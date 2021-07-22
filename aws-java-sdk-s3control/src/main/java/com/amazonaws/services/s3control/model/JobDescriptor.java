@@ -116,8 +116,8 @@ public class JobDescriptor implements Serializable, Cloneable {
     private java.util.Date terminationDate;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
-     * for this job.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for
+     * this job.
      * </p>
      */
     private String roleArn;
@@ -785,13 +785,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
-     * for this job.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for
+     * this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
-     *        tasks for this job.
+     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks
+     *        for this job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -800,11 +800,11 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
-     * for this job.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for
+     * this job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
+     * @return The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the
      *         tasks for this job.
      */
 
@@ -814,13 +814,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
-     * for this job.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for
+     * this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
-     *        tasks for this job.
+     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks
+     *        for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

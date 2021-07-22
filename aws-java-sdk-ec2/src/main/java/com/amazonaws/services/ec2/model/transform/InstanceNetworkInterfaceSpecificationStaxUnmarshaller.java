@@ -135,6 +135,36 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     instanceNetworkInterfaceSpecification.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Ipv4Prefix", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv4Prefixes(new ArrayList<Ipv4PrefixSpecificationRequest>());
+                    continue;
+                }
+
+                if (context.testExpression("Ipv4Prefix/item", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv4Prefixes(Ipv4PrefixSpecificationRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv4PrefixCount", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setIpv4PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6Prefix", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Prefixes(new ArrayList<Ipv6PrefixSpecificationRequest>());
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6Prefix/item", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Prefixes(Ipv6PrefixSpecificationRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6PrefixCount", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setIpv6PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceSpecification;

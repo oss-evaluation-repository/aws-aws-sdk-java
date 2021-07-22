@@ -72,6 +72,10 @@ public class DescribeJobRunResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeJobRunResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProfileConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeJobRunResult.setProfileConfiguration(ProfileConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RunId", targetDepth)) {
                     context.nextToken();
                     describeJobRunResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -97,6 +101,12 @@ public class DescribeJobRunResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("DataCatalogOutputs", targetDepth)) {
                     context.nextToken();
                     describeJobRunResult.setDataCatalogOutputs(new ListUnmarshaller<DataCatalogOutput>(DataCatalogOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DatabaseOutputs", targetDepth)) {
+                    context.nextToken();
+                    describeJobRunResult.setDatabaseOutputs(new ListUnmarshaller<DatabaseOutput>(DatabaseOutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

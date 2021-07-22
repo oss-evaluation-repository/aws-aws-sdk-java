@@ -39,7 +39,7 @@ public class Route implements Serializable, Cloneable {
     private String destinationIpv6CidrBlock;
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      */
     private String destinationPrefixListId;
@@ -63,7 +63,7 @@ public class Route implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The ID of account that owns the instance.
      * </p>
      */
     private String instanceOwnerId;
@@ -216,11 +216,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
      * @param destinationPrefixListId
-     *        The prefix of the AWS service.
+     *        The prefix of the Amazon Web Service.
      */
 
     public void setDestinationPrefixListId(String destinationPrefixListId) {
@@ -229,10 +229,10 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
-     * @return The prefix of the AWS service.
+     * @return The prefix of the Amazon Web Service.
      */
 
     public String getDestinationPrefixListId() {
@@ -241,11 +241,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
      * @param destinationPrefixListId
-     *        The prefix of the AWS service.
+     *        The prefix of the Amazon Web Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,11 +376,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The ID of account that owns the instance.
      * </p>
      * 
      * @param instanceOwnerId
-     *        The AWS account ID of the owner of the instance.
+     *        The ID of account that owns the instance.
      */
 
     public void setInstanceOwnerId(String instanceOwnerId) {
@@ -389,10 +389,10 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The ID of account that owns the instance.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the instance.
+     * @return The ID of account that owns the instance.
      */
 
     public String getInstanceOwnerId() {
@@ -401,11 +401,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The ID of account that owns the instance.
      * </p>
      * 
      * @param instanceOwnerId
-     *        The AWS account ID of the owner of the instance.
+     *        The ID of account that owns the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

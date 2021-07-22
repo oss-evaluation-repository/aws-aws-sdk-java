@@ -1248,6 +1248,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSubnetCidrReservationResult> createSubnetCidrReservationAsync(CreateSubnetCidrReservationRequest request) {
+
+        return createSubnetCidrReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSubnetCidrReservationResult> createSubnetCidrReservationAsync(CreateSubnetCidrReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSubnetCidrReservationRequest, CreateSubnetCidrReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -2025,6 +2038,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(DeleteSubnetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSubnetCidrReservationResult> deleteSubnetCidrReservationAsync(DeleteSubnetCidrReservationRequest request) {
+
+        return deleteSubnetCidrReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSubnetCidrReservationResult> deleteSubnetCidrReservationAsync(DeleteSubnetCidrReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSubnetCidrReservationRequest, DeleteSubnetCidrReservationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -5931,6 +5957,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSerialConsoleAccessStatusRequest, GetSerialConsoleAccessStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrReservationsResult> getSubnetCidrReservationsAsync(GetSubnetCidrReservationsRequest request) {
+
+        return getSubnetCidrReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrReservationsResult> getSubnetCidrReservationsAsync(GetSubnetCidrReservationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSubnetCidrReservationsRequest, GetSubnetCidrReservationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

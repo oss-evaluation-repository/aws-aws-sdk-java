@@ -139,6 +139,27 @@ public class InstanceNetworkInterfaceStaxUnmarshaller implements Unmarshaller<In
                     instanceNetworkInterface.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ipv4PrefixSet", targetDepth)) {
+                    instanceNetworkInterface.withIpv4Prefixes(new ArrayList<InstanceIpv4Prefix>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv4PrefixSet/item", targetDepth)) {
+                    instanceNetworkInterface.withIpv4Prefixes(InstanceIpv4PrefixStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet", targetDepth)) {
+                    instanceNetworkInterface.withIpv6Prefixes(new ArrayList<InstanceIpv6Prefix>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet/item", targetDepth)) {
+                    instanceNetworkInterface.withIpv6Prefixes(InstanceIpv6PrefixStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterface;

@@ -28,25 +28,25 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      */
     private String sourceIp;
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      */
     private String destinationIp;
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      */
     private String destination;
@@ -72,19 +72,19 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the AWS resource that is the source of the path.
+     *        The IP address of the Amazon Web Services resource that is the source of the path.
      */
 
     public void setSourceIp(String sourceIp) {
@@ -93,10 +93,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
-     * @return The IP address of the AWS resource that is the source of the path.
+     * @return The IP address of the Amazon Web Services resource that is the source of the path.
      */
 
     public String getSourceIp() {
@@ -105,11 +105,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the AWS resource that is the source of the path.
+     *        The IP address of the Amazon Web Services resource that is the source of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +120,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the AWS resource that is the destination of the path.
+     *        The IP address of the Amazon Web Services resource that is the destination of the path.
      */
 
     public void setDestinationIp(String destinationIp) {
@@ -133,10 +133,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
-     * @return The IP address of the AWS resource that is the destination of the path.
+     * @return The IP address of the Amazon Web Services resource that is the destination of the path.
      */
 
     public String getDestinationIp() {
@@ -145,11 +145,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the AWS resource that is the destination of the path.
+     *        The IP address of the Amazon Web Services resource that is the destination of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +160,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param source
-     *        The AWS resource that is the source of the path.
+     *        The Amazon Web Services resource that is the source of the path.
      */
 
     public void setSource(String source) {
@@ -173,10 +173,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
-     * @return The AWS resource that is the source of the path.
+     * @return The Amazon Web Services resource that is the source of the path.
      */
 
     public String getSource() {
@@ -185,11 +185,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param source
-     *        The AWS resource that is the source of the path.
+     *        The Amazon Web Services resource that is the source of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destination
-     *        The AWS resource that is the destination of the path.
+     *        The Amazon Web Services resource that is the destination of the path.
      */
 
     public void setDestination(String destination) {
@@ -213,10 +213,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
-     * @return The AWS resource that is the destination of the path.
+     * @return The Amazon Web Services resource that is the destination of the path.
      */
 
     public String getDestination() {
@@ -225,11 +225,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destination
-     *        The AWS resource that is the destination of the path.
+     *        The Amazon Web Services resource that is the destination of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,15 +414,15 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *        idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -433,14 +433,14 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *         idempotency</a>.
      */
 
     public String getClientToken() {
@@ -451,15 +451,15 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *        idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

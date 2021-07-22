@@ -26,18 +26,18 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      * </p>
      */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      * </p>
      * 
      * @param publicAccessBlockConfiguration
-     *        The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      */
 
     public void setPublicAccessBlockConfiguration(PublicAccessBlockConfiguration publicAccessBlockConfiguration) {
@@ -46,10 +46,10 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      * </p>
      * 
-     * @return The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     * @return The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      */
 
     public PublicAccessBlockConfiguration getPublicAccessBlockConfiguration() {
@@ -58,11 +58,11 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      * </p>
      * 
      * @param publicAccessBlockConfiguration
-     *        The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

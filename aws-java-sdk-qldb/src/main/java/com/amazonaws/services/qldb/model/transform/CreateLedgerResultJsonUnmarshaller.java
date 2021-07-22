@@ -72,6 +72,10 @@ public class CreateLedgerResultJsonUnmarshaller implements Unmarshaller<CreateLe
                     context.nextToken();
                     createLedgerResult.setDeletionProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    context.nextToken();
+                    createLedgerResult.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

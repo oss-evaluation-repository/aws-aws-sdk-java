@@ -64,7 +64,7 @@ public class NetworkAcl implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The ID of the AWS account that owns the network ACL.
+     * The ID of the account that owns the network ACL.
      * </p>
      */
     private String ownerId;
@@ -422,11 +422,11 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network ACL.
+     * The ID of the account that owns the network ACL.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the network ACL.
+     *        The ID of the account that owns the network ACL.
      */
 
     public void setOwnerId(String ownerId) {
@@ -435,10 +435,10 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network ACL.
+     * The ID of the account that owns the network ACL.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the network ACL.
+     * @return The ID of the account that owns the network ACL.
      */
 
     public String getOwnerId() {
@@ -447,11 +447,11 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network ACL.
+     * The ID of the account that owns the network ACL.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the network ACL.
+     *        The ID of the account that owns the network ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

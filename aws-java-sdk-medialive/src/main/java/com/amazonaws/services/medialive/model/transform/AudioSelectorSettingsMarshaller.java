@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AudioSelectorSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AUDIOHLSRENDITIONSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioHlsRenditionSelection").build();
     private static final MarshallingInfo<StructuredPojo> AUDIOLANGUAGESELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioLanguageSelection").build();
     private static final MarshallingInfo<StructuredPojo> AUDIOPIDSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,6 +52,7 @@ public class AudioSelectorSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(audioSelectorSettings.getAudioHlsRenditionSelection(), AUDIOHLSRENDITIONSELECTION_BINDING);
             protocolMarshaller.marshall(audioSelectorSettings.getAudioLanguageSelection(), AUDIOLANGUAGESELECTION_BINDING);
             protocolMarshaller.marshall(audioSelectorSettings.getAudioPidSelection(), AUDIOPIDSELECTION_BINDING);
             protocolMarshaller.marshall(audioSelectorSettings.getAudioTrackSelection(), AUDIOTRACKSELECTION_BINDING);

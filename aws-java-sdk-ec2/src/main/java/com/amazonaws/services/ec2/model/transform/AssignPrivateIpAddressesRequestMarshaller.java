@@ -66,6 +66,23 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> assignPrivateIpAddressesRequestIpv4PrefixesList = (com.amazonaws.internal.SdkInternalList<String>) assignPrivateIpAddressesRequest
+                .getIpv4Prefixes();
+        if (!assignPrivateIpAddressesRequestIpv4PrefixesList.isEmpty() || !assignPrivateIpAddressesRequestIpv4PrefixesList.isAutoConstruct()) {
+            int ipv4PrefixesListIndex = 1;
+
+            for (String assignPrivateIpAddressesRequestIpv4PrefixesListValue : assignPrivateIpAddressesRequestIpv4PrefixesList) {
+                if (assignPrivateIpAddressesRequestIpv4PrefixesListValue != null) {
+                    request.addParameter("Ipv4Prefix." + ipv4PrefixesListIndex, StringUtils.fromString(assignPrivateIpAddressesRequestIpv4PrefixesListValue));
+                }
+                ipv4PrefixesListIndex++;
+            }
+        }
+
+        if (assignPrivateIpAddressesRequest.getIpv4PrefixCount() != null) {
+            request.addParameter("Ipv4PrefixCount", StringUtils.fromInteger(assignPrivateIpAddressesRequest.getIpv4PrefixCount()));
+        }
+
         return request;
     }
 

@@ -100,6 +100,12 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("DatabaseOutputs", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setDatabaseOutputs(new ListUnmarshaller<DatabaseOutput>(DatabaseOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("RecipeReference", targetDepth)) {
                     context.nextToken();
                     jobRun.setRecipeReference(RecipeReferenceJsonUnmarshaller.getInstance().unmarshall(context));

@@ -40,8 +40,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
-     * point accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -100,8 +100,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
-     * point accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -116,8 +116,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      *        x-amz-outpost-id as well.
      *        </p>
      *        <p>
-     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *        access point accessed in the format
+     *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *        the ARN of the access point accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -138,8 +138,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
-     * point accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -153,8 +153,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      *         x-amz-outpost-id as well.
      *         </p>
      *         <p>
-     *         For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *         access point accessed in the format
+     *         For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *         the ARN of the access point accessed in the format
      *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *         . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *         owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -175,8 +175,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
-     * point accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -191,8 +191,8 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      *        x-amz-outpost-id as well.
      *        </p>
      *        <p>
-     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *        access point accessed in the format
+     *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *        the ARN of the access point accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of

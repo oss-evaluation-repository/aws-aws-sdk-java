@@ -27,7 +27,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      */
     private String accountId;
@@ -37,7 +37,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * The ID of the AWS Outposts.
+     * The ID of the Outposts.
      * </p>
      * <note>
      * <p>
@@ -49,11 +49,11 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Outposts bucket.
+     *        The account ID of the Outposts bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -62,10 +62,10 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
-     * @return The AWS account ID of the Outposts bucket.
+     * @return The account ID of the Outposts bucket.
      */
 
     public String getAccountId() {
@@ -74,11 +74,11 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Outposts bucket.
+     *        The account ID of the Outposts bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +153,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Outposts.
+     * The ID of the Outposts.
      * </p>
      * <note>
      * <p>
@@ -162,7 +162,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param outpostId
-     *        The ID of the AWS Outposts.</p> <note>
+     *        The ID of the Outposts.</p> <note>
      *        <p>
      *        This is required by Amazon S3 on Outposts buckets.
      *        </p>
@@ -174,7 +174,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Outposts.
+     * The ID of the Outposts.
      * </p>
      * <note>
      * <p>
@@ -182,7 +182,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </note>
      * 
-     * @return The ID of the AWS Outposts.</p> <note>
+     * @return The ID of the Outposts.</p> <note>
      *         <p>
      *         This is required by Amazon S3 on Outposts buckets.
      *         </p>
@@ -194,7 +194,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Outposts.
+     * The ID of the Outposts.
      * </p>
      * <note>
      * <p>
@@ -203,7 +203,7 @@ public class ListRegionalBucketsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param outpostId
-     *        The ID of the AWS Outposts.</p> <note>
+     *        The ID of the Outposts.</p> <note>
      *        <p>
      *        This is required by Amazon S3 on Outposts buckets.
      *        </p>

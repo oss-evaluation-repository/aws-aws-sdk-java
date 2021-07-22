@@ -27,7 +27,7 @@ public class CreateAccessPointForObjectLambdaRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS account ID for owner of the specified Object Lambda Access Point.
+     * The account ID for owner of the specified Object Lambda Access Point.
      * </p>
      */
     private String accountId;
@@ -46,11 +46,11 @@ public class CreateAccessPointForObjectLambdaRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS account ID for owner of the specified Object Lambda Access Point.
+     * The account ID for owner of the specified Object Lambda Access Point.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for owner of the specified Object Lambda Access Point.
+     *        The account ID for owner of the specified Object Lambda Access Point.
      */
 
     public void setAccountId(String accountId) {
@@ -59,10 +59,10 @@ public class CreateAccessPointForObjectLambdaRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS account ID for owner of the specified Object Lambda Access Point.
+     * The account ID for owner of the specified Object Lambda Access Point.
      * </p>
      * 
-     * @return The AWS account ID for owner of the specified Object Lambda Access Point.
+     * @return The account ID for owner of the specified Object Lambda Access Point.
      */
 
     public String getAccountId() {
@@ -71,11 +71,11 @@ public class CreateAccessPointForObjectLambdaRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The AWS account ID for owner of the specified Object Lambda Access Point.
+     * The account ID for owner of the specified Object Lambda Access Point.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for owner of the specified Object Lambda Access Point.
+     *        The account ID for owner of the specified Object Lambda Access Point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

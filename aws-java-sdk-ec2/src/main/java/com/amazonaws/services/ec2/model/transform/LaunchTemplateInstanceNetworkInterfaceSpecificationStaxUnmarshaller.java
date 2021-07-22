@@ -138,6 +138,38 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationStaxUnmarshaller
                     launchTemplateInstanceNetworkInterfaceSpecification.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ipv4PrefixSet", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.withIpv4Prefixes(new ArrayList<Ipv4PrefixSpecificationResponse>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv4PrefixSet/item", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.withIpv4Prefixes(Ipv4PrefixSpecificationResponseStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv4PrefixCount", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.setIpv4PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.withIpv6Prefixes(new ArrayList<Ipv6PrefixSpecificationResponse>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet/item", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.withIpv6Prefixes(Ipv6PrefixSpecificationResponseStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixCount", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.setIpv6PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplateInstanceNetworkInterfaceSpecification;

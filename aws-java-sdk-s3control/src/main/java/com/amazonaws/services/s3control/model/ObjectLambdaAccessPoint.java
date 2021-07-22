@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An access point with an attached AWS Lambda function used to access transformed data from an Amazon S3 bucket.
+ * An access point with an attached Lambda function used to access transformed data from an Amazon S3 bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaAccessPoint" target="_top">AWS

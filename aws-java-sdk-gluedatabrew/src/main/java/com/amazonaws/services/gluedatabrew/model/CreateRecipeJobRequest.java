@@ -88,10 +88,17 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<Output> outputs;
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      */
     private java.util.List<DataCatalogOutput> dataCatalogOutputs;
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write to.
+     * </p>
+     */
+    private java.util.List<DatabaseOutput> databaseOutputs;
     /**
      * <p>
      * Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.
@@ -614,10 +621,10 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
-     * @return One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public java.util.List<DataCatalogOutput> getDataCatalogOutputs() {
@@ -626,11 +633,11 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public void setDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
@@ -644,7 +651,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -653,7 +660,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,16 +676,94 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRecipeJobRequest withDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
         setDataCatalogOutputs(dataCatalogOutputs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write to.
+     * </p>
+     * 
+     * @return Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *         recipe job to write to.
+     */
+
+    public java.util.List<DatabaseOutput> getDatabaseOutputs() {
+        return databaseOutputs;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write to.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write to.
+     */
+
+    public void setDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        if (databaseOutputs == null) {
+            this.databaseOutputs = null;
+            return;
+        }
+
+        this.databaseOutputs = new java.util.ArrayList<DatabaseOutput>(databaseOutputs);
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDatabaseOutputs(java.util.Collection)} or {@link #withDatabaseOutputs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRecipeJobRequest withDatabaseOutputs(DatabaseOutput... databaseOutputs) {
+        if (this.databaseOutputs == null) {
+            setDatabaseOutputs(new java.util.ArrayList<DatabaseOutput>(databaseOutputs.length));
+        }
+        for (DatabaseOutput ele : databaseOutputs) {
+            this.databaseOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write to.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRecipeJobRequest withDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        setDatabaseOutputs(databaseOutputs);
         return this;
     }
 
@@ -941,6 +1026,8 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getDataCatalogOutputs() != null)
             sb.append("DataCatalogOutputs: ").append(getDataCatalogOutputs()).append(",");
+        if (getDatabaseOutputs() != null)
+            sb.append("DatabaseOutputs: ").append(getDatabaseOutputs()).append(",");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getRecipeReference() != null)
@@ -1001,6 +1088,10 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDataCatalogOutputs() != null && other.getDataCatalogOutputs().equals(this.getDataCatalogOutputs()) == false)
             return false;
+        if (other.getDatabaseOutputs() == null ^ this.getDatabaseOutputs() == null)
+            return false;
+        if (other.getDatabaseOutputs() != null && other.getDatabaseOutputs().equals(this.getDatabaseOutputs()) == false)
+            return false;
         if (other.getProjectName() == null ^ this.getProjectName() == null)
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
@@ -1038,6 +1129,7 @@ public class CreateRecipeJobRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getDataCatalogOutputs() == null) ? 0 : getDataCatalogOutputs().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseOutputs() == null) ? 0 : getDatabaseOutputs().hashCode());
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

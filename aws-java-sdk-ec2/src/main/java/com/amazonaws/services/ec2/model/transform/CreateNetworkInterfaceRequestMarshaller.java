@@ -105,6 +105,44 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
         }
 
+        com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest> createNetworkInterfaceRequestIpv4PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>) createNetworkInterfaceRequest
+                .getIpv4Prefixes();
+        if (!createNetworkInterfaceRequestIpv4PrefixesList.isEmpty() || !createNetworkInterfaceRequestIpv4PrefixesList.isAutoConstruct()) {
+            int ipv4PrefixesListIndex = 1;
+
+            for (Ipv4PrefixSpecificationRequest createNetworkInterfaceRequestIpv4PrefixesListValue : createNetworkInterfaceRequestIpv4PrefixesList) {
+
+                if (createNetworkInterfaceRequestIpv4PrefixesListValue.getIpv4Prefix() != null) {
+                    request.addParameter("Ipv4Prefix." + ipv4PrefixesListIndex + ".Ipv4Prefix",
+                            StringUtils.fromString(createNetworkInterfaceRequestIpv4PrefixesListValue.getIpv4Prefix()));
+                }
+                ipv4PrefixesListIndex++;
+            }
+        }
+
+        if (createNetworkInterfaceRequest.getIpv4PrefixCount() != null) {
+            request.addParameter("Ipv4PrefixCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getIpv4PrefixCount()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest> createNetworkInterfaceRequestIpv6PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>) createNetworkInterfaceRequest
+                .getIpv6Prefixes();
+        if (!createNetworkInterfaceRequestIpv6PrefixesList.isEmpty() || !createNetworkInterfaceRequestIpv6PrefixesList.isAutoConstruct()) {
+            int ipv6PrefixesListIndex = 1;
+
+            for (Ipv6PrefixSpecificationRequest createNetworkInterfaceRequestIpv6PrefixesListValue : createNetworkInterfaceRequestIpv6PrefixesList) {
+
+                if (createNetworkInterfaceRequestIpv6PrefixesListValue.getIpv6Prefix() != null) {
+                    request.addParameter("Ipv6Prefix." + ipv6PrefixesListIndex + ".Ipv6Prefix",
+                            StringUtils.fromString(createNetworkInterfaceRequestIpv6PrefixesListValue.getIpv6Prefix()));
+                }
+                ipv6PrefixesListIndex++;
+            }
+        }
+
+        if (createNetworkInterfaceRequest.getIpv6PrefixCount() != null) {
+            request.addParameter("Ipv6PrefixCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getIpv6PrefixCount()));
+        }
+
         if (createNetworkInterfaceRequest.getInterfaceType() != null) {
             request.addParameter("InterfaceType", StringUtils.fromString(createNetworkInterfaceRequest.getInterfaceType()));
         }

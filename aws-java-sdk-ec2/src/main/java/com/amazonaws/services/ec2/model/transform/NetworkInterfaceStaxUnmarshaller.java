@@ -130,6 +130,26 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
+                if (context.testExpression("ipv4PrefixSet", targetDepth)) {
+                    networkInterface.withIpv4Prefixes(new ArrayList<Ipv4PrefixSpecification>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv4PrefixSet/item", targetDepth)) {
+                    networkInterface.withIpv4Prefixes(Ipv4PrefixSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet", targetDepth)) {
+                    networkInterface.withIpv6Prefixes(new ArrayList<Ipv6PrefixSpecification>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6PrefixSet/item", targetDepth)) {
+                    networkInterface.withIpv6Prefixes(Ipv6PrefixSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("requesterId", targetDepth)) {
                     networkInterface.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

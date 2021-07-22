@@ -40,10 +40,6 @@ public class UnassignIpv6AddressesRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (unassignIpv6AddressesRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils.fromString(unassignIpv6AddressesRequest.getNetworkInterfaceId()));
-        }
-
         com.amazonaws.internal.SdkInternalList<String> unassignIpv6AddressesRequestIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<String>) unassignIpv6AddressesRequest
                 .getIpv6Addresses();
         if (!unassignIpv6AddressesRequestIpv6AddressesList.isEmpty() || !unassignIpv6AddressesRequestIpv6AddressesList.isAutoConstruct()) {
@@ -55,6 +51,23 @@ public class UnassignIpv6AddressesRequestMarshaller implements Marshaller<Reques
                 }
                 ipv6AddressesListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> unassignIpv6AddressesRequestIpv6PrefixesList = (com.amazonaws.internal.SdkInternalList<String>) unassignIpv6AddressesRequest
+                .getIpv6Prefixes();
+        if (!unassignIpv6AddressesRequestIpv6PrefixesList.isEmpty() || !unassignIpv6AddressesRequestIpv6PrefixesList.isAutoConstruct()) {
+            int ipv6PrefixesListIndex = 1;
+
+            for (String unassignIpv6AddressesRequestIpv6PrefixesListValue : unassignIpv6AddressesRequestIpv6PrefixesList) {
+                if (unassignIpv6AddressesRequestIpv6PrefixesListValue != null) {
+                    request.addParameter("Ipv6Prefix." + ipv6PrefixesListIndex, StringUtils.fromString(unassignIpv6AddressesRequestIpv6PrefixesListValue));
+                }
+                ipv6PrefixesListIndex++;
+            }
+        }
+
+        if (unassignIpv6AddressesRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(unassignIpv6AddressesRequest.getNetworkInterfaceId()));
         }
 
         return request;

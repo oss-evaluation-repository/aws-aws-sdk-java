@@ -85,6 +85,13 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
     private S3Location outputLocation;
     /**
      * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     */
+    private ProfileConfiguration configuration;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
      * the job.
      * </p>
@@ -564,6 +571,52 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param configuration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public void setConfiguration(ProfileConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @return Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters
+     *         of evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public ProfileConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param configuration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfileJobRequest withConfiguration(ProfileConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
      * the job.
      * </p>
@@ -802,6 +855,8 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
         if (getOutputLocation() != null)
             sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
@@ -856,6 +911,10 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -888,6 +947,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());

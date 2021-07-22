@@ -37,6 +37,8 @@ public class CreateLedgerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionsMode").build();
     private static final MarshallingInfo<Boolean> DELETIONPROTECTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionProtection").build();
+    private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKey").build();
 
     private static final CreateLedgerRequestMarshaller instance = new CreateLedgerRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class CreateLedgerRequestMarshaller {
             protocolMarshaller.marshall(createLedgerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createLedgerRequest.getPermissionsMode(), PERMISSIONSMODE_BINDING);
             protocolMarshaller.marshall(createLedgerRequest.getDeletionProtection(), DELETIONPROTECTION_BINDING);
+            protocolMarshaller.marshall(createLedgerRequest.getKmsKey(), KMSKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AWS organization for your S3 Storage Lens.
+ * The Amazon Web Services organization for your S3 Storage Lens.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensAwsOrg" target="_top">AWS API
@@ -28,8 +28,8 @@ public class StorageLensAwsOrg implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and follows
-     * the following format:
+     * A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     * read-only and follows the following format:
      * <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      * </p>
      */
@@ -37,14 +37,14 @@ public class StorageLensAwsOrg implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and follows
-     * the following format:
+     * A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     * read-only and follows the following format:
      * <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      * </p>
      * 
      * @param arn
-     *        A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and
-     *        follows the following format:
+     *        A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     *        read-only and follows the following format:
      *        <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      */
 
@@ -54,13 +54,13 @@ public class StorageLensAwsOrg implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and follows
-     * the following format:
+     * A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     * read-only and follows the following format:
      * <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      * </p>
      * 
-     * @return A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and
-     *         follows the following format:
+     * @return A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     *         read-only and follows the following format:
      *         <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      */
 
@@ -70,14 +70,14 @@ public class StorageLensAwsOrg implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and follows
-     * the following format:
+     * A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     * read-only and follows the following format:
      * <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      * </p>
      * 
      * @param arn
-     *        A container for the Amazon Resource Name (ARN) of the AWS organization. This property is read-only and
-     *        follows the following format:
+     *        A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is
+     *        read-only and follows the following format:
      *        <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

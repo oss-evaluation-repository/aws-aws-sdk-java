@@ -45,6 +45,8 @@ public class CreateProfileJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRetries").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -78,6 +80,7 @@ public class CreateProfileJobRequestMarshaller {
             protocolMarshaller.marshall(createProfileJobRequest.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(createProfileJobRequest.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(createProfileJobRequest.getOutputLocation(), OUTPUTLOCATION_BINDING);
+            protocolMarshaller.marshall(createProfileJobRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createProfileJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createProfileJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createProfileJobRequest.getTimeout(), TIMEOUT_BINDING);

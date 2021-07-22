@@ -68,6 +68,10 @@ public class UpdateLedgerResultJsonUnmarshaller implements Unmarshaller<UpdateLe
                     context.nextToken();
                     updateLedgerResult.setDeletionProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EncryptionDescription", targetDepth)) {
+                    context.nextToken();
+                    updateLedgerResult.setEncryptionDescription(LedgerEncryptionDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -213,7 +213,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Creates a new ledger in your AWS account in the current Region.
+     * Creates a new ledger in your account in the current Region.
      * </p>
      * 
      * @param createLedgerRequest
@@ -485,7 +485,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns information about a ledger, including its state and when it was created.
+     * Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when
+     * it was created.
      * </p>
      * 
      * @param describeLedgerRequest
@@ -891,8 +892,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns an array of journal export job descriptions for all ledgers that are associated with the current AWS
-     * account and Region.
+     * Returns an array of journal export job descriptions for all ledgers that are associated with the current account
+     * and Region.
      * </p>
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
@@ -1022,7 +1023,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns an array of ledger summaries that are associated with the current AWS account and Region.
+     * Returns an array of ledger summaries that are associated with the current account and Region.
      * </p>
      * <p>
      * This action returns a maximum of 100 items and is paginated so that you can retrieve all the items by calling

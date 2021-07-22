@@ -59,6 +59,19 @@ public class UnassignPrivateIpAddressesRequestMarshaller implements Marshaller<R
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> unassignPrivateIpAddressesRequestIpv4PrefixesList = (com.amazonaws.internal.SdkInternalList<String>) unassignPrivateIpAddressesRequest
+                .getIpv4Prefixes();
+        if (!unassignPrivateIpAddressesRequestIpv4PrefixesList.isEmpty() || !unassignPrivateIpAddressesRequestIpv4PrefixesList.isAutoConstruct()) {
+            int ipv4PrefixesListIndex = 1;
+
+            for (String unassignPrivateIpAddressesRequestIpv4PrefixesListValue : unassignPrivateIpAddressesRequestIpv4PrefixesList) {
+                if (unassignPrivateIpAddressesRequestIpv4PrefixesListValue != null) {
+                    request.addParameter("Ipv4Prefix." + ipv4PrefixesListIndex, StringUtils.fromString(unassignPrivateIpAddressesRequestIpv4PrefixesListValue));
+                }
+                ipv4PrefixesListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -225,7 +225,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -233,19 +233,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private LaunchTemplateInstanceMetadataOptionsRequest metadataOptions;
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      */
     private LaunchTemplateEnclaveOptionsRequest enclaveOptions;
@@ -1869,7 +1869,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -1878,7 +1878,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      *        meets the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
      *        >hibernation prerequisites</a>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1892,7 +1892,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -1900,7 +1900,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      *         meets the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
      *         >hibernation prerequisites</a>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1914,7 +1914,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -1923,7 +1923,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      *        meets the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
      *        >hibernation prerequisites</a>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1936,14 +1936,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequest metadataOptions) {
@@ -1953,13 +1953,13 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The metadata options for the instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *         and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public LaunchTemplateInstanceMetadataOptionsRequest getMetadataOptions() {
@@ -1969,14 +1969,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1987,20 +1987,20 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      */
 
     public void setEnclaveOptions(LaunchTemplateEnclaveOptionsRequest enclaveOptions) {
@@ -2009,19 +2009,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
-     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *         href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *         Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *         Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *         <p>
-     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *         You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      */
 
     public LaunchTemplateEnclaveOptionsRequest getEnclaveOptions() {
@@ -2030,20 +2030,20 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

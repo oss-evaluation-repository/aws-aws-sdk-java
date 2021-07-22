@@ -46,7 +46,7 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the Key Management Service (KMS) CMK used for encryption.
      * </p>
      */
     private String kmsKeyId;
@@ -221,11 +221,11 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the Key Management Service (KMS) CMK used for encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     *        The ARN of the Key Management Service (KMS) CMK used for encryption.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -234,10 +234,10 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the Key Management Service (KMS) CMK used for encryption.
      * </p>
      * 
-     * @return The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * @return The ARN of the Key Management Service (KMS) CMK used for encryption.
      */
 
     public String getKmsKeyId() {
@@ -246,11 +246,11 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the Key Management Service (KMS) CMK used for encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     *        The ARN of the Key Management Service (KMS) CMK used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

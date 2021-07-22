@@ -33,9 +33,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String targetGroupArn;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -151,18 +153,22 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP.
+     *        The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS.
+     *        It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+     *        The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -174,17 +180,21 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
-     * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *         supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *         GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     * @return The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *         Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is
+     *         TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or
+     *         HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or
+     *         TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *         <p>
      *         With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -196,18 +206,22 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP.
+     *        The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS.
+     *        It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+     *        The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -221,18 +235,22 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP.
+     *        The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS.
+     *        It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+     *        The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -244,18 +262,22 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
-     * TCP_UDP protocols are not supported for health checks.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is
+     * not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health
+     * checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+     * protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP.
+     *        The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS.
+     *        It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+     *        The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.

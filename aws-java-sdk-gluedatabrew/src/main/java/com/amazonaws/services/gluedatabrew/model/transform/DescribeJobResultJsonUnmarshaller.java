@@ -108,9 +108,19 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("DatabaseOutputs", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setDatabaseOutputs(new ListUnmarshaller<DatabaseOutput>(DatabaseOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ProjectName", targetDepth)) {
                     context.nextToken();
                     describeJobResult.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProfileConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setProfileConfiguration(ProfileConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecipeReference", targetDepth)) {
                     context.nextToken();

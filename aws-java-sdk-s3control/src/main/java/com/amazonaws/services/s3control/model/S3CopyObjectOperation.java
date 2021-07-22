@@ -90,8 +90,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
-     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
-     * encryption with SSE-KMS.
+     * Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS.
      * </p>
      * <p>
      * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
@@ -837,8 +837,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
-     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
-     * encryption with SSE-KMS.
+     * Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS.
      * </p>
      * <p>
      * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
@@ -847,8 +847,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
      * 
      * @param bucketKeyEnabled
      *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
-     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
-     *        for object encryption with SSE-KMS.</p>
+     *        using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use
+     *        an S3 Bucket Key for object encryption with SSE-KMS.</p>
      *        <p>
      *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
      *        Bucket Key.
@@ -861,8 +861,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
-     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
-     * encryption with SSE-KMS.
+     * Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS.
      * </p>
      * <p>
      * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
@@ -870,8 +870,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
-     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     *         Key for object encryption with SSE-KMS.</p>
+     *         using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use
+     *         an S3 Bucket Key for object encryption with SSE-KMS.</p>
      *         <p>
      *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
      *         Bucket Key.
@@ -884,8 +884,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
-     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
-     * encryption with SSE-KMS.
+     * Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS.
      * </p>
      * <p>
      * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
@@ -894,8 +894,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
      * 
      * @param bucketKeyEnabled
      *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
-     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
-     *        for object encryption with SSE-KMS.</p>
+     *        using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use
+     *        an S3 Bucket Key for object encryption with SSE-KMS.</p>
      *        <p>
      *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
      *        Bucket Key.
@@ -910,8 +910,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
-     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
-     * encryption with SSE-KMS.
+     * Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS.
      * </p>
      * <p>
      * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
@@ -919,8 +919,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
-     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     *         Key for object encryption with SSE-KMS.</p>
+     *         using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use
+     *         an S3 Bucket Key for object encryption with SSE-KMS.</p>
      *         <p>
      *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
      *         Bucket Key.

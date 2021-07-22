@@ -82,12 +82,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     * <code>is-default</code> - Indicates whether the VPC is the default VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * <code>owner-id</code> - The ID of the account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -197,12 +197,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     * <code>is-default</code> - Indicates whether the VPC is the default VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * <code>owner-id</code> - The ID of the account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -285,12 +285,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         </li>
      *         <li>
      *         <p>
-     *         <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *         <code>is-default</code> - Indicates whether the VPC is the default VPC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     *         <code>owner-id</code> - The ID of the account that owns the VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -383,12 +383,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     * <code>is-default</code> - Indicates whether the VPC is the default VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * <code>owner-id</code> - The ID of the account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -472,12 +472,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        <code>is-default</code> - Indicates whether the VPC is the default VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -572,12 +572,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     * <code>is-default</code> - Indicates whether the VPC is the default VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * <code>owner-id</code> - The ID of the account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -666,12 +666,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        <code>is-default</code> - Indicates whether the VPC is the default VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -768,12 +768,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     * <code>is-default</code> - Indicates whether the VPC is the default VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * <code>owner-id</code> - The ID of the account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -857,12 +857,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        <code>is-default</code> - Indicates whether the VPC is the default VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>

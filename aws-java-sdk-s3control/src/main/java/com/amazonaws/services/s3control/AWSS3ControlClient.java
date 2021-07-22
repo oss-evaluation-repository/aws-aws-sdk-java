@@ -55,7 +55,7 @@ import static com.amazonaws.services.s3control.S3ControlHandlerContextKey.S3_ARN
  * the service call completes.
  * <p>
  * <p>
- * AWS S3 Control provides access to Amazon S3 control plane actions.
+ * Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
  * </p>
  */
 @ThreadSafe
@@ -452,7 +452,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * @return Result of the CreateBucket operation returned by the service.
      * @throws BucketAlreadyExistsException
      *         The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the
-     *         AWS Outposts in this Region. Select a different name and try again.
+     *         Outposts in this Region. Select a different name and try again.
      * @throws BucketAlreadyOwnedByYouException
      *         The Outposts bucket you tried to create already exists, and you own it.
      * @sample AWSS3Control.CreateBucket
@@ -1318,11 +1318,11 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * This implementation of the DELETE action uses the policy subresource to delete the policy of a specified Amazon
-     * S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns the
-     * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
-     * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
-     * in <i>Amazon S3 User Guide</i>.
+     * S3 on Outposts bucket. If you are using an identity other than the root user of the account that owns the bucket,
+     * the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
+     * Outposts bucket and belong to the bucket owner's account to use this action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -1331,8 +1331,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </p>
      * <important>
      * <p>
-     * As a security precaution, the root user of the AWS account that owns a bucket can always use this action, even if
-     * the policy explicitly denies the root user the ability to perform this action.
+     * As a security precaution, the root user of the account that owns a bucket can always use this action, even if the
+     * policy explicitly denies the root user the ability to perform this action.
      * </p>
      * </important>
      * <p>
@@ -1677,7 +1677,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Removes the <code>PublicAccessBlock</code> configuration for an AWS account. For more information, see <a
+     * Removes the <code>PublicAccessBlock</code> configuration for an account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
      * block public access</a>.
      * </p>
@@ -2662,10 +2662,10 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
-     * calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
-     * and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket
-     * owner account with the right permissions can perform actions on an Outposts bucket.
+     * If you are using an identity other than the root user of the account that owns the Outposts bucket, the calling
+     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket and belong
+     * to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket owner account
+     * with the right permissions can perform actions on an Outposts bucket.
      * </p>
      * <p>
      * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
@@ -2970,9 +2970,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
-     * identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to the bucket
-     * owner's account in order to use this action.
+     * If you are using an identity other than the root user of the account that owns the bucket, the calling identity
+     * must have the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to the bucket owner's
+     * account in order to use this action.
      * </p>
      * <p>
      * Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts
@@ -2981,8 +2981,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </p>
      * <important>
      * <p>
-     * As a security precaution, the root user of the AWS account that owns a bucket can always use this action, even if
-     * the policy explicitly denies the root user the ability to perform this action.
+     * As a security precaution, the root user of the account that owns a bucket can always use this action, even if the
+     * policy explicitly denies the root user the ability to perform this action.
      * </p>
      * </important>
      * <p>
@@ -3352,7 +3352,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Retrieves the <code>PublicAccessBlock</code> configuration for an AWS account. For more information, see <a
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
      * block public access</a>.
      * </p>
@@ -3821,8 +3821,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
-     * making the request. For more information, see <a
+     * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the account making
+     * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
@@ -4510,9 +4510,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
-     * calling identity must have the <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and
-     * belong to the bucket owner's account in order to use this action.
+     * If you are using an identity other than the root user of the account that owns the Outposts bucket, the calling
+     * identity must have the <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and belong to
+     * the bucket owner's account in order to use this action.
      * </p>
      * <p>
      * If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -4521,8 +4521,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </p>
      * <important>
      * <p>
-     * As a security precaution, the root user of the AWS account that owns a bucket can always use this action, even if
-     * the policy explicitly denies the root user the ability to perform this action.
+     * As a security precaution, the root user of the account that owns a bucket can always use this action, even if the
+     * policy explicitly denies the root user the ability to perform this action.
      * </p>
      * </important>
      * <p>
@@ -4657,11 +4657,11 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
-     * account bill with tag key values included. Then, to see the cost of combined resources, organize your billing
-     * information according to resources with the same tag key values. For example, you can tag several resources with
-     * a specific application name, and then organize your billing information to see the total cost of that application
-     * across several services. For more information, see <a
+     * Use tags to organize your Amazon Web Services bill to reflect your own cost structure. To do this, sign up to get
+     * your account bill with tag key values included. Then, to see the cost of combined resources, organize your
+     * billing information according to resources with the same tag key values. For example, you can tag several
+     * resources with a specific application name, and then organize your billing information to see the total cost of
+     * that application across several services. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost allocation and
      * tagging</a>.
      * </p>
@@ -4697,8 +4697,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * For information about tag restrictions, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
      * User-Defined Tag Restrictions</a> and <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html"> AWS-Generated Cost
-     * Allocation Tag Restrictions</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html"> Amazon Web
+     * Services-Generated Cost Allocation Tag Restrictions</a>.
      * </p>
      * </li>
      * </ul>
@@ -4916,7 +4916,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * For tagging-related restrictions related to characters and encodings, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -5017,9 +5017,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an AWS account. For more information,
-     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using
-     * Amazon S3 block public access</a>.
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
+     * block public access</a>.
      * </p>
      * <p>
      * Related actions include:

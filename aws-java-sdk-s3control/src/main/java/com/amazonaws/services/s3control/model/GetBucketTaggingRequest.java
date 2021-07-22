@@ -27,7 +27,7 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      */
     private String accountId;
@@ -40,8 +40,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
-     * accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -53,11 +53,11 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Outposts bucket.
+     *        The account ID of the Outposts bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -66,10 +66,10 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
-     * @return The AWS account ID of the Outposts bucket.
+     * @return The account ID of the Outposts bucket.
      */
 
     public String getAccountId() {
@@ -78,11 +78,11 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID of the Outposts bucket.
+     * The account ID of the Outposts bucket.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Outposts bucket.
+     *        The account ID of the Outposts bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,8 +100,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
-     * accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -116,8 +116,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      *        x-amz-outpost-id as well.
      *        </p>
      *        <p>
-     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *        bucket accessed in the format
+     *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *        the ARN of the bucket accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
      *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -138,8 +138,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
-     * accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -153,8 +153,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      *         x-amz-outpost-id as well.
      *         </p>
      *         <p>
-     *         For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *         bucket accessed in the format
+     *         For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *         the ARN of the bucket accessed in the format
      *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      *         . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
      *         account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -175,8 +175,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      * x-amz-outpost-id as well.
      * </p>
      * <p>
-     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
-     * accessed in the format
+     * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
+     * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -191,8 +191,8 @@ public class GetBucketTaggingRequest extends com.amazonaws.AmazonWebServiceReque
      *        x-amz-outpost-id as well.
      *        </p>
      *        <p>
-     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
-     *        bucket accessed in the format
+     *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
+     *        the ARN of the bucket accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
      *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
      *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of

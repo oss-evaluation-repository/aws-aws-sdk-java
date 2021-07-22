@@ -383,6 +383,48 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
                             StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getNetworkCardIndex()));
                 }
+
+                com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest> instanceNetworkInterfaceSpecificationIpv4PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>) runInstancesRequestNetworkInterfacesListValue
+                        .getIpv4Prefixes();
+                if (!instanceNetworkInterfaceSpecificationIpv4PrefixesList.isEmpty()
+                        || !instanceNetworkInterfaceSpecificationIpv4PrefixesList.isAutoConstruct()) {
+                    int ipv4PrefixesListIndex = 1;
+
+                    for (Ipv4PrefixSpecificationRequest instanceNetworkInterfaceSpecificationIpv4PrefixesListValue : instanceNetworkInterfaceSpecificationIpv4PrefixesList) {
+
+                        if (instanceNetworkInterfaceSpecificationIpv4PrefixesListValue.getIpv4Prefix() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv4Prefix." + ipv4PrefixesListIndex + ".Ipv4Prefix",
+                                    StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv4PrefixesListValue.getIpv4Prefix()));
+                        }
+                        ipv4PrefixesListIndex++;
+                    }
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getIpv4PrefixCount() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv4PrefixCount",
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getIpv4PrefixCount()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest> instanceNetworkInterfaceSpecificationIpv6PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>) runInstancesRequestNetworkInterfacesListValue
+                        .getIpv6Prefixes();
+                if (!instanceNetworkInterfaceSpecificationIpv6PrefixesList.isEmpty()
+                        || !instanceNetworkInterfaceSpecificationIpv6PrefixesList.isAutoConstruct()) {
+                    int ipv6PrefixesListIndex = 1;
+
+                    for (Ipv6PrefixSpecificationRequest instanceNetworkInterfaceSpecificationIpv6PrefixesListValue : instanceNetworkInterfaceSpecificationIpv6PrefixesList) {
+
+                        if (instanceNetworkInterfaceSpecificationIpv6PrefixesListValue.getIpv6Prefix() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6Prefix." + ipv6PrefixesListIndex + ".Ipv6Prefix",
+                                    StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6PrefixesListValue.getIpv6Prefix()));
+                        }
+                        ipv6PrefixesListIndex++;
+                    }
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount()));
+                }
                 networkInterfacesListIndex++;
             }
         }

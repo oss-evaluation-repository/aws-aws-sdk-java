@@ -55,6 +55,16 @@ public class AssignIpv6AddressesResultStaxUnmarshaller implements Unmarshaller<A
                     continue;
                 }
 
+                if (context.testExpression("assignedIpv6PrefixSet", targetDepth)) {
+                    assignIpv6AddressesResult.withAssignedIpv6Prefixes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("assignedIpv6PrefixSet/item", targetDepth)) {
+                    assignIpv6AddressesResult.withAssignedIpv6Prefixes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
                     assignIpv6AddressesResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

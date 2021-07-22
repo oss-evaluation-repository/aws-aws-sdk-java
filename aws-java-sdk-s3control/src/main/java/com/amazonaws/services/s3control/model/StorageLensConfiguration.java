@@ -67,7 +67,7 @@ public class StorageLensConfiguration implements Serializable, Cloneable {
     private Boolean isEnabled;
     /**
      * <p>
-     * A container for the AWS organization for this S3 Storage Lens configuration.
+     * A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      * </p>
      */
     private StorageLensAwsOrg awsOrg;
@@ -352,11 +352,11 @@ public class StorageLensConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the AWS organization for this S3 Storage Lens configuration.
+     * A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      * </p>
      * 
      * @param awsOrg
-     *        A container for the AWS organization for this S3 Storage Lens configuration.
+     *        A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      */
 
     public void setAwsOrg(StorageLensAwsOrg awsOrg) {
@@ -365,10 +365,10 @@ public class StorageLensConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the AWS organization for this S3 Storage Lens configuration.
+     * A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      * </p>
      * 
-     * @return A container for the AWS organization for this S3 Storage Lens configuration.
+     * @return A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      */
 
     public StorageLensAwsOrg getAwsOrg() {
@@ -377,11 +377,11 @@ public class StorageLensConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the AWS organization for this S3 Storage Lens configuration.
+     * A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      * </p>
      * 
      * @param awsOrg
-     *        A container for the AWS organization for this S3 Storage Lens configuration.
+     *        A container for the Amazon Web Services organization for this S3 Storage Lens configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

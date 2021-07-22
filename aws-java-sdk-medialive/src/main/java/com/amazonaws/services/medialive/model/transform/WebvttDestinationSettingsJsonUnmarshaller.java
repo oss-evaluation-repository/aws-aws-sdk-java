@@ -48,6 +48,10 @@ public class WebvttDestinationSettingsJsonUnmarshaller implements Unmarshaller<W
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("styleControl", targetDepth)) {
+                    context.nextToken();
+                    webvttDestinationSettings.setStyleControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

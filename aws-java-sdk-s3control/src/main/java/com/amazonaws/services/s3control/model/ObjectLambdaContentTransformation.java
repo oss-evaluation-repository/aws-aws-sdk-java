@@ -28,18 +28,18 @@ public class ObjectLambdaContentTransformation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A container for an AWS Lambda function.
+     * A container for an Lambda function.
      * </p>
      */
     private AwsLambdaTransformation awsLambda;
 
     /**
      * <p>
-     * A container for an AWS Lambda function.
+     * A container for an Lambda function.
      * </p>
      * 
      * @param awsLambda
-     *        A container for an AWS Lambda function.
+     *        A container for an Lambda function.
      */
 
     public void setAwsLambda(AwsLambdaTransformation awsLambda) {
@@ -48,10 +48,10 @@ public class ObjectLambdaContentTransformation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A container for an AWS Lambda function.
+     * A container for an Lambda function.
      * </p>
      * 
-     * @return A container for an AWS Lambda function.
+     * @return A container for an Lambda function.
      */
 
     public AwsLambdaTransformation getAwsLambda() {
@@ -60,11 +60,11 @@ public class ObjectLambdaContentTransformation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A container for an AWS Lambda function.
+     * A container for an Lambda function.
      * </p>
      * 
      * @param awsLambda
-     *        A container for an AWS Lambda function.
+     *        A container for an Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

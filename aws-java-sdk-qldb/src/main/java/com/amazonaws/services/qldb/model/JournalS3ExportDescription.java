@@ -83,8 +83,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption
-     * of your exported data.
+     * (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your
+     * exported data.
      * </p>
      * </li>
      * </ul>
@@ -407,8 +407,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption
-     * of your exported data.
+     * (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your
+     * exported data.
      * </p>
      * </li>
      * </ul>
@@ -424,8 +424,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side
-     *        encryption of your exported data.
+     *        (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption
+     *        of your exported data.
      *        </p>
      *        </li>
      */
@@ -447,8 +447,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption
-     * of your exported data.
+     * (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your
+     * exported data.
      * </p>
      * </li>
      * </ul>
@@ -463,8 +463,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side
-     *         encryption of your exported data.
+     *         (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption
+     *         of your exported data.
      *         </p>
      *         </li>
      */
@@ -486,8 +486,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption
-     * of your exported data.
+     * (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your
+     * exported data.
      * </p>
      * </li>
      * </ul>
@@ -503,8 +503,8 @@ public class JournalS3ExportDescription implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side
-     *        encryption of your exported data.
+     *        (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption
+     *        of your exported data.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

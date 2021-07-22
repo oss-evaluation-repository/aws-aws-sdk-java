@@ -352,6 +352,12 @@ public interface AmazonEC2 {
      * <p>
      * You must specify either the IPv6 addresses or the IPv6 address count in the request.
      * </p>
+     * <p>
+     * You can optionally use Prefix Delegation on the network interface. You must specify either the IPV6 Prefix
+     * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param assignIpv6AddressesRequest
      * @return Result of the AssignIpv6Addresses operation returned by the service.
@@ -385,6 +391,12 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You must specify either the IP addresses or the IP address count in the request.
+     * </p>
+     * <p>
+     * You can optionally use Prefix Delegation on the network interface. You must specify either the IPv4 Prefix
+     * Delegation prefixes, or the IPv4 Prefix Delegation count. For information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
@@ -476,7 +488,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -539,9 +551,8 @@ public interface AmazonEC2 {
      * or tags) can be specified with an event window.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param associateInstanceEventWindowRequest
@@ -561,7 +572,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -657,7 +668,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet Sizing</a> in
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and subnet sizing</a> in
      * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -1184,7 +1195,7 @@ public interface AmazonEC2 {
      * <p>
      * Creates a carrier gateway. For more information about carrier gateways, see <a href=
      * "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway"
-     * >Carrier gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * >Carrier gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.
      * </p>
      * 
      * @param createCarrierGatewayRequest
@@ -1288,8 +1299,8 @@ public interface AmazonEC2 {
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a Default
-     * Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a default
+     * subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -1304,7 +1315,7 @@ public interface AmazonEC2 {
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and Default Subnets</a> in
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and default subnets</a> in
      * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
      * yourself.
      * </p>
@@ -1378,7 +1389,7 @@ public interface AmazonEC2 {
      * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
      * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
      * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -1434,7 +1445,7 @@ public interface AmazonEC2 {
      * <p>
      * Flow log data for a monitored network interface is recorded as flow log records, which are log events consisting
      * of fields that describe the traffic flow. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a> in
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in
      * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -1536,9 +1547,8 @@ public interface AmazonEC2 {
      * </ul>
      * </important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createInstanceEventWindowRequest
@@ -1721,7 +1731,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-     * Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNatGatewayRequest
@@ -1974,7 +1984,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -1993,7 +2003,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -2171,8 +2181,8 @@ public interface AmazonEC2 {
      * </p>
      * <important>
      * <p>
-     * AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block. They're not available for
-     * use.
+     * Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR block. They're
+     * not available for use.
      * </p>
      * </important>
      * <p>
@@ -2184,7 +2194,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2195,6 +2205,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreateSubnetResult createSubnet(CreateSubnetRequest createSubnetRequest);
+
+    /**
+     * <p>
+     * Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createSubnetCidrReservationRequest
+     * @return Result of the CreateSubnetCidrReservation operation returned by the service.
+     * @sample AmazonEC2.CreateSubnetCidrReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSubnetCidrReservationResult createSubnetCidrReservation(CreateSubnetCidrReservationRequest createSubnetCidrReservationRequest);
 
     /**
      * <p>
@@ -2525,7 +2550,7 @@ public interface AmazonEC2 {
      * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
      * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
      * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
-     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
@@ -2536,7 +2561,7 @@ public interface AmazonEC2 {
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
      * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -2652,8 +2677,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
-     * to create the connection. The accepter VPC can belong to another AWS account and can be in a different Region to
-     * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+     * to create the connection. The accepter VPC can belong to another account and can be in a different Region to the
+     * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
      * <note>
      * <p>
@@ -2933,9 +2958,8 @@ public interface AmazonEC2 {
      * Deletes the specified event window.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param deleteInstanceEventWindowRequest
@@ -3276,6 +3300,19 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     DeleteSubnetResult deleteSubnet(DeleteSubnetRequest deleteSubnetRequest);
+
+    /**
+     * <p>
+     * Deletes a subnet CIDR reservation.
+     * </p>
+     * 
+     * @param deleteSubnetCidrReservationRequest
+     * @return Result of the DeleteSubnetCidrReservation operation returned by the service.
+     * @sample AmazonEC2.DeleteSubnetCidrReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSubnetCidrReservationResult deleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest deleteSubnetCidrReservationRequest);
 
     /**
      * <p>
@@ -4144,7 +4181,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -4656,9 +4693,8 @@ public interface AmazonEC2 {
      * successfully.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeInstanceEventWindowsRequest
@@ -5388,7 +5424,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -5795,7 +5831,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
-     * and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -6698,9 +6734,8 @@ public interface AmazonEC2 {
      * Disassociates one or more targets from an event window.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disassociateInstanceEventWindowRequest
@@ -6718,7 +6753,7 @@ public interface AmazonEC2 {
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -7377,6 +7412,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Gets information about the subnet CIDR reservations.
+     * </p>
+     * 
+     * @param getSubnetCidrReservationsRequest
+     * @return Result of the GetSubnetCidrReservations operation returned by the service.
+     * @sample AmazonEC2.GetSubnetCidrReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSubnetCidrReservationsResult getSubnetCidrReservations(GetSubnetCidrReservationsRequest getSubnetCidrReservationsRequest);
+
+    /**
+     * <p>
      * Lists the route tables to which the specified resource attachment propagates routes.
      * </p>
      * 
@@ -7969,9 +8017,8 @@ public interface AmazonEC2 {
      * scheduled event.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define event
-     * windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
+     * event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceEventWindowRequest
@@ -8488,11 +8535,11 @@ public interface AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries from the local VPC.
-     * This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
-     * available if the peered VPCs are in different AWS accounts or different Regions. For peered VPCs in different AWS
-     * accounts, each AWS account owner must initiate a separate request to modify the peering connection options. For
-     * inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC
+     * If the peered VPCs are in the same account, you can enable DNS resolution for queries from the local VPC. This
+     * ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
+     * available if the peered VPCs are in different different accounts or different Regions. For peered VPCs in
+     * different accounts, each account owner must initiate a separate request to modify the peering connection options.
+     * For inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC
      * peering options and the Region for the accepter VPC to modify the accepter VPC peering options. To verify which
      * VPCs are the accepter and the requester for a VPC peering connection, use the
      * <a>DescribeVpcPeeringConnections</a> command.
@@ -9139,7 +9186,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -9155,7 +9202,7 @@ public interface AmazonEC2 {
      * Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC.
      * After the operation completes, the subnet or gateway uses the routes in the new route table. For more information
      * about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * You can also use this operation to change which table is the main route table in the VPC. Specify the main route
@@ -9924,7 +9971,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Unassigns one or more IPv6 addresses from a network interface.
+     * Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.
      * </p>
      * 
      * @param unassignIpv6AddressesRequest
@@ -9937,7 +9984,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Unassigns one or more secondary private IP addresses from a network interface.
+     * Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes from a network
+     * interface.
      * </p>
      * 
      * @param unassignPrivateIpAddressesRequest

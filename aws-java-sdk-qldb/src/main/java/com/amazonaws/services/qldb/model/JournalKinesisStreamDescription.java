@@ -50,7 +50,7 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
     private java.util.Date inclusiveStartTime;
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream runs
+     * The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs
      * indefinitely until you cancel it.
      * </p>
      */
@@ -228,13 +228,13 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream runs
+     * The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs
      * indefinitely until you cancel it.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream
-     *        runs indefinitely until you cancel it.
+     *        The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the
+     *        stream runs indefinitely until you cancel it.
      */
 
     public void setExclusiveEndTime(java.util.Date exclusiveEndTime) {
@@ -243,12 +243,12 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream runs
+     * The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs
      * indefinitely until you cancel it.
      * </p>
      * 
-     * @return The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream
-     *         runs indefinitely until you cancel it.
+     * @return The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the
+     *         stream runs indefinitely until you cancel it.
      */
 
     public java.util.Date getExclusiveEndTime() {
@@ -257,13 +257,13 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream runs
+     * The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs
      * indefinitely until you cancel it.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive date and time that specifies when the stream ends. If this parameter is blank, the stream
-     *        runs indefinitely until you cancel it.
+     *        The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the
+     *        stream runs indefinitely until you cancel it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

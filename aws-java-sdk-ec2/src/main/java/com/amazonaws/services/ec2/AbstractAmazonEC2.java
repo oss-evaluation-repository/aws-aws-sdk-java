@@ -486,6 +486,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateSubnetCidrReservationResult createSubnetCidrReservation(CreateSubnetCidrReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -767,6 +772,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteSubnetResult deleteSubnet(DeleteSubnetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSubnetCidrReservationResult deleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2049,6 +2059,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public GetSerialConsoleAccessStatusResult getSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSubnetCidrReservationsResult getSubnetCidrReservations(GetSubnetCidrReservationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

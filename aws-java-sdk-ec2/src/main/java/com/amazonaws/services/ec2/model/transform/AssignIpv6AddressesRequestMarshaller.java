@@ -57,6 +57,23 @@ public class AssignIpv6AddressesRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        if (assignIpv6AddressesRequest.getIpv6PrefixCount() != null) {
+            request.addParameter("Ipv6PrefixCount", StringUtils.fromInteger(assignIpv6AddressesRequest.getIpv6PrefixCount()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> assignIpv6AddressesRequestIpv6PrefixesList = (com.amazonaws.internal.SdkInternalList<String>) assignIpv6AddressesRequest
+                .getIpv6Prefixes();
+        if (!assignIpv6AddressesRequestIpv6PrefixesList.isEmpty() || !assignIpv6AddressesRequestIpv6PrefixesList.isAutoConstruct()) {
+            int ipv6PrefixesListIndex = 1;
+
+            for (String assignIpv6AddressesRequestIpv6PrefixesListValue : assignIpv6AddressesRequestIpv6PrefixesList) {
+                if (assignIpv6AddressesRequestIpv6PrefixesListValue != null) {
+                    request.addParameter("Ipv6Prefix." + ipv6PrefixesListIndex, StringUtils.fromString(assignIpv6AddressesRequestIpv6PrefixesListValue));
+                }
+                ipv6PrefixesListIndex++;
+            }
+        }
+
         if (assignIpv6AddressesRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignIpv6AddressesRequest.getNetworkInterfaceId()));
         }

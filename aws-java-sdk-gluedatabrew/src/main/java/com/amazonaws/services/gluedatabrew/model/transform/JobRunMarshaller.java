@@ -52,6 +52,8 @@ public class JobRunMarshaller {
             .marshallLocationName("Outputs").build();
     private static final MarshallingInfo<List> DATACATALOGOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogOutputs").build();
+    private static final MarshallingInfo<List> DATABASEOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseOutputs").build();
     private static final MarshallingInfo<StructuredPojo> RECIPEREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecipeReference").build();
     private static final MarshallingInfo<String> STARTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -89,6 +91,7 @@ public class JobRunMarshaller {
             protocolMarshaller.marshall(jobRun.getLogGroupName(), LOGGROUPNAME_BINDING);
             protocolMarshaller.marshall(jobRun.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(jobRun.getDataCatalogOutputs(), DATACATALOGOUTPUTS_BINDING);
+            protocolMarshaller.marshall(jobRun.getDatabaseOutputs(), DATABASEOUTPUTS_BINDING);
             protocolMarshaller.marshall(jobRun.getRecipeReference(), RECIPEREFERENCE_BINDING);
             protocolMarshaller.marshall(jobRun.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(jobRun.getStartedOn(), STARTEDON_BINDING);

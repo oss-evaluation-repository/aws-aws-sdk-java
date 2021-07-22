@@ -31,7 +31,7 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     * Directs the specified job to invoke an Lambda function on every object in the manifest.
      * </p>
      */
     private LambdaInvokeOperation lambdaInvoke;
@@ -72,11 +72,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     * Directs the specified job to invoke an Lambda function on every object in the manifest.
      * </p>
      * 
      * @param lambdaInvoke
-     *        Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     *        Directs the specified job to invoke an Lambda function on every object in the manifest.
      */
 
     public void setLambdaInvoke(LambdaInvokeOperation lambdaInvoke) {
@@ -85,10 +85,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     * Directs the specified job to invoke an Lambda function on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     * @return Directs the specified job to invoke an Lambda function on every object in the manifest.
      */
 
     public LambdaInvokeOperation getLambdaInvoke() {
@@ -97,11 +97,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     * Directs the specified job to invoke an Lambda function on every object in the manifest.
      * </p>
      * 
      * @param lambdaInvoke
-     *        Directs the specified job to invoke an AWS Lambda function on every object in the manifest.
+     *        Directs the specified job to invoke an Lambda function on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

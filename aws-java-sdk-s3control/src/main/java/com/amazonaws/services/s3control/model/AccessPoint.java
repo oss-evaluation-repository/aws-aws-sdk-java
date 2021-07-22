@@ -48,8 +48,8 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      */
@@ -204,8 +204,8 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
@@ -213,7 +213,7 @@ public class AccessPoint implements Serializable, Cloneable {
      *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
      *        <p>
      *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *        AWS services.
+     *        Amazon Web Services.
      *        </p>
      */
 
@@ -227,15 +227,15 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
      * @return The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
      *         <p>
      *         This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *         AWS services.
+     *         Amazon Web Services.
      *         </p>
      */
 
@@ -249,8 +249,8 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
@@ -258,7 +258,7 @@ public class AccessPoint implements Serializable, Cloneable {
      *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
      *        <p>
      *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *        AWS services.
+     *        Amazon Web Services.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

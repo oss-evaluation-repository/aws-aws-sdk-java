@@ -27,19 +27,18 @@ public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
+     * The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
+     * The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to
-     *        retrieve.
+     *        The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      */
 
     public void setAccountId(String accountId) {
@@ -48,11 +47,10 @@ public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
+     * The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      * </p>
      * 
-     * @return The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to
-     *         retrieve.
+     * @return The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      */
 
     public String getAccountId() {
@@ -61,12 +59,11 @@ public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
+     * The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to
-     *        retrieve.
+     *        The account ID for the account whose <code>PublicAccessBlock</code> configuration you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

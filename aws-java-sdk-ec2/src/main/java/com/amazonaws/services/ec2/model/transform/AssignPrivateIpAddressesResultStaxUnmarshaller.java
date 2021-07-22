@@ -60,6 +60,16 @@ public class AssignPrivateIpAddressesResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("assignedIpv4PrefixSet", targetDepth)) {
+                    assignPrivateIpAddressesResult.withAssignedIpv4Prefixes(new ArrayList<Ipv4PrefixSpecification>());
+                    continue;
+                }
+
+                if (context.testExpression("assignedIpv4PrefixSet/item", targetDepth)) {
+                    assignPrivateIpAddressesResult.withAssignedIpv4Prefixes(Ipv4PrefixSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assignPrivateIpAddressesResult;

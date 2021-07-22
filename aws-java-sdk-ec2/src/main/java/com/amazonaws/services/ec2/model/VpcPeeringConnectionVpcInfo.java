@@ -46,7 +46,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<CidrBlock> cidrBlockSet;
     /**
      * <p>
-     * The AWS account ID of the VPC owner.
+     * The ID of the account that owns the VPC.
      * </p>
      */
     private String ownerId;
@@ -257,11 +257,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the VPC owner.
+     * The ID of the account that owns the VPC.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the VPC owner.
+     *        The ID of the account that owns the VPC.
      */
 
     public void setOwnerId(String ownerId) {
@@ -270,10 +270,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the VPC owner.
+     * The ID of the account that owns the VPC.
      * </p>
      * 
-     * @return The AWS account ID of the VPC owner.
+     * @return The ID of the account that owns the VPC.
      */
 
     public String getOwnerId() {
@@ -282,11 +282,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the VPC owner.
+     * The ID of the account that owns the VPC.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the VPC owner.
+     *        The ID of the account that owns the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

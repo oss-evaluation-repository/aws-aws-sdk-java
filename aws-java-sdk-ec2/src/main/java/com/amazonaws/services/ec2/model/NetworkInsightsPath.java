@@ -46,25 +46,25 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     private java.util.Date createdDate;
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      */
     private String destination;
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      */
     private String sourceIp;
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      */
     private String destinationIp;
@@ -209,11 +209,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param source
-     *        The AWS resource that is the source of the path.
+     *        The Amazon Web Services resource that is the source of the path.
      */
 
     public void setSource(String source) {
@@ -222,10 +222,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
-     * @return The AWS resource that is the source of the path.
+     * @return The Amazon Web Services resource that is the source of the path.
      */
 
     public String getSource() {
@@ -234,11 +234,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the source of the path.
+     * The Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param source
-     *        The AWS resource that is the source of the path.
+     *        The Amazon Web Services resource that is the source of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +249,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destination
-     *        The AWS resource that is the destination of the path.
+     *        The Amazon Web Services resource that is the destination of the path.
      */
 
     public void setDestination(String destination) {
@@ -262,10 +262,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
-     * @return The AWS resource that is the destination of the path.
+     * @return The Amazon Web Services resource that is the destination of the path.
      */
 
     public String getDestination() {
@@ -274,11 +274,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS resource that is the destination of the path.
+     * The Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destination
-     *        The AWS resource that is the destination of the path.
+     *        The Amazon Web Services resource that is the destination of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +289,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the AWS resource that is the source of the path.
+     *        The IP address of the Amazon Web Services resource that is the source of the path.
      */
 
     public void setSourceIp(String sourceIp) {
@@ -302,10 +302,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
-     * @return The IP address of the AWS resource that is the source of the path.
+     * @return The IP address of the Amazon Web Services resource that is the source of the path.
      */
 
     public String getSourceIp() {
@@ -314,11 +314,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the source of the path.
+     * The IP address of the Amazon Web Services resource that is the source of the path.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the AWS resource that is the source of the path.
+     *        The IP address of the Amazon Web Services resource that is the source of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,11 +329,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the AWS resource that is the destination of the path.
+     *        The IP address of the Amazon Web Services resource that is the destination of the path.
      */
 
     public void setDestinationIp(String destinationIp) {
@@ -342,10 +342,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
-     * @return The IP address of the AWS resource that is the destination of the path.
+     * @return The IP address of the Amazon Web Services resource that is the destination of the path.
      */
 
     public String getDestinationIp() {
@@ -354,11 +354,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the AWS resource that is the destination of the path.
+     * The IP address of the Amazon Web Services resource that is the destination of the path.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the AWS resource that is the destination of the path.
+     *        The IP address of the Amazon Web Services resource that is the destination of the path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

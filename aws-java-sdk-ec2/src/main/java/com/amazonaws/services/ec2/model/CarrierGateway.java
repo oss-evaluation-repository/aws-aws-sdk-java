@@ -46,7 +46,7 @@ public class CarrierGateway implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The AWS account ID of the owner of the carrier gateway.
+     * The account ID of the owner of the carrier gateway.
      * </p>
      */
     private String ownerId;
@@ -198,11 +198,11 @@ public class CarrierGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the carrier gateway.
+     * The account ID of the owner of the carrier gateway.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the carrier gateway.
+     *        The account ID of the owner of the carrier gateway.
      */
 
     public void setOwnerId(String ownerId) {
@@ -211,10 +211,10 @@ public class CarrierGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the carrier gateway.
+     * The account ID of the owner of the carrier gateway.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the carrier gateway.
+     * @return The account ID of the owner of the carrier gateway.
      */
 
     public String getOwnerId() {
@@ -223,11 +223,11 @@ public class CarrierGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the carrier gateway.
+     * The account ID of the owner of the carrier gateway.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the carrier gateway.
+     *        The account ID of the owner of the carrier gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

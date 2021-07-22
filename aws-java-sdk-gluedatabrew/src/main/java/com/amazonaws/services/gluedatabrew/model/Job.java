@@ -140,10 +140,17 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Output> outputs;
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      */
     private java.util.List<DataCatalogOutput> dataCatalogOutputs;
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     */
+    private java.util.List<DatabaseOutput> databaseOutputs;
     /**
      * <p>
      * The name of the project that the job is associated with.
@@ -1046,10 +1053,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
-     * @return One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public java.util.List<DataCatalogOutput> getDataCatalogOutputs() {
@@ -1058,11 +1065,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public void setDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
@@ -1076,7 +1083,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1085,7 +1092,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1101,16 +1108,94 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
         setDataCatalogOutputs(dataCatalogOutputs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @return Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *         recipe job to write into.
+     */
+
+    public java.util.List<DatabaseOutput> getDatabaseOutputs() {
+        return databaseOutputs;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     */
+
+    public void setDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        if (databaseOutputs == null) {
+            this.databaseOutputs = null;
+            return;
+        }
+
+        this.databaseOutputs = new java.util.ArrayList<DatabaseOutput>(databaseOutputs);
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDatabaseOutputs(java.util.Collection)} or {@link #withDatabaseOutputs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDatabaseOutputs(DatabaseOutput... databaseOutputs) {
+        if (this.databaseOutputs == null) {
+            setDatabaseOutputs(new java.util.ArrayList<DatabaseOutput>(databaseOutputs.length));
+        }
+        for (DatabaseOutput ele : databaseOutputs) {
+            this.databaseOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        setDatabaseOutputs(databaseOutputs);
         return this;
     }
 
@@ -1482,6 +1567,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getDataCatalogOutputs() != null)
             sb.append("DataCatalogOutputs: ").append(getDataCatalogOutputs()).append(",");
+        if (getDatabaseOutputs() != null)
+            sb.append("DatabaseOutputs: ").append(getDatabaseOutputs()).append(",");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getRecipeReference() != null)
@@ -1570,6 +1657,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataCatalogOutputs() != null && other.getDataCatalogOutputs().equals(this.getDataCatalogOutputs()) == false)
             return false;
+        if (other.getDatabaseOutputs() == null ^ this.getDatabaseOutputs() == null)
+            return false;
+        if (other.getDatabaseOutputs() != null && other.getDatabaseOutputs().equals(this.getDatabaseOutputs()) == false)
+            return false;
         if (other.getProjectName() == null ^ this.getProjectName() == null)
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
@@ -1621,6 +1712,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getDataCatalogOutputs() == null) ? 0 : getDataCatalogOutputs().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseOutputs() == null) ? 0 : getDatabaseOutputs().hashCode());
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());

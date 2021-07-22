@@ -34,7 +34,7 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
     private String destinationCidr;
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      */
     private String destinationPrefixListId;
@@ -146,11 +146,11 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
      * @param destinationPrefixListId
-     *        The prefix of the AWS service.
+     *        The prefix of the Amazon Web Service.
      */
 
     public void setDestinationPrefixListId(String destinationPrefixListId) {
@@ -159,10 +159,10 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
-     * @return The prefix of the AWS service.
+     * @return The prefix of the Amazon Web Service.
      */
 
     public String getDestinationPrefixListId() {
@@ -171,11 +171,11 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix of the AWS service.
+     * The prefix of the Amazon Web Service.
      * </p>
      * 
      * @param destinationPrefixListId
-     *        The prefix of the AWS service.
+     *        The prefix of the Amazon Web Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

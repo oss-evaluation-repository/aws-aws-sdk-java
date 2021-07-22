@@ -112,6 +112,18 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NetworkInterfacePrivateIpAddress> privateIpAddresses;
     /**
      * <p>
+     * The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecification> ipv4Prefixes;
+    /**
+     * <p>
+     * The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecification> ipv6Prefixes;
+    /**
+     * <p>
      * The alias or account ID of the principal or service that created the network interface.
      * </p>
      */
@@ -847,6 +859,152 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @return The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     */
+
+    public java.util.List<Ipv4PrefixSpecification> getIpv4Prefixes() {
+        if (ipv4Prefixes == null) {
+            ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecification>();
+        }
+        return ipv4Prefixes;
+    }
+
+    /**
+     * <p>
+     * The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     */
+
+    public void setIpv4Prefixes(java.util.Collection<Ipv4PrefixSpecification> ipv4Prefixes) {
+        if (ipv4Prefixes == null) {
+            this.ipv4Prefixes = null;
+            return;
+        }
+
+        this.ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecification>(ipv4Prefixes);
+    }
+
+    /**
+     * <p>
+     * The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Prefixes(java.util.Collection)} or {@link #withIpv4Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withIpv4Prefixes(Ipv4PrefixSpecification... ipv4Prefixes) {
+        if (this.ipv4Prefixes == null) {
+            setIpv4Prefixes(new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecification>(ipv4Prefixes.length));
+        }
+        for (Ipv4PrefixSpecification ele : ipv4Prefixes) {
+            this.ipv4Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 Prefix Delegation prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withIpv4Prefixes(java.util.Collection<Ipv4PrefixSpecification> ipv4Prefixes) {
+        setIpv4Prefixes(ipv4Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @return The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     */
+
+    public java.util.List<Ipv6PrefixSpecification> getIpv6Prefixes() {
+        if (ipv6Prefixes == null) {
+            ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecification>();
+        }
+        return ipv6Prefixes;
+    }
+
+    /**
+     * <p>
+     * The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     */
+
+    public void setIpv6Prefixes(java.util.Collection<Ipv6PrefixSpecification> ipv6Prefixes) {
+        if (ipv6Prefixes == null) {
+            this.ipv6Prefixes = null;
+            return;
+        }
+
+        this.ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecification>(ipv6Prefixes);
+    }
+
+    /**
+     * <p>
+     * The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Prefixes(java.util.Collection)} or {@link #withIpv6Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withIpv6Prefixes(Ipv6PrefixSpecification... ipv6Prefixes) {
+        if (this.ipv6Prefixes == null) {
+            setIpv6Prefixes(new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecification>(ipv6Prefixes.length));
+        }
+        for (Ipv6PrefixSpecification ele : ipv6Prefixes) {
+            this.ipv6Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 Prefix Delegation prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withIpv6Prefixes(java.util.Collection<Ipv6PrefixSpecification> ipv6Prefixes) {
+        setIpv6Prefixes(ipv6Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
      * The alias or account ID of the principal or service that created the network interface.
      * </p>
      * 
@@ -1255,6 +1413,10 @@ public class NetworkInterface implements Serializable, Cloneable {
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrivateIpAddresses() != null)
             sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
+        if (getIpv4Prefixes() != null)
+            sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
+        if (getIpv6Prefixes() != null)
+            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
         if (getRequesterId() != null)
             sb.append("RequesterId: ").append(getRequesterId()).append(",");
         if (getRequesterManaged() != null)
@@ -1339,6 +1501,14 @@ public class NetworkInterface implements Serializable, Cloneable {
             return false;
         if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false)
             return false;
+        if (other.getIpv4Prefixes() == null ^ this.getIpv4Prefixes() == null)
+            return false;
+        if (other.getIpv4Prefixes() != null && other.getIpv4Prefixes().equals(this.getIpv4Prefixes()) == false)
+            return false;
+        if (other.getIpv6Prefixes() == null ^ this.getIpv6Prefixes() == null)
+            return false;
+        if (other.getIpv6Prefixes() != null && other.getIpv6Prefixes().equals(this.getIpv6Prefixes()) == false)
+            return false;
         if (other.getRequesterId() == null ^ this.getRequesterId() == null)
             return false;
         if (other.getRequesterId() != null && other.getRequesterId().equals(this.getRequesterId()) == false)
@@ -1389,6 +1559,8 @@ public class NetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode());
         hashCode = prime * hashCode + ((getRequesterManaged() == null) ? 0 : getRequesterManaged().hashCode());
         hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Lambda function used to transform objects through an Object Lambda Access Point.
+ * Lambda function used to transform objects through an Object Lambda Access Point.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AwsLambdaTransformation" target="_top">AWS
@@ -28,7 +28,7 @@ public class AwsLambdaTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Lambda function.
+     * The Amazon Resource Name (ARN) of the Lambda function.
      * </p>
      */
     private String functionArn;
@@ -41,11 +41,11 @@ public class AwsLambdaTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Lambda function.
+     * The Amazon Resource Name (ARN) of the Lambda function.
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) of the AWS Lambda function.
+     *        The Amazon Resource Name (ARN) of the Lambda function.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -54,10 +54,10 @@ public class AwsLambdaTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Lambda function.
+     * The Amazon Resource Name (ARN) of the Lambda function.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Lambda function.
+     * @return The Amazon Resource Name (ARN) of the Lambda function.
      */
 
     public String getFunctionArn() {
@@ -66,11 +66,11 @@ public class AwsLambdaTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Lambda function.
+     * The Amazon Resource Name (ARN) of the Lambda function.
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) of the AWS Lambda function.
+     *        The Amazon Resource Name (ARN) of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

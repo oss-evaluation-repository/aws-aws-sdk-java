@@ -40,7 +40,7 @@ public class DhcpOptions implements Serializable, Cloneable {
     private String dhcpOptionsId;
     /**
      * <p>
-     * The ID of the AWS account that owns the DHCP options set.
+     * The ID of the account that owns the DHCP options set.
      * </p>
      */
     private String ownerId;
@@ -166,11 +166,11 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the DHCP options set.
+     * The ID of the account that owns the DHCP options set.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the DHCP options set.
+     *        The ID of the account that owns the DHCP options set.
      */
 
     public void setOwnerId(String ownerId) {
@@ -179,10 +179,10 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the DHCP options set.
+     * The ID of the account that owns the DHCP options set.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the DHCP options set.
+     * @return The ID of the account that owns the DHCP options set.
      */
 
     public String getOwnerId() {
@@ -191,11 +191,11 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the DHCP options set.
+     * The ID of the account that owns the DHCP options set.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the DHCP options set.
+     *        The ID of the account that owns the DHCP options set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

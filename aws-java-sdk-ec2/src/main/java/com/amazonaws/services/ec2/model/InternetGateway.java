@@ -40,7 +40,7 @@ public class InternetGateway implements Serializable, Cloneable {
     private String internetGatewayId;
     /**
      * <p>
-     * The ID of the AWS account that owns the internet gateway.
+     * The ID of the account that owns the internet gateway.
      * </p>
      */
     private String ownerId;
@@ -166,11 +166,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the internet gateway.
+     * The ID of the account that owns the internet gateway.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the internet gateway.
+     *        The ID of the account that owns the internet gateway.
      */
 
     public void setOwnerId(String ownerId) {
@@ -179,10 +179,10 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the internet gateway.
+     * The ID of the account that owns the internet gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the internet gateway.
+     * @return The ID of the account that owns the internet gateway.
      */
 
     public String getOwnerId() {
@@ -191,11 +191,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the internet gateway.
+     * The ID of the account that owns the internet gateway.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the internet gateway.
+     *        The ID of the account that owns the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

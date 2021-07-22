@@ -37,8 +37,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * <p>
      * Constraint: Maximum 64 ASCII characters.
@@ -120,8 +120,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * <p>
      * Constraint: Maximum 64 ASCII characters.
@@ -130,8 +130,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.</p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *        idempotency</a>.</p>
      *        <p>
      *        Constraint: Maximum 64 ASCII characters.
      */
@@ -144,8 +144,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * <p>
      * Constraint: Maximum 64 ASCII characters.
@@ -153,8 +153,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a>.</p>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *         idempotency</a>.</p>
      *         <p>
      *         Constraint: Maximum 64 ASCII characters.
      */
@@ -167,8 +167,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     * idempotency</a>.
      * </p>
      * <p>
      * Constraint: Maximum 64 ASCII characters.
@@ -177,8 +177,8 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.</p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+     *        idempotency</a>.</p>
      *        <p>
      *        Constraint: Maximum 64 ASCII characters.
      * @return Returns a reference to this object so that method calls can be chained together.

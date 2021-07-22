@@ -54,7 +54,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     * <code>owner-id</code> - The ID of the account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -74,8 +74,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in the
-     * table.
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a route in
+     * the table.
      * </p>
      * </li>
      * <li>
@@ -199,7 +199,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     * <code>owner-id</code> - The ID of the account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -219,8 +219,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in the
-     * table.
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a route in
+     * the table.
      * </p>
      * </li>
      * <li>
@@ -317,7 +317,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     *         <code>owner-id</code> - The ID of the account that owns the route table.
      *         </p>
      *         </li>
      *         <li>
@@ -338,8 +338,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route
-     *         in the table.
+     *         <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a
+     *         route in the table.
      *         </p>
      *         </li>
      *         <li>
@@ -447,7 +447,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     * <code>owner-id</code> - The ID of the account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -467,8 +467,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in the
-     * table.
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a route in
+     * the table.
      * </p>
      * </li>
      * <li>
@@ -566,7 +566,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     *        <code>owner-id</code> - The ID of the account that owns the route table.
      *        </p>
      *        </li>
      *        <li>
@@ -587,8 +587,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in
-     *        the table.
+     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a
+     *        route in the table.
      *        </p>
      *        </li>
      *        <li>
@@ -698,7 +698,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     * <code>owner-id</code> - The ID of the account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -718,8 +718,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in the
-     * table.
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a route in
+     * the table.
      * </p>
      * </li>
      * <li>
@@ -822,7 +822,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     *        <code>owner-id</code> - The ID of the account that owns the route table.
      *        </p>
      *        </li>
      *        <li>
@@ -843,8 +843,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in
-     *        the table.
+     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a
+     *        route in the table.
      *        </p>
      *        </li>
      *        <li>
@@ -956,7 +956,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     * <code>owner-id</code> - The ID of the account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -976,8 +976,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in the
-     * table.
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a route in
+     * the table.
      * </p>
      * </li>
      * <li>
@@ -1075,7 +1075,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the route table.
+     *        <code>owner-id</code> - The ID of the account that owns the route table.
      *        </p>
      *        </li>
      *        <li>
@@ -1096,8 +1096,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service specified in a route in
-     *        the table.
+     *        <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon Web Service specified in a
+     *        route in the table.
      *        </p>
      *        </li>
      *        <li>

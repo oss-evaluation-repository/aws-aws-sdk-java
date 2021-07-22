@@ -59,6 +59,8 @@ public class JobMarshaller {
             .marshallLocationName("Outputs").build();
     private static final MarshallingInfo<List> DATACATALOGOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogOutputs").build();
+    private static final MarshallingInfo<List> DATABASEOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseOutputs").build();
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectName").build();
     private static final MarshallingInfo<StructuredPojo> RECIPEREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -105,6 +107,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(job.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(job.getDataCatalogOutputs(), DATACATALOGOUTPUTS_BINDING);
+            protocolMarshaller.marshall(job.getDatabaseOutputs(), DATABASEOUTPUTS_BINDING);
             protocolMarshaller.marshall(job.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(job.getRecipeReference(), RECIPEREFERENCE_BINDING);
             protocolMarshaller.marshall(job.getResourceArn(), RESOURCEARN_BINDING);

@@ -60,6 +60,16 @@ public class UnassignIpv6AddressesResultStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("unassignedIpv6PrefixSet", targetDepth)) {
+                    unassignIpv6AddressesResult.withUnassignedIpv6Prefixes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("unassignedIpv6PrefixSet/item", targetDepth)) {
+                    unassignIpv6AddressesResult.withUnassignedIpv6Prefixes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return unassignIpv6AddressesResult;

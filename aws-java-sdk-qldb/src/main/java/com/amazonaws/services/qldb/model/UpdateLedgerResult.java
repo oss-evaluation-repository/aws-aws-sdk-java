@@ -59,6 +59,13 @@ public class UpdateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
+     * and when the key became inaccessible (in the case of an error).
+     * </p>
+     */
+    private LedgerEncryptionDescription encryptionDescription;
 
     /**
      * <p>
@@ -334,6 +341,52 @@ public class UpdateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
+     * and when the key became inaccessible (in the case of an error).
+     * </p>
+     * 
+     * @param encryptionDescription
+     *        Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
+     *        key, and when the key became inaccessible (in the case of an error).
+     */
+
+    public void setEncryptionDescription(LedgerEncryptionDescription encryptionDescription) {
+        this.encryptionDescription = encryptionDescription;
+    }
+
+    /**
+     * <p>
+     * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
+     * and when the key became inaccessible (in the case of an error).
+     * </p>
+     * 
+     * @return Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
+     *         key, and when the key became inaccessible (in the case of an error).
+     */
+
+    public LedgerEncryptionDescription getEncryptionDescription() {
+        return this.encryptionDescription;
+    }
+
+    /**
+     * <p>
+     * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
+     * and when the key became inaccessible (in the case of an error).
+     * </p>
+     * 
+     * @param encryptionDescription
+     *        Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
+     *        key, and when the key became inaccessible (in the case of an error).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLedgerResult withEncryptionDescription(LedgerEncryptionDescription encryptionDescription) {
+        setEncryptionDescription(encryptionDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,7 +407,9 @@ public class UpdateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getEncryptionDescription() != null)
+            sb.append("EncryptionDescription: ").append(getEncryptionDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -389,6 +444,10 @@ public class UpdateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getEncryptionDescription() == null ^ this.getEncryptionDescription() == null)
+            return false;
+        if (other.getEncryptionDescription() != null && other.getEncryptionDescription().equals(this.getEncryptionDescription()) == false)
+            return false;
         return true;
     }
 
@@ -402,6 +461,7 @@ public class UpdateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionDescription() == null) ? 0 : getEncryptionDescription().hashCode());
         return hashCode;
     }
 

@@ -55,8 +55,8 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      */
@@ -267,8 +267,8 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
@@ -276,7 +276,7 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
      *        <p>
      *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *        AWS services.
+     *        Amazon Web Services.
      *        </p>
      */
 
@@ -290,15 +290,15 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
      * @return Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
      *         <p>
      *         This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *         AWS services.
+     *         Amazon Web Services.
      *         </p>
      */
 
@@ -312,8 +312,8 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
-     * services.
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon
+     * Web Services.
      * </p>
      * </note>
      * 
@@ -321,7 +321,7 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
      *        <p>
      *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
-     *        AWS services.
+     *        Amazon Web Services.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

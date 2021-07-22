@@ -103,7 +103,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * <code>owner-id</code> - The ID of the account that owns the network ACL.
      * </p>
      * </li>
      * <li>
@@ -229,7 +229,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * <code>owner-id</code> - The ID of the account that owns the network ACL.
      * </p>
      * </li>
      * <li>
@@ -329,7 +329,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     *         <code>owner-id</code> - The ID of the account that owns the network ACL.
      *         </p>
      *         </li>
      *         <li>
@@ -438,7 +438,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * <code>owner-id</code> - The ID of the account that owns the network ACL.
      * </p>
      * </li>
      * <li>
@@ -539,7 +539,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     *        <code>owner-id</code> - The ID of the account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>
@@ -650,7 +650,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * <code>owner-id</code> - The ID of the account that owns the network ACL.
      * </p>
      * </li>
      * <li>
@@ -756,7 +756,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     *        <code>owner-id</code> - The ID of the account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>
@@ -869,7 +869,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * <code>owner-id</code> - The ID of the account that owns the network ACL.
      * </p>
      * </li>
      * <li>
@@ -970,7 +970,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     *        <code>owner-id</code> - The ID of the account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>

@@ -44,6 +44,8 @@ public class UpdateRecipeJobRequestMarshaller {
             .marshallLocationName("Outputs").build();
     private static final MarshallingInfo<List> DATACATALOGOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogOutputs").build();
+    private static final MarshallingInfo<List> DATABASEOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseOutputs").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -73,6 +75,7 @@ public class UpdateRecipeJobRequestMarshaller {
             protocolMarshaller.marshall(updateRecipeJobRequest.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(updateRecipeJobRequest.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(updateRecipeJobRequest.getDataCatalogOutputs(), DATACATALOGOUTPUTS_BINDING);
+            protocolMarshaller.marshall(updateRecipeJobRequest.getDatabaseOutputs(), DATABASEOUTPUTS_BINDING);
             protocolMarshaller.marshall(updateRecipeJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateRecipeJobRequest.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {

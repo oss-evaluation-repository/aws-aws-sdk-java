@@ -61,6 +61,13 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
     private String jobName;
     /**
      * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     */
+    private ProfileConfiguration profileConfiguration;
+    /**
+     * <p>
      * The unique identifier of the job run.
      * </p>
      */
@@ -91,10 +98,17 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<Output> outputs;
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      */
     private java.util.List<DataCatalogOutput> dataCatalogOutputs;
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     */
+    private java.util.List<DatabaseOutput> databaseOutputs;
 
     private RecipeReference recipeReference;
     /**
@@ -355,6 +369,52 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeJobRunResult withJobName(String jobName) {
         setJobName(jobName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param profileConfiguration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public void setProfileConfiguration(ProfileConfiguration profileConfiguration) {
+        this.profileConfiguration = profileConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @return Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters
+     *         of evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public ProfileConfiguration getProfileConfiguration() {
+        return this.profileConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param profileConfiguration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobRunResult withProfileConfiguration(ProfileConfiguration profileConfiguration) {
+        setProfileConfiguration(profileConfiguration);
         return this;
     }
 
@@ -628,10 +688,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
-     * @return One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public java.util.List<DataCatalogOutput> getDataCatalogOutputs() {
@@ -640,11 +700,11 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      */
 
     public void setDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
@@ -658,7 +718,7 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -667,7 +727,7 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,16 +743,94 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * One or more artifacts that represent the Glue Data Catalog output from running the job.
      * </p>
      * 
      * @param dataCatalogOutputs
-     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     *        One or more artifacts that represent the Glue Data Catalog output from running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobRunResult withDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
         setDataCatalogOutputs(dataCatalogOutputs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @return Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *         recipe job to write into.
+     */
+
+    public java.util.List<DatabaseOutput> getDatabaseOutputs() {
+        return databaseOutputs;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     */
+
+    public void setDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        if (databaseOutputs == null) {
+            this.databaseOutputs = null;
+            return;
+        }
+
+        this.databaseOutputs = new java.util.ArrayList<DatabaseOutput>(databaseOutputs);
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDatabaseOutputs(java.util.Collection)} or {@link #withDatabaseOutputs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobRunResult withDatabaseOutputs(DatabaseOutput... databaseOutputs) {
+        if (this.databaseOutputs == null) {
+            setDatabaseOutputs(new java.util.ArrayList<DatabaseOutput>(databaseOutputs.length));
+        }
+        for (DatabaseOutput ele : databaseOutputs) {
+            this.databaseOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job
+     * to write into.
+     * </p>
+     * 
+     * @param databaseOutputs
+     *        Represents a list of JDBC database output objects which defines the output destination for a DataBrew
+     *        recipe job to write into.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobRunResult withDatabaseOutputs(java.util.Collection<DatabaseOutput> databaseOutputs) {
+        setDatabaseOutputs(databaseOutputs);
         return this;
     }
 
@@ -878,6 +1016,8 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("ExecutionTime: ").append(getExecutionTime()).append(",");
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
+        if (getProfileConfiguration() != null)
+            sb.append("ProfileConfiguration: ").append(getProfileConfiguration()).append(",");
         if (getRunId() != null)
             sb.append("RunId: ").append(getRunId()).append(",");
         if (getState() != null)
@@ -890,6 +1030,8 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getDataCatalogOutputs() != null)
             sb.append("DataCatalogOutputs: ").append(getDataCatalogOutputs()).append(",");
+        if (getDatabaseOutputs() != null)
+            sb.append("DatabaseOutputs: ").append(getDatabaseOutputs()).append(",");
         if (getRecipeReference() != null)
             sb.append("RecipeReference: ").append(getRecipeReference()).append(",");
         if (getStartedBy() != null)
@@ -936,6 +1078,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
             return false;
+        if (other.getProfileConfiguration() == null ^ this.getProfileConfiguration() == null)
+            return false;
+        if (other.getProfileConfiguration() != null && other.getProfileConfiguration().equals(this.getProfileConfiguration()) == false)
+            return false;
         if (other.getRunId() == null ^ this.getRunId() == null)
             return false;
         if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
@@ -959,6 +1105,10 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getDataCatalogOutputs() == null ^ this.getDataCatalogOutputs() == null)
             return false;
         if (other.getDataCatalogOutputs() != null && other.getDataCatalogOutputs().equals(this.getDataCatalogOutputs()) == false)
+            return false;
+        if (other.getDatabaseOutputs() == null ^ this.getDatabaseOutputs() == null)
+            return false;
+        if (other.getDatabaseOutputs() != null && other.getDatabaseOutputs().equals(this.getDatabaseOutputs()) == false)
             return false;
         if (other.getRecipeReference() == null ^ this.getRecipeReference() == null)
             return false;
@@ -990,12 +1140,14 @@ public class DescribeJobRunResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getProfileConfiguration() == null) ? 0 : getProfileConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getLogSubscription() == null) ? 0 : getLogSubscription().hashCode());
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getDataCatalogOutputs() == null) ? 0 : getDataCatalogOutputs().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseOutputs() == null) ? 0 : getDatabaseOutputs().hashCode());
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());

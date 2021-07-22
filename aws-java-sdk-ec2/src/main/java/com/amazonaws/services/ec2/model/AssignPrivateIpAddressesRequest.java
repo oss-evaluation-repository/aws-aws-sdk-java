@@ -58,6 +58,20 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
+    /**
+     * <p>
+     * One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> ipv4Prefixes;
+    /**
+     * <p>
+     * The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot
+     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * </p>
+     */
+    private Integer ipv4PrefixCount;
 
     /**
      * <p>
@@ -311,6 +325,133 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @return One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option
+     *         if you use the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public java.util.List<String> getIpv4Prefixes() {
+        if (ipv4Prefixes == null) {
+            ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return ipv4Prefixes;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option
+     *        if you use the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public void setIpv4Prefixes(java.util.Collection<String> ipv4Prefixes) {
+        if (ipv4Prefixes == null) {
+            this.ipv4Prefixes = null;
+            return;
+        }
+
+        this.ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<String>(ipv4Prefixes);
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Prefixes(java.util.Collection)} or {@link #withIpv4Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option
+     *        if you use the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignPrivateIpAddressesRequest withIpv4Prefixes(String... ipv4Prefixes) {
+        if (this.ipv4Prefixes == null) {
+            setIpv4Prefixes(new com.amazonaws.internal.SdkInternalList<String>(ipv4Prefixes.length));
+        }
+        for (String ele : ipv4Prefixes) {
+            this.ipv4Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 Prefix Delegation prefixes assigned to the network interface. You cannot use this option
+     *        if you use the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignPrivateIpAddressesRequest withIpv4Prefixes(java.util.Collection<String> ipv4Prefixes) {
+        setIpv4Prefixes(ipv4Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot
+     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You
+     *        cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     */
+
+    public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+        this.ipv4PrefixCount = ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot
+     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * </p>
+     * 
+     * @return The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface.
+     *         You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     */
+
+    public Integer getIpv4PrefixCount() {
+        return this.ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You cannot
+     * use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns to the network interface. You
+     *        cannot use this option if you use the <code>Ipv4 Prefixes</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignPrivateIpAddressesRequest withIpv4PrefixCount(Integer ipv4PrefixCount) {
+        setIpv4PrefixCount(ipv4PrefixCount);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -340,7 +481,11 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         if (getPrivateIpAddresses() != null)
             sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
         if (getSecondaryPrivateIpAddressCount() != null)
-            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount());
+            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
+        if (getIpv4Prefixes() != null)
+            sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
+        if (getIpv4PrefixCount() != null)
+            sb.append("Ipv4PrefixCount: ").append(getIpv4PrefixCount());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +517,14 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         if (other.getSecondaryPrivateIpAddressCount() != null
                 && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false)
             return false;
+        if (other.getIpv4Prefixes() == null ^ this.getIpv4Prefixes() == null)
+            return false;
+        if (other.getIpv4Prefixes() != null && other.getIpv4Prefixes().equals(this.getIpv4Prefixes()) == false)
+            return false;
+        if (other.getIpv4PrefixCount() == null ^ this.getIpv4PrefixCount() == null)
+            return false;
+        if (other.getIpv4PrefixCount() != null && other.getIpv4PrefixCount().equals(this.getIpv4PrefixCount()) == false)
+            return false;
         return true;
     }
 
@@ -384,6 +537,8 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv4PrefixCount() == null) ? 0 : getIpv4PrefixCount().hashCode());
         return hashCode;
     }
 

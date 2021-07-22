@@ -26,11 +26,39 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioSelectorSettings implements Serializable, Cloneable, StructuredPojo {
 
+    private AudioHlsRenditionSelection audioHlsRenditionSelection;
+
     private AudioLanguageSelection audioLanguageSelection;
 
     private AudioPidSelection audioPidSelection;
 
     private AudioTrackSelection audioTrackSelection;
+
+    /**
+     * @param audioHlsRenditionSelection
+     */
+
+    public void setAudioHlsRenditionSelection(AudioHlsRenditionSelection audioHlsRenditionSelection) {
+        this.audioHlsRenditionSelection = audioHlsRenditionSelection;
+    }
+
+    /**
+     * @return
+     */
+
+    public AudioHlsRenditionSelection getAudioHlsRenditionSelection() {
+        return this.audioHlsRenditionSelection;
+    }
+
+    /**
+     * @param audioHlsRenditionSelection
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioSelectorSettings withAudioHlsRenditionSelection(AudioHlsRenditionSelection audioHlsRenditionSelection) {
+        setAudioHlsRenditionSelection(audioHlsRenditionSelection);
+        return this;
+    }
 
     /**
      * @param audioLanguageSelection
@@ -122,6 +150,8 @@ public class AudioSelectorSettings implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioHlsRenditionSelection() != null)
+            sb.append("AudioHlsRenditionSelection: ").append(getAudioHlsRenditionSelection()).append(",");
         if (getAudioLanguageSelection() != null)
             sb.append("AudioLanguageSelection: ").append(getAudioLanguageSelection()).append(",");
         if (getAudioPidSelection() != null)
@@ -142,6 +172,10 @@ public class AudioSelectorSettings implements Serializable, Cloneable, Structure
         if (obj instanceof AudioSelectorSettings == false)
             return false;
         AudioSelectorSettings other = (AudioSelectorSettings) obj;
+        if (other.getAudioHlsRenditionSelection() == null ^ this.getAudioHlsRenditionSelection() == null)
+            return false;
+        if (other.getAudioHlsRenditionSelection() != null && other.getAudioHlsRenditionSelection().equals(this.getAudioHlsRenditionSelection()) == false)
+            return false;
         if (other.getAudioLanguageSelection() == null ^ this.getAudioLanguageSelection() == null)
             return false;
         if (other.getAudioLanguageSelection() != null && other.getAudioLanguageSelection().equals(this.getAudioLanguageSelection()) == false)
@@ -162,6 +196,7 @@ public class AudioSelectorSettings implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioHlsRenditionSelection() == null) ? 0 : getAudioHlsRenditionSelection().hashCode());
         hashCode = prime * hashCode + ((getAudioLanguageSelection() == null) ? 0 : getAudioLanguageSelection().hashCode());
         hashCode = prime * hashCode + ((getAudioPidSelection() == null) ? 0 : getAudioPidSelection().hashCode());
         hashCode = prime * hashCode + ((getAudioTrackSelection() == null) ? 0 : getAudioTrackSelection().hashCode());

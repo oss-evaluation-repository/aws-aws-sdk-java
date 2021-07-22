@@ -38,7 +38,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -58,7 +58,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     * <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      * </p>
      * </li>
      * <li>
@@ -136,7 +136,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -156,7 +156,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     * <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      * </p>
      * </li>
      * <li>
@@ -207,7 +207,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     *         <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -227,7 +227,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     *         <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -288,7 +288,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -308,7 +308,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     * <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      * </p>
      * </li>
      * <li>
@@ -360,7 +360,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -380,7 +380,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     *        <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -443,7 +443,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -463,7 +463,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     * <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      * </p>
      * </li>
      * <li>
@@ -520,7 +520,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -540,7 +540,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     *        <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -605,7 +605,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -625,7 +625,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     * <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      * </p>
      * </li>
      * <li>
@@ -677,7 +677,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The ID of the account that owns the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -697,7 +697,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the requester VPC.
+     *        <code>requester-vpc-info.owner-id</code> - The ID of the account that owns the requester VPC.
      *        </p>
      *        </li>
      *        <li>

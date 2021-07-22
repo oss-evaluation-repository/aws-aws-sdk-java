@@ -125,6 +125,18 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * </p>
      */
     private String interfaceType;
+    /**
+     * <p>
+     * The IPv4 delegated prefixes that are assigned to the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceIpv4Prefix> ipv4Prefixes;
+    /**
+     * <p>
+     * The IPv6 delegated prefixes that are assigned to the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceIpv6Prefix> ipv6Prefixes;
 
     /**
      * <p>
@@ -926,6 +938,152 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IPv4 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @return The IPv4 delegated prefixes that are assigned to the network interface.
+     */
+
+    public java.util.List<InstanceIpv4Prefix> getIpv4Prefixes() {
+        if (ipv4Prefixes == null) {
+            ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<InstanceIpv4Prefix>();
+        }
+        return ipv4Prefixes;
+    }
+
+    /**
+     * <p>
+     * The IPv4 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 delegated prefixes that are assigned to the network interface.
+     */
+
+    public void setIpv4Prefixes(java.util.Collection<InstanceIpv4Prefix> ipv4Prefixes) {
+        if (ipv4Prefixes == null) {
+            this.ipv4Prefixes = null;
+            return;
+        }
+
+        this.ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<InstanceIpv4Prefix>(ipv4Prefixes);
+    }
+
+    /**
+     * <p>
+     * The IPv4 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Prefixes(java.util.Collection)} or {@link #withIpv4Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 delegated prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterface withIpv4Prefixes(InstanceIpv4Prefix... ipv4Prefixes) {
+        if (this.ipv4Prefixes == null) {
+            setIpv4Prefixes(new com.amazonaws.internal.SdkInternalList<InstanceIpv4Prefix>(ipv4Prefixes.length));
+        }
+        for (InstanceIpv4Prefix ele : ipv4Prefixes) {
+            this.ipv4Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        The IPv4 delegated prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterface withIpv4Prefixes(java.util.Collection<InstanceIpv4Prefix> ipv4Prefixes) {
+        setIpv4Prefixes(ipv4Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @return The IPv6 delegated prefixes that are assigned to the network interface.
+     */
+
+    public java.util.List<InstanceIpv6Prefix> getIpv6Prefixes() {
+        if (ipv6Prefixes == null) {
+            ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Prefix>();
+        }
+        return ipv6Prefixes;
+    }
+
+    /**
+     * <p>
+     * The IPv6 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 delegated prefixes that are assigned to the network interface.
+     */
+
+    public void setIpv6Prefixes(java.util.Collection<InstanceIpv6Prefix> ipv6Prefixes) {
+        if (ipv6Prefixes == null) {
+            this.ipv6Prefixes = null;
+            return;
+        }
+
+        this.ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Prefix>(ipv6Prefixes);
+    }
+
+    /**
+     * <p>
+     * The IPv6 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Prefixes(java.util.Collection)} or {@link #withIpv6Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 delegated prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterface withIpv6Prefixes(InstanceIpv6Prefix... ipv6Prefixes) {
+        if (this.ipv6Prefixes == null) {
+            setIpv6Prefixes(new com.amazonaws.internal.SdkInternalList<InstanceIpv6Prefix>(ipv6Prefixes.length));
+        }
+        for (InstanceIpv6Prefix ele : ipv6Prefixes) {
+            this.ipv6Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 delegated prefixes that are assigned to the network interface.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        The IPv6 delegated prefixes that are assigned to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterface withIpv6Prefixes(java.util.Collection<InstanceIpv6Prefix> ipv6Prefixes) {
+        setIpv6Prefixes(ipv6Prefixes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -968,7 +1126,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getInterfaceType() != null)
-            sb.append("InterfaceType: ").append(getInterfaceType());
+            sb.append("InterfaceType: ").append(getInterfaceType()).append(",");
+        if (getIpv4Prefixes() != null)
+            sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
+        if (getIpv6Prefixes() != null)
+            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes());
         sb.append("}");
         return sb.toString();
     }
@@ -1047,6 +1209,14 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
             return false;
         if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
             return false;
+        if (other.getIpv4Prefixes() == null ^ this.getIpv4Prefixes() == null)
+            return false;
+        if (other.getIpv4Prefixes() != null && other.getIpv4Prefixes().equals(this.getIpv4Prefixes()) == false)
+            return false;
+        if (other.getIpv6Prefixes() == null ^ this.getIpv6Prefixes() == null)
+            return false;
+        if (other.getIpv6Prefixes() != null && other.getIpv6Prefixes().equals(this.getIpv6Prefixes()) == false)
+            return false;
         return true;
     }
 
@@ -1071,6 +1241,8 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         return hashCode;
     }
 

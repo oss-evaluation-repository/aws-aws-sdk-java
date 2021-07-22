@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the AWS Outposts
- * in this Region. Select a different name and try again.
+ * The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in
+ * this Region. Select a different name and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

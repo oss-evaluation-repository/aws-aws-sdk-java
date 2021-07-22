@@ -3216,6 +3216,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSubnetCidrReservationResult> createSubnetCidrReservationAsync(CreateSubnetCidrReservationRequest request) {
+
+        return createSubnetCidrReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSubnetCidrReservationResult> createSubnetCidrReservationAsync(final CreateSubnetCidrReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSubnetCidrReservationRequest, CreateSubnetCidrReservationResult> asyncHandler) {
+        final CreateSubnetCidrReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSubnetCidrReservationResult>() {
+            @Override
+            public CreateSubnetCidrReservationResult call() throws Exception {
+                CreateSubnetCidrReservationResult result = null;
+
+                try {
+                    result = executeCreateSubnetCidrReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -5087,6 +5120,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteSubnet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSubnetCidrReservationResult> deleteSubnetCidrReservationAsync(DeleteSubnetCidrReservationRequest request) {
+
+        return deleteSubnetCidrReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSubnetCidrReservationResult> deleteSubnetCidrReservationAsync(final DeleteSubnetCidrReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSubnetCidrReservationRequest, DeleteSubnetCidrReservationResult> asyncHandler) {
+        final DeleteSubnetCidrReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSubnetCidrReservationResult>() {
+            @Override
+            public DeleteSubnetCidrReservationResult call() throws Exception {
+                DeleteSubnetCidrReservationResult result = null;
+
+                try {
+                    result = executeDeleteSubnetCidrReservation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -13167,6 +13233,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeGetSerialConsoleAccessStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrReservationsResult> getSubnetCidrReservationsAsync(GetSubnetCidrReservationsRequest request) {
+
+        return getSubnetCidrReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrReservationsResult> getSubnetCidrReservationsAsync(final GetSubnetCidrReservationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSubnetCidrReservationsRequest, GetSubnetCidrReservationsResult> asyncHandler) {
+        final GetSubnetCidrReservationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSubnetCidrReservationsResult>() {
+            @Override
+            public GetSubnetCidrReservationsResult call() throws Exception {
+                GetSubnetCidrReservationsResult result = null;
+
+                try {
+                    result = executeGetSubnetCidrReservations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

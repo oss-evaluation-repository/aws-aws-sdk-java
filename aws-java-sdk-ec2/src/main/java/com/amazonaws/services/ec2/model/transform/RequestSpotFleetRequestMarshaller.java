@@ -392,6 +392,54 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         + networkInterfacesListIndex + ".NetworkCardIndex",
                                         StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getNetworkCardIndex()));
                             }
+
+                            com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest> instanceNetworkInterfaceSpecificationIpv4PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>) spotFleetLaunchSpecificationNetworkInterfacesListValue
+                                    .getIpv4Prefixes();
+                            if (!instanceNetworkInterfaceSpecificationIpv4PrefixesList.isEmpty()
+                                    || !instanceNetworkInterfaceSpecificationIpv4PrefixesList.isAutoConstruct()) {
+                                int ipv4PrefixesListIndex = 1;
+
+                                for (Ipv4PrefixSpecificationRequest instanceNetworkInterfaceSpecificationIpv4PrefixesListValue : instanceNetworkInterfaceSpecificationIpv4PrefixesList) {
+
+                                    if (instanceNetworkInterfaceSpecificationIpv4PrefixesListValue.getIpv4Prefix() != null) {
+                                        request.addParameter(
+                                                "SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                                        + networkInterfacesListIndex + ".Ipv4Prefix." + ipv4PrefixesListIndex + ".Ipv4Prefix",
+                                                StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv4PrefixesListValue.getIpv4Prefix()));
+                                    }
+                                    ipv4PrefixesListIndex++;
+                                }
+                            }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv4PrefixCount() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".Ipv4PrefixCount",
+                                        StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv4PrefixCount()));
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest> instanceNetworkInterfaceSpecificationIpv6PrefixesList = (com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>) spotFleetLaunchSpecificationNetworkInterfacesListValue
+                                    .getIpv6Prefixes();
+                            if (!instanceNetworkInterfaceSpecificationIpv6PrefixesList.isEmpty()
+                                    || !instanceNetworkInterfaceSpecificationIpv6PrefixesList.isAutoConstruct()) {
+                                int ipv6PrefixesListIndex = 1;
+
+                                for (Ipv6PrefixSpecificationRequest instanceNetworkInterfaceSpecificationIpv6PrefixesListValue : instanceNetworkInterfaceSpecificationIpv6PrefixesList) {
+
+                                    if (instanceNetworkInterfaceSpecificationIpv6PrefixesListValue.getIpv6Prefix() != null) {
+                                        request.addParameter(
+                                                "SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                                        + networkInterfacesListIndex + ".Ipv6Prefix." + ipv6PrefixesListIndex + ".Ipv6Prefix",
+                                                StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6PrefixesListValue.getIpv6Prefix()));
+                                    }
+                                    ipv6PrefixesListIndex++;
+                                }
+                            }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv6PrefixCount() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".Ipv6PrefixCount",
+                                        StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv6PrefixCount()));
+                            }
                             networkInterfacesListIndex++;
                         }
                     }

@@ -44,7 +44,7 @@ public class RegionalBucket implements Serializable, Cloneable {
     private java.util.Date creationDate;
     /**
      * <p>
-     * The AWS Outposts ID of the regional bucket.
+     * The Outposts ID of the regional bucket.
      * </p>
      */
     private String outpostId;
@@ -205,11 +205,11 @@ public class RegionalBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Outposts ID of the regional bucket.
+     * The Outposts ID of the regional bucket.
      * </p>
      * 
      * @param outpostId
-     *        The AWS Outposts ID of the regional bucket.
+     *        The Outposts ID of the regional bucket.
      */
 
     public void setOutpostId(String outpostId) {
@@ -218,10 +218,10 @@ public class RegionalBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Outposts ID of the regional bucket.
+     * The Outposts ID of the regional bucket.
      * </p>
      * 
-     * @return The AWS Outposts ID of the regional bucket.
+     * @return The Outposts ID of the regional bucket.
      */
 
     public String getOutpostId() {
@@ -230,11 +230,11 @@ public class RegionalBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Outposts ID of the regional bucket.
+     * The Outposts ID of the regional bucket.
      * </p>
      * 
      * @param outpostId
-     *        The AWS Outposts ID of the regional bucket.
+     *        The Outposts ID of the regional bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

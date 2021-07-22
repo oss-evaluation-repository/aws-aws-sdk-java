@@ -156,6 +156,34 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      */
     private Integer networkCardIndex;
+    /**
+     * <p>
+     * One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest> ipv4Prefixes;
+    /**
+     * <p>
+     * The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv4Prefix</code> option.
+     * </p>
+     */
+    private Integer ipv4PrefixCount;
+    /**
+     * <p>
+     * One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv6PrefixCount</code> option.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest> ipv6Prefixes;
+    /**
+     * <p>
+     * The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     */
+    private Integer ipv6PrefixCount;
 
     /**
      * <p>
@@ -1161,6 +1189,260 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @return One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option
+     *         if you use the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public java.util.List<Ipv4PrefixSpecificationRequest> getIpv4Prefixes() {
+        if (ipv4Prefixes == null) {
+            ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>();
+        }
+        return ipv4Prefixes;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public void setIpv4Prefixes(java.util.Collection<Ipv4PrefixSpecificationRequest> ipv4Prefixes) {
+        if (ipv4Prefixes == null) {
+            this.ipv4Prefixes = null;
+            return;
+        }
+
+        this.ipv4Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>(ipv4Prefixes);
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Prefixes(java.util.Collection)} or {@link #withIpv4Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv4Prefixes(Ipv4PrefixSpecificationRequest... ipv4Prefixes) {
+        if (this.ipv4Prefixes == null) {
+            setIpv4Prefixes(new com.amazonaws.internal.SdkInternalList<Ipv4PrefixSpecificationRequest>(ipv4Prefixes.length));
+        }
+        for (Ipv4PrefixSpecificationRequest ele : ipv4Prefixes) {
+            this.ipv4Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv4Prefixes(java.util.Collection<Ipv4PrefixSpecificationRequest> ipv4Prefixes) {
+        setIpv4Prefixes(ipv4Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv4Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *        use this option if you use the <code>Ipv4Prefix</code> option.
+     */
+
+    public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+        this.ipv4PrefixCount = ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv4Prefix</code> option.
+     * </p>
+     * 
+     * @return The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *         use this option if you use the <code>Ipv4Prefix</code> option.
+     */
+
+    public Integer getIpv4PrefixCount() {
+        return this.ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv4Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *        use this option if you use the <code>Ipv4Prefix</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv4PrefixCount(Integer ipv4PrefixCount) {
+        setIpv4PrefixCount(ipv4PrefixCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @return One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option
+     *         if you use the <code>Ipv6PrefixCount</code> option.
+     */
+
+    public java.util.List<Ipv6PrefixSpecificationRequest> getIpv6Prefixes() {
+        if (ipv6Prefixes == null) {
+            ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>();
+        }
+        return ipv6Prefixes;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv6PrefixCount</code> option.
+     */
+
+    public void setIpv6Prefixes(java.util.Collection<Ipv6PrefixSpecificationRequest> ipv6Prefixes) {
+        if (ipv6Prefixes == null) {
+            this.ipv6Prefixes = null;
+            return;
+        }
+
+        this.ipv6Prefixes = new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>(ipv6Prefixes);
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Prefixes(java.util.Collection)} or {@link #withIpv6Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv6PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv6Prefixes(Ipv6PrefixSpecificationRequest... ipv6Prefixes) {
+        if (this.ipv6Prefixes == null) {
+            setIpv6Prefixes(new com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecificationRequest>(ipv6Prefixes.length));
+        }
+        for (Ipv6PrefixSpecificationRequest ele : ipv6Prefixes) {
+            this.ipv6Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you
+     * use the <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if
+     *        you use the <code>Ipv6PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv6Prefixes(java.util.Collection<Ipv6PrefixSpecificationRequest> ipv6Prefixes) {
+        setIpv6Prefixes(ipv6Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv6PrefixCount
+     *        The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *        use this option if you use the <code>Ipv6Prefix</code> option.
+     */
+
+    public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
+        this.ipv6PrefixCount = ipv6PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @return The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *         use this option if you use the <code>Ipv6Prefix</code> option.
+     */
+
+    public Integer getIpv6PrefixCount() {
+        return this.ipv6PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this
+     * option if you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv6PrefixCount
+     *        The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot
+     *        use this option if you use the <code>Ipv6Prefix</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withIpv6PrefixCount(Integer ipv6PrefixCount) {
+        setIpv6PrefixCount(ipv6PrefixCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1201,7 +1483,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         if (getInterfaceType() != null)
             sb.append("InterfaceType: ").append(getInterfaceType()).append(",");
         if (getNetworkCardIndex() != null)
-            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex()).append(",");
+        if (getIpv4Prefixes() != null)
+            sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
+        if (getIpv4PrefixCount() != null)
+            sb.append("Ipv4PrefixCount: ").append(getIpv4PrefixCount()).append(",");
+        if (getIpv6Prefixes() != null)
+            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
+        if (getIpv6PrefixCount() != null)
+            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount());
         sb.append("}");
         return sb.toString();
     }
@@ -1277,6 +1567,22 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             return false;
         if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
             return false;
+        if (other.getIpv4Prefixes() == null ^ this.getIpv4Prefixes() == null)
+            return false;
+        if (other.getIpv4Prefixes() != null && other.getIpv4Prefixes().equals(this.getIpv4Prefixes()) == false)
+            return false;
+        if (other.getIpv4PrefixCount() == null ^ this.getIpv4PrefixCount() == null)
+            return false;
+        if (other.getIpv4PrefixCount() != null && other.getIpv4PrefixCount().equals(this.getIpv4PrefixCount()) == false)
+            return false;
+        if (other.getIpv6Prefixes() == null ^ this.getIpv6Prefixes() == null)
+            return false;
+        if (other.getIpv6Prefixes() != null && other.getIpv6Prefixes().equals(this.getIpv6Prefixes()) == false)
+            return false;
+        if (other.getIpv6PrefixCount() == null ^ this.getIpv6PrefixCount() == null)
+            return false;
+        if (other.getIpv6PrefixCount() != null && other.getIpv6PrefixCount().equals(this.getIpv6PrefixCount()) == false)
+            return false;
         return true;
     }
 
@@ -1300,6 +1606,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
         hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
         hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv4PrefixCount() == null) ? 0 : getIpv4PrefixCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
         return hashCode;
     }
 

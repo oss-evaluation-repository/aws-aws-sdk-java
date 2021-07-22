@@ -65,6 +65,13 @@ public class CreateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     * undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     * </p>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -399,6 +406,52 @@ public class CreateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     * undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     *        undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     * undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     * </p>
+     * 
+     * @return The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     *         undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     * undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is
+     *        undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLedgerResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,7 +474,9 @@ public class CreateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getPermissionsMode() != null)
             sb.append("PermissionsMode: ").append(getPermissionsMode()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +515,10 @@ public class CreateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -474,6 +533,7 @@ public class CreateLedgerResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getPermissionsMode() == null) ? 0 : getPermissionsMode().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

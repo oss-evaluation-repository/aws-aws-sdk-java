@@ -157,7 +157,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -177,7 +177,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -185,14 +185,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private LaunchTemplateInstanceMetadataOptions metadataOptions;
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      */
     private LaunchTemplateEnclaveOptions enclaveOptions;
@@ -1352,14 +1352,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setCpuOptions(LaunchTemplateCpuOptions cpuOptions) {
@@ -1369,13 +1369,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The CPU options for the instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *         Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public LaunchTemplateCpuOptions getCpuOptions() {
@@ -1385,14 +1385,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1518,13 +1518,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is configured for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1535,12 +1535,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether an instance is configured for hibernation. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1551,13 +1551,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is configured for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1570,14 +1570,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setMetadataOptions(LaunchTemplateInstanceMetadataOptions metadataOptions) {
@@ -1587,13 +1587,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The metadata options for the instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *         and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public LaunchTemplateInstanceMetadataOptions getMetadataOptions() {
@@ -1603,14 +1603,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1621,11 +1621,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public void setEnclaveOptions(LaunchTemplateEnclaveOptions enclaveOptions) {
@@ -1634,10 +1634,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
-     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public LaunchTemplateEnclaveOptions getEnclaveOptions() {
@@ -1646,11 +1646,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

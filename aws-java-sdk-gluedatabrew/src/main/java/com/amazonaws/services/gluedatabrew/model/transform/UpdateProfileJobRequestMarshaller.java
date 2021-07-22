@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateProfileJobRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> ENCRYPTIONKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionKeyArn").build();
     private static final MarshallingInfo<String> ENCRYPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class UpdateProfileJobRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateProfileJobRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateProfileJobRequest.getEncryptionKeyArn(), ENCRYPTIONKEYARN_BINDING);
             protocolMarshaller.marshall(updateProfileJobRequest.getEncryptionMode(), ENCRYPTIONMODE_BINDING);
             protocolMarshaller.marshall(updateProfileJobRequest.getName(), NAME_BINDING);

@@ -27,7 +27,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS account ID that creates the job.
+     * The account ID that creates the job.
      * </p>
      */
     private String accountId;
@@ -81,8 +81,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer priority;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's action on every object in the manifest.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use
+     * to run this job's action on every object in the manifest.
      * </p>
      */
     private String roleArn;
@@ -95,11 +95,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS account ID that creates the job.
+     * The account ID that creates the job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID that creates the job.
+     *        The account ID that creates the job.
      */
 
     public void setAccountId(String accountId) {
@@ -108,10 +108,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS account ID that creates the job.
+     * The account ID that creates the job.
      * </p>
      * 
-     * @return The AWS account ID that creates the job.
+     * @return The account ID that creates the job.
      */
 
     public String getAccountId() {
@@ -120,11 +120,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS account ID that creates the job.
+     * The account ID that creates the job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID that creates the job.
+     *        The account ID that creates the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,12 +465,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's action on every object in the manifest.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use
+     * to run this job's action on every object in the manifest.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
+     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations
      *        will use to run this job's action on every object in the manifest.
      */
 
@@ -480,12 +480,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's action on every object in the manifest.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use
+     * to run this job's action on every object in the manifest.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch
-     *         Operations will use to run this job's action on every object in the manifest.
+     * @return The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations
+     *         will use to run this job's action on every object in the manifest.
      */
 
     public String getRoleArn() {
@@ -494,12 +494,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's action on every object in the manifest.
+     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use
+     * to run this job's action on every object in the manifest.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
+     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations
      *        will use to run this job's action on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

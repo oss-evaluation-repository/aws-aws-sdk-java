@@ -64,7 +64,7 @@ public class RouteTable implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The ID of the AWS account that owns the route table.
+     * The ID of the account that owns the route table.
      * </p>
      */
     private String ownerId;
@@ -443,11 +443,11 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the route table.
+     * The ID of the account that owns the route table.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the route table.
+     *        The ID of the account that owns the route table.
      */
 
     public void setOwnerId(String ownerId) {
@@ -456,10 +456,10 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the route table.
+     * The ID of the account that owns the route table.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the route table.
+     * @return The ID of the account that owns the route table.
      */
 
     public String getOwnerId() {
@@ -468,11 +468,11 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the route table.
+     * The ID of the account that owns the route table.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the route table.
+     *        The ID of the account that owns the route table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

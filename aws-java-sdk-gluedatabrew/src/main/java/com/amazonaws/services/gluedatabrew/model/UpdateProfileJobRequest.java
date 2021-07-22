@@ -27,6 +27,13 @@ public class UpdateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     */
+    private ProfileConfiguration configuration;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.
      * </p>
      */
@@ -98,6 +105,52 @@ public class UpdateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private JobSample jobSample;
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param configuration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public void setConfiguration(ProfileConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @return Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters
+     *         of evaluations. When configuration is null, the profile job will run with default settings.
+     */
+
+    public ProfileConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     * evaluations. When configuration is null, the profile job will run with default settings.
+     * </p>
+     * 
+     * @param configuration
+     *        Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of
+     *        evaluations. When configuration is null, the profile job will run with default settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProfileJobRequest withConfiguration(ProfileConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
 
     /**
      * <p>
@@ -659,6 +712,8 @@ public class UpdateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getEncryptionKeyArn() != null)
             sb.append("EncryptionKeyArn: ").append(getEncryptionKeyArn()).append(",");
         if (getEncryptionMode() != null)
@@ -693,6 +748,10 @@ public class UpdateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof UpdateProfileJobRequest == false)
             return false;
         UpdateProfileJobRequest other = (UpdateProfileJobRequest) obj;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         if (other.getEncryptionKeyArn() == null ^ this.getEncryptionKeyArn() == null)
             return false;
         if (other.getEncryptionKeyArn() != null && other.getEncryptionKeyArn().equals(this.getEncryptionKeyArn()) == false)
@@ -741,6 +800,7 @@ public class UpdateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
         hashCode = prime * hashCode + ((getEncryptionMode() == null) ? 0 : getEncryptionMode().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
