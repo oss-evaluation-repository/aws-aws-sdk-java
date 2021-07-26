@@ -47,9 +47,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
     private Integer memoryInMB;
     /**
      * <p>
-     * Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this canary
-     * run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that
-     * has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
+     * Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run
+     * to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has
+     * X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
      * Canaries and X-Ray tracing</a>.
      * </p>
@@ -186,9 +186,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this canary
-     * run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that
-     * has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
+     * Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run
+     * to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has
+     * X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
      * Canaries and X-Ray tracing</a>.
      * </p>
@@ -198,9 +198,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param activeTracing
-     *        Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this
+     *        Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this
      *        canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an
-     *        endpoint that has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
+     *        endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"
      *        > Canaries and X-Ray tracing</a>.</p>
@@ -215,9 +215,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this canary
-     * run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that
-     * has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
+     * Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run
+     * to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has
+     * X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
      * Canaries and X-Ray tracing</a>.
      * </p>
@@ -226,10 +226,10 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * canary runtime.
      * </p>
      * 
-     * @return Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables
-     *         this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit
-     *         an endpoint that has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see
-     *         <a href=
+     * @return Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this
+     *         canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an
+     *         endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"
      *         > Canaries and X-Ray tracing</a>.</p>
      *         <p>
@@ -243,9 +243,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this canary
-     * run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that
-     * has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
+     * Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run
+     * to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has
+     * X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
      * Canaries and X-Ray tracing</a>.
      * </p>
@@ -255,9 +255,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param activeTracing
-     *        Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this
+     *        Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this
      *        canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an
-     *        endpoint that has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
+     *        endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"
      *        > Canaries and X-Ray tracing</a>.</p>
@@ -274,9 +274,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables this canary
-     * run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that
-     * has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
+     * Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run
+     * to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has
+     * X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
      * Canaries and X-Ray tracing</a>.
      * </p>
@@ -285,10 +285,10 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * canary runtime.
      * </p>
      * 
-     * @return Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active tracing enables
-     *         this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit
-     *         an endpoint that has X-ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see
-     *         <a href=
+     * @return Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this
+     *         canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an
+     *         endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"
      *         > Canaries and X-Ray tracing</a>.</p>
      *         <p>

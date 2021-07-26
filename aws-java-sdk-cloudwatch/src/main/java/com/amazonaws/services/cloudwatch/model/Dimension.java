@@ -30,24 +30,28 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     * The name of the dimension. Dimension names must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     * The name of the dimension. Dimension names must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
      * @param name
-     *        The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     *        The name of the dimension. Dimension names must contain only ASCII characters and must include at least
+     *        one non-whitespace character.
      */
 
     public void setName(String name) {
@@ -56,10 +60,12 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     * The name of the dimension. Dimension names must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
-     * @return The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     * @return The name of the dimension. Dimension names must contain only ASCII characters and must include at least
+     *         one non-whitespace character.
      */
 
     public String getName() {
@@ -68,11 +74,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     * The name of the dimension. Dimension names must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
      * @param name
-     *        The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
+     *        The name of the dimension. Dimension names must contain only ASCII characters and must include at least
+     *        one non-whitespace character.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
      * @param value
-     *        The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     *        The value of the dimension. Dimension values must contain only ASCII characters and must include at least
+     *        one non-whitespace character.
      */
 
     public void setValue(String value) {
@@ -96,10 +106,12 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
-     * @return The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     * @return The value of the dimension. Dimension values must contain only ASCII characters and must include at least
+     *         one non-whitespace character.
      */
 
     public String getValue() {
@@ -108,11 +120,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
+     * non-whitespace character.
      * </p>
      * 
      * @param value
-     *        The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
+     *        The value of the dimension. Dimension values must contain only ASCII characters and must include at least
+     *        one non-whitespace character.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -131,6 +131,8 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
     private VpcConfigInput vpcConfig;
 
+    private VisualReferenceInput visualReference;
+
     /**
      * <p>
      * The name of the canary that you want to update. To find the names of your canaries, use <a
@@ -795,6 +797,32 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * @param visualReference
+     */
+
+    public void setVisualReference(VisualReferenceInput visualReference) {
+        this.visualReference = visualReference;
+    }
+
+    /**
+     * @return
+     */
+
+    public VisualReferenceInput getVisualReference() {
+        return this.visualReference;
+    }
+
+    /**
+     * @param visualReference
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCanaryRequest withVisualReference(VisualReferenceInput visualReference) {
+        setVisualReference(visualReference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -823,7 +851,9 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getFailureRetentionPeriodInDays() != null)
             sb.append("FailureRetentionPeriodInDays: ").append(getFailureRetentionPeriodInDays()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getVisualReference() != null)
+            sb.append("VisualReference: ").append(getVisualReference());
         sb.append("}");
         return sb.toString();
     }
@@ -874,6 +904,10 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getVisualReference() == null ^ this.getVisualReference() == null)
+            return false;
+        if (other.getVisualReference() != null && other.getVisualReference().equals(this.getVisualReference()) == false)
+            return false;
         return true;
     }
 
@@ -891,6 +925,7 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSuccessRetentionPeriodInDays() == null) ? 0 : getSuccessRetentionPeriodInDays().hashCode());
         hashCode = prime * hashCode + ((getFailureRetentionPeriodInDays() == null) ? 0 : getFailureRetentionPeriodInDays().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getVisualReference() == null) ? 0 : getVisualReference().hashCode());
         return hashCode;
     }
 

@@ -848,7 +848,8 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * <p>
-     * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
      * </p>
      * <p>
      * You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key

@@ -124,6 +124,16 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * </p>
      */
     private Integer period;
+    /**
+     * <p>
+     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * </p>
+     * <p>
+     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
+     * operations.
+     * </p>
+     */
+    private String accountId;
 
     /**
      * <p>
@@ -593,6 +603,67 @@ public class MetricDataQuery implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * </p>
+     * <p>
+     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
+     * operations.
+     * </p>
+     * 
+     * @param accountId
+     *        The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     *        <p>
+     *        Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+     *        <code>GetMetricData</code> operations.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * </p>
+     * <p>
+     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
+     * operations.
+     * </p>
+     * 
+     * @return The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     *         <p>
+     *         Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+     *         <code>GetMetricData</code> operations.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * </p>
+     * <p>
+     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
+     * operations.
+     * </p>
+     * 
+     * @param accountId
+     *        The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     *        <p>
+     *        Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+     *        <code>GetMetricData</code> operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricDataQuery withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -615,7 +686,9 @@ public class MetricDataQuery implements Serializable, Cloneable {
         if (getReturnData() != null)
             sb.append("ReturnData: ").append(getReturnData()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: ").append(getPeriod());
+            sb.append("Period: ").append(getPeriod()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -654,6 +727,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
             return false;
         if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -668,6 +745,7 @@ public class MetricDataQuery implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         hashCode = prime * hashCode + ((getReturnData() == null) ? 0 : getReturnData().hashCode());
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         return hashCode;
     }
 

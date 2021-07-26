@@ -27,9 +27,9 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed
-     * prefix, and 1234567890 is a randomly generated string which contains number and lower case letters. This value is
-     * generated at the time that a new identity store is created.
+     * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
+     * number and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      */
     private String identityStoreId;
@@ -42,15 +42,16 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed
-     * prefix, and 1234567890 is a randomly generated string which contains number and lower case letters. This value is
-     * generated at the time that a new identity store is created.
+     * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
+     * number and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
      * @param identityStoreId
-     *        The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a
-     *        fixed prefix, and 1234567890 is a randomly generated string which contains number and lower case letters.
-     *        This value is generated at the time that a new identity store is created.
+     *        The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     *        <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that
+     *        contains number and lower case letters. This value is generated at the time that a new identity store is
+     *        created.
      */
 
     public void setIdentityStoreId(String identityStoreId) {
@@ -59,14 +60,15 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed
-     * prefix, and 1234567890 is a randomly generated string which contains number and lower case letters. This value is
-     * generated at the time that a new identity store is created.
+     * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
+     * number and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
-     * @return The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a
-     *         fixed prefix, and 1234567890 is a randomly generated string which contains number and lower case letters.
-     *         This value is generated at the time that a new identity store is created.
+     * @return The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this
+     *         example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string
+     *         that contains number and lower case letters. This value is generated at the time that a new identity
+     *         store is created.
      */
 
     public String getIdentityStoreId() {
@@ -75,15 +77,16 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a fixed
-     * prefix, and 1234567890 is a randomly generated string which contains number and lower case letters. This value is
-     * generated at the time that a new identity store is created.
+     * The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     * <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains
+     * number and lower case letters. This value is generated at the time that a new identity store is created.
      * </p>
      * 
      * @param identityStoreId
-     *        The globally unique identifier for the identity store, such as d-1234567890. In this example, d- is a
-     *        fixed prefix, and 1234567890 is a randomly generated string which contains number and lower case letters.
-     *        This value is generated at the time that a new identity store is created.
+     *        The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example,
+     *        <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that
+     *        contains number and lower case letters. This value is generated at the time that a new identity store is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

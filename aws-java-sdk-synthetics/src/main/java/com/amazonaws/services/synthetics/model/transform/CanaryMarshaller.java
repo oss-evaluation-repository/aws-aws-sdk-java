@@ -57,6 +57,8 @@ public class CanaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeVersion").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> VISUALREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualReference").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -90,6 +92,7 @@ public class CanaryMarshaller {
             protocolMarshaller.marshall(canary.getEngineArn(), ENGINEARN_BINDING);
             protocolMarshaller.marshall(canary.getRuntimeVersion(), RUNTIMEVERSION_BINDING);
             protocolMarshaller.marshall(canary.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(canary.getVisualReference(), VISUALREFERENCE_BINDING);
             protocolMarshaller.marshall(canary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

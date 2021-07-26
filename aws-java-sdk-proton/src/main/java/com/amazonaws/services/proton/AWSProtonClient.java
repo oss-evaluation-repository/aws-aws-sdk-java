@@ -331,7 +331,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * infrastructure resources in the associated environment account.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -765,8 +766,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * <p>
      * An environment account connection is a secure bi-directional connection between a <i>management account</i> and
      * an <i>environment account</i> that maintains authorization and permissions. For more information, see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>AWS
-     * Proton Administrator guide</i>.
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
      * @param createEnvironmentAccountConnectionRequest
@@ -1311,7 +1312,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * resources that remain without an environment connection.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -1874,7 +1876,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * In an environment account, view the detail data for an environment account connection.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -2342,7 +2345,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * View a list of environment account connections.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -2942,7 +2946,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * You <i>can’t</i> reject an environment account connection that is connected to an environment.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -3352,7 +3357,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * In an environment account, update an environment account connection to use a new IAM role.
      * </p>
      * <p>
-     * For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 

@@ -133,6 +133,65 @@ public interface AmazonTextract {
 
     /**
      * <p>
+     * Analyzes an input document for financially related relationships between text.
+     * </p>
+     * <p>
+     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which store information about the lines
+     * of text, such as an item purchased and its price on a receipt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SummaryFields</code>- Contains all other information a receipt, such as header information or the vendors
+     * name.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param analyzeExpenseRequest
+     * @return Result of the AnalyzeExpense operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws UnsupportedDocumentException
+     *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
+     *         JPEG format. Documents for asynchronous operations can also be in PDF format.
+     * @throws DocumentTooLargeException
+     *         The document can't be processed because it's too large. The maximum document size for synchronous
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     * @throws BadDocumentException
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @sample AmazonTextract.AnalyzeExpense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AnalyzeExpenseResult analyzeExpense(AnalyzeExpenseRequest analyzeExpenseRequest);
+
+    /**
+     * <p>
      * Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of
      * text. The input document must be an image in JPEG or PNG format. <code>DetectDocumentText</code> returns the
      * detected text in an array of <a>Block</a> objects.
@@ -270,6 +329,9 @@ public interface AmazonTextract {
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @sample AmazonTextract.GetDocumentAnalysis
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis" target="_top">AWS
      *      API Documentation</a>
@@ -335,6 +397,9 @@ public interface AmazonTextract {
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @sample AmazonTextract.GetDocumentTextDetection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection"
      *      target="_top">AWS API Documentation</a>

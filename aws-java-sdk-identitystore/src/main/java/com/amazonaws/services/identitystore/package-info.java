@@ -12,7 +12,11 @@
  */
 
 /**
- * 
+ * <p>
+ * The AWS Single Sign-On (SSO) Identity Store service provides a single place to retrieve all of your identities (users
+ * and groups). For more information about AWS, see the <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.
+ * </p>
  */
 package com.amazonaws.services.identitystore;
 

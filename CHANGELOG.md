@@ -1,3 +1,28 @@
+# __1.12.32__ __2021-07-26__
+## __AWS Proton__
+  - ### Features
+    - Documentation-only update links
+
+## __AWS S3 Control__
+  - ### Features
+    - S3 Access Point aliases can be used anywhere you use S3 bucket names to access data in S3
+
+## __AWS SSO Identity Store__
+  - ### Features
+    - Documentation updates for SSO API Ref.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - SDK update to support creation of Cross-Account Metric Alarms and update API documentation.
+
+## __Amazon Textract__
+  - ### Features
+    - Adds support for AnalyzeExpense, a new API to extract relevant data such as contact information, items purchased, and vendor name, from almost any invoice or receipt without the need for any templates or configuration.
+
+## __Synthetics__
+  - ### Features
+    - CloudWatch Synthetics now supports visual testing in its canaries.
+
 # __1.12.31__ __2021-07-23__
 ## __AWS SecurityHub__
   - ### Features

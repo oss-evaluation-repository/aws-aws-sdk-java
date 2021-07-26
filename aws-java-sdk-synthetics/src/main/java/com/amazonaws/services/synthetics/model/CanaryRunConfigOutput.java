@@ -43,7 +43,7 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
     private Integer memoryInMB;
     /**
      * <p>
-     * Displays whether this canary run used active AWS X-Ray tracing.
+     * Displays whether this canary run used active X-Ray tracing.
      * </p>
      */
     private Boolean activeTracing;
@@ -136,11 +136,11 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Displays whether this canary run used active AWS X-Ray tracing.
+     * Displays whether this canary run used active X-Ray tracing.
      * </p>
      * 
      * @param activeTracing
-     *        Displays whether this canary run used active AWS X-Ray tracing.
+     *        Displays whether this canary run used active X-Ray tracing.
      */
 
     public void setActiveTracing(Boolean activeTracing) {
@@ -149,10 +149,10 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Displays whether this canary run used active AWS X-Ray tracing.
+     * Displays whether this canary run used active X-Ray tracing.
      * </p>
      * 
-     * @return Displays whether this canary run used active AWS X-Ray tracing.
+     * @return Displays whether this canary run used active X-Ray tracing.
      */
 
     public Boolean getActiveTracing() {
@@ -161,11 +161,11 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Displays whether this canary run used active AWS X-Ray tracing.
+     * Displays whether this canary run used active X-Ray tracing.
      * </p>
      * 
      * @param activeTracing
-     *        Displays whether this canary run used active AWS X-Ray tracing.
+     *        Displays whether this canary run used active X-Ray tracing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,10 +176,10 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Displays whether this canary run used active AWS X-Ray tracing.
+     * Displays whether this canary run used active X-Ray tracing.
      * </p>
      * 
-     * @return Displays whether this canary run used active AWS X-Ray tracing.
+     * @return Displays whether this canary run used active X-Ray tracing.
      */
 
     public Boolean isActiveTracing() {

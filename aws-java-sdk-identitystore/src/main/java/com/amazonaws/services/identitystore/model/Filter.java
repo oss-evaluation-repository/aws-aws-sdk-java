@@ -31,9 +31,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute path used to specify which attribute name to search. Length limit is 255 characters. For example,
-     * <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
-     * is a valid attribute path for the <code>ListGroups</code> API.
+     * The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For
+     * example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     * <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      * </p>
      */
     private String attributePath;
@@ -46,14 +46,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute path used to specify which attribute name to search. Length limit is 255 characters. For example,
-     * <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
-     * is a valid attribute path for the <code>ListGroups</code> API.
+     * The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For
+     * example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     * <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      * </p>
      * 
      * @param attributePath
-     *        The attribute path used to specify which attribute name to search. Length limit is 255 characters. For
-     *        example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     *        The attribute path that is used to specify which attribute name to search. Length limit is 255 characters.
+     *        For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
      *        <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      */
 
@@ -63,14 +63,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute path used to specify which attribute name to search. Length limit is 255 characters. For example,
-     * <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
-     * is a valid attribute path for the <code>ListGroups</code> API.
+     * The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For
+     * example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     * <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      * </p>
      * 
-     * @return The attribute path used to specify which attribute name to search. Length limit is 255 characters. For
-     *         example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
-     *         <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
+     * @return The attribute path that is used to specify which attribute name to search. Length limit is 255
+     *         characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code>
+     *         API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      */
 
     public String getAttributePath() {
@@ -79,14 +79,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute path used to specify which attribute name to search. Length limit is 255 characters. For example,
-     * <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
-     * is a valid attribute path for the <code>ListGroups</code> API.
+     * The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For
+     * example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     * <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      * </p>
      * 
      * @param attributePath
-     *        The attribute path used to specify which attribute name to search. Length limit is 255 characters. For
-     *        example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
+     *        The attribute path that is used to specify which attribute name to search. Length limit is 255 characters.
+     *        For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and
      *        <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

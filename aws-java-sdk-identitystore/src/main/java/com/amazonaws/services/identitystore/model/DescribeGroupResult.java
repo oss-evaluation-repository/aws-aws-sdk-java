@@ -31,10 +31,10 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     private String groupId;
     /**
      * <p>
-     * Contains the group’s display name value. The length limit is 1024 characters. This value can consist of letters,
-     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non breaking space
-     * in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at the time the group is
-     * created and stored as an attribute of the group object in the identity store.
+     * Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters,
+     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space
+     * in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that
+     * the group is created and stored as an attribute of the group object in the identity store.
      * </p>
      */
     private String displayName;
@@ -81,17 +81,18 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains the group’s display name value. The length limit is 1024 characters. This value can consist of letters,
-     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non breaking space
-     * in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at the time the group is
-     * created and stored as an attribute of the group object in the identity store.
+     * Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters,
+     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space
+     * in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that
+     * the group is created and stored as an attribute of the group object in the identity store.
      * </p>
      * 
      * @param displayName
-     *        Contains the group’s display name value. The length limit is 1024 characters. This value can consist of
-     *        letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non
-     *        breaking space in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at
-     *        the time the group is created and stored as an attribute of the group object in the identity store.
+     *        Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of
+     *        letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and
+     *        nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     *        specified at the time that the group is created and stored as an attribute of the group object in the
+     *        identity store.
      */
 
     public void setDisplayName(String displayName) {
@@ -100,16 +101,17 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains the group’s display name value. The length limit is 1024 characters. This value can consist of letters,
-     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non breaking space
-     * in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at the time the group is
-     * created and stored as an attribute of the group object in the identity store.
+     * Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters,
+     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space
+     * in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that
+     * the group is created and stored as an attribute of the group object in the identity store.
      * </p>
      * 
-     * @return Contains the group’s display name value. The length limit is 1024 characters. This value can consist of
-     *         letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and
-     *         non breaking space in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     *         at the time the group is created and stored as an attribute of the group object in the identity store.
+     * @return Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of
+     *         letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and
+     *         nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     *         specified at the time that the group is created and stored as an attribute of the group object in the
+     *         identity store.
      */
 
     public String getDisplayName() {
@@ -118,17 +120,18 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Contains the group’s display name value. The length limit is 1024 characters. This value can consist of letters,
-     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non breaking space
-     * in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at the time the group is
-     * created and stored as an attribute of the group object in the identity store.
+     * Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters,
+     * accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space
+     * in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that
+     * the group is created and stored as an attribute of the group object in the identity store.
      * </p>
      * 
      * @param displayName
-     *        Contains the group’s display name value. The length limit is 1024 characters. This value can consist of
-     *        letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space and non
-     *        breaking space in this attribute. The characters “&lt;&gt;;:%” are excluded. This value is specified at
-     *        the time the group is created and stored as an attribute of the group object in the identity store.
+     *        Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of
+     *        letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and
+     *        nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     *        specified at the time that the group is created and stored as an attribute of the group object in the
+     *        identity store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

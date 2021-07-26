@@ -104,6 +104,10 @@ public class CanaryJsonUnmarshaller implements Unmarshaller<Canary, JsonUnmarsha
                     context.nextToken();
                     canary.setVpcConfig(VpcConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VisualReference", targetDepth)) {
+                    context.nextToken();
+                    canary.setVisualReference(VisualReferenceOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     canary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

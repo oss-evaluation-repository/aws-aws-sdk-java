@@ -108,6 +108,39 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AnalyzeExpenseResult> analyzeExpenseAsync(AnalyzeExpenseRequest request) {
+
+        return analyzeExpenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AnalyzeExpenseResult> analyzeExpenseAsync(final AnalyzeExpenseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AnalyzeExpenseRequest, AnalyzeExpenseResult> asyncHandler) {
+        final AnalyzeExpenseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AnalyzeExpenseResult>() {
+            @Override
+            public AnalyzeExpenseResult call() throws Exception {
+                AnalyzeExpenseResult result = null;
+
+                try {
+                    result = executeAnalyzeExpense(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetectDocumentTextResult> detectDocumentTextAsync(DetectDocumentTextRequest request) {
 
         return detectDocumentTextAsync(request, null);

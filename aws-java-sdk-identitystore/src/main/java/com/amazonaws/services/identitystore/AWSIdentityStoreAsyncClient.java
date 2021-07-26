@@ -24,6 +24,12 @@ import java.util.concurrent.ExecutorService;
  * Client for accessing IdentityStore asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <p>
+ * The AWS Single Sign-On (SSO) Identity Store service provides a single place to retrieve all of your identities (users
+ * and groups). For more information about AWS, see the <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

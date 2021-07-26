@@ -48,7 +48,7 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include
-     * the log file, screenshots, and HAR files.
+     * the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      * </p>
      */
     private String artifactS3Location;
@@ -280,12 +280,12 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include
-     * the log file, screenshots, and HAR files.
+     * the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      * </p>
      * 
      * @param artifactS3Location
      *        The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts
-     *        include the log file, screenshots, and HAR files.
+     *        include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      */
 
     public void setArtifactS3Location(String artifactS3Location) {
@@ -295,11 +295,11 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include
-     * the log file, screenshots, and HAR files.
+     * the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      * </p>
      * 
      * @return The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts
-     *         include the log file, screenshots, and HAR files.
+     *         include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      */
 
     public String getArtifactS3Location() {
@@ -309,12 +309,12 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include
-     * the log file, screenshots, and HAR files.
+     * the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      * </p>
      * 
      * @param artifactS3Location
      *        The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts
-     *        include the log file, screenshots, and HAR files.
+     *        include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

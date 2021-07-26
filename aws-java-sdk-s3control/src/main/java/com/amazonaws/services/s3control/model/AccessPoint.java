@@ -66,6 +66,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      */
     private String accessPointArn;
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     */
+    private String alias;
 
     /**
      * <p>
@@ -349,6 +355,46 @@ public class AccessPoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @param alias
+     *        The name or alias of the access point.
+     */
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @return The name or alias of the access point.
+     */
+
+    public String getAlias() {
+        return this.alias;
+    }
+
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @param alias
+     *        The name or alias of the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPoint withAlias(String alias) {
+        setAlias(alias);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -369,7 +415,9 @@ public class AccessPoint implements Serializable, Cloneable {
         if (getBucket() != null)
             sb.append("Bucket: ").append(getBucket()).append(",");
         if (getAccessPointArn() != null)
-            sb.append("AccessPointArn: ").append(getAccessPointArn());
+            sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
+        if (getAlias() != null)
+            sb.append("Alias: ").append(getAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +452,10 @@ public class AccessPoint implements Serializable, Cloneable {
             return false;
         if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
             return false;
+        if (other.getAlias() == null ^ this.getAlias() == null)
+            return false;
+        if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
+            return false;
         return true;
     }
 
@@ -417,6 +469,7 @@ public class AccessPoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
+        hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         return hashCode;
     }
 

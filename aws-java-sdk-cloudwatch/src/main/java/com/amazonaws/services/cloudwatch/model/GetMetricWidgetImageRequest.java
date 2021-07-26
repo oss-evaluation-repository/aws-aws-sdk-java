@@ -83,8 +83,8 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions
-     * using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
-     * content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     * using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the
+     * HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
      * </p>
      */
     private String outputFormat;
@@ -233,8 +233,8 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions
-     * using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
-     * content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     * using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the
+     * HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
      * </p>
      * 
      * @param outputFormat
@@ -276,8 +276,9 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all
-     *        actions using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP
-     *        response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     *        actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
+     *        <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body
+     *        of the response is a PNG image.
      */
 
     public void setOutputFormat(String outputFormat) {
@@ -325,8 +326,8 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions
-     * using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
-     * content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     * using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the
+     * HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
      * </p>
      * 
      * @return The format of the resulting image. Only PNG images are supported.</p>
@@ -367,9 +368,9 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all
-     *         actions using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the
-     *         HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG
-     *         image.
+     *         actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
+     *         <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body
+     *         of the response is a PNG image.
      */
 
     public String getOutputFormat() {
@@ -417,8 +418,8 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions
-     * using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
-     * content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     * using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the
+     * HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
      * </p>
      * 
      * @param outputFormat
@@ -460,8 +461,9 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all
-     *        actions using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP
-     *        response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.
+     *        actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
+     *        <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body
+     *        of the response is a PNG image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

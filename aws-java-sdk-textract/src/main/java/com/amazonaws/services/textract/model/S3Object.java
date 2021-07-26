@@ -38,7 +38,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the S3 bucket.
+     * The name of the S3 bucket. Note that the # character is not valid in the file name.
      * </p>
      */
     private String bucket;
@@ -58,11 +58,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the S3 bucket.
+     * The name of the S3 bucket. Note that the # character is not valid in the file name.
      * </p>
      * 
      * @param bucket
-     *        The name of the S3 bucket.
+     *        The name of the S3 bucket. Note that the # character is not valid in the file name.
      */
 
     public void setBucket(String bucket) {
@@ -71,10 +71,10 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the S3 bucket.
+     * The name of the S3 bucket. Note that the # character is not valid in the file name.
      * </p>
      * 
-     * @return The name of the S3 bucket.
+     * @return The name of the S3 bucket. Note that the # character is not valid in the file name.
      */
 
     public String getBucket() {
@@ -83,11 +83,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the S3 bucket.
+     * The name of the S3 bucket. Note that the # character is not valid in the file name.
      * </p>
      * 
      * @param bucket
-     *        The name of the S3 bucket.
+     *        The name of the S3 bucket. Note that the # character is not valid in the file name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

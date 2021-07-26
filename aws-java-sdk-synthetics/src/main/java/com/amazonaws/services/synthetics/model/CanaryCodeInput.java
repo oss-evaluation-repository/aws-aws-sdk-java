@@ -33,8 +33,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If your canary script is located in S3, specify the full bucket name here. The bucket must already exist. Specify
-     * the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     * If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the
+     * start of the bucket name.
      * </p>
      */
     private String s3Bucket;
@@ -54,27 +54,27 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
      * The entry point to use for the source code when running the canary. This value must end with the string
-     * <code>.handler</code>.
+     * <code>.handler</code>. The string is limited to 29 characters or fewer.
      * </p>
      */
     private String handler;
 
     /**
      * <p>
-     * If your canary script is located in S3, specify the full bucket name here. The bucket must already exist. Specify
-     * the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     * If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the
+     * start of the bucket name.
      * </p>
      * 
      * @param s3Bucket
-     *        If your canary script is located in S3, specify the full bucket name here. The bucket must already exist.
-     *        Specify the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     *        If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as
+     *        the start of the bucket name.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -83,12 +83,12 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If your canary script is located in S3, specify the full bucket name here. The bucket must already exist. Specify
-     * the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     * If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the
+     * start of the bucket name.
      * </p>
      * 
-     * @return If your canary script is located in S3, specify the full bucket name here. The bucket must already exist.
-     *         Specify the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     * @return If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code>
+     *         as the start of the bucket name.
      */
 
     public String getS3Bucket() {
@@ -97,13 +97,13 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If your canary script is located in S3, specify the full bucket name here. The bucket must already exist. Specify
-     * the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     * If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the
+     * start of the bucket name.
      * </p>
      * 
      * @param s3Bucket
-     *        If your canary script is located in S3, specify the full bucket name here. The bucket must already exist.
-     *        Specify the full bucket name, including <code>s3://</code> as the start of the bucket name.
+     *        If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as
+     *        the start of the bucket name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,7 +204,7 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -219,7 +219,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param zipFile
      *        If you input your canary script directly into the canary instead of referring to an S3 location, the value
-     *        of this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up
+     *        to 5 MB.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -229,7 +230,7 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -240,7 +241,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @return If you input your canary script directly into the canary instead of referring to an S3 location, the
-     *         value of this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     *         value of this parameter is the base64-encoded contents of the .zip file that contains the script. It can
+     *         be up to 5 MB.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -250,7 +252,7 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -265,7 +267,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param zipFile
      *        If you input your canary script directly into the canary instead of referring to an S3 location, the value
-     *        of this parameter is the .zip file that contains the script. It can be up to 5 MB.
+     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up
+     *        to 5 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,12 +280,12 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The entry point to use for the source code when running the canary. This value must end with the string
-     * <code>.handler</code>.
+     * <code>.handler</code>. The string is limited to 29 characters or fewer.
      * </p>
      * 
      * @param handler
      *        The entry point to use for the source code when running the canary. This value must end with the string
-     *        <code>.handler</code>.
+     *        <code>.handler</code>. The string is limited to 29 characters or fewer.
      */
 
     public void setHandler(String handler) {
@@ -292,11 +295,11 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The entry point to use for the source code when running the canary. This value must end with the string
-     * <code>.handler</code>.
+     * <code>.handler</code>. The string is limited to 29 characters or fewer.
      * </p>
      * 
      * @return The entry point to use for the source code when running the canary. This value must end with the string
-     *         <code>.handler</code>.
+     *         <code>.handler</code>. The string is limited to 29 characters or fewer.
      */
 
     public String getHandler() {
@@ -306,12 +309,12 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The entry point to use for the source code when running the canary. This value must end with the string
-     * <code>.handler</code>.
+     * <code>.handler</code>. The string is limited to 29 characters or fewer.
      * </p>
      * 
      * @param handler
      *        The entry point to use for the source code when running the canary. This value must end with the string
-     *        <code>.handler</code>.
+     *        <code>.handler</code>. The string is limited to 29 characters or fewer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

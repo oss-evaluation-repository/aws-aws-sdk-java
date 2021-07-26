@@ -156,6 +156,71 @@ public interface AmazonTextractAsync extends AmazonTextract {
 
     /**
      * <p>
+     * Analyzes an input document for financially related relationships between text.
+     * </p>
+     * <p>
+     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which store information about the lines
+     * of text, such as an item purchased and its price on a receipt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SummaryFields</code>- Contains all other information a receipt, such as header information or the vendors
+     * name.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param analyzeExpenseRequest
+     * @return A Java Future containing the result of the AnalyzeExpense operation returned by the service.
+     * @sample AmazonTextractAsync.AnalyzeExpense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AnalyzeExpenseResult> analyzeExpenseAsync(AnalyzeExpenseRequest analyzeExpenseRequest);
+
+    /**
+     * <p>
+     * Analyzes an input document for financially related relationships between text.
+     * </p>
+     * <p>
+     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which store information about the lines
+     * of text, such as an item purchased and its price on a receipt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SummaryFields</code>- Contains all other information a receipt, such as header information or the vendors
+     * name.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param analyzeExpenseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AnalyzeExpense operation returned by the service.
+     * @sample AmazonTextractAsyncHandler.AnalyzeExpense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AnalyzeExpenseResult> analyzeExpenseAsync(AnalyzeExpenseRequest analyzeExpenseRequest,
+            com.amazonaws.handlers.AsyncHandler<AnalyzeExpenseRequest, AnalyzeExpenseResult> asyncHandler);
+
+    /**
+     * <p>
      * Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of
      * text. The input document must be an image in JPEG or PNG format. <code>DetectDocumentText</code> returns the
      * detected text in an array of <a>Block</a> objects.

@@ -69,6 +69,24 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     */
+    private String alias;
+    /**
+     * <p>
+     * The ARN of the access point.
+     * </p>
+     */
+    private String accessPointArn;
+    /**
+     * <p>
+     * The VPC endpoint for the access point.
+     * </p>
+     */
+    private java.util.Map<String, String> endpoints;
 
     /**
      * <p>
@@ -398,6 +416,154 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @param alias
+     *        The name or alias of the access point.
+     */
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @return The name or alias of the access point.
+     */
+
+    public String getAlias() {
+        return this.alias;
+    }
+
+    /**
+     * <p>
+     * The name or alias of the access point.
+     * </p>
+     * 
+     * @param alias
+     *        The name or alias of the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult withAlias(String alias) {
+        setAlias(alias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN of the access point.
+     */
+
+    public void setAccessPointArn(String accessPointArn) {
+        this.accessPointArn = accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the access point.
+     * </p>
+     * 
+     * @return The ARN of the access point.
+     */
+
+    public String getAccessPointArn() {
+        return this.accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN of the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult withAccessPointArn(String accessPointArn) {
+        setAccessPointArn(accessPointArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC endpoint for the access point.
+     * </p>
+     * 
+     * @return The VPC endpoint for the access point.
+     */
+
+    public java.util.Map<String, String> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * <p>
+     * The VPC endpoint for the access point.
+     * </p>
+     * 
+     * @param endpoints
+     *        The VPC endpoint for the access point.
+     */
+
+    public void setEndpoints(java.util.Map<String, String> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    /**
+     * <p>
+     * The VPC endpoint for the access point.
+     * </p>
+     * 
+     * @param endpoints
+     *        The VPC endpoint for the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult withEndpoints(java.util.Map<String, String> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
+    /**
+     * Add a single Endpoints entry
+     *
+     * @see GetAccessPointResult#withEndpoints
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult addEndpointsEntry(String key, String value) {
+        if (null == this.endpoints) {
+            this.endpoints = new java.util.HashMap<String, String>();
+        }
+        if (this.endpoints.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.endpoints.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Endpoints.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult clearEndpointsEntries() {
+        this.endpoints = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -420,7 +586,13 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getPublicAccessBlockConfiguration() != null)
             sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getAlias() != null)
+            sb.append("Alias: ").append(getAlias()).append(",");
+        if (getAccessPointArn() != null)
+            sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +632,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getAlias() == null ^ this.getAlias() == null)
+            return false;
+        if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
+            return false;
+        if (other.getAccessPointArn() == null ^ this.getAccessPointArn() == null)
+            return false;
+        if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
+            return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -474,6 +658,9 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         return hashCode;
     }
 

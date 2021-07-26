@@ -106,6 +106,8 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     private String runtimeVersion;
 
     private VpcConfigOutput vpcConfig;
+
+    private VisualReferenceOutput visualReference;
     /**
      * <p>
      * The list of key-value pairs that are associated with the canary.
@@ -677,6 +679,32 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param visualReference
+     */
+
+    public void setVisualReference(VisualReferenceOutput visualReference) {
+        this.visualReference = visualReference;
+    }
+
+    /**
+     * @return
+     */
+
+    public VisualReferenceOutput getVisualReference() {
+        return this.visualReference;
+    }
+
+    /**
+     * @param visualReference
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Canary withVisualReference(VisualReferenceOutput visualReference) {
+        setVisualReference(visualReference);
+        return this;
+    }
+
+    /**
      * <p>
      * The list of key-value pairs that are associated with the canary.
      * </p>
@@ -784,6 +812,8 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
             sb.append("RuntimeVersion: ").append(getRuntimeVersion()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getVisualReference() != null)
+            sb.append("VisualReference: ").append(getVisualReference()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -856,6 +886,10 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getVisualReference() == null ^ this.getVisualReference() == null)
+            return false;
+        if (other.getVisualReference() != null && other.getVisualReference().equals(this.getVisualReference()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -882,6 +916,7 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEngineArn() == null) ? 0 : getEngineArn().hashCode());
         hashCode = prime * hashCode + ((getRuntimeVersion() == null) ? 0 : getRuntimeVersion().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getVisualReference() == null) ? 0 : getVisualReference().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

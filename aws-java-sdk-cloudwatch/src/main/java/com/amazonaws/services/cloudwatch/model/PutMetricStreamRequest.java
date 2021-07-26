@@ -103,6 +103,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
+     * <p>
+     * You can use this parameter only when you are creating a new metric stream. If you are using this operation to
+     * update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an
+     * existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
@@ -646,12 +654,29 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
+     * <p>
+     * You can use this parameter only when you are creating a new metric stream. If you are using this operation to
+     * update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an
+     * existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
      * 
      * @return A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with
      *         a metric stream.</p>
      *         <p>
      *         Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *         by granting a user permission to access or change only resources with certain tag values.
+     *         </p>
+     *         <p>
+     *         You can use this parameter only when you are creating a new metric stream. If you are using this
+     *         operation to update an existing metric stream, any tags you specify in this parameter are ignored. To
+     *         change the tags of an existing metric stream, use <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *         >TagResource</a> or <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *         >UntagResource</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -670,6 +695,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
+     * <p>
+     * You can use this parameter only when you are creating a new metric stream. If you are using this operation to
+     * update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an
+     * existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
      * 
      * @param tags
      *        A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a
@@ -677,6 +710,15 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        You can use this parameter only when you are creating a new metric stream. If you are using this operation
+     *        to update an existing metric stream, any tags you specify in this parameter are ignored. To change the
+     *        tags of an existing metric stream, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -698,6 +740,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * <p>
+     * You can use this parameter only when you are creating a new metric stream. If you are using this operation to
+     * update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an
+     * existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -709,6 +759,15 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        You can use this parameter only when you are creating a new metric stream. If you are using this operation
+     *        to update an existing metric stream, any tags you specify in this parameter are ignored. To change the
+     *        tags of an existing metric stream, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,6 +790,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
+     * <p>
+     * You can use this parameter only when you are creating a new metric stream. If you are using this operation to
+     * update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an
+     * existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
      * 
      * @param tags
      *        A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a
@@ -738,6 +805,15 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        You can use this parameter only when you are creating a new metric stream. If you are using this operation
+     *        to update an existing metric stream, any tags you specify in this parameter are ignored. To change the
+     *        tags of an existing metric stream, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

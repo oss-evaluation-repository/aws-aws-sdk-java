@@ -36,7 +36,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The ID of the environment account connection that you provide if you're provisioning your environment
      * infrastructure resources to an environment account. You must include either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For more
-     * information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      */
@@ -138,7 +139,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The ID of the environment account connection that you provide if you're provisioning your environment
      * infrastructure resources to an environment account. You must include either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For more
-     * information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -146,7 +148,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The ID of the environment account connection that you provide if you're provisioning your environment
      *        infrastructure resources to an environment account. You must include either the
      *        <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For
-     *        more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      *        account connections</a> in the <i>AWS Proton Administrator guide</i>.
      */
 
@@ -159,14 +162,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The ID of the environment account connection that you provide if you're provisioning your environment
      * infrastructure resources to an environment account. You must include either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For more
-     * information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
      * @return The ID of the environment account connection that you provide if you're provisioning your environment
      *         infrastructure resources to an environment account. You must include either the
      *         <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For
-     *         more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      *         account connections</a> in the <i>AWS Proton Administrator guide</i>.
      */
 
@@ -179,7 +184,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The ID of the environment account connection that you provide if you're provisioning your environment
      * infrastructure resources to an environment account. You must include either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For more
-     * information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
      * connections</a> in the <i>AWS Proton Administrator guide</i>.
      * </p>
      * 
@@ -187,7 +193,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The ID of the environment account connection that you provide if you're provisioning your environment
      *        infrastructure resources to an environment account. You must include either the
      *        <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. For
-     *        more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      *        account connections</a> in the <i>AWS Proton Administrator guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
