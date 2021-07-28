@@ -27,7 +27,7 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the data set whose contents information you want to list.
+     * The name of the dataset whose contents information you want to list.
      * </p>
      */
     private String datasetName;
@@ -45,14 +45,14 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See
      * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      */
     private java.util.Date scheduledOnOrAfter;
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the
      * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      */
@@ -60,11 +60,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the data set whose contents information you want to list.
+     * The name of the dataset whose contents information you want to list.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose contents information you want to list.
+     *        The name of the dataset whose contents information you want to list.
      */
 
     public void setDatasetName(String datasetName) {
@@ -73,10 +73,10 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the data set whose contents information you want to list.
+     * The name of the dataset whose contents information you want to list.
      * </p>
      * 
-     * @return The name of the data set whose contents information you want to list.
+     * @return The name of the dataset whose contents information you want to list.
      */
 
     public String getDatasetName() {
@@ -85,11 +85,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the data set whose contents information you want to list.
+     * The name of the dataset whose contents information you want to list.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose contents information you want to list.
+     *        The name of the dataset whose contents information you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,12 +180,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See
      * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledOnOrAfter
-     *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     *        A filter to limit results to those dataset contents whose creation is scheduled on or after the given
      *        time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
@@ -195,11 +195,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See
      * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
-     * @return A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     * @return A filter to limit results to those dataset contents whose creation is scheduled on or after the given
      *         time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
@@ -209,12 +209,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See
      * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledOnOrAfter
-     *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     *        A filter to limit results to those dataset contents whose creation is scheduled on or after the given
      *        time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -226,13 +226,13 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the
      * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledBefore
-     *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
-     *        See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
+     *        A filter to limit results to those dataset contents whose creation is scheduled before the given time. See
+     *        the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
     public void setScheduledBefore(java.util.Date scheduledBefore) {
@@ -241,11 +241,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the
      * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
-     * @return A filter to limit results to those data set contents whose creation is scheduled before the given time.
+     * @return A filter to limit results to those dataset contents whose creation is scheduled before the given time.
      *         See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
@@ -255,13 +255,13 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the
      * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledBefore
-     *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
-     *        See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
+     *        A filter to limit results to those dataset contents whose creation is scheduled before the given time. See
+     *        the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

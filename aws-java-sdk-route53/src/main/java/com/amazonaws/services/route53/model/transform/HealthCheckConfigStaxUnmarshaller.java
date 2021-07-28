@@ -139,6 +139,11 @@ public class HealthCheckConfigStaxUnmarshaller implements Unmarshaller<HealthChe
                     healthCheckConfig.setInsufficientDataHealthStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("RoutingControlArn", targetDepth)) {
+                    healthCheckConfig.setRoutingControlArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheckConfig;

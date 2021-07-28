@@ -27,7 +27,7 @@ public class DescribeNamespaceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     * The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.
      * </p>
      */
     private String awsAccountId;
@@ -40,11 +40,12 @@ public class DescribeNamespaceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     * The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     *        The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to
+     *        describe.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +54,11 @@ public class DescribeNamespaceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     * The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     * @return The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to
+     *         describe.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +67,12 @@ public class DescribeNamespaceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     * The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespace that you want to describe.
+     *        The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to
+     *        describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

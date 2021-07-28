@@ -98,11 +98,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      */
     private NodePropertiesSummary nodeProperties;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job definition.
+     * </p>
+     */
+    private String jobDefinition;
 
     /**
      * <p>
@@ -556,14 +562,14 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param nodeProperties
      *        The node properties for a single node in a job summary list.</p> <note>
      *        <p>
-     *        This isn't applicable to jobs running on Fargate resources.
+     *        This isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      */
 
@@ -577,13 +583,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @return The node properties for a single node in a job summary list.</p> <note>
      *         <p>
-     *         This isn't applicable to jobs running on Fargate resources.
+     *         This isn't applicable to jobs that are running on Fargate resources.
      *         </p>
      */
 
@@ -597,20 +603,60 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param nodeProperties
      *        The node properties for a single node in a job summary list.</p> <note>
      *        <p>
-     *        This isn't applicable to jobs running on Fargate resources.
+     *        This isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobSummary withNodeProperties(NodePropertiesSummary nodeProperties) {
         setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job definition.
+     * </p>
+     * 
+     * @param jobDefinition
+     *        The Amazon Resource Name (ARN) of the job definition.
+     */
+
+    public void setJobDefinition(String jobDefinition) {
+        this.jobDefinition = jobDefinition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job definition.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job definition.
+     */
+
+    public String getJobDefinition() {
+        return this.jobDefinition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job definition.
+     * </p>
+     * 
+     * @param jobDefinition
+     *        The Amazon Resource Name (ARN) of the job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withJobDefinition(String jobDefinition) {
+        setJobDefinition(jobDefinition);
         return this;
     }
 
@@ -647,7 +693,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         if (getArrayProperties() != null)
             sb.append("ArrayProperties: ").append(getArrayProperties()).append(",");
         if (getNodeProperties() != null)
-            sb.append("NodeProperties: ").append(getNodeProperties());
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
+        if (getJobDefinition() != null)
+            sb.append("JobDefinition: ").append(getJobDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -706,6 +754,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
             return false;
+        if (other.getJobDefinition() == null ^ this.getJobDefinition() == null)
+            return false;
+        if (other.getJobDefinition() != null && other.getJobDefinition().equals(this.getJobDefinition()) == false)
+            return false;
         return true;
     }
 
@@ -725,6 +777,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
         hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
+        hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
         return hashCode;
     }
 

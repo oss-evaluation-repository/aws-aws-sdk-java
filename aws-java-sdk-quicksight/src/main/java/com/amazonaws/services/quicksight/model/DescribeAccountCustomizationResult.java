@@ -25,13 +25,13 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The ID for the AWS account that you're describing.
+     * The ID for the Amazon Web Services account; that you're describing.
      * </p>
      */
     private String awsAccountId;
@@ -43,13 +43,13 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
     private String namespace;
     /**
      * <p>
-     * The QuickSight customizations that exist in the current AWS Region.
+     * The QuickSight customizations that exist in the current Region;.
      * </p>
      */
     private AccountCustomization accountCustomization;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -62,11 +62,12 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     *        The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services
+     *        account;.
      */
 
     public void setArn(String arn) {
@@ -75,10 +76,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * @return The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services
+     *         account;.
      */
 
     public String getArn() {
@@ -87,11 +89,12 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account;.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     *        The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services
+     *        account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +105,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you're describing.
+     * The ID for the Amazon Web Services account; that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you're describing.
+     *        The ID for the Amazon Web Services account; that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -115,10 +118,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you're describing.
+     * The ID for the Amazon Web Services account; that you're describing.
      * </p>
      * 
-     * @return The ID for the AWS account that you're describing.
+     * @return The ID for the Amazon Web Services account; that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -127,11 +130,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you're describing.
+     * The ID for the Amazon Web Services account; that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you're describing.
+     *        The ID for the Amazon Web Services account; that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +185,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The QuickSight customizations that exist in the current AWS Region.
+     * The QuickSight customizations that exist in the current Region;.
      * </p>
      * 
      * @param accountCustomization
-     *        The QuickSight customizations that exist in the current AWS Region.
+     *        The QuickSight customizations that exist in the current Region;.
      */
 
     public void setAccountCustomization(AccountCustomization accountCustomization) {
@@ -195,10 +198,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The QuickSight customizations that exist in the current AWS Region.
+     * The QuickSight customizations that exist in the current Region;.
      * </p>
      * 
-     * @return The QuickSight customizations that exist in the current AWS Region.
+     * @return The QuickSight customizations that exist in the current Region;.
      */
 
     public AccountCustomization getAccountCustomization() {
@@ -207,11 +210,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The QuickSight customizations that exist in the current AWS Region.
+     * The QuickSight customizations that exist in the current Region;.
      * </p>
      * 
      * @param accountCustomization
-     *        The QuickSight customizations that exist in the current AWS Region.
+     *        The QuickSight customizations that exist in the current Region;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +225,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -235,10 +238,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -247,11 +250,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

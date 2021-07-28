@@ -27,8 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fully managed, serverless business intelligence service for the AWS Cloud that makes it easy
- * to extend data and insights to every user in your organization. This API reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless business intelligence service for the Cloud that makes it easy to
+ * extend data and insights to every user in your organization. This API reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */
@@ -1980,6 +1980,76 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDescribeUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForAnonymousUserResult> generateEmbedUrlForAnonymousUserAsync(
+            GenerateEmbedUrlForAnonymousUserRequest request) {
+
+        return generateEmbedUrlForAnonymousUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForAnonymousUserResult> generateEmbedUrlForAnonymousUserAsync(
+            final GenerateEmbedUrlForAnonymousUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateEmbedUrlForAnonymousUserRequest, GenerateEmbedUrlForAnonymousUserResult> asyncHandler) {
+        final GenerateEmbedUrlForAnonymousUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateEmbedUrlForAnonymousUserResult>() {
+            @Override
+            public GenerateEmbedUrlForAnonymousUserResult call() throws Exception {
+                GenerateEmbedUrlForAnonymousUserResult result = null;
+
+                try {
+                    result = executeGenerateEmbedUrlForAnonymousUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForRegisteredUserResult> generateEmbedUrlForRegisteredUserAsync(
+            GenerateEmbedUrlForRegisteredUserRequest request) {
+
+        return generateEmbedUrlForRegisteredUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForRegisteredUserResult> generateEmbedUrlForRegisteredUserAsync(
+            final GenerateEmbedUrlForRegisteredUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateEmbedUrlForRegisteredUserRequest, GenerateEmbedUrlForRegisteredUserResult> asyncHandler) {
+        final GenerateEmbedUrlForRegisteredUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateEmbedUrlForRegisteredUserResult>() {
+            @Override
+            public GenerateEmbedUrlForRegisteredUserResult call() throws Exception {
+                GenerateEmbedUrlForRegisteredUserResult result = null;
+
+                try {
+                    result = executeGenerateEmbedUrlForRegisteredUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

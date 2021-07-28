@@ -27,7 +27,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account associated with your QuickSight subscription.
+     * The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      * </p>
      */
     private String awsAccountId;
@@ -96,7 +96,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
      * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
@@ -109,11 +109,11 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account associated with your QuickSight subscription.
+     * The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account associated with your QuickSight subscription.
+     *        The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -122,10 +122,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account associated with your QuickSight subscription.
+     * The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      * </p>
      * 
-     * @return The ID for the AWS account associated with your QuickSight subscription.
+     * @return The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      */
 
     public String getAwsAccountId() {
@@ -134,11 +134,11 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account associated with your QuickSight subscription.
+     * The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account associated with your QuickSight subscription.
+     *        The ID for the Amazon Web Services account; associated with your QuickSight subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,7 +450,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
      * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
@@ -476,7 +476,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
+     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
      *        Single Sign-On using SAML, OpenID Connect, or IAM federation
      *        </p>
      *        </li>
@@ -508,7 +508,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
      * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
@@ -533,8 +533,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through
-     *         Federated Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *         Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
+     *         Single Sign-On using SAML, OpenID Connect, or IAM federation
      *         </p>
      *         </li>
      *         </ol>
@@ -565,7 +565,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
+     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
      * Sign-On using SAML, OpenID Connect, or IAM federation
      * </p>
      * </li>
@@ -591,7 +591,7 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
+     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
      *        Single Sign-On using SAML, OpenID Connect, or IAM federation
      *        </p>
      *        </li>

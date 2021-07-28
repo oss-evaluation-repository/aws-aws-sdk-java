@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An activity that adds information from the AWS IoT Device Shadow service to a message.
+ * An activity that adds information from the IoT Device Shadow service to a message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceShadowEnrichActivity"

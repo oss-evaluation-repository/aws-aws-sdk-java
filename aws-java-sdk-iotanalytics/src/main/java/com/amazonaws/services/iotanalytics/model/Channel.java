@@ -38,8 +38,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      */
     private ChannelStorage storage;
@@ -78,7 +78,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -130,14 +130,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param storage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      */
 
     public void setStorage(ChannelStorage storage) {
@@ -147,13 +147,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @return Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *         You cannot change this storage option after the channel is created.
+     *         You can't change this storage option after the channel is created.
      */
 
     public ChannelStorage getStorage() {
@@ -163,14 +163,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param storage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,7 +403,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -413,7 +413,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the channel.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *        IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *        <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
@@ -429,7 +429,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -438,7 +438,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The last time when a new message arrived in the channel.</p>
      *         <p>
-     *         AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *         IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *         <code>lastMessageArrivalTime</code> value is an approximation.
      *         </p>
      *         <p>
@@ -454,7 +454,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -464,7 +464,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the channel.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *        IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *        <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>

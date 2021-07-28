@@ -56,6 +56,11 @@ public class DatastoreStorageSummaryJsonUnmarshaller implements Unmarshaller<Dat
                     context.nextToken();
                     datastoreStorageSummary.setCustomerManagedS3(CustomerManagedDatastoreS3StorageSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("iotSiteWiseMultiLayerStorage", targetDepth)) {
+                    context.nextToken();
+                    datastoreStorageSummary.setIotSiteWiseMultiLayerStorage(DatastoreIotSiteWiseMultiLayerStorageSummaryJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

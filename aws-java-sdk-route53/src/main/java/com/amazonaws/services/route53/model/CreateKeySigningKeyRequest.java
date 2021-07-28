@@ -39,10 +39,10 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
     private String hostedZoneId;
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     * DNSSEC, scroll down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service (KMS).
+     * The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
+     * To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
+     * down to <b>Example</b>.
      * </p>
      * <p>
      * You must configure the customer managed CMK as follows:
@@ -95,16 +95,15 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with a customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with a customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      */
     private String keyManagementServiceArn;
@@ -205,10 +204,10 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     * DNSSEC, scroll down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service (KMS).
+     * The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
+     * To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
+     * down to <b>Example</b>.
      * </p>
      * <p>
      * You must configure the customer managed CMK as follows:
@@ -261,23 +260,22 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with a customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with a customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
      * @param keyManagementServiceArn
-     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
-     *        Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
-     *        in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct
-     *        permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service
+     *        (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     *        hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions
+     *        for DNSSEC, scroll down to <b>Example</b>. </p>
      *        <p>
      *        You must configure the customer managed CMK as follows:
      *        </p>
@@ -329,15 +327,15 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     *        <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with a customer managed CMK in AWS KMS, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *        For more information about working with a customer managed CMK in KMS, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *        concepts</a>.
      */
 
@@ -347,10 +345,10 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     * DNSSEC, scroll down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service (KMS).
+     * The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
+     * To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
+     * down to <b>Example</b>.
      * </p>
      * <p>
      * You must configure the customer managed CMK as follows:
@@ -403,22 +401,21 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with a customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with a customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
-     *         Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
-     *         in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the
-     *         correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+     * @return The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service
+     *         (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     *         hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct
+     *         permissions for DNSSEC, scroll down to <b>Example</b>. </p>
      *         <p>
      *         You must configure the customer managed CMK as follows:
      *         </p>
@@ -470,15 +467,15 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     *         <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *         </p>
      *         </li>
      *         </ul>
      *         </dd>
      *         </dl>
      *         <p>
-     *         For more information about working with a customer managed CMK in AWS KMS, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *         For more information about working with a customer managed CMK in KMS, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *         concepts</a>.
      */
 
@@ -488,10 +485,10 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for
-     * DNSSEC, scroll down to <b>Example</b>.
+     * The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service (KMS).
+     * The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
+     * To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll
+     * down to <b>Example</b>.
      * </p>
      * <p>
      * You must configure the customer managed CMK as follows:
@@ -544,23 +541,22 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with a customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with a customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
      * @param keyManagementServiceArn
-     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management
-     *        Service (AWS KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK)
-     *        in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct
-     *        permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+     *        The Amazon resource name (ARN) for a customer managed customer master key (CMK) in Key Management Service
+     *        (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single
+     *        hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions
+     *        for DNSSEC, scroll down to <b>Example</b>. </p>
      *        <p>
      *        You must configure the customer managed CMK as follows:
      *        </p>
@@ -612,15 +608,15 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
+     *        <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with a customer managed CMK in AWS KMS, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *        For more information about working with a customer managed CMK in KMS, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *        concepts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

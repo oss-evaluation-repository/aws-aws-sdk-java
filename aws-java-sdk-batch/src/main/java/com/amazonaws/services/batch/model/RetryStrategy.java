@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The retry strategy associated with a job. For more information, see <a
- * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>AWS
- * Batch User Guide</i>.
+ * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch
+ * User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RetryStrategy" target="_top">AWS API

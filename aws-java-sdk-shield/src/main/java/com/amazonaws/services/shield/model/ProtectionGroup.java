@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource
- * grouping improves the accuracy of detection and reduces false positives.
+ * A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping
+ * improves the accuracy of detection and reduces false positives.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionGroup" target="_top">AWS API
@@ -38,7 +38,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     private String protectionGroupId;
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -56,8 +56,8 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
@@ -142,7 +142,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -160,14 +160,14 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -185,8 +185,8 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @see ProtectionGroupAggregation
@@ -198,7 +198,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -216,13 +216,13 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     * @return Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *         events.</p>
      *         <ul>
      *         <li>
@@ -240,8 +240,8 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *         and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *         and origin resources for CloudFront distributions.
+     *         and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *         distributions and origin resources for CloudFront distributions.
      *         </p>
      *         </li>
      * @see ProtectionGroupAggregation
@@ -253,7 +253,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -271,14 +271,14 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -296,8 +296,8 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -311,7 +311,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -329,14 +329,14 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -354,8 +354,8 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in the Amazon
- * QuickSight console. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one
- * visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other
- * components, such as controls, filters, and so on.
+ * A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon
+ * QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization
+ * widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such
+ * as controls, filters, and so on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Sheet" target="_top">AWS API

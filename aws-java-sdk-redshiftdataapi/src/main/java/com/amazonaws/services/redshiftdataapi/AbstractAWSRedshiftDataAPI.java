@@ -28,6 +28,11 @@ public class AbstractAWSRedshiftDataAPI implements AWSRedshiftDataAPI {
     }
 
     @Override
+    public BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelStatementResult cancelStatement(CancelStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

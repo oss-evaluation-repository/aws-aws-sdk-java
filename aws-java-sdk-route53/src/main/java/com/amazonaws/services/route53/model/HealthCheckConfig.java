@@ -169,6 +169,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -306,9 +313,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private Integer failureThreshold;
     /**
      * <p>
-     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions
-     * and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.
+     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web
+     * Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
+     * the Route 53 console.
      * </p>
      * <important>
      * <p>
@@ -465,6 +472,12 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      */
     private String insufficientDataHealthStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     * </p>
+     */
+    private String routingControlArn;
 
     /**
      * <p>
@@ -991,6 +1004,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1060,6 +1080,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the
      *        number of health checks that Route 53 health checkers consider to be healthy and compares that number with
      *        the value of <code>HealthThreshold</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller
+     *        routing control. If the routing control state is <code>ON</code>, the health check is considered healthy.
+     *        If the state is <code>OFF</code>, the health check is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -1141,6 +1168,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1209,6 +1243,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the
      *         number of health checks that Route 53 health checkers consider to be healthy and compares that number
      *         with the value of <code>HealthThreshold</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller
+     *         routing control. If the routing control state is <code>ON</code>, the health check is considered healthy.
+     *         If the state is <code>OFF</code>, the health check is considered unhealthy.
      *         </p>
      *         </li>
      *         </ul>
@@ -1291,6 +1332,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1360,6 +1408,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the
      *        number of health checks that Route 53 health checkers consider to be healthy and compares that number with
      *        the value of <code>HealthThreshold</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller
+     *        routing control. If the routing control state is <code>ON</code>, the health check is considered healthy.
+     *        If the state is <code>OFF</code>, the health check is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -1443,6 +1498,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1512,6 +1574,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the
      *        number of health checks that Route 53 health checkers consider to be healthy and compares that number with
      *        the value of <code>HealthThreshold</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller
+     *        routing control. If the routing control state is <code>ON</code>, the health check is considered healthy.
+     *        If the state is <code>OFF</code>, the health check is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -1593,6 +1662,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>HealthThreshold</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing
+     * control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1662,6 +1738,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the
      *        number of health checks that Route 53 health checkers consider to be healthy and compares that number with
      *        the value of <code>HealthThreshold</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller
+     *        routing control. If the routing control state is <code>ON</code>, the health check is considered healthy.
+     *        If the state is <code>OFF</code>, the health check is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -2464,9 +2547,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions
-     * and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.
+     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web
+     * Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
+     * the Route 53 console.
      * </p>
      * <important>
      * <p>
@@ -2475,9 +2558,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </important>
      * 
      * @param measureLatency
-     *        Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS
-     *        regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
-     *        the Route 53 console.</p> <important>
+     *        Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon
+     *        Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health
+     *        Checks</b> page in the Route 53 console.</p> <important>
      *        <p>
      *        You can't change the value of <code>MeasureLatency</code> after you create a health check.
      *        </p>
@@ -2489,9 +2572,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions
-     * and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.
+     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web
+     * Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
+     * the Route 53 console.
      * </p>
      * <important>
      * <p>
@@ -2499,9 +2582,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * </important>
      * 
-     * @return Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS
-     *         regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
-     *         the Route 53 console.</p> <important>
+     * @return Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple
+     *         Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health
+     *         Checks</b> page in the Route 53 console.</p> <important>
      *         <p>
      *         You can't change the value of <code>MeasureLatency</code> after you create a health check.
      *         </p>
@@ -2513,9 +2596,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions
-     * and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.
+     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web
+     * Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
+     * the Route 53 console.
      * </p>
      * <important>
      * <p>
@@ -2524,9 +2607,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </important>
      * 
      * @param measureLatency
-     *        Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS
-     *        regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
-     *        the Route 53 console.</p> <important>
+     *        Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon
+     *        Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health
+     *        Checks</b> page in the Route 53 console.</p> <important>
      *        <p>
      *        You can't change the value of <code>MeasureLatency</code> after you create a health check.
      *        </p>
@@ -2540,9 +2623,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions
-     * and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.
+     * Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web
+     * Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
+     * the Route 53 console.
      * </p>
      * <important>
      * <p>
@@ -2550,9 +2633,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * </important>
      * 
-     * @return Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS
-     *         regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in
-     *         the Route 53 console.</p> <important>
+     * @return Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple
+     *         Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health
+     *         Checks</b> page in the Route 53 console.</p> <important>
      *         <p>
      *         You can't change the value of <code>MeasureLatency</code> after you create a health check.
      *         </p>
@@ -3850,6 +3933,46 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     * </p>
+     * 
+     * @param routingControlArn
+     *        The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     */
+
+    public void setRoutingControlArn(String routingControlArn) {
+        this.routingControlArn = routingControlArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     */
+
+    public String getRoutingControlArn() {
+        return this.routingControlArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     * </p>
+     * 
+     * @param routingControlArn
+     *        The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HealthCheckConfig withRoutingControlArn(String routingControlArn) {
+        setRoutingControlArn(routingControlArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3894,7 +4017,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         if (getAlarmIdentifier() != null)
             sb.append("AlarmIdentifier: ").append(getAlarmIdentifier()).append(",");
         if (getInsufficientDataHealthStatus() != null)
-            sb.append("InsufficientDataHealthStatus: ").append(getInsufficientDataHealthStatus());
+            sb.append("InsufficientDataHealthStatus: ").append(getInsufficientDataHealthStatus()).append(",");
+        if (getRoutingControlArn() != null)
+            sb.append("RoutingControlArn: ").append(getRoutingControlArn());
         sb.append("}");
         return sb.toString();
     }
@@ -3977,6 +4102,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
             return false;
         if (other.getInsufficientDataHealthStatus() != null && other.getInsufficientDataHealthStatus().equals(this.getInsufficientDataHealthStatus()) == false)
             return false;
+        if (other.getRoutingControlArn() == null ^ this.getRoutingControlArn() == null)
+            return false;
+        if (other.getRoutingControlArn() != null && other.getRoutingControlArn().equals(this.getRoutingControlArn()) == false)
+            return false;
         return true;
     }
 
@@ -4002,6 +4131,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         hashCode = prime * hashCode + ((getAlarmIdentifier() == null) ? 0 : getAlarmIdentifier().hashCode());
         hashCode = prime * hashCode + ((getInsufficientDataHealthStatus() == null) ? 0 : getInsufficientDataHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getRoutingControlArn() == null) ? 0 : getRoutingControlArn().hashCode());
         return hashCode;
     }
 

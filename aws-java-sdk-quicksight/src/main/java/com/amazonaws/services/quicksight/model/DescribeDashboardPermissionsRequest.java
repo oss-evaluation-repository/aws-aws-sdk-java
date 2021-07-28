@@ -27,7 +27,7 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions for.
      * </p>
      */
     private String awsAccountId;
@@ -40,11 +40,12 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions for.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     *        The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions
+     *        for.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +54,11 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions for.
      * </p>
      * 
-     * @return The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     * @return The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions
+     *         for.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +67,12 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions for.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the dashboard that you're describing permissions for.
+     *        The ID of the Amazon Web Services account; that contains the dashboard that you're describing permissions
+     *        for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

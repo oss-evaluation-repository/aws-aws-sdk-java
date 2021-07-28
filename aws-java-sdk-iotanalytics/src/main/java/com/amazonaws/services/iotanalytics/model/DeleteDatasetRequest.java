@@ -27,18 +27,18 @@ public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to delete.
+     * The name of the dataset to delete.
      * </p>
      */
     private String datasetName;
 
     /**
      * <p>
-     * The name of the data set to delete.
+     * The name of the dataset to delete.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set to delete.
+     *        The name of the dataset to delete.
      */
 
     public void setDatasetName(String datasetName) {
@@ -47,10 +47,10 @@ public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to delete.
+     * The name of the dataset to delete.
      * </p>
      * 
-     * @return The name of the data set to delete.
+     * @return The name of the dataset to delete.
      */
 
     public String getDatasetName() {
@@ -59,11 +59,11 @@ public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to delete.
+     * The name of the dataset to delete.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set to delete.
+     *        The name of the dataset to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

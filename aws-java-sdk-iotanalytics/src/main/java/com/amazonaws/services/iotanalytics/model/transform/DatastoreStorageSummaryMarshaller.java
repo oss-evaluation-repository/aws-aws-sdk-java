@@ -31,6 +31,8 @@ public class DatastoreStorageSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceManagedS3").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMERMANAGEDS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedS3").build();
+    private static final MarshallingInfo<StructuredPojo> IOTSITEWISEMULTILAYERSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iotSiteWiseMultiLayerStorage").build();
 
     private static final DatastoreStorageSummaryMarshaller instance = new DatastoreStorageSummaryMarshaller();
 
@@ -50,6 +52,7 @@ public class DatastoreStorageSummaryMarshaller {
         try {
             protocolMarshaller.marshall(datastoreStorageSummary.getServiceManagedS3(), SERVICEMANAGEDS3_BINDING);
             protocolMarshaller.marshall(datastoreStorageSummary.getCustomerManagedS3(), CUSTOMERMANAGEDS3_BINDING);
+            protocolMarshaller.marshall(datastoreStorageSummary.getIotSiteWiseMultiLayerStorage(), IOTSITEWISEMULTILAYERSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

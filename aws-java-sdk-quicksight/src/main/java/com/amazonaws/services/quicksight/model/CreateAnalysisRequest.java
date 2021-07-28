@@ -27,7 +27,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you are creating an analysis.
+     * The ID of the Amazon Web Services account; where you are creating an analysis.
      * </p>
      */
     private String awsAccountId;
@@ -54,7 +54,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A structure that describes the principals and the resource-level permissions on an analysis. You can use the
-     * <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access Management
+     * <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management
      * (IAM) action information for each principal listed by Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -85,11 +85,11 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you are creating an analysis.
+     * The ID of the Amazon Web Services account; where you are creating an analysis.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you are creating an analysis.
+     *        The ID of the Amazon Web Services account; where you are creating an analysis.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -98,10 +98,10 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you are creating an analysis.
+     * The ID of the Amazon Web Services account; where you are creating an analysis.
      * </p>
      * 
-     * @return The ID of the AWS account where you are creating an analysis.
+     * @return The ID of the Amazon Web Services account; where you are creating an analysis.
      */
 
     public String getAwsAccountId() {
@@ -110,11 +110,11 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you are creating an analysis.
+     * The ID of the Amazon Web Services account; where you are creating an analysis.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you are creating an analysis.
+     *        The ID of the Amazon Web Services account; where you are creating an analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +258,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A structure that describes the principals and the resource-level permissions on an analysis. You can use the
-     * <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access Management
+     * <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management
      * (IAM) action information for each principal listed by Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -266,8 +266,8 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return A structure that describes the principals and the resource-level permissions on an analysis. You can use
-     *         the <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and
-     *         Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
+     *         the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access
+     *         Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
      *         <p>
      *         To specify no permissions, omit <code>Permissions</code>.
      */
@@ -279,7 +279,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A structure that describes the principals and the resource-level permissions on an analysis. You can use the
-     * <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access Management
+     * <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management
      * (IAM) action information for each principal listed by Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -288,7 +288,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param permissions
      *        A structure that describes the principals and the resource-level permissions on an analysis. You can use
-     *        the <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access
+     *        the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access
      *        Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
      *        <p>
      *        To specify no permissions, omit <code>Permissions</code>.
@@ -306,7 +306,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A structure that describes the principals and the resource-level permissions on an analysis. You can use the
-     * <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access Management
+     * <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management
      * (IAM) action information for each principal listed by Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -320,7 +320,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param permissions
      *        A structure that describes the principals and the resource-level permissions on an analysis. You can use
-     *        the <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access
+     *        the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access
      *        Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
      *        <p>
      *        To specify no permissions, omit <code>Permissions</code>.
@@ -340,7 +340,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A structure that describes the principals and the resource-level permissions on an analysis. You can use the
-     * <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access Management
+     * <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management
      * (IAM) action information for each principal listed by Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -349,7 +349,7 @@ public class CreateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param permissions
      *        A structure that describes the principals and the resource-level permissions on an analysis. You can use
-     *        the <code>Permissions</code> structure to grant permissions by providing a list of AWS Identity and Access
+     *        the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access
      *        Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
      *        <p>
      *        To specify no permissions, omit <code>Permissions</code>.

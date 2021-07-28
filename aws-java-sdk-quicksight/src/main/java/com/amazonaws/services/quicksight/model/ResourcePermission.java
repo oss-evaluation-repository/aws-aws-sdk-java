@@ -46,8 +46,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
-     * resources (templates) across AWS accounts. (This is less common.)
+     * The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this option
+     * only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      * </p>
      * </li>
      * </ul>
@@ -78,8 +78,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
-     * resources (templates) across AWS accounts. (This is less common.)
+     * The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this option
+     * only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      * </p>
      * </li>
      * </ul>
@@ -100,8 +100,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
-     *        share resources (templates) across AWS accounts. (This is less common.)
+     *        The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this
+     *        option only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      *        </p>
      *        </li>
      */
@@ -128,8 +128,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
-     * resources (templates) across AWS accounts. (This is less common.)
+     * The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this option
+     * only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      * </p>
      * </li>
      * </ul>
@@ -149,8 +149,9 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
-     *         share resources (templates) across AWS accounts. (This is less common.)
+     *         The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use
+     *         this option only to share resources (templates) across Amazon Web Services accounts. (This is less
+     *         common.)
      *         </p>
      *         </li>
      */
@@ -177,8 +178,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
-     * resources (templates) across AWS accounts. (This is less common.)
+     * The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this option
+     * only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      * </p>
      * </li>
      * </ul>
@@ -199,8 +200,8 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
-     *        share resources (templates) across AWS accounts. (This is less common.)
+     *        The ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a QuickSight ARN. Use this
+     *        option only to share resources (templates) across Amazon Web Services accounts. (This is less common.)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

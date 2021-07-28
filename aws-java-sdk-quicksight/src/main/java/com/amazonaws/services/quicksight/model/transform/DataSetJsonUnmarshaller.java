@@ -107,6 +107,10 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                     context.nextToken();
                     dataSet.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RowLevelPermissionTagConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ColumnLevelPermissionRules", targetDepth)) {
                     context.nextToken();
                     dataSet.setColumnLevelPermissionRules(new ListUnmarshaller<ColumnLevelPermissionRule>(ColumnLevelPermissionRuleJsonUnmarshaller

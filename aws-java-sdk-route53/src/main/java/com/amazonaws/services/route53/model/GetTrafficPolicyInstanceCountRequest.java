@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to get the number of traffic policy instances that are associated with the current AWS account.
+ * Request to get the number of traffic policy instances that are associated with the current account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"

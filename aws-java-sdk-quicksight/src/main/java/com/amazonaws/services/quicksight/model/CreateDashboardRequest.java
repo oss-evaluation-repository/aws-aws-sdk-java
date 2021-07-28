@@ -27,7 +27,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account where you want to create the dashboard.
+     * The ID of the Amazon Web Services account; where you want to create the dashboard.
      * </p>
      */
     private String awsAccountId;
@@ -66,8 +66,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -119,19 +119,19 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
-     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
-     * where you create the dashboard.
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web
+     * Services account; where you create the dashboard.
      * </p>
      */
     private String themeArn;
 
     /**
      * <p>
-     * The ID of the AWS account where you want to create the dashboard.
+     * The ID of the Amazon Web Services account; where you want to create the dashboard.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to create the dashboard.
+     *        The ID of the Amazon Web Services account; where you want to create the dashboard.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -140,10 +140,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account where you want to create the dashboard.
+     * The ID of the Amazon Web Services account; where you want to create the dashboard.
      * </p>
      * 
-     * @return The ID of the AWS account where you want to create the dashboard.
+     * @return The ID of the Amazon Web Services account; where you want to create the dashboard.
      */
 
     public String getAwsAccountId() {
@@ -152,11 +152,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account where you want to create the dashboard.
+     * The ID of the Amazon Web Services account; where you want to create the dashboard.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to create the dashboard.
+     *        The ID of the Amazon Web Services account; where you want to create the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,8 +395,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -409,7 +409,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first
      *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *        <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *        Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -426,8 +427,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -439,7 +440,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis,
      *         first convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *         <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *         <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *         <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *         Region;. </p>
      *         <p>
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *         datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -456,8 +458,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -470,7 +472,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first
      *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *        <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *        Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -771,14 +774,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
-     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
-     * where you create the dashboard.
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web
+     * Services account; where you create the dashboard.
      * </p>
      * 
      * @param themeArn
      *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *        this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same
-     *        AWS account where you create the dashboard.
+     *        Amazon Web Services account; where you create the dashboard.
      */
 
     public void setThemeArn(String themeArn) {
@@ -788,13 +791,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
-     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
-     * where you create the dashboard.
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web
+     * Services account; where you create the dashboard.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *         this field, it overrides the value that is used in the source entity. The theme ARN must exist in the
-     *         same AWS account where you create the dashboard.
+     *         same Amazon Web Services account; where you create the dashboard.
      */
 
     public String getThemeArn() {
@@ -804,14 +807,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
-     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
-     * where you create the dashboard.
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web
+     * Services account; where you create the dashboard.
      * </p>
      * 
      * @param themeArn
      *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *        this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same
-     *        AWS account where you create the dashboard.
+     *        Amazon Web Services account; where you create the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

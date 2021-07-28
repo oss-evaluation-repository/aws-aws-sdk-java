@@ -56,7 +56,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
     private String reason;
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
@@ -243,14 +243,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
-     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      */
 
@@ -260,14 +260,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
-     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch
-     *         jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach
-     *         the <code>RUNNING</code> status.
+     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *         <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *         <code>RUNNING</code> status.
      */
 
     public String getLogStreamName() {
@@ -276,14 +276,14 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
-     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

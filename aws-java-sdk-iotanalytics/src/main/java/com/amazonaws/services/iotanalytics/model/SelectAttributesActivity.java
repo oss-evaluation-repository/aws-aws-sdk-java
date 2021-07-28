@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates a new message using only the specified attributes from the original message.
+ * Used to create a new message using only the specified attributes from the original message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/SelectAttributesActivity"

@@ -27,7 +27,7 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're updating.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -49,8 +49,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -104,18 +104,18 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
      * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
-     * same AWS account where you create the dashboard.
+     * same Amazon Web Services account; where you create the dashboard.
      * </p>
      */
     private String themeArn;
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're updating.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the dashboard that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -124,10 +124,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're updating.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      * </p>
      * 
-     * @return The ID of the AWS account that contains the dashboard that you're updating.
+     * @return The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -136,11 +136,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS account that contains the dashboard that you're updating.
+     * The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the dashboard that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the dashboard that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,8 +235,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -249,7 +249,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first
      *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code> ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *        <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *        Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -266,8 +267,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -279,7 +280,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis,
      *         first convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *         <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *         <code>SourceTemplate</code> ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *         <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *         Region;. </p>
      *         <p>
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *         datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -296,8 +298,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
      * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any AWS
-     * Account and any QuickSight-supported AWS Region.
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
+     * Web Services account; and any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -310,7 +312,8 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first
      *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
      *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code> ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
+     *        <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any QuickSight-supported
+     *        Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
@@ -588,13 +591,13 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
      * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
-     * same AWS account where you create the dashboard.
+     * same Amazon Web Services account; where you create the dashboard.
      * </p>
      * 
      * @param themeArn
      *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *        this field, it overrides the value that was originally associated with the entity. The theme ARN must
-     *        exist in the same AWS account where you create the dashboard.
+     *        exist in the same Amazon Web Services account; where you create the dashboard.
      */
 
     public void setThemeArn(String themeArn) {
@@ -605,12 +608,12 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
      * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
-     * same AWS account where you create the dashboard.
+     * same Amazon Web Services account; where you create the dashboard.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *         this field, it overrides the value that was originally associated with the entity. The theme ARN must
-     *         exist in the same AWS account where you create the dashboard.
+     *         exist in the same Amazon Web Services account; where you create the dashboard.
      */
 
     public String getThemeArn() {
@@ -621,13 +624,13 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
      * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
-     * same AWS account where you create the dashboard.
+     * same Amazon Web Services account; where you create the dashboard.
      * </p>
      * 
      * @param themeArn
      *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
      *        this field, it overrides the value that was originally associated with the entity. The theme ARN must
-     *        exist in the same AWS account where you create the dashboard.
+     *        exist in the same Amazon Web Services account; where you create the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

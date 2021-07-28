@@ -35,9 +35,9 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
     private String protectionId;
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
-     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
-     * the <code>ProtectionID</code>, but not both.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
+     * described. When submitting the <code>DescribeProtection</code> request you must provide either the
+     * <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      * </p>
      */
     private String resourceArn;
@@ -96,14 +96,14 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
-     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
-     * the <code>ProtectionID</code>, but not both.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
+     * described. When submitting the <code>DescribeProtection</code> request you must provide either the
+     * <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
-     *        When submitting the <code>DescribeProtection</code> request you must provide either the
+     *        The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that
+     *        is described. When submitting the <code>DescribeProtection</code> request you must provide either the
      *        <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      */
 
@@ -113,13 +113,13 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
-     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
-     * the <code>ProtectionID</code>, but not both.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
+     * described. When submitting the <code>DescribeProtection</code> request you must provide either the
+     * <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
-     *         When submitting the <code>DescribeProtection</code> request you must provide either the
+     * @return The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that
+     *         is described. When submitting the <code>DescribeProtection</code> request you must provide either the
      *         <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      */
 
@@ -129,14 +129,14 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
-     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
-     * the <code>ProtectionID</code>, but not both.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
+     * described. When submitting the <code>DescribeProtection</code> request you must provide either the
+     * <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
-     *        When submitting the <code>DescribeProtection</code> request you must provide either the
+     *        The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that
+     *        is described. When submitting the <code>DescribeProtection</code> request you must provide either the
      *        <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

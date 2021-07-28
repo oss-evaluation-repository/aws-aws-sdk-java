@@ -36,7 +36,7 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
     private String datastoreName;
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data in a data store is stored.
      * </p>
      */
     private DatastoreStorageSummary datastoreStorage;
@@ -63,8 +63,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -79,7 +79,7 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
     private String fileFormatType;
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      */
     private DatastorePartitions datastorePartitions;
@@ -126,11 +126,11 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data in a data store is stored.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored.
+     *        Where data in a data store is stored.
      */
 
     public void setDatastoreStorage(DatastoreStorageSummary datastoreStorage) {
@@ -139,10 +139,10 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data in a data store is stored.
      * </p>
      * 
-     * @return Where data store data is stored.
+     * @return Where data in a data store is stored.
      */
 
     public DatastoreStorageSummary getDatastoreStorage() {
@@ -151,11 +151,11 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data in a data store is stored.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored.
+     *        Where data in a data store is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,8 +308,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -318,8 +318,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the data store.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store.
+     *        Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
      *        This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -334,8 +334,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -343,8 +343,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * 
      * @return The last time when a new message arrived in the data store.</p>
      *         <p>
-     *         AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *         <code>lastMessageArrivalTime</code> value is an approximation.
+     *         IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data
+     *         store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *         </p>
      *         <p>
      *         This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -359,8 +359,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -369,8 +369,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the data store.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store.
+     *        Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
      *        This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -443,11 +443,11 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
      * @param datastorePartitions
-     *        Contains information about the partitions in a data store.
+     *        Contains information about the partition dimensions in a data store.
      */
 
     public void setDatastorePartitions(DatastorePartitions datastorePartitions) {
@@ -456,10 +456,10 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
-     * @return Contains information about the partitions in a data store.
+     * @return Contains information about the partition dimensions in a data store.
      */
 
     public DatastorePartitions getDatastorePartitions() {
@@ -468,11 +468,11 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
      * @param datastorePartitions
-     *        Contains information about the partitions in a data store.
+     *        Contains information about the partition dimensions in a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

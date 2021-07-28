@@ -27,9 +27,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags
-     * are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node
-     * parallel (MNP) jobs are not supported.
+     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are
+     * compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+     * (MNP) jobs are not supported.
      * </p>
      */
     private String resourceArn;
@@ -42,13 +42,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags
-     * are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node
-     * parallel (MNP) jobs are not supported.
+     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are
+     * compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+     * (MNP) jobs are not supported.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support
+     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support
      *        tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      *        multi-node parallel (MNP) jobs are not supported.
      */
@@ -59,14 +59,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags
-     * are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node
-     * parallel (MNP) jobs are not supported.
+     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are
+     * compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+     * (MNP) jobs are not supported.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that
-     *         support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of
-     *         array and multi-node parallel (MNP) jobs are not supported.
+     * @return The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support
+     *         tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
+     *         multi-node parallel (MNP) jobs are not supported.
      */
 
     public String getResourceArn() {
@@ -75,13 +75,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags
-     * are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node
-     * parallel (MNP) jobs are not supported.
+     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are
+     * compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+     * (MNP) jobs are not supported.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support
+     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support
      *        tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      *        multi-node parallel (MNP) jobs are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.

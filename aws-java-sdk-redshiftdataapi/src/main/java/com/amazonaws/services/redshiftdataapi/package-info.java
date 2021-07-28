@@ -13,8 +13,8 @@
 
 /**
  * <p>
- * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
- * statements, which are committed if the statement succeeds.
+ * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which
+ * are committed if the statement succeeds.
  * </p>
  * <p>
  * For more information about the Amazon Redshift Data API, see <a

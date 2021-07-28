@@ -31,14 +31,14 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
     private String dataSetArn;
     /**
      * <p>
-     * The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     * account.
+     * The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon Web
+     * Services account;.
      * </p>
      */
     private String dataSetId;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -91,13 +91,13 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     * account.
+     * The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon Web
+     * Services account;.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     *        account.
+     *        The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon
+     *        Web Services account;.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -106,12 +106,12 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     * account.
+     * The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon Web
+     * Services account;.
      * </p>
      * 
-     * @return The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each
-     *         AWS account.
+     * @return The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each
+     *         Amazon Web Services account;.
      */
 
     public String getDataSetId() {
@@ -120,13 +120,13 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     * account.
+     * The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon Web
+     * Services account;.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset whose permissions you want to update. This ID is unique per AWS Region for each AWS
-     *        account.
+     *        The ID for the dataset whose permissions you want to update. This ID is unique per Region; for each Amazon
+     *        Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -150,10 +150,10 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -162,11 +162,11 @@ public class UpdateDataSetPermissionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

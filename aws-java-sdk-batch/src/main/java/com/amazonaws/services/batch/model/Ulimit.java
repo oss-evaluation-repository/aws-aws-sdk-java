@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * This object isn't applicable to jobs running on Fargate resources.
+ * This object isn't applicable to jobs that are running on Fargate resources.
  * </p>
  * </note>
  * 

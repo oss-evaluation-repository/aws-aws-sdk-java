@@ -37,8 +37,8 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of data. For more information about the supported data types, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>AWS
-     * Glue Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue
+     * Developer Guide</i>.
      * </p>
      */
     private String type;
@@ -86,14 +86,14 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of data. For more information about the supported data types, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>AWS
-     * Glue Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue
+     * Developer Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of data. For more information about the supported data types, see <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the
-     *        <i>AWS Glue Developer Guide</i>.
+     *        <i>Glue Developer Guide</i>.
      */
 
     public void setType(String type) {
@@ -103,13 +103,13 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of data. For more information about the supported data types, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>AWS
-     * Glue Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue
+     * Developer Guide</i>.
      * </p>
      * 
      * @return The type of data. For more information about the supported data types, see <a
      *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the
-     *         <i>AWS Glue Developer Guide</i>.
+     *         <i>Glue Developer Guide</i>.
      */
 
     public String getType() {
@@ -119,14 +119,14 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of data. For more information about the supported data types, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>AWS
-     * Glue Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue
+     * Developer Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of data. For more information about the supported data types, see <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the
-     *        <i>AWS Glue Developer Guide</i>.
+     *        <i>Glue Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

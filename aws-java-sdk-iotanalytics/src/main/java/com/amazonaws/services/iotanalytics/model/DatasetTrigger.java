@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <code>DatasetTrigger</code> that specifies when the data set is automatically updated.
+ * The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetTrigger" target="_top">AWS API
@@ -36,7 +36,7 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
     private Schedule schedule;
     /**
      * <p>
-     * The data set whose content creation triggers the creation of this data set's contents.
+     * The dataset whose content creation triggers the creation of this dataset's contents.
      * </p>
      */
     private TriggeringDataset dataset;
@@ -83,11 +83,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation triggers the creation of this data set's contents.
+     * The dataset whose content creation triggers the creation of this dataset's contents.
      * </p>
      * 
      * @param dataset
-     *        The data set whose content creation triggers the creation of this data set's contents.
+     *        The dataset whose content creation triggers the creation of this dataset's contents.
      */
 
     public void setDataset(TriggeringDataset dataset) {
@@ -96,10 +96,10 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation triggers the creation of this data set's contents.
+     * The dataset whose content creation triggers the creation of this dataset's contents.
      * </p>
      * 
-     * @return The data set whose content creation triggers the creation of this data set's contents.
+     * @return The dataset whose content creation triggers the creation of this dataset's contents.
      */
 
     public TriggeringDataset getDataset() {
@@ -108,11 +108,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation triggers the creation of this data set's contents.
+     * The dataset whose content creation triggers the creation of this dataset's contents.
      * </p>
      * 
      * @param dataset
-     *        The data set whose content creation triggers the creation of this data set's contents.
+     *        The dataset whose content creation triggers the creation of this dataset's contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

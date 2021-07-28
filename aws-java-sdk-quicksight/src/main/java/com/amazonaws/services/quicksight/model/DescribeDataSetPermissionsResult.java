@@ -31,7 +31,8 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
     private String dataSetArn;
     /**
      * <p>
-     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     * account;.
      * </p>
      */
     private String dataSetId;
@@ -43,7 +44,7 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -96,11 +97,13 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     * account;.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     *        account;.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -109,10 +112,12 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     * account;.
      * </p>
      * 
-     * @return The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     * @return The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web
+     *         Services account;.
      */
 
     public String getDataSetId() {
@@ -121,11 +126,13 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     * account;.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services
+     *        account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +213,11 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -219,10 +226,10 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -231,11 +238,11 @@ public class DescribeDataSetPermissionsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

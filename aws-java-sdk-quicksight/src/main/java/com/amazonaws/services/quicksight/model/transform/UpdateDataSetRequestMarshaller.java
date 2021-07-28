@@ -47,6 +47,8 @@ public class UpdateDataSetRequestMarshaller {
             .marshallLocationName("FieldFolders").build();
     private static final MarshallingInfo<StructuredPojo> ROWLEVELPERMISSIONDATASET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowLevelPermissionDataSet").build();
+    private static final MarshallingInfo<StructuredPojo> ROWLEVELPERMISSIONTAGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowLevelPermissionTagConfiguration").build();
     private static final MarshallingInfo<List> COLUMNLEVELPERMISSIONRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnLevelPermissionRules").build();
 
@@ -75,6 +77,7 @@ public class UpdateDataSetRequestMarshaller {
             protocolMarshaller.marshall(updateDataSetRequest.getColumnGroups(), COLUMNGROUPS_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getFieldFolders(), FIELDFOLDERS_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getRowLevelPermissionDataSet(), ROWLEVELPERMISSIONDATASET_BINDING);
+            protocolMarshaller.marshall(updateDataSetRequest.getRowLevelPermissionTagConfiguration(), ROWLEVELPERMISSIONTAGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

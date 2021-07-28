@@ -36,9 +36,9 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      */
     private DatastoreStorage storage;
@@ -98,8 +98,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -108,7 +108,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastMessageArrivalTime;
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -121,7 +121,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     private FileFormatConfiguration fileFormatConfiguration;
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      */
     private DatastorePartitions datastorePartitions;
@@ -168,15 +168,16 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
      * @param storage
-     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the data store is created.
+     *        Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *        <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *        is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *        is created.
      */
 
     public void setStorage(DatastoreStorage storage) {
@@ -185,14 +186,15 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
-     * @return Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *         You cannot change this storage option after the data store is created.
+     * @return Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *         <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *         is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *         is created.
      */
 
     public DatastoreStorage getStorage() {
@@ -201,15 +203,16 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
      * @param storage
-     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the data store is created.
+     *        Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *        <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *        is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *        is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,8 +607,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -614,8 +617,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the data store.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store.
+     *        Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
      *        This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -630,8 +633,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -639,8 +642,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The last time when a new message arrived in the data store.</p>
      *         <p>
-     *         AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *         <code>lastMessageArrivalTime</code> value is an approximation.
+     *         IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data
+     *         store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *         </p>
      *         <p>
      *         This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -655,8 +658,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the data store.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence,
+     * the <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
      * This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -665,8 +668,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the data store.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
-     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store.
+     *        Hence, the <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
      *        This feature only applies to messages that arrived in the data store after October 23, 2020.
@@ -680,7 +683,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -691,7 +694,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param fileFormatConfiguration
-     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *        href="https://parquet.apache.org/">Parquet</a>.</p>
      *        <p>
      *        The default file format is JSON. You can specify only one format.
@@ -706,7 +709,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -716,7 +719,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * You can't change the file format after you create the data store.
      * </p>
      * 
-     * @return Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * @return Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *         href="https://parquet.apache.org/">Parquet</a>.</p>
      *         <p>
      *         The default file format is JSON. You can specify only one format.
@@ -731,7 +734,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -742,7 +745,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param fileFormatConfiguration
-     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *        href="https://parquet.apache.org/">Parquet</a>.</p>
      *        <p>
      *        The default file format is JSON. You can specify only one format.
@@ -759,11 +762,11 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
      * @param datastorePartitions
-     *        Contains information about the partitions in a data store.
+     *        Contains information about the partition dimensions in a data store.
      */
 
     public void setDatastorePartitions(DatastorePartitions datastorePartitions) {
@@ -772,10 +775,10 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
-     * @return Contains information about the partitions in a data store.
+     * @return Contains information about the partition dimensions in a data store.
      */
 
     public DatastorePartitions getDatastorePartitions() {
@@ -784,11 +787,11 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about the partitions in a data store.
+     * Contains information about the partition dimensions in a data store.
      * </p>
      * 
      * @param datastorePartitions
-     *        Contains information about the partitions in a data store.
+     *        Contains information about the partition dimensions in a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

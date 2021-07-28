@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The platform configuration for jobs running on Fargate resources. For jobs that run on EC2 resources, you shouldn't
+ * The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not
  * specify this parameter.
  * </p>
  * 
@@ -31,31 +31,33 @@ public class FargatePlatformConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     * The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are
      * running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * default. This uses a recent, approved version of the Fargate platform for compute resources. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String platformVersion;
 
     /**
      * <p>
-     * The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     * The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are
      * running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * default. This uses a recent, approved version of the Fargate platform for compute resources. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
-     *        running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     *        default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     *        that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is
+     *        used by default. This uses a recent, approved version of the Fargate platform for compute resources. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -64,18 +66,19 @@ public class FargatePlatformConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     * The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are
      * running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * default. This uses a recent, approved version of the Fargate platform for compute resources. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The AWS Fargate platform version where the jobs are running. A platform version is specified only for
-     *         jobs running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is
-     *         used by default. This uses a recent, approved version of the AWS Fargate platform for compute resources.
+     * @return The Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     *         that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version
+     *         is used by default. This uses a recent, approved version of the Fargate platform for compute resources.
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -85,20 +88,21 @@ public class FargatePlatformConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     * The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are
      * running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * default. This uses a recent, approved version of the Fargate platform for compute resources. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs
-     *        running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
-     *        default. This uses a recent, approved version of the AWS Fargate platform for compute resources. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The Fargate platform version where the jobs are running. A platform version is specified only for jobs
+     *        that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is
+     *        used by default. This uses a recent, approved version of the Fargate platform for compute resources. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+     *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

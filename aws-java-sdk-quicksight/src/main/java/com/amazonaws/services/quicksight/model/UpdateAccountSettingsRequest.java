@@ -27,33 +27,33 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight settings that you want to list.
+     * The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity and
-     * Access Management (IAM) users that register for the first time with QuickSight provide an email that becomes
-     * associated with the default namespace.
+     * The default namespace for this Amazon Web Services account;. Currently, the default is <code>default</code>.
+     * Identity and Access Management (IAM) users that register for the first time with QuickSight provide an email that
+     * becomes associated with the default namespace.
      * </p>
      */
     private String defaultNamespace;
     /**
      * <p>
-     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
-     * subscription.
+     * The email address that you want QuickSight to send notifications to regarding your Amazon Web Services account;
+     * or QuickSight subscription.
      * </p>
      */
     private String notificationEmail;
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight settings that you want to list.
+     * The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight settings that you want to list.
+     *        The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -62,10 +62,10 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight settings that you want to list.
+     * The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the QuickSight settings that you want to list.
+     * @return The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      */
 
     public String getAwsAccountId() {
@@ -74,11 +74,11 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight settings that you want to list.
+     * The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight settings that you want to list.
+     *        The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,15 +89,15 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity and
-     * Access Management (IAM) users that register for the first time with QuickSight provide an email that becomes
-     * associated with the default namespace.
+     * The default namespace for this Amazon Web Services account;. Currently, the default is <code>default</code>.
+     * Identity and Access Management (IAM) users that register for the first time with QuickSight provide an email that
+     * becomes associated with the default namespace.
      * </p>
      * 
      * @param defaultNamespace
-     *        The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity
-     *        and Access Management (IAM) users that register for the first time with QuickSight provide an email that
-     *        becomes associated with the default namespace.
+     *        The default namespace for this Amazon Web Services account;. Currently, the default is
+     *        <code>default</code>. Identity and Access Management (IAM) users that register for the first time with
+     *        QuickSight provide an email that becomes associated with the default namespace.
      */
 
     public void setDefaultNamespace(String defaultNamespace) {
@@ -106,14 +106,14 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity and
-     * Access Management (IAM) users that register for the first time with QuickSight provide an email that becomes
-     * associated with the default namespace.
+     * The default namespace for this Amazon Web Services account;. Currently, the default is <code>default</code>.
+     * Identity and Access Management (IAM) users that register for the first time with QuickSight provide an email that
+     * becomes associated with the default namespace.
      * </p>
      * 
-     * @return The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity
-     *         and Access Management (IAM) users that register for the first time with QuickSight provide an email that
-     *         becomes associated with the default namespace.
+     * @return The default namespace for this Amazon Web Services account;. Currently, the default is
+     *         <code>default</code>. Identity and Access Management (IAM) users that register for the first time with
+     *         QuickSight provide an email that becomes associated with the default namespace.
      */
 
     public String getDefaultNamespace() {
@@ -122,15 +122,15 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity and
-     * Access Management (IAM) users that register for the first time with QuickSight provide an email that becomes
-     * associated with the default namespace.
+     * The default namespace for this Amazon Web Services account;. Currently, the default is <code>default</code>.
+     * Identity and Access Management (IAM) users that register for the first time with QuickSight provide an email that
+     * becomes associated with the default namespace.
      * </p>
      * 
      * @param defaultNamespace
-     *        The default namespace for this AWS account. Currently, the default is <code>default</code>. AWS Identity
-     *        and Access Management (IAM) users that register for the first time with QuickSight provide an email that
-     *        becomes associated with the default namespace.
+     *        The default namespace for this Amazon Web Services account;. Currently, the default is
+     *        <code>default</code>. Identity and Access Management (IAM) users that register for the first time with
+     *        QuickSight provide an email that becomes associated with the default namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,13 +141,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
-     * subscription.
+     * The email address that you want QuickSight to send notifications to regarding your Amazon Web Services account;
+     * or QuickSight subscription.
      * </p>
      * 
      * @param notificationEmail
-     *        The email address that you want QuickSight to send notifications to regarding your AWS account or
-     *        QuickSight subscription.
+     *        The email address that you want QuickSight to send notifications to regarding your Amazon Web Services
+     *        account; or QuickSight subscription.
      */
 
     public void setNotificationEmail(String notificationEmail) {
@@ -156,12 +156,12 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
-     * subscription.
+     * The email address that you want QuickSight to send notifications to regarding your Amazon Web Services account;
+     * or QuickSight subscription.
      * </p>
      * 
-     * @return The email address that you want QuickSight to send notifications to regarding your AWS account or
-     *         QuickSight subscription.
+     * @return The email address that you want QuickSight to send notifications to regarding your Amazon Web Services
+     *         account; or QuickSight subscription.
      */
 
     public String getNotificationEmail() {
@@ -170,13 +170,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
-     * subscription.
+     * The email address that you want QuickSight to send notifications to regarding your Amazon Web Services account;
+     * or QuickSight subscription.
      * </p>
      * 
      * @param notificationEmail
-     *        The email address that you want QuickSight to send notifications to regarding your AWS account or
-     *        QuickSight subscription.
+     *        The email address that you want QuickSight to send notifications to regarding your Amazon Web Services
+     *        account; or QuickSight subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,10 +32,14 @@ public class StatementDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<Boolean> ISBATCHSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsBatchStatement").build();
     private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryParameters").build();
     private static final MarshallingInfo<String> QUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryString").build();
+    private static final MarshallingInfo<List> QUERYSTRINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueryStrings").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SecretArn").build();
     private static final MarshallingInfo<String> STATEMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,8 +67,10 @@ public class StatementDataMarshaller {
         try {
             protocolMarshaller.marshall(statementData.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(statementData.getId(), ID_BINDING);
+            protocolMarshaller.marshall(statementData.getIsBatchStatement(), ISBATCHSTATEMENT_BINDING);
             protocolMarshaller.marshall(statementData.getQueryParameters(), QUERYPARAMETERS_BINDING);
             protocolMarshaller.marshall(statementData.getQueryString(), QUERYSTRING_BINDING);
+            protocolMarshaller.marshall(statementData.getQueryStrings(), QUERYSTRINGS_BINDING);
             protocolMarshaller.marshall(statementData.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(statementData.getStatementName(), STATEMENTNAME_BINDING);
             protocolMarshaller.marshall(statementData.getStatus(), STATUS_BINDING);

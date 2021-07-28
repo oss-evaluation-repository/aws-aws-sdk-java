@@ -114,6 +114,12 @@ public class DescribeStatementResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeStatementResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubStatements", targetDepth)) {
+                    context.nextToken();
+                    describeStatementResult.setSubStatements(new ListUnmarshaller<SubStatementData>(SubStatementDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
                     context.nextToken();
                     describeStatementResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

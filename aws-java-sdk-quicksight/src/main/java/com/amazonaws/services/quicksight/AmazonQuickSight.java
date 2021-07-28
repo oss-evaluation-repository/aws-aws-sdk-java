@@ -28,8 +28,8 @@ import com.amazonaws.services.quicksight.model.*;
  * <p>
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fully managed, serverless business intelligence service for the AWS Cloud that makes it easy
- * to extend data and insights to every user in your organization. This API reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless business intelligence service for the Cloud that makes it easy to
+ * extend data and insights to every user in your organization. This API reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */
@@ -74,16 +74,17 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * Creates Amazon QuickSight customizations the current Region;. Currently, you can add a custom default theme by
      * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
      * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
      * in the <i>Amazon QuickSight User Guide.</i>
      * </p>
      * <p>
-     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
-     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
-     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * You can create customizations for your Amazon Web Services account; or, if you specify a namespace, for a
+     * QuickSight namespace instead. Customizations that apply to a namespace always override customizations that apply
+     * to an Amazon Web Services account;. To find out which customizations apply, use the
+     * <code>DescribeAccountCustomization</code> API operation.
      * </p>
      * <p>
      * Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default,
@@ -155,7 +156,8 @@ public interface AmazonQuickSight {
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
      * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
-     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
+     * the correct permissions, you can create a dashboard from a template that exists in a different Amazon Web
+     * Services account;.
      * </p>
      * 
      * @param createDashboardRequest
@@ -396,8 +398,9 @@ public interface AmazonQuickSight {
     /**
      * <p>
      * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
-     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS
-     * account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
+     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per
+     * Amazon Web Services account;. To avoid overwriting rules in other namespaces, use assignment names that are
+     * unique.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -433,8 +436,8 @@ public interface AmazonQuickSight {
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
      * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
-     * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
-     * are visible on the tagged dataset, but not on the ingestion resource.
+     * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the Amazon Web Services
+     * Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
      * 
      * @param createIngestionRequest
@@ -469,9 +472,10 @@ public interface AmazonQuickSight {
      * <p>
      * A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users
      * that access the namespace can share assets only with other users or groups in the same namespace. They can't see
-     * users and groups in other namespaces. You can create a namespace after your AWS account is subscribed to
-     * QuickSight. The namespace must be unique within the AWS account. By default, there is a limit of 100 namespaces
-     * per AWS account. To increase your limit, create a ticket with AWS Support.
+     * users and groups in other namespaces. You can create a namespace after your Amazon Web Services account; is
+     * subscribed to QuickSight. The namespace must be unique within the Amazon Web Services account;. By default, there
+     * is a limit of 100 namespaces per Amazon Web Services account;. To increase your limit, create a ticket with
+     * Amazon Web Services Support.
      * </p>
      * 
      * @param createNamespaceRequest
@@ -507,8 +511,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing QuickSight analysis or template. You can use the resulting template to create
-     * a dashboard.
+     * Creates a template from an existing Amazon QuickSight analysis or template. You can use the resulting template to
+     * create a dashboard.
      * </p>
      * <p>
      * A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and
@@ -652,8 +656,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and QuickSight
-     * namespace.
+     * Deletes all Amazon QuickSight customizations in this Region; for the specified Amazon Web Services account; and
+     * QuickSight namespace.
      * </p>
      * 
      * @param deleteAccountCustomizationRequest
@@ -1102,7 +1106,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and Access Management
+     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
      * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
@@ -1163,9 +1167,9 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
-     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
-     * <code>Resolved</code> flag included.
+     * Describes the customizations associated with the provided Amazon Web Services account; and Amazon QuickSight
+     * namespace in an Region;. The QuickSight console evaluates which customizations to apply by running this API
+     * operation with the <code>Resolved</code> flag included.
      * </p>
      * <p>
      * To determine what customizations display when you run this command, it can help to visualize the relationship of
@@ -1174,21 +1178,22 @@ public interface AmazonQuickSight {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
-     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
-     * Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * <code>Amazon Web Services account;</code> - The Amazon Web Services account; exists at the top of the hierarchy.
+     * It has the potential to use all of the Regions; and AWS Services. When you subscribe to QuickSight, you choose
+     * one Region; to use as your home Region. That's where your free SPICE capacity is located. You can use QuickSight
+     * in any supported Region;.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * <code>Region;</code> - In each Region; where you sign in to QuickSight at least once, QuickSight acts as a
      * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
-     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any Region;, unless they are
      * constrained to a namespace.
      * </p>
      * <p>
-     * To run the command in a different AWS Region, you change your Region settings. If you're using the AWS CLI, you
-     * can use one of the following options:
+     * To run the command in a different Region;, you change your Region settings. If you're using the AWS CLI, you can
+     * use one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -1204,8 +1209,8 @@ public interface AmazonQuickSight {
      * </li>
      * <li>
      * <p>
-     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
-     * keys. For more information, see <a
+     * Run <code>aws configure</code> to change your default Region;. Use Enter to key the same settings for your keys.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
      * </p>
      * </li>
@@ -1216,16 +1221,16 @@ public interface AmazonQuickSight {
      * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
      * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
      * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
-     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * other namespaces, even if they are in the same Amazon Web Services account; and Region;.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
-     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
-     * account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
-     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
-     * customizations.
+     * <code>Applied customizations</code> - Within an Region;, a set of QuickSight customizations can apply to an
+     * Amazon Web Services account; or to a namespace. Settings that you apply to a namespace override settings that you
+     * apply to an Amazon Web Services account;. All settings are isolated to a single Region;. To apply them in other
+     * Regions;, run the <code>CreateAccountCustomization</code> command in each Region; where you want to apply the
+     * same customizations.
      * </p>
      * </li>
      * </ul>
@@ -1255,7 +1260,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the settings that were used when your QuickSight subscription was first created in this AWS account.
+     * Describes the settings that were used when your QuickSight subscription was first created in this Amazon Web
+     * Services account;.
      * </p>
      * 
      * @param describeAccountSettingsRequest
@@ -1908,6 +1914,170 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in your website, without having
+     * to register any reader users. Before you use this action, make sure that you have configured the dashboards and
+     * permissions.
+     * </p>
+     * <p>
+     * The following rules apply to the generated URL:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this
+     * period, it cannot be re-used again.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The URL validity period should not be confused with the actual session lifetime that can be customized using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code>
+     * parameter.
+     * </p>
+     * <p>
+     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the high-level steps for embedding and for an interactive demo of the ways you can
+     * customize embedding, visit the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer
+     * Portal</a>.
+     * </p>
+     * 
+     * @param generateEmbedUrlForAnonymousUserRequest
+     * @return Result of the GenerateEmbedUrlForAnonymousUser operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws SessionLifetimeInMinutesInvalidException
+     *         The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be
+     *         15-600 minutes.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your Amazon Web Services account;. Before you can use embedding for anonymous
+     *         users, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the
+     *         <b>Manage QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
+     *         <code>--identity-type ANONYMOUS</code> option.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.GenerateEmbedUrlForAnonymousUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GenerateEmbedUrlForAnonymousUserResult generateEmbedUrlForAnonymousUser(GenerateEmbedUrlForAnonymousUserRequest generateEmbedUrlForAnonymousUserRequest);
+
+    /**
+     * <p>
+     * Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can
+     * be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure
+     * that you have configured the relevant Amazon QuickSight resource and permissions.
+     * </p>
+     * <p>
+     * The following rules apply to the generated URL:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this
+     * period, it cannot be re-used again.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The URL validity period should not be confused with the actual session lifetime that can be customized using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code>
+     * parameter.
+     * </p>
+     * <p>
+     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the high-level steps for embedding and for an interactive demo of the ways you can
+     * customize embedding, visit the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer
+     * Portal</a>.
+     * </p>
+     * 
+     * @param generateEmbedUrlForRegisteredUserRequest
+     * @return Result of the GenerateEmbedUrlForRegisteredUser operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws QuickSightUserNotFoundException
+     *         The user with the provided name isn't found. This error can happen in any operation that requires finding
+     *         a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so
+     *         on.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws SessionLifetimeInMinutesInvalidException
+     *         The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be
+     *         15-600 minutes.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your Amazon Web Services account;. Before you can use embedding for anonymous
+     *         users, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the
+     *         <b>Manage QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
+     *         <code>--identity-type ANONYMOUS</code> option.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.GenerateEmbedUrlForRegisteredUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GenerateEmbedUrlForRegisteredUserResult generateEmbedUrlForRegisteredUser(GenerateEmbedUrlForRegisteredUserRequest generateEmbedUrlForRegisteredUserRequest);
+
+    /**
+     * <p>
      * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
      * in your web server code. Before you use this command, make sure that you have configured the dashboards and
      * permissions.
@@ -1942,6 +2112,12 @@ public interface AmazonQuickSight {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
      * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the high-level steps for embedding and for an interactive demo of the ways you can
+     * customize embedding, visit the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer
+     * Portal</a>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1978,9 +2154,9 @@ public interface AmazonQuickSight {
      *         Enterprise Edition. Not every operation and capability is available in every edition.
      * @throws UnsupportedPricingPlanException
      *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
-     *         required pricing plan on your AWS account. Before you can use embedding for anonymous users, a QuickSight
-     *         administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage
-     *         QuickSight</b> page. </p>
+     *         required pricing plan on your Amazon Web Services account;. Before you can use embedding for anonymous
+     *         users, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the
+     *         <b>Manage QuickSight</b> page. </p>
      *         <p>
      *         After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
      *         <code>--identity-type ANONYMOUS</code> option.
@@ -2054,7 +2230,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account;.
      * </p>
      * 
      * @param listAnalysesRequest
@@ -2104,7 +2280,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists dashboards in an AWS account.
+     * Lists dashboards in an Amazon Web Services account;.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -2127,7 +2303,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all of the datasets belonging to the current AWS account in an AWS Region.
+     * Lists all of the datasets belonging to the current Amazon Web Services account; in an Region;.
      * </p>
      * <p>
      * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
@@ -2156,7 +2332,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists data sources in current AWS Region that belong to this AWS account.
+     * Lists data sources in current Region; that belong to this Amazon Web Services account;.
      * </p>
      * 
      * @param listDataSourcesRequest
@@ -2400,7 +2576,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists the namespaces for the specified AWS account.
+     * Lists the namespaces for the specified Amazon Web Services account;.
      * </p>
      * 
      * @param listNamespacesRequest
@@ -2566,7 +2742,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the versions of the themes in the current AWS account.
+     * Lists all the versions of the themes in the current Amazon Web Services account;.
      * </p>
      * 
      * @param listThemeVersionsRequest
@@ -2598,7 +2774,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the themes in the current AWS account.
+     * Lists all the themes in the current Amazon Web Services account;.
      * </p>
      * 
      * @param listThemesRequest
@@ -2756,6 +2932,12 @@ public interface AmazonQuickSight {
      * <p>
      * Searches for analyses that belong to the user specified in the filter.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param searchAnalysesRequest
      * @return Result of the SearchAnalyses operation returned by the service.
@@ -2783,6 +2965,12 @@ public interface AmazonQuickSight {
      * <p>
      * Searches for dashboards that belong to a user.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param searchDashboardsRequest
      * @return Result of the SearchDashboards operation returned by the service.
@@ -2866,7 +3054,7 @@ public interface AmazonQuickSight {
      * </li>
      * <li>
      * <p>
-     * QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.
+     * QuickSight doesn't currently support the Tag Editor for Resource Groups.
      * </p>
      * </li>
      * </ul>
@@ -2922,13 +3110,14 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
-     * a theme.
+     * Updates Amazon QuickSight customizations the current Region;. Currently, the only customization you can use is a
+     * theme.
      * </p>
      * <p>
-     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
-     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
-     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * You can use customizations for your Amazon Web Services account; or, if you specify a namespace, for a QuickSight
+     * namespace instead. Customizations that apply to a namespace override customizations that apply to an Amazon Web
+     * Services account;. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API
+     * operation.
      * </p>
      * 
      * @param updateAccountCustomizationRequest
@@ -2956,7 +3145,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the Amazon QuickSight settings in your AWS account.
+     * Updates the Amazon QuickSight settings in your Amazon Web Services account;.
      * </p>
      * 
      * @param updateAccountSettingsRequest
@@ -3040,8 +3229,14 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Updates a dashboard in an AWS account.
+     * Updates a dashboard in an Amazon Web Services account;.
      * </p>
+     * <note>
+     * <p>
+     * Updating a Dashboard creates a new dashboard version but does not immediately publish the new version. You can
+     * update the published version of a dashboard by using the <a>UpdateDashboardPublishedVersion</a> API operation.
+     * </p>
+     * </note>
      * 
      * @param updateDashboardRequest
      * @return Result of the UpdateDashboard operation returned by the service.

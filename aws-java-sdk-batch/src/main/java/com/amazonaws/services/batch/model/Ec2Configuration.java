@@ -22,13 +22,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If
  * <code>Ec2Configuration</code> isn't specified, the default is currently <code>ECS_AL1</code> (<a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>) for
- * non-GPU, non-Graviton instances. Starting on March 31, 2021, this default will be changing to <code>ECS_AL2</code>
+ * non-GPU, non AWSGraviton instances. Starting on March 31, 2021, this default will be changing to <code>ECS_AL2</code>
  * (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
  * 2</a>).
  * </p>
  * <note>
  * <p>
- * This object isn't applicable to jobs running on Fargate resources.
+ * This object isn't applicable to jobs that are running on Fargate resources.
  * </p>
  * </note>
  * 
@@ -53,8 +53,8 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>, <code>M6g</code>,
-     * <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     * 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example, <code>C6g</code>,
+     * <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
@@ -62,16 +62,16 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
      * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
-     * used for all non-AWS Graviton-based instance types.
+     * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL1</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
-     * AMI</a>.
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is reaching
+     * the end-of-life of standard support. For more information, see <a
+     * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
@@ -100,8 +100,8 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>, <code>M6g</code>,
-     * <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     * 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example, <code>C6g</code>,
+     * <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
@@ -109,16 +109,16 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
      * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
-     * used for all non-AWS Graviton-based instance types.
+     * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL1</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
-     * AMI</a>.
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is reaching
+     * the end-of-life of standard support. For more information, see <a
+     * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
@@ -136,8 +136,9 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *        Linux 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>,
-     *        <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     *        Linux 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example,
+     *        <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all
+     *        non-GPU instance types.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL2_NVIDIA</dt>
@@ -145,15 +146,15 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      *        Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
-     *        and can be used for all non-AWS Graviton-based instance types.
+     *        and can be used for all non Amazon Web Services Graviton-based instance types.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL1</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
-     *        end-of-life of standard support. For more information, see <a
+     *        Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is
+     *        reaching the end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
      *        </dd>
@@ -178,8 +179,8 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>, <code>M6g</code>,
-     * <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     * 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example, <code>C6g</code>,
+     * <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
@@ -187,16 +188,16 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
      * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
-     * used for all non-AWS Graviton-based instance types.
+     * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL1</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
-     * AMI</a>.
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is reaching
+     * the end-of-life of standard support. For more information, see <a
+     * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
@@ -214,8 +215,9 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *         Linux 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>,
-     *         <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     *         Linux 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example,
+     *         <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all
+     *         non-GPU instance types.
      *         </p>
      *         </dd>
      *         <dt>ECS_AL2_NVIDIA</dt>
@@ -224,15 +226,15 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *         <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      *         Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
-     *         and can be used for all non-AWS Graviton-based instance types.
+     *         and can be used for all non Amazon Web Services Graviton-based instance types.
      *         </p>
      *         </dd>
      *         <dt>ECS_AL1</dt>
      *         <dd>
      *         <p>
      *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *         Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
-     *         end-of-life of standard support. For more information, see <a
+     *         Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is
+     *         reaching the end-of-life of standard support. For more information, see <a
      *         href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *         </p>
      *         </dd>
@@ -257,8 +259,8 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
-     * 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>, <code>M6g</code>,
-     * <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     * 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example, <code>C6g</code>,
+     * <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL2_NVIDIA</dt>
@@ -266,16 +268,16 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
      * 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be
-     * used for all non-AWS Graviton-based instance types.
+     * used for all non Amazon Web Services Graviton-based instance types.
      * </p>
      * </dd>
      * <dt>ECS_AL1</dt>
      * <dd>
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
-     * AMI</a>.
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is reaching
+     * the end-of-life of standard support. For more information, see <a
+     * href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      * </p>
      * </dd>
      * </dl>
@@ -293,8 +295,9 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     *        Linux 2</a>− Default for all AWS Graviton-based instance families (for example, <code>C6g</code>,
-     *        <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.
+     *        Linux 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example,
+     *        <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all
+     *        non-GPU instance types.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL2_NVIDIA</dt>
@@ -302,15 +305,15 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      *        Linux 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>)
-     *        and can be used for all non-AWS Graviton-based instance types.
+     *        and can be used for all non Amazon Web Services Graviton-based instance types.
      *        </p>
      *        </dd>
      *        <dt>ECS_AL1</dt>
      *        <dd>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     *        Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux is reaching the
-     *        end-of-life of standard support. For more information, see <a
+     *        Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is
+     *        reaching the end-of-life of standard support. For more information, see <a
      *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
      *        </dd>

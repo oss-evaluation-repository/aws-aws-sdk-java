@@ -28,7 +28,7 @@ public class PutResourceLogLevelRequest extends com.amazonaws.AmazonWebServiceRe
     private String resourceIdentifier;
     /**
      * <p>
-     * The type of the resource, currently support WirelessDevice and WirelessGateway.
+     * The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      * </p>
      */
     private String resourceType;
@@ -63,11 +63,11 @@ public class PutResourceLogLevelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the resource, currently support WirelessDevice and WirelessGateway.
+     * The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource, currently support WirelessDevice and WirelessGateway.
+     *        The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -76,10 +76,10 @@ public class PutResourceLogLevelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the resource, currently support WirelessDevice and WirelessGateway.
+     * The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      * </p>
      * 
-     * @return The type of the resource, currently support WirelessDevice and WirelessGateway.
+     * @return The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      */
 
     public String getResourceType() {
@@ -88,11 +88,11 @@ public class PutResourceLogLevelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the resource, currently support WirelessDevice and WirelessGateway.
+     * The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource, currently support WirelessDevice and WirelessGateway.
+     *        The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -318,6 +318,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public GenerateEmbedUrlForAnonymousUserResult generateEmbedUrlForAnonymousUser(GenerateEmbedUrlForAnonymousUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GenerateEmbedUrlForRegisteredUserResult generateEmbedUrlForRegisteredUser(GenerateEmbedUrlForRegisteredUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDashboardEmbedUrlResult getDashboardEmbedUrl(GetDashboardEmbedUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

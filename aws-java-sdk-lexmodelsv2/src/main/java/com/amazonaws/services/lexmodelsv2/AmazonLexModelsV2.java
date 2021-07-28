@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.lexmodelsv2.model.*;
+import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 
 /**
  * Interface for accessing Lex Models V2.
@@ -1194,5 +1195,7 @@ public interface AmazonLexModelsV2 {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonLexModelsV2Waiters waiters();
 
 }

@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An object representing the attributes of a compute environment that can be updated. For more information, see <a
  * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
- * <i>AWS Batch User Guide</i>.
+ * <i>Batch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate" target="_top">AWS API
@@ -36,7 +36,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      */
@@ -47,10 +47,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
-     * never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     * among those specified in your compute environment.
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
+     * specified in your compute environment.
      * </p>
      * </note>
      */
@@ -61,16 +61,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      */
     private Integer desiredvCpus;
     /**
      * <p>
-     * The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
-     * subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made.
-     * This can't be specified for EC2 compute resources. For more information, see <a
+     * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
+     * Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't
+     * be specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -92,14 +92,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param minvCpus
      *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      *        </p>
      */
 
@@ -113,13 +113,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+     *         specified.
      *         </p>
      */
 
@@ -133,14 +134,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param minvCpus
      *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -156,10 +157,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
-     * never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     * among those specified in your compute environment.
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
+     * specified in your compute environment.
      * </p>
      * </note>
      * 
@@ -167,9 +168,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
      *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *        strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In
-     *        this event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more
-     *        than a single instance from among those specified in your compute environment.
+     *        strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     *        event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a
+     *        single instance from among those specified in your compute environment.
      *        </p>
      */
 
@@ -183,19 +184,19 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
-     * never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     * among those specified in your compute environment.
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
+     * specified in your compute environment.
      * </p>
      * </note>
      * 
      * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *         <p>
      *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *         strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In
-     *         this event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no
-     *         more than a single instance from among those specified in your compute environment.
+     *         strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     *         event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a
+     *         single instance from among those specified in your compute environment.
      *         </p>
      */
 
@@ -209,10 +210,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, AWS Batch
-     * never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     * among those specified in your compute environment.
+     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
+     * specified in your compute environment.
      * </p>
      * </note>
      * 
@@ -220,9 +221,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
      *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *        strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In
-     *        this event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more
-     *        than a single instance from among those specified in your compute environment.
+     *        strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     *        event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a
+     *        single instance from among those specified in your compute environment.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -238,14 +239,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param desiredvCpus
      *        The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      *        </p>
      */
 
@@ -259,13 +260,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @return The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+     *         specified.
      *         </p>
      */
 
@@ -279,14 +281,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      * </p>
      * </note>
      * 
      * @param desiredvCpus
      *        The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -298,16 +300,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
-     * subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made.
-     * This can't be specified for EC2 compute resources. For more information, see <a
+     * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
+     * Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't
+     * be specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
      * 
-     * @return The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to
-     *         16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change
-     *         is made. This can't be specified for EC2 compute resources. For more information, see <a
+     * @return The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
+     *         subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
+     *         made. This can't be specified for EC2 compute resources. For more information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
      *         <i>Amazon VPC User Guide</i>.
      */
@@ -318,16 +320,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
-     * subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made.
-     * This can't be specified for EC2 compute resources. For more information, see <a
+     * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
+     * Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't
+     * be specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to
-     *        16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
+     *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
+     *        subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
      *        made. This can't be specified for EC2 compute resources. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.
@@ -344,9 +346,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
-     * subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made.
-     * This can't be specified for EC2 compute resources. For more information, see <a
+     * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
+     * Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't
+     * be specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -357,8 +359,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to
-     *        16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
+     *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
+     *        subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
      *        made. This can't be specified for EC2 compute resources. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.
@@ -377,16 +379,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to 16
-     * subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made.
-     * This can't be specified for EC2 compute resources. For more information, see <a
+     * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
+     * Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't
+     * be specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets that the compute resources are launched into. Fargate compute resources can contain up to
-     *        16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
+     *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
+     *        subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is
      *        made. This can't be specified for EC2 compute resources. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.

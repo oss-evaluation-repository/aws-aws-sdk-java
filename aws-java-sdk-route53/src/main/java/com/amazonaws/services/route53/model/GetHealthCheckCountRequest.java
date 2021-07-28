@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request for the number of health checks that are associated with the current AWS account.
+ * A request for the number of health checks that are associated with the current account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount" target="_top">AWS API

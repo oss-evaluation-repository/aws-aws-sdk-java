@@ -36,7 +36,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * The field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to IoT Analytics:
      * </p>
      * <ul>
      * <li>
@@ -122,7 +122,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * The field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to IoT Analytics:
      * </p>
      * <ul>
      * <li>
@@ -164,7 +164,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
      *         "string"}.</p>
      *         <p>
-     *         The field names of message payloads (data) that you send to AWS IoT Analytics:
+     *         The field names of message payloads (data) that you send to IoT Analytics:
      *         </p>
      *         <ul>
      *         <li>
@@ -212,7 +212,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * The field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to IoT Analytics:
      * </p>
      * <ul>
      * <li>
@@ -255,7 +255,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
      *        "string"}.</p>
      *        <p>
-     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>
@@ -308,7 +308,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * The field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to IoT Analytics:
      * </p>
      * <ul>
      * <li>
@@ -356,7 +356,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
      *        "string"}.</p>
      *        <p>
-     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>
@@ -411,7 +411,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * The field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to IoT Analytics:
      * </p>
      * <ul>
      * <li>
@@ -454,7 +454,7 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
      *        "string"}.</p>
      *        <p>
-     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>

@@ -36,7 +36,7 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
     private String version;
     /**
      * <p>
-     * The status of the data set contents.
+     * The status of the dataset contents.
      * </p>
      */
     private DatasetContentStatus status;
@@ -101,11 +101,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the data set contents.
+     * The status of the dataset contents.
      * </p>
      * 
      * @param status
-     *        The status of the data set contents.
+     *        The status of the dataset contents.
      */
 
     public void setStatus(DatasetContentStatus status) {
@@ -114,10 +114,10 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the data set contents.
+     * The status of the dataset contents.
      * </p>
      * 
-     * @return The status of the data set contents.
+     * @return The status of the dataset contents.
      */
 
     public DatasetContentStatus getStatus() {
@@ -126,11 +126,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the data set contents.
+     * The status of the dataset contents.
      * </p>
      * 
      * @param status
-     *        The status of the data set contents.
+     *        The status of the dataset contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

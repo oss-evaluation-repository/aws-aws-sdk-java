@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS IoT Analytics parameters.
+ * Amazon Web Services IoT Analytics parameters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AwsIotAnalyticsParameters"

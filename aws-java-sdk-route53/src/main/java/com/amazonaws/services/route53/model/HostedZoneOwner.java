@@ -30,34 +30,36 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones
-     * using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when
-     * you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current AWS account.
+     * If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates
+     * hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
+     * example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current
+     * account.
      * </p>
      */
     private String owningAccount;
     /**
      * <p>
-     * If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted
-     * zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon
-     * Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of
-     * <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     * If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC
+     * with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For
+     * example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
+     * zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      * </p>
      */
     private String owningService;
 
     /**
      * <p>
-     * If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones
-     * using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when
-     * you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current AWS account.
+     * If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates
+     * hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
+     * example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current
+     * account.
      * </p>
      * 
      * @param owningAccount
-     *        If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted
-     *        zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
-     *        example, when you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the
-     *        current AWS account.
+     *        If the hosted zone was created by an account, or was created by an Amazon Web Services service that
+     *        creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that
+     *        account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone
+     *        using the current account.
      */
 
     public void setOwningAccount(String owningAccount) {
@@ -66,15 +68,16 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones
-     * using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when
-     * you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current AWS account.
+     * If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates
+     * hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
+     * example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current
+     * account.
      * </p>
      * 
-     * @return If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted
-     *         zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
-     *         example, when you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the
-     *         current AWS account.
+     * @return If the hosted zone was created by an account, or was created by an Amazon Web Services service that
+     *         creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of
+     *         that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
+     *         zone using the current account.
      */
 
     public String getOwningAccount() {
@@ -83,16 +86,17 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones
-     * using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when
-     * you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current AWS account.
+     * If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates
+     * hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
+     * example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current
+     * account.
      * </p>
      * 
      * @param owningAccount
-     *        If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted
-     *        zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For
-     *        example, when you use AWS Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the
-     *        current AWS account.
+     *        If the hosted zone was created by an account, or was created by an Amazon Web Services service that
+     *        creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that
+     *        account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone
+     *        using the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,17 +107,17 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted
-     * zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon
-     * Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of
-     * <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     * If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC
+     * with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For
+     * example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
+     * zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      * </p>
      * 
      * @param owningService
-     *        If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that
-     *        hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example,
-     *        if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
-     *        zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     *        If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified
+     *        VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the
+     *        service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a
+     *        VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      */
 
     public void setOwningService(String owningService) {
@@ -122,16 +126,16 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted
-     * zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon
-     * Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of
-     * <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     * If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC
+     * with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For
+     * example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
+     * zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      * </p>
      * 
-     * @return If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that
-     *         hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For
-     *         example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the
-     *         hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     * @return If an Amazon Web Services service uses its own account to create a hosted zone and associate the
+     *         specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies
+     *         the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated
+     *         a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      */
 
     public String getOwningService() {
@@ -140,17 +144,17 @@ public class HostedZoneOwner implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted
-     * zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon
-     * Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of
-     * <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     * If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC
+     * with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For
+     * example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
+     * zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      * </p>
      * 
      * @param owningService
-     *        If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that
-     *        hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example,
-     *        if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted
-     *        zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+     *        If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified
+     *        VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the
+     *        service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a
+     *        VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

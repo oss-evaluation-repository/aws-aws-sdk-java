@@ -40,7 +40,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.
+     * Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.
      * </p>
      * </note>
      * <dl>
@@ -49,7 +50,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
-     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
      * </dd>
@@ -131,7 +132,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
-     * Data</a> in the <i>AWS Batch User Guide</i>.
+     * Data</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secretOptions;
@@ -148,7 +149,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.
+     * Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.
      * </p>
      * </note>
      * <dl>
@@ -157,7 +159,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
-     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
      * </dd>
@@ -235,8 +237,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <note>
      *        <p>
-     *        Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
-     *        drivers.
+     *        Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and
+     *        <code>splunk</code> log drivers.
      *        </p>
      *        </note>
      *        <dl>
@@ -245,7 +247,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        Driver</a> in the <i>Batch User Guide</i> and <a
      *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
      *        driver</a> in the Docker documentation.
      *        </p>
@@ -331,7 +333,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.
+     * Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.
      * </p>
      * </note>
      * <dl>
@@ -340,7 +343,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
-     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
      * </dd>
@@ -417,8 +420,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <note>
      *         <p>
-     *         Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
-     *         drivers.
+     *         Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and
+     *         <code>splunk</code> log drivers.
      *         </p>
      *         </note>
      *         <dl>
@@ -427,7 +430,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
-     *         Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *         Driver</a> in the <i>Batch User Guide</i> and <a
      *         href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
      *         driver</a> in the Docker documentation.
      *         </p>
@@ -513,7 +516,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.
+     * Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.
      * </p>
      * </note>
      * <dl>
@@ -522,7 +526,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
-     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
      * </dd>
@@ -600,8 +604,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <note>
      *        <p>
-     *        Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
-     *        drivers.
+     *        Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and
+     *        <code>splunk</code> log drivers.
      *        </p>
      *        </note>
      *        <dl>
@@ -610,7 +614,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        Driver</a> in the <i>Batch User Guide</i> and <a
      *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
      *        driver</a> in the Docker documentation.
      *        </p>
@@ -698,7 +702,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.
+     * Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.
      * </p>
      * </note>
      * <dl>
@@ -707,7 +712,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
-     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
      * </dd>
@@ -785,8 +790,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <note>
      *        <p>
-     *        Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log
-     *        drivers.
+     *        Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and
+     *        <code>splunk</code> log drivers.
      *        </p>
      *        </note>
      *        <dl>
@@ -795,7 +800,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        Driver</a> in the <i>Batch User Guide</i> and <a
      *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
      *        driver</a> in the Docker documentation.
      *        </p>
@@ -961,12 +966,12 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
-     * Data</a> in the <i>AWS Batch User Guide</i>.
+     * Data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets to pass to the log configuration. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *         Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
+     *         Sensitive Data</a> in the <i>Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecretOptions() {
@@ -977,13 +982,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
-     * Data</a> in the <i>AWS Batch User Guide</i>.
+     * Data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
+     *        Sensitive Data</a> in the <i>Batch User Guide</i>.
      */
 
     public void setSecretOptions(java.util.Collection<Secret> secretOptions) {
@@ -999,7 +1004,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
-     * Data</a> in the <i>AWS Batch User Guide</i>.
+     * Data</a> in the <i>Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1010,7 +1015,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
+     *        Sensitive Data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,13 +1033,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
-     * Data</a> in the <i>AWS Batch User Guide</i>.
+     * Data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
+     *        Sensitive Data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -53,13 +53,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an AWS CloudFront distribution:
+     * For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an AWS Global Accelerator accelerator:
+     * For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -146,13 +146,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an AWS CloudFront distribution:
+     * For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an AWS Global Accelerator accelerator:
+     * For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -189,13 +189,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an AWS CloudFront distribution:
+     *        For an Amazon CloudFront distribution:
      *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For an AWS Global Accelerator accelerator:
+     *        For an Global Accelerator accelerator:
      *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *        </p>
      *        </li>
@@ -238,13 +238,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an AWS CloudFront distribution:
+     * For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an AWS Global Accelerator accelerator:
+     * For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -280,13 +280,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         For an AWS CloudFront distribution:
+     *         For an Amazon CloudFront distribution:
      *         <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For an AWS Global Accelerator accelerator:
+     *         For an Global Accelerator accelerator:
      *         <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *         </p>
      *         </li>
@@ -329,13 +329,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an AWS CloudFront distribution:
+     * For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an AWS Global Accelerator accelerator:
+     * For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      * </p>
      * </li>
@@ -372,13 +372,13 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an AWS CloudFront distribution:
+     *        For an Amazon CloudFront distribution:
      *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For an AWS Global Accelerator accelerator:
+     *        For an Global Accelerator accelerator:
      *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
      *        </p>
      *        </li>

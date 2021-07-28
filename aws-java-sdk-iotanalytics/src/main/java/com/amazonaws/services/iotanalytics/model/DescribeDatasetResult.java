@@ -25,18 +25,18 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An object that contains information about the data set.
+     * An object that contains information about the dataset.
      * </p>
      */
     private Dataset dataset;
 
     /**
      * <p>
-     * An object that contains information about the data set.
+     * An object that contains information about the dataset.
      * </p>
      * 
      * @param dataset
-     *        An object that contains information about the data set.
+     *        An object that contains information about the dataset.
      */
 
     public void setDataset(Dataset dataset) {
@@ -45,10 +45,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An object that contains information about the data set.
+     * An object that contains information about the dataset.
      * </p>
      * 
-     * @return An object that contains information about the data set.
+     * @return An object that contains information about the dataset.
      */
 
     public Dataset getDataset() {
@@ -57,11 +57,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An object that contains information about the data set.
+     * An object that contains information about the dataset.
      * </p>
      * 
      * @param dataset
-     *        An object that contains information about the data set.
+     *        An object that contains information about the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

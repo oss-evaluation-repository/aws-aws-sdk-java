@@ -35,7 +35,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
      * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
-     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize
      * device data.
      * </p>
      * <p>
@@ -98,7 +98,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
      * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
-     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize
      * device data.
      * </p>
      * <p>
@@ -111,7 +111,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages,
      *         such as removing, renaming or adding message attributes; filtering messages based on attribute values;
-     *         invoking your Lambda functions on messages for advanced processing; or performing mathematical
+     *         invoking your Lambda unctions on messages for advanced processing; or performing mathematical
      *         transformations to normalize device data.</p>
      *         <p>
      *         The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
@@ -130,7 +130,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
      * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
-     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize
      * device data.
      * </p>
      * <p>
@@ -144,7 +144,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param pipelineActivities
      *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
      *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
-     *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
+     *        your Lambda unctions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
      *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
@@ -167,7 +167,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
      * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
-     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize
      * device data.
      * </p>
      * <p>
@@ -186,7 +186,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param pipelineActivities
      *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
      *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
-     *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
+     *        your Lambda unctions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
      *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
@@ -211,7 +211,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
      * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
-     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize
      * device data.
      * </p>
      * <p>
@@ -225,7 +225,7 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param pipelineActivities
      *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
      *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
-     *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
+     *        your Lambda unctions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
      *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>

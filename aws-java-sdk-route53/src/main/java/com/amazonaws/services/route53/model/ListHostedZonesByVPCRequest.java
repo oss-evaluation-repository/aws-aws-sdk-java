@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created
- * the hosted zones.
+ * Lists all the private hosted zones that a specified VPC is associated with, regardless of which account created the
+ * hosted zones.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC" target="_top">AWS API
@@ -37,7 +37,8 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
     private String vPCId;
     /**
      * <p>
-     * For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the
+     * VPC in.
      * </p>
      */
     private String vPCRegion;
@@ -106,11 +107,13 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the
+     * VPC in.
      * </p>
      * 
      * @param vPCRegion
-     *        For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     *        For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you
+     *        created the VPC in.
      * @see VPCRegion
      */
 
@@ -120,10 +123,12 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the
+     * VPC in.
      * </p>
      * 
-     * @return For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * @return For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you
+     *         created the VPC in.
      * @see VPCRegion
      */
 
@@ -133,11 +138,13 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the
+     * VPC in.
      * </p>
      * 
      * @param vPCRegion
-     *        For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     *        For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you
+     *        created the VPC in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
@@ -149,11 +156,13 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     * For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the
+     * VPC in.
      * </p>
      * 
      * @param vPCRegion
-     *        For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in.
+     *        For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you
+     *        created the VPC in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */

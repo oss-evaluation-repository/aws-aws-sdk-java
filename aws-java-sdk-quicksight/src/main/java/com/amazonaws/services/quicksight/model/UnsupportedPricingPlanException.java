@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing
- * plan on your AWS account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add
- * capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.
+ * plan on your Amazon Web Services account;. Before you can use embedding for anonymous users, a QuickSight
+ * administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.
  * </p>
  * <p>
  * After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
@@ -31,7 +31,7 @@ public class UnsupportedPricingPlanException extends com.amazonaws.services.quic
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      */
     private String requestId;
@@ -48,11 +48,11 @@ public class UnsupportedPricingPlanException extends com.amazonaws.services.quic
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this request.
+     *        The Amazon Web Services request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -62,10 +62,10 @@ public class UnsupportedPricingPlanException extends com.amazonaws.services.quic
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
-     * @return The AWS request ID for this request.
+     * @return The Amazon Web Services request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -75,11 +75,11 @@ public class UnsupportedPricingPlanException extends com.amazonaws.services.quic
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this request.
+     *        The Amazon Web Services request ID for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

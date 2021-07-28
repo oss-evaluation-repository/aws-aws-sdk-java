@@ -27,8 +27,8 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If you have proactive engagement enabled, the contact list must include at least one phone number.
@@ -38,15 +38,15 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
-     * @return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *         you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     * @return A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *         you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *         support.</p>
      *         <p>
      *         If you have proactive engagement enabled, the contact list must include at least one phone number.
@@ -58,16 +58,16 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.</p>
      *        <p>
      *        If you have proactive engagement enabled, the contact list must include at least one phone number.
@@ -84,8 +84,8 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If you have proactive engagement enabled, the contact list must include at least one phone number.
@@ -97,8 +97,8 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.</p>
      *        <p>
      *        If you have proactive engagement enabled, the contact list must include at least one phone number.
@@ -117,16 +117,16 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.</p>
      *        <p>
      *        If you have proactive engagement enabled, the contact list must include at least one phone number.

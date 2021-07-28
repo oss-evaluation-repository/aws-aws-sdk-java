@@ -63,7 +63,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -283,7 +283,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -295,7 +295,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate
      *         compute environments can't be mixed.</p> <note>
      *         <p>
-     *         All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *         All compute environments that are associated with a job queue must share the same architecture. Batch
      *         doesn't support mixing compute environment architecture types in a single job queue.
      *         </p>
      */
@@ -314,7 +314,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -327,7 +327,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      */
@@ -351,7 +351,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -369,7 +369,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -395,7 +395,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -408,7 +408,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

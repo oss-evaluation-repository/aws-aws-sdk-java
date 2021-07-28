@@ -34,15 +34,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      */
     private ChannelStorage channelStorage;
     /**
      * <p>
-     * How long, in days, message data is kept for the channel. The retention period cannot be updated if the channel's
-     * S3 storage is customer-managed.
+     * How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's
+     * Amazon S3 storage is customer-managed.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
@@ -90,14 +90,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      */
 
     public void setChannelStorage(ChannelStorage channelStorage) {
@@ -107,13 +107,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @return Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *         You cannot change this storage option after the channel is created.
+     *         You can't change this storage option after the channel is created.
      */
 
     public ChannelStorage getChannelStorage() {
@@ -123,14 +123,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,13 +141,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in days, message data is kept for the channel. The retention period cannot be updated if the channel's
-     * S3 storage is customer-managed.
+     * How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's
+     * Amazon S3 storage is customer-managed.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the channel. The retention period cannot be updated if the
-     *        channel's S3 storage is customer-managed.
+     *        How long, in days, message data is kept for the channel. The retention period can't be updated if the
+     *        channel's Amazon S3 storage is customer-managed.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -156,12 +156,12 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in days, message data is kept for the channel. The retention period cannot be updated if the channel's
-     * S3 storage is customer-managed.
+     * How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's
+     * Amazon S3 storage is customer-managed.
      * </p>
      * 
-     * @return How long, in days, message data is kept for the channel. The retention period cannot be updated if the
-     *         channel's S3 storage is customer-managed.
+     * @return How long, in days, message data is kept for the channel. The retention period can't be updated if the
+     *         channel's Amazon S3 storage is customer-managed.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -170,13 +170,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in days, message data is kept for the channel. The retention period cannot be updated if the channel's
-     * S3 storage is customer-managed.
+     * How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's
+     * Amazon S3 storage is customer-managed.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the channel. The retention period cannot be updated if the
-     *        channel's S3 storage is customer-managed.
+     *        How long, in days, message data is kept for the channel. The retention period can't be updated if the
+     *        channel's Amazon S3 storage is customer-managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

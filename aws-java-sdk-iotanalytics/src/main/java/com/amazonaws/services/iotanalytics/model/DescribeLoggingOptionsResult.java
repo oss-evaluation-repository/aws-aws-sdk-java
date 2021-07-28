@@ -25,18 +25,18 @@ public class DescribeLoggingOptionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The current settings of the AWS IoT Analytics logging options.
+     * The current settings of the IoT Analytics logging options.
      * </p>
      */
     private LoggingOptions loggingOptions;
 
     /**
      * <p>
-     * The current settings of the AWS IoT Analytics logging options.
+     * The current settings of the IoT Analytics logging options.
      * </p>
      * 
      * @param loggingOptions
-     *        The current settings of the AWS IoT Analytics logging options.
+     *        The current settings of the IoT Analytics logging options.
      */
 
     public void setLoggingOptions(LoggingOptions loggingOptions) {
@@ -45,10 +45,10 @@ public class DescribeLoggingOptionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The current settings of the AWS IoT Analytics logging options.
+     * The current settings of the IoT Analytics logging options.
      * </p>
      * 
-     * @return The current settings of the AWS IoT Analytics logging options.
+     * @return The current settings of the IoT Analytics logging options.
      */
 
     public LoggingOptions getLoggingOptions() {
@@ -57,11 +57,11 @@ public class DescribeLoggingOptionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The current settings of the AWS IoT Analytics logging options.
+     * The current settings of the IoT Analytics logging options.
      * </p>
      * 
      * @param loggingOptions
-     *        The current settings of the AWS IoT Analytics logging options.
+     *        The current settings of the IoT Analytics logging options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

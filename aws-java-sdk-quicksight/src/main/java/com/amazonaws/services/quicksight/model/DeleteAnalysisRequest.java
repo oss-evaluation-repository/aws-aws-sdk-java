@@ -27,7 +27,7 @@ public class DeleteAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you want to delete an analysis.
+     * The ID of the Amazon Web Services account; where you want to delete an analysis.
      * </p>
      */
     private String awsAccountId;
@@ -55,11 +55,11 @@ public class DeleteAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you want to delete an analysis.
+     * The ID of the Amazon Web Services account; where you want to delete an analysis.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to delete an analysis.
+     *        The ID of the Amazon Web Services account; where you want to delete an analysis.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -68,10 +68,10 @@ public class DeleteAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you want to delete an analysis.
+     * The ID of the Amazon Web Services account; where you want to delete an analysis.
      * </p>
      * 
-     * @return The ID of the AWS account where you want to delete an analysis.
+     * @return The ID of the Amazon Web Services account; where you want to delete an analysis.
      */
 
     public String getAwsAccountId() {
@@ -80,11 +80,11 @@ public class DeleteAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account where you want to delete an analysis.
+     * The ID of the Amazon Web Services account; where you want to delete an analysis.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to delete an analysis.
+     *        The ID of the Amazon Web Services account; where you want to delete an analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

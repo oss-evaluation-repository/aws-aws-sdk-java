@@ -163,6 +163,10 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                         if (healthCheckConfig.getInsufficientDataHealthStatus() != null) {
                             xmlWriter.startElement("InsufficientDataHealthStatus").value(healthCheckConfig.getInsufficientDataHealthStatus()).endElement();
                         }
+
+                        if (healthCheckConfig.getRoutingControlArn() != null) {
+                            xmlWriter.startElement("RoutingControlArn").value(healthCheckConfig.getRoutingControlArn()).endElement();
+                        }
                         xmlWriter.endElement();
                     }
                 }

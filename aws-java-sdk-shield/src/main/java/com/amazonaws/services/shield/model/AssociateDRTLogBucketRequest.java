@@ -27,18 +27,18 @@ public class AssociateDRTLogBucketRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your AWS WAF logs.
+     * The Amazon S3 bucket that contains the logs that you want to share.
      * </p>
      */
     private String logBucket;
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your AWS WAF logs.
+     * The Amazon S3 bucket that contains the logs that you want to share.
      * </p>
      * 
      * @param logBucket
-     *        The Amazon S3 bucket that contains your AWS WAF logs.
+     *        The Amazon S3 bucket that contains the logs that you want to share.
      */
 
     public void setLogBucket(String logBucket) {
@@ -47,10 +47,10 @@ public class AssociateDRTLogBucketRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your AWS WAF logs.
+     * The Amazon S3 bucket that contains the logs that you want to share.
      * </p>
      * 
-     * @return The Amazon S3 bucket that contains your AWS WAF logs.
+     * @return The Amazon S3 bucket that contains the logs that you want to share.
      */
 
     public String getLogBucket() {
@@ -59,11 +59,11 @@ public class AssociateDRTLogBucketRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your AWS WAF logs.
+     * The Amazon S3 bucket that contains the logs that you want to share.
      * </p>
      * 
      * @param logBucket
-     *        The Amazon S3 bucket that contains your AWS WAF logs.
+     *        The Amazon S3 bucket that contains the logs that you want to share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

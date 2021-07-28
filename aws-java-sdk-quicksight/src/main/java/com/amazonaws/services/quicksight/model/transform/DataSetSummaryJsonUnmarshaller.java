@@ -76,6 +76,10 @@ public class DataSetSummaryJsonUnmarshaller implements Unmarshaller<DataSetSumma
                     context.nextToken();
                     dataSetSummary.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RowLevelPermissionTagConfigurationApplied", targetDepth)) {
+                    context.nextToken();
+                    dataSetSummary.setRowLevelPermissionTagConfigurationApplied(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ColumnLevelPermissionRulesApplied", targetDepth)) {
                     context.nextToken();
                     dataSetSummary.setColumnLevelPermissionRulesApplied(context.getUnmarshaller(Boolean.class).unmarshall(context));

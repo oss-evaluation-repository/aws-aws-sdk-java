@@ -33,22 +33,22 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     private String datastoreName;
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. The retention period cannot be updated if the data
-     * store's S3 storage is customer-managed.
+     * How long, in days, message data is kept for the data store. The retention period can't be updated if the data
+     * store's Amazon S3 storage is customer-managed.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
-     * change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      */
     private DatastoreStorage datastoreStorage;
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -102,13 +102,13 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. The retention period cannot be updated if the data
-     * store's S3 storage is customer-managed.
+     * How long, in days, message data is kept for the data store. The retention period can't be updated if the data
+     * store's Amazon S3 storage is customer-managed.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. The retention period cannot be updated if the
-     *        data store's S3 storage is customer-managed.
+     *        How long, in days, message data is kept for the data store. The retention period can't be updated if the
+     *        data store's Amazon S3 storage is customer-managed.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -117,12 +117,12 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. The retention period cannot be updated if the data
-     * store's S3 storage is customer-managed.
+     * How long, in days, message data is kept for the data store. The retention period can't be updated if the data
+     * store's Amazon S3 storage is customer-managed.
      * </p>
      * 
-     * @return How long, in days, message data is kept for the data store. The retention period cannot be updated if the
-     *         data store's S3 storage is customer-managed.
+     * @return How long, in days, message data is kept for the data store. The retention period can't be updated if the
+     *         data store's Amazon S3 storage is customer-managed.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -131,13 +131,13 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. The retention period cannot be updated if the data
-     * store's S3 storage is customer-managed.
+     * How long, in days, message data is kept for the data store. The retention period can't be updated if the data
+     * store's Amazon S3 storage is customer-managed.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. The retention period cannot be updated if the
-     *        data store's S3 storage is customer-managed.
+     *        How long, in days, message data is kept for the data store. The retention period can't be updated if the
+     *        data store's Amazon S3 storage is customer-managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,15 +148,16 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
-     * change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *        <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You
-     *        cannot change this storage option after the data store is created.
+     *        Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *        <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *        is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *        is created.
      */
 
     public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
@@ -165,14 +166,15 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
-     * change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
-     * @return Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *         <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>.
-     *         You cannot change this storage option after the data store is created.
+     * @return Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *         <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *         is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *         is created.
      */
 
     public DatastoreStorage getDatastoreStorage() {
@@ -181,15 +183,16 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
-     * change this storage option after the data store is created.
+     * Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     * <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-     *        <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You
-     *        cannot change this storage option after the data store is created.
+     *        Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage,
+     *        <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default
+     *        is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store
+     *        is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,7 +203,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -211,7 +214,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param fileFormatConfiguration
-     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *        href="https://parquet.apache.org/">Parquet</a>.</p>
      *        <p>
      *        The default file format is JSON. You can specify only one format.
@@ -226,7 +229,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -236,7 +239,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * You can't change the file format after you create the data store.
      * </p>
      * 
-     * @return Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * @return Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *         href="https://parquet.apache.org/">Parquet</a>.</p>
      *         <p>
      *         The default file format is JSON. You can specify only one format.
@@ -251,7 +254,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      * href="https://parquet.apache.org/">Parquet</a>.
      * </p>
      * <p>
@@ -262,7 +265,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param fileFormatConfiguration
-     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
      *        href="https://parquet.apache.org/">Parquet</a>.</p>
      *        <p>
      *        The default file format is JSON. You can specify only one format.

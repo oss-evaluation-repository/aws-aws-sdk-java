@@ -74,15 +74,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     private String key;
     /**
      * <p>
-     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
-     * service.
+     * Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
      * </p>
      */
     private GlueConfiguration glueConfiguration;
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
-     * resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.
      * </p>
      */
     private String roleArn;
@@ -358,13 +356,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
-     * service.
+     * Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
      * </p>
      * 
      * @param glueConfiguration
-     *        Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
-     *        (ETL) service.
+     *        Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL)
+     *        service.
      */
 
     public void setGlueConfiguration(GlueConfiguration glueConfiguration) {
@@ -373,12 +370,11 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
-     * service.
+     * Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
      * </p>
      * 
-     * @return Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
-     *         (ETL) service.
+     * @return Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL)
+     *         service.
      */
 
     public GlueConfiguration getGlueConfiguration() {
@@ -387,13 +383,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
-     * service.
+     * Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
      * </p>
      * 
      * @param glueConfiguration
-     *        Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
-     *        (ETL) service.
+     *        Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL)
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,12 +399,11 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
-     * resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     *        The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
      *        resources.
      */
 
@@ -419,11 +413,10 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
-     * resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.
      * </p>
      * 
-     * @return The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     * @return The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
      *         resources.
      */
 
@@ -433,12 +426,11 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
-     * resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     *        The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
      *        resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,7 +27,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the AWS account that contains the themes that you're listing.
+     * The ID of the Amazon Web Services account; that contains the themes that you're listing.
      * </p>
      */
     private String awsAccountId;
@@ -60,7 +60,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     * <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      * </p>
      * </li>
      * </ul>
@@ -69,11 +69,11 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the AWS account that contains the themes that you're listing.
+     * The ID of the Amazon Web Services account; that contains the themes that you're listing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the themes that you're listing.
+     *        The ID of the Amazon Web Services account; that contains the themes that you're listing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -82,10 +82,10 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the AWS account that contains the themes that you're listing.
+     * The ID of the Amazon Web Services account; that contains the themes that you're listing.
      * </p>
      * 
-     * @return The ID of the AWS account that contains the themes that you're listing.
+     * @return The ID of the Amazon Web Services account; that contains the themes that you're listing.
      */
 
     public String getAwsAccountId() {
@@ -94,11 +94,11 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the AWS account that contains the themes that you're listing.
+     * The ID of the Amazon Web Services account; that contains the themes that you're listing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the themes that you're listing.
+     *        The ID of the Amazon Web Services account; that contains the themes that you're listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,7 +204,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     * <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      * </p>
      * </li>
      * </ul>
@@ -224,7 +224,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      *        </p>
      *        </li>
      * @see ThemeType
@@ -251,7 +251,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     * <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      * </p>
      * </li>
      * </ul>
@@ -270,7 +270,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     *         <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      *         </p>
      *         </li>
      * @see ThemeType
@@ -297,7 +297,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     * <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      * </p>
      * </li>
      * </ul>
@@ -317,7 +317,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -346,7 +346,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     * <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      * </p>
      * </li>
      * </ul>
@@ -366,7 +366,7 @@ public class ListThemesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.
+     *        <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

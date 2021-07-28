@@ -72,6 +72,12 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
     /**
      * <p>
+     * Whether or not the row level permission tags are applied.
+     * </p>
+     */
+    private Boolean rowLevelPermissionTagConfigurationApplied;
+    /**
+     * <p>
      * A value that indicates if the dataset has column level permission configured.
      * </p>
      */
@@ -378,6 +384,58 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether or not the row level permission tags are applied.
+     * </p>
+     * 
+     * @param rowLevelPermissionTagConfigurationApplied
+     *        Whether or not the row level permission tags are applied.
+     */
+
+    public void setRowLevelPermissionTagConfigurationApplied(Boolean rowLevelPermissionTagConfigurationApplied) {
+        this.rowLevelPermissionTagConfigurationApplied = rowLevelPermissionTagConfigurationApplied;
+    }
+
+    /**
+     * <p>
+     * Whether or not the row level permission tags are applied.
+     * </p>
+     * 
+     * @return Whether or not the row level permission tags are applied.
+     */
+
+    public Boolean getRowLevelPermissionTagConfigurationApplied() {
+        return this.rowLevelPermissionTagConfigurationApplied;
+    }
+
+    /**
+     * <p>
+     * Whether or not the row level permission tags are applied.
+     * </p>
+     * 
+     * @param rowLevelPermissionTagConfigurationApplied
+     *        Whether or not the row level permission tags are applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSetSummary withRowLevelPermissionTagConfigurationApplied(Boolean rowLevelPermissionTagConfigurationApplied) {
+        setRowLevelPermissionTagConfigurationApplied(rowLevelPermissionTagConfigurationApplied);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the row level permission tags are applied.
+     * </p>
+     * 
+     * @return Whether or not the row level permission tags are applied.
+     */
+
+    public Boolean isRowLevelPermissionTagConfigurationApplied() {
+        return this.rowLevelPermissionTagConfigurationApplied;
+    }
+
+    /**
+     * <p>
      * A value that indicates if the dataset has column level permission configured.
      * </p>
      * 
@@ -454,6 +512,8 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImportMode: ").append(getImportMode()).append(",");
         if (getRowLevelPermissionDataSet() != null)
             sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getRowLevelPermissionTagConfigurationApplied() != null)
+            sb.append("RowLevelPermissionTagConfigurationApplied: ").append(getRowLevelPermissionTagConfigurationApplied()).append(",");
         if (getColumnLevelPermissionRulesApplied() != null)
             sb.append("ColumnLevelPermissionRulesApplied: ").append(getColumnLevelPermissionRulesApplied());
         sb.append("}");
@@ -498,6 +558,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
             return false;
+        if (other.getRowLevelPermissionTagConfigurationApplied() == null ^ this.getRowLevelPermissionTagConfigurationApplied() == null)
+            return false;
+        if (other.getRowLevelPermissionTagConfigurationApplied() != null
+                && other.getRowLevelPermissionTagConfigurationApplied().equals(this.getRowLevelPermissionTagConfigurationApplied()) == false)
+            return false;
         if (other.getColumnLevelPermissionRulesApplied() == null ^ this.getColumnLevelPermissionRulesApplied() == null)
             return false;
         if (other.getColumnLevelPermissionRulesApplied() != null
@@ -518,6 +583,8 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode
+                + ((getRowLevelPermissionTagConfigurationApplied() == null) ? 0 : getRowLevelPermissionTagConfigurationApplied().hashCode());
         hashCode = prime * hashCode + ((getColumnLevelPermissionRulesApplied() == null) ? 0 : getColumnLevelPermissionRulesApplied().hashCode());
         return hashCode;
     }

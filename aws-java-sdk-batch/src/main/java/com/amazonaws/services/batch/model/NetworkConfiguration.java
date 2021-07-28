@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify this
- * parameter.
+ * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must
+ * not specify this parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NetworkConfiguration" target="_top">AWS API
@@ -31,8 +31,8 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
-     * subnet to send outbound traffic to the internet (for example, in order to pull container images), the private
+     * Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+     * private subnet to send outbound traffic to the internet (for example, to pull container images), the private
      * subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      * networking</a>. The default value is "DISABLED".
@@ -42,20 +42,19 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
-     * subnet to send outbound traffic to the internet (for example, in order to pull container images), the private
+     * Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+     * private subnet to send outbound traffic to the internet (for example, to pull container images), the private
      * subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      * networking</a>. The default value is "DISABLED".
      * </p>
      * 
      * @param assignPublicIp
-     *        Indicates whether the job should have a public IP address. For a job running on Fargate resources in a
-     *        private subnet to send outbound traffic to the internet (for example, in order to pull container images),
-     *        the private subnet requires a NAT gateway be attached to route requests to the internet. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
-     *        networking</a>. The default value is "DISABLED".
+     *        Indicates whether the job should have a public IP address. For a job that is running on Fargate resources
+     *        in a private subnet to send outbound traffic to the internet (for example, to pull container images), the
+     *        private subnet requires a NAT gateway be attached to route requests to the internet. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS
+     *        task networking</a>. The default value is "DISABLED".
      * @see AssignPublicIp
      */
 
@@ -65,16 +64,16 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
-     * subnet to send outbound traffic to the internet (for example, in order to pull container images), the private
+     * Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+     * private subnet to send outbound traffic to the internet (for example, to pull container images), the private
      * subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      * networking</a>. The default value is "DISABLED".
      * </p>
      * 
-     * @return Indicates whether the job should have a public IP address. For a job running on Fargate resources in a
-     *         private subnet to send outbound traffic to the internet (for example, in order to pull container images),
-     *         the private subnet requires a NAT gateway be attached to route requests to the internet. For more
+     * @return Indicates whether the job should have a public IP address. For a job that is running on Fargate resources
+     *         in a private subnet to send outbound traffic to the internet (for example, to pull container images), the
+     *         private subnet requires a NAT gateway be attached to route requests to the internet. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      *         networking</a>. The default value is "DISABLED".
@@ -87,20 +86,19 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
-     * subnet to send outbound traffic to the internet (for example, in order to pull container images), the private
+     * Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+     * private subnet to send outbound traffic to the internet (for example, to pull container images), the private
      * subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      * networking</a>. The default value is "DISABLED".
      * </p>
      * 
      * @param assignPublicIp
-     *        Indicates whether the job should have a public IP address. For a job running on Fargate resources in a
-     *        private subnet to send outbound traffic to the internet (for example, in order to pull container images),
-     *        the private subnet requires a NAT gateway be attached to route requests to the internet. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
-     *        networking</a>. The default value is "DISABLED".
+     *        Indicates whether the job should have a public IP address. For a job that is running on Fargate resources
+     *        in a private subnet to send outbound traffic to the internet (for example, to pull container images), the
+     *        private subnet requires a NAT gateway be attached to route requests to the internet. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS
+     *        task networking</a>. The default value is "DISABLED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */
@@ -112,20 +110,19 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates whether the job should have a public IP address. For a job running on Fargate resources in a private
-     * subnet to send outbound traffic to the internet (for example, in order to pull container images), the private
+     * Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+     * private subnet to send outbound traffic to the internet (for example, to pull container images), the private
      * subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
      * networking</a>. The default value is "DISABLED".
      * </p>
      * 
      * @param assignPublicIp
-     *        Indicates whether the job should have a public IP address. For a job running on Fargate resources in a
-     *        private subnet to send outbound traffic to the internet (for example, in order to pull container images),
-     *        the private subnet requires a NAT gateway be attached to route requests to the internet. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task
-     *        networking</a>. The default value is "DISABLED".
+     *        Indicates whether the job should have a public IP address. For a job that is running on Fargate resources
+     *        in a private subnet to send outbound traffic to the internet (for example, to pull container images), the
+     *        private subnet requires a NAT gateway be attached to route requests to the internet. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS
+     *        task networking</a>. The default value is "DISABLED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */

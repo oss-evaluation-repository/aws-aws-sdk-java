@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about partitions in a data store.
+ * Contains information about the partition dimensions in a data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastorePartitions" target="_top">AWS
@@ -30,17 +30,17 @@ public class DatastorePartitions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of partitions in a data store.
+     * A list of partition dimensions in a data store.
      * </p>
      */
     private java.util.List<DatastorePartition> partitions;
 
     /**
      * <p>
-     * A list of partitions in a data store.
+     * A list of partition dimensions in a data store.
      * </p>
      * 
-     * @return A list of partitions in a data store.
+     * @return A list of partition dimensions in a data store.
      */
 
     public java.util.List<DatastorePartition> getPartitions() {
@@ -49,11 +49,11 @@ public class DatastorePartitions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of partitions in a data store.
+     * A list of partition dimensions in a data store.
      * </p>
      * 
      * @param partitions
-     *        A list of partitions in a data store.
+     *        A list of partition dimensions in a data store.
      */
 
     public void setPartitions(java.util.Collection<DatastorePartition> partitions) {
@@ -67,7 +67,7 @@ public class DatastorePartitions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of partitions in a data store.
+     * A list of partition dimensions in a data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DatastorePartitions implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param partitions
-     *        A list of partitions in a data store.
+     *        A list of partition dimensions in a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DatastorePartitions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of partitions in a data store.
+     * A list of partition dimensions in a data store.
      * </p>
      * 
      * @param partitions
-     *        A list of partitions in a data store.
+     *        A list of partition dimensions in a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

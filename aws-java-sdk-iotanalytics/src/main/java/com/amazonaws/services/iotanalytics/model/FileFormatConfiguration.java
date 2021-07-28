@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+ * Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a
  * href="https://parquet.apache.org/">Parquet</a>.
  * </p>
  * <p>

@@ -27,7 +27,7 @@ public class UpdateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account that contains the analysis that you're updating.
+     * The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -68,11 +68,11 @@ public class UpdateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account that contains the analysis that you're updating.
+     * The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the analysis that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -81,10 +81,10 @@ public class UpdateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account that contains the analysis that you're updating.
+     * The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      * </p>
      * 
-     * @return The ID of the AWS account that contains the analysis that you're updating.
+     * @return The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -93,11 +93,11 @@ public class UpdateAnalysisRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the AWS account that contains the analysis that you're updating.
+     * The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the analysis that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the analysis that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the AWS account that contains the theme that you're updating.
+     * The ID of the Amazon Web Services account; that contains the theme that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -46,7 +46,7 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from
-     * a default QuickSight theme.
+     * a default Amazon QuickSight theme.
      * </p>
      */
     private String baseThemeId;
@@ -67,11 +67,11 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the AWS account that contains the theme that you're updating.
+     * The ID of the Amazon Web Services account; that contains the theme that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the theme that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the theme that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -80,10 +80,10 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the AWS account that contains the theme that you're updating.
+     * The ID of the Amazon Web Services account; that contains the theme that you're updating.
      * </p>
      * 
-     * @return The ID of the AWS account that contains the theme that you're updating.
+     * @return The ID of the Amazon Web Services account; that contains the theme that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -92,11 +92,11 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the AWS account that contains the theme that you're updating.
+     * The ID of the Amazon Web Services account; that contains the theme that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account that contains the theme that you're updating.
+     *        The ID of the Amazon Web Services account; that contains the theme that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,12 +188,12 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from
-     * a default QuickSight theme.
+     * a default Amazon QuickSight theme.
      * </p>
      * 
      * @param baseThemeId
      *        The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially
-     *        inherit from a default QuickSight theme.
+     *        inherit from a default Amazon QuickSight theme.
      */
 
     public void setBaseThemeId(String baseThemeId) {
@@ -203,11 +203,11 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from
-     * a default QuickSight theme.
+     * a default Amazon QuickSight theme.
      * </p>
      * 
      * @return The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially
-     *         inherit from a default QuickSight theme.
+     *         inherit from a default Amazon QuickSight theme.
      */
 
     public String getBaseThemeId() {
@@ -217,12 +217,12 @@ public class UpdateThemeRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from
-     * a default QuickSight theme.
+     * a default Amazon QuickSight theme.
      * </p>
      * 
      * @param baseThemeId
      *        The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially
-     *        inherit from a default QuickSight theme.
+     *        inherit from a default Amazon QuickSight theme.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

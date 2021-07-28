@@ -27,7 +27,7 @@ public class AccessDeniedException extends com.amazonaws.services.quicksight.mod
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      */
     private String requestId;
@@ -44,11 +44,11 @@ public class AccessDeniedException extends com.amazonaws.services.quicksight.mod
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this request.
+     *        The Amazon Web Services request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -58,10 +58,10 @@ public class AccessDeniedException extends com.amazonaws.services.quicksight.mod
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
-     * @return The AWS request ID for this request.
+     * @return The Amazon Web Services request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -71,11 +71,11 @@ public class AccessDeniedException extends com.amazonaws.services.quicksight.mod
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The Amazon Web Services request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this request.
+     *        The Amazon Web Services request ID for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

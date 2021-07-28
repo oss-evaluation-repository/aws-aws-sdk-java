@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an
- * Amazon S3 bucket, that you want to route traffic to.
+ * <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront
+ * distribution or an Amazon S3 bucket, that you want to route traffic to.
  * </p>
  * <p>
  * When creating resource record sets for a private hosted zone, note the following:
@@ -53,7 +53,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -73,7 +73,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
-     * the AWS CLI command <a
+     * the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
      * -vpc-endpoints</a>.
      * </p>
@@ -93,7 +93,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
      * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
@@ -114,8 +114,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     * select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
+     * the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      * </p>
      * </li>
      * <li>
@@ -142,8 +142,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
-     * the applicable guide:
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the
+     * applicable guide:
      * </p>
      * <ul>
      * <li>
@@ -164,7 +164,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -197,7 +197,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -225,7 +225,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Enter the API endpoint for the interface endpoint, such as
      * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
      * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
-     * of <code>DnsName</code> using the AWS CLI command <a
+     * of <code>DnsName</code> using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      * >describe-vpc-endpoints</a>.
      * </p>
@@ -276,9 +276,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
-     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * <i>Management Console</i>: For information about how to get the value by using the console, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     * Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -286,15 +286,15 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     * >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     * >describe-environments</a> in the <i>CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -302,14 +302,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>ELB load balancer</dt>
      * <dd>
      * <p>
-     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management
-     * Console, the ELB API, or the AWS CLI.
+     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+     * the ELB API, or the CLI.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      * </p>
      * <p>
      * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
@@ -340,7 +340,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
      * information, see the applicable guide:
      * </p>
      * <ul>
@@ -362,7 +362,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify the DNS name for your accelerator:
@@ -377,7 +377,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * <b>CLI:</b> To get the DNS name, use <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      * >describe-accelerator</a>.
      * </p>
@@ -416,8 +416,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record
      * sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the
-     * health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted
-     * zone.
+     * health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record
+     * set in the hosted zone.
      * </p>
      * <p>
      * Note the following:
@@ -497,9 +497,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Other records in the same hosted zone</dt>
      * <dd>
      * <p>
-     * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
-     * group of weighted records) but is not another alias record, we recommend that you associate a health check with
-     * all of the records in the alias target. For more information, see <a href=
+     * If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
+     * (for example, a group of weighted records) but is not another alias record, we recommend that you associate a
+     * health check with all of the records in the alias target. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -530,9 +530,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
-     *        href
-     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html"
+     *        >get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -551,7 +551,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
-     *        using the AWS CLI command <a
+     *        using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -571,8 +571,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
-     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
+     *        quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -592,9 +592,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation
-     *        pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     *        <b>Description</b> tab.
+     *        <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      *        </p>
      *        </li>
      *        <li>
@@ -621,8 +620,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
-     *        information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information,
+     *        see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -643,7 +642,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -672,10 +671,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
-     *        command <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
-     *        -names</a>:
+     *        Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -702,7 +700,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Enter the API endpoint for the interface endpoint, such as
      *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
      *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
-     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        get the value of <code>DnsName</code> using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -756,9 +754,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -766,15 +764,15 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     *        >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
-     *        <code>CNAME</code> attribute. For more information, see <a
+     *        <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     *        attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     *        >describe-environments</a> in the <i>CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -782,15 +780,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>ELB load balancer</dt>
      *        <dd>
      *        <p>
-     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS
-     *        Management Console, the ELB API, or the AWS CLI.
+     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management
+     *        Console, the ELB API, or the CLI.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field.
+     *        <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
+     *        the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      *        </p>
      *        <p>
      *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
@@ -822,8 +819,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For
-     *        more information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -844,7 +841,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify the DNS name for your accelerator:
@@ -859,7 +856,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        <b>CLI:</b> To get the DNS name, use <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      *        >describe-accelerator</a>.
      *        </p>
@@ -905,7 +902,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -925,7 +922,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
-     * the AWS CLI command <a
+     * the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
      * -vpc-endpoints</a>.
      * </p>
@@ -945,7 +942,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
      * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
@@ -966,8 +963,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     * select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
+     * the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      * </p>
      * </li>
      * <li>
@@ -994,8 +991,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
-     * the applicable guide:
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the
+     * applicable guide:
      * </p>
      * <ul>
      * <li>
@@ -1016,7 +1013,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1046,9 +1043,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
-     *        href
-     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html"
+     *        >get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -1067,7 +1064,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
-     *        using the AWS CLI command <a
+     *        using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -1087,8 +1084,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
-     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
+     *        quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1108,9 +1105,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation
-     *        pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     *        <b>Description</b> tab.
+     *        <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      *        </p>
      *        </li>
      *        <li>
@@ -1137,8 +1133,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
-     *        information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information,
+     *        see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -1159,7 +1155,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1195,7 +1191,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -1215,7 +1211,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
-     * the AWS CLI command <a
+     * the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
      * -vpc-endpoints</a>.
      * </p>
@@ -1235,7 +1231,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
      * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
@@ -1256,8 +1252,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     * select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
+     * the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      * </p>
      * </li>
      * <li>
@@ -1284,8 +1280,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
-     * the applicable guide:
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the
+     * applicable guide:
      * </p>
      * <ul>
      * <li>
@@ -1306,7 +1302,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1335,10 +1331,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *         <dd>
      *         <p>
-     *         Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
-     *         href
-     *         ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names<
-     *         /a>:
+     *         Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html"
+     *         >get-domain-names</a>:
      *         </p>
      *         <ul>
      *         <li>
@@ -1357,7 +1352,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dd>
      *         <p>
      *         Specify the hosted zone ID for your interface endpoint. You can get the value of
-     *         <code>HostedZoneId</code> using the AWS CLI command <a
+     *         <code>HostedZoneId</code> using the CLI command <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *         >describe-vpc-endpoints</a>.
      *         </p>
@@ -1377,8 +1372,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         Specify the hosted zone ID for the region that you created the environment in. The environment must have
      *         a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk
-     *         endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints
+     *         and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>ELB load balancer</dt>
@@ -1398,7 +1393,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation
+     *         <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation
      *         pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the
      *         <b>Description</b> tab.
      *         </p>
@@ -1427,8 +1422,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
-     *         information, see the applicable guide:
+     *         <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information,
+     *         see the applicable guide:
      *         </p>
      *         <ul>
      *         <li>
@@ -1449,7 +1444,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         </dd>
-     *         <dt>AWS Global Accelerator accelerator</dt>
+     *         <dt>Global Accelerator accelerator</dt>
      *         <dd>
      *         <p>
      *         Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1485,7 +1480,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -1505,7 +1500,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
-     * the AWS CLI command <a
+     * the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
      * -vpc-endpoints</a>.
      * </p>
@@ -1525,7 +1520,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
      * quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
@@ -1546,8 +1541,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     * select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
+     * the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      * </p>
      * </li>
      * <li>
@@ -1574,8 +1569,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
-     * the applicable guide:
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the
+     * applicable guide:
      * </p>
      * <ul>
      * <li>
@@ -1596,7 +1591,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1626,9 +1621,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
-     *        href
-     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html"
+     *        >get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -1647,7 +1642,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
-     *        using the AWS CLI command <a
+     *        using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -1667,8 +1662,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints
-     *        and quotas</a> in the the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and
+     *        quotas</a> in the the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1688,9 +1683,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation
-     *        pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     *        <b>Description</b> tab.
+     *        <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
      *        </p>
      *        </li>
      *        <li>
@@ -1717,8 +1711,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
-     *        information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information,
+     *        see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -1739,7 +1733,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
@@ -1777,7 +1771,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -1805,7 +1799,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Enter the API endpoint for the interface endpoint, such as
      * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
      * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
-     * of <code>DnsName</code> using the AWS CLI command <a
+     * of <code>DnsName</code> using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      * >describe-vpc-endpoints</a>.
      * </p>
@@ -1856,9 +1850,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
-     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * <i>Management Console</i>: For information about how to get the value by using the console, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     * Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1866,15 +1860,15 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     * >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     * >describe-environments</a> in the <i>CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -1882,14 +1876,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>ELB load balancer</dt>
      * <dd>
      * <p>
-     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management
-     * Console, the ELB API, or the AWS CLI.
+     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+     * the ELB API, or the CLI.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      * </p>
      * <p>
      * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
@@ -1920,7 +1914,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
      * information, see the applicable guide:
      * </p>
      * <ul>
@@ -1942,7 +1936,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify the DNS name for your accelerator:
@@ -1957,7 +1951,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * <b>CLI:</b> To get the DNS name, use <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      * >describe-accelerator</a>.
      * </p>
@@ -1998,10 +1992,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
-     *        command <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
-     *        -names</a>:
+     *        Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -2028,7 +2021,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Enter the API endpoint for the interface endpoint, such as
      *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
      *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
-     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        get the value of <code>DnsName</code> using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -2082,9 +2075,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -2092,15 +2085,15 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     *        >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
-     *        <code>CNAME</code> attribute. For more information, see <a
+     *        <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     *        attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     *        >describe-environments</a> in the <i>CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2108,15 +2101,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>ELB load balancer</dt>
      *        <dd>
      *        <p>
-     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS
-     *        Management Console, the ELB API, or the AWS CLI.
+     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management
+     *        Console, the ELB API, or the CLI.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field.
+     *        <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
+     *        the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      *        </p>
      *        <p>
      *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
@@ -2148,8 +2140,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For
-     *        more information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -2170,7 +2162,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify the DNS name for your accelerator:
@@ -2185,7 +2177,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        <b>CLI:</b> To get the DNS name, use <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      *        >describe-accelerator</a>.
      *        </p>
@@ -2231,7 +2223,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -2259,7 +2251,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Enter the API endpoint for the interface endpoint, such as
      * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
      * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
-     * of <code>DnsName</code> using the AWS CLI command <a
+     * of <code>DnsName</code> using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      * >describe-vpc-endpoints</a>.
      * </p>
@@ -2310,9 +2302,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
-     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * <i>Management Console</i>: For information about how to get the value by using the console, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     * Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -2320,15 +2312,15 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     * >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     * >describe-environments</a> in the <i>CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -2336,14 +2328,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>ELB load balancer</dt>
      * <dd>
      * <p>
-     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management
-     * Console, the ELB API, or the AWS CLI.
+     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+     * the ELB API, or the CLI.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      * </p>
      * <p>
      * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
@@ -2374,7 +2366,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
      * information, see the applicable guide:
      * </p>
      * <ul>
@@ -2396,7 +2388,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify the DNS name for your accelerator:
@@ -2411,7 +2403,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * <b>CLI:</b> To get the DNS name, use <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      * >describe-accelerator</a>.
      * </p>
@@ -2451,10 +2443,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *         <dd>
      *         <p>
-     *         Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
-     *         command <a
-     *         href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
-     *         -names</a>:
+     *         Specify the applicable domain name for your API. You can get the applicable value using the CLI command
+     *         <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-
+     *         names</a>:
      *         </p>
      *         <ul>
      *         <li>
@@ -2481,7 +2472,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         Enter the API endpoint for the interface endpoint, such as
      *         <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
      *         For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
-     *         get the value of <code>DnsName</code> using the AWS CLI command <a
+     *         get the value of <code>DnsName</code> using the CLI command <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *         >describe-vpc-endpoints</a>.
      *         </p>
@@ -2536,9 +2527,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
+     *         <i>Management Console</i>: For information about how to get the value by using the console, see <a
      *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains
-     *         with AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *         with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2546,15 +2537,15 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *         <code>CNAME</code> attribute. For more information, see <a
      *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     *         >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     *         >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
-     *         <code>CNAME</code> attribute. For more information, see <a
+     *         <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     *         attribute. For more information, see <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *         >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     *         >describe-environments</a> in the <i>CLI Command Reference</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -2562,13 +2553,13 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>ELB load balancer</dt>
      *         <dd>
      *         <p>
-     *         Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS
-     *         Management Console, the ELB API, or the AWS CLI.
+     *         Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management
+     *         Console, the ELB API, or the CLI.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
+     *         <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
      *         choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
      *         field.
      *         </p>
@@ -2602,8 +2593,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For
-     *         more information, see the applicable guide:
+     *         <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     *         information, see the applicable guide:
      *         </p>
      *         <ul>
      *         <li>
@@ -2624,7 +2615,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         </dd>
-     *         <dt>AWS Global Accelerator accelerator</dt>
+     *         <dt>Global Accelerator accelerator</dt>
      *         <dd>
      *         <p>
      *         Specify the DNS name for your accelerator:
@@ -2639,7 +2630,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS CLI:</b> To get the DNS name, use <a
+     *         <b>CLI:</b> To get the DNS name, use <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      *         >describe-accelerator</a>.
      *         </p>
@@ -2686,7 +2677,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      * <dd>
      * <p>
-     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      * </p>
      * <ul>
@@ -2714,7 +2705,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Enter the API endpoint for the interface endpoint, such as
      * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
      * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
-     * of <code>DnsName</code> using the AWS CLI command <a
+     * of <code>DnsName</code> using the CLI command <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      * >describe-vpc-endpoints</a>.
      * </p>
@@ -2765,9 +2756,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
-     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * <i>Management Console</i>: For information about how to get the value by using the console, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     * Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -2775,15 +2766,15 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     * >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     * >describe-environments</a> in the <i>CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -2791,14 +2782,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>ELB load balancer</dt>
      * <dd>
      * <p>
-     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management
-     * Console, the ELB API, or the AWS CLI.
+     * Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+     * the ELB API, or the CLI.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      * </p>
      * <p>
      * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
@@ -2829,7 +2820,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     * <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
      * information, see the applicable guide:
      * </p>
      * <ul>
@@ -2851,7 +2842,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
-     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dt>Global Accelerator accelerator</dt>
      * <dd>
      * <p>
      * Specify the DNS name for your accelerator:
@@ -2866,7 +2857,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * <b>CLI:</b> To get the DNS name, use <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      * >describe-accelerator</a>.
      * </p>
@@ -2907,10 +2898,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
      *        <dd>
      *        <p>
-     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
-     *        command <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
-     *        -names</a>:
+     *        Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -2937,7 +2927,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Enter the API endpoint for the interface endpoint, such as
      *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
      *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
-     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        get the value of <code>DnsName</code> using the CLI command <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
      *        >describe-vpc-endpoints</a>.
      *        </p>
@@ -2991,9 +2981,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -3001,15 +2991,15 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
-     *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
+     *        >DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
-     *        <code>CNAME</code> attribute. For more information, see <a
+     *        <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     *        attribute. For more information, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
+     *        >describe-environments</a> in the <i>CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -3017,15 +3007,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>ELB load balancer</dt>
      *        <dd>
      *        <p>
-     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS
-     *        Management Console, the ELB API, or the AWS CLI.
+     *        Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management
+     *        Console, the ELB API, or the CLI.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field.
+     *        <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
+     *        the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
      *        </p>
      *        <p>
      *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
@@ -3057,8 +3046,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For
-     *        more information, see the applicable guide:
+     *        <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
@@ -3079,7 +3068,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dt>Global Accelerator accelerator</dt>
      *        <dd>
      *        <p>
      *        Specify the DNS name for your accelerator:
@@ -3094,7 +3083,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        <b>CLI:</b> To get the DNS name, use <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
      *        >describe-accelerator</a>.
      *        </p>
@@ -3138,8 +3127,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record
      * sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the
-     * health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted
-     * zone.
+     * health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record
+     * set in the hosted zone.
      * </p>
      * <p>
      * Note the following:
@@ -3219,9 +3208,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Other records in the same hosted zone</dt>
      * <dd>
      * <p>
-     * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
-     * group of weighted records) but is not another alias record, we recommend that you associate a health check with
-     * all of the records in the alias target. For more information, see <a href=
+     * If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
+     * (for example, a group of weighted records) but is not another alias record, we recommend that you associate a
+     * health check with all of the records in the alias target. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -3236,8 +3225,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * @param evaluateTargetHealth
      *        <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource
      *        record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set
-     *        inherits the health of the referenced AWS resource, such as an ELB load balancer or another resource
-     *        record set in the hosted zone.</p>
+     *        inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or
+     *        another resource record set in the hosted zone.</p>
      *        <p>
      *        Note the following:
      *        </p>
@@ -3317,9 +3306,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Other records in the same hosted zone</dt>
      *        <dd>
      *        <p>
-     *        If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
-     *        example, a group of weighted records) but is not another alias record, we recommend that you associate a
-     *        health check with all of the records in the alias target. For more information, see <a href=
+     *        If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of
+     *        records (for example, a group of weighted records) but is not another alias record, we recommend that you
+     *        associate a health check with all of the records in the alias target. For more information, see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
@@ -3339,8 +3328,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record
      * sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the
-     * health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted
-     * zone.
+     * health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record
+     * set in the hosted zone.
      * </p>
      * <p>
      * Note the following:
@@ -3420,9 +3409,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Other records in the same hosted zone</dt>
      * <dd>
      * <p>
-     * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
-     * group of weighted records) but is not another alias record, we recommend that you associate a health check with
-     * all of the records in the alias target. For more information, see <a href=
+     * If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
+     * (for example, a group of weighted records) but is not another alias record, we recommend that you associate a
+     * health check with all of the records in the alias target. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -3436,8 +3425,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * 
      * @return <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource
      *         record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
-     *         set inherits the health of the referenced AWS resource, such as an ELB load balancer or another resource
-     *         record set in the hosted zone.</p>
+     *         set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or
+     *         another resource record set in the hosted zone.</p>
      *         <p>
      *         Note the following:
      *         </p>
@@ -3517,9 +3506,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>Other records in the same hosted zone</dt>
      *         <dd>
      *         <p>
-     *         If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
-     *         example, a group of weighted records) but is not another alias record, we recommend that you associate a
-     *         health check with all of the records in the alias target. For more information, see <a href=
+     *         If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of
+     *         records (for example, a group of weighted records) but is not another alias record, we recommend that you
+     *         associate a health check with all of the records in the alias target. For more information, see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
@@ -3539,8 +3528,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record
      * sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the
-     * health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted
-     * zone.
+     * health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record
+     * set in the hosted zone.
      * </p>
      * <p>
      * Note the following:
@@ -3620,9 +3609,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Other records in the same hosted zone</dt>
      * <dd>
      * <p>
-     * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
-     * group of weighted records) but is not another alias record, we recommend that you associate a health check with
-     * all of the records in the alias target. For more information, see <a href=
+     * If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
+     * (for example, a group of weighted records) but is not another alias record, we recommend that you associate a
+     * health check with all of the records in the alias target. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -3637,8 +3626,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * @param evaluateTargetHealth
      *        <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource
      *        record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set
-     *        inherits the health of the referenced AWS resource, such as an ELB load balancer or another resource
-     *        record set in the hosted zone.</p>
+     *        inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or
+     *        another resource record set in the hosted zone.</p>
      *        <p>
      *        Note the following:
      *        </p>
@@ -3718,9 +3707,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Other records in the same hosted zone</dt>
      *        <dd>
      *        <p>
-     *        If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
-     *        example, a group of weighted records) but is not another alias record, we recommend that you associate a
-     *        health check with all of the records in the alias target. For more information, see <a href=
+     *        If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of
+     *        records (for example, a group of weighted records) but is not another alias record, we recommend that you
+     *        associate a health check with all of the records in the alias target. For more information, see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
@@ -3742,8 +3731,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record
      * sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the
-     * health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted
-     * zone.
+     * health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record
+     * set in the hosted zone.
      * </p>
      * <p>
      * Note the following:
@@ -3823,9 +3812,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Other records in the same hosted zone</dt>
      * <dd>
      * <p>
-     * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
-     * group of weighted records) but is not another alias record, we recommend that you associate a health check with
-     * all of the records in the alias target. For more information, see <a href=
+     * If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records
+     * (for example, a group of weighted records) but is not another alias record, we recommend that you associate a
+     * health check with all of the records in the alias target. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -3839,8 +3828,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * 
      * @return <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource
      *         record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
-     *         set inherits the health of the referenced AWS resource, such as an ELB load balancer or another resource
-     *         record set in the hosted zone.</p>
+     *         set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or
+     *         another resource record set in the hosted zone.</p>
      *         <p>
      *         Note the following:
      *         </p>
@@ -3920,9 +3909,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>Other records in the same hosted zone</dt>
      *         <dd>
      *         <p>
-     *         If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
-     *         example, a group of weighted records) but is not another alias record, we recommend that you associate a
-     *         health check with all of the records in the alias target. For more information, see <a href=
+     *         If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of
+     *         records (for example, a group of weighted records) but is not another alias record, we recommend that you
+     *         associate a health check with all of the records in the alias target. For more information, see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>

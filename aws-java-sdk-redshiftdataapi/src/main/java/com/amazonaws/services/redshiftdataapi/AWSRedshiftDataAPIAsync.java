@@ -26,8 +26,8 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  * </p>
  * <p>
  * <p>
- * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
- * statements, which are committed if the statement succeeds.
+ * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which
+ * are committed if the statement succeeds.
  * </p>
  * <p>
  * For more information about the Amazon Redshift Data API, see <a
@@ -37,6 +37,67 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
+
+    /**
+     * <p>
+     * Runs one or more SQL statements, which can be data manipulation language (DML) or data definition language (DDL).
+     * Depending on the authorization method, use one of the following combinations of request parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Temporary credentials - specify the cluster identifier, the database name, and the database user name. Permission
+     * to call the <code>redshift:GetClusterCredentials</code> operation is required to use this method.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AWSRedshiftDataAPIAsync.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest);
+
+    /**
+     * <p>
+     * Runs one or more SQL statements, which can be data manipulation language (DML) or data definition language (DDL).
+     * Depending on the authorization method, use one of the following combinations of request parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Temporary credentials - specify the cluster identifier, the database name, and the database user name. Permission
+     * to call the <code>redshift:GetClusterCredentials</code> operation is required to use this method.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchExecuteStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AWSRedshiftDataAPIAsyncHandler.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler);
 
     /**
      * <p>
@@ -113,8 +174,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -142,8 +203,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -176,8 +237,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -205,8 +266,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -271,8 +332,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -299,8 +360,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -332,8 +393,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -360,8 +421,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -427,8 +488,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -456,8 +517,8 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>

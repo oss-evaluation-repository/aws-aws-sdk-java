@@ -37,7 +37,7 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
     private String name;
     /**
      * <p>
-     * The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the region
+     * The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region
      * that you run CreateNamespace in.
      * </p>
      */
@@ -60,7 +60,7 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
     private String identityStore;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -153,12 +153,12 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the region
+     * The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region
      * that you run CreateNamespace in.
      * </p>
      * 
      * @param capacityRegion
-     *        The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the
+     *        The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the
      *        region that you run CreateNamespace in.
      */
 
@@ -168,11 +168,11 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the region
+     * The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region
      * that you run CreateNamespace in.
      * </p>
      * 
-     * @return The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the
+     * @return The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the
      *         region that you run CreateNamespace in.
      */
 
@@ -182,12 +182,12 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the region
+     * The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region
      * that you run CreateNamespace in.
      * </p>
      * 
      * @param capacityRegion
-     *        The AWS Region that you want to use for the free SPICE capacity for the new namespace. This is set to the
+     *        The Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the
      *        region that you run CreateNamespace in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -349,11 +349,11 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -362,10 +362,10 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -374,11 +374,11 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

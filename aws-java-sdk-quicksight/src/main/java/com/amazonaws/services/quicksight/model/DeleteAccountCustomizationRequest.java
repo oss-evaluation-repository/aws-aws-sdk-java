@@ -27,7 +27,8 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     * The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     * Region;.
      * </p>
      */
     private String awsAccountId;
@@ -40,11 +41,13 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     * The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     * Region;.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     *        The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     *        Region;.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +56,12 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     * The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     * Region;.
      * </p>
      * 
-     * @return The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     * @return The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+     *         this Region;.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +70,13 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     * The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     * Region;.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
+     *        The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in this
+     *        Region;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

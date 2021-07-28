@@ -28,8 +28,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
- * support mixing compute environment architecture types in a single job queue.
+ * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support
+ * mixing compute environment architecture types in a single job queue.
  * </p>
  * </note>
  * 

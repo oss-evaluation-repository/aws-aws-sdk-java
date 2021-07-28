@@ -30,7 +30,7 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of dataset contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to IoT Events.
      * </p>
      */
     private IotEventsDestinationConfiguration iotEventsDestinationConfiguration;
@@ -43,11 +43,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of dataset contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to IoT Events.
      * </p>
      * 
      * @param iotEventsDestinationConfiguration
-     *        Configuration information for delivery of dataset contents to AWS IoT Events.
+     *        Configuration information for delivery of dataset contents to IoT Events.
      */
 
     public void setIotEventsDestinationConfiguration(IotEventsDestinationConfiguration iotEventsDestinationConfiguration) {
@@ -56,10 +56,10 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of dataset contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to IoT Events.
      * </p>
      * 
-     * @return Configuration information for delivery of dataset contents to AWS IoT Events.
+     * @return Configuration information for delivery of dataset contents to IoT Events.
      */
 
     public IotEventsDestinationConfiguration getIotEventsDestinationConfiguration() {
@@ -68,11 +68,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of dataset contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to IoT Events.
      * </p>
      * 
      * @param iotEventsDestinationConfiguration
-     *        Configuration information for delivery of dataset contents to AWS IoT Events.
+     *        Configuration information for delivery of dataset contents to IoT Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

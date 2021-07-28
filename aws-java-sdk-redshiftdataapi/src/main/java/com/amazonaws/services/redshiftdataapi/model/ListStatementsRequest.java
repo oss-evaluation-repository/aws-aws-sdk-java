@@ -51,10 +51,11 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean roleLevel;
     /**
      * <p>
-     * The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query. You can
-     * list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to
-     * list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.
-     * Data API does a case-sensitive match of SQL statement names to the prefix value you provide.
+     * The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     * <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that
+     * matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and
+     * so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL
+     * statement names to the prefix value you provide.
      * </p>
      */
     private String statementName;
@@ -276,18 +277,19 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query. You can
-     * list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to
-     * list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.
-     * Data API does a case-sensitive match of SQL statement names to the prefix value you provide.
+     * The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     * <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that
+     * matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and
+     * so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL
+     * statement names to the prefix value you provide.
      * </p>
      * 
      * @param statementName
-     *        The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query.
-     *        You can list multiple statements by providing a prefix that matches the beginning of the statement name.
-     *        For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of
-     *        <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value
-     *        you provide.
+     *        The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     *        <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a
+     *        prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2,
+     *        myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a
+     *        case-sensitive match of SQL statement names to the prefix value you provide.
      */
 
     public void setStatementName(String statementName) {
@@ -296,17 +298,18 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query. You can
-     * list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to
-     * list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.
-     * Data API does a case-sensitive match of SQL statement names to the prefix value you provide.
+     * The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     * <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that
+     * matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and
+     * so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL
+     * statement names to the prefix value you provide.
      * </p>
      * 
-     * @return The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query.
-     *         You can list multiple statements by providing a prefix that matches the beginning of the statement name.
-     *         For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of
-     *         <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value
-     *         you provide.
+     * @return The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     *         <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a
+     *         prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2,
+     *         myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a
+     *         case-sensitive match of SQL statement names to the prefix value you provide.
      */
 
     public String getStatementName() {
@@ -315,18 +318,19 @@ public class ListStatementsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query. You can
-     * list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to
-     * list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.
-     * Data API does a case-sensitive match of SQL statement names to the prefix value you provide.
+     * The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     * <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that
+     * matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and
+     * so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL
+     * statement names to the prefix value you provide.
      * </p>
      * 
      * @param statementName
-     *        The name of the SQL statement specified as input to <code>ExecuteStatement</code> to identify the query.
-     *        You can list multiple statements by providing a prefix that matches the beginning of the statement name.
-     *        For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of
-     *        <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value
-     *        you provide.
+     *        The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or
+     *        <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a
+     *        prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2,
+     *        myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a
+     *        case-sensitive match of SQL statement names to the prefix value you provide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

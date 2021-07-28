@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of the described attack.
+ * Details of a Shield event. This is provided as part of an <a>AttackDetail</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackProperty" target="_top">AWS API
@@ -30,47 +30,63 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates layer 3
-     * and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     * <code>APPLICATION</code> indicates layer 7 events.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private String attackLayer;
     /**
      * <p>
-     * Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
-     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback DDoS attacks.
+     * Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
+     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.
      * </p>
      */
     private String attackPropertyIdentifier;
     /**
      * <p>
-     * The array of contributor objects that includes the top five contributors to an attack.
+     * Contributor objects for the top five contributors to a Shield event.
      * </p>
      */
     private java.util.List<Contributor> topContributors;
     /**
      * <p>
-     * The unit of the <code>Value</code> of the contributions.
+     * The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      */
     private String unit;
     /**
      * <p>
-     * The total contributions made to this attack by all contributors, not just the five listed in the
-     * <code>TopContributors</code> list.
+     * The total contributions made to this Shield event by all contributors.
      * </p>
      */
     private Long total;
 
     /**
      * <p>
-     * The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates layer 3
-     * and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     * <code>APPLICATION</code> indicates layer 7 events.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param attackLayer
-     *        The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates
-     *        layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     *        The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     *        <code>APPLICATION</code> indicates layer 7 events.</p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @see AttackLayer
      */
 
@@ -80,12 +96,23 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates layer 3
-     * and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     * <code>APPLICATION</code> indicates layer 7 events.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates
-     *         layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * @return The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     *         <code>APPLICATION</code> indicates layer 7 events.</p>
+     *         <p>
+     *         For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *         contributors in Amazon CloudWatch metrics. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *         >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @see AttackLayer
      */
 
@@ -95,13 +122,24 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates layer 3
-     * and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     * <code>APPLICATION</code> indicates layer 7 events.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param attackLayer
-     *        The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates
-     *        layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     *        The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     *        <code>APPLICATION</code> indicates layer 7 events.</p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttackLayer
      */
@@ -113,13 +151,24 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates layer 3
-     * and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     * The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     * <code>APPLICATION</code> indicates layer 7 events.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param attackLayer
-     *        The type of distributed denial of service (DDoS) event that was observed. <code>NETWORK</code> indicates
-     *        layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+     *        The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and
+     *        <code>APPLICATION</code> indicates layer 7 events.</p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttackLayer
      */
@@ -131,14 +180,14 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
-     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback DDoS attacks.
+     * Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
+     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.
      * </p>
      * 
      * @param attackPropertyIdentifier
-     *        Defines the DDoS attack property information that is provided. The
+     *        Defines the Shield event property information that is provided. The
      *        <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only
-     *        for WordPress reflective pingback DDoS attacks.
+     *        for WordPress reflective pingback events.
      * @see AttackPropertyIdentifier
      */
 
@@ -148,13 +197,13 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
-     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback DDoS attacks.
+     * Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
+     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.
      * </p>
      * 
-     * @return Defines the DDoS attack property information that is provided. The
+     * @return Defines the Shield event property information that is provided. The
      *         <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid
-     *         only for WordPress reflective pingback DDoS attacks.
+     *         only for WordPress reflective pingback events.
      * @see AttackPropertyIdentifier
      */
 
@@ -164,14 +213,14 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
-     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback DDoS attacks.
+     * Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
+     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.
      * </p>
      * 
      * @param attackPropertyIdentifier
-     *        Defines the DDoS attack property information that is provided. The
+     *        Defines the Shield event property information that is provided. The
      *        <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only
-     *        for WordPress reflective pingback DDoS attacks.
+     *        for WordPress reflective pingback events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttackPropertyIdentifier
      */
@@ -183,14 +232,14 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the DDoS attack property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
-     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback DDoS attacks.
+     * Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and
+     * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.
      * </p>
      * 
      * @param attackPropertyIdentifier
-     *        Defines the DDoS attack property information that is provided. The
+     *        Defines the Shield event property information that is provided. The
      *        <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only
-     *        for WordPress reflective pingback DDoS attacks.
+     *        for WordPress reflective pingback events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttackPropertyIdentifier
      */
@@ -202,10 +251,10 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of contributor objects that includes the top five contributors to an attack.
+     * Contributor objects for the top five contributors to a Shield event.
      * </p>
      * 
-     * @return The array of contributor objects that includes the top five contributors to an attack.
+     * @return Contributor objects for the top five contributors to a Shield event.
      */
 
     public java.util.List<Contributor> getTopContributors() {
@@ -214,11 +263,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of contributor objects that includes the top five contributors to an attack.
+     * Contributor objects for the top five contributors to a Shield event.
      * </p>
      * 
      * @param topContributors
-     *        The array of contributor objects that includes the top five contributors to an attack.
+     *        Contributor objects for the top five contributors to a Shield event.
      */
 
     public void setTopContributors(java.util.Collection<Contributor> topContributors) {
@@ -232,7 +281,7 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of contributor objects that includes the top five contributors to an attack.
+     * Contributor objects for the top five contributors to a Shield event.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +290,7 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param topContributors
-     *        The array of contributor objects that includes the top five contributors to an attack.
+     *        Contributor objects for the top five contributors to a Shield event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +306,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of contributor objects that includes the top five contributors to an attack.
+     * Contributor objects for the top five contributors to a Shield event.
      * </p>
      * 
      * @param topContributors
-     *        The array of contributor objects that includes the top five contributors to an attack.
+     *        Contributor objects for the top five contributors to a Shield event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +321,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of the <code>Value</code> of the contributions.
+     * The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      * 
      * @param unit
-     *        The unit of the <code>Value</code> of the contributions.
+     *        The unit used for the <code>Contributor</code> <code>Value</code> property.
      * @see Unit
      */
 
@@ -286,10 +335,10 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of the <code>Value</code> of the contributions.
+     * The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      * 
-     * @return The unit of the <code>Value</code> of the contributions.
+     * @return The unit used for the <code>Contributor</code> <code>Value</code> property.
      * @see Unit
      */
 
@@ -299,11 +348,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of the <code>Value</code> of the contributions.
+     * The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      * 
      * @param unit
-     *        The unit of the <code>Value</code> of the contributions.
+     *        The unit used for the <code>Contributor</code> <code>Value</code> property.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Unit
      */
@@ -315,11 +364,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of the <code>Value</code> of the contributions.
+     * The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      * 
      * @param unit
-     *        The unit of the <code>Value</code> of the contributions.
+     *        The unit used for the <code>Contributor</code> <code>Value</code> property.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Unit
      */
@@ -331,13 +380,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total contributions made to this attack by all contributors, not just the five listed in the
-     * <code>TopContributors</code> list.
+     * The total contributions made to this Shield event by all contributors.
      * </p>
      * 
      * @param total
-     *        The total contributions made to this attack by all contributors, not just the five listed in the
-     *        <code>TopContributors</code> list.
+     *        The total contributions made to this Shield event by all contributors.
      */
 
     public void setTotal(Long total) {
@@ -346,12 +393,10 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total contributions made to this attack by all contributors, not just the five listed in the
-     * <code>TopContributors</code> list.
+     * The total contributions made to this Shield event by all contributors.
      * </p>
      * 
-     * @return The total contributions made to this attack by all contributors, not just the five listed in the
-     *         <code>TopContributors</code> list.
+     * @return The total contributions made to this Shield event by all contributors.
      */
 
     public Long getTotal() {
@@ -360,13 +405,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total contributions made to this attack by all contributors, not just the five listed in the
-     * <code>TopContributors</code> list.
+     * The total contributions made to this Shield event by all contributors.
      * </p>
      * 
      * @param total
-     *        The total contributions made to this attack by all contributors, not just the five listed in the
-     *        <code>TopContributors</code> list.
+     *        The total contributions made to this Shield event by all contributors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

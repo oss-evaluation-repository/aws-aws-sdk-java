@@ -55,7 +55,7 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     private AuroraPostgreSqlParameters auroraPostgreSqlParameters;
     /**
      * <p>
-     * AWS IoT Analytics parameters.
+     * Amazon Web Services IoT Analytics parameters.
      * </p>
      */
     private AwsIotAnalyticsParameters awsIotAnalyticsParameters;
@@ -312,11 +312,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * AWS IoT Analytics parameters.
+     * Amazon Web Services IoT Analytics parameters.
      * </p>
      * 
      * @param awsIotAnalyticsParameters
-     *        AWS IoT Analytics parameters.
+     *        Amazon Web Services IoT Analytics parameters.
      */
 
     public void setAwsIotAnalyticsParameters(AwsIotAnalyticsParameters awsIotAnalyticsParameters) {
@@ -325,10 +325,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * AWS IoT Analytics parameters.
+     * Amazon Web Services IoT Analytics parameters.
      * </p>
      * 
-     * @return AWS IoT Analytics parameters.
+     * @return Amazon Web Services IoT Analytics parameters.
      */
 
     public AwsIotAnalyticsParameters getAwsIotAnalyticsParameters() {
@@ -337,11 +337,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * AWS IoT Analytics parameters.
+     * Amazon Web Services IoT Analytics parameters.
      * </p>
      * 
      * @param awsIotAnalyticsParameters
-     *        AWS IoT Analytics parameters.
+     *        Amazon Web Services IoT Analytics parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -101,13 +101,13 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * Either the number of rows returned from the SQL statement or the number of rows affected. If result size is
      * greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE,
-     * DELETE, COPY, and others.
+     * DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      * </p>
      */
     private Long resultRows;
     /**
      * <p>
-     * The size in bytes of the returned results.
+     * The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      * </p>
      */
     private Long resultSize;
@@ -160,6 +160,12 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * The SQL statements from a multiple statement run.
+     * </p>
+     */
+    private java.util.List<SubStatementData> subStatements;
     /**
      * <p>
      * The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the
@@ -706,13 +712,13 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * Either the number of rows returned from the SQL statement or the number of rows affected. If result size is
      * greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE,
-     * DELETE, COPY, and others.
+     * DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      * </p>
      * 
      * @param resultRows
      *        Either the number of rows returned from the SQL statement or the number of rows affected. If result size
      *        is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT,
-     *        UPDATE, DELETE, COPY, and others.
+     *        UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      */
 
     public void setResultRows(Long resultRows) {
@@ -723,12 +729,12 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * Either the number of rows returned from the SQL statement or the number of rows affected. If result size is
      * greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE,
-     * DELETE, COPY, and others.
+     * DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      * </p>
      * 
      * @return Either the number of rows returned from the SQL statement or the number of rows affected. If result size
      *         is greater than zero, the result rows can be the number of rows affected by SQL statements such as
-     *         INSERT, UPDATE, DELETE, COPY, and others.
+     *         INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      */
 
     public Long getResultRows() {
@@ -739,13 +745,13 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * Either the number of rows returned from the SQL statement or the number of rows affected. If result size is
      * greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE,
-     * DELETE, COPY, and others.
+     * DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      * </p>
      * 
      * @param resultRows
      *        Either the number of rows returned from the SQL statement or the number of rows affected. If result size
      *        is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT,
-     *        UPDATE, DELETE, COPY, and others.
+     *        UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,11 +762,11 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The size in bytes of the returned results.
+     * The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      * </p>
      * 
      * @param resultSize
-     *        The size in bytes of the returned results.
+     *        The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      */
 
     public void setResultSize(Long resultSize) {
@@ -769,10 +775,10 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The size in bytes of the returned results.
+     * The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      * </p>
      * 
-     * @return The size in bytes of the returned results.
+     * @return The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      */
 
     public Long getResultSize() {
@@ -781,11 +787,11 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The size in bytes of the returned results.
+     * The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      * </p>
      * 
      * @param resultSize
-     *        The size in bytes of the returned results.
+     *        The size in bytes of the returned results. A <code>-1</code> indicates the value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1187,6 +1193,76 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The SQL statements from a multiple statement run.
+     * </p>
+     * 
+     * @return The SQL statements from a multiple statement run.
+     */
+
+    public java.util.List<SubStatementData> getSubStatements() {
+        return subStatements;
+    }
+
+    /**
+     * <p>
+     * The SQL statements from a multiple statement run.
+     * </p>
+     * 
+     * @param subStatements
+     *        The SQL statements from a multiple statement run.
+     */
+
+    public void setSubStatements(java.util.Collection<SubStatementData> subStatements) {
+        if (subStatements == null) {
+            this.subStatements = null;
+            return;
+        }
+
+        this.subStatements = new java.util.ArrayList<SubStatementData>(subStatements);
+    }
+
+    /**
+     * <p>
+     * The SQL statements from a multiple statement run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubStatements(java.util.Collection)} or {@link #withSubStatements(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param subStatements
+     *        The SQL statements from a multiple statement run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStatementResult withSubStatements(SubStatementData... subStatements) {
+        if (this.subStatements == null) {
+            setSubStatements(new java.util.ArrayList<SubStatementData>(subStatements.length));
+        }
+        for (SubStatementData ele : subStatements) {
+            this.subStatements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SQL statements from a multiple statement run.
+     * </p>
+     * 
+     * @param subStatements
+     *        The SQL statements from a multiple statement run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStatementResult withSubStatements(java.util.Collection<SubStatementData> subStatements) {
+        setSubStatements(subStatements);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the
      * status last changed.
      * </p>
@@ -1275,6 +1351,8 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("SecretArn: ").append(getSecretArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getSubStatements() != null)
+            sb.append("SubStatements: ").append(getSubStatements()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -1355,6 +1433,10 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getSubStatements() == null ^ this.getSubStatements() == null)
+            return false;
+        if (other.getSubStatements() != null && other.getSubStatements().equals(this.getSubStatements()) == false)
+            return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
@@ -1383,6 +1465,7 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getResultSize() == null) ? 0 : getResultSize().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubStatements() == null) ? 0 : getSubStatements().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

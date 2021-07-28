@@ -37,7 +37,7 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date timestamp;
     /**
      * <p>
-     * The status of the data set content.
+     * The status of the dataset content.
      * </p>
      */
     private DatasetContentStatus status;
@@ -154,11 +154,11 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the data set content.
+     * The status of the dataset content.
      * </p>
      * 
      * @param status
-     *        The status of the data set content.
+     *        The status of the dataset content.
      */
 
     public void setStatus(DatasetContentStatus status) {
@@ -167,10 +167,10 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the data set content.
+     * The status of the dataset content.
      * </p>
      * 
-     * @return The status of the data set content.
+     * @return The status of the dataset content.
      */
 
     public DatasetContentStatus getStatus() {
@@ -179,11 +179,11 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the data set content.
+     * The status of the dataset content.
      * </p>
      * 
      * @param status
-     *        The status of the data set content.
+     *        The status of the dataset content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

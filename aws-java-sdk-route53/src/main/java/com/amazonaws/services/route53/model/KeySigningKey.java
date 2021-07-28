@@ -37,9 +37,8 @@ public class KeySigningKey implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management
+     * Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -92,16 +91,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      */
     private String kmsArn;
@@ -286,9 +284,8 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management
+     * Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -341,21 +338,20 @@ public class KeySigningKey implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
      * @param kmsArn
-     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     *        Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key
+     *        Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
      *        single hosted zone.</p>
      *        <p>
      *        You must configure the CMK as follows:
@@ -408,15 +404,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *        <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with the customer managed CMK in AWS KMS, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *        For more information about working with the customer managed CMK in KMS, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *        concepts</a>.
      */
 
@@ -426,9 +422,8 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management
+     * Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -481,20 +476,19 @@ public class KeySigningKey implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     *         Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     * @return The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key
+     *         Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
      *         single hosted zone.</p>
      *         <p>
      *         You must configure the CMK as follows:
@@ -547,15 +541,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *         <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *         </p>
      *         </li>
      *         </ul>
      *         </dd>
      *         </dl>
      *         <p>
-     *         For more information about working with the customer managed CMK in AWS KMS, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *         For more information about working with the customer managed CMK in KMS, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *         concepts</a>.
      */
 
@@ -565,9 +559,8 @@ public class KeySigningKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.
+     * The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key Management
+     * Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.
      * </p>
      * <p>
      * You must configure the CMK as follows:
@@ -620,21 +613,20 @@ public class KeySigningKey implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec-route53.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
      * </dd>
      * </dl>
      * <p>
-     * For more information about working with the customer managed CMK in AWS KMS, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
-     * concepts</a>.
+     * For more information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.
      * </p>
      * 
      * @param kmsArn
-     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key
-     *        Management Service (AWS KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
+     *        The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in Key
+     *        Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a
      *        single hosted zone.</p>
      *        <p>
      *        You must configure the CMK as follows:
@@ -687,15 +679,15 @@ public class KeySigningKey implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *        <code>"Service": "dnssec-route53.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </dd>
      *        </dl>
      *        <p>
-     *        For more information about working with the customer managed CMK in AWS KMS, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service
+     *        For more information about working with the customer managed CMK in KMS, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service
      *        concepts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

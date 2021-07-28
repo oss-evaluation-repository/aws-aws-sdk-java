@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.lexmodelsv2.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 
 /**
  * Abstract implementation of {@code AmazonLexModelsV2}. Convenient method forms pass through to the corresponding
@@ -314,6 +315,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonLexModelsV2Waiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

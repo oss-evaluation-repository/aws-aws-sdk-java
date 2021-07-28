@@ -27,8 +27,8 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
-     * temporary credentials.
+     * The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary
+     * credentials.
      * </p>
      */
     private String clusterIdentifier;
@@ -76,7 +76,7 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or ARN of the secret that enables access to the database. This parameter is required when authenticating
-     * using AWS Secrets Manager.
+     * using Secrets Manager.
      * </p>
      */
     private String secretArn;
@@ -90,12 +90,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
-     * temporary credentials.
+     * The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary
+     * credentials.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
+     *        The cluster identifier. This parameter is required when authenticating using either Secrets Manager or
      *        temporary credentials.
      */
 
@@ -105,12 +105,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
-     * temporary credentials.
+     * The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary
+     * credentials.
      * </p>
      * 
-     * @return The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager
-     *         or temporary credentials.
+     * @return The cluster identifier. This parameter is required when authenticating using either Secrets Manager or
+     *         temporary credentials.
      */
 
     public String getClusterIdentifier() {
@@ -119,12 +119,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
-     * temporary credentials.
+     * The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary
+     * credentials.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The cluster identifier. This parameter is required when authenticating using either AWS Secrets Manager or
+     *        The cluster identifier. This parameter is required when authenticating using either Secrets Manager or
      *        temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -413,12 +413,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or ARN of the secret that enables access to the database. This parameter is required when authenticating
-     * using AWS Secrets Manager.
+     * using Secrets Manager.
      * </p>
      * 
      * @param secretArn
      *        The name or ARN of the secret that enables access to the database. This parameter is required when
-     *        authenticating using AWS Secrets Manager.
+     *        authenticating using Secrets Manager.
      */
 
     public void setSecretArn(String secretArn) {
@@ -428,11 +428,11 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or ARN of the secret that enables access to the database. This parameter is required when authenticating
-     * using AWS Secrets Manager.
+     * using Secrets Manager.
      * </p>
      * 
      * @return The name or ARN of the secret that enables access to the database. This parameter is required when
-     *         authenticating using AWS Secrets Manager.
+     *         authenticating using Secrets Manager.
      */
 
     public String getSecretArn() {
@@ -442,12 +442,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or ARN of the secret that enables access to the database. This parameter is required when authenticating
-     * using AWS Secrets Manager.
+     * using Secrets Manager.
      * </p>
      * 
      * @param secretArn
      *        The name or ARN of the secret that enables access to the database. This parameter is required when
-     *        authenticating using AWS Secrets Manager.
+     *        authenticating using Secrets Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

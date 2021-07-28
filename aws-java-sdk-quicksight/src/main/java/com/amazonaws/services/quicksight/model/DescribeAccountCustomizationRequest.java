@@ -27,7 +27,7 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      * </p>
      */
     private String awsAccountId;
@@ -49,11 +49,11 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to describe QuickSight customizations for.
+     *        The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -62,10 +62,10 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      * </p>
      * 
-     * @return The ID for the AWS account that you want to describe QuickSight customizations for.
+     * @return The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      */
 
     public String getAwsAccountId() {
@@ -74,11 +74,11 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to describe QuickSight customizations for.
+     *        The ID for the Amazon Web Services account; that you want to describe QuickSight customizations for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

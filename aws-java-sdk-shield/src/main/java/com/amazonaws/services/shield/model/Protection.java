@@ -42,7 +42,7 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      * </p>
      */
     private String resourceArn;
@@ -141,11 +141,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     *        The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -154,10 +154,10 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     * @return The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      */
 
     public String getResourceArn() {
@@ -166,11 +166,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     * The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the AWS resource that is protected.
+     *        The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

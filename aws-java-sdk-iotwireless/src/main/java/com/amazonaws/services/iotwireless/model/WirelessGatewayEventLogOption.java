@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The log option for a wireless gateway event. Can be used to set log level for a specific wireless gateway event. For
- * a LoRaWAN gateway, the possible events for a log message are: CUPS_Request, Certificate.
+ * The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.
+ * </p>
+ * <p>
+ * For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessGatewayEventLogOption"

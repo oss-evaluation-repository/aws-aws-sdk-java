@@ -27,18 +27,18 @@ public class DescribeDatasetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the data set whose information is retrieved.
+     * The name of the dataset whose information is retrieved.
      * </p>
      */
     private String datasetName;
 
     /**
      * <p>
-     * The name of the data set whose information is retrieved.
+     * The name of the dataset whose information is retrieved.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose information is retrieved.
+     *        The name of the dataset whose information is retrieved.
      */
 
     public void setDatasetName(String datasetName) {
@@ -47,10 +47,10 @@ public class DescribeDatasetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the data set whose information is retrieved.
+     * The name of the dataset whose information is retrieved.
      * </p>
      * 
-     * @return The name of the data set whose information is retrieved.
+     * @return The name of the dataset whose information is retrieved.
      */
 
     public String getDatasetName() {
@@ -59,11 +59,11 @@ public class DescribeDatasetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the data set whose information is retrieved.
+     * The name of the dataset whose information is retrieved.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose information is retrieved.
+     *        The name of the dataset whose information is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

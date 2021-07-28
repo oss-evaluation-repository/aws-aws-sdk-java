@@ -51,8 +51,8 @@ import com.amazonaws.services.redshiftdataapi.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
- * statements, which are committed if the statement succeeds.
+ * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which
+ * are committed if the statement succeeds.
  * </p>
  * <p>
  * For more information about the Amazon Redshift Data API, see <a
@@ -97,6 +97,9 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecuteStatementException").withExceptionUnmarshaller(
                                     com.amazonaws.services.redshiftdataapi.model.transform.ExecuteStatementExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BatchExecuteStatementException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.redshiftdataapi.model.transform.BatchExecuteStatementExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.redshiftdataapi.model.AWSRedshiftDataAPIException.class));
 
     public static AWSRedshiftDataAPIClientBuilder builder() {
@@ -147,11 +150,90 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Runs one or more SQL statements, which can be data manipulation language (DML) or data definition language (DDL).
+     * Depending on the authorization method, use one of the following combinations of request parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Temporary credentials - specify the cluster identifier, the database name, and the database user name. Permission
+     * to call the <code>redshift:GetClusterCredentials</code> operation is required to use this method.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return Result of the BatchExecuteStatement operation returned by the service.
+     * @throws ValidationException
+     *         The Amazon Redshift Data API operation failed due to invalid input.
+     * @throws ActiveStatementsExceededException
+     *         The number of active statements exceeds the limit.
+     * @throws BatchExecuteStatementException
+     *         An SQL statement encountered an environmental error while running.
+     * @sample AWSRedshiftDataAPI.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchExecuteStatement(request);
+    }
+
+    @SdkInternalApi
+    final BatchExecuteStatementResult executeBatchExecuteStatement(BatchExecuteStatementRequest batchExecuteStatementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchExecuteStatementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchExecuteStatementRequest> request = null;
+        Response<BatchExecuteStatementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchExecuteStatementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchExecuteStatement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchExecuteStatementResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchExecuteStatementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a running query. To be canceled, a query must be running.
      * </p>
      * 
      * @param cancelStatementRequest
      * @return Result of the CancelStatement operation returned by the service.
+     * @throws ValidationException
+     *         The Amazon Redshift Data API operation failed due to invalid input.
      * @throws ResourceNotFoundException
      *         The Amazon Redshift Data API operation failed due to a missing resource.
      * @throws InternalServerException
@@ -276,8 +358,8 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -351,8 +433,8 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -489,8 +571,8 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -563,8 +645,8 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -698,8 +780,8 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>

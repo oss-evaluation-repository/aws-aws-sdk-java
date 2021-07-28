@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An activity that adds data from the AWS IoT device registry to your message.
+ * An activity that adds data from the IoT device registry to your message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceRegistryEnrichActivity"

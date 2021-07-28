@@ -34,8 +34,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      */
     private ChannelStorage channelStorage;
@@ -96,14 +96,14 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      */
 
     public void setChannelStorage(ChannelStorage channelStorage) {
@@ -113,13 +113,13 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @return Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *         You cannot change this storage option after the channel is created.
+     *         You can't change this storage option after the channel is created.
      */
 
     public ChannelStorage getChannelStorage() {
@@ -129,14 +129,14 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
-     * cannot change this storage option after the channel is created.
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't
+     * change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
      *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
      *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-     *        You cannot change this storage option after the channel is created.
+     *        You can't change this storage option after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,7 +34,7 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
     private String protectionGroupId;
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -52,8 +52,8 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
@@ -132,7 +132,7 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -150,14 +150,14 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -175,8 +175,8 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @see ProtectionGroupAggregation
@@ -188,7 +188,7 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -206,13 +206,13 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     * @return Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *         events.</p>
      *         <ul>
      *         <li>
@@ -230,8 +230,8 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      *         <li>
      *         <p>
      *         Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *         and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *         and origin resources for CloudFront distributions.
+     *         and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *         distributions and origin resources for CloudFront distributions.
      *         </p>
      *         </li>
      * @see ProtectionGroupAggregation
@@ -243,7 +243,7 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -261,14 +261,14 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -286,8 +286,8 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -301,7 +301,7 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
+     * Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.
      * </p>
      * <ul>
      * <li>
@@ -319,14 +319,14 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for
-     * resources that share that traffic in a non-uniform way. Examples include CloudFront distributions and origin
-     * resources for CloudFront distributions.
+     * resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and
+     * origin resources for CloudFront distributions.
      * </p>
      * </li>
      * </ul>
      * 
      * @param aggregation
-     *        Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report
+     *        Defines how Shield combines resource data for the group in order to detect, mitigate, and report
      *        events.</p>
      *        <ul>
      *        <li>
@@ -344,8 +344,8 @@ public class UpdateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic
-     *        and for resources that share that traffic in a non-uniform way. Examples include CloudFront distributions
-     *        and origin resources for CloudFront distributions.
+     *        and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront
+     *        distributions and origin resources for CloudFront distributions.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

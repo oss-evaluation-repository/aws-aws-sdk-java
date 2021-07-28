@@ -27,14 +27,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
+     * An ID for the template that you want to create. This template is unique per Region; in each Amazon Web Services
+     * account;.
      * </p>
      */
     private String templateId;
@@ -56,8 +57,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * the type of object you're using as source: <code>SourceTemplate</code> for a template or
      * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      * <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the
-     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-     * QuickSight-supported AWS Region.
+     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
+     * any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code>
@@ -83,13 +84,13 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that
-     *        contains your Amazon QuickSight account.
+     *        The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon
+     *        Web Services account; that contains your Amazon QuickSight account.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -98,12 +99,12 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
-     * @return The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that
-     *         contains your Amazon QuickSight account.
+     * @return The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
+     *         Amazon Web Services account; that contains your Amazon QuickSight account.
      */
 
     public String getAwsAccountId() {
@@ -112,13 +113,13 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that
-     *        contains your Amazon QuickSight account.
+     *        The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the Amazon
+     *        Web Services account; that contains your Amazon QuickSight account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,12 +130,13 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
+     * An ID for the template that you want to create. This template is unique per Region; in each Amazon Web Services
+     * account;.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template that you want to create. This template is unique per AWS Region in each AWS
-     *        account.
+     *        An ID for the template that you want to create. This template is unique per Region; in each Amazon Web
+     *        Services account;.
      */
 
     public void setTemplateId(String templateId) {
@@ -143,11 +145,12 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
+     * An ID for the template that you want to create. This template is unique per Region; in each Amazon Web Services
+     * account;.
      * </p>
      * 
-     * @return An ID for the template that you want to create. This template is unique per AWS Region in each AWS
-     *         account.
+     * @return An ID for the template that you want to create. This template is unique per Region; in each Amazon Web
+     *         Services account;.
      */
 
     public String getTemplateId() {
@@ -156,12 +159,13 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
+     * An ID for the template that you want to create. This template is unique per Region; in each Amazon Web Services
+     * account;.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template that you want to create. This template is unique per AWS Region in each AWS
-     *        account.
+     *        An ID for the template that you want to create. This template is unique per Region; in each Amazon Web
+     *        Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,8 +290,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * the type of object you're using as source: <code>SourceTemplate</code> for a template or
      * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      * <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the
-     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-     * QuickSight-supported AWS Region.
+     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
+     * any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code>
@@ -300,8 +304,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *        specify the type of object you're using as source: <code>SourceTemplate</code> for a template or
      *        <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      *        <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>,
-     *        specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account
-     *        and any QuickSight-supported AWS Region. </p>
+     *        specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     *        Services account; and any QuickSight-supported Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *        <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.
@@ -318,8 +322,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * the type of object you're using as source: <code>SourceTemplate</code> for a template or
      * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      * <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the
-     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-     * QuickSight-supported AWS Region.
+     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
+     * any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code>
@@ -331,8 +335,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *         specify the type of object you're using as source: <code>SourceTemplate</code> for a template or
      *         <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      *         <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>,
-     *         specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account
-     *         and any QuickSight-supported AWS Region. </p>
+     *         specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     *         Services account; and any QuickSight-supported Region;. </p>
      *         <p>
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *         <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.
@@ -349,8 +353,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * the type of object you're using as source: <code>SourceTemplate</code> for a template or
      * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      * <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the
-     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
-     * QuickSight-supported AWS Region.
+     * ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
+     * any QuickSight-supported Region;.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code>
@@ -363,8 +367,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *        specify the type of object you're using as source: <code>SourceTemplate</code> for a template or
      *        <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For
      *        <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>,
-     *        specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account
-     *        and any QuickSight-supported AWS Region. </p>
+     *        specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     *        Services account; and any QuickSight-supported Region;. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *        <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.

@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.lexmodelsv2.AmazonLexModelsV2ClientBuilder;
+import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -63,6 +64,8 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "lex";
+
+    private volatile AmazonLexModelsV2Waiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -3711,8 +3714,23 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
     }
 
     @Override
+    public AmazonLexModelsV2Waiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonLexModelsV2Waiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
     public void shutdown() {
         super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

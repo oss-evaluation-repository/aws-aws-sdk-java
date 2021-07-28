@@ -33,7 +33,7 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
     private String datastoreName;
     /**
      * <p>
-     * If true, additional statistical information about the data store is included in the response. This feature cannot
+     * If true, additional statistical information about the data store is included in the response. This feature can't
      * be used with a data store whose S3 storage is customer-managed.
      * </p>
      */
@@ -81,13 +81,13 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If true, additional statistical information about the data store is included in the response. This feature cannot
+     * If true, additional statistical information about the data store is included in the response. This feature can't
      * be used with a data store whose S3 storage is customer-managed.
      * </p>
      * 
      * @param includeStatistics
      *        If true, additional statistical information about the data store is included in the response. This feature
-     *        cannot be used with a data store whose S3 storage is customer-managed.
+     *        can't be used with a data store whose S3 storage is customer-managed.
      */
 
     public void setIncludeStatistics(Boolean includeStatistics) {
@@ -96,12 +96,12 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If true, additional statistical information about the data store is included in the response. This feature cannot
+     * If true, additional statistical information about the data store is included in the response. This feature can't
      * be used with a data store whose S3 storage is customer-managed.
      * </p>
      * 
      * @return If true, additional statistical information about the data store is included in the response. This
-     *         feature cannot be used with a data store whose S3 storage is customer-managed.
+     *         feature can't be used with a data store whose S3 storage is customer-managed.
      */
 
     public Boolean getIncludeStatistics() {
@@ -110,13 +110,13 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If true, additional statistical information about the data store is included in the response. This feature cannot
+     * If true, additional statistical information about the data store is included in the response. This feature can't
      * be used with a data store whose S3 storage is customer-managed.
      * </p>
      * 
      * @param includeStatistics
      *        If true, additional statistical information about the data store is included in the response. This feature
-     *        cannot be used with a data store whose S3 storage is customer-managed.
+     *        can't be used with a data store whose S3 storage is customer-managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,12 +127,12 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If true, additional statistical information about the data store is included in the response. This feature cannot
+     * If true, additional statistical information about the data store is included in the response. This feature can't
      * be used with a data store whose S3 storage is customer-managed.
      * </p>
      * 
      * @return If true, additional statistical information about the data store is included in the response. This
-     *         feature cannot be used with a data store whose S3 storage is customer-managed.
+     *         feature can't be used with a data store whose S3 storage is customer-managed.
      */
 
     public Boolean isIncludeStatistics() {

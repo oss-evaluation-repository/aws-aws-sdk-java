@@ -78,8 +78,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The
-     * number of vCPUs must be specified but can be be specified in several places. You must specify it at least once
-     * for each node.
+     * number of vCPUs must be specified but can be specified in several places. You must specify it at least once for
+     * each node.
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources. For
@@ -88,8 +88,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs that run
-     * on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided. For jobs
+     * that run on Fargate resources, you must specify the vCPU requirement for the job using
+     * <code>resourceRequirements</code>.
      * </p>
      * </note>
      */
@@ -98,7 +99,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed the
-     * specified number, it is terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
      * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * <p>
@@ -109,14 +110,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate resources, you
-     * should specify the memory requirement using <code>resourceRequirement</code>. You can do this for EC2 resources.
+     * should specify the memory requirement using <code>resourceRequirement</code>. You can also do this for EC2
+     * resources.
      * </p>
      * <note>
      * <p>
      * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
-     * <i>AWS Batch User Guide</i>.
+     * <i>Batch User Guide</i>.
      * </p>
      * </note>
      */
@@ -135,18 +137,19 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private java.util.List<String> command;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String jobRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on Fargate
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
      * resources, you must provide an execution role. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -170,7 +173,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </important> <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      */
@@ -204,8 +207,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      */
@@ -219,7 +222,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -240,7 +243,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources and
+     * This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
      * shouldn't be provided.
      * </p>
      * </note>
@@ -277,7 +280,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).
      * </p>
      * </note>
@@ -301,21 +304,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The secrets for the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secrets;
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      */
     private FargatePlatformConfiguration fargatePlatformConfiguration;
@@ -591,8 +594,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The
-     * number of vCPUs must be specified but can be be specified in several places. You must specify it at least once
-     * for each node.
+     * number of vCPUs must be specified but can be specified in several places. You must specify it at least once for
+     * each node.
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources. For
@@ -601,8 +604,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs that run
-     * on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided. For jobs
+     * that run on Fargate resources, you must specify the vCPU requirement for the job using
+     * <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
@@ -612,8 +616,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. The number of vCPUs must be specified but can be be specified in several places. You must specify
-     *        it at least once for each node.</p>
+     *        run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it
+     *        at least once for each node.</p>
      *        <p>
      *        This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources.
      *        For these resources, use <code>resourceRequirement</code> instead. You can use this parameter or
@@ -621,8 +625,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs
-     *        that run on Fargate resources, you must specify the vCPU requirement for the job using
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
+     *        For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using
      *        <code>resourceRequirements</code>.
      *        </p>
      */
@@ -637,8 +641,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The
-     * number of vCPUs must be specified but can be be specified in several places. You must specify it at least once
-     * for each node.
+     * number of vCPUs must be specified but can be specified in several places. You must specify it at least once for
+     * each node.
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources. For
@@ -647,8 +651,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs that run
-     * on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided. For jobs
+     * that run on Fargate resources, you must specify the vCPU requirement for the job using
+     * <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
@@ -657,8 +662,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. The number of vCPUs must be specified but can be be specified in several places. You must
-     *         specify it at least once for each node.</p>
+     *         run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify
+     *         it at least once for each node.</p>
      *         <p>
      *         This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources.
      *         For these resources, use <code>resourceRequirement</code> instead. You can use this parameter or
@@ -666,8 +671,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs
-     *         that run on Fargate resources, you must specify the vCPU requirement for the job using
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
+     *         For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using
      *         <code>resourceRequirements</code>.
      *         </p>
      */
@@ -682,8 +687,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The
-     * number of vCPUs must be specified but can be be specified in several places. You must specify it at least once
-     * for each node.
+     * number of vCPUs must be specified but can be specified in several places. You must specify it at least once for
+     * each node.
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources. For
@@ -692,8 +697,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs that run
-     * on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided. For jobs
+     * that run on Fargate resources, you must specify the vCPU requirement for the job using
+     * <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
@@ -703,8 +709,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. The number of vCPUs must be specified but can be be specified in several places. You must specify
-     *        it at least once for each node.</p>
+     *        run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it
+     *        at least once for each node.</p>
      *        <p>
      *        This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources.
      *        For these resources, use <code>resourceRequirement</code> instead. You can use this parameter or
@@ -712,8 +718,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. For jobs
-     *        that run on Fargate resources, you must specify the vCPU requirement for the job using
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
+     *        For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using
      *        <code>resourceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -727,7 +733,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed the
-     * specified number, it is terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
      * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * <p>
@@ -738,20 +744,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate resources, you
-     * should specify the memory requirement using <code>resourceRequirement</code>. You can do this for EC2 resources.
+     * should specify the memory requirement using <code>resourceRequirement</code>. You can also do this for EC2
+     * resources.
      * </p>
      * <note>
      * <p>
      * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
-     * <i>AWS Batch User Guide</i>.
+     * <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
      * @param memory
      *        This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to
-     *        exceed the specified number, it is terminated. You must specify at least 4 MiB of memory for a job using
+     *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *        node at least once.</p>
      *        <p>
@@ -762,15 +769,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <p>
      *        This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate
-     *        resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can do
-     *        this for EC2 resources.
+     *        resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can also
+     *        do this for EC2 resources.
      *        </p>
      *        <note>
      *        <p>
      *        If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *        for a particular instance type, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
-     *        the <i>AWS Batch User Guide</i>.
+     *        the <i>Batch User Guide</i>.
      *        </p>
      */
     @Deprecated
@@ -781,7 +788,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed the
-     * specified number, it is terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
      * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * <p>
@@ -792,19 +799,20 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate resources, you
-     * should specify the memory requirement using <code>resourceRequirement</code>. You can do this for EC2 resources.
+     * should specify the memory requirement using <code>resourceRequirement</code>. You can also do this for EC2
+     * resources.
      * </p>
      * <note>
      * <p>
      * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
-     * <i>AWS Batch User Guide</i>.
+     * <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
      * @return This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to
-     *         exceed the specified number, it is terminated. You must specify at least 4 MiB of memory for a job using
+     *         exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *         this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *         node at least once.</p>
      *         <p>
@@ -815,15 +823,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </p>
      *         <p>
      *         This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate
-     *         resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can do
-     *         this for EC2 resources.
+     *         resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can also
+     *         do this for EC2 resources.
      *         </p>
      *         <note>
      *         <p>
      *         If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *         for a particular instance type, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
-     *         the <i>AWS Batch User Guide</i>.
+     *         the <i>Batch User Guide</i>.
      *         </p>
      */
     @Deprecated
@@ -834,7 +842,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed the
-     * specified number, it is terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
      * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * <p>
@@ -845,20 +853,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate resources, you
-     * should specify the memory requirement using <code>resourceRequirement</code>. You can do this for EC2 resources.
+     * should specify the memory requirement using <code>resourceRequirement</code>. You can also do this for EC2
+     * resources.
      * </p>
      * <note>
      * <p>
      * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
-     * <i>AWS Batch User Guide</i>.
+     * <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
      * @param memory
      *        This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to
-     *        exceed the specified number, it is terminated. You must specify at least 4 MiB of memory for a job using
+     *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *        node at least once.</p>
      *        <p>
@@ -869,15 +878,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <p>
      *        This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate
-     *        resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can do
-     *        this for EC2 resources.
+     *        resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can also
+     *        do this for EC2 resources.
      *        </p>
      *        <note>
      *        <p>
      *        If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *        for a particular instance type, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
-     *        the <i>AWS Batch User Guide</i>.
+     *        the <i>Batch User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1003,14 +1012,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     *        information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services
+     *        permissions. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
      *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1021,13 +1031,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For
-     *         more information, see <a
+     * @return The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
      *         Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1038,14 +1049,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
-     *        information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services
+     *        permissions. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
      *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1058,17 +1070,17 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on Fargate
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
      * resources, you must provide an execution role. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on
-     *        Fargate resources, you must provide an execution role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     *        role</a> in the <i>AWS Batch User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
+     *        resources, you must provide an execution role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *        role</a> in the <i>Batch User Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -1077,16 +1089,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on Fargate
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
      * resources, you must provide an execution role. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on
-     *         Fargate resources, you must provide an execution role. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     *         role</a> in the <i>AWS Batch User Guide</i>.
+     * @return The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
+     *         resources, you must provide an execution role. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *         role</a> in the <i>Batch User Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -1095,17 +1107,17 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on Fargate
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
      * resources, you must provide an execution role. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For jobs that run on
-     *        Fargate resources, you must provide an execution role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     *        role</a> in the <i>AWS Batch User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate
+     *        resources, you must provide an execution role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *        role</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1198,7 +1210,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </important> <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
@@ -1213,7 +1225,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </important> <note>
      *         <p>
      *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *         variables that are set by the AWS Batch service.
+     *         variables that are set by the Batch service.
      *         </p>
      */
 
@@ -1235,7 +1247,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </important> <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
@@ -1251,7 +1263,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </important> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      */
 
@@ -1278,7 +1290,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </important> <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * <p>
@@ -1299,7 +1311,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </important> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1328,7 +1340,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </important> <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
@@ -1344,7 +1356,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </important> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1542,8 +1554,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1555,8 +1567,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. The default value is false.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *        specified as false.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *        or specified as false.
      *        </p>
      */
 
@@ -1574,8 +1586,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1586,8 +1598,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. The default value is false.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *         specified as false.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *         or specified as false.
      *         </p>
      */
 
@@ -1605,8 +1617,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1618,8 +1630,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. The default value is false.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *        specified as false.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *        or specified as false.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1639,8 +1651,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1651,8 +1663,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. The default value is false.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *         specified as false.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *         or specified as false.
      *         </p>
      */
 
@@ -1669,7 +1681,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -1679,7 +1691,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -1696,7 +1708,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -1707,7 +1719,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -1729,7 +1741,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * <p>
@@ -1745,7 +1757,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1769,7 +1781,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -1780,7 +1792,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1855,7 +1867,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources and
+     * This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
      * shouldn't be provided.
      * </p>
      * </note>
@@ -1864,8 +1876,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
      *        use the same instance type.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources
-     *        and shouldn't be provided.
+     *        This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
+     *        shouldn't be provided.
      *        </p>
      */
 
@@ -1880,7 +1892,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources and
+     * This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
      * shouldn't be provided.
      * </p>
      * </note>
@@ -1888,8 +1900,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * @return The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
      *         use the same instance type.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources
-     *         and shouldn't be provided.
+     *         This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
+     *         shouldn't be provided.
      *         </p>
      */
 
@@ -1904,7 +1916,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources and
+     * This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
      * shouldn't be provided.
      * </p>
      * </note>
@@ -1913,8 +1925,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
      *        use the same instance type.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to single-node container jobs or for jobs that run on Fargate resources
-     *        and shouldn't be provided.
+     *        This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
+     *        shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2060,7 +2072,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).
      * </p>
      * </note>
@@ -2096,7 +2108,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type).
      *        </p>
      *        </note>
@@ -2137,7 +2149,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).
      * </p>
      * </note>
@@ -2172,7 +2184,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </p>
      *         <note>
      *         <p>
-     *         AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *         <a>LogConfiguration</a> data type).
      *         </p>
      *         </note>
@@ -2213,7 +2225,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).
      * </p>
      * </note>
@@ -2249,7 +2261,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type).
      *        </p>
      *        </note>
@@ -2278,12 +2290,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The secrets for the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets for the container. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *         sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *         sensitive data</a> in the <i>Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecrets() {
@@ -2294,13 +2306,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The secrets for the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets for the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      */
 
     public void setSecrets(java.util.Collection<Secret> secrets) {
@@ -2316,7 +2328,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The secrets for the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2327,7 +2339,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * @param secrets
      *        The secrets for the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2345,13 +2357,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * The secrets for the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets for the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2362,13 +2374,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -2377,12 +2389,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
-     * @return The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *         specify this parameter.
+     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *         resources must not specify this parameter.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -2391,13 +2403,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2408,13 +2420,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      */
 
     public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
@@ -2423,12 +2435,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
-     * @return The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *         specify this parameter.
+     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *         resources must not specify this parameter.
      */
 
     public FargatePlatformConfiguration getFargatePlatformConfiguration() {
@@ -2437,13 +2449,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

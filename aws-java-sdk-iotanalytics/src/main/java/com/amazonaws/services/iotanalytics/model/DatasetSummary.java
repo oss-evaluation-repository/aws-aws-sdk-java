@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of information about a data set.
+ * A summary of information about a dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetSummary" target="_top">AWS API
@@ -30,33 +30,32 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      */
     private String datasetName;
     /**
      * <p>
-     * The status of the data set.
+     * The status of the dataset.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The time the data set was created.
+     * The time the dataset was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The last time the data set was updated.
+     * The last time the dataset was updated.
      * </p>
      */
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     * another data set is populated. The list of triggers can be empty or contain up to five
-     * <code>DataSetTrigger</code> objects
+     * A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another
+     * dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
@@ -69,11 +68,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      */
 
     public void setDatasetName(String datasetName) {
@@ -82,10 +81,10 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
-     * @return The name of the data set.
+     * @return The name of the dataset.
      */
 
     public String getDatasetName() {
@@ -94,11 +93,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +108,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the data set.
+     * The status of the dataset.
      * </p>
      * 
      * @param status
-     *        The status of the data set.
+     *        The status of the dataset.
      * @see DatasetStatus
      */
 
@@ -123,10 +122,10 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the data set.
+     * The status of the dataset.
      * </p>
      * 
-     * @return The status of the data set.
+     * @return The status of the dataset.
      * @see DatasetStatus
      */
 
@@ -136,11 +135,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the data set.
+     * The status of the dataset.
      * </p>
      * 
      * @param status
-     *        The status of the data set.
+     *        The status of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetStatus
      */
@@ -152,11 +151,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the data set.
+     * The status of the dataset.
      * </p>
      * 
      * @param status
-     *        The status of the data set.
+     *        The status of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetStatus
      */
@@ -168,11 +167,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the data set was created.
+     * The time the dataset was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the data set was created.
+     *        The time the dataset was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -181,10 +180,10 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the data set was created.
+     * The time the dataset was created.
      * </p>
      * 
-     * @return The time the data set was created.
+     * @return The time the dataset was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -193,11 +192,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the data set was created.
+     * The time the dataset was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the data set was created.
+     *        The time the dataset was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +207,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time the data set was updated.
+     * The last time the dataset was updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the data set was updated.
+     *        The last time the dataset was updated.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -221,10 +220,10 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time the data set was updated.
+     * The last time the dataset was updated.
      * </p>
      * 
-     * @return The last time the data set was updated.
+     * @return The last time the dataset was updated.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -233,11 +232,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time the data set was updated.
+     * The last time the dataset was updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the data set was updated.
+     *        The last time the dataset was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,13 +247,12 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     * another data set is populated. The list of triggers can be empty or contain up to five
-     * <code>DataSetTrigger</code> objects
+     * A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another
+     * dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects
      * </p>
      * 
-     * @return A list of triggers. A trigger causes data set content to be populated at a specified time interval or
-     *         when another data set is populated. The list of triggers can be empty or contain up to five
+     * @return A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when
+     *         another dataset is populated. The list of triggers can be empty or contain up to five
      *         <code>DataSetTrigger</code> objects
      */
 
@@ -264,14 +262,13 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     * another data set is populated. The list of triggers can be empty or contain up to five
-     * <code>DataSetTrigger</code> objects
+     * A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another
+     * dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects
      * </p>
      * 
      * @param triggers
-     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     *        another data set is populated. The list of triggers can be empty or contain up to five
+     *        A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when
+     *        another dataset is populated. The list of triggers can be empty or contain up to five
      *        <code>DataSetTrigger</code> objects
      */
 
@@ -286,9 +283,8 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     * another data set is populated. The list of triggers can be empty or contain up to five
-     * <code>DataSetTrigger</code> objects
+     * A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another
+     * dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,8 +293,8 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param triggers
-     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     *        another data set is populated. The list of triggers can be empty or contain up to five
+     *        A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when
+     *        another dataset is populated. The list of triggers can be empty or contain up to five
      *        <code>DataSetTrigger</code> objects
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -315,14 +311,13 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     * another data set is populated. The list of triggers can be empty or contain up to five
-     * <code>DataSetTrigger</code> objects
+     * A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another
+     * dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects
      * </p>
      * 
      * @param triggers
-     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
-     *        another data set is populated. The list of triggers can be empty or contain up to five
+     *        A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when
+     *        another dataset is populated. The list of triggers can be empty or contain up to five
      *        <code>DataSetTrigger</code> objects
      * @return Returns a reference to this object so that method calls can be chained together.
      */

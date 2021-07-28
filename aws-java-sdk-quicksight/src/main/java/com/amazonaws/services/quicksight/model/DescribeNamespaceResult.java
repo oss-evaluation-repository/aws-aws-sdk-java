@@ -25,16 +25,16 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
-     * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
-     * messages associated with the creation process.
+     * The information about the namespace that you're describing. The response includes the namespace ARN, name,
+     * Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are
+     * in the process of being created. For incomplete namespaces, this API operation lists the namespace error types
+     * and messages associated with the creation process.
      * </p>
      */
     private NamespaceInfoV2 namespace;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -47,15 +47,15 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
-     * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
-     * messages associated with the creation process.
+     * The information about the namespace that you're describing. The response includes the namespace ARN, name,
+     * Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are
+     * in the process of being created. For incomplete namespaces, this API operation lists the namespace error types
+     * and messages associated with the creation process.
      * </p>
      * 
      * @param namespace
      *        The information about the namespace that you're describing. The response includes the namespace ARN, name,
-     *        AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
+     *        Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
      *        that are in the process of being created. For incomplete namespaces, this API operation lists the
      *        namespace error types and messages associated with the creation process.
      */
@@ -66,14 +66,14 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
-     * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
-     * messages associated with the creation process.
+     * The information about the namespace that you're describing. The response includes the namespace ARN, name,
+     * Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are
+     * in the process of being created. For incomplete namespaces, this API operation lists the namespace error types
+     * and messages associated with the creation process.
      * </p>
      * 
      * @return The information about the namespace that you're describing. The response includes the namespace ARN,
-     *         name, AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for
+     *         name, Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for
      *         namespaces that are in the process of being created. For incomplete namespaces, this API operation lists
      *         the namespace error types and messages associated with the creation process.
      */
@@ -84,15 +84,15 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
-     * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
-     * messages associated with the creation process.
+     * The information about the namespace that you're describing. The response includes the namespace ARN, name,
+     * Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are
+     * in the process of being created. For incomplete namespaces, this API operation lists the namespace error types
+     * and messages associated with the creation process.
      * </p>
      * 
      * @param namespace
      *        The information about the namespace that you're describing. The response includes the namespace ARN, name,
-     *        AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
+     *        Region;, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
      *        that are in the process of being created. For incomplete namespaces, this API operation lists the
      *        namespace error types and messages associated with the creation process.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -105,11 +105,11 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -118,10 +118,10 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -130,11 +130,11 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

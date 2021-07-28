@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A partition defined by a timestamp.
+ * A partition dimension defined by a timestamp attribute.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TimestampPartition" target="_top">AWS
@@ -36,7 +36,8 @@ public class TimestampPartition implements Serializable, Cloneable, StructuredPo
     private String attributeName;
     /**
      * <p>
-     * The timestamp format of a partition defined by a timestamp.
+     * The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1,
+     * 1970 at midnight UTC time).
      * </p>
      */
     private String timestampFormat;
@@ -83,11 +84,13 @@ public class TimestampPartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp format of a partition defined by a timestamp.
+     * The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1,
+     * 1970 at midnight UTC time).
      * </p>
      * 
      * @param timestampFormat
-     *        The timestamp format of a partition defined by a timestamp.
+     *        The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch
+     *        (January 1, 1970 at midnight UTC time).
      */
 
     public void setTimestampFormat(String timestampFormat) {
@@ -96,10 +99,12 @@ public class TimestampPartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp format of a partition defined by a timestamp.
+     * The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1,
+     * 1970 at midnight UTC time).
      * </p>
      * 
-     * @return The timestamp format of a partition defined by a timestamp.
+     * @return The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch
+     *         (January 1, 1970 at midnight UTC time).
      */
 
     public String getTimestampFormat() {
@@ -108,11 +113,13 @@ public class TimestampPartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp format of a partition defined by a timestamp.
+     * The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1,
+     * 1970 at midnight UTC time).
      * </p>
      * 
      * @param timestampFormat
-     *        The timestamp format of a partition defined by a timestamp.
+     *        The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch
+     *        (January 1, 1970 at midnight UTC time).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

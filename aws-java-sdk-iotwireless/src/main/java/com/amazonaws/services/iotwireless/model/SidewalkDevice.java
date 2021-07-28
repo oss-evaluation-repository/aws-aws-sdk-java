@@ -28,6 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
 
+    private String amazonId;
     /**
      * <p>
      * The sidewalk device identification.
@@ -46,6 +47,32 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CertificateList> deviceCertificates;
+
+    /**
+     * @param amazonId
+     */
+
+    public void setAmazonId(String amazonId) {
+        this.amazonId = amazonId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAmazonId() {
+        return this.amazonId;
+    }
+
+    /**
+     * @param amazonId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkDevice withAmazonId(String amazonId) {
+        setAmazonId(amazonId);
+        return this;
+    }
 
     /**
      * <p>
@@ -209,6 +236,8 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAmazonId() != null)
+            sb.append("AmazonId: ").append(getAmazonId()).append(",");
         if (getSidewalkId() != null)
             sb.append("SidewalkId: ").append(getSidewalkId()).append(",");
         if (getSidewalkManufacturingSn() != null)
@@ -229,6 +258,10 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof SidewalkDevice == false)
             return false;
         SidewalkDevice other = (SidewalkDevice) obj;
+        if (other.getAmazonId() == null ^ this.getAmazonId() == null)
+            return false;
+        if (other.getAmazonId() != null && other.getAmazonId().equals(this.getAmazonId()) == false)
+            return false;
         if (other.getSidewalkId() == null ^ this.getSidewalkId() == null)
             return false;
         if (other.getSidewalkId() != null && other.getSidewalkId().equals(this.getSidewalkId()) == false)
@@ -249,6 +282,7 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
         hashCode = prime * hashCode + ((getSidewalkId() == null) ? 0 : getSidewalkId().hashCode());
         hashCode = prime * hashCode + ((getSidewalkManufacturingSn() == null) ? 0 : getSidewalkManufacturingSn().hashCode());
         hashCode = prime * hashCode + ((getDeviceCertificates() == null) ? 0 : getDeviceCertificates().hashCode());

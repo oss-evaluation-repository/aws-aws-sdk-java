@@ -27,13 +27,13 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     * The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      * </p>
      */
     private String dataSourceId;
@@ -52,11 +52,11 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The Amazon Web Services account; ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -65,10 +65,10 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The Amazon Web Services account; ID.
      */
 
     public String getAwsAccountId() {
@@ -77,11 +77,11 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The Amazon Web Services account; ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     * The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     *        The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -105,10 +105,10 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     * The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
-     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     * @return The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      */
 
     public String getDataSourceId() {
@@ -117,11 +117,11 @@ public class UpdateDataSourcePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     * The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
+     *        The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

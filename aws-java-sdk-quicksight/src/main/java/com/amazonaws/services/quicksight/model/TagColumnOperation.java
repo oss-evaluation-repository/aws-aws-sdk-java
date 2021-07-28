@@ -36,11 +36,11 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
     private String columnName;
     /**
      * <p>
-     * The dataset column tag, currently only used for geospatial type tagging. .
+     * The dataset column tag, currently only used for geospatial type tagging.
      * </p>
      * <note>
      * <p>
-     * This is not tags for the AWS tagging feature. .
+     * This is not tags for the Amazon Web Services tagging feature.
      * </p>
      * </note>
      */
@@ -88,17 +88,17 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The dataset column tag, currently only used for geospatial type tagging. .
+     * The dataset column tag, currently only used for geospatial type tagging.
      * </p>
      * <note>
      * <p>
-     * This is not tags for the AWS tagging feature. .
+     * This is not tags for the Amazon Web Services tagging feature.
      * </p>
      * </note>
      * 
-     * @return The dataset column tag, currently only used for geospatial type tagging. .</p> <note>
+     * @return The dataset column tag, currently only used for geospatial type tagging.</p> <note>
      *         <p>
-     *         This is not tags for the AWS tagging feature. .
+     *         This is not tags for the Amazon Web Services tagging feature.
      *         </p>
      */
 
@@ -108,18 +108,18 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The dataset column tag, currently only used for geospatial type tagging. .
+     * The dataset column tag, currently only used for geospatial type tagging.
      * </p>
      * <note>
      * <p>
-     * This is not tags for the AWS tagging feature. .
+     * This is not tags for the Amazon Web Services tagging feature.
      * </p>
      * </note>
      * 
      * @param tags
-     *        The dataset column tag, currently only used for geospatial type tagging. .</p> <note>
+     *        The dataset column tag, currently only used for geospatial type tagging.</p> <note>
      *        <p>
-     *        This is not tags for the AWS tagging feature. .
+     *        This is not tags for the Amazon Web Services tagging feature.
      *        </p>
      */
 
@@ -134,11 +134,11 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The dataset column tag, currently only used for geospatial type tagging. .
+     * The dataset column tag, currently only used for geospatial type tagging.
      * </p>
      * <note>
      * <p>
-     * This is not tags for the AWS tagging feature. .
+     * This is not tags for the Amazon Web Services tagging feature.
      * </p>
      * </note>
      * <p>
@@ -148,9 +148,9 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param tags
-     *        The dataset column tag, currently only used for geospatial type tagging. .</p> <note>
+     *        The dataset column tag, currently only used for geospatial type tagging.</p> <note>
      *        <p>
-     *        This is not tags for the AWS tagging feature. .
+     *        This is not tags for the Amazon Web Services tagging feature.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -167,18 +167,18 @@ public class TagColumnOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The dataset column tag, currently only used for geospatial type tagging. .
+     * The dataset column tag, currently only used for geospatial type tagging.
      * </p>
      * <note>
      * <p>
-     * This is not tags for the AWS tagging feature. .
+     * This is not tags for the Amazon Web Services tagging feature.
      * </p>
      * </note>
      * 
      * @param tags
-     *        The dataset column tag, currently only used for geospatial type tagging. .</p> <note>
+     *        The dataset column tag, currently only used for geospatial type tagging.</p> <note>
      *        <p>
-     *        This is not tags for the AWS tagging feature. .
+     *        This is not tags for the Amazon Web Services tagging feature.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

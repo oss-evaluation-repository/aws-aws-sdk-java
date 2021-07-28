@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Sidewalk device message type.
+ * Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

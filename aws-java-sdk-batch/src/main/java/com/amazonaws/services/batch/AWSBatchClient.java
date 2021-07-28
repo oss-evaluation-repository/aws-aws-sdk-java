@@ -50,19 +50,20 @@ import com.amazonaws.services.batch.model.transform.*;
  * Client for accessing AWS Batch. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
+ * <fullname>Batch</fullname>
  * <p>
- * Using AWS Batch, you can run batch computing workloads on the AWS Cloud. Batch computing is a common means for
- * developers, scientists, and engineers to access large amounts of compute resources. AWS Batch uses the advantages of
- * this computing workload to remove the undifferentiated heavy lifting of configuring and managing required
- * infrastructure. At the same time, it also adopts a familiar batch computing software approach. Given these
- * advantages, AWS Batch can help you to efficiently provision resources in response to jobs submitted, thus effectively
- * helping you to eliminate capacity constraints, reduce compute costs, and deliver your results more quickly.
+ * Using Batch, you can run batch computing workloads on the Cloud. Batch computing is a common means for developers,
+ * scientists, and engineers to access large amounts of compute resources. Batch uses the advantages of this computing
+ * workload to remove the undifferentiated heavy lifting of configuring and managing required infrastructure. At the
+ * same time, it also adopts a familiar batch computing software approach. Given these advantages, Batch can help you to
+ * efficiently provision resources in response to jobs submitted, thus effectively helping you to eliminate capacity
+ * constraints, reduce compute costs, and deliver your results more quickly.
  * </p>
  * <p>
- * As a fully managed service, AWS Batch can run batch computing workloads of any scale. AWS Batch automatically
- * provisions compute resources and optimizes workload distribution based on the quantity and scale of your specific
- * workloads. With AWS Batch, there's no need to install or manage batch computing software. This means that you can
- * focus your time and energy on analyzing results and solving your specific problems.
+ * As a fully managed service, Batch can run batch computing workloads of any scale. Batch automatically provisions
+ * compute resources and optimizes workload distribution based on the quantity and scale of your specific workloads.
+ * With Batch, there's no need to install or manage batch computing software. This means that you can focus your time
+ * and energy on analyzing results and solving your specific problems.
  * </p>
  */
 @ThreadSafe
@@ -296,7 +297,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
+     * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
      * <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or
      * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These
      * jobs must be terminated with the <a>TerminateJob</a> operation.
@@ -361,13 +362,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code> compute
-     * environments. <code>MANAGED</code> compute environments can use Amazon EC2 or AWS Fargate resources.
+     * Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code> compute
+     * environments. <code>MANAGED</code> compute environments can use Amazon EC2 or Fargate resources.
      * <code>UNMANAGED</code> compute environments can only use EC2 resources.
      * </p>
      * <p>
-     * In a managed compute environment, AWS Batch manages the capacity and instance types of the compute resources
-     * within the environment. This is based on the compute resource specification that you define or the <a
+     * In a managed compute environment, Batch manages the capacity and instance types of the compute resources within
+     * the environment. This is based on the compute resource specification that you define or the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
      * specify when you create the compute environment. Either, you can choose to use EC2 On-Demand Instances and EC2
      * Spot Instances. Or, you can use Fargate and Fargate Spot capacity in your managed compute environment. You can
@@ -393,11 +394,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * <note>
      * <p>
-     * AWS Batch doesn't upgrade the AMIs in a compute environment after the environment is created. For example, it
-     * doesn't update the AMIs when a newer version of the Amazon ECS optimized AMI is available. Therefore, you're
-     * responsible for managing the guest operating system (including its updates and security patches) and any
-     * additional application software or utilities that you install on the compute resources. To use a new AMI for your
-     * AWS Batch jobs, complete these steps:
+     * Batch doesn't upgrade the AMIs in a compute environment after the environment is created. For example, it doesn't
+     * update the AMIs when a newer version of the Amazon ECS optimized AMI is available. Therefore, you're responsible
+     * for managing the guest operating system (including its updates and security patches) and any additional
+     * application software or utilities that you install on the compute resources. To use a new AMI for your Batch
+     * jobs, complete these steps:
      * </p>
      * <ol>
      * <li>
@@ -484,12 +485,12 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Creates an AWS Batch job queue. When you create a job queue, you associate one or more compute environments to
-     * the queue and assign an order of preference for the compute environments.
+     * Creates an Batch job queue. When you create a job queue, you associate one or more compute environments to the
+     * queue and assign an order of preference for the compute environments.
      * </p>
      * <p>
-     * You also set a priority to the job queue that determines the order that the AWS Batch scheduler places jobs onto
-     * its associated compute environments. For example, if a compute environment is associated with more than one job
+     * You also set a priority to the job queue that determines the order that the Batch scheduler places jobs onto its
+     * associated compute environments. For example, if a compute environment is associated with more than one job
      * queue, the job queue with a higher priority is given preference for scheduling jobs to that compute environment.
      * </p>
      * 
@@ -552,13 +553,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Deletes an AWS Batch compute environment.
+     * Deletes an Batch compute environment.
      * </p>
      * <p>
      * Before you can delete a compute environment, you must set its state to <code>DISABLED</code> with the
      * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job queues with the
-     * <a>UpdateJobQueue</a> API operation. Compute environments that use AWS Fargate resources must terminate all
-     * active jobs on that compute environment before deleting the compute environment. If this isn't done, the compute
+     * <a>UpdateJobQueue</a> API operation. Compute environments that use Fargate resources must terminate all active
+     * jobs on that compute environment before deleting the compute environment. If this isn't done, the compute
      * environment enters an invalid state.
      * </p>
      * 
@@ -691,7 +692,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Deregisters an AWS Batch job definition. Job definitions are permanently deleted after 180 days.
+     * Deregisters an Batch job definition. Job definitions are permanently deleted after 180 days.
      * </p>
      * 
      * @param deregisterJobDefinitionRequest
@@ -949,7 +950,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Describes a list of AWS Batch jobs.
+     * Describes a list of Batch jobs.
      * </p>
      * 
      * @param describeJobsRequest
@@ -1011,7 +1012,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Returns a list of AWS Batch jobs.
+     * Returns a list of Batch jobs.
      * </p>
      * <p>
      * You must specify only one of the following items:
@@ -1097,9 +1098,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Lists the tags for an AWS Batch resource. AWS Batch resources that support tags are compute environments, jobs,
-     * job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
-     * supported.
+     * Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job
+     * definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1160,7 +1160,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Registers an AWS Batch job definition.
+     * Registers an Batch job definition.
      * </p>
      * 
      * @param registerJobDefinitionRequest
@@ -1223,7 +1223,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Submits an AWS Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a> override
+     * Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a> override
      * parameters defined in the job definition. vCPU and memory requirements that are specified in the
      * <code>ResourceRequirements</code> objects in the job definition are the exception. They can't be overridden this
      * way using the <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates to job
@@ -1298,7 +1298,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well. AWS Batch resources that support tags are compute
+     * that are associated with that resource are deleted as well. Batch resources that support tags are compute
      * environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP)
      * jobs are not supported.
      * </p>
@@ -1425,7 +1425,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Deletes specified tags from an AWS Batch resource.
+     * Deletes specified tags from an Batch resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1486,7 +1486,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Updates an AWS Batch compute environment.
+     * Updates an Batch compute environment.
      * </p>
      * 
      * @param updateComputeEnvironmentRequest

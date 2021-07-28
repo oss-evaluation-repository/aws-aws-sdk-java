@@ -27,14 +27,14 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
-     * element for each configuration for DNS query logging that is associated with the current AWS account.
+     * element for each configuration for DNS query logging that is associated with the current account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<QueryLoggingConfig> queryLoggingConfigs;
     /**
      * <p>
-     * If a response includes the last of the query logging configurations that are associated with the current AWS
-     * account, <code>NextToken</code> doesn't appear in the response.
+     * If a response includes the last of the query logging configurations that are associated with the current account,
+     * <code>NextToken</code> doesn't appear in the response.
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
@@ -49,13 +49,13 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
-     * element for each configuration for DNS query logging that is associated with the current AWS account.
+     * element for each configuration for DNS query logging that is associated with the current account.
      * </p>
      * 
      * @return An array that contains one <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html"
      *         >QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the
-     *         current AWS account.
+     *         current account.
      */
 
     public java.util.List<QueryLoggingConfig> getQueryLoggingConfigs() {
@@ -69,14 +69,14 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
-     * element for each configuration for DNS query logging that is associated with the current AWS account.
+     * element for each configuration for DNS query logging that is associated with the current account.
      * </p>
      * 
      * @param queryLoggingConfigs
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html"
      *        >QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the
-     *        current AWS account.
+     *        current account.
      */
 
     public void setQueryLoggingConfigs(java.util.Collection<QueryLoggingConfig> queryLoggingConfigs) {
@@ -92,7 +92,7 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
-     * element for each configuration for DNS query logging that is associated with the current AWS account.
+     * element for each configuration for DNS query logging that is associated with the current account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -104,7 +104,7 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html"
      *        >QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the
-     *        current AWS account.
+     *        current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,14 +122,14 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * <p>
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
-     * element for each configuration for DNS query logging that is associated with the current AWS account.
+     * element for each configuration for DNS query logging that is associated with the current account.
      * </p>
      * 
      * @param queryLoggingConfigs
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html"
      *        >QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the
-     *        current AWS account.
+     *        current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,8 +140,8 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If a response includes the last of the query logging configurations that are associated with the current AWS
-     * account, <code>NextToken</code> doesn't appear in the response.
+     * If a response includes the last of the query logging configurations that are associated with the current account,
+     * <code>NextToken</code> doesn't appear in the response.
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
@@ -152,7 +152,7 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * 
      * @param nextToken
      *        If a response includes the last of the query logging configurations that are associated with the current
-     *        AWS account, <code>NextToken</code> doesn't appear in the response.</p>
+     *        account, <code>NextToken</code> doesn't appear in the response.</p>
      *        <p>
      *        If a response doesn't include the last of the configurations, you can get more configurations by
      *        submitting another <a
@@ -167,8 +167,8 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If a response includes the last of the query logging configurations that are associated with the current AWS
-     * account, <code>NextToken</code> doesn't appear in the response.
+     * If a response includes the last of the query logging configurations that are associated with the current account,
+     * <code>NextToken</code> doesn't appear in the response.
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
@@ -178,7 +178,7 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return If a response includes the last of the query logging configurations that are associated with the current
-     *         AWS account, <code>NextToken</code> doesn't appear in the response.</p>
+     *         account, <code>NextToken</code> doesn't appear in the response.</p>
      *         <p>
      *         If a response doesn't include the last of the configurations, you can get more configurations by
      *         submitting another <a
@@ -193,8 +193,8 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If a response includes the last of the query logging configurations that are associated with the current AWS
-     * account, <code>NextToken</code> doesn't appear in the response.
+     * If a response includes the last of the query logging configurations that are associated with the current account,
+     * <code>NextToken</code> doesn't appear in the response.
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
@@ -205,7 +205,7 @@ public class ListQueryLoggingConfigsResult extends com.amazonaws.AmazonWebServic
      * 
      * @param nextToken
      *        If a response includes the last of the query logging configurations that are associated with the current
-     *        AWS account, <code>NextToken</code> doesn't appear in the response.</p>
+     *        account, <code>NextToken</code> doesn't appear in the response.</p>
      *        <p>
      *        If a response doesn't include the last of the configurations, you can get more configurations by
      *        submitting another <a

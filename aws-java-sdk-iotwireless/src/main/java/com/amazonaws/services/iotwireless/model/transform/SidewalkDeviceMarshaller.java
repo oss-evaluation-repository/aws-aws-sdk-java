@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SidewalkDeviceMarshaller {
 
+    private static final MarshallingInfo<String> AMAZONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AmazonId").build();
     private static final MarshallingInfo<String> SIDEWALKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SidewalkId").build();
     private static final MarshallingInfo<String> SIDEWALKMANUFACTURINGSN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class SidewalkDeviceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(sidewalkDevice.getAmazonId(), AMAZONID_BINDING);
             protocolMarshaller.marshall(sidewalkDevice.getSidewalkId(), SIDEWALKID_BINDING);
             protocolMarshaller.marshall(sidewalkDevice.getSidewalkManufacturingSn(), SIDEWALKMANUFACTURINGSN_BINDING);
             protocolMarshaller.marshall(sidewalkDevice.getDeviceCertificates(), DEVICECERTIFICATES_BINDING);

@@ -28,6 +28,19 @@ public class AbstractAWSRedshiftDataAPIAsync extends AbstractAWSRedshiftDataAPI 
     }
 
     @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request) {
+
+        return batchExecuteStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelStatementResult> cancelStatementAsync(CancelStatementRequest request) {
 
         return cancelStatementAsync(request, null);

@@ -109,6 +109,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
     /**
      * <p>
+     * The element you can use to define tags for row-level security.
+     * </p>
+     */
+    private RowLevelPermissionTagConfiguration rowLevelPermissionTagConfiguration;
+    /**
+     * <p>
      * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
      * </p>
      */
@@ -811,6 +817,46 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The element you can use to define tags for row-level security.
+     * </p>
+     * 
+     * @param rowLevelPermissionTagConfiguration
+     *        The element you can use to define tags for row-level security.
+     */
+
+    public void setRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration rowLevelPermissionTagConfiguration) {
+        this.rowLevelPermissionTagConfiguration = rowLevelPermissionTagConfiguration;
+    }
+
+    /**
+     * <p>
+     * The element you can use to define tags for row-level security.
+     * </p>
+     * 
+     * @return The element you can use to define tags for row-level security.
+     */
+
+    public RowLevelPermissionTagConfiguration getRowLevelPermissionTagConfiguration() {
+        return this.rowLevelPermissionTagConfiguration;
+    }
+
+    /**
+     * <p>
+     * The element you can use to define tags for row-level security.
+     * </p>
+     * 
+     * @param rowLevelPermissionTagConfiguration
+     *        The element you can use to define tags for row-level security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSet withRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration rowLevelPermissionTagConfiguration) {
+        setRowLevelPermissionTagConfiguration(rowLevelPermissionTagConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
      * </p>
      * 
@@ -917,6 +963,8 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
             sb.append("FieldFolders: ").append(getFieldFolders()).append(",");
         if (getRowLevelPermissionDataSet() != null)
             sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getRowLevelPermissionTagConfiguration() != null)
+            sb.append("RowLevelPermissionTagConfiguration: ").append(getRowLevelPermissionTagConfiguration()).append(",");
         if (getColumnLevelPermissionRules() != null)
             sb.append("ColumnLevelPermissionRules: ").append(getColumnLevelPermissionRules());
         sb.append("}");
@@ -985,6 +1033,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
             return false;
+        if (other.getRowLevelPermissionTagConfiguration() == null ^ this.getRowLevelPermissionTagConfiguration() == null)
+            return false;
+        if (other.getRowLevelPermissionTagConfiguration() != null
+                && other.getRowLevelPermissionTagConfiguration().equals(this.getRowLevelPermissionTagConfiguration()) == false)
+            return false;
         if (other.getColumnLevelPermissionRules() == null ^ this.getColumnLevelPermissionRules() == null)
             return false;
         if (other.getColumnLevelPermissionRules() != null && other.getColumnLevelPermissionRules().equals(this.getColumnLevelPermissionRules()) == false)
@@ -1010,6 +1063,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getColumnGroups() == null) ? 0 : getColumnGroups().hashCode());
         hashCode = prime * hashCode + ((getFieldFolders() == null) ? 0 : getFieldFolders().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode + ((getRowLevelPermissionTagConfiguration() == null) ? 0 : getRowLevelPermissionTagConfiguration().hashCode());
         hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());
         return hashCode;
     }

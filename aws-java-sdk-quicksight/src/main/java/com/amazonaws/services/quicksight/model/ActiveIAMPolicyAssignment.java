@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The active AWS Identity and Access Management (IAM) policy assignment.
+ * The active Identity and Access Management (IAM) policy assignment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ActiveIAMPolicyAssignment"

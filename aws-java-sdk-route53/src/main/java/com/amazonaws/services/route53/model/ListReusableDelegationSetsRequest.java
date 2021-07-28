@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get a list of the reusable delegation sets that are associated with the current AWS account.
+ * A request to get a list of the reusable delegation sets that are associated with the current account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets" target="_top">AWS

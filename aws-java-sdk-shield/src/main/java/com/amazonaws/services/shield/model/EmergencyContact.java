@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to
- * the DRT and to initiate proactive customer support.
+ * Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to
+ * the SRT and to initiate proactive customer support.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EmergencyContact" target="_top">AWS API

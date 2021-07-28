@@ -36,7 +36,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -52,7 +52,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
-     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      */
     private EFSVolumeConfiguration efsVolumeConfiguration;
@@ -66,7 +66,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -76,7 +76,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
      *        associated with it stop running.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -93,7 +93,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -102,7 +102,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *         a host path for your data volume. However, the data isn't guaranteed to persist after the containers
      *         associated with it stop running.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -119,7 +119,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -129,7 +129,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
      *        associated with it stop running.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -194,12 +194,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
-     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
      * @param efsVolumeConfiguration
      *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
-     *        Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *        Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *        <code>1.4.0</code>.
      */
 
@@ -210,11 +210,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
-     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
      * @return This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
-     *         Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *         Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *         <code>1.4.0</code>.
      */
 
@@ -225,12 +225,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
-     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * that are running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
      * </p>
      * 
      * @param efsVolumeConfiguration
      *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
-     *        Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *        Jobs that are running on Fargate resources must specify a <code>platformVersion</code> of at least
      *        <code>1.4.0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

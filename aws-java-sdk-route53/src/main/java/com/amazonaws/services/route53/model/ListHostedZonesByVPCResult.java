@@ -40,8 +40,7 @@ public class ListHostedZonesByVPCResult extends com.amazonaws.AmazonWebServiceRe
     private String maxItems;
     /**
      * <p>
-     * The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code>
-     * request.
+     * The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.
      * </p>
      */
     private String nextToken;
@@ -183,13 +182,12 @@ public class ListHostedZonesByVPCResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code>
-     * request.
+     * The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.
      * </p>
      * 
      * @param nextToken
-     *        The value that you specified for <code>NextToken</code> in the most recent
-     *        <code>ListHostedZonesByVPC</code> request.
+     *        The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code>
+     *        request.
      */
 
     public void setNextToken(String nextToken) {
@@ -198,12 +196,11 @@ public class ListHostedZonesByVPCResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code>
-     * request.
+     * The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.
      * </p>
      * 
-     * @return The value that you specified for <code>NextToken</code> in the most recent
-     *         <code>ListHostedZonesByVPC</code> request.
+     * @return The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code>
+     *         request.
      */
 
     public String getNextToken() {
@@ -212,13 +209,12 @@ public class ListHostedZonesByVPCResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code>
-     * request.
+     * The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.
      * </p>
      * 
      * @param nextToken
-     *        The value that you specified for <code>NextToken</code> in the most recent
-     *        <code>ListHostedZonesByVPC</code> request.
+     *        The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

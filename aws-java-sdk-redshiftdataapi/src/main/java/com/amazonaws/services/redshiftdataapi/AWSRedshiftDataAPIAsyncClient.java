@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
- * statements, which are committed if the statement succeeds.
+ * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which
+ * are committed if the statement succeeds.
  * </p>
  * <p>
  * For more information about the Amazon Redshift Data API, see <a
@@ -79,6 +79,39 @@ public class AWSRedshiftDataAPIAsyncClient extends AWSRedshiftDataAPIClient impl
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request) {
+
+        return batchExecuteStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(final BatchExecuteStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler) {
+        final BatchExecuteStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchExecuteStatementResult>() {
+            @Override
+            public BatchExecuteStatementResult call() throws Exception {
+                BatchExecuteStatementResult result = null;
+
+                try {
+                    result = executeBatchExecuteStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

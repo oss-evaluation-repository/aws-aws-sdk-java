@@ -32,9 +32,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults,
-     * AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of
-     * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
-     * previous response to get information about another batch of Protections.
+     * Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections.
+     * For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response
+     * to get information about another batch of Protections.
      * </p>
      * <p>
      * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
@@ -117,9 +117,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults,
-     * AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of
-     * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
-     * previous response to get information about another batch of Protections.
+     * Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections.
+     * For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response
+     * to get information about another batch of Protections.
      * </p>
      * <p>
      * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
@@ -129,7 +129,7 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
-     *        MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
+     *        MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *        NextToken from the previous response to get information about another batch of Protections.</p>
      *        <p>
@@ -145,9 +145,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults,
-     * AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of
-     * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
-     * previous response to get information about another batch of Protections.
+     * Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections.
+     * For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response
+     * to get information about another batch of Protections.
      * </p>
      * <p>
      * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
@@ -156,7 +156,7 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
-     *         MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
+     *         MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another
      *         group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *         NextToken from the previous response to get information about another batch of Protections.</p>
      *         <p>
@@ -172,9 +172,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults,
-     * AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of
-     * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
-     * previous response to get information about another batch of Protections.
+     * Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections.
+     * For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response
+     * to get information about another batch of Protections.
      * </p>
      * <p>
      * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
@@ -184,7 +184,7 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
-     *        MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
+     *        MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *        NextToken from the previous response to get information about another batch of Protections.</p>
      *        <p>

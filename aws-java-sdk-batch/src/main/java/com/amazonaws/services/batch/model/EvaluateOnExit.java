@@ -32,7 +32,7 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
-     * to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including
+     * to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an
      * exact match.
      * </p>
@@ -41,8 +41,8 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512
-     * characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces and
-     * tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces
+     * and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
      * match.
      * </p>
      */
@@ -50,8 +50,8 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
-     * job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact match.
+     * job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      */
     private String onExitCode;
@@ -66,15 +66,15 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
-     * to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including
+     * to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an
      * exact match.
      * </p>
      * 
      * @param onStatusReason
      *        Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can
-     *        be up to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space
-     *        (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the
+     *        be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white
+     *        space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the
      *        string needs to be an exact match.
      */
 
@@ -85,15 +85,15 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
-     * to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including
+     * to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an
      * exact match.
      * </p>
      * 
      * @return Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern
-     *         can be up to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white
-     *         space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of
-     *         the string needs to be an exact match.
+     *         can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and
+     *         white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start
+     *         of the string needs to be an exact match.
      */
 
     public String getOnStatusReason() {
@@ -103,15 +103,15 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
-     * to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including
+     * to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an
      * exact match.
      * </p>
      * 
      * @param onStatusReason
      *        Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can
-     *        be up to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space
-     *        (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the
+     *        be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white
+     *        space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the
      *        string needs to be an exact match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -124,14 +124,14 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512
-     * characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces and
-     * tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces
+     * and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
      * match.
      * </p>
      * 
      * @param onReason
      *        Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up
-     *        to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space
+     *        to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space
      *        (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the
      *        string needs to be an exact match.
      */
@@ -143,13 +143,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512
-     * characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces and
-     * tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces
+     * and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
      * match.
      * </p>
      * 
      * @return Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be
-     *         up to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space
+     *         up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space
      *         (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the
      *         string needs to be an exact match.
      */
@@ -161,14 +161,14 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to 512
-     * characters long, and can contain letters, numbers, periods (.), colons (:), and white space (including spaces and
-     * tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces
+     * and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
      * match.
      * </p>
      * 
      * @param onReason
      *        Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up
-     *        to 512 characters long, and can contain letters, numbers, periods (.), colons (:), and white space
+     *        to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space
      *        (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the
      *        string needs to be an exact match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -182,14 +182,14 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
-     * job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact match.
+     * job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onExitCode
      *        Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned
-     *        for a job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end
-     *        with an asterisk (*) so that only the start of the string needs to be an exact match.
+     *        for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can
+     *        optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      */
 
     public void setOnExitCode(String onExitCode) {
@@ -199,13 +199,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
-     * job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact match.
+     * job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @return Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned
-     *         for a job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end
-     *         with an asterisk (*) so that only the start of the string needs to be an exact match.
+     *         for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can
+     *         optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      */
 
     public String getOnExitCode() {
@@ -215,14 +215,14 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
-     * job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact match.
+     * job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onExitCode
      *        Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned
-     *        for a job. The pattern can be up to 512 characters long, can contain only numbers, and can optionally end
-     *        with an asterisk (*) so that only the start of the string needs to be an exact match.
+     *        for a job. The pattern can be up to 512 characters in length. It can contain only numbers, and can
+     *        optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

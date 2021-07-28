@@ -35,8 +35,8 @@ import javax.annotation.Generated;
  * >GetReusableDelegationSetLimit</a>.
  * </p>
  * <p>
- * To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
- * Center.
+ * To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web
+ * Services Support Center.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

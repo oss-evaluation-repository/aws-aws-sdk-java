@@ -28,18 +28,18 @@ public class GetHealthCheckCountResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of health checks associated with the current AWS account.
+     * The number of health checks associated with the current account.
      * </p>
      */
     private Long healthCheckCount;
 
     /**
      * <p>
-     * The number of health checks associated with the current AWS account.
+     * The number of health checks associated with the current account.
      * </p>
      * 
      * @param healthCheckCount
-     *        The number of health checks associated with the current AWS account.
+     *        The number of health checks associated with the current account.
      */
 
     public void setHealthCheckCount(Long healthCheckCount) {
@@ -48,10 +48,10 @@ public class GetHealthCheckCountResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of health checks associated with the current AWS account.
+     * The number of health checks associated with the current account.
      * </p>
      * 
-     * @return The number of health checks associated with the current AWS account.
+     * @return The number of health checks associated with the current account.
      */
 
     public Long getHealthCheckCount() {
@@ -60,11 +60,11 @@ public class GetHealthCheckCountResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of health checks associated with the current AWS account.
+     * The number of health checks associated with the current account.
      * </p>
      * 
      * @param healthCheckCount
-     *        The number of health checks associated with the current AWS account.
+     *        The number of health checks associated with the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

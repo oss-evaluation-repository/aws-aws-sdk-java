@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the details of an AWS Batch job queue.
+ * An object representing the details of an Batch job queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail" target="_top">AWS API
@@ -81,8 +81,8 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags applied to the job queue. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -524,13 +524,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags applied to the job queue. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The tags applied to the job queue. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *         resources</a> in <i>AWS Batch User Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch
+     *         resources</a> in <i>Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -540,14 +540,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags applied to the job queue. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags applied to the job queue. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *        resources</a> in <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
+     *        in <i>Batch User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -557,14 +557,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags applied to the job queue. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags applied to the job queue. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *        resources</a> in <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
+     *        in <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

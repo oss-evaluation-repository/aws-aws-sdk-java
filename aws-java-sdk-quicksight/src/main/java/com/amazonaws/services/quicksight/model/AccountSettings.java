@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The QuickSight settings associated with your AWS account.
+ * The QuickSight settings associated with your Amazon Web Services account;.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountSettings" target="_top">AWS API
@@ -30,8 +30,9 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
-     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
+     * The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You create
+     * this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.
      * </p>
      */
     private String accountName;
@@ -43,7 +44,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     private String edition;
     /**
      * <p>
-     * The default QuickSight namespace for your AWS account.
+     * The default QuickSight namespace for your Amazon Web Services account;.
      * </p>
      */
     private String defaultNamespace;
@@ -56,14 +57,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
-     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
+     * The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You create
+     * this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.
      * </p>
      * 
      * @param accountName
-     *        The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
-     *        when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
-     *        sign in.
+     *        The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You
+     *        create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it
+     *        appears only when users sign in.
      */
 
     public void setAccountName(String accountName) {
@@ -72,13 +74,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
-     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
+     * The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You create
+     * this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.
      * </p>
      * 
-     * @return The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
-     *         when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
-     *         sign in.
+     * @return The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You
+     *         create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it
+     *         appears only when users sign in.
      */
 
     public String getAccountName() {
@@ -87,14 +90,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
-     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
+     * The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You create
+     * this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.
      * </p>
      * 
      * @param accountName
-     *        The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
-     *        when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
-     *        sign in.
+     *        The "account name" you provided for the QuickSight subscription in your Amazon Web Services account;. You
+     *        create this name when you sign up for QuickSight. It is unique in all of Amazon Web Services and it
+     *        appears only when users sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +168,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default QuickSight namespace for your AWS account.
+     * The default QuickSight namespace for your Amazon Web Services account;.
      * </p>
      * 
      * @param defaultNamespace
-     *        The default QuickSight namespace for your AWS account.
+     *        The default QuickSight namespace for your Amazon Web Services account;.
      */
 
     public void setDefaultNamespace(String defaultNamespace) {
@@ -177,10 +181,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default QuickSight namespace for your AWS account.
+     * The default QuickSight namespace for your Amazon Web Services account;.
      * </p>
      * 
-     * @return The default QuickSight namespace for your AWS account.
+     * @return The default QuickSight namespace for your Amazon Web Services account;.
      */
 
     public String getDefaultNamespace() {
@@ -189,11 +193,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default QuickSight namespace for your AWS account.
+     * The default QuickSight namespace for your Amazon Web Services account;.
      * </p>
      * 
      * @param defaultNamespace
-     *        The default QuickSight namespace for your AWS account.
+     *        The default QuickSight namespace for your Amazon Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

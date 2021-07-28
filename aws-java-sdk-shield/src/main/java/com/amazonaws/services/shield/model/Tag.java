@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your
- * resources, for purposes like billing or other management. Typically, the tag key represents a category, such as
- * "environment", and the tag value represents a specific value within that category, such as "test," "development," or
- * "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify
- * one or more tags to add to each AWS resource, up to 50 tags for a resource.
+ * A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and
+ * manage your resources, for purposes like billing or other management. Typically, the tag key represents a category,
+ * such as "environment", and the tag value represents a specific value within that category, such as "test,"
+ * "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID.
+ * You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Tag" target="_top">AWS API Documentation</a>

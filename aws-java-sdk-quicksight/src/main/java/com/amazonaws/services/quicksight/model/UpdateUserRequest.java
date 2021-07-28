@@ -33,8 +33,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String userName;
     /**
      * <p>
-     * The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      */
     private String awsAccountId;
@@ -114,8 +114,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * author, reader).
      * </p>
      * <p>
-     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).
+     * This feature is available only to QuickSight Enterprise edition subscriptions.
      * </p>
      */
     private String customPermissionsName;
@@ -213,13 +212,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that
-     *        contains your Amazon QuickSight account.
+     *        The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon
+     *        Web Services account; that contains your Amazon QuickSight account.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -228,12 +227,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
-     * @return The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that
-     *         contains your Amazon QuickSight account.
+     * @return The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon
+     *         Web Services account; that contains your Amazon QuickSight account.
      */
 
     public String getAwsAccountId() {
@@ -242,13 +241,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your
-     * Amazon QuickSight account.
+     * The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon Web
+     * Services account; that contains your Amazon QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that
-     *        contains your Amazon QuickSight account.
+     *        The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the Amazon
+     *        Web Services account; that contains your Amazon QuickSight account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,8 +594,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * author, reader).
      * </p>
      * <p>
-     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).
+     * This feature is available only to QuickSight Enterprise edition subscriptions.
      * </p>
      * 
      * @param customPermissionsName
@@ -636,8 +634,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        (admin, author, reader).
      *        </p>
      *        <p>
-     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
-     *        Federation for Single Sign-On (SSO).
+     *        This feature is available only to QuickSight Enterprise edition subscriptions.
      */
 
     public void setCustomPermissionsName(String customPermissionsName) {
@@ -682,8 +679,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * author, reader).
      * </p>
      * <p>
-     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).
+     * This feature is available only to QuickSight Enterprise edition subscriptions.
      * </p>
      * 
      * @return (Enterprise edition only) The name of the custom permissions profile that you want to assign to this
@@ -722,8 +718,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         (admin, author, reader).
      *         </p>
      *         <p>
-     *         This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
-     *         Federation for Single Sign-On (SSO).
+     *         This feature is available only to QuickSight Enterprise edition subscriptions.
      */
 
     public String getCustomPermissionsName() {
@@ -768,8 +763,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * author, reader).
      * </p>
      * <p>
-     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
-     * for Single Sign-On (SSO).
+     * This feature is available only to QuickSight Enterprise edition subscriptions.
      * </p>
      * 
      * @param customPermissionsName
@@ -809,8 +803,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        (admin, author, reader).
      *        </p>
      *        <p>
-     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
-     *        Federation for Single Sign-On (SSO).
+     *        This feature is available only to QuickSight Enterprise edition subscriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

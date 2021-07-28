@@ -40,7 +40,7 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
     private Integer transmitMode;
     /**
      * <p>
-     * The message payload to send.
+     * The binary to be sent to the end device, encoded in base64.
      * </p>
      */
     private String payloadData;
@@ -139,11 +139,11 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The message payload to send.
+     * The binary to be sent to the end device, encoded in base64.
      * </p>
      * 
      * @param payloadData
-     *        The message payload to send.
+     *        The binary to be sent to the end device, encoded in base64.
      */
 
     public void setPayloadData(String payloadData) {
@@ -152,10 +152,10 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The message payload to send.
+     * The binary to be sent to the end device, encoded in base64.
      * </p>
      * 
-     * @return The message payload to send.
+     * @return The binary to be sent to the end device, encoded in base64.
      */
 
     public String getPayloadData() {
@@ -164,11 +164,11 @@ public class SendDataToWirelessDeviceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The message payload to send.
+     * The binary to be sent to the end device, encoded in base64.
      * </p>
      * 
      * @param payloadData
-     *        The message payload to send.
+     *        The binary to be sent to the end device, encoded in base64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

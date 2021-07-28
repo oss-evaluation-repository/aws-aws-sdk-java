@@ -48,6 +48,10 @@ public class SidewalkDeviceJsonUnmarshaller implements Unmarshaller<SidewalkDevi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AmazonId", targetDepth)) {
+                    context.nextToken();
+                    sidewalkDevice.setAmazonId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SidewalkId", targetDepth)) {
                     context.nextToken();
                     sidewalkDevice.setSidewalkId(context.getUnmarshaller(String.class).unmarshall(context));

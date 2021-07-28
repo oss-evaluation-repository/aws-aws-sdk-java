@@ -25,7 +25,7 @@ public class DescribeProtectionGroupResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource
+     * A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
      * grouping improves the accuracy of detection and reduces false positives.
      * </p>
      */
@@ -33,13 +33,13 @@ public class DescribeProtectionGroupResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource
+     * A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
      * grouping improves the accuracy of detection and reduces false positives.
      * </p>
      * 
      * @param protectionGroup
-     *        A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This
-     *        resource grouping improves the accuracy of detection and reduces false positives.
+     *        A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
+     *        grouping improves the accuracy of detection and reduces false positives.
      */
 
     public void setProtectionGroup(ProtectionGroup protectionGroup) {
@@ -48,12 +48,12 @@ public class DescribeProtectionGroupResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource
+     * A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
      * grouping improves the accuracy of detection and reduces false positives.
      * </p>
      * 
-     * @return A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This
-     *         resource grouping improves the accuracy of detection and reduces false positives.
+     * @return A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
+     *         grouping improves the accuracy of detection and reduces false positives.
      */
 
     public ProtectionGroup getProtectionGroup() {
@@ -62,13 +62,13 @@ public class DescribeProtectionGroupResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource
+     * A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
      * grouping improves the accuracy of detection and reduces false positives.
      * </p>
      * 
      * @param protectionGroup
-     *        A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This
-     *        resource grouping improves the accuracy of detection and reduces false positives.
+     *        A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource
+     *        grouping improves the accuracy of detection and reduces false positives.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

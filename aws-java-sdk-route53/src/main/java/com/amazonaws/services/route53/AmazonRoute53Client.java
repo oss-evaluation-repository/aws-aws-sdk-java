@@ -363,6 +363,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.ActivateKeySigningKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
      *      API Documentation</a>
@@ -423,8 +425,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
-     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * If you want to associate a VPC that was created by using one account with a private hosted zone that was created
+     * by using a different account, the account that created the private hosted zone must first submit a
      * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
@@ -481,7 +483,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         private hosted zone, see <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
      *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
+     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
+     *         Center.
      * @throws PriorRequestNotCompleteException
      *         If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent
      *         requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>).
@@ -603,8 +606,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set does not already exist, AWS creates it. If a resource set does
-     * exist, Route 53 updates it with the values in the request.
+     * <code>UPSERT</code>: If a resource record set does not already exist, Amazon Web Services creates it. If a
+     * resource set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -716,7 +719,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * For information about using tags for cost allocation, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Tags</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param changeTagsForResourceRequest
@@ -850,11 +853,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         For information about how to get the current limit for an account, see <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html"
      *         >GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a
-     *         case</a> with the AWS Support Center.
+     *         case</a> with the Amazon Web Services Support Center.
      *         </p>
      *         <p>
-     *         You have reached the maximum number of active health checks for an AWS account. To request a higher
-     *         limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
+     *         You have reached the maximum number of active health checks for an account. To request a higher limit, <a
+     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
+     *         Center.
      * @throws HealthCheckAlreadyExistsException
      *         The health check you're attempting to create already exists. Amazon Route 53 returns this error when you
      *         submit a request that has the following values:
@@ -1009,8 +1013,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         GetReusableDelegationSetLimit</a>.
      *         </p>
      *         <p>
-     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
-     *         Support Center.
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the
+     *         Amazon Web Services Support Center.
      * @throws InvalidVPCIdException
      *         The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access
      *         this VPC.
@@ -1238,7 +1242,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * <li>
      * <p>
-     * You must use the same AWS account to create the log group and the hosted zone that you want to configure query
+     * You must use the same account to create the log group and the hosted zone that you want to configure query
      * logging for.
      * </p>
      * </li>
@@ -1251,9 +1255,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * In the next step, you'll create a resource policy, which controls access to one or more log groups and the
-     * associated AWS resources, such as Route 53 hosted zones. There's a limit on the number of resource policies that
-     * you can create, so we recommend that you use a consistent prefix so you can use the same resource policy for all
-     * the log groups that you create for query logging.
+     * associated Amazon Web Services resources, such as Route 53 hosted zones. There's a limit on the number of
+     * resource policies that you can create, so we recommend that you use a consistent prefix so you can use the same
+     * resource policy for all the log groups that you create for query logging.
      * </p>
      * </li>
      * </ul>
@@ -1271,7 +1275,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <note>
      * <p>
      * You can't use the CloudWatch console to create or edit a resource policy. You must use the CloudWatch API, one of
-     * the AWS SDKs, or the AWS CLI.
+     * the Amazon Web Services SDKs, or the CLI.
      * </p>
      * </note></li>
      * </ol>
@@ -1382,6 +1386,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The resource policy hasn't finished propagating yet.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group
+     *         associated with query log. Update or provide a resource policy to grant permissions for the KMS key.
+     *         </p>
+     *         </li>
      * @sample AmazonRoute53.CreateQueryLoggingConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1434,7 +1444,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones that were
-     * created by the same AWS account.
+     * created by the same account.
      * </p>
      * <p>
      * You can also create a reusable delegation set that uses the four name servers that are associated with an
@@ -1527,7 +1537,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         private hosted zone, see <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
      *         >GetHostedZoneLimit</a>. To request a higher limit, <a
-     *         href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
+     *         href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support
+     *         Center.
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
@@ -1615,8 +1626,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         >GetAccountLimit</a>.
      *         </p>
      *         <p>
-     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
-     *         Support Center.
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the
+     *         Amazon Web Services Support Center.
      * @throws TrafficPolicyAlreadyExistsException
      *         A traffic policy that has the same value for <code>Name</code> already exists.
      * @throws InvalidTrafficPolicyDocumentException
@@ -1702,8 +1713,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         >GetAccountLimit</a>.
      *         </p>
      *         <p>
-     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
-     *         Support Center.
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the
+     *         Amazon Web Services Support Center.
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @throws TrafficPolicyInstanceAlreadyExistsException
@@ -1841,8 +1852,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Authorizes the AWS account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
-     * request to associate the VPC with a specified hosted zone that was created by a different account. To submit a
+     * Authorizes the account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code> request
+     * to associate the VPC with a specified hosted zone that was created by a different account. To submit a
      * <code>CreateVPCAssociationAuthorization</code> request, you must use the account that created the hosted zone.
      * After you authorize the association, use the account that created the VPC to submit an
      * <code>AssociateVPCWithHostedZone</code> request.
@@ -1947,6 +1958,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
      * @throws KeySigningKeyInParentDSRecordException
      *         The key-signing key (KSK) is specified in a parent DS record.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.DeactivateKeySigningKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
      *      target="_top">AWS API Documentation</a>
@@ -2011,7 +2024,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * </important>
      * <p>
-     * If you're using AWS Cloud Map and you configured Cloud Map to create a Route 53 health check when you register an
+     * If you're using Cloud Map and you configured Cloud Map to create a Route 53 health check when you register an
      * instance, you can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the health check. The
      * health check is deleted automatically when you deregister the instance; there can be a delay of several hours
      * before the health check is deleted from Route 53.
@@ -2080,7 +2093,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Deletes a hosted zone.
      * </p>
      * <p>
-     * If the hosted zone was created by another service, such as AWS Cloud Map, see <a href=
+     * If the hosted zone was created by another service, such as Cloud Map, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service"
      * >Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer
      * Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones
@@ -2129,7 +2142,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * <li>
      * <p>
-     * Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current AWS
+     * Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current
      * account.
      * </p>
      * </li>
@@ -2220,6 +2233,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.DeleteKeySigningKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
      *      API Documentation</a>
@@ -2585,7 +2600,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <important>
      * <p>
-     * Sending this request only prevents the AWS account that created the VPC from associating the VPC with the Amazon
+     * Sending this request only prevents the account that created the VPC from associating the VPC with the Amazon
      * Route 53 hosted zone in the future. If the VPC is already associated with the hosted zone,
      * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from the hosted zone. If you want to
      * delete an existing association, use <code>DisassociateVPCFromHostedZone</code>.
@@ -2594,7 +2609,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * 
      * @param deleteVPCAssociationAuthorizationRequest
      *        A complex type that contains information about the request to remove authorization to associate a VPC that
-     *        was created by one AWS account with a hosted zone that was created with a different AWS account.
+     *        was created by one account with a hosted zone that was created with a different account.
      * @return Result of the DeleteVPCAssociationAuthorization operation returned by the service.
      * @throws ConcurrentModificationException
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
@@ -2681,6 +2696,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
      * @throws InvalidKMSArnException
      *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.DisableHostedZoneDNSSEC
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
      *      target="_top">AWS API Documentation</a>
@@ -2754,10 +2771,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * <li>
      * <p>
-     * Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted
-     * zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using
-     * its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using
-     * your account.
+     * Some services, such as Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+     * and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using its own
+     * account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using your
+     * account.
      * </p>
      * <p>
      * When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">
@@ -2859,6 +2876,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The hosted zone doesn't have any DNSSEC resources.
      * @throws InvalidKeySigningKeyStatusException
      *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.EnableHostedZoneDNSSEC
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
      *      API Documentation</a>
@@ -2922,8 +2941,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <note>
      * <p>
-     * You can also view account limits in AWS Trusted Advisor. Sign in to the AWS Management Console and open the
-     * Trusted Advisor console at <a
+     * You can also view account limits in Amazon Web Services Trusted Advisor. Sign in to the Management Console and
+     * open the Trusted Advisor console at <a
      * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>. Then
      * choose <b>Service limits</b> in the navigation pane.
      * </p>
@@ -3064,7 +3083,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
-     * address ranges for all AWS services. For more information, see <a
+     * address ranges for all Amazon Web Services services. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP Address Ranges of
      * Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
@@ -3139,6 +3158,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         No hosted zone exists with the ID that you specified.
      * @throws InvalidArgumentException
      *         Parameter name is not valid.
+     * @throws InvalidInputException
+     *         The input is not valid.
      * @sample AmazonRoute53.GetDNSSEC
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
      *      Documentation</a>
@@ -3345,11 +3366,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves the number of health checks that are associated with the current AWS account.
+     * Retrieves the number of health checks that are associated with the current account.
      * </p>
      * 
      * @param getHealthCheckCountRequest
-     *        A request for the number of health checks that are associated with the current AWS account.
+     *        A request for the number of health checks that are associated with the current account.
      * @return Result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53.GetHealthCheckCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount" target="_top">AWS
@@ -3471,6 +3492,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets status of a specified health check.
      * </p>
+     * <important>
+     * <p>
+     * This API is intended for use during development to diagnose behavior. It doesn’t support production use-cases
+     * with high query rates that require immediate and actionable responses.
+     * </p>
+     * </important>
      * 
      * @param getHealthCheckStatusRequest
      *        A request to get the status for a health check.
@@ -3590,11 +3617,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves the number of hosted zones that are associated with the current AWS account.
+     * Retrieves the number of hosted zones that are associated with the current account.
      * </p>
      * 
      * @param getHostedZoneCountRequest
-     *        A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
+     *        A request to retrieve a count of all the hosted zones that are associated with the current account.
      * @return Result of the GetHostedZoneCount operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4062,11 +4089,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets the number of traffic policy instances that are associated with the current AWS account.
+     * Gets the number of traffic policy instances that are associated with the current account.
      * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
-     *        Request to get the number of traffic policy instances that are associated with the current AWS account.
+     *        Request to get the number of traffic policy instances that are associated with the current account.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"
@@ -4202,11 +4229,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieve a list of the health checks that are associated with the current AWS account.
+     * Retrieve a list of the health checks that are associated with the current account.
      * </p>
      * 
      * @param listHealthChecksRequest
-     *        A request to retrieve a list of the health checks that are associated with the current AWS account.
+     *        A request to retrieve a list of the health checks that are associated with the current account.
      * @return Result of the ListHealthChecks operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4268,7 +4295,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of the public and private hosted zones that are associated with the current AWS account. The
+     * Retrieves a list of the public and private hosted zones that are associated with the current account. The
      * response includes a <code>HostedZones</code> child element for each hosted zone.
      * </p>
      * <p>
@@ -4278,7 +4305,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * 
      * @param listHostedZonesRequest
      *        A request to retrieve a list of the public and private hosted zones that are associated with the current
-     *        AWS account.
+     *        account.
      * @return Result of the ListHostedZones operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4343,7 +4370,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Retrieves a list of your hosted zones in lexicographic order. The response includes a <code>HostedZones</code>
-     * child element for each hosted zone created by the current AWS account.
+     * child element for each hosted zone created by the current account.
      * </p>
      * <p>
      * <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed. For example:
@@ -4391,7 +4418,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <li>
      * <p>
      * If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated with the
-     * current AWS account.
+     * current account.
      * </p>
      * <p>
      * If <code>IsTruncated</code> is false, this response includes the last hosted zone that is associated with the
@@ -4402,8 +4429,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <li>
      * <p>
      * The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response contain the domain name
-     * and the hosted zone ID of the next hosted zone that is associated with the current AWS account. If you want to
-     * list more hosted zones, make another call to <code>ListHostedZonesByName</code>, and specify the value of
+     * and the hosted zone ID of the next hosted zone that is associated with the current account. If you want to list
+     * more hosted zones, make another call to <code>ListHostedZonesByName</code>, and specify the value of
      * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and
      * <code>hostedzoneid</code> parameters, respectively.
      * </p>
@@ -4411,8 +4438,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </ul>
      * 
      * @param listHostedZonesByNameRequest
-     *        Retrieves a list of the public and private hosted zones that are associated with the current AWS account
-     *        in ASCII order by domain name.
+     *        Retrieves a list of the public and private hosted zones that are associated with the current account in
+     *        ASCII order by domain name.
      * @return Result of the ListHostedZonesByName operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4474,29 +4501,29 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account or
-     * AWS service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the
-     * following values:
+     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which account or Amazon
+     * Web Services service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An <code>OwningAccount</code> element, which contains the account number of either the current AWS account or
-     * another AWS account. Some services, such as AWS Cloud Map, create hosted zones using the current account.
+     * An <code>OwningAccount</code> element, which contains the account number of either the current account or another
+     * account. Some services, such as Cloud Map, create hosted zones using the current account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An <code>OwningService</code> element, which identifies the AWS service that created and owns the hosted zone.
-     * For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
+     * An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the
+     * hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
      * <code>Owner</code> is <code>efs.amazonaws.com</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param listHostedZonesByVPCRequest
-     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS
-     *        account created the hosted zones.
+     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which account
+     *        created the hosted zones.
      * @return Result of the ListHostedZonesByVPC operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4553,8 +4580,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Lists the configurations for DNS query logging that are associated with the current AWS account or the
-     * configuration that is associated with a specified hosted zone.
+     * Lists the configurations for DNS query logging that are associated with the current account or the configuration
+     * that is associated with a specified hosted zone.
      * </p>
      * <p>
      * For more information about DNS query logs, see <a
@@ -4766,11 +4793,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of the reusable delegation sets that are associated with the current AWS account.
+     * Retrieves a list of the reusable delegation sets that are associated with the current account.
      * </p>
      * 
      * @param listReusableDelegationSetsRequest
-     *        A request to get a list of the reusable delegation sets that are associated with the current AWS account.
+     *        A request to get a list of the reusable delegation sets that are associated with the current account.
      * @return Result of the ListReusableDelegationSets operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -4835,7 +4862,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * For information about using tags for cost allocation, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Tags</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -4911,7 +4938,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * For information about using tags for cost allocation, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Tags</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourcesRequest
@@ -4982,8 +5009,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets information about the latest version for every traffic policy that is associated with the current AWS
-     * account. Policies are listed in the order that they were created in.
+     * Gets information about the latest version for every traffic policy that is associated with the current account.
+     * Policies are listed in the order that they were created in.
      * </p>
      * <p>
      * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
@@ -4994,7 +5021,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * 
      * @param listTrafficPoliciesRequest
      *        A complex type that contains the information about the request to list the traffic policies that are
-     *        associated with the current AWS account.
+     *        associated with the current account.
      * @return Result of the ListTrafficPolicies operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -5054,7 +5081,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets information about the traffic policy instances that you created by using the current AWS account.
+     * Gets information about the traffic policy instances that you created by using the current account.
      * </p>
      * <note>
      * <p>
@@ -5069,7 +5096,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * 
      * @param listTrafficPolicyInstancesRequest
-     *        A request to get information about the traffic policy instances that you created by using the current AWS
+     *        A request to get information about the traffic policy instances that you created by using the current
      *        account.
      * @return Result of the ListTrafficPolicyInstances operation returned by the service.
      * @throws InvalidInputException

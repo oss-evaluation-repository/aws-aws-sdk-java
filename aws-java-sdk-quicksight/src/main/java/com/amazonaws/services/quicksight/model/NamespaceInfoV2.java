@@ -42,7 +42,7 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * The namespace AWS Region.
+     * The namespace Region;.
      * </p>
      */
     private String capacityRegion;
@@ -147,11 +147,11 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The namespace AWS Region.
+     * The namespace Region;.
      * </p>
      * 
      * @param capacityRegion
-     *        The namespace AWS Region.
+     *        The namespace Region;.
      */
 
     public void setCapacityRegion(String capacityRegion) {
@@ -160,10 +160,10 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The namespace AWS Region.
+     * The namespace Region;.
      * </p>
      * 
-     * @return The namespace AWS Region.
+     * @return The namespace Region;.
      */
 
     public String getCapacityRegion() {
@@ -172,11 +172,11 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The namespace AWS Region.
+     * The namespace Region;.
      * </p>
      * 
      * @param capacityRegion
-     *        The namespace AWS Region.
+     *        The namespace Region;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

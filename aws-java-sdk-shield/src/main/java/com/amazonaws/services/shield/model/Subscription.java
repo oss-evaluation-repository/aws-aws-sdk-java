@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the AWS Shield Advanced subscription for an account.
+ * Information about the Shield Advanced subscription for an account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription" target="_top">AWS API
@@ -43,7 +43,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date endTime;
     /**
      * <p>
-     * The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     * The length, in seconds, of the Shield Advanced subscription for the account.
      * </p>
      */
     private Long timeCommitmentInSeconds;
@@ -68,15 +68,15 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Limit> limits;
     /**
      * <p>
-     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     * escalations to the DRT and to initiate proactive customer support.
+     * If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
      * to <code>ENABLED</code> when your request is fully processed.
      * </p>
      * <p>
-     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive
      * customer support.
      * </p>
      */
@@ -183,11 +183,11 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     * The length, in seconds, of the Shield Advanced subscription for the account.
      * </p>
      * 
      * @param timeCommitmentInSeconds
-     *        The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     *        The length, in seconds, of the Shield Advanced subscription for the account.
      */
 
     public void setTimeCommitmentInSeconds(Long timeCommitmentInSeconds) {
@@ -196,10 +196,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     * The length, in seconds, of the Shield Advanced subscription for the account.
      * </p>
      * 
-     * @return The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     * @return The length, in seconds, of the Shield Advanced subscription for the account.
      */
 
     public Long getTimeCommitmentInSeconds() {
@@ -208,11 +208,11 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     * The length, in seconds, of the Shield Advanced subscription for the account.
      * </p>
      * 
      * @param timeCommitmentInSeconds
-     *        The length, in seconds, of the AWS Shield Advanced subscription for the account.
+     *        The length, in seconds, of the Shield Advanced subscription for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,27 +404,27 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     * escalations to the DRT and to initiate proactive customer support.
+     * If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
      * to <code>ENABLED</code> when your request is fully processed.
      * </p>
      * <p>
-     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive
      * customer support.
      * </p>
      * 
      * @param proactiveEngagementStatus
-     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     *        escalations to the SRT and to initiate proactive customer support.</p>
      *        <p>
      *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
      *        changes to <code>ENABLED</code> when your request is fully processed.
      *        </p>
      *        <p>
-     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate
      *        proactive customer support.
      * @see ProactiveEngagementStatus
      */
@@ -435,26 +435,26 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     * escalations to the DRT and to initiate proactive customer support.
+     * If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
      * to <code>ENABLED</code> when your request is fully processed.
      * </p>
      * <p>
-     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive
      * customer support.
      * </p>
      * 
-     * @return If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     *         escalations to the DRT and to initiate proactive customer support.</p>
+     * @return If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     *         escalations to the SRT and to initiate proactive customer support.</p>
      *         <p>
      *         If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
      *         changes to <code>ENABLED</code> when your request is fully processed.
      *         </p>
      *         <p>
-     *         If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *         If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate
      *         proactive customer support.
      * @see ProactiveEngagementStatus
      */
@@ -465,27 +465,27 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     * escalations to the DRT and to initiate proactive customer support.
+     * If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
      * to <code>ENABLED</code> when your request is fully processed.
      * </p>
      * <p>
-     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive
      * customer support.
      * </p>
      * 
      * @param proactiveEngagementStatus
-     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     *        escalations to the SRT and to initiate proactive customer support.</p>
      *        <p>
      *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
      *        changes to <code>ENABLED</code> when your request is fully processed.
      *        </p>
      *        <p>
-     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate
      *        proactive customer support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProactiveEngagementStatus
@@ -498,27 +498,27 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     * escalations to the DRT and to initiate proactive customer support.
+     * If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
      * to <code>ENABLED</code> when your request is fully processed.
      * </p>
      * <p>
-     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive
      * customer support.
      * </p>
      * 
      * @param proactiveEngagementStatus
-     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
-     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about
+     *        escalations to the SRT and to initiate proactive customer support.</p>
      *        <p>
      *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
      *        changes to <code>ENABLED</code> when your request is fully processed.
      *        </p>
      *        <p>
-     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate
      *        proactive customer support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProactiveEngagementStatus

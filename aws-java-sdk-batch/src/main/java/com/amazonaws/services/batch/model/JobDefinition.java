@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an AWS Batch job definition.
+ * An object representing an Batch job definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDefinition" target="_top">AWS API
@@ -57,7 +57,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      * For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private String type;
@@ -67,7 +67,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
      * parameter defaults from the job definition. For more information about specifying parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     * Parameters</a> in the <i>AWS Batch User Guide</i>.
+     * Parameters</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -86,7 +86,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they haven't finished.
+     * duration after which Batch terminates your jobs if they haven't finished.
      * </p>
      */
     private JobTimeout timeout;
@@ -290,14 +290,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      * For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
      *        supported. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.
      */
 
     public void setType(String type) {
@@ -309,13 +309,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      * For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
      *         supported. For more information about multi-node parallel jobs, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *         parallel job definition</a> in the <i>AWS Batch User Guide</i>.
+     *         parallel job definition</a> in the <i>Batch User Guide</i>.
      */
 
     public String getType() {
@@ -327,14 +327,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      * For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
      *        supported. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,7 +349,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
      * parameter defaults from the job definition. For more information about specifying parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     * Parameters</a> in the <i>AWS Batch User Guide</i>.
+     * Parameters</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
@@ -357,7 +357,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      *         corresponding parameter defaults from the job definition. For more information about specifying
      *         parameters, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     *         Parameters</a> in the <i>AWS Batch User Guide</i>.
+     *         Parameters</a> in the <i>Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -370,7 +370,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
      * parameter defaults from the job definition. For more information about specifying parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     * Parameters</a> in the <i>AWS Batch User Guide</i>.
+     * Parameters</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
@@ -379,7 +379,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      *        corresponding parameter defaults from the job definition. For more information about specifying
      *        parameters, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
+     *        Parameters</a> in the <i>Batch User Guide</i>.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -392,7 +392,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
      * parameter defaults from the job definition. For more information about specifying parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     * Parameters</a> in the <i>AWS Batch User Guide</i>.
+     * Parameters</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
@@ -401,7 +401,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      *        corresponding parameter defaults from the job definition. For more information about specifying
      *        parameters, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
-     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
+     *        Parameters</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,12 +521,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they haven't finished.
+     * duration after which Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @param timeout
      *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which AWS Batch terminates your jobs if they haven't finished.
+     *        duration after which Batch terminates your jobs if they haven't finished.
      */
 
     public void setTimeout(JobTimeout timeout) {
@@ -536,11 +536,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they haven't finished.
+     * duration after which Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @return The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *         duration after which AWS Batch terminates your jobs if they haven't finished.
+     *         duration after which Batch terminates your jobs if they haven't finished.
      */
 
     public JobTimeout getTimeout() {
@@ -550,12 +550,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they haven't finished.
+     * duration after which Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @param timeout
      *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which AWS Batch terminates your jobs if they haven't finished.
+     *        duration after which Batch terminates your jobs if they haven't finished.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A single partition.
+ * A partition dimension defined by an attribute.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Partition" target="_top">AWS API
@@ -30,18 +30,18 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the partition.
+     * The name of the attribute that defines a partition dimension.
      * </p>
      */
     private String attributeName;
 
     /**
      * <p>
-     * The attribute name of the partition.
+     * The name of the attribute that defines a partition dimension.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name of the partition.
+     *        The name of the attribute that defines a partition dimension.
      */
 
     public void setAttributeName(String attributeName) {
@@ -50,10 +50,10 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the partition.
+     * The name of the attribute that defines a partition dimension.
      * </p>
      * 
-     * @return The attribute name of the partition.
+     * @return The name of the attribute that defines a partition dimension.
      */
 
     public String getAttributeName() {
@@ -62,11 +62,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the partition.
+     * The name of the attribute that defines a partition dimension.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name of the partition.
+     *        The name of the attribute that defines a partition dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to update.
+     * The name of the dataset to update.
      * </p>
      */
     private String datasetName;
@@ -62,13 +62,13 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a href=
      * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     * >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      * </p>
      */
     private VersioningConfiguration versioningConfiguration;
     /**
      * <p>
-     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      * <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
      * </p>
@@ -77,11 +77,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to update.
+     * The name of the dataset to update.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set to update.
+     *        The name of the dataset to update.
      */
 
     public void setDatasetName(String datasetName) {
@@ -90,10 +90,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to update.
+     * The name of the dataset to update.
      * </p>
      * 
-     * @return The name of the data set to update.
+     * @return The name of the dataset to update.
      */
 
     public String getDatasetName() {
@@ -102,11 +102,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data set to update.
+     * The name of the dataset to update.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set to update.
+     *        The name of the dataset to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,7 +379,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a href=
      * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     * >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
@@ -387,7 +387,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        version plus the latest succeeded version (if they are different) are kept for the time period specified
      *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
      *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     *        >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      */
 
     public void setVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
@@ -400,14 +400,14 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a href=
      * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     * >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      * </p>
      * 
      * @return Optional. How many versions of dataset contents are kept. If not specified or set to null, only the
      *         latest version plus the latest succeeded version (if they are different) are kept for the time period
      *         specified by the <code>retentionPeriod</code> parameter. For more information, see <a href=
      *         "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     *         >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     *         >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      */
 
     public VersioningConfiguration getVersioningConfiguration() {
@@ -420,7 +420,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a href=
      * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     * >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
@@ -428,7 +428,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        version plus the latest succeeded version (if they are different) are kept for the time period specified
      *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
      *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
-     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
+     *        >Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,12 +439,12 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      * <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
      * </p>
      * 
-     * @return A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * @return A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      *         <code>lateDataRules</code>, the dataset must use a <a
      *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      *         filter.
@@ -456,13 +456,13 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      * <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
      * </p>
      * 
      * @param lateDataRules
-     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      *        <code>lateDataRules</code>, the dataset must use a <a
      *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      *        filter.
@@ -479,7 +479,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      * <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
      * </p>
@@ -490,7 +490,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param lateDataRules
-     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      *        <code>lateDataRules</code>, the dataset must use a <a
      *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      *        filter.
@@ -509,13 +509,13 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      * <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
      * </p>
      * 
      * @param lateDataRules
-     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        A list of data rules that send notifications to CloudWatch, when data arrives late. To specify
      *        <code>lateDataRules</code>, the dataset must use a <a
      *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      *        filter.

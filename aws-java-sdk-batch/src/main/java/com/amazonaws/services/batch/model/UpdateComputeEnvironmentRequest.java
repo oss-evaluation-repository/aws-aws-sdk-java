@@ -40,12 +40,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -57,21 +57,21 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * Details of the compute resources managed by the compute environment. Required for a managed compute environment.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * the <i>Batch User Guide</i>.
      * </p>
      */
     private ComputeResourceUpdate computeResources;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services
+     * services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
+     * <i>Batch User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If the
-     * compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     * If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if
+     * the compute environment has a regular IAM role, it can't be changed to use a service-linked role.
      * </p>
      * </important>
      * <p>
@@ -80,8 +80,8 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path
+     * prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -135,12 +135,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -151,15 +151,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        jobs from a queue and scale in or out automatically based on the workload demand of its associated
      *        queues.</p>
      *        <p>
-     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
-     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
-     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
-     *        scale in to <code>minvCpus</code> value after instances become idle.
+     *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+     *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     *        <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -173,12 +173,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -188,15 +188,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         jobs from a queue and scale in or out automatically based on the workload demand of its associated
      *         queues.</p>
      *         <p>
-     *         If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *         If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *         associated job queue on the compute resources within the environment. If the compute environment is
      *         managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *         </p>
      *         <p>
-     *         If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
-     *         the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
-     *         normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
-     *         scale in to <code>minvCpus</code> value after instances become idle.
+     *         If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+     *         environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
+     *         Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in
+     *         to <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -210,12 +210,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -226,15 +226,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        jobs from a queue and scale in or out automatically based on the workload demand of its associated
      *        queues.</p>
      *        <p>
-     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
-     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
-     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
-     *        scale in to <code>minvCpus</code> value after instances become idle.
+     *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+     *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     *        <code>minvCpus</code> value after instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -250,12 +250,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -266,15 +266,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        jobs from a queue and scale in or out automatically based on the workload demand of its associated
      *        queues.</p>
      *        <p>
-     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
-     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
-     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
-     *        scale in to <code>minvCpus</code> value after instances become idle.
+     *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+     *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     *        <code>minvCpus</code> value after instances become idle.
      * @see CEState
      */
 
@@ -288,12 +288,12 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * a queue and scale in or out automatically based on the workload demand of its associated queues.
      * </p>
      * <p>
-     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
-     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
-     * scale its instances out or in automatically, based on the job queue demand.
+     * If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job
+     * queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+     * its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -304,15 +304,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        jobs from a queue and scale in or out automatically based on the workload demand of its associated
      *        queues.</p>
      *        <p>
-     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
      *        associated job queue on the compute resources within the environment. If the compute environment is
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
-     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
-     *        normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they
-     *        scale in to <code>minvCpus</code> value after instances become idle.
+     *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+     *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+     *        <code>minvCpus</code> value after instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -327,14 +327,14 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * Details of the compute resources managed by the compute environment. Required for a managed compute environment.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
      *        Details of the compute resources managed by the compute environment. Required for a managed compute
      *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     *        Environments</a> in the <i>AWS Batch User Guide</i>.
+     *        Environments</a> in the <i>Batch User Guide</i>.
      */
 
     public void setComputeResources(ComputeResourceUpdate computeResources) {
@@ -346,13 +346,13 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * Details of the compute resources managed by the compute environment. Required for a managed compute environment.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return Details of the compute resources managed by the compute environment. Required for a managed compute
      *         environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     *         Environments</a> in the <i>AWS Batch User Guide</i>.
+     *         Environments</a> in the <i>Batch User Guide</i>.
      */
 
     public ComputeResourceUpdate getComputeResources() {
@@ -364,14 +364,14 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * Details of the compute resources managed by the compute environment. Required for a managed compute environment.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
      *        Details of the compute resources managed by the compute environment. Required for a managed compute
      *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     *        Environments</a> in the <i>AWS Batch User Guide</i>.
+     *        Environments</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,15 +382,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services
+     * services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
+     * <i>Batch User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If the
-     * compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     * If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if
+     * the compute environment has a regular IAM role, it can't be changed to use a service-linked role.
      * </p>
      * </important>
      * <p>
@@ -399,21 +399,22 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path
+     * prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
      * </note>
      * 
      * @param serviceRole
-     *        The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *        services on your behalf. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
-     *        role</a> in the <i>AWS Batch User Guide</i>.</p> <important>
+     *        The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web
+     *        Services services on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a>
+     *        in the <i>Batch User Guide</i>.</p> <important>
      *        <p>
-     *        If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If
-     *        the compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     *        If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
+     *        Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
+     *        role.
      *        </p>
      *        </important>
      *        <p>
@@ -422,10 +423,10 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <note>
      *        <p>
-     *        Depending on how you created your AWS Batch service role, its ARN might contain the
-     *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
-     *        that you specify the full ARN of your service role when you create compute environments.
+     *        Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+     *        path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use
+     *        the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of
+     *        your service role when you create compute environments.
      *        </p>
      */
 
@@ -435,15 +436,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services
+     * services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
+     * <i>Batch User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If the
-     * compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     * If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if
+     * the compute environment has a regular IAM role, it can't be changed to use a service-linked role.
      * </p>
      * </important>
      * <p>
@@ -452,20 +453,21 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path
+     * prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *         services on your behalf. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
-     *         role</a> in the <i>AWS Batch User Guide</i>.</p> <important>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web
+     *         Services services on your behalf. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
+     *         role</a> in the <i>Batch User Guide</i>.</p> <important>
      *         <p>
-     *         If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If
-     *         the compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     *         If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
+     *         Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
+     *         role.
      *         </p>
      *         </important>
      *         <p>
@@ -474,10 +476,10 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         </p>
      *         <note>
      *         <p>
-     *         Depending on how you created your AWS Batch service role, its ARN might contain the
-     *         <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *         assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
-     *         recommend that you specify the full ARN of your service role when you create compute environments.
+     *         Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+     *         path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use
+     *         the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of
+     *         your service role when you create compute environments.
      *         </p>
      */
 
@@ -487,15 +489,15 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on
-     * your behalf. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM role</a> in
-     * the <i>AWS Batch User Guide</i>.
+     * The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services
+     * services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
+     * <i>Batch User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If the
-     * compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     * If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if
+     * the compute environment has a regular IAM role, it can't be changed to use a service-linked role.
      * </p>
      * </important>
      * <p>
@@ -504,21 +506,22 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * Depending on how you created your AWS Batch service role, its ARN might contain the <code>service-role</code>
-     * path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
+     * Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path
+     * prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
      * </note>
      * 
      * @param serviceRole
-     *        The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS
-     *        services on your behalf. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS Batch service IAM
-     *        role</a> in the <i>AWS Batch User Guide</i>.</p> <important>
+     *        The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web
+     *        Services services on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a>
+     *        in the <i>Batch User Guide</i>.</p> <important>
      *        <p>
-     *        If the compute environment has a service-linked role, it cannot be changed to use a regular IAM role. If
-     *        the compute environment has a regular IAM role, it cannot be changed to use a service-linked role.
+     *        If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
+     *        Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
+     *        role.
      *        </p>
      *        </important>
      *        <p>
@@ -527,10 +530,10 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <note>
      *        <p>
-     *        Depending on how you created your AWS Batch service role, its ARN might contain the
-     *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
-     *        that you specify the full ARN of your service role when you create compute environments.
+     *        Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+     *        path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use
+     *        the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of
+     *        your service role when you create compute environments.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

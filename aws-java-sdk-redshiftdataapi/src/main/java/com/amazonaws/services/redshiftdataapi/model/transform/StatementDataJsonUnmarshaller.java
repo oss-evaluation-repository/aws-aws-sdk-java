@@ -56,6 +56,10 @@ public class StatementDataJsonUnmarshaller implements Unmarshaller<StatementData
                     context.nextToken();
                     statementData.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsBatchStatement", targetDepth)) {
+                    context.nextToken();
+                    statementData.setIsBatchStatement(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("QueryParameters", targetDepth)) {
                     context.nextToken();
                     statementData.setQueryParameters(new ListUnmarshaller<SqlParameter>(SqlParameterJsonUnmarshaller.getInstance())
@@ -65,6 +69,12 @@ public class StatementDataJsonUnmarshaller implements Unmarshaller<StatementData
                 if (context.testExpression("QueryString", targetDepth)) {
                     context.nextToken();
                     statementData.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("QueryStrings", targetDepth)) {
+                    context.nextToken();
+                    statementData.setQueryStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
                     context.nextToken();

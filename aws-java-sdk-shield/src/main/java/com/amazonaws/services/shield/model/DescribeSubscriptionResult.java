@@ -25,18 +25,18 @@ public class DescribeSubscriptionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS Shield Advanced subscription details for an account.
+     * The Shield Advanced subscription details for an account.
      * </p>
      */
     private Subscription subscription;
 
     /**
      * <p>
-     * The AWS Shield Advanced subscription details for an account.
+     * The Shield Advanced subscription details for an account.
      * </p>
      * 
      * @param subscription
-     *        The AWS Shield Advanced subscription details for an account.
+     *        The Shield Advanced subscription details for an account.
      */
 
     public void setSubscription(Subscription subscription) {
@@ -45,10 +45,10 @@ public class DescribeSubscriptionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS Shield Advanced subscription details for an account.
+     * The Shield Advanced subscription details for an account.
      * </p>
      * 
-     * @return The AWS Shield Advanced subscription details for an account.
+     * @return The Shield Advanced subscription details for an account.
      */
 
     public Subscription getSubscription() {
@@ -57,11 +57,11 @@ public class DescribeSubscriptionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS Shield Advanced subscription details for an account.
+     * The Shield Advanced subscription details for an account.
      * </p>
      * 
      * @param subscription
-     *        The AWS Shield Advanced subscription details for an account.
+     *        The Shield Advanced subscription details for an account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

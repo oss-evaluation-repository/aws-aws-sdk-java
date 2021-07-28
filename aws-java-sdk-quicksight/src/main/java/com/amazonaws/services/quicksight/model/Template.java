@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * placeholders with datasets that follow the same schema that was used to create the source analysis and template.
  * </p>
  * <p>
- * You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a
- * dashboard from an existing template.
+ * You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts
+ * to create a template or a dashboard from an existing template.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Template" target="_top">AWS API
@@ -55,7 +55,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
     private TemplateVersion version;
     /**
      * <p>
-     * The ID for the template. This is unique per AWS Region for each AWS account.
+     * The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      * </p>
      */
     private String templateId;
@@ -194,11 +194,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per AWS Region for each AWS account.
+     * The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
      * @param templateId
-     *        The ID for the template. This is unique per AWS Region for each AWS account.
+     *        The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      */
 
     public void setTemplateId(String templateId) {
@@ -207,10 +207,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per AWS Region for each AWS account.
+     * The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
-     * @return The ID for the template. This is unique per AWS Region for each AWS account.
+     * @return The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      */
 
     public String getTemplateId() {
@@ -219,11 +219,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per AWS Region for each AWS account.
+     * The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      * </p>
      * 
      * @param templateId
-     *        The ID for the template. This is unique per AWS Region for each AWS account.
+     *        The ID for the template. This is unique per Region; for each Amazon Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

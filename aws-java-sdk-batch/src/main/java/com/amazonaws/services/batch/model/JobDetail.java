@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an AWS Batch job.
+ * An object representing an Batch job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDetail" target="_top">AWS API
@@ -60,7 +60,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      */
@@ -143,7 +143,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      */
@@ -351,7 +351,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
@@ -360,7 +360,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If your jobs don't progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      *        </p>
      * @see JobStatus
      */
@@ -377,7 +377,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
@@ -385,7 +385,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         If your jobs don't progress to <code>STARTING</code>, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     *         Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *         Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      *         </p>
      * @see JobStatus
      */
@@ -402,7 +402,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
@@ -411,7 +411,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If your jobs don't progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
@@ -430,7 +430,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
@@ -439,7 +439,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If your jobs don't progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      *        </p>
      * @see JobStatus
      */
@@ -456,7 +456,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If your jobs don't progress to <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
-     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      * </p>
      * </note>
      * 
@@ -465,7 +465,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If your jobs don't progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
@@ -1049,14 +1049,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param nodeProperties
      *        An object representing the node properties of a multi-node parallel job.</p> <note>
      *        <p>
-     *        This isn't applicable to jobs running on Fargate resources.
+     *        This isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      */
 
@@ -1070,13 +1070,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @return An object representing the node properties of a multi-node parallel job.</p> <note>
      *         <p>
-     *         This isn't applicable to jobs running on Fargate resources.
+     *         This isn't applicable to jobs that are running on Fargate resources.
      *         </p>
      */
 
@@ -1090,14 +1090,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This isn't applicable to jobs running on Fargate resources.
+     * This isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param nodeProperties
      *        An object representing the node properties of a multi-node parallel job.</p> <note>
      *        <p>
-     *        This isn't applicable to jobs running on Fargate resources.
+     *        This isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

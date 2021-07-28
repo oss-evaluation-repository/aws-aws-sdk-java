@@ -27,8 +27,8 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  * </p>
  * <p>
  * <p>
- * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run individual SQL
- * statements, which are committed if the statement succeeds.
+ * You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which
+ * are committed if the statement succeeds.
  * </p>
  * <p>
  * For more information about the Amazon Redshift Data API, see <a
@@ -49,11 +49,47 @@ public interface AWSRedshiftDataAPI {
 
     /**
      * <p>
+     * Runs one or more SQL statements, which can be data manipulation language (DML) or data definition language (DDL).
+     * Depending on the authorization method, use one of the following combinations of request parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Temporary credentials - specify the cluster identifier, the database name, and the database user name. Permission
+     * to call the <code>redshift:GetClusterCredentials</code> operation is required to use this method.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return Result of the BatchExecuteStatement operation returned by the service.
+     * @throws ValidationException
+     *         The Amazon Redshift Data API operation failed due to invalid input.
+     * @throws ActiveStatementsExceededException
+     *         The number of active statements exceeds the limit.
+     * @throws BatchExecuteStatementException
+     *         An SQL statement encountered an environmental error while running.
+     * @sample AWSRedshiftDataAPI.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest batchExecuteStatementRequest);
+
+    /**
+     * <p>
      * Cancels a running query. To be canceled, a query must be running.
      * </p>
      * 
      * @param cancelStatementRequest
      * @return Result of the CancelStatement operation returned by the service.
+     * @throws ValidationException
+     *         The Amazon Redshift Data API operation failed due to invalid input.
      * @throws ResourceNotFoundException
      *         The Amazon Redshift Data API operation failed due to a missing resource.
      * @throws InternalServerException
@@ -94,8 +130,8 @@ public interface AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -127,8 +163,8 @@ public interface AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -181,8 +217,8 @@ public interface AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -213,8 +249,8 @@ public interface AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>
@@ -264,8 +300,8 @@ public interface AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster identifier that
-     * matches the cluster in the secret.
+     * Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+     * identifier that matches the cluster in the secret.
      * </p>
      * </li>
      * <li>

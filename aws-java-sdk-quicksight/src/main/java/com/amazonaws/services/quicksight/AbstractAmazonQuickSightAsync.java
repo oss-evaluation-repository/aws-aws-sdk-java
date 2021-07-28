@@ -784,6 +784,36 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForAnonymousUserResult> generateEmbedUrlForAnonymousUserAsync(
+            GenerateEmbedUrlForAnonymousUserRequest request) {
+
+        return generateEmbedUrlForAnonymousUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForAnonymousUserResult> generateEmbedUrlForAnonymousUserAsync(
+            GenerateEmbedUrlForAnonymousUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateEmbedUrlForAnonymousUserRequest, GenerateEmbedUrlForAnonymousUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForRegisteredUserResult> generateEmbedUrlForRegisteredUserAsync(
+            GenerateEmbedUrlForRegisteredUserRequest request) {
+
+        return generateEmbedUrlForRegisteredUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateEmbedUrlForRegisteredUserResult> generateEmbedUrlForRegisteredUserAsync(
+            GenerateEmbedUrlForRegisteredUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateEmbedUrlForRegisteredUserRequest, GenerateEmbedUrlForRegisteredUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDashboardEmbedUrlResult> getDashboardEmbedUrlAsync(GetDashboardEmbedUrlRequest request) {
 
         return getDashboardEmbedUrlAsync(request, null);

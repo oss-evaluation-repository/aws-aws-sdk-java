@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about one health check that is associated with the current AWS account.
+ * A complex type that contains information about one health check that is associated with the current Amazon Web
+ * Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheck" target="_top">AWS API

@@ -834,8 +834,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
-     * wireless gateway log options.
+     * Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
+     * for wireless device log options or wireless gateway log options.
      * </p>
      * 
      * @param getLogLevelsByResourceTypesRequest
@@ -849,8 +849,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
-     * wireless gateway log options.
+     * Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
+     * for wireless device log options or wireless gateway log options.
      * </p>
      * 
      * @param getLogLevelsByResourceTypesRequest
@@ -902,8 +902,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
-     * wireless gateway.
+     * Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless
+     * device or a wireless gateway.
      * </p>
      * 
      * @param getResourceLogLevelRequest
@@ -916,8 +916,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
-     * wireless gateway.
+     * Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless
+     * device or a wireless gateway.
      * </p>
      * 
      * @param getResourceLogLevelRequest
@@ -1519,8 +1519,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
-     * device.
+     * Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless
+     * gateway or a wireless device. A limit of 200 log level override can be set per account.
      * </p>
      * 
      * @param putResourceLogLevelRequest
@@ -1533,8 +1533,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
-     * device.
+     * Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless
+     * gateway or a wireless device. A limit of 200 log level override can be set per account.
      * </p>
      * 
      * @param putResourceLogLevelRequest
@@ -1552,7 +1552,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * Removes the log-level overrides for all resources; both wireless devices and wireless gateways.
      * </p>
      * 
      * @param resetAllResourceLogLevelsRequest
@@ -1566,7 +1566,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * Removes the log-level overrides for all resources; both wireless devices and wireless gateways.
      * </p>
      * 
      * @param resetAllResourceLogLevelsRequest
@@ -1585,8 +1585,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
-     * wireless gateway.
+     * Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a
+     * wireless device or a wireless gateway.
      * </p>
      * 
      * @param resetResourceLogLevelRequest
@@ -1599,8 +1599,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
-     * wireless gateway.
+     * Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a
+     * wireless device or a wireless gateway.
      * </p>
      * 
      * @param resetResourceLogLevelRequest
@@ -1773,8 +1773,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
-     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * Set default log level, or log levels by resource types. This can be for wireless device log options or wireless
+     * gateways log options and is used to control the log messages that'll be displayed in CloudWatch.
      * </p>
      * 
      * @param updateLogLevelsByResourceTypesRequest
@@ -1789,8 +1789,8 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
-     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * Set default log level, or log levels by resource types. This can be for wireless device log options or wireless
+     * gateways log options and is used to control the log messages that'll be displayed in CloudWatch.
      * </p>
      * 
      * @param updateLogLevelsByResourceTypesRequest

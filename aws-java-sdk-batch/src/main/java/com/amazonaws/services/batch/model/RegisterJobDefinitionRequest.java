@@ -39,7 +39,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -75,7 +75,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
      * </p>
@@ -106,12 +106,12 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private Boolean propagateTags;
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
-     * your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value
-     * for the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
+     * The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your
+     * jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
      * overrides the timeout configuration defined here. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch
-     * User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User
+     * Guide</i>.
      * </p>
      */
     private JobTimeout timeout;
@@ -119,8 +119,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      * consists of a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in <i>AWS
-     * Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     * Resources</a> in <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -182,7 +182,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -193,7 +193,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -208,7 +208,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -218,7 +218,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * 
      * @return The type of job definition. For more information about multi-node parallel jobs, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *         parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p> <note>
+     *         parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
      *         <p>
      *         If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *         </p>
@@ -233,7 +233,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -244,7 +244,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -261,7 +261,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -272,7 +272,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -287,7 +287,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The type of job definition. For more information about multi-node parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
-     * job definition</a> in the <i>AWS Batch User Guide</i>.
+     * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -298,7 +298,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -478,7 +478,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
      * </p>
@@ -493,8 +493,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
-     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
@@ -511,7 +511,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
      * </p>
@@ -525,8 +525,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
      *         for a job, it becomes a multi-node parallel job. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *         Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
-     *         is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *         Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     *         <code>container</code>, then you must specify either <code>containerProperties</code> or
      *         <code>nodeProperties</code>.</p> <note>
      *         <p>
      *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
@@ -543,7 +543,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
      * </p>
@@ -558,8 +558,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
-     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
@@ -707,21 +707,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
-     * your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value
-     * for the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
+     * The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your
+     * jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
      * overrides the timeout configuration defined here. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch
-     * User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User
+     * Guide</i>.
      * </p>
      * 
      * @param timeout
-     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        The timeout configuration for jobs that are submitted with this job definition, after which Batch
      *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried.
      *        The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a
      *        <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS
-     *        Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the
+     *        <i>Batch User Guide</i>.
      */
 
     public void setTimeout(JobTimeout timeout) {
@@ -730,20 +730,20 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
-     * your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value
-     * for the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
+     * The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your
+     * jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
      * overrides the timeout configuration defined here. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch
-     * User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User
+     * Guide</i>.
      * </p>
      * 
-     * @return The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     * @return The timeout configuration for jobs that are submitted with this job definition, after which Batch
      *         terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't
      *         retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified
      *         during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
      *         information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     *         Timeouts</a> in the <i>AWS Batch User Guide</i>.
+     *         Timeouts</a> in the <i>Batch User Guide</i>.
      */
 
     public JobTimeout getTimeout() {
@@ -752,21 +752,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
-     * your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value
-     * for the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
+     * The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your
+     * jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
      * overrides the timeout configuration defined here. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch
-     * User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User
+     * Guide</i>.
      * </p>
      * 
      * @param timeout
-     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        The timeout configuration for jobs that are submitted with this job definition, after which Batch
      *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried.
      *        The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a
      *        <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS
-     *        Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the
+     *        <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -779,14 +779,14 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      * consists of a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in <i>AWS
-     * Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     * Resources</a> in <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The tags that you apply to the job definition to help you categorize and organize your resources. Each
      *         tag consists of a key and an optional value. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in
-     *         <i>AWS Batch User Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     *         Resources</a> in <i>Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -797,15 +797,15 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      * consists of a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in <i>AWS
-     * Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     * Resources</a> in <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      *        consists of a key and an optional value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in
-     *        <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     *        Resources</a> in <i>Batch User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -816,15 +816,15 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      * consists of a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in <i>AWS
-     * Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     * Resources</a> in <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
      *        consists of a key and an optional value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging AWS Resources</a> in
-     *        <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services
+     *        Resources</a> in <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,7 +22,8 @@ public enum WirelessDeviceIdType {
 
     WirelessDeviceId("WirelessDeviceId"),
     DevEui("DevEui"),
-    ThingName("ThingName");
+    ThingName("ThingName"),
+    SidewalkManufacturingSn("SidewalkManufacturingSn");
 
     private String value;
 

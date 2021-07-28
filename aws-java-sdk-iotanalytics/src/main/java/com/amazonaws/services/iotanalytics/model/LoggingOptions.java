@@ -30,7 +30,7 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     * The ARN of the role that grants permission to IoT Analytics to perform logging.
      * </p>
      */
     private String roleArn;
@@ -42,18 +42,18 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
     private String level;
     /**
      * <p>
-     * If true, logging is enabled for AWS IoT Analytics.
+     * If true, logging is enabled for IoT Analytics.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     * The ARN of the role that grants permission to IoT Analytics to perform logging.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     *        The ARN of the role that grants permission to IoT Analytics to perform logging.
      */
 
     public void setRoleArn(String roleArn) {
@@ -62,10 +62,10 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     * The ARN of the role that grants permission to IoT Analytics to perform logging.
      * </p>
      * 
-     * @return The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     * @return The ARN of the role that grants permission to IoT Analytics to perform logging.
      */
 
     public String getRoleArn() {
@@ -74,11 +74,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     * The ARN of the role that grants permission to IoT Analytics to perform logging.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
+     *        The ARN of the role that grants permission to IoT Analytics to perform logging.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If true, logging is enabled for AWS IoT Analytics.
+     * If true, logging is enabled for IoT Analytics.
      * </p>
      * 
      * @param enabled
-     *        If true, logging is enabled for AWS IoT Analytics.
+     *        If true, logging is enabled for IoT Analytics.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -161,10 +161,10 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If true, logging is enabled for AWS IoT Analytics.
+     * If true, logging is enabled for IoT Analytics.
      * </p>
      * 
-     * @return If true, logging is enabled for AWS IoT Analytics.
+     * @return If true, logging is enabled for IoT Analytics.
      */
 
     public Boolean getEnabled() {
@@ -173,11 +173,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If true, logging is enabled for AWS IoT Analytics.
+     * If true, logging is enabled for IoT Analytics.
      * </p>
      * 
      * @param enabled
-     *        If true, logging is enabled for AWS IoT Analytics.
+     *        If true, logging is enabled for IoT Analytics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,10 +188,10 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If true, logging is enabled for AWS IoT Analytics.
+     * If true, logging is enabled for IoT Analytics.
      * </p>
      * 
-     * @return If true, logging is enabled for AWS IoT Analytics.
+     * @return If true, logging is enabled for IoT Analytics.
      */
 
     public Boolean isEnabled() {

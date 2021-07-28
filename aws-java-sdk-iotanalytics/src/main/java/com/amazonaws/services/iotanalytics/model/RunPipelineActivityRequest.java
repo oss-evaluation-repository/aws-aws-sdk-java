@@ -27,9 +27,9 @@ public class RunPipelineActivityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The pipeline activity that is run. This must not be a channel activity or a datastore activity because these
+     * The pipeline activity that is run. This must not be a channel activity or a data store activity because these
      * activities are used in a pipeline only to load the original message and to store the (possibly) transformed
-     * message. If a lambda activity is specified, only short-running Lambda functions (those with a timeout of less
+     * message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less
      * than 30 seconds or less) can be used.
      * </p>
      */
@@ -43,16 +43,16 @@ public class RunPipelineActivityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The pipeline activity that is run. This must not be a channel activity or a datastore activity because these
+     * The pipeline activity that is run. This must not be a channel activity or a data store activity because these
      * activities are used in a pipeline only to load the original message and to store the (possibly) transformed
-     * message. If a lambda activity is specified, only short-running Lambda functions (those with a timeout of less
+     * message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less
      * than 30 seconds or less) can be used.
      * </p>
      * 
      * @param pipelineActivity
-     *        The pipeline activity that is run. This must not be a channel activity or a datastore activity because
+     *        The pipeline activity that is run. This must not be a channel activity or a data store activity because
      *        these activities are used in a pipeline only to load the original message and to store the (possibly)
-     *        transformed message. If a lambda activity is specified, only short-running Lambda functions (those with a
+     *        transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a
      *        timeout of less than 30 seconds or less) can be used.
      */
 
@@ -62,15 +62,15 @@ public class RunPipelineActivityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The pipeline activity that is run. This must not be a channel activity or a datastore activity because these
+     * The pipeline activity that is run. This must not be a channel activity or a data store activity because these
      * activities are used in a pipeline only to load the original message and to store the (possibly) transformed
-     * message. If a lambda activity is specified, only short-running Lambda functions (those with a timeout of less
+     * message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less
      * than 30 seconds or less) can be used.
      * </p>
      * 
-     * @return The pipeline activity that is run. This must not be a channel activity or a datastore activity because
+     * @return The pipeline activity that is run. This must not be a channel activity or a data store activity because
      *         these activities are used in a pipeline only to load the original message and to store the (possibly)
-     *         transformed message. If a lambda activity is specified, only short-running Lambda functions (those with a
+     *         transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a
      *         timeout of less than 30 seconds or less) can be used.
      */
 
@@ -80,16 +80,16 @@ public class RunPipelineActivityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The pipeline activity that is run. This must not be a channel activity or a datastore activity because these
+     * The pipeline activity that is run. This must not be a channel activity or a data store activity because these
      * activities are used in a pipeline only to load the original message and to store the (possibly) transformed
-     * message. If a lambda activity is specified, only short-running Lambda functions (those with a timeout of less
+     * message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less
      * than 30 seconds or less) can be used.
      * </p>
      * 
      * @param pipelineActivity
-     *        The pipeline activity that is run. This must not be a channel activity or a datastore activity because
+     *        The pipeline activity that is run. This must not be a channel activity or a data store activity because
      *        these activities are used in a pipeline only to load the original message and to store the (possibly)
-     *        transformed message. If a lambda activity is specified, only short-running Lambda functions (those with a
+     *        transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a
      *        timeout of less than 30 seconds or less) can be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

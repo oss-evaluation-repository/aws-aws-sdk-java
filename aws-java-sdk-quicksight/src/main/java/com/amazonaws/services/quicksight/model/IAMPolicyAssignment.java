@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Identity and Access Management (IAM) policy assignment.
+ * An Identity and Access Management (IAM) policy assignment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IAMPolicyAssignment" target="_top">AWS API
@@ -30,7 +30,7 @@ public class IAMPolicyAssignment implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      */
     private String awsAccountId;
@@ -67,11 +67,11 @@ public class IAMPolicyAssignment implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The Amazon Web Services account; ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -80,10 +80,10 @@ public class IAMPolicyAssignment implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The Amazon Web Services account; ID.
      */
 
     public String getAwsAccountId() {
@@ -92,11 +92,11 @@ public class IAMPolicyAssignment implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account; ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The Amazon Web Services account; ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

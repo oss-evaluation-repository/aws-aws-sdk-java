@@ -26,20 +26,20 @@ public class DescribeEmergencyContactSettingsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      */
     private java.util.List<EmergencyContact> emergencyContactList;
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * 
-     * @return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *         you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     * @return A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *         you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *         support.
      */
 
@@ -49,13 +49,13 @@ public class DescribeEmergencyContactSettingsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.
      */
 
@@ -70,8 +70,8 @@ public class DescribeEmergencyContactSettingsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,8 +80,8 @@ public class DescribeEmergencyContactSettingsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -98,13 +98,13 @@ public class DescribeEmergencyContactSettingsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
-     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you
+     * have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
-     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer
      *        support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

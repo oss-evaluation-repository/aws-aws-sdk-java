@@ -37,7 +37,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -60,7 +60,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -72,7 +72,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -93,7 +93,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -104,7 +104,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
      * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
-     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. If
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If
      * <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      * run</a>.
@@ -142,7 +142,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      */
@@ -157,7 +157,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -166,7 +166,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
      *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -183,7 +183,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -193,7 +193,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -215,7 +215,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * <p>
@@ -230,7 +230,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -254,7 +254,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -264,7 +264,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -373,7 +373,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -382,7 +382,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -397,7 +397,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -405,7 +405,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -420,7 +420,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -429,7 +429,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -446,7 +446,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -454,7 +454,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -469,7 +469,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -478,7 +478,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -498,7 +498,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * <p>
@@ -512,7 +512,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -534,7 +534,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -543,7 +543,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -569,7 +569,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -588,7 +588,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -612,7 +612,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -630,7 +630,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -654,7 +654,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -673,7 +673,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -689,7 +689,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
      * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
-     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. If
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If
      * <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      * run</a>.
@@ -727,7 +727,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -736,7 +736,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
      *        of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
      *        between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
-     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this
      *        parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter
      *        maps to the <code>--memory-swappiness</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -773,7 +773,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      */
 
@@ -787,7 +787,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
      * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
-     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. If
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If
      * <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      * run</a>.
@@ -825,7 +825,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -833,7 +833,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
      *         of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
      *         between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
-     *         default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *         default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this
      *         parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter
      *         maps to the <code>--memory-swappiness</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -870,7 +870,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         </ul>
      *         <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *         </p>
      */
 
@@ -884,7 +884,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
      * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
-     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. If
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If
      * <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      * run</a>.
@@ -922,7 +922,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      * </p>
      * </note>
      * 
@@ -931,7 +931,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
      *        of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
      *        between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
-     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this
      *        parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter
      *        maps to the <code>--memory-swappiness</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -968,7 +968,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

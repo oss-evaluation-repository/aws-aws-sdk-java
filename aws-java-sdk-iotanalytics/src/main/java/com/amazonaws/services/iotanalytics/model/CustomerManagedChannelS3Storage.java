@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the
- * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
- * customer-managed S3 storage after the channel is created.
+ * Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the
+ * <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is
+ * created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedChannelS3Storage"
@@ -38,7 +38,7 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
     private String bucket;
     /**
      * <p>
-     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
      * that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
      * with a forward slash (/).
      * </p>
@@ -46,7 +46,7 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
     private String keyPrefix;
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      */
     private String roleArn;
@@ -93,13 +93,13 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
      * that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
      * with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
+     *        (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
      *        a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix
      *        must end with a forward slash (/).
      */
@@ -110,13 +110,13 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
      * that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
      * with a forward slash (/).
      * </p>
      * 
-     * @return Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
-     *         a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The
+     * @return (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket
+     *         has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The
      *         prefix must end with a forward slash (/).
      */
 
@@ -126,13 +126,13 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
      * that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
      * with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
+     *        (Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
      *        a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix
      *        must end with a forward slash (/).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -145,11 +145,11 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public void setRoleArn(String roleArn) {
@@ -158,10 +158,10 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
-     * @return The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * @return The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public String getRoleArn() {
@@ -170,11 +170,11 @@ public class CustomerManagedChannelS3Storage implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

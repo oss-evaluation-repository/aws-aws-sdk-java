@@ -27,13 +27,13 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     * The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or groups.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The name of the assignment, also called a rule. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      * </p>
      */
     private String assignmentName;
@@ -81,11 +81,12 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     * The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or groups.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     *        The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+     *        groups.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -94,10 +95,11 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     * The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or groups.
      * </p>
      * 
-     * @return The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     * @return The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+     *         groups.
      */
 
     public String getAwsAccountId() {
@@ -106,11 +108,12 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     * The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or groups.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the AWS account where you want to assign an IAM policy to QuickSight users or groups.
+     *        The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+     *        groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +124,11 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment, also called a rule. It must be unique within an AWS account.
+     *        The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -134,10 +137,10 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      * </p>
      * 
-     * @return The name of the assignment, also called a rule. It must be unique within an AWS account.
+     * @return The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      */
 
     public String getAssignmentName() {
@@ -146,11 +149,11 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment, also called a rule. It must be unique within an AWS account.
+     *        The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

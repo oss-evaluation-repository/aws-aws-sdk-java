@@ -25,8 +25,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
-     * about the dashboards.
+     * A structure that contains all of the dashboards in your Amazon Web Services account;. This structure provides
+     * basic information about the dashboards.
      * </p>
      */
     private java.util.List<DashboardSummary> dashboardSummaryList;
@@ -44,19 +44,19 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
     private Integer status;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
-     * about the dashboards.
+     * A structure that contains all of the dashboards in your Amazon Web Services account;. This structure provides
+     * basic information about the dashboards.
      * </p>
      * 
-     * @return A structure that contains all of the dashboards in your AWS account. This structure provides basic
-     *         information about the dashboards.
+     * @return A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
+     *         provides basic information about the dashboards.
      */
 
     public java.util.List<DashboardSummary> getDashboardSummaryList() {
@@ -65,13 +65,13 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
-     * about the dashboards.
+     * A structure that contains all of the dashboards in your Amazon Web Services account;. This structure provides
+     * basic information about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
-     *        information about the dashboards.
+     *        A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
+     *        provides basic information about the dashboards.
      */
 
     public void setDashboardSummaryList(java.util.Collection<DashboardSummary> dashboardSummaryList) {
@@ -85,8 +85,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
-     * about the dashboards.
+     * A structure that contains all of the dashboards in your Amazon Web Services account;. This structure provides
+     * basic information about the dashboards.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +95,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
-     *        information about the dashboards.
+     *        A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
+     *        provides basic information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
-     * about the dashboards.
+     * A structure that contains all of the dashboards in your Amazon Web Services account;. This structure provides
+     * basic information about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
-     *        information about the dashboards.
+     *        A structure that contains all of the dashboards in your Amazon Web Services account;. This structure
+     *        provides basic information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -222,10 +222,10 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -234,11 +234,11 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

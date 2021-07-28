@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that
+     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      * multi-node parallel (MNP) jobs are not supported.
      * </p>
@@ -36,15 +36,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that
+     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      * multi-node parallel (MNP) jobs are not supported.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources
-     *        that support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of
-     *        array and multi-node parallel (MNP) jobs are not supported.
+     *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
+     *        support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array
+     *        and multi-node parallel (MNP) jobs are not supported.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,12 +53,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that
+     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      * multi-node parallel (MNP) jobs are not supported.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources
+     * @return The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources
      *         that support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of
      *         array and multi-node parallel (MNP) jobs are not supported.
      */
@@ -69,15 +69,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that
+     * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array and
      * multi-node parallel (MNP) jobs are not supported.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources
-     *        that support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of
-     *        array and multi-node parallel (MNP) jobs are not supported.
+     *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
+     *        support tags are compute environments, jobs, job definitions, and job queues. ARNs for child jobs of array
+     *        and multi-node parallel (MNP) jobs are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

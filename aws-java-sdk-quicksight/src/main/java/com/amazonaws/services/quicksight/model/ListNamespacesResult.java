@@ -25,8 +25,8 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information about the namespaces in this AWS account. The response includes the namespace ARN, name, AWS
-     * Region, notification email address, creation status, and identity store.
+     * The information about the namespaces in this Amazon Web Services account;. The response includes the namespace
+     * ARN, name, Region;, notification email address, creation status, and identity store.
      * </p>
      */
     private java.util.List<NamespaceInfoV2> namespaces;
@@ -38,7 +38,7 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
     private String nextToken;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -51,12 +51,12 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information about the namespaces in this AWS account. The response includes the namespace ARN, name, AWS
-     * Region, notification email address, creation status, and identity store.
+     * The information about the namespaces in this Amazon Web Services account;. The response includes the namespace
+     * ARN, name, Region;, notification email address, creation status, and identity store.
      * </p>
      * 
-     * @return The information about the namespaces in this AWS account. The response includes the namespace ARN, name,
-     *         AWS Region, notification email address, creation status, and identity store.
+     * @return The information about the namespaces in this Amazon Web Services account;. The response includes the
+     *         namespace ARN, name, Region;, notification email address, creation status, and identity store.
      */
 
     public java.util.List<NamespaceInfoV2> getNamespaces() {
@@ -65,13 +65,13 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information about the namespaces in this AWS account. The response includes the namespace ARN, name, AWS
-     * Region, notification email address, creation status, and identity store.
+     * The information about the namespaces in this Amazon Web Services account;. The response includes the namespace
+     * ARN, name, Region;, notification email address, creation status, and identity store.
      * </p>
      * 
      * @param namespaces
-     *        The information about the namespaces in this AWS account. The response includes the namespace ARN, name,
-     *        AWS Region, notification email address, creation status, and identity store.
+     *        The information about the namespaces in this Amazon Web Services account;. The response includes the
+     *        namespace ARN, name, Region;, notification email address, creation status, and identity store.
      */
 
     public void setNamespaces(java.util.Collection<NamespaceInfoV2> namespaces) {
@@ -85,8 +85,8 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information about the namespaces in this AWS account. The response includes the namespace ARN, name, AWS
-     * Region, notification email address, creation status, and identity store.
+     * The information about the namespaces in this Amazon Web Services account;. The response includes the namespace
+     * ARN, name, Region;, notification email address, creation status, and identity store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +95,8 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param namespaces
-     *        The information about the namespaces in this AWS account. The response includes the namespace ARN, name,
-     *        AWS Region, notification email address, creation status, and identity store.
+     *        The information about the namespaces in this Amazon Web Services account;. The response includes the
+     *        namespace ARN, name, Region;, notification email address, creation status, and identity store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information about the namespaces in this AWS account. The response includes the namespace ARN, name, AWS
-     * Region, notification email address, creation status, and identity store.
+     * The information about the namespaces in this Amazon Web Services account;. The response includes the namespace
+     * ARN, name, Region;, notification email address, creation status, and identity store.
      * </p>
      * 
      * @param namespaces
-     *        The information about the namespaces in this AWS account. The response includes the namespace ARN, name,
-     *        AWS Region, notification email address, creation status, and identity store.
+     *        The information about the namespaces in this Amazon Web Services account;. The response includes the
+     *        namespace ARN, name, Region;, notification email address, creation status, and identity store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +169,11 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -182,10 +182,10 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -194,11 +194,11 @@ public class ListNamespacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class ChannelStorageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     * Used to store channel data in an S3 bucket managed by IoT Analytics.
      * </p>
      */
     private ServiceManagedChannelS3StorageSummary serviceManagedS3;
@@ -43,11 +43,11 @@ public class ChannelStorageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     * Used to store channel data in an S3 bucket managed by IoT Analytics.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     *        Used to store channel data in an S3 bucket managed by IoT Analytics.
      */
 
     public void setServiceManagedS3(ServiceManagedChannelS3StorageSummary serviceManagedS3) {
@@ -56,10 +56,10 @@ public class ChannelStorageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     * Used to store channel data in an S3 bucket managed by IoT Analytics.
      * </p>
      * 
-     * @return Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     * @return Used to store channel data in an S3 bucket managed by IoT Analytics.
      */
 
     public ServiceManagedChannelS3StorageSummary getServiceManagedS3() {
@@ -68,11 +68,11 @@ public class ChannelStorageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     * Used to store channel data in an S3 bucket managed by IoT Analytics.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+     *        Used to store channel data in an S3 bucket managed by IoT Analytics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

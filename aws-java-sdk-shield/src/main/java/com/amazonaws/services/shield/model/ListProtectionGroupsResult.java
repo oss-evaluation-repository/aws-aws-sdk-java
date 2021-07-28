@@ -28,8 +28,8 @@ public class ListProtectionGroupsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     * MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch
-     * of objects.
+     * MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of
+     * objects.
      * </p>
      */
     private String nextToken;
@@ -96,13 +96,13 @@ public class ListProtectionGroupsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     * MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch
-     * of objects.
+     * MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of
+     * objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     *        MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next
+     *        MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next
      *        batch of objects.
      */
 
@@ -113,12 +113,12 @@ public class ListProtectionGroupsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     * MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch
-     * of objects.
+     * MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of
+     * objects.
      * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     *         MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next
+     *         MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next
      *         batch of objects.
      */
 
@@ -129,13 +129,13 @@ public class ListProtectionGroupsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     * MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next batch
-     * of objects.
+     * MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of
+     * objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of
-     *        MaxResults, AWS Shield Advanced returns this token that you can use in your next request, to get the next
+     *        MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next
      *        batch of objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

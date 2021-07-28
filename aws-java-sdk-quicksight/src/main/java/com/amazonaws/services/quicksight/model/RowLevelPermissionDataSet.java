@@ -66,6 +66,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
      * </p>
      */
     private String formatVersion;
+    /**
+     * <p>
+     * The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If
+     * disabled, the status is <code>DISABLED</code>.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -318,6 +325,73 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If
+     * disabled, the status is <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>.
+     *        If disabled, the status is <code>DISABLED</code>.
+     * @see Status
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If
+     * disabled, the status is <code>DISABLED</code>.
+     * </p>
+     * 
+     * @return The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>.
+     *         If disabled, the status is <code>DISABLED</code>.
+     * @see Status
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If
+     * disabled, the status is <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>.
+     *        If disabled, the status is <code>DISABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public RowLevelPermissionDataSet withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If
+     * disabled, the status is <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>.
+     *        If disabled, the status is <code>DISABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public RowLevelPermissionDataSet withStatus(Status status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,7 +410,9 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         if (getPermissionPolicy() != null)
             sb.append("PermissionPolicy: ").append(getPermissionPolicy()).append(",");
         if (getFormatVersion() != null)
-            sb.append("FormatVersion: ").append(getFormatVersion());
+            sb.append("FormatVersion: ").append(getFormatVersion()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +443,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
             return false;
         if (other.getFormatVersion() != null && other.getFormatVersion().equals(this.getFormatVersion()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +459,7 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionPolicy() == null) ? 0 : getPermissionPolicy().hashCode());
         hashCode = prime * hashCode + ((getFormatVersion() == null) ? 0 : getFormatVersion().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more
- * information, see <a href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html">Amazon EFS Volumes</a> in the
- * <i>AWS Batch User Guide</i>.
+ * This is used when you're using an Amazon Elastic File System file system for job storage. For more information, see
+ * <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Batch
+ * User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EFSVolumeConfiguration" target="_top">AWS API
@@ -39,22 +39,22 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter
-     * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
-     * as omitting this parameter.
+     * is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.
      * </p>
      * <important>
      * <p>
      * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access point.
+     * either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.
      * </p>
      * </important>
      */
     private String rootDirectory;
     /**
      * <p>
-     * Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS
-     * server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
+     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
@@ -62,10 +62,11 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     private String transitEncryption;
     /**
      * <p>
-     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
-     * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't
+     * specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The
+     * value must be between 0 and 65,535. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon
+     * Elastic File System User Guide</i>.
      * </p>
      */
     private Integer transitEncryptionPort;
@@ -119,23 +120,23 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter
-     * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
-     * as omitting this parameter.
+     * is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.
      * </p>
      * <important>
      * <p>
      * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access point.
+     * either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.
      * </p>
      * </important>
      * 
      * @param rootDirectory
      *        The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
-     *        parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *        the same effect as omitting this parameter.</p> <important>
+     *        parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the
+     *        same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
      *        <p>
      *        If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
-     *        must either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access
+     *        must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access
      *        point.
      *        </p>
      */
@@ -147,22 +148,22 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter
-     * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
-     * as omitting this parameter.
+     * is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.
      * </p>
      * <important>
      * <p>
      * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access point.
+     * either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.
      * </p>
      * </important>
      * 
      * @return The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
-     *         parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *         the same effect as omitting this parameter.</p> <important>
+     *         parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has
+     *         the same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
      *         <p>
      *         If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
-     *         must either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access
+     *         must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access
      *         point.
      *         </p>
      */
@@ -174,23 +175,23 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter
-     * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
-     * as omitting this parameter.
+     * is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.
      * </p>
      * <important>
      * <p>
      * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access point.
+     * either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.
      * </p>
      * </important>
      * 
      * @param rootDirectory
      *        The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
-     *        parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *        the same effect as omitting this parameter.</p> <important>
+     *        parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the
+     *        same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
      *        <p>
      *        If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
-     *        must either be omitted or set to <code>/</code> which will enforce the path set on the Amazon EFS access
+     *        must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access
      *        point.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -203,15 +204,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS
-     * server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
+     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryption
-     *        Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
+     *        Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
@@ -225,17 +226,17 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS
-     * server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
+     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
-     * @return Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
-     *         Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
-     *         parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
-     *         href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in
+     * @return Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and
+     *         the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If
+     *         this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see
+     *         <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in
      *         transit</a> in the <i>Amazon Elastic File System User Guide</i>.
      * @see EFSTransitEncryption
      */
@@ -246,15 +247,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS
-     * server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
+     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryption
-     *        Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
+     *        Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
@@ -270,15 +271,15 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS
-     * server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
+     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryption
-     *        Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
+     *        Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the
      *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
@@ -294,16 +295,17 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
-     * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't
+     * specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The
+     * value must be between 0 and 65,535. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon
+     * Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryptionPort
      *        The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
-     *        do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
-     *        mount helper uses. For more information, see <a
+     *        don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount
+     *        helper uses. The value must be between 0 and 65,535. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
      *        <i>Amazon Elastic File System User Guide</i>.
      */
@@ -314,15 +316,16 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
-     * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't
+     * specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The
+     * value must be between 0 and 65,535. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon
+     * Elastic File System User Guide</i>.
      * </p>
      * 
      * @return The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
-     *         do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
-     *         mount helper uses. For more information, see <a
+     *         don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount
+     *         helper uses. The value must be between 0 and 65,535. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
      *         <i>Amazon Elastic File System User Guide</i>.
      */
@@ -333,16 +336,17 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not
-     * specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+     * The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't
+     * specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The
+     * value must be between 0 and 65,535. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon
+     * Elastic File System User Guide</i>.
      * </p>
      * 
      * @param transitEncryptionPort
      *        The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you
-     *        do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS
-     *        mount helper uses. For more information, see <a
+     *        don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount
+     *        helper uses. The value must be between 0 and 65,535. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the
      *        <i>Amazon Elastic File System User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

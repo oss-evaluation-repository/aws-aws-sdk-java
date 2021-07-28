@@ -27,18 +27,18 @@ public class PutLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new values of the AWS IoT Analytics logging options.
+     * The new values of the IoT Analytics logging options.
      * </p>
      */
     private LoggingOptions loggingOptions;
 
     /**
      * <p>
-     * The new values of the AWS IoT Analytics logging options.
+     * The new values of the IoT Analytics logging options.
      * </p>
      * 
      * @param loggingOptions
-     *        The new values of the AWS IoT Analytics logging options.
+     *        The new values of the IoT Analytics logging options.
      */
 
     public void setLoggingOptions(LoggingOptions loggingOptions) {
@@ -47,10 +47,10 @@ public class PutLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new values of the AWS IoT Analytics logging options.
+     * The new values of the IoT Analytics logging options.
      * </p>
      * 
-     * @return The new values of the AWS IoT Analytics logging options.
+     * @return The new values of the IoT Analytics logging options.
      */
 
     public LoggingOptions getLoggingOptions() {
@@ -59,11 +59,11 @@ public class PutLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The new values of the AWS IoT Analytics logging options.
+     * The new values of the IoT Analytics logging options.
      * </p>
      * 
      * @param loggingOptions
-     *        The new values of the AWS IoT Analytics logging options.
+     *        The new values of the IoT Analytics logging options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

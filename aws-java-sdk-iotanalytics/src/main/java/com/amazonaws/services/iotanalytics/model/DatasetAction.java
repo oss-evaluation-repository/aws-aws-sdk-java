@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>DatasetAction</code> object that specifies how data set contents are automatically created.
+ * A <code>DatasetAction</code> object that specifies how dataset contents are automatically created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction" target="_top">AWS API
@@ -30,13 +30,13 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action by which data set contents are automatically created.
+     * The name of the dataset action by which dataset contents are automatically created.
      * </p>
      */
     private String actionName;
     /**
      * <p>
-     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.
      * </p>
      */
     private SqlQueryDatasetAction queryAction;
@@ -50,11 +50,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action by which data set contents are automatically created.
+     * The name of the dataset action by which dataset contents are automatically created.
      * </p>
      * 
      * @param actionName
-     *        The name of the data set action by which data set contents are automatically created.
+     *        The name of the dataset action by which dataset contents are automatically created.
      */
 
     public void setActionName(String actionName) {
@@ -63,10 +63,10 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action by which data set contents are automatically created.
+     * The name of the dataset action by which dataset contents are automatically created.
      * </p>
      * 
-     * @return The name of the data set action by which data set contents are automatically created.
+     * @return The name of the dataset action by which dataset contents are automatically created.
      */
 
     public String getActionName() {
@@ -75,11 +75,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action by which data set contents are automatically created.
+     * The name of the dataset action by which dataset contents are automatically created.
      * </p>
      * 
      * @param actionName
-     *        The name of the data set action by which data set contents are automatically created.
+     *        The name of the dataset action by which dataset contents are automatically created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.
      * </p>
      * 
      * @param queryAction
-     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset
      *        contents.
      */
 
@@ -104,10 +104,10 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.
      * </p>
      * 
-     * @return An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     * @return An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset
      *         contents.
      */
 
@@ -117,11 +117,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.
      * </p>
      * 
      * @param queryAction
-     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset
      *        contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,13 +27,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the AWS account that contains the dashboard that you're embedding.
+     * The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     * The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      * </p>
      */
     private String dashboardId;
@@ -102,8 +102,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private String userArn;
     /**
      * <p>
-     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
-     * set this to "<code>default</code>".
+     * The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight
+     * custom namespace, set this to <code>default</code>.
      * </p>
      */
     private String namespace;
@@ -120,11 +120,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the AWS account that contains the dashboard that you're embedding.
+     * The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the dashboard that you're embedding.
+     *        The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -133,10 +133,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the AWS account that contains the dashboard that you're embedding.
+     * The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the dashboard that you're embedding.
+     * @return The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      */
 
     public String getAwsAccountId() {
@@ -145,11 +145,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the AWS account that contains the dashboard that you're embedding.
+     * The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the dashboard that you're embedding.
+     *        The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +160,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     * The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     *        The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      */
 
     public void setDashboardId(String dashboardId) {
@@ -173,10 +173,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     * The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      * </p>
      * 
-     * @return The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     * @return The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      */
 
     public String getDashboardId() {
@@ -185,11 +185,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     * The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
+     *        The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,13 +670,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
-     * set this to "<code>default</code>".
+     * The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight
+     * custom namespace, set this to <code>default</code>.
      * </p>
      * 
      * @param namespace
-     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
-     *        namespace, set this to "<code>default</code>".
+     *        The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon
+     *        QuickSight custom namespace, set this to <code>default</code>.
      */
 
     public void setNamespace(String namespace) {
@@ -685,12 +685,12 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
-     * set this to "<code>default</code>".
+     * The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight
+     * custom namespace, set this to <code>default</code>.
      * </p>
      * 
-     * @return The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
-     *         namespace, set this to "<code>default</code>".
+     * @return The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon
+     *         QuickSight custom namespace, set this to <code>default</code>.
      */
 
     public String getNamespace() {
@@ -699,13 +699,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
-     * set this to "<code>default</code>".
+     * The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight
+     * custom namespace, set this to <code>default</code>.
      * </p>
      * 
      * @param namespace
-     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
-     *        namespace, set this to "<code>default</code>".
+     *        The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon
+     *        QuickSight custom namespace, set this to <code>default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

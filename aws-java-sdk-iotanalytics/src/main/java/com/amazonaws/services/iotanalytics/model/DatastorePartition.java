@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A single partition in a data store.
+ * A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a
+ * <code>TimestampPartition</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastorePartition" target="_top">AWS
@@ -30,24 +31,24 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code>.
+     * A partition dimension defined by an <code>attributeName</code>.
      * </p>
      */
     private Partition attributePartition;
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code> and a timestamp format.
+     * A partition dimension defined by a timestamp attribute.
      * </p>
      */
     private TimestampPartition timestampPartition;
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code>.
+     * A partition dimension defined by an <code>attributeName</code>.
      * </p>
      * 
      * @param attributePartition
-     *        A partition defined by an <code>attributeName</code>.
+     *        A partition dimension defined by an <code>attributeName</code>.
      */
 
     public void setAttributePartition(Partition attributePartition) {
@@ -56,10 +57,10 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code>.
+     * A partition dimension defined by an <code>attributeName</code>.
      * </p>
      * 
-     * @return A partition defined by an <code>attributeName</code>.
+     * @return A partition dimension defined by an <code>attributeName</code>.
      */
 
     public Partition getAttributePartition() {
@@ -68,11 +69,11 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code>.
+     * A partition dimension defined by an <code>attributeName</code>.
      * </p>
      * 
      * @param attributePartition
-     *        A partition defined by an <code>attributeName</code>.
+     *        A partition dimension defined by an <code>attributeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +84,11 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code> and a timestamp format.
+     * A partition dimension defined by a timestamp attribute.
      * </p>
      * 
      * @param timestampPartition
-     *        A partition defined by an <code>attributeName</code> and a timestamp format.
+     *        A partition dimension defined by a timestamp attribute.
      */
 
     public void setTimestampPartition(TimestampPartition timestampPartition) {
@@ -96,10 +97,10 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code> and a timestamp format.
+     * A partition dimension defined by a timestamp attribute.
      * </p>
      * 
-     * @return A partition defined by an <code>attributeName</code> and a timestamp format.
+     * @return A partition dimension defined by a timestamp attribute.
      */
 
     public TimestampPartition getTimestampPartition() {
@@ -108,11 +109,11 @@ public class DatastorePartition implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A partition defined by an <code>attributeName</code> and a timestamp format.
+     * A partition dimension defined by a timestamp attribute.
      * </p>
      * 
      * @param timestampPartition
-     *        A partition defined by an <code>attributeName</code> and a timestamp format.
+     *        A partition dimension defined by a timestamp attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

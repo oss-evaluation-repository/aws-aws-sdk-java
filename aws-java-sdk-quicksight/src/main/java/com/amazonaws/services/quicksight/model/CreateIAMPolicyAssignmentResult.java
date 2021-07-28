@@ -25,7 +25,7 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the AWS account.
+     * The name of the assignment. This name must be unique within the Amazon Web Services account;.
      * </p>
      */
     private String assignmentName;
@@ -72,7 +72,7 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
     private java.util.Map<String, java.util.List<String>> identities;
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
@@ -85,11 +85,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the AWS account.
+     * The name of the assignment. This name must be unique within the Amazon Web Services account;.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. This name must be unique within the AWS account.
+     *        The name of the assignment. This name must be unique within the Amazon Web Services account;.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -98,10 +98,10 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the AWS account.
+     * The name of the assignment. This name must be unique within the Amazon Web Services account;.
      * </p>
      * 
-     * @return The name of the assignment. This name must be unique within the AWS account.
+     * @return The name of the assignment. This name must be unique within the Amazon Web Services account;.
      */
 
     public String getAssignmentName() {
@@ -110,11 +110,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the AWS account.
+     * The name of the assignment. This name must be unique within the Amazon Web Services account;.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. This name must be unique within the AWS account.
+     *        The name of the assignment. This name must be unique within the Amazon Web Services account;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +467,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -480,10 +480,10 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The AWS request ID for this operation.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -492,11 +492,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS request ID for this operation.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The AWS request ID for this operation.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

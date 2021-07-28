@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL) service.
+ * Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GlueConfiguration" target="_top">AWS API
@@ -30,28 +30,28 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS Glue Data
-     * Catalog table contains partitioned data and descriptions of data sources and targets.
+     * The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog
+     * table contains partitioned data and descriptions of data sources and targets.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data Catalog
-     * database contains metadata tables.
+     * The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database
+     * contains metadata tables.
      * </p>
      */
     private String databaseName;
 
     /**
      * <p>
-     * The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS Glue Data
-     * Catalog table contains partitioned data and descriptions of data sources and targets.
+     * The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog
+     * table contains partitioned data and descriptions of data sources and targets.
      * </p>
      * 
      * @param tableName
-     *        The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS
-     *        Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.
+     *        The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data
+     *        Catalog table contains partitioned data and descriptions of data sources and targets.
      */
 
     public void setTableName(String tableName) {
@@ -60,12 +60,12 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS Glue Data
-     * Catalog table contains partitioned data and descriptions of data sources and targets.
+     * The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog
+     * table contains partitioned data and descriptions of data sources and targets.
      * </p>
      * 
-     * @return The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS
-     *         Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.
+     * @return The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data
+     *         Catalog table contains partitioned data and descriptions of data sources and targets.
      */
 
     public String getTableName() {
@@ -74,13 +74,13 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS Glue Data
-     * Catalog table contains partitioned data and descriptions of data sources and targets.
+     * The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog
+     * table contains partitioned data and descriptions of data sources and targets.
      * </p>
      * 
      * @param tableName
-     *        The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations. An AWS
-     *        Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.
+     *        The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data
+     *        Catalog table contains partitioned data and descriptions of data sources and targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +91,13 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data Catalog
-     * database contains metadata tables.
+     * The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database
+     * contains metadata tables.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data
-     *        Catalog database contains metadata tables.
+     *        The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog
+     *        database contains metadata tables.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -106,12 +106,12 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data Catalog
-     * database contains metadata tables.
+     * The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database
+     * contains metadata tables.
      * </p>
      * 
-     * @return The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data
-     *         Catalog database contains metadata tables.
+     * @return The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog
+     *         database contains metadata tables.
      */
 
     public String getDatabaseName() {
@@ -120,13 +120,13 @@ public class GlueConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data Catalog
-     * database contains metadata tables.
+     * The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database
+     * contains metadata tables.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data
-     *        Catalog database contains metadata tables.
+     *        The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog
+     *        database contains metadata tables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,8 +27,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     * escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * To enable proactive engagement, the contact list must include at least one phone number.
@@ -45,8 +45,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     * escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * To enable proactive engagement, the contact list must include at least one phone number.
@@ -59,8 +59,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
      * </p>
      * </note>
      * 
-     * @return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     *         escalations to the DRT and to initiate proactive customer support. </p>
+     * @return A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you
+     *         for escalations to the SRT and to initiate proactive customer support. </p>
      *         <p>
      *         To enable proactive engagement, the contact list must include at least one phone number.
      *         </p>
@@ -78,8 +78,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     * escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * To enable proactive engagement, the contact list must include at least one phone number.
@@ -93,8 +93,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
      * </note>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     *        escalations to the DRT and to initiate proactive customer support. </p>
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     *        escalations to the SRT and to initiate proactive customer support. </p>
      *        <p>
      *        To enable proactive engagement, the contact list must include at least one phone number.
      *        </p>
@@ -117,8 +117,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     * escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * To enable proactive engagement, the contact list must include at least one phone number.
@@ -137,8 +137,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     *        escalations to the DRT and to initiate proactive customer support. </p>
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     *        escalations to the SRT and to initiate proactive customer support. </p>
      *        <p>
      *        To enable proactive engagement, the contact list must include at least one phone number.
      *        </p>
@@ -163,8 +163,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     * escalations to the DRT and to initiate proactive customer support.
+     * A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     * escalations to the SRT and to initiate proactive customer support.
      * </p>
      * <p>
      * To enable proactive engagement, the contact list must include at least one phone number.
@@ -178,8 +178,8 @@ public class AssociateProactiveEngagementDetailsRequest extends com.amazonaws.Am
      * </note>
      * 
      * @param emergencyContactList
-     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for
-     *        escalations to the DRT and to initiate proactive customer support. </p>
+     *        A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for
+     *        escalations to the SRT and to initiate proactive customer support. </p>
      *        <p>
      *        To enable proactive engagement, the contact list must include at least one phone number.
      *        </p>

@@ -30,25 +30,25 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Batch job ID of the job to terminate.
+     * The Batch job ID of the job to terminate.
      * </p>
      */
     private String jobId;
     /**
      * <p>
      * A message to attach to the job that explains the reason for canceling it. This message is returned by future
-     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity logs.
      * </p>
      */
     private String reason;
 
     /**
      * <p>
-     * The AWS Batch job ID of the job to terminate.
+     * The Batch job ID of the job to terminate.
      * </p>
      * 
      * @param jobId
-     *        The AWS Batch job ID of the job to terminate.
+     *        The Batch job ID of the job to terminate.
      */
 
     public void setJobId(String jobId) {
@@ -57,10 +57,10 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Batch job ID of the job to terminate.
+     * The Batch job ID of the job to terminate.
      * </p>
      * 
-     * @return The AWS Batch job ID of the job to terminate.
+     * @return The Batch job ID of the job to terminate.
      */
 
     public String getJobId() {
@@ -69,11 +69,11 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Batch job ID of the job to terminate.
+     * The Batch job ID of the job to terminate.
      * </p>
      * 
      * @param jobId
-     *        The AWS Batch job ID of the job to terminate.
+     *        The Batch job ID of the job to terminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +85,12 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A message to attach to the job that explains the reason for canceling it. This message is returned by future
-     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity logs.
      * </p>
      * 
      * @param reason
      *        A message to attach to the job that explains the reason for canceling it. This message is returned by
-     *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
+     *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
      *        logs.
      */
 
@@ -101,11 +101,11 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A message to attach to the job that explains the reason for canceling it. This message is returned by future
-     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity logs.
      * </p>
      * 
      * @return A message to attach to the job that explains the reason for canceling it. This message is returned by
-     *         future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
+     *         future <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
      *         logs.
      */
 
@@ -116,12 +116,12 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A message to attach to the job that explains the reason for canceling it. This message is returned by future
-     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+     * <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity logs.
      * </p>
      * 
      * @param reason
      *        A message to attach to the job that explains the reason for canceling it. This message is returned by
-     *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
+     *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
      *        logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

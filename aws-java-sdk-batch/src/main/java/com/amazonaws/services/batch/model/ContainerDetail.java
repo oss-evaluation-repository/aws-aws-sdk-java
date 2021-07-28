@@ -75,9 +75,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String jobRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -94,7 +94,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      */
@@ -124,7 +124,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      */
@@ -136,8 +136,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      */
@@ -179,7 +179,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String taskArn;
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
@@ -191,7 +191,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      */
@@ -234,7 +234,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
      * ECS container agent.
      * </p>
@@ -259,21 +259,21 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The secrets to pass to the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secrets;
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      */
     private FargatePlatformConfiguration fargatePlatformConfiguration;
@@ -598,15 +598,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a> in the <i>AWS Batch User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *        role</a> in the <i>Batch User Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -615,14 +615,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *         <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *         IAM role</a> in the <i>AWS Batch User Guide</i>.
+     * @return The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *         role</a> in the <i>Batch User Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -631,15 +631,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a> in the <i>AWS Batch User Guide</i>.
+     * The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a> in the <i>AWS Batch User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM
+     *        role</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,14 +725,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
      * @return The environment variables to pass to a container.</p> <note>
      *         <p>
      *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *         variables that are set by the AWS Batch service.
+     *         variables that are set by the Batch service.
      *         </p>
      */
 
@@ -747,7 +747,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
@@ -755,7 +755,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      */
 
@@ -775,7 +775,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * <p>
@@ -788,7 +788,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -810,7 +810,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <note>
      * <p>
      * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     * variables that are set by the AWS Batch service.
+     * variables that are set by the Batch service.
      * </p>
      * </note>
      * 
@@ -818,7 +818,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        The environment variables to pass to a container.</p> <note>
      *        <p>
      *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
-     *        variables that are set by the AWS Batch service.
+     *        variables that are set by the Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -995,7 +995,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
@@ -1005,7 +1005,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources.
      *         </p>
      */
 
@@ -1022,7 +1022,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
@@ -1033,7 +1033,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      */
 
@@ -1055,7 +1055,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * <p>
@@ -1071,7 +1071,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1095,7 +1095,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
@@ -1106,7 +1106,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1123,8 +1123,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1132,8 +1132,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        When this parameter is true, the container is given elevated permissions on the host container instance
      *        (similar to the <code>root</code> user). The default value is false.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *        specified as false.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *        or specified as false.
      *        </p>
      */
 
@@ -1148,16 +1148,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
      * @return When this parameter is true, the container is given elevated permissions on the host container instance
      *         (similar to the <code>root</code> user). The default value is false.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *         specified as false.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *         or specified as false.
      *         </p>
      */
 
@@ -1172,8 +1172,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
@@ -1181,8 +1181,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        When this parameter is true, the container is given elevated permissions on the host container instance
      *        (similar to the <code>root</code> user). The default value is false.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *        specified as false.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *        or specified as false.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1199,16 +1199,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
-     * false.
+     * This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as false.
      * </p>
      * </note>
      * 
      * @return When this parameter is true, the container is given elevated permissions on the host container instance
      *         (similar to the <code>root</code> user). The default value is false.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
-     *         specified as false.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided,
+     *         or specified as false.
      *         </p>
      */
 
@@ -1448,14 +1448,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
-     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      */
 
@@ -1465,14 +1465,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
-     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch
-     *         jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach
-     *         the <code>RUNNING</code> status.
+     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *         <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *         <code>RUNNING</code> status.
      */
 
     public String getLogStreamName() {
@@ -1481,14 +1481,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
      * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      * <code>RUNNING</code> status.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
-     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+     *        <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
      *        <code>RUNNING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1504,14 +1504,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      */
 
@@ -1525,13 +1525,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @return The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources.
+     *         This parameter isn't applicable to jobs that are running on Fargate resources.
      *         </p>
      */
 
@@ -1545,14 +1545,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources.
+     * This parameter isn't applicable to jobs that are running on Fargate resources.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        This parameter isn't applicable to jobs that are running on Fargate resources.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1769,7 +1769,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
      * ECS container agent.
      * </p>
@@ -1806,7 +1806,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
@@ -1849,7 +1849,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
      * ECS container agent.
      * </p>
@@ -1885,7 +1885,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *         <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *         Amazon ECS container agent.
      *         </p>
@@ -1928,7 +1928,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
      * ECS container agent.
      * </p>
@@ -1965,7 +1965,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
@@ -1995,12 +1995,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The secrets to pass to the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets to pass to the container. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *         sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *         sensitive data</a> in the <i>Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecrets() {
@@ -2011,13 +2011,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The secrets to pass to the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      */
 
     public void setSecrets(java.util.Collection<Secret> secrets) {
@@ -2033,7 +2033,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The secrets to pass to the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2044,7 +2044,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2062,13 +2062,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The secrets to pass to the container. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
-     * data</a> in the <i>AWS Batch User Guide</i>.
+     * data</a> in the <i>Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
+     *        sensitive data</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2079,13 +2079,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -2094,12 +2094,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
-     * @return The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *         specify this parameter.
+     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *         resources must not specify this parameter.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -2108,13 +2108,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2125,13 +2125,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      */
 
     public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
@@ -2140,12 +2140,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
-     * @return The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *         specify this parameter.
+     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *         resources must not specify this parameter.
      */
 
     public FargatePlatformConfiguration getFargatePlatformConfiguration() {
@@ -2154,13 +2154,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
-     * this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
+     * must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
-     *        specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+     *        resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

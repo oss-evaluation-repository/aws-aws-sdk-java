@@ -49,7 +49,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private Integer priority;
@@ -64,7 +64,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -74,8 +74,8 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of
      * a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -223,7 +223,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -232,7 +232,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -246,7 +246,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -254,7 +254,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Priority is determined in descending order. For example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public Integer getPriority() {
@@ -268,7 +268,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -277,7 +277,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,7 +297,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -309,7 +309,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      *         <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
      *         <p>
-     *         All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *         All compute environments that are associated with a job queue must share the same architecture. Batch
      *         doesn't support mixing compute environment architecture types in a single job queue.
      *         </p>
      */
@@ -329,7 +329,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -342,7 +342,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      */
@@ -367,7 +367,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -385,7 +385,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -412,7 +412,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+     * All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
      * support mixing compute environment architecture types in a single job queue.
      * </p>
      * </note>
@@ -425,7 +425,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
      *        <p>
-     *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
+     *        All compute environments that are associated with a job queue must share the same architecture. Batch
      *        doesn't support mixing compute environment architecture types in a single job queue.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -440,14 +440,14 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of
      * a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @return The tags that you apply to the job queue to help you categorize and organize your resources. Each tag
      *         consists of a key and an optional value. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *         resources</a> in <i>AWS Batch User Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch
+     *         resources</a> in <i>Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -458,15 +458,15 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of
      * a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags that you apply to the job queue to help you categorize and organize your resources. Each tag
      *        consists of a key and an optional value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *        resources</a> in <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
+     *        in <i>Batch User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -477,15 +477,15 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of
      * a key and an optional value. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
-     * <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+     * <i>Batch User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags that you apply to the job queue to help you categorize and organize your resources. Each tag
      *        consists of a key and an optional value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
-     *        resources</a> in <i>AWS Batch User Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>
+     *        in <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

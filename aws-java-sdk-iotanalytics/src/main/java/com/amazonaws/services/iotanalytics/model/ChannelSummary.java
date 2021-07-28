@@ -63,7 +63,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -296,7 +296,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -306,7 +306,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the channel.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *        IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *        <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>
@@ -322,7 +322,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -331,7 +331,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The last time when a new message arrived in the channel.</p>
      *         <p>
-     *         AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *         IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *         <code>lastMessageArrivalTime</code> value is an approximation.
      *         </p>
      *         <p>
@@ -347,7 +347,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * The last time when a new message arrived in the channel.
      * </p>
      * <p>
-     * AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     * IoT Analytics updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.
      * </p>
      * <p>
@@ -357,7 +357,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
      * @param lastMessageArrivalTime
      *        The last time when a new message arrived in the channel.</p>
      *        <p>
-     *        AWS IoT Analytics updates this value at most once per minute for one channel. Hence, the
+     *        IoT Analytics updates this value at most once per minute for one channel. Hence, the
      *        <code>lastMessageArrivalTime</code> value is an approximation.
      *        </p>
      *        <p>

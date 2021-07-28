@@ -68,7 +68,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<SummarizedCounter> attackCounters;
     /**
      * <p>
-     * The array of <a>AttackProperty</a> objects.
+     * The array of objects that provide details of the Shield event.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private java.util.List<AttackProperty> attackProperties;
@@ -395,10 +401,21 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>AttackProperty</a> objects.
+     * The array of objects that provide details of the Shield event.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return The array of <a>AttackProperty</a> objects.
+     * @return The array of objects that provide details of the Shield event. </p>
+     *         <p>
+     *         For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *         contributors in Amazon CloudWatch metrics. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *         >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      */
 
     public java.util.List<AttackProperty> getAttackProperties() {
@@ -407,11 +424,22 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>AttackProperty</a> objects.
+     * The array of objects that provide details of the Shield event.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param attackProperties
-     *        The array of <a>AttackProperty</a> objects.
+     *        The array of objects that provide details of the Shield event. </p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setAttackProperties(java.util.Collection<AttackProperty> attackProperties) {
@@ -425,7 +453,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>AttackProperty</a> objects.
+     * The array of objects that provide details of the Shield event.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -434,7 +468,12 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attackProperties
-     *        The array of <a>AttackProperty</a> objects.
+     *        The array of objects that provide details of the Shield event. </p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,11 +489,22 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>AttackProperty</a> objects.
+     * The array of objects that provide details of the Shield event.
+     * </p>
+     * <p>
+     * For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param attackProperties
-     *        The array of <a>AttackProperty</a> objects.
+     *        The array of objects that provide details of the Shield event. </p>
+     *        <p>
+     *        For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top
+     *        contributors in Amazon CloudWatch metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms"
+     *        >Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
