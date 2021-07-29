@@ -40,7 +40,7 @@ public class SecurityGroupRule implements Serializable, Cloneable {
     private String groupId;
     /**
      * <p>
-     * The ID of the account that owns the security group.
+     * The ID of the Amazon Web Services account that owns the security group.
      * </p>
      */
     private String groupOwnerId;
@@ -193,11 +193,11 @@ public class SecurityGroupRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the security group.
+     * The ID of the Amazon Web Services account that owns the security group.
      * </p>
      * 
      * @param groupOwnerId
-     *        The ID of the account that owns the security group.
+     *        The ID of the Amazon Web Services account that owns the security group.
      */
 
     public void setGroupOwnerId(String groupOwnerId) {
@@ -206,10 +206,10 @@ public class SecurityGroupRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the security group.
+     * The ID of the Amazon Web Services account that owns the security group.
      * </p>
      * 
-     * @return The ID of the account that owns the security group.
+     * @return The ID of the Amazon Web Services account that owns the security group.
      */
 
     public String getGroupOwnerId() {
@@ -218,11 +218,11 @@ public class SecurityGroupRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the security group.
+     * The ID of the Amazon Web Services account that owns the security group.
      * </p>
      * 
      * @param groupOwnerId
-     *        The ID of the account that owns the security group.
+     *        The ID of the Amazon Web Services account that owns the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

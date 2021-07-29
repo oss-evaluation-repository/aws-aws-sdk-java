@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MeasurementMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> PROCESSINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("processingConfig").build();
+
     private static final MeasurementMarshaller instance = new MeasurementMarshaller();
 
     public static MeasurementMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class MeasurementMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(measurement.getProcessingConfig(), PROCESSINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

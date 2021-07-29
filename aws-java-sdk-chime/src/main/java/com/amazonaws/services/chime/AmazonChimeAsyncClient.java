@@ -5502,6 +5502,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<StartMeetingTranscriptionResult> startMeetingTranscriptionAsync(StartMeetingTranscriptionRequest request) {
+
+        return startMeetingTranscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMeetingTranscriptionResult> startMeetingTranscriptionAsync(final StartMeetingTranscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMeetingTranscriptionRequest, StartMeetingTranscriptionResult> asyncHandler) {
+        final StartMeetingTranscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMeetingTranscriptionResult>() {
+            @Override
+            public StartMeetingTranscriptionResult call() throws Exception {
+                StartMeetingTranscriptionResult result = null;
+
+                try {
+                    result = executeStartMeetingTranscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMeetingTranscriptionResult> stopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest request) {
+
+        return stopMeetingTranscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMeetingTranscriptionResult> stopMeetingTranscriptionAsync(final StopMeetingTranscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopMeetingTranscriptionRequest, StopMeetingTranscriptionResult> asyncHandler) {
+        final StopMeetingTranscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopMeetingTranscriptionResult>() {
+            @Override
+            public StopMeetingTranscriptionResult call() throws Exception {
+                StopMeetingTranscriptionResult result = null;
+
+                try {
+                    result = executeStopMeetingTranscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagAttendeeResult> tagAttendeeAsync(TagAttendeeRequest request) {
 
         return tagAttendeeAsync(request, null);

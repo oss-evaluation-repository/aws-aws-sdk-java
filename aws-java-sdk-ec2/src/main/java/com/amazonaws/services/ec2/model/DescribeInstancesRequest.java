@@ -389,7 +389,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the instance owner.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -440,8 +440,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, Amazon
+     * Web Services Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -913,7 +913,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the instance owner.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -964,8 +964,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, Amazon
+     * Web Services Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -1413,7 +1413,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The account ID of the instance owner.
+     *         <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      *         </p>
      *         </li>
      *         <li>
@@ -1467,7 +1467,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *         Management Console, Auto Scaling, and so on).
+     *         Amazon Web Services Management Console, Auto Scaling, and so on).
      *         </p>
      *         </li>
      *         <li>
@@ -1923,7 +1923,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the instance owner.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -1974,8 +1974,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, Amazon
+     * Web Services Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -2424,7 +2424,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the instance owner.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -2477,7 +2477,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        Management Console, Auto Scaling, and so on).
+     *        Amazon Web Services Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -2935,7 +2935,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the instance owner.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -2986,8 +2986,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, Amazon
+     * Web Services Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -3441,7 +3441,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the instance owner.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -3494,7 +3494,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        Management Console, Auto Scaling, and so on).
+     *        Amazon Web Services Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -3954,7 +3954,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the instance owner.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -4005,8 +4005,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, Amazon
+     * Web Services Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -4455,7 +4455,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the instance owner.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -4508,7 +4508,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        Management Console, Auto Scaling, and so on).
+     *        Amazon Web Services Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>

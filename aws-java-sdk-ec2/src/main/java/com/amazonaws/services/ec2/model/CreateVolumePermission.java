@@ -34,7 +34,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
     private String group;
     /**
      * <p>
-     * The ID of the account to be added or removed.
+     * The ID of the Amazon Web Services account to be added or removed.
      * </p>
      */
     private String userId;
@@ -114,11 +114,11 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account to be added or removed.
+     * The ID of the Amazon Web Services account to be added or removed.
      * </p>
      * 
      * @param userId
-     *        The ID of the account to be added or removed.
+     *        The ID of the Amazon Web Services account to be added or removed.
      */
 
     public void setUserId(String userId) {
@@ -127,10 +127,10 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account to be added or removed.
+     * The ID of the Amazon Web Services account to be added or removed.
      * </p>
      * 
-     * @return The ID of the account to be added or removed.
+     * @return The ID of the Amazon Web Services account to be added or removed.
      */
 
     public String getUserId() {
@@ -139,11 +139,11 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account to be added or removed.
+     * The ID of the Amazon Web Services account to be added or removed.
      * </p>
      * 
      * @param userId
-     *        The ID of the account to be added or removed.
+     *        The ID of the Amazon Web Services account to be added or removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

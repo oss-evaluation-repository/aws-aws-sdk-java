@@ -32,6 +32,8 @@ public class GatewaySummaryMarshaller {
             .marshallLocationName("gatewayId").build();
     private static final MarshallingInfo<String> GATEWAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gatewayName").build();
+    private static final MarshallingInfo<StructuredPojo> GATEWAYPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gatewayPlatform").build();
     private static final MarshallingInfo<List> GATEWAYCAPABILITYSUMMARIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gatewayCapabilitySummaries").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -57,6 +59,7 @@ public class GatewaySummaryMarshaller {
         try {
             protocolMarshaller.marshall(gatewaySummary.getGatewayId(), GATEWAYID_BINDING);
             protocolMarshaller.marshall(gatewaySummary.getGatewayName(), GATEWAYNAME_BINDING);
+            protocolMarshaller.marshall(gatewaySummary.getGatewayPlatform(), GATEWAYPLATFORM_BINDING);
             protocolMarshaller.marshall(gatewaySummary.getGatewayCapabilitySummaries(), GATEWAYCAPABILITYSUMMARIES_BINDING);
             protocolMarshaller.marshall(gatewaySummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(gatewaySummary.getLastUpdateDate(), LASTUPDATEDATE_BINDING);

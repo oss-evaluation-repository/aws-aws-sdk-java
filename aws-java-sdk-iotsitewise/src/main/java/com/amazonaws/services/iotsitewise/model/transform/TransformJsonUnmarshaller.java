@@ -58,6 +58,10 @@ public class TransformJsonUnmarshaller implements Unmarshaller<Transform, JsonUn
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("processingConfig", targetDepth)) {
+                    context.nextToken();
+                    transform.setProcessingConfig(TransformProcessingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

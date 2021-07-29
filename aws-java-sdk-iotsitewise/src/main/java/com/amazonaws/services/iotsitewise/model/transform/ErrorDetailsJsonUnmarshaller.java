@@ -56,6 +56,12 @@ public class ErrorDetailsJsonUnmarshaller implements Unmarshaller<ErrorDetails, 
                     context.nextToken();
                     errorDetails.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("details", targetDepth)) {
+                    context.nextToken();
+                    errorDetails.setDetails(new ListUnmarshaller<DetailedError>(DetailedErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

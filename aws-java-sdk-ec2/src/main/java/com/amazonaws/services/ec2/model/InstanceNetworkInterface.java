@@ -70,7 +70,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private String networkInterfaceId;
     /**
      * <p>
-     * The ID of the account that created the network interface.
+     * The ID of the Amazon Web Services account that created the network interface.
      * </p>
      */
     private String ownerId;
@@ -486,11 +486,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that created the network interface.
+     * The ID of the Amazon Web Services account that created the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that created the network interface.
+     *        The ID of the Amazon Web Services account that created the network interface.
      */
 
     public void setOwnerId(String ownerId) {
@@ -499,10 +499,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that created the network interface.
+     * The ID of the Amazon Web Services account that created the network interface.
      * </p>
      * 
-     * @return The ID of the account that created the network interface.
+     * @return The ID of the Amazon Web Services account that created the network interface.
      */
 
     public String getOwnerId() {
@@ -511,11 +511,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that created the network interface.
+     * The ID of the Amazon Web Services account that created the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that created the network interface.
+     *        The ID of the Amazon Web Services account that created the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

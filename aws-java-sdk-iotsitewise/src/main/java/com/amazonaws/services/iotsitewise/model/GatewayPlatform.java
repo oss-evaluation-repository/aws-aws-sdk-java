@@ -34,6 +34,12 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Greengrass greengrass;
+    /**
+     * <p>
+     * A gateway that runs on IoT Greengrass V2.
+     * </p>
+     */
+    private GreengrassV2 greengrassV2;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A gateway that runs on IoT Greengrass V2.
+     * </p>
+     * 
+     * @param greengrassV2
+     *        A gateway that runs on IoT Greengrass V2.
+     */
+
+    public void setGreengrassV2(GreengrassV2 greengrassV2) {
+        this.greengrassV2 = greengrassV2;
+    }
+
+    /**
+     * <p>
+     * A gateway that runs on IoT Greengrass V2.
+     * </p>
+     * 
+     * @return A gateway that runs on IoT Greengrass V2.
+     */
+
+    public GreengrassV2 getGreengrassV2() {
+        return this.greengrassV2;
+    }
+
+    /**
+     * <p>
+     * A gateway that runs on IoT Greengrass V2.
+     * </p>
+     * 
+     * @param greengrassV2
+     *        A gateway that runs on IoT Greengrass V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewayPlatform withGreengrassV2(GreengrassV2 greengrassV2) {
+        setGreengrassV2(greengrassV2);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGreengrass() != null)
-            sb.append("Greengrass: ").append(getGreengrass());
+            sb.append("Greengrass: ").append(getGreengrass()).append(",");
+        if (getGreengrassV2() != null)
+            sb.append("GreengrassV2: ").append(getGreengrassV2());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getGreengrass() != null && other.getGreengrass().equals(this.getGreengrass()) == false)
             return false;
+        if (other.getGreengrassV2() == null ^ this.getGreengrassV2() == null)
+            return false;
+        if (other.getGreengrassV2() != null && other.getGreengrassV2().equals(this.getGreengrassV2()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGreengrass() == null) ? 0 : getGreengrass().hashCode());
+        hashCode = prime * hashCode + ((getGreengrassV2() == null) ? 0 : getGreengrassV2().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,12 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * A list of detailed errors.
+     * </p>
+     */
+    private java.util.List<DetailedError> details;
 
     /**
      * <p>
@@ -141,6 +147,76 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of detailed errors.
+     * </p>
+     * 
+     * @return A list of detailed errors.
+     */
+
+    public java.util.List<DetailedError> getDetails() {
+        return details;
+    }
+
+    /**
+     * <p>
+     * A list of detailed errors.
+     * </p>
+     * 
+     * @param details
+     *        A list of detailed errors.
+     */
+
+    public void setDetails(java.util.Collection<DetailedError> details) {
+        if (details == null) {
+            this.details = null;
+            return;
+        }
+
+        this.details = new java.util.ArrayList<DetailedError>(details);
+    }
+
+    /**
+     * <p>
+     * A list of detailed errors.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDetails(java.util.Collection)} or {@link #withDetails(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param details
+     *        A list of detailed errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorDetails withDetails(DetailedError... details) {
+        if (this.details == null) {
+            setDetails(new java.util.ArrayList<DetailedError>(details.length));
+        }
+        for (DetailedError ele : details) {
+            this.details.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of detailed errors.
+     * </p>
+     * 
+     * @param details
+     *        A list of detailed errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorDetails withDetails(java.util.Collection<DetailedError> details) {
+        setDetails(details);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +231,9 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getDetails() != null)
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +256,10 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getDetails() == null ^ this.getDetails() == null)
+            return false;
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +270,7 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }
 

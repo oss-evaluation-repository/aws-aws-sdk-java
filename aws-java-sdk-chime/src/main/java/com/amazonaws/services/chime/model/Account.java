@@ -74,7 +74,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> supportedLicenses;
     /**
      * <p>
-     * The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * The status of the account.
      * </p>
      */
     private String accountStatus;
@@ -479,11 +479,11 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * The status of the account.
      * </p>
      * 
      * @param accountStatus
-     *        The status of the account, <code>Suspended</code> or <code>Active</code>.
+     *        The status of the account.
      * @see AccountStatus
      */
 
@@ -493,10 +493,10 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * The status of the account.
      * </p>
      * 
-     * @return The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * @return The status of the account.
      * @see AccountStatus
      */
 
@@ -506,11 +506,11 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * The status of the account.
      * </p>
      * 
      * @param accountStatus
-     *        The status of the account, <code>Suspended</code> or <code>Active</code>.
+     *        The status of the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountStatus
      */
@@ -522,11 +522,11 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the account, <code>Suspended</code> or <code>Active</code>.
+     * The status of the account.
      * </p>
      * 
      * @param accountStatus
-     *        The status of the account, <code>Suspended</code> or <code>Active</code>.
+     *        The status of the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountStatus
      */

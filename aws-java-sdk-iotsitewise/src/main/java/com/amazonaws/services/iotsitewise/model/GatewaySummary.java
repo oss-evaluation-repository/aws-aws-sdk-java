@@ -40,6 +40,8 @@ public class GatewaySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String gatewayName;
+
+    private GatewayPlatform gatewayPlatform;
     /**
      * <p>
      * A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines
@@ -139,6 +141,32 @@ public class GatewaySummary implements Serializable, Cloneable, StructuredPojo {
 
     public GatewaySummary withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
+        return this;
+    }
+
+    /**
+     * @param gatewayPlatform
+     */
+
+    public void setGatewayPlatform(GatewayPlatform gatewayPlatform) {
+        this.gatewayPlatform = gatewayPlatform;
+    }
+
+    /**
+     * @return
+     */
+
+    public GatewayPlatform getGatewayPlatform() {
+        return this.gatewayPlatform;
+    }
+
+    /**
+     * @param gatewayPlatform
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewaySummary withGatewayPlatform(GatewayPlatform gatewayPlatform) {
+        setGatewayPlatform(gatewayPlatform);
         return this;
     }
 
@@ -332,6 +360,8 @@ public class GatewaySummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getGatewayName() != null)
             sb.append("GatewayName: ").append(getGatewayName()).append(",");
+        if (getGatewayPlatform() != null)
+            sb.append("GatewayPlatform: ").append(getGatewayPlatform()).append(",");
         if (getGatewayCapabilitySummaries() != null)
             sb.append("GatewayCapabilitySummaries: ").append(getGatewayCapabilitySummaries()).append(",");
         if (getCreationDate() != null)
@@ -360,6 +390,10 @@ public class GatewaySummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false)
             return false;
+        if (other.getGatewayPlatform() == null ^ this.getGatewayPlatform() == null)
+            return false;
+        if (other.getGatewayPlatform() != null && other.getGatewayPlatform().equals(this.getGatewayPlatform()) == false)
+            return false;
         if (other.getGatewayCapabilitySummaries() == null ^ this.getGatewayCapabilitySummaries() == null)
             return false;
         if (other.getGatewayCapabilitySummaries() != null && other.getGatewayCapabilitySummaries().equals(this.getGatewayCapabilitySummaries()) == false)
@@ -382,6 +416,7 @@ public class GatewaySummary implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
+        hashCode = prime * hashCode + ((getGatewayPlatform() == null) ? 0 : getGatewayPlatform().hashCode());
         hashCode = prime * hashCode + ((getGatewayCapabilitySummaries() == null) ? 0 : getGatewayCapabilitySummaries().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting.
+ * A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MediaPlacement" target="_top">AWS API
@@ -72,7 +72,7 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
     private String turnControlUrl;
     /**
      * <p>
-     * The event ingestion URL.
+     * The URL of the S3 bucket used to store the captured media.
      * </p>
      */
     private String eventIngestionUrl;
@@ -359,11 +359,11 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event ingestion URL.
+     * The URL of the S3 bucket used to store the captured media.
      * </p>
      * 
      * @param eventIngestionUrl
-     *        The event ingestion URL.
+     *        The URL of the S3 bucket used to store the captured media.
      */
 
     public void setEventIngestionUrl(String eventIngestionUrl) {
@@ -372,10 +372,10 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event ingestion URL.
+     * The URL of the S3 bucket used to store the captured media.
      * </p>
      * 
-     * @return The event ingestion URL.
+     * @return The URL of the S3 bucket used to store the captured media.
      */
 
     public String getEventIngestionUrl() {
@@ -384,11 +384,11 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event ingestion URL.
+     * The URL of the S3 bucket used to store the captured media.
      * </p>
      * 
      * @param eventIngestionUrl
-     *        The event ingestion URL.
+     *        The URL of the S3 bucket used to store the captured media.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

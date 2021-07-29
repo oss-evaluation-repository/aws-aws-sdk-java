@@ -35,7 +35,7 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
     /**
      * <p>
      * The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot
-     * that was shared with you from another account.
+     * that was shared with you from another Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> sourceSnapshotIds;
@@ -116,11 +116,11 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
     /**
      * <p>
      * The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot
-     * that was shared with you from another account.
+     * that was shared with you from another Amazon Web Services account.
      * </p>
      * 
      * @return The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a
-     *         snapshot that was shared with you from another account.
+     *         snapshot that was shared with you from another Amazon Web Services account.
      */
 
     public java.util.List<String> getSourceSnapshotIds() {
@@ -133,12 +133,12 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
     /**
      * <p>
      * The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot
-     * that was shared with you from another account.
+     * that was shared with you from another Amazon Web Services account.
      * </p>
      * 
      * @param sourceSnapshotIds
      *        The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a
-     *        snapshot that was shared with you from another account.
+     *        snapshot that was shared with you from another Amazon Web Services account.
      */
 
     public void setSourceSnapshotIds(java.util.Collection<String> sourceSnapshotIds) {
@@ -153,7 +153,7 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
     /**
      * <p>
      * The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot
-     * that was shared with you from another account.
+     * that was shared with you from another Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
      * 
      * @param sourceSnapshotIds
      *        The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a
-     *        snapshot that was shared with you from another account.
+     *        snapshot that was shared with you from another Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,12 +180,12 @@ public class EnableFastSnapshotRestoresRequest extends AmazonWebServiceRequest i
     /**
      * <p>
      * The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot
-     * that was shared with you from another account.
+     * that was shared with you from another Amazon Web Services account.
      * </p>
      * 
      * @param sourceSnapshotIds
      *        The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a
-     *        snapshot that was shared with you from another account.
+     *        snapshot that was shared with you from another Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

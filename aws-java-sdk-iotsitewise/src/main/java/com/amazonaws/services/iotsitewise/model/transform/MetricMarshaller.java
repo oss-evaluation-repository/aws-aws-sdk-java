@@ -34,6 +34,8 @@ public class MetricMarshaller {
             .marshallLocationName("variables").build();
     private static final MarshallingInfo<StructuredPojo> WINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("window").build();
+    private static final MarshallingInfo<StructuredPojo> PROCESSINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("processingConfig").build();
 
     private static final MetricMarshaller instance = new MetricMarshaller();
 
@@ -54,6 +56,7 @@ public class MetricMarshaller {
             protocolMarshaller.marshall(metric.getExpression(), EXPRESSION_BINDING);
             protocolMarshaller.marshall(metric.getVariables(), VARIABLES_BINDING);
             protocolMarshaller.marshall(metric.getWindow(), WINDOW_BINDING);
+            protocolMarshaller.marshall(metric.getProcessingConfig(), PROCESSINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

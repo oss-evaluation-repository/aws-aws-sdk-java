@@ -32,6 +32,8 @@ public class TransformMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expression").build();
     private static final MarshallingInfo<List> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("variables").build();
+    private static final MarshallingInfo<StructuredPojo> PROCESSINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("processingConfig").build();
 
     private static final TransformMarshaller instance = new TransformMarshaller();
 
@@ -51,6 +53,7 @@ public class TransformMarshaller {
         try {
             protocolMarshaller.marshall(transform.getExpression(), EXPRESSION_BINDING);
             protocolMarshaller.marshall(transform.getVariables(), VARIABLES_BINDING);
+            protocolMarshaller.marshall(transform.getProcessingConfig(), PROCESSINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

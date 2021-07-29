@@ -66,7 +66,7 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
     private String stateTransitionReason;
     /**
      * <p>
-     * The ID of the account that enabled fast snapshot restores on the snapshot.
+     * The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      * </p>
      */
     private String ownerId;
@@ -370,11 +370,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the account that enabled fast snapshot restores on the snapshot.
+     * The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that enabled fast snapshot restores on the snapshot.
+     *        The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      */
 
     public void setOwnerId(String ownerId) {
@@ -383,10 +383,10 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the account that enabled fast snapshot restores on the snapshot.
+     * The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
-     * @return The ID of the account that enabled fast snapshot restores on the snapshot.
+     * @return The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      */
 
     public String getOwnerId() {
@@ -395,11 +395,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the account that enabled fast snapshot restores on the snapshot.
+     * The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that enabled fast snapshot restores on the snapshot.
+     *        The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

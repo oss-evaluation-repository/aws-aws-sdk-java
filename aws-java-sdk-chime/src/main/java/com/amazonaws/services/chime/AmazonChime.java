@@ -4925,6 +4925,66 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Start transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param startMeetingTranscriptionRequest
+     * @return Result of the StartMeetingTranscription operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws UnprocessableEntityException
+     *         The request was well-formed but was unable to be followed due to semantic errors.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.StartMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMeetingTranscriptionResult startMeetingTranscription(StartMeetingTranscriptionRequest startMeetingTranscriptionRequest);
+
+    /**
+     * <p>
+     * Stops transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param stopMeetingTranscriptionRequest
+     * @return Result of the StopMeetingTranscription operation returned by the service.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws UnprocessableEntityException
+     *         The request was well-formed but was unable to be followed due to semantic errors.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.StopMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopMeetingTranscriptionResult stopMeetingTranscription(StopMeetingTranscriptionRequest stopMeetingTranscriptionRequest);
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon Chime SDK attendee.
      * </p>
      * 

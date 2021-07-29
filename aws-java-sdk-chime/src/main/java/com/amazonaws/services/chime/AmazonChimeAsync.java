@@ -6195,6 +6195,70 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Start transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param startMeetingTranscriptionRequest
+     * @return A Java Future containing the result of the StartMeetingTranscription operation returned by the service.
+     * @sample AmazonChimeAsync.StartMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMeetingTranscriptionResult> startMeetingTranscriptionAsync(
+            StartMeetingTranscriptionRequest startMeetingTranscriptionRequest);
+
+    /**
+     * <p>
+     * Start transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param startMeetingTranscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMeetingTranscription operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.StartMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMeetingTranscriptionResult> startMeetingTranscriptionAsync(
+            StartMeetingTranscriptionRequest startMeetingTranscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMeetingTranscriptionRequest, StartMeetingTranscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param stopMeetingTranscriptionRequest
+     * @return A Java Future containing the result of the StopMeetingTranscription operation returned by the service.
+     * @sample AmazonChimeAsync.StopMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopMeetingTranscriptionResult> stopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest stopMeetingTranscriptionRequest);
+
+    /**
+     * <p>
+     * Stops transcription for the specified <code>meetingId</code>.
+     * </p>
+     * 
+     * @param stopMeetingTranscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopMeetingTranscription operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.StopMeetingTranscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopMeetingTranscriptionResult> stopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest stopMeetingTranscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopMeetingTranscriptionRequest, StopMeetingTranscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon Chime SDK attendee.
      * </p>
      * 

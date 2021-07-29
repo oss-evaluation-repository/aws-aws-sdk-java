@@ -50,7 +50,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      * </p>
      * </li>
      * <li>
@@ -180,7 +180,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      * </p>
      * </li>
      * <li>
@@ -219,7 +219,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     *         <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      *         </p>
      *         </li>
      *         <li>
@@ -268,7 +268,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      * </p>
      * </li>
      * <li>
@@ -308,7 +308,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      *        </p>
      *        </li>
      *        <li>
@@ -359,7 +359,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      * </p>
      * </li>
      * <li>
@@ -404,7 +404,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      *        </p>
      *        </li>
      *        <li>
@@ -457,7 +457,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      * </p>
      * </li>
      * <li>
@@ -497,7 +497,7 @@ public class DescribeCarrierGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The account ID of the owner of the carrier gateway.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the carrier gateway.
      *        </p>
      *        </li>
      *        <li>

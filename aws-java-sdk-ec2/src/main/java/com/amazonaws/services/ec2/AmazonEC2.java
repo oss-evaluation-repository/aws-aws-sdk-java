@@ -266,9 +266,9 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate it
-     * with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
-     * pool and can be allocated to a different account.
+     * Allocates an Elastic IP address to your Amazon Web Services account. After you allocate the Elastic IP address
+     * you can associate it with an instance or network interface. After you release an Elastic IP address, it is
+     * released to the IP address pool and can be allocated to a different Amazon Web Services account.
      * </p>
      * <p>
      * You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool
@@ -279,8 +279,9 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another account. You cannot recover an Elastic IP address for
-     * EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
+     * address that you released after it is allocated to another Amazon Web Services account. You cannot recover an
+     * Elastic IP address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in
+     * this operation.
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
@@ -748,7 +749,7 @@ public interface AmazonEC2 {
      * for use</a>.
      * </p>
      * <p>
-     * If a volume has an Marketplace product code:
+     * If a volume has an Amazon Web Services Marketplace product code:
      * </p>
      * <ul>
      * <li>
@@ -758,7 +759,7 @@ public interface AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * Marketplace product codes are copied from the volume to the instance.
+     * Amazon Web Services Marketplace product codes are copied from the volume to the instance.
      * </p>
      * </li>
      * <li>
@@ -1833,7 +1834,7 @@ public interface AmazonEC2 {
      * instance in their account.
      * </p>
      * <p>
-     * You can grant permission to a single account only, and only one account at a time.
+     * You can grant permission to a single Amazon Web Services account only, and only one account at a time.
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
@@ -2064,8 +2065,8 @@ public interface AmazonEC2 {
      * on an Outpost, the snapshot can be stored on the same Outpost as the volume, or in the Region for that Outpost.
      * </p>
      * <p>
-     * When a snapshot is created, any Marketplace product codes that are associated with the source volume are
-     * propagated to the snapshot.
+     * When a snapshot is created, any Amazon Web Services Marketplace product codes that are associated with the source
+     * volume are propagated to the snapshot.
      * </p>
      * <p>
      * You can take a snapshot of an attached volume that is in use. However, snapshots only capture data that has been
@@ -2129,7 +2130,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
-     * feed per account. For more information, see <a
+     * feed per Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
@@ -2517,8 +2518,8 @@ public interface AmazonEC2 {
      * Creates an EBS volume that can be attached to an instance in the same Availability Zone.
      * </p>
      * <p>
-     * You can create a new empty volume or restore a volume from an EBS snapshot. Any Marketplace product codes from
-     * the snapshot are propagated to the volume.
+     * You can create a new empty volume or restore a volume from an EBS snapshot. Any Amazon Web Services Marketplace
+     * product codes from the snapshot are propagated to the volume.
      * </p>
      * <p>
      * You can create encrypted volumes. Encrypted volumes must be attached to instances that support Amazon EBS
@@ -2677,8 +2678,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
-     * to create the connection. The accepter VPC can belong to another account and can be in a different Region to the
-     * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+     * to create the connection. The accepter VPC can belong to another Amazon Web Services account and can be in a
+     * different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
      * <note>
      * <p>
@@ -3999,7 +4000,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
-     * Region that you're currently using.
+     * Amazon Web Services Region that you're currently using.
      * </p>
      * 
      * @param describeCapacityReservationsRequest
@@ -5558,7 +5559,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * The snapshots available to you include public snapshots, private snapshots that you own, and private snapshots
-     * owned by other accounts for which you have explicit create volume permissions.
+     * owned by other Amazon Web Services accounts for which you have explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -5567,24 +5568,25 @@ public interface AmazonEC2 {
      * <li>
      * <p>
      * <i>public</i>: The owner of the snapshot granted create volume permissions for the snapshot to the
-     * <code>all</code> group. All accounts have create volume permissions for these snapshots.
+     * <code>all</code> group. All Amazon Web Services accounts have create volume permissions for these snapshots.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>explicit</i>: The owner of the snapshot granted create volume permissions to a specific account.
+     * <i>explicit</i>: The owner of the snapshot granted create volume permissions to a specific Amazon Web Services
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>implicit</i>: An account has implicit create volume permissions for all snapshots it owns.
+     * <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions for all snapshots it owns.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot owners, or accounts with
-     * create volume permissions. If no options are specified, Amazon EC2 returns all snapshots for which you have
-     * create volume permissions.
+     * The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot owners, or Amazon Web
+     * Services accounts with create volume permissions. If no options are specified, Amazon EC2 returns all snapshots
+     * for which you have create volume permissions.
      * </p>
      * <p>
      * If you specify one or more snapshot IDs, only snapshots that have the specified IDs are returned. If you specify
@@ -5593,14 +5595,14 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * If you specify one or more snapshot owners using the <code>OwnerIds</code> option, only snapshots from the
-     * specified owners and for which you have access are returned. The results can include the account IDs of the
-     * specified owners, <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots that you
-     * own.
+     * specified owners and for which you have access are returned. The results can include the Amazon Web Services
+     * account IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for
+     * snapshots that you own.
      * </p>
      * <p>
      * If you specify a list of restorable users, only snapshots with create snapshot permissions for those users are
-     * returned. You can specify account IDs (if you own the snapshots), <code>self</code> for snapshots for which you
-     * own or have explicit permissions, or <code>all</code> for public snapshots.
+     * returned. You can specify Amazon Web Services account IDs (if you own the snapshots), <code>self</code> for
+     * snapshots for which you own or have explicit permissions, or <code>all</code> for public snapshots.
      * </p>
      * <p>
      * If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more
@@ -6468,8 +6470,8 @@ public interface AmazonEC2 {
      * first.
      * </p>
      * <p>
-     * When a volume with an Marketplace product code is detached from an instance, the product code is no longer
-     * associated with the instance.
+     * When a volume with an Amazon Web Services Marketplace product code is detached from an instance, the product code
+     * is no longer associated with the instance.
      * </p>
      * <p>
      * For more information, see <a
@@ -7107,8 +7109,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage
-     * information for the Capacity Reservation owner and each account that is currently using the shared capacity. If
-     * the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
+     * information for the Capacity Reservation owner and each Amazon Web Services account that is currently using the
+     * shared capacity. If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
      * </p>
      * 
      * @param getCapacityReservationUsageRequest
@@ -7700,15 +7702,15 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Modifies the default credit option for CPU usage of burstable performance instances. The default credit option is
-     * set at the account level per Region, and is specified per instance family. All new burstable performance
-     * instances in the account launch using the default credit option.
+     * set at the account level per Amazon Web Services Region, and is specified per instance family. All new burstable
+     * performance instances in the account launch using the default credit option.
      * </p>
      * <p>
-     * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an Region level and
-     * modifies the credit option for each Availability Zone. All zones in a Region are updated within five minutes. But
-     * if instances are launched during this operation, they might not get the new credit option until the zone is
-     * updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code> and
-     * check <code>DefaultCreditSpecification</code> for updates.
+     * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an Amazon Web Services
+     * Region level and modifies the credit option for each Availability Zone. All zones in a Region are updated within
+     * five minutes. But if instances are launched during this operation, they might not get the new credit option until
+     * the zone is updated. To verify whether the update has occurred, you can call
+     * <code>GetDefaultCreditSpecification</code> and check <code>DefaultCreditSpecification</code> for updates.
      * </p>
      * <p>
      * For more information, see <a
@@ -8182,14 +8184,14 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Adds or removes permission settings for the specified snapshot. You may add or remove specified account IDs from
-     * a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to both
-     * add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500 modifications
-     * to a snapshot in a single operation.
+     * Adds or removes permission settings for the specified snapshot. You may add or remove specified Amazon Web
+     * Services account IDs from a snapshot's list of create volume permissions, but you cannot do both in a single
+     * operation. If you need to both add and remove account IDs for a snapshot, you must use multiple operations. You
+     * can make up to 500 modifications to a snapshot in a single operation.
      * </p>
      * <p>
-     * Encrypted snapshots and snapshots with Marketplace product codes cannot be made public. Snapshots encrypted with
-     * your default KMS key cannot be shared with other accounts.
+     * Encrypted snapshots and snapshots with Amazon Web Services Marketplace product codes cannot be made public.
+     * Snapshots encrypted with your default KMS key cannot be shared with other accounts.
      * </p>
      * <p>
      * For more information about modifying snapshot permissions, see <a
@@ -8535,14 +8537,14 @@ public interface AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * If the peered VPCs are in the same account, you can enable DNS resolution for queries from the local VPC. This
-     * ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
-     * available if the peered VPCs are in different different accounts or different Regions. For peered VPCs in
-     * different accounts, each account owner must initiate a separate request to modify the peering connection options.
-     * For inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC
-     * peering options and the Region for the accepter VPC to modify the accepter VPC peering options. To verify which
-     * VPCs are the accepter and the requester for a VPC peering connection, use the
-     * <a>DescribeVpcPeeringConnections</a> command.
+     * If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution for queries from
+     * the local VPC. This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This
+     * option is not available if the peered VPCs are in different different Amazon Web Services accounts or different
+     * Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must
+     * initiate a separate request to modify the peering connection options. For inter-region peering connections, you
+     * must use the Region for the requester VPC to modify the requester VPC peering options and the Region for the
+     * accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester
+     * for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 
      * @param modifyVpcPeeringConnectionOptionsRequest
@@ -9087,7 +9089,7 @@ public interface AmazonEC2 {
      * After releasing an Elastic IP address, it is released to the IP address pool. Be sure to update your DNS records
      * and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address
      * that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to
-     * another account.
+     * another Amazon Web Services account.
      * </p>
      * <p>
      * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more

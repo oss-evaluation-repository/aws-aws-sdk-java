@@ -51,7 +51,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-permission.aws-account-id</code> - The account ID.
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -173,7 +173,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-permission.aws-account-id</code> - The account ID.
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -203,7 +203,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface-permission.aws-account-id</code> - The account ID.
+     *         <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      *         </p>
      *         </li>
      *         <li>
@@ -243,7 +243,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-permission.aws-account-id</code> - The account ID.
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -274,7 +274,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-permission.aws-account-id</code> - The account ID.
+     *        <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      *        </p>
      *        </li>
      *        <li>
@@ -316,7 +316,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-permission.aws-account-id</code> - The account ID.
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -352,7 +352,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-permission.aws-account-id</code> - The account ID.
+     *        <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      *        </p>
      *        </li>
      *        <li>
@@ -396,7 +396,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-permission.aws-account-id</code> - The account ID.
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -427,7 +427,7 @@ public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-permission.aws-account-id</code> - The account ID.
+     *        <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.
      *        </p>
      *        </li>
      *        <li>

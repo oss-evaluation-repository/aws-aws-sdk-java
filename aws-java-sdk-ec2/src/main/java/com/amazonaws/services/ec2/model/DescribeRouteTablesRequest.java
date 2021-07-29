@@ -54,7 +54,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the route table.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -199,7 +199,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the route table.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -317,7 +317,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the account that owns the route table.
+     *         <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      *         </p>
      *         </li>
      *         <li>
@@ -447,7 +447,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the route table.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -566,7 +566,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the route table.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      *        </p>
      *        </li>
      *        <li>
@@ -698,7 +698,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the route table.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -822,7 +822,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the route table.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      *        </p>
      *        </li>
      *        <li>
@@ -956,7 +956,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the route table.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      * </p>
      * </li>
      * <li>
@@ -1075,7 +1075,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the route table.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the route table.
      *        </p>
      *        </li>
      *        <li>

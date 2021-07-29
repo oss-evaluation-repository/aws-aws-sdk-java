@@ -65,7 +65,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The account ID of the owner.
+     * <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -151,7 +151,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The account ID of the owner.
+     * <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -217,7 +217,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface-owner-id</code> - The account ID of the owner.
+     *         <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      *         </p>
      *         </li>
      *         <li>
@@ -294,7 +294,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The account ID of the owner.
+     * <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -361,7 +361,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
@@ -439,7 +439,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The account ID of the owner.
+     * <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -511,7 +511,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
@@ -591,7 +591,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The account ID of the owner.
+     * <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -658,7 +658,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.
      *        </p>
      *        </li>
      *        <li>

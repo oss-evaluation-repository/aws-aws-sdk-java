@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotsitewise.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ErrorDetailsMarshaller {
             .marshallLocationName("code").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("message").build();
+    private static final MarshallingInfo<List> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("details").build();
 
     private static final ErrorDetailsMarshaller instance = new ErrorDetailsMarshaller();
 
@@ -50,6 +53,7 @@ public class ErrorDetailsMarshaller {
         try {
             protocolMarshaller.marshall(errorDetails.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(errorDetails.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(errorDetails.getDetails(), DETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

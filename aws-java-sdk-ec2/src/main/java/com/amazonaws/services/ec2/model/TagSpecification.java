@@ -45,8 +45,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -80,8 +80,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -108,7 +108,7 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> |
      *        <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code> |
      *        <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-     *        <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
+     *        <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
      *        <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
      *        <p>
      *        To tag a resource after it has been created, see <a
@@ -139,8 +139,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -166,7 +166,7 @@ public class TagSpecification implements Serializable, Cloneable {
      *         <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> |
      *         <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code> |
      *         <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-     *         <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
+     *         <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
      *         <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
      *         <p>
      *         To tag a resource after it has been created, see <a
@@ -197,8 +197,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -225,7 +225,7 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> |
      *        <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code> |
      *        <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-     *        <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
+     *        <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
      *        <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
      *        <p>
      *        To tag a resource after it has been created, see <a
@@ -258,8 +258,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -286,7 +286,7 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> |
      *        <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code> |
      *        <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-     *        <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
+     *        <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
      *        <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
      *        <p>
      *        To tag a resource after it has been created, see <a
@@ -317,8 +317,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
      * <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
      * <code>vpc</code> | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway
-     * endpoints) | <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * endpoints) | <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code>
+     * | <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -345,7 +345,7 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> |
      *        <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code> |
      *        <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-     *        <code>vpc-endpoint-service</code> (for PrivateLink) | <code>vpc-flow-log</code> |
+     *        <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
      *        <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
      *        <p>
      *        To tag a resource after it has been created, see <a

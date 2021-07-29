@@ -95,7 +95,7 @@ public class Subnet implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The ID of the account that owns the subnet.
+     * The ID of the Amazon Web Services account that owns the subnet.
      * </p>
      */
     private String ownerId;
@@ -656,11 +656,11 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the subnet.
+     * The ID of the Amazon Web Services account that owns the subnet.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the subnet.
+     *        The ID of the Amazon Web Services account that owns the subnet.
      */
 
     public void setOwnerId(String ownerId) {
@@ -669,10 +669,10 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the subnet.
+     * The ID of the Amazon Web Services account that owns the subnet.
      * </p>
      * 
-     * @return The ID of the account that owns the subnet.
+     * @return The ID of the Amazon Web Services account that owns the subnet.
      */
 
     public String getOwnerId() {
@@ -681,11 +681,11 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the subnet.
+     * The ID of the Amazon Web Services account that owns the subnet.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the subnet.
+     *        The ID of the Amazon Web Services account that owns the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

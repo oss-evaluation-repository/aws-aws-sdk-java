@@ -51,7 +51,7 @@ public class Vpc implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The ID of the account that owns the VPC.
+     * The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      */
     private String ownerId;
@@ -281,11 +281,11 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the VPC.
+     * The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the VPC.
+     *        The ID of the Amazon Web Services account that owns the VPC.
      */
 
     public void setOwnerId(String ownerId) {
@@ -294,10 +294,10 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the VPC.
+     * The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * 
-     * @return The ID of the account that owns the VPC.
+     * @return The ID of the Amazon Web Services account that owns the VPC.
      */
 
     public String getOwnerId() {
@@ -306,11 +306,11 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the VPC.
+     * The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the VPC.
+     *        The ID of the Amazon Web Services account that owns the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

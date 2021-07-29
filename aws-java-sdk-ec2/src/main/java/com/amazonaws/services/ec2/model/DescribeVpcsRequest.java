@@ -87,7 +87,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the VPC.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -202,7 +202,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the VPC.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -290,7 +290,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the account that owns the VPC.
+     *         <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -388,7 +388,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the VPC.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -477,7 +477,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -577,7 +577,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the VPC.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -671,7 +671,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -773,7 +773,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the account that owns the VPC.
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      * </p>
      * </li>
      * <li>
@@ -862,7 +862,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the account that owns the VPC.
+     *        <code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>

@@ -88,7 +88,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private String outpostArn;
     /**
      * <p>
-     * The account ID of the owner of the network interface.
+     * The Amazon Web Services account ID of the owner of the network interface.
      * </p>
      */
     private String ownerId;
@@ -124,7 +124,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Ipv6PrefixSpecification> ipv6Prefixes;
     /**
      * <p>
-     * The alias or account ID of the principal or service that created the network interface.
+     * The alias or Amazon Web Services account ID of the principal or service that created the network interface.
      * </p>
      */
     private String requesterId;
@@ -666,11 +666,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The account ID of the owner of the network interface.
+     * The Amazon Web Services account ID of the owner of the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The account ID of the owner of the network interface.
+     *        The Amazon Web Services account ID of the owner of the network interface.
      */
 
     public void setOwnerId(String ownerId) {
@@ -679,10 +679,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The account ID of the owner of the network interface.
+     * The Amazon Web Services account ID of the owner of the network interface.
      * </p>
      * 
-     * @return The account ID of the owner of the network interface.
+     * @return The Amazon Web Services account ID of the owner of the network interface.
      */
 
     public String getOwnerId() {
@@ -691,11 +691,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The account ID of the owner of the network interface.
+     * The Amazon Web Services account ID of the owner of the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The account ID of the owner of the network interface.
+     *        The Amazon Web Services account ID of the owner of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,11 +1005,12 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or account ID of the principal or service that created the network interface.
+     * The alias or Amazon Web Services account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The alias or account ID of the principal or service that created the network interface.
+     *        The alias or Amazon Web Services account ID of the principal or service that created the network
+     *        interface.
      */
 
     public void setRequesterId(String requesterId) {
@@ -1018,10 +1019,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or account ID of the principal or service that created the network interface.
+     * The alias or Amazon Web Services account ID of the principal or service that created the network interface.
      * </p>
      * 
-     * @return The alias or account ID of the principal or service that created the network interface.
+     * @return The alias or Amazon Web Services account ID of the principal or service that created the network
+     *         interface.
      */
 
     public String getRequesterId() {
@@ -1030,11 +1032,12 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or account ID of the principal or service that created the network interface.
+     * The alias or Amazon Web Services account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The alias or account ID of the principal or service that created the network interface.
+     *        The alias or Amazon Web Services account ID of the principal or service that created the network
+     *        interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -840,6 +840,16 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public StartMeetingTranscriptionResult startMeetingTranscription(StartMeetingTranscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopMeetingTranscriptionResult stopMeetingTranscription(StopMeetingTranscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagAttendeeResult tagAttendee(TagAttendeeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

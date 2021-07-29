@@ -31,6 +31,63 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Measurement implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
+     * The processing configuration for the given measurement property. You can configure measurements to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+     * </p>
+     */
+    private MeasurementProcessingConfig processingConfig;
+
+    /**
+     * <p>
+     * The processing configuration for the given measurement property. You can configure measurements to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+     * </p>
+     * 
+     * @param processingConfig
+     *        The processing configuration for the given measurement property. You can configure measurements to be kept
+     *        at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the
+     *        cloud.
+     */
+
+    public void setProcessingConfig(MeasurementProcessingConfig processingConfig) {
+        this.processingConfig = processingConfig;
+    }
+
+    /**
+     * <p>
+     * The processing configuration for the given measurement property. You can configure measurements to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+     * </p>
+     * 
+     * @return The processing configuration for the given measurement property. You can configure measurements to be
+     *         kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to
+     *         the cloud.
+     */
+
+    public MeasurementProcessingConfig getProcessingConfig() {
+        return this.processingConfig;
+    }
+
+    /**
+     * <p>
+     * The processing configuration for the given measurement property. You can configure measurements to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+     * </p>
+     * 
+     * @param processingConfig
+     *        The processing configuration for the given measurement property. You can configure measurements to be kept
+     *        at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the
+     *        cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Measurement withProcessingConfig(MeasurementProcessingConfig processingConfig) {
+        setProcessingConfig(processingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -42,6 +99,8 @@ public class Measurement implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getProcessingConfig() != null)
+            sb.append("ProcessingConfig: ").append(getProcessingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -56,6 +115,10 @@ public class Measurement implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Measurement == false)
             return false;
         Measurement other = (Measurement) obj;
+        if (other.getProcessingConfig() == null ^ this.getProcessingConfig() == null)
+            return false;
+        if (other.getProcessingConfig() != null && other.getProcessingConfig().equals(this.getProcessingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -64,6 +127,7 @@ public class Measurement implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getProcessingConfig() == null) ? 0 : getProcessingConfig().hashCode());
         return hashCode;
     }
 

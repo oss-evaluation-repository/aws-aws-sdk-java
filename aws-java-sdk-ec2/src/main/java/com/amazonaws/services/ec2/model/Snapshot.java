@@ -56,7 +56,7 @@ public class Snapshot implements Serializable, Cloneable {
     private String kmsKeyId;
     /**
      * <p>
-     * The ID of the account that owns the EBS snapshot.
+     * The ID of the Amazon Web Services account that owns the EBS snapshot.
      * </p>
      */
     private String ownerId;
@@ -108,7 +108,7 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     * user-configured account alias set using the IAM console.
+     * user-configured Amazon Web Services account alias set using the IAM console.
      * </p>
      */
     private String ownerAlias;
@@ -331,11 +331,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the EBS snapshot.
+     * The ID of the Amazon Web Services account that owns the EBS snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the EBS snapshot.
+     *        The ID of the Amazon Web Services account that owns the EBS snapshot.
      */
 
     public void setOwnerId(String ownerId) {
@@ -344,10 +344,10 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the EBS snapshot.
+     * The ID of the Amazon Web Services account that owns the EBS snapshot.
      * </p>
      * 
-     * @return The ID of the account that owns the EBS snapshot.
+     * @return The ID of the Amazon Web Services account that owns the EBS snapshot.
      */
 
     public String getOwnerId() {
@@ -356,11 +356,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the EBS snapshot.
+     * The ID of the Amazon Web Services account that owns the EBS snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the EBS snapshot.
+     *        The ID of the Amazon Web Services account that owns the EBS snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,12 +706,12 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     * user-configured account alias set using the IAM console.
+     * user-configured Amazon Web Services account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
      *        The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     *        user-configured account alias set using the IAM console.
+     *        user-configured Amazon Web Services account alias set using the IAM console.
      */
 
     public void setOwnerAlias(String ownerAlias) {
@@ -721,11 +721,11 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     * user-configured account alias set using the IAM console.
+     * user-configured Amazon Web Services account alias set using the IAM console.
      * </p>
      * 
      * @return The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not
-     *         the user-configured account alias set using the IAM console.
+     *         the user-configured Amazon Web Services account alias set using the IAM console.
      */
 
     public String getOwnerAlias() {
@@ -735,12 +735,12 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     * user-configured account alias set using the IAM console.
+     * user-configured Amazon Web Services account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
      *        The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
-     *        user-configured account alias set using the IAM console.
+     *        user-configured Amazon Web Services account alias set using the IAM console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

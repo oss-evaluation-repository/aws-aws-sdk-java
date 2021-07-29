@@ -69,13 +69,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -435,13 +436,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -452,13 +454,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @see CapacityReservationTenancy
@@ -476,13 +479,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -492,14 +496,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other
-     *         accounts.
+     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *         Web Services accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *         to a single account.
+     *         to a single Amazon Web Services account.
      *         </p>
      *         </li>
      * @see CapacityReservationTenancy
@@ -517,13 +521,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -534,13 +539,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -560,13 +566,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -577,13 +584,14 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

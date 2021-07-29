@@ -62,6 +62,10 @@ public class MetricJsonUnmarshaller implements Unmarshaller<Metric, JsonUnmarsha
                     context.nextToken();
                     metric.setWindow(MetricWindowJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("processingConfig", targetDepth)) {
+                    context.nextToken();
+                    metric.setProcessingConfig(MetricProcessingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

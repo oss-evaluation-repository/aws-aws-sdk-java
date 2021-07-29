@@ -255,6 +255,8 @@ public enum InstanceType {
     G38xlarge("g3.8xlarge"),
     G316xlarge("g3.16xlarge"),
     G3sXlarge("g3s.xlarge"),
+    G4adXlarge("g4ad.xlarge"),
+    G4ad2xlarge("g4ad.2xlarge"),
     G4ad4xlarge("g4ad.4xlarge"),
     G4ad8xlarge("g4ad.8xlarge"),
     G4ad16xlarge("g4ad.16xlarge"),

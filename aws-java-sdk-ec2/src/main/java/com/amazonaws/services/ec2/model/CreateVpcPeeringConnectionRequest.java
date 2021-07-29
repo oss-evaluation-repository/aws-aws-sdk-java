@@ -28,10 +28,10 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The account ID of the owner of the accepter VPC.
+     * The Amazon Web Services account ID of the owner of the accepter VPC.
      * </p>
      * <p>
-     * Default: Your account ID
+     * Default: Your Amazon Web Services account ID
      * </p>
      */
     private String peerOwnerId;
@@ -67,16 +67,16 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The account ID of the owner of the accepter VPC.
+     * The Amazon Web Services account ID of the owner of the accepter VPC.
      * </p>
      * <p>
-     * Default: Your account ID
+     * Default: Your Amazon Web Services account ID
      * </p>
      * 
      * @param peerOwnerId
-     *        The account ID of the owner of the accepter VPC.</p>
+     *        The Amazon Web Services account ID of the owner of the accepter VPC.</p>
      *        <p>
-     *        Default: Your account ID
+     *        Default: Your Amazon Web Services account ID
      */
 
     public void setPeerOwnerId(String peerOwnerId) {
@@ -85,15 +85,15 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The account ID of the owner of the accepter VPC.
+     * The Amazon Web Services account ID of the owner of the accepter VPC.
      * </p>
      * <p>
-     * Default: Your account ID
+     * Default: Your Amazon Web Services account ID
      * </p>
      * 
-     * @return The account ID of the owner of the accepter VPC.</p>
+     * @return The Amazon Web Services account ID of the owner of the accepter VPC.</p>
      *         <p>
-     *         Default: Your account ID
+     *         Default: Your Amazon Web Services account ID
      */
 
     public String getPeerOwnerId() {
@@ -102,16 +102,16 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The account ID of the owner of the accepter VPC.
+     * The Amazon Web Services account ID of the owner of the accepter VPC.
      * </p>
      * <p>
-     * Default: Your account ID
+     * Default: Your Amazon Web Services account ID
      * </p>
      * 
      * @param peerOwnerId
-     *        The account ID of the owner of the accepter VPC.</p>
+     *        The Amazon Web Services account ID of the owner of the accepter VPC.</p>
      *        <p>
-     *        Default: Your account ID
+     *        Default: Your Amazon Web Services account ID
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

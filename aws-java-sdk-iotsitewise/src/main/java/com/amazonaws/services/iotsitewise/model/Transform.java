@@ -54,6 +54,14 @@ public class Transform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ExpressionVariable> variables;
+    /**
+     * <p>
+     * The processing configuration for the given transform property. You can configure transforms to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge
+     * or in the cloud.
+     * </p>
+     */
+    private TransformProcessingConfig processingConfig;
 
     /**
      * <p>
@@ -199,6 +207,58 @@ public class Transform implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The processing configuration for the given transform property. You can configure transforms to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge
+     * or in the cloud.
+     * </p>
+     * 
+     * @param processingConfig
+     *        The processing configuration for the given transform property. You can configure transforms to be kept at
+     *        the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed
+     *        at the edge or in the cloud.
+     */
+
+    public void setProcessingConfig(TransformProcessingConfig processingConfig) {
+        this.processingConfig = processingConfig;
+    }
+
+    /**
+     * <p>
+     * The processing configuration for the given transform property. You can configure transforms to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge
+     * or in the cloud.
+     * </p>
+     * 
+     * @return The processing configuration for the given transform property. You can configure transforms to be kept at
+     *         the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed
+     *         at the edge or in the cloud.
+     */
+
+    public TransformProcessingConfig getProcessingConfig() {
+        return this.processingConfig;
+    }
+
+    /**
+     * <p>
+     * The processing configuration for the given transform property. You can configure transforms to be kept at the
+     * edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge
+     * or in the cloud.
+     * </p>
+     * 
+     * @param processingConfig
+     *        The processing configuration for the given transform property. You can configure transforms to be kept at
+     *        the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed
+     *        at the edge or in the cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Transform withProcessingConfig(TransformProcessingConfig processingConfig) {
+        setProcessingConfig(processingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +273,9 @@ public class Transform implements Serializable, Cloneable, StructuredPojo {
         if (getExpression() != null)
             sb.append("Expression: ").append(getExpression()).append(",");
         if (getVariables() != null)
-            sb.append("Variables: ").append(getVariables());
+            sb.append("Variables: ").append(getVariables()).append(",");
+        if (getProcessingConfig() != null)
+            sb.append("ProcessingConfig: ").append(getProcessingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +298,10 @@ public class Transform implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
+        if (other.getProcessingConfig() == null ^ this.getProcessingConfig() == null)
+            return false;
+        if (other.getProcessingConfig() != null && other.getProcessingConfig().equals(this.getProcessingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -246,6 +312,7 @@ public class Transform implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getProcessingConfig() == null) ? 0 : getProcessingConfig().hashCode());
         return hashCode;
     }
 

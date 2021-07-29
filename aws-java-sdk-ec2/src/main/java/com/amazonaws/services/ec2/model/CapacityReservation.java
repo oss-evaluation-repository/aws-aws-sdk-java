@@ -34,7 +34,7 @@ public class CapacityReservation implements Serializable, Cloneable {
     private String capacityReservationId;
     /**
      * <p>
-     * The ID of the account that owns the Capacity Reservation.
+     * The ID of the Amazon Web Services account that owns the Capacity Reservation.
      * </p>
      */
     private String ownerId;
@@ -76,13 +76,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -268,11 +269,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the Capacity Reservation.
+     * The ID of the Amazon Web Services account that owns the Capacity Reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the Capacity Reservation.
+     *        The ID of the Amazon Web Services account that owns the Capacity Reservation.
      */
 
     public void setOwnerId(String ownerId) {
@@ -281,10 +282,10 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the Capacity Reservation.
+     * The ID of the Amazon Web Services account that owns the Capacity Reservation.
      * </p>
      * 
-     * @return The ID of the account that owns the Capacity Reservation.
+     * @return The ID of the Amazon Web Services account that owns the Capacity Reservation.
      */
 
     public String getOwnerId() {
@@ -293,11 +294,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account that owns the Capacity Reservation.
+     * The ID of the Amazon Web Services account that owns the Capacity Reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the account that owns the Capacity Reservation.
+     *        The ID of the Amazon Web Services account that owns the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,13 +534,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -550,13 +552,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @see CapacityReservationTenancy
@@ -574,13 +577,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -590,14 +594,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other
-     *         accounts.
+     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *         Web Services accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *         to a single account.
+     *         to a single Amazon Web Services account.
      *         </p>
      *         </li>
      * @see CapacityReservationTenancy
@@ -615,13 +619,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -632,13 +637,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -658,13 +664,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web
+     * Services accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.
+     * single Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -675,13 +682,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon
+     *        Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single account.
+     *        to a single Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

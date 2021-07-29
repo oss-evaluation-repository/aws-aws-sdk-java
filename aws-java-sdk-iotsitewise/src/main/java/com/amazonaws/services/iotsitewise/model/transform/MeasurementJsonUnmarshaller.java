@@ -48,6 +48,10 @@ public class MeasurementJsonUnmarshaller implements Unmarshaller<Measurement, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("processingConfig", targetDepth)) {
+                    context.nextToken();
+                    measurement.setProcessingConfig(MeasurementProcessingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
