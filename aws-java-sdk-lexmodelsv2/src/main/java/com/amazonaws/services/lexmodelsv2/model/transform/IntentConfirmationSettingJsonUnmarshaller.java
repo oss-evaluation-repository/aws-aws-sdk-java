@@ -56,6 +56,10 @@ public class IntentConfirmationSettingJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     intentConfirmationSetting.setDeclinationResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("active", targetDepth)) {
+                    context.nextToken();
+                    intentConfirmationSetting.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

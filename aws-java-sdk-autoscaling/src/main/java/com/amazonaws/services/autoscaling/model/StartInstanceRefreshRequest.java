@@ -36,26 +36,34 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
      * </p>
      * <p>
-     * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
-     * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
-     * rolled back to their previous configuration.
+     * A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks
+     * or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances
+     * that are replaced are not rolled back to their previous configuration.
      * </p>
      */
     private String strategy;
     /**
      * <p>
-     * Set of preferences associated with the instance refresh request.
+     * The desired configuration. For example, the desired configuration can specify a new launch template or a new
+     * version of the current launch template.
      * </p>
      * <p>
-     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
-     * grace period for the Auto Scaling group.
+     * Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
+     * reflect the new desired configuration.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * When you specify a new launch template or a new version of the current launch template for your desired
+     * configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon
+     * EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can
+     * help you reduce the number of replacements that are required to apply updates.
+     * </p>
+     * </note>
+     */
+    private DesiredConfiguration desiredConfiguration;
+    /**
+     * <p>
+     * Set of preferences associated with the instance refresh request. If not provided, the default values are used.
      * </p>
      */
     private RefreshPreferences preferences;
@@ -105,19 +113,17 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
      * </p>
      * <p>
-     * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
-     * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
-     * rolled back to their previous configuration.
+     * A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks
+     * or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances
+     * that are replaced are not rolled back to their previous configuration.
      * </p>
      * 
      * @param strategy
      *        The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
      *        <p>
-     *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
-     *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
-     *        already replaced are not rolled back to their previous configuration.
+     *        A rolling update helps you update your instances gradually. A rolling update can fail due to failed health
+     *        checks or if instances are on standby or are protected from scale in. If the rolling update process fails,
+     *        any instances that are replaced are not rolled back to their previous configuration.
      * @see RefreshStrategy
      */
 
@@ -130,18 +136,16 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
      * </p>
      * <p>
-     * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
-     * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
-     * rolled back to their previous configuration.
+     * A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks
+     * or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances
+     * that are replaced are not rolled back to their previous configuration.
      * </p>
      * 
      * @return The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
      *         <p>
-     *         A rolling update is an update that is applied to all instances in an Auto Scaling group until all
-     *         instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *         standby or are protected from scale in. If the rolling update process fails, any instances that were
-     *         already replaced are not rolled back to their previous configuration.
+     *         A rolling update helps you update your instances gradually. A rolling update can fail due to failed
+     *         health checks or if instances are on standby or are protected from scale in. If the rolling update
+     *         process fails, any instances that are replaced are not rolled back to their previous configuration.
      * @see RefreshStrategy
      */
 
@@ -154,19 +158,17 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
      * </p>
      * <p>
-     * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
-     * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
-     * rolled back to their previous configuration.
+     * A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks
+     * or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances
+     * that are replaced are not rolled back to their previous configuration.
      * </p>
      * 
      * @param strategy
      *        The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
      *        <p>
-     *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
-     *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
-     *        already replaced are not rolled back to their previous configuration.
+     *        A rolling update helps you update your instances gradually. A rolling update can fail due to failed health
+     *        checks or if instances are on standby or are protected from scale in. If the rolling update process fails,
+     *        any instances that are replaced are not rolled back to their previous configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RefreshStrategy
      */
@@ -181,19 +183,17 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
      * </p>
      * <p>
-     * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
-     * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
-     * rolled back to their previous configuration.
+     * A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks
+     * or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances
+     * that are replaced are not rolled back to their previous configuration.
      * </p>
      * 
      * @param strategy
      *        The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
      *        <p>
-     *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
-     *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
-     *        already replaced are not rolled back to their previous configuration.
+     *        A rolling update helps you update your instances gradually. A rolling update can fail due to failed health
+     *        checks or if instances are on standby or are protected from scale in. If the rolling update process fails,
+     *        any instances that are replaced are not rolled back to their previous configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RefreshStrategy
      */
@@ -205,30 +205,127 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set of preferences associated with the instance refresh request.
+     * The desired configuration. For example, the desired configuration can specify a new launch template or a new
+     * version of the current launch template.
      * </p>
      * <p>
-     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
-     * grace period for the Auto Scaling group.
+     * Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
+     * reflect the new desired configuration.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify a new launch template or a new version of the current launch template for your desired
+     * configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon
+     * EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can
+     * help you reduce the number of replacements that are required to apply updates.
+     * </p>
+     * </note>
+     * 
+     * @param desiredConfiguration
+     *        The desired configuration. For example, the desired configuration can specify a new launch template or a
+     *        new version of the current launch template.</p>
+     *        <p>
+     *        Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group
+     *        to reflect the new desired configuration.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        When you specify a new launch template or a new version of the current launch template for your desired
+     *        configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled,
+     *        Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and
+     *        version. This can help you reduce the number of replacements that are required to apply updates.
+     *        </p>
+     */
+
+    public void setDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
+        this.desiredConfiguration = desiredConfiguration;
+    }
+
+    /**
+     * <p>
+     * The desired configuration. For example, the desired configuration can specify a new launch template or a new
+     * version of the current launch template.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
+     * reflect the new desired configuration.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify a new launch template or a new version of the current launch template for your desired
+     * configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon
+     * EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can
+     * help you reduce the number of replacements that are required to apply updates.
+     * </p>
+     * </note>
+     * 
+     * @return The desired configuration. For example, the desired configuration can specify a new launch template or a
+     *         new version of the current launch template.</p>
+     *         <p>
+     *         Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling
+     *         group to reflect the new desired configuration.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         When you specify a new launch template or a new version of the current launch template for your desired
+     *         configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled,
+     *         Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and
+     *         version. This can help you reduce the number of replacements that are required to apply updates.
+     *         </p>
+     */
+
+    public DesiredConfiguration getDesiredConfiguration() {
+        return this.desiredConfiguration;
+    }
+
+    /**
+     * <p>
+     * The desired configuration. For example, the desired configuration can specify a new launch template or a new
+     * version of the current launch template.
+     * </p>
+     * <p>
+     * Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
+     * reflect the new desired configuration.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify a new launch template or a new version of the current launch template for your desired
+     * configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon
+     * EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can
+     * help you reduce the number of replacements that are required to apply updates.
+     * </p>
+     * </note>
+     * 
+     * @param desiredConfiguration
+     *        The desired configuration. For example, the desired configuration can specify a new launch template or a
+     *        new version of the current launch template.</p>
+     *        <p>
+     *        Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group
+     *        to reflect the new desired configuration.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        When you specify a new launch template or a new version of the current launch template for your desired
+     *        configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled,
+     *        Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and
+     *        version. This can help you reduce the number of replacements that are required to apply updates.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartInstanceRefreshRequest withDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
+        setDesiredConfiguration(desiredConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set of preferences associated with the instance refresh request. If not provided, the default values are used.
      * </p>
      * 
      * @param preferences
-     *        Set of preferences associated with the instance refresh request.</p>
-     *        <p>
-     *        If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     *        <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health
-     *        check grace period for the Auto Scaling group.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     *        >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        Set of preferences associated with the instance refresh request. If not provided, the default values are
+     *        used.
      */
 
     public void setPreferences(RefreshPreferences preferences) {
@@ -237,29 +334,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set of preferences associated with the instance refresh request.
-     * </p>
-     * <p>
-     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
-     * grace period for the Auto Scaling group.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * Set of preferences associated with the instance refresh request. If not provided, the default values are used.
      * </p>
      * 
-     * @return Set of preferences associated with the instance refresh request.</p>
-     *         <p>
-     *         If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     *         <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the
-     *         health check grace period for the Auto Scaling group.
-     *         </p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     *         >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @return Set of preferences associated with the instance refresh request. If not provided, the default values are
+     *         used.
      */
 
     public RefreshPreferences getPreferences() {
@@ -268,30 +347,12 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set of preferences associated with the instance refresh request.
-     * </p>
-     * <p>
-     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
-     * grace period for the Auto Scaling group.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * Set of preferences associated with the instance refresh request. If not provided, the default values are used.
      * </p>
      * 
      * @param preferences
-     *        Set of preferences associated with the instance refresh request.</p>
-     *        <p>
-     *        If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
-     *        <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health
-     *        check grace period for the Auto Scaling group.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
-     *        >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        Set of preferences associated with the instance refresh request. If not provided, the default values are
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,6 +377,8 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getStrategy() != null)
             sb.append("Strategy: ").append(getStrategy()).append(",");
+        if (getDesiredConfiguration() != null)
+            sb.append("DesiredConfiguration: ").append(getDesiredConfiguration()).append(",");
         if (getPreferences() != null)
             sb.append("Preferences: ").append(getPreferences());
         sb.append("}");
@@ -340,6 +403,10 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getStrategy() != null && other.getStrategy().equals(this.getStrategy()) == false)
             return false;
+        if (other.getDesiredConfiguration() == null ^ this.getDesiredConfiguration() == null)
+            return false;
+        if (other.getDesiredConfiguration() != null && other.getDesiredConfiguration().equals(this.getDesiredConfiguration()) == false)
+            return false;
         if (other.getPreferences() == null ^ this.getPreferences() == null)
             return false;
         if (other.getPreferences() != null && other.getPreferences().equals(this.getPreferences()) == false)
@@ -354,6 +421,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
+        hashCode = prime * hashCode + ((getDesiredConfiguration() == null) ? 0 : getDesiredConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPreferences() == null) ? 0 : getPreferences().hashCode());
         return hashCode;
     }

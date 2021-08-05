@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provided the identity of a the bot that was exported.
+ * Provides the identity of a the bot that was exported.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotExportSpecification"

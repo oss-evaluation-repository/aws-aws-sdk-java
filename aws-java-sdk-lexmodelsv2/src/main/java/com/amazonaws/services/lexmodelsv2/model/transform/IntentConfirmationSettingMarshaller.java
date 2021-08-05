@@ -31,6 +31,8 @@ public class IntentConfirmationSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("promptSpecification").build();
     private static final MarshallingInfo<StructuredPojo> DECLINATIONRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("declinationResponse").build();
+    private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("active").build();
 
     private static final IntentConfirmationSettingMarshaller instance = new IntentConfirmationSettingMarshaller();
 
@@ -50,6 +52,7 @@ public class IntentConfirmationSettingMarshaller {
         try {
             protocolMarshaller.marshall(intentConfirmationSetting.getPromptSpecification(), PROMPTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(intentConfirmationSetting.getDeclinationResponse(), DECLINATIONRESPONSE_BINDING);
+            protocolMarshaller.marshall(intentConfirmationSetting.getActive(), ACTIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

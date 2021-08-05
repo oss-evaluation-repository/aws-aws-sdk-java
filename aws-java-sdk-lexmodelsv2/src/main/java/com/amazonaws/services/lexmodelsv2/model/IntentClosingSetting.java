@@ -34,6 +34,14 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
      * </p>
      */
     private ResponseSpecification closingResponse;
+    /**
+     * <p>
+     * Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent
+     * to the user and no closing input from the user is used. If the <code>active</code> field isn't specified, the
+     * default is true.
+     * </p>
+     */
+    private Boolean active;
 
     /**
      * <p>
@@ -76,6 +84,74 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent
+     * to the user and no closing input from the user is used. If the <code>active</code> field isn't specified, the
+     * default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether an intent's closing response is used. When this field is false, the closing response
+     *        isn't sent to the user and no closing input from the user is used. If the <code>active</code> field isn't
+     *        specified, the default is true.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent
+     * to the user and no closing input from the user is used. If the <code>active</code> field isn't specified, the
+     * default is true.
+     * </p>
+     * 
+     * @return Specifies whether an intent's closing response is used. When this field is false, the closing response
+     *         isn't sent to the user and no closing input from the user is used. If the <code>active</code> field isn't
+     *         specified, the default is true.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent
+     * to the user and no closing input from the user is used. If the <code>active</code> field isn't specified, the
+     * default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether an intent's closing response is used. When this field is false, the closing response
+     *        isn't sent to the user and no closing input from the user is used. If the <code>active</code> field isn't
+     *        specified, the default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IntentClosingSetting withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent
+     * to the user and no closing input from the user is used. If the <code>active</code> field isn't specified, the
+     * default is true.
+     * </p>
+     * 
+     * @return Specifies whether an intent's closing response is used. When this field is false, the closing response
+     *         isn't sent to the user and no closing input from the user is used. If the <code>active</code> field isn't
+     *         specified, the default is true.
+     */
+
+    public Boolean isActive() {
+        return this.active;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +164,9 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClosingResponse() != null)
-            sb.append("ClosingResponse: ").append(getClosingResponse());
+            sb.append("ClosingResponse: ").append(getClosingResponse()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +185,10 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
             return false;
         if (other.getClosingResponse() != null && other.getClosingResponse().equals(this.getClosingResponse()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +198,7 @@ public class IntentClosingSetting implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClosingResponse() == null) ? 0 : getClosingResponse().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         return hashCode;
     }
 

@@ -47,6 +47,14 @@ public class IntentConfirmationSetting implements Serializable, Cloneable, Struc
      * </p>
      */
     private ResponseSpecification declinationResponse;
+    /**
+     * <p>
+     * Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and
+     * declination responses aren't sent and processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     */
+    private Boolean active;
 
     /**
      * <p>
@@ -168,6 +176,74 @@ public class IntentConfirmationSetting implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and
+     * declination responses aren't sent and processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation
+     *        and declination responses aren't sent and processing continues as if the responses aren't present. If the
+     *        <code>active</code> field isn't specified, the default is true.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and
+     * declination responses aren't sent and processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @return Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation
+     *         and declination responses aren't sent and processing continues as if the responses aren't present. If the
+     *         <code>active</code> field isn't specified, the default is true.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and
+     * declination responses aren't sent and processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation
+     *        and declination responses aren't sent and processing continues as if the responses aren't present. If the
+     *        <code>active</code> field isn't specified, the default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IntentConfirmationSetting withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and
+     * declination responses aren't sent and processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @return Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation
+     *         and declination responses aren't sent and processing continues as if the responses aren't present. If the
+     *         <code>active</code> field isn't specified, the default is true.
+     */
+
+    public Boolean isActive() {
+        return this.active;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +258,9 @@ public class IntentConfirmationSetting implements Serializable, Cloneable, Struc
         if (getPromptSpecification() != null)
             sb.append("PromptSpecification: ").append(getPromptSpecification()).append(",");
         if (getDeclinationResponse() != null)
-            sb.append("DeclinationResponse: ").append(getDeclinationResponse());
+            sb.append("DeclinationResponse: ").append(getDeclinationResponse()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +283,10 @@ public class IntentConfirmationSetting implements Serializable, Cloneable, Struc
             return false;
         if (other.getDeclinationResponse() != null && other.getDeclinationResponse().equals(this.getDeclinationResponse()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
         return true;
     }
 
@@ -215,6 +297,7 @@ public class IntentConfirmationSetting implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getPromptSpecification() == null) ? 0 : getPromptSpecification().hashCode());
         hashCode = prime * hashCode + ((getDeclinationResponse() == null) ? 0 : getDeclinationResponse().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         return hashCode;
     }
 

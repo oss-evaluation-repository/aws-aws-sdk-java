@@ -33,6 +33,8 @@ public class WaitAndContinueSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("continueResponse").build();
     private static final MarshallingInfo<StructuredPojo> STILLWAITINGRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stillWaitingResponse").build();
+    private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("active").build();
 
     private static final WaitAndContinueSpecificationMarshaller instance = new WaitAndContinueSpecificationMarshaller();
 
@@ -53,6 +55,7 @@ public class WaitAndContinueSpecificationMarshaller {
             protocolMarshaller.marshall(waitAndContinueSpecification.getWaitingResponse(), WAITINGRESPONSE_BINDING);
             protocolMarshaller.marshall(waitAndContinueSpecification.getContinueResponse(), CONTINUERESPONSE_BINDING);
             protocolMarshaller.marshall(waitAndContinueSpecification.getStillWaitingResponse(), STILLWAITINGRESPONSE_BINDING);
+            protocolMarshaller.marshall(waitAndContinueSpecification.getActive(), ACTIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

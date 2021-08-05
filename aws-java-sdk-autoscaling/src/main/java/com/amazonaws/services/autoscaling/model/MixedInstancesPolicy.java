@@ -17,16 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can
- * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more
- * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
- * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
- * Guide</i>.
- * </p>
- * <p>
- * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by
- * updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch
- * configuration or launch template.
+ * Describes a mixed instances policy. A mixed instances policy contains the instance types Amazon EC2 Auto Scaling can
+ * launch, and other information Amazon EC2 Auto Scaling can use to launch instances to help you optimize your costs.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
+ * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy" target="_top">AWS
@@ -37,8 +32,8 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
-     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
+     * Specifies the launch template to use and the instance types (overrides) that are used to provision EC2 instances
+     * to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      */
     private LaunchTemplate launchTemplate;
@@ -52,14 +47,13 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
-     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
+     * Specifies the launch template to use and the instance types (overrides) that are used to provision EC2 instances
+     * to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        Specifies the launch template to use and optionally the instance types (overrides) that are used to
-     *        provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances
-     *        policy.
+     *        Specifies the launch template to use and the instance types (overrides) that are used to provision EC2
+     *        instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      */
 
     public void setLaunchTemplate(LaunchTemplate launchTemplate) {
@@ -68,13 +62,12 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
-     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
+     * Specifies the launch template to use and the instance types (overrides) that are used to provision EC2 instances
+     * to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
-     * @return Specifies the launch template to use and optionally the instance types (overrides) that are used to
-     *         provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed
-     *         instances policy.
+     * @return Specifies the launch template to use and the instance types (overrides) that are used to provision EC2
+     *         instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      */
 
     public LaunchTemplate getLaunchTemplate() {
@@ -83,14 +76,13 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
-     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
+     * Specifies the launch template to use and the instance types (overrides) that are used to provision EC2 instances
+     * to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        Specifies the launch template to use and optionally the instance types (overrides) that are used to
-     *        provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances
-     *        policy.
+     *        Specifies the launch template to use and the instance types (overrides) that are used to provision EC2
+     *        instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

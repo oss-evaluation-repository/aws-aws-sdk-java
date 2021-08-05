@@ -17,11 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes information used to start an instance refresh.
- * </p>
- * <p>
- * All properties are optional. However, if you specify a value for <code>CheckpointDelay</code>, you must also provide
- * a value for <code>CheckpointPercentages</code>.
+ * Describes the preferences for an instance refresh.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RefreshPreferences" target="_top">AWS API
@@ -33,8 +29,12 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the
-     * operation to continue, as a percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.
+     * operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.
+     * </p>
+     * <p>
+     * Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time.
+     * In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      * </p>
      */
     private Integer minHealthyPercentage;
@@ -67,18 +67,34 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      */
     private Integer checkpointDelay;
+    /**
+     * <p>
+     * A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips
+     * replacing instances that match the desired configuration. If no desired configuration is specified, then it skips
+     * replacing instances that have the same configuration that is already set on the group. The default is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean skipMatching;
 
     /**
      * <p>
      * The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the
-     * operation to continue, as a percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.
+     * operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.
+     * </p>
+     * <p>
+     * Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time.
+     * In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      * </p>
      * 
      * @param minHealthyPercentage
      *        The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to
-     *        allow the operation to continue, as a percentage of the desired capacity of the Auto Scaling group
-     *        (rounded up to the nearest integer). The default is <code>90</code>.
+     *        allow the operation to continue. The value is expressed as a percentage of the desired capacity of the
+     *        Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     *        <p>
+     *        Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a
+     *        time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      */
 
     public void setMinHealthyPercentage(Integer minHealthyPercentage) {
@@ -88,13 +104,20 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the
-     * operation to continue, as a percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.
+     * operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.
+     * </p>
+     * <p>
+     * Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time.
+     * In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      * </p>
      * 
      * @return The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to
-     *         allow the operation to continue, as a percentage of the desired capacity of the Auto Scaling group
-     *         (rounded up to the nearest integer). The default is <code>90</code>.
+     *         allow the operation to continue. The value is expressed as a percentage of the desired capacity of the
+     *         Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     *         <p>
+     *         Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a
+     *         time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      */
 
     public Integer getMinHealthyPercentage() {
@@ -104,14 +127,21 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the
-     * operation to continue, as a percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.
+     * operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.
+     * </p>
+     * <p>
+     * Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time.
+     * In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      * </p>
      * 
      * @param minHealthyPercentage
      *        The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to
-     *        allow the operation to continue, as a percentage of the desired capacity of the Auto Scaling group
-     *        (rounded up to the nearest integer). The default is <code>90</code>.
+     *        allow the operation to continue. The value is expressed as a percentage of the desired capacity of the
+     *        Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     *        <p>
+     *        Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a
+     *        time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,6 +378,82 @@ public class RefreshPreferences implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips
+     * replacing instances that match the desired configuration. If no desired configuration is specified, then it skips
+     * replacing instances that have the same configuration that is already set on the group. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param skipMatching
+     *        A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling
+     *        skips replacing instances that match the desired configuration. If no desired configuration is specified,
+     *        then it skips replacing instances that have the same configuration that is already set on the group. The
+     *        default is <code>false</code>.
+     */
+
+    public void setSkipMatching(Boolean skipMatching) {
+        this.skipMatching = skipMatching;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips
+     * replacing instances that match the desired configuration. If no desired configuration is specified, then it skips
+     * replacing instances that have the same configuration that is already set on the group. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling
+     *         skips replacing instances that match the desired configuration. If no desired configuration is specified,
+     *         then it skips replacing instances that have the same configuration that is already set on the group. The
+     *         default is <code>false</code>.
+     */
+
+    public Boolean getSkipMatching() {
+        return this.skipMatching;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips
+     * replacing instances that match the desired configuration. If no desired configuration is specified, then it skips
+     * replacing instances that have the same configuration that is already set on the group. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param skipMatching
+     *        A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling
+     *        skips replacing instances that match the desired configuration. If no desired configuration is specified,
+     *        then it skips replacing instances that have the same configuration that is already set on the group. The
+     *        default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RefreshPreferences withSkipMatching(Boolean skipMatching) {
+        setSkipMatching(skipMatching);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips
+     * replacing instances that match the desired configuration. If no desired configuration is specified, then it skips
+     * replacing instances that have the same configuration that is already set on the group. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling
+     *         skips replacing instances that match the desired configuration. If no desired configuration is specified,
+     *         then it skips replacing instances that have the same configuration that is already set on the group. The
+     *         default is <code>false</code>.
+     */
+
+    public Boolean isSkipMatching() {
+        return this.skipMatching;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -366,7 +472,9 @@ public class RefreshPreferences implements Serializable, Cloneable {
         if (getCheckpointPercentages() != null)
             sb.append("CheckpointPercentages: ").append(getCheckpointPercentages()).append(",");
         if (getCheckpointDelay() != null)
-            sb.append("CheckpointDelay: ").append(getCheckpointDelay());
+            sb.append("CheckpointDelay: ").append(getCheckpointDelay()).append(",");
+        if (getSkipMatching() != null)
+            sb.append("SkipMatching: ").append(getSkipMatching());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +505,10 @@ public class RefreshPreferences implements Serializable, Cloneable {
             return false;
         if (other.getCheckpointDelay() != null && other.getCheckpointDelay().equals(this.getCheckpointDelay()) == false)
             return false;
+        if (other.getSkipMatching() == null ^ this.getSkipMatching() == null)
+            return false;
+        if (other.getSkipMatching() != null && other.getSkipMatching().equals(this.getSkipMatching()) == false)
+            return false;
         return true;
     }
 
@@ -409,6 +521,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceWarmup() == null) ? 0 : getInstanceWarmup().hashCode());
         hashCode = prime * hashCode + ((getCheckpointPercentages() == null) ? 0 : getCheckpointPercentages().hashCode());
         hashCode = prime * hashCode + ((getCheckpointDelay() == null) ? 0 : getCheckpointDelay().hashCode());
+        hashCode = prime * hashCode + ((getSkipMatching() == null) ? 0 : getSkipMatching().hashCode());
         return hashCode;
     }
 

@@ -47,6 +47,14 @@ public class WaitAndContinueSpecification implements Serializable, Cloneable, St
      * </p>
      */
     private StillWaitingResponseSpecification stillWaitingResponse;
+    /**
+     * <p>
+     * Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses
+     * for a slot aren't used and the bot expects an appropriate response within the configured timeout. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     */
+    private Boolean active;
 
     /**
      * <p>
@@ -175,6 +183,74 @@ public class WaitAndContinueSpecification implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses
+     * for a slot aren't used and the bot expects an appropriate response within the configured timeout. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue
+     *        responses for a slot aren't used and the bot expects an appropriate response within the configured
+     *        timeout. If the <code>active</code> field isn't specified, the default is true.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses
+     * for a slot aren't used and the bot expects an appropriate response within the configured timeout. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @return Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue
+     *         responses for a slot aren't used and the bot expects an appropriate response within the configured
+     *         timeout. If the <code>active</code> field isn't specified, the default is true.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses
+     * for a slot aren't used and the bot expects an appropriate response within the configured timeout. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @param active
+     *        Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue
+     *        responses for a slot aren't used and the bot expects an appropriate response within the configured
+     *        timeout. If the <code>active</code> field isn't specified, the default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WaitAndContinueSpecification withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses
+     * for a slot aren't used and the bot expects an appropriate response within the configured timeout. If the
+     * <code>active</code> field isn't specified, the default is true.
+     * </p>
+     * 
+     * @return Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue
+     *         responses for a slot aren't used and the bot expects an appropriate response within the configured
+     *         timeout. If the <code>active</code> field isn't specified, the default is true.
+     */
+
+    public Boolean isActive() {
+        return this.active;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +267,9 @@ public class WaitAndContinueSpecification implements Serializable, Cloneable, St
         if (getContinueResponse() != null)
             sb.append("ContinueResponse: ").append(getContinueResponse()).append(",");
         if (getStillWaitingResponse() != null)
-            sb.append("StillWaitingResponse: ").append(getStillWaitingResponse());
+            sb.append("StillWaitingResponse: ").append(getStillWaitingResponse()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +296,10 @@ public class WaitAndContinueSpecification implements Serializable, Cloneable, St
             return false;
         if (other.getStillWaitingResponse() != null && other.getStillWaitingResponse().equals(this.getStillWaitingResponse()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +311,7 @@ public class WaitAndContinueSpecification implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getWaitingResponse() == null) ? 0 : getWaitingResponse().hashCode());
         hashCode = prime * hashCode + ((getContinueResponse() == null) ? 0 : getContinueResponse().hashCode());
         hashCode = prime * hashCode + ((getStillWaitingResponse() == null) ? 0 : getStillWaitingResponse().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         return hashCode;
     }
 

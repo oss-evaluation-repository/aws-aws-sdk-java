@@ -117,6 +117,14 @@ public class InstanceRefresh implements Serializable, Cloneable {
      */
     private InstanceRefreshProgressDetails progressDetails;
 
+    private RefreshPreferences preferences;
+    /**
+     * <p>
+     * Describes the specific update you want to deploy.
+     * </p>
+     */
+    private DesiredConfiguration desiredConfiguration;
+
     /**
      * <p>
      * The instance refresh ID.
@@ -780,6 +788,72 @@ public class InstanceRefresh implements Serializable, Cloneable {
     }
 
     /**
+     * @param preferences
+     */
+
+    public void setPreferences(RefreshPreferences preferences) {
+        this.preferences = preferences;
+    }
+
+    /**
+     * @return
+     */
+
+    public RefreshPreferences getPreferences() {
+        return this.preferences;
+    }
+
+    /**
+     * @param preferences
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRefresh withPreferences(RefreshPreferences preferences) {
+        setPreferences(preferences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the specific update you want to deploy.
+     * </p>
+     * 
+     * @param desiredConfiguration
+     *        Describes the specific update you want to deploy.
+     */
+
+    public void setDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
+        this.desiredConfiguration = desiredConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the specific update you want to deploy.
+     * </p>
+     * 
+     * @return Describes the specific update you want to deploy.
+     */
+
+    public DesiredConfiguration getDesiredConfiguration() {
+        return this.desiredConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the specific update you want to deploy.
+     * </p>
+     * 
+     * @param desiredConfiguration
+     *        Describes the specific update you want to deploy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRefresh withDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
+        setDesiredConfiguration(desiredConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -808,7 +882,11 @@ public class InstanceRefresh implements Serializable, Cloneable {
         if (getInstancesToUpdate() != null)
             sb.append("InstancesToUpdate: ").append(getInstancesToUpdate()).append(",");
         if (getProgressDetails() != null)
-            sb.append("ProgressDetails: ").append(getProgressDetails());
+            sb.append("ProgressDetails: ").append(getProgressDetails()).append(",");
+        if (getPreferences() != null)
+            sb.append("Preferences: ").append(getPreferences()).append(",");
+        if (getDesiredConfiguration() != null)
+            sb.append("DesiredConfiguration: ").append(getDesiredConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -859,6 +937,14 @@ public class InstanceRefresh implements Serializable, Cloneable {
             return false;
         if (other.getProgressDetails() != null && other.getProgressDetails().equals(this.getProgressDetails()) == false)
             return false;
+        if (other.getPreferences() == null ^ this.getPreferences() == null)
+            return false;
+        if (other.getPreferences() != null && other.getPreferences().equals(this.getPreferences()) == false)
+            return false;
+        if (other.getDesiredConfiguration() == null ^ this.getDesiredConfiguration() == null)
+            return false;
+        if (other.getDesiredConfiguration() != null && other.getDesiredConfiguration().equals(this.getDesiredConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -876,6 +962,8 @@ public class InstanceRefresh implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPercentageComplete() == null) ? 0 : getPercentageComplete().hashCode());
         hashCode = prime * hashCode + ((getInstancesToUpdate() == null) ? 0 : getInstancesToUpdate().hashCode());
         hashCode = prime * hashCode + ((getProgressDetails() == null) ? 0 : getProgressDetails().hashCode());
+        hashCode = prime * hashCode + ((getPreferences() == null) ? 0 : getPreferences().hashCode());
+        hashCode = prime * hashCode + ((getDesiredConfiguration() == null) ? 0 : getDesiredConfiguration().hashCode());
         return hashCode;
     }
 

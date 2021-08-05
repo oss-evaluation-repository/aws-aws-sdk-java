@@ -69,6 +69,11 @@ public class RefreshPreferencesStaxUnmarshaller implements Unmarshaller<RefreshP
                     refreshPreferences.setCheckpointDelay(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SkipMatching", targetDepth)) {
+                    refreshPreferences.setSkipMatching(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return refreshPreferences;

@@ -29,6 +29,8 @@ public class IntentClosingSettingMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> CLOSINGRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("closingResponse").build();
+    private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("active").build();
 
     private static final IntentClosingSettingMarshaller instance = new IntentClosingSettingMarshaller();
 
@@ -47,6 +49,7 @@ public class IntentClosingSettingMarshaller {
 
         try {
             protocolMarshaller.marshall(intentClosingSetting.getClosingResponse(), CLOSINGRESPONSE_BINDING);
+            protocolMarshaller.marshall(intentClosingSetting.getActive(), ACTIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
