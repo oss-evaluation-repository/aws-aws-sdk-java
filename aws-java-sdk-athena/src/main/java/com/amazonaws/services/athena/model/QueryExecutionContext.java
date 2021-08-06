@@ -30,7 +30,7 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database used in the query execution.
+     * The name of the database used in the query execution. The database must exist in the catalog.
      * </p>
      */
     private String database;
@@ -43,11 +43,11 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database used in the query execution.
+     * The name of the database used in the query execution. The database must exist in the catalog.
      * </p>
      * 
      * @param database
-     *        The name of the database used in the query execution.
+     *        The name of the database used in the query execution. The database must exist in the catalog.
      */
 
     public void setDatabase(String database) {
@@ -56,10 +56,10 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database used in the query execution.
+     * The name of the database used in the query execution. The database must exist in the catalog.
      * </p>
      * 
-     * @return The name of the database used in the query execution.
+     * @return The name of the database used in the query execution. The database must exist in the catalog.
      */
 
     public String getDatabase() {
@@ -68,11 +68,11 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database used in the query execution.
+     * The name of the database used in the query execution. The database must exist in the catalog.
      * </p>
      * 
      * @param database
-     *        The name of the database used in the query execution.
+     *        The name of the database used in the query execution. The database must exist in the catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

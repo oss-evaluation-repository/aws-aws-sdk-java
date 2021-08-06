@@ -68,7 +68,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateAgentStatusResult createAgentStatus(CreateAgentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateContactFlowResult createContactFlow(CreateContactFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateHoursOfOperationResult createHoursOfOperation(CreateHoursOfOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,6 +123,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DeleteHoursOfOperationResult deleteHoursOfOperation(DeleteHoursOfOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +154,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteUserHierarchyGroupResult deleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAgentStatusResult describeAgentStatus(DescribeAgentStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +274,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public GetMetricDataResult getMetricData(GetMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAgentStatusesResult listAgentStatuses(ListAgentStatusesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -423,6 +448,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public UpdateAgentStatusResult updateAgentStatus(UpdateAgentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateContactAttributesResult updateContactAttributes(UpdateContactAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -434,6 +464,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateContactFlowNameResult updateContactFlowName(UpdateContactFlowNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateHoursOfOperationResult updateHoursOfOperation(UpdateHoursOfOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

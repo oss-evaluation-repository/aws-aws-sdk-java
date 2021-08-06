@@ -132,6 +132,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAgentStatusResult> createAgentStatusAsync(CreateAgentStatusRequest request) {
+
+        return createAgentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAgentStatusResult> createAgentStatusAsync(CreateAgentStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAgentStatusRequest, CreateAgentStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateContactFlowResult> createContactFlowAsync(CreateContactFlowRequest request) {
 
         return createContactFlowAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<CreateContactFlowResult> createContactFlowAsync(CreateContactFlowRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateContactFlowRequest, CreateContactFlowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(CreateHoursOfOperationRequest request) {
+
+        return createHoursOfOperationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(CreateHoursOfOperationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateHoursOfOperationRequest, CreateHoursOfOperationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +275,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHoursOfOperationResult> deleteHoursOfOperationAsync(DeleteHoursOfOperationRequest request) {
+
+        return deleteHoursOfOperationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHoursOfOperationResult> deleteHoursOfOperationAsync(DeleteHoursOfOperationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteHoursOfOperationRequest, DeleteHoursOfOperationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest request) {
 
         return deleteInstanceAsync(request, null);
@@ -322,6 +361,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DeleteUserHierarchyGroupResult> deleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserHierarchyGroupRequest, DeleteUserHierarchyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAgentStatusResult> describeAgentStatusAsync(DescribeAgentStatusRequest request) {
+
+        return describeAgentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAgentStatusResult> describeAgentStatusAsync(DescribeAgentStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAgentStatusRequest, DescribeAgentStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -625,6 +677,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<GetMetricDataResult> getMetricDataAsync(GetMetricDataRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMetricDataRequest, GetMetricDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAgentStatusesResult> listAgentStatusesAsync(ListAgentStatusesRequest request) {
+
+        return listAgentStatusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAgentStatusesResult> listAgentStatusesAsync(ListAgentStatusesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAgentStatusesRequest, ListAgentStatusesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1059,6 +1124,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(UpdateAgentStatusRequest request) {
+
+        return updateAgentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(UpdateAgentStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAgentStatusRequest, UpdateAgentStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateContactAttributesResult> updateContactAttributesAsync(UpdateContactAttributesRequest request) {
 
         return updateContactAttributesAsync(request, null);
@@ -1093,6 +1171,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<UpdateContactFlowNameResult> updateContactFlowNameAsync(UpdateContactFlowNameRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContactFlowNameRequest, UpdateContactFlowNameResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHoursOfOperationResult> updateHoursOfOperationAsync(UpdateHoursOfOperationRequest request) {
+
+        return updateHoursOfOperationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHoursOfOperationResult> updateHoursOfOperationAsync(UpdateHoursOfOperationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateHoursOfOperationRequest, UpdateHoursOfOperationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

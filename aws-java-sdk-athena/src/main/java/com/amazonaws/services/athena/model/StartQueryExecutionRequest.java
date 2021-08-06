@@ -39,8 +39,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <important>
      * <p>
-     * This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token
-     * for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.
+     * This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK
+     * for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web
+     * Services CLI, you must provide this token or the action will fail.
      * </p>
      * </important>
      */
@@ -115,8 +116,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <important>
      * <p>
-     * This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token
-     * for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.
+     * This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK
+     * for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web
+     * Services CLI, you must provide this token or the action will fail.
      * </p>
      * </important>
      * 
@@ -126,9 +128,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      *        another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an
      *        error is returned.</p> <important>
      *        <p>
-     *        This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the
-     *        token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the
-     *        action will fail.
+     *        This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services
+     *        SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the
+     *        Amazon Web Services CLI, you must provide this token or the action will fail.
      *        </p>
      */
 
@@ -144,8 +146,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <important>
      * <p>
-     * This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token
-     * for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.
+     * This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK
+     * for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web
+     * Services CLI, you must provide this token or the action will fail.
      * </p>
      * </important>
      * 
@@ -154,9 +157,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      *         returned and another query is not created. If a parameter has changed, for example, the
      *         <code>QueryString</code>, an error is returned.</p> <important>
      *         <p>
-     *         This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate
-     *         the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the
-     *         action will fail.
+     *         This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web
+     *         Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services
+     *         SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
      *         </p>
      */
 
@@ -172,8 +175,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <important>
      * <p>
-     * This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token
-     * for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.
+     * This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK
+     * for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web
+     * Services CLI, you must provide this token or the action will fail.
      * </p>
      * </important>
      * 
@@ -183,9 +187,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      *        another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an
      *        error is returned.</p> <important>
      *        <p>
-     *        This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the
-     *        token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the
-     *        action will fail.
+     *        This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services
+     *        SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the
+     *        Amazon Web Services CLI, you must provide this token or the action will fail.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -18,6 +18,18 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An object that specifies what screenshots to use as a baseline for visual monitoring by this canary, and optionally
+ * the parts of the screenshots to ignore during the visual monitoring comparison.
+ * </p>
+ * <p>
+ * Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more
+ * information, see <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"
+ * > Visual monitoring</a> and <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"
+ * > Visual monitoring blueprint</a>
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/VisualReferenceInput" target="_top">AWS
  *      API Documentation</a>
@@ -25,12 +37,34 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VisualReferenceInput implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If
+     * there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.
+     * </p>
+     */
     private java.util.List<BaseScreenshot> baseScreenshots;
-
+    /**
+     * <p>
+     * Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this
+     * canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made,
+     * <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of
+     * <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from
+     * any past run of this canary.
+     * </p>
+     */
     private String baseCanaryRunId;
 
     /**
-     * @return
+     * <p>
+     * An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If
+     * there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.
+     * </p>
+     * 
+     * @return An array of screenshots that will be used as the baseline for visual monitoring in future runs of this
+     *         canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from
+     *         this array.
      */
 
     public java.util.List<BaseScreenshot> getBaseScreenshots() {
@@ -38,7 +72,15 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If
+     * there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.
+     * </p>
+     * 
      * @param baseScreenshots
+     *        An array of screenshots that will be used as the baseline for visual monitoring in future runs of this
+     *        canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this
+     *        array.
      */
 
     public void setBaseScreenshots(java.util.Collection<BaseScreenshot> baseScreenshots) {
@@ -52,12 +94,19 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If
+     * there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBaseScreenshots(java.util.Collection)} or {@link #withBaseScreenshots(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param baseScreenshots
+     *        An array of screenshots that will be used as the baseline for visual monitoring in future runs of this
+     *        canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this
+     *        array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +121,15 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If
+     * there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.
+     * </p>
+     * 
      * @param baseScreenshots
+     *        An array of screenshots that will be used as the baseline for visual monitoring in future runs of this
+     *        canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this
+     *        array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +139,22 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this
+     * canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made,
+     * <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of
+     * <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from
+     * any past run of this canary.
+     * </p>
+     * 
      * @param baseCanaryRunId
+     *        Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with
+     *        this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this
+     *        update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update
+     *        was made, or the value of <code>Id</code> in the <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a>
+     *        from any past run of this canary.
      */
 
     public void setBaseCanaryRunId(String baseCanaryRunId) {
@@ -90,7 +162,21 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this
+     * canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made,
+     * <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of
+     * <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from
+     * any past run of this canary.
+     * </p>
+     * 
+     * @return Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with
+     *         this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this
+     *         update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update
+     *         was made, or the value of <code>Id</code> in the <a
+     *         href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a>
+     *         from any past run of this canary.
      */
 
     public String getBaseCanaryRunId() {
@@ -98,7 +184,22 @@ public class VisualReferenceInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this
+     * canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made,
+     * <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of
+     * <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from
+     * any past run of this canary.
+     * </p>
+     * 
      * @param baseCanaryRunId
+     *        Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with
+     *        this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this
+     *        update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update
+     *        was made, or the value of <code>Id</code> in the <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a>
+     *        from any past run of this canary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

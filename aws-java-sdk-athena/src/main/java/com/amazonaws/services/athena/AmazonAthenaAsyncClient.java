@@ -39,7 +39,7 @@ import java.util.concurrent.ExecutorService;
  * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.
  * </p>
  * <p>
- * For code samples using the AWS SDK for Java, see <a
+ * For code samples using the Amazon Web Services SDK for Java, see <a
  * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon
  * Athena User Guide</i>.
  * </p>

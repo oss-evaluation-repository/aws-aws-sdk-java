@@ -36,8 +36,9 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
      * enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and
-     * whether workgroup's settings (specified with EnforceWorkGroupConfiguration) in the WorkGroupConfiguration
-     * override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      */
     private WorkGroupConfiguration configuration;
@@ -99,17 +100,18 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
      * enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and
-     * whether workgroup's settings (specified with EnforceWorkGroupConfiguration) in the WorkGroupConfiguration
-     * override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param configuration
      *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
      *        stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon
      *        CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per
-     *        query, if it is specified, and whether workgroup's settings (specified with EnforceWorkGroupConfiguration)
-     *        in the WorkGroupConfiguration override client-side settings. See
-     *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     *        query, if it is specified, and whether workgroup's settings (specified with
+     *        <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override
+     *        client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
     public void setConfiguration(WorkGroupConfiguration configuration) {
@@ -121,16 +123,17 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
      * enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and
-     * whether workgroup's settings (specified with EnforceWorkGroupConfiguration) in the WorkGroupConfiguration
-     * override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @return The configuration for the workgroup, which includes the location in Amazon S3 where query results are
      *         stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon
      *         CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per
      *         query, if it is specified, and whether workgroup's settings (specified with
-     *         EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override client-side settings. See
-     *         <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     *         <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override
+     *         client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
     public WorkGroupConfiguration getConfiguration() {
@@ -142,17 +145,18 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
      * enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and
-     * whether workgroup's settings (specified with EnforceWorkGroupConfiguration) in the WorkGroupConfiguration
-     * override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param configuration
      *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
      *        stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon
      *        CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per
-     *        query, if it is specified, and whether workgroup's settings (specified with EnforceWorkGroupConfiguration)
-     *        in the WorkGroupConfiguration override client-side settings. See
-     *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     *        query, if it is specified, and whether workgroup's settings (specified with
+     *        <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override
+     *        client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class AccessKeyMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> LASTUSED_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUsed").build();
 
     private static final AccessKeyMarshaller instance = new AccessKeyMarshaller();
 
@@ -56,6 +58,7 @@ public class AccessKeyMarshaller {
             protocolMarshaller.marshall(accessKey.getSecretAccessKey(), SECRETACCESSKEY_BINDING);
             protocolMarshaller.marshall(accessKey.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accessKey.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(accessKey.getLastUsed(), LASTUSED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

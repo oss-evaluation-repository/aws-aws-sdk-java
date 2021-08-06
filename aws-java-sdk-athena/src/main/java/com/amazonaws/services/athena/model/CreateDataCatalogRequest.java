@@ -27,23 +27,16 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
-     * external hive metastore.
+     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     * external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      */
     private String type;
     /**
@@ -94,6 +87,35 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is
+     * the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.
+     * </p>
+     * <p>
+     * <code>catalog-id=<i>catalog_id</i> </code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already
+     * exists in your account, of which you can have only one and cannot modify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
+     * engine version 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> parameters;
@@ -106,13 +128,13 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
      * @param name
-     *        The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a
-     *        maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services
+     *        account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      */
 
     public void setName(String name) {
@@ -121,12 +143,12 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
-     * @return The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a
-     *         maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * @return The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services
+     *         account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      */
 
     public String getName() {
@@ -135,13 +157,13 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
      * @param name
-     *        The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a
-     *        maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services
+     *        account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,25 +174,13 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
-     * external hive metastore.
+     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     * external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for
-     *        an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     *        external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @see DataCatalogType
      */
 
@@ -180,24 +190,12 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
-     * external hive metastore.
+     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     * external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
-     * @return The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for
-     *         an external hive metastore.</p> <note>
-     *         <p>
-     *         Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *         in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *         <code>INVALID_INPUT</code> error.
-     *         </p>
+     * @return The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     *         external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @see DataCatalogType
      */
 
@@ -207,25 +205,13 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
-     * external hive metastore.
+     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     * external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for
-     *        an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     *        external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -237,25 +223,13 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an
-     * external hive metastore.
+     * The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     * external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for
-     *        an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an
+     *        external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -347,6 +321,35 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is
+     * the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.
+     * </p>
+     * <p>
+     * <code>catalog-id=<i>catalog_id</i> </code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already
+     * exists in your account, of which you can have only one and cannot modify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
+     * engine version 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @return Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose
@@ -384,6 +387,36 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <p>
      *         <code>function=<i>lambda_arn</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+     *         <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue
+     *         Data Catalog belongs.
+     *         </p>
+     *         <p>
+     *         <code>catalog-id=<i>catalog_id</i> </code>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
+     *         already exists in your account, of which you can have only one and cannot modify.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     *         on Athena engine version 2.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     *         <code>INVALID_INPUT</code> error.
      *         </p>
      *         </li>
      *         </ul>
@@ -436,6 +469,35 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is
+     * the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.
+     * </p>
+     * <p>
+     * <code>catalog-id=<i>catalog_id</i> </code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already
+     * exists in your account, of which you can have only one and cannot modify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
+     * engine version 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param parameters
@@ -474,6 +536,36 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        <code>function=<i>lambda_arn</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+     *        <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue
+     *        Data Catalog belongs.
+     *        </p>
+     *        <p>
+     *        <code>catalog-id=<i>catalog_id</i> </code>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
+     *        already exists in your account, of which you can have only one and cannot modify.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on
+     *        Athena engine version 2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     *        <code>INVALID_INPUT</code> error.
      *        </p>
      *        </li>
      *        </ul>
@@ -526,6 +618,35 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is
+     * the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.
+     * </p>
+     * <p>
+     * <code>catalog-id=<i>catalog_id</i> </code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already
+     * exists in your account, of which you can have only one and cannot modify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
+     * engine version 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     * <code>INVALID_INPUT</code> error.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param parameters
@@ -564,6 +685,36 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        <code>function=<i>lambda_arn</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+     *        <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue
+     *        Data Catalog belongs.
+     *        </p>
+     *        <p>
+     *        <code>catalog-id=<i>catalog_id</i> </code>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
+     *        already exists in your account, of which you can have only one and cannot modify.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on
+     *        Athena engine version 2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
+     *        <code>INVALID_INPUT</code> error.
      *        </p>
      *        </li>
      *        </ul>

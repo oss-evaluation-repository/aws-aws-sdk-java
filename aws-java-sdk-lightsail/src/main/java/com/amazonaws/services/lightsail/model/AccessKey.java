@@ -73,6 +73,19 @@ public class AccessKey implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * An object that describes the last time the access key was used.
+     * </p>
+     * <note>
+     * <p>
+     * This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has
+     * not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.
+     * </p>
+     * </note>
+     */
+    private AccessKeyLastUsed lastUsed;
 
     /**
      * <p>
@@ -295,6 +308,82 @@ public class AccessKey implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that describes the last time the access key was used.
+     * </p>
+     * <note>
+     * <p>
+     * This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has
+     * not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.
+     * </p>
+     * </note>
+     * 
+     * @param lastUsed
+     *        An object that describes the last time the access key was used.</p> <note>
+     *        <p>
+     *        This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access
+     *        key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     *        and the <code>lastUsedDate</code> value is null.
+     *        </p>
+     */
+
+    public void setLastUsed(AccessKeyLastUsed lastUsed) {
+        this.lastUsed = lastUsed;
+    }
+
+    /**
+     * <p>
+     * An object that describes the last time the access key was used.
+     * </p>
+     * <note>
+     * <p>
+     * This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has
+     * not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.
+     * </p>
+     * </note>
+     * 
+     * @return An object that describes the last time the access key was used.</p> <note>
+     *         <p>
+     *         This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access
+     *         key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     *         and the <code>lastUsedDate</code> value is null.
+     *         </p>
+     */
+
+    public AccessKeyLastUsed getLastUsed() {
+        return this.lastUsed;
+    }
+
+    /**
+     * <p>
+     * An object that describes the last time the access key was used.
+     * </p>
+     * <note>
+     * <p>
+     * This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has
+     * not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.
+     * </p>
+     * </note>
+     * 
+     * @param lastUsed
+     *        An object that describes the last time the access key was used.</p> <note>
+     *        <p>
+     *        This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access
+     *        key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     *        and the <code>lastUsedDate</code> value is null.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessKey withLastUsed(AccessKeyLastUsed lastUsed) {
+        setLastUsed(lastUsed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -313,7 +402,9 @@ public class AccessKey implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getLastUsed() != null)
+            sb.append("LastUsed: ").append(getLastUsed());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +435,10 @@ public class AccessKey implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getLastUsed() == null ^ this.getLastUsed() == null)
+            return false;
+        if (other.getLastUsed() != null && other.getLastUsed().equals(this.getLastUsed()) == false)
+            return false;
         return true;
     }
 
@@ -356,6 +451,7 @@ public class AccessKey implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecretAccessKey() == null) ? 0 : getSecretAccessKey().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUsed() == null) ? 0 : getLastUsed().hashCode());
         return hashCode;
     }
 

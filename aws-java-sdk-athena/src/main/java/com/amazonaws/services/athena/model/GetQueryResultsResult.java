@@ -25,7 +25,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     * The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      * </p>
      */
     private Long updateCount;
@@ -46,11 +46,11 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     * The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      * </p>
      * 
      * @param updateCount
-     *        The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     *        The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      */
 
     public void setUpdateCount(Long updateCount) {
@@ -59,10 +59,10 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     * The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      * </p>
      * 
-     * @return The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     * @return The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      */
 
     public Long getUpdateCount() {
@@ -71,11 +71,11 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     * The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      * </p>
      * 
      * @param updateCount
-     *        The number of rows inserted with a CREATE TABLE AS SELECT statement.
+     *        The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

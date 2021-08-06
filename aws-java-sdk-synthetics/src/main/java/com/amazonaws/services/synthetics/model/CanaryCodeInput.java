@@ -54,7 +54,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than
+     * 256 Kb.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -204,7 +205,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than
+     * 256 Kb.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -219,8 +221,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param zipFile
      *        If you input your canary script directly into the canary instead of referring to an S3 location, the value
-     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up
-     *        to 5 MB.
+     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be
+     *        smaller than 256 Kb.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -230,7 +232,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than
+     * 256 Kb.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -241,8 +244,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @return If you input your canary script directly into the canary instead of referring to an S3 location, the
-     *         value of this parameter is the base64-encoded contents of the .zip file that contains the script. It can
-     *         be up to 5 MB.
+     *         value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must
+     *         be smaller than 256 Kb.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -252,7 +255,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * If you input your canary script directly into the canary instead of referring to an S3 location, the value of
-     * this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up to 5 MB.
+     * this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than
+     * 256 Kb.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -267,8 +271,8 @@ public class CanaryCodeInput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param zipFile
      *        If you input your canary script directly into the canary instead of referring to an S3 location, the value
-     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It can be up
-     *        to 5 MB.
+     *        of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be
+     *        smaller than 256 Kb.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

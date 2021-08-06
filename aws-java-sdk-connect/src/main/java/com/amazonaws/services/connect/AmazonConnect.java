@@ -299,6 +299,36 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates an agent status for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createAgentStatusRequest
+     * @return Result of the CreateAgentStatus operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateAgentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAgentStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAgentStatusResult createAgentStatus(CreateAgentStatusRequest createAgentStatusRequest);
+
+    /**
+     * <p>
      * Creates a contact flow for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -329,6 +359,36 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     CreateContactFlowResult createContactFlow(CreateContactFlowRequest createContactFlowRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates hours of operation.
+     * </p>
+     * 
+     * @param createHoursOfOperationRequest
+     * @return Result of the CreateHoursOfOperation operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateHoursOfOperationResult createHoursOfOperation(CreateHoursOfOperationRequest createHoursOfOperationRequest);
 
     /**
      * <p>
@@ -558,6 +618,32 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Deletes an hours of operation.
+     * </p>
+     * 
+     * @param deleteHoursOfOperationRequest
+     * @return Result of the DeleteHoursOfOperation operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteHoursOfOperationResult deleteHoursOfOperation(DeleteHoursOfOperationRequest deleteHoursOfOperationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes the Amazon Connect instance.
      * </p>
      * <p>
@@ -700,6 +786,32 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteUserHierarchyGroupResult deleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest deleteUserHierarchyGroupRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Describes an agent status.
+     * </p>
+     * 
+     * @param describeAgentStatusRequest
+     * @return Result of the DescribeAgentStatus operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DescribeAgentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAgentStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAgentStatusResult describeAgentStatus(DescribeAgentStatusRequest describeAgentStatusRequest);
 
     /**
      * <p>
@@ -1288,6 +1400,32 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     GetMetricDataResult getMetricData(GetMetricDataRequest getMetricDataRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists agent statuses.
+     * </p>
+     * 
+     * @param listAgentStatusesRequest
+     * @return Result of the ListAgentStatuses operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListAgentStatuses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAgentStatusesResult listAgentStatuses(ListAgentStatusesRequest listAgentStatusesRequest);
 
     /**
      * <p>
@@ -2147,7 +2285,8 @@ public interface AmazonConnect {
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
-     * The supported resource types are users, routing profiles, queues, quick connects, and contact flows.
+     * The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status,
+     * and hours of operation.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -2195,6 +2334,36 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates agent status.
+     * </p>
+     * 
+     * @param updateAgentStatusRequest
+     * @return Result of the UpdateAgentStatus operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateAgentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAgentStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAgentStatusResult updateAgentStatus(UpdateAgentStatusRequest updateAgentStatusRequest);
 
     /**
      * <p>
@@ -2294,6 +2463,34 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     UpdateContactFlowNameResult updateContactFlowName(UpdateContactFlowNameRequest updateContactFlowNameRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates the hours of operation.
+     * </p>
+     * 
+     * @param updateHoursOfOperationRequest
+     * @return Result of the UpdateHoursOfOperation operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateHoursOfOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateHoursOfOperationResult updateHoursOfOperation(UpdateHoursOfOperationRequest updateHoursOfOperationRequest);
 
     /**
      * <p>

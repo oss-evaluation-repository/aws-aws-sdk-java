@@ -22,8 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
  * encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the
  * workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data
- * scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration
- * (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+ * scanned per query or per workgroup. The workgroup settings override is specified in
+ * <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
+ * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfiguration" target="_top">AWS API

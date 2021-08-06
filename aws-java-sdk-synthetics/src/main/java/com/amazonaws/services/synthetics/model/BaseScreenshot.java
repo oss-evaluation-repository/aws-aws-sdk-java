@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the
+ * canary.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/BaseScreenshot" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +29,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the screenshot. This is generated the first time the canary is run after the
+     * <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
+     * </p>
+     */
     private String screenshotName;
-
+    /**
+     * <p>
+     * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
+     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
+     * {LINK}
+     * </p>
+     */
     private java.util.List<String> ignoreCoordinates;
 
     /**
+     * <p>
+     * The name of the screenshot. This is generated the first time the canary is run after the
+     * <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
+     * </p>
+     * 
      * @param screenshotName
+     *        The name of the screenshot. This is generated the first time the canary is run after the
+     *        <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
      */
 
     public void setScreenshotName(String screenshotName) {
@@ -38,7 +61,13 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the screenshot. This is generated the first time the canary is run after the
+     * <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
+     * </p>
+     * 
+     * @return The name of the screenshot. This is generated the first time the canary is run after the
+     *         <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
      */
 
     public String getScreenshotName() {
@@ -46,7 +75,14 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the screenshot. This is generated the first time the canary is run after the
+     * <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
+     * </p>
+     * 
      * @param screenshotName
+     *        The name of the screenshot. This is generated the first time the canary is run after the
+     *        <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +92,15 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
+     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
+     * {LINK}
+     * </p>
+     * 
+     * @return Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
+     *         coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
+     *         information, see {LINK}
      */
 
     public java.util.List<String> getIgnoreCoordinates() {
@@ -64,7 +108,16 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
+     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
+     * {LINK}
+     * </p>
+     * 
      * @param ignoreCoordinates
+     *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
+     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
+     *        information, see {LINK}
      */
 
     public void setIgnoreCoordinates(java.util.Collection<String> ignoreCoordinates) {
@@ -78,12 +131,20 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
+     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
+     * {LINK}
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIgnoreCoordinates(java.util.Collection)} or {@link #withIgnoreCoordinates(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param ignoreCoordinates
+     *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
+     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
+     *        information, see {LINK}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +159,16 @@ public class BaseScreenshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates
+     * to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see
+     * {LINK}
+     * </p>
+     * 
      * @param ignoreCoordinates
+     *        Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the
+     *        coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more
+     *        information, see {LINK}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

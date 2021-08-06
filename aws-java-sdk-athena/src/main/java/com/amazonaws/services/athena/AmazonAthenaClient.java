@@ -64,7 +64,7 @@ import com.amazonaws.services.athena.model.transform.*;
  * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.
  * </p>
  * <p>
- * For code samples using the AWS SDK for Java, see <a
+ * For code samples using the Amazon Web Services SDK for Java, see <a
  * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon
  * Athena User Guide</i>.
  * </p>
@@ -287,7 +287,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
-     * users of the same AWS account.
+     * users of the same Amazon Web Services account.
      * </p>
      * 
      * @param createDataCatalogRequest
@@ -350,7 +350,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -597,7 +597,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * Deletes the named query if you have access to the workgroup in which the query was saved.
      * </p>
      * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -1293,7 +1293,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Lists the data catalogs in the current AWS account.
+     * Lists the data catalogs in the current Amazon Web Services account.
      * </p>
      * 
      * @param listDataCatalogsRequest
@@ -1483,7 +1483,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * workgroup.
      * </p>
      * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -1611,7 +1611,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * the workgroup in which the queries ran.
      * </p>
      * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -1862,7 +1862,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
      * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
-     * the catalog. For code samples using the AWS SDK for Java, see <a
+     * the catalog. For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -1929,7 +1929,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * Stops a query execution. Requires you to have access to the workgroup in which the query ran.
      * </p>
      * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * For code samples using the Amazon Web Services SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>

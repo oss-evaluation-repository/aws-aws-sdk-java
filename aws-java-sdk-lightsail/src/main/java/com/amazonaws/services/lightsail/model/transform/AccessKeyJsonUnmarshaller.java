@@ -64,6 +64,10 @@ public class AccessKeyJsonUnmarshaller implements Unmarshaller<AccessKey, JsonUn
                     context.nextToken();
                     accessKey.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("lastUsed", targetDepth)) {
+                    context.nextToken();
+                    accessKey.setLastUsed(AccessKeyLastUsedJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

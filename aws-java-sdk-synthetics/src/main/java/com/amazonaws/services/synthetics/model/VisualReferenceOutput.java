@@ -18,6 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run
+ * that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored
+ * during visual monitoring comparison.
+ * </p>
+ * <p>
+ * Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/VisualReferenceOutput" target="_top">AWS
  *      API Documentation</a>
@@ -25,12 +33,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VisualReferenceOutput implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An array of screenshots that are used as the baseline for comparisons during visual monitoring.
+     * </p>
+     */
     private java.util.List<BaseScreenshot> baseScreenshots;
-
+    /**
+     * <p>
+     * The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     * comparisons during future runs of this canary.
+     * </p>
+     */
     private String baseCanaryRunId;
 
     /**
-     * @return
+     * <p>
+     * An array of screenshots that are used as the baseline for comparisons during visual monitoring.
+     * </p>
+     * 
+     * @return An array of screenshots that are used as the baseline for comparisons during visual monitoring.
      */
 
     public java.util.List<BaseScreenshot> getBaseScreenshots() {
@@ -38,7 +60,12 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An array of screenshots that are used as the baseline for comparisons during visual monitoring.
+     * </p>
+     * 
      * @param baseScreenshots
+     *        An array of screenshots that are used as the baseline for comparisons during visual monitoring.
      */
 
     public void setBaseScreenshots(java.util.Collection<BaseScreenshot> baseScreenshots) {
@@ -52,12 +79,16 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * An array of screenshots that are used as the baseline for comparisons during visual monitoring.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBaseScreenshots(java.util.Collection)} or {@link #withBaseScreenshots(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param baseScreenshots
+     *        An array of screenshots that are used as the baseline for comparisons during visual monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +103,12 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An array of screenshots that are used as the baseline for comparisons during visual monitoring.
+     * </p>
+     * 
      * @param baseScreenshots
+     *        An array of screenshots that are used as the baseline for comparisons during visual monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +118,14 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     * comparisons during future runs of this canary.
+     * </p>
+     * 
      * @param baseCanaryRunId
+     *        The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     *        comparisons during future runs of this canary.
      */
 
     public void setBaseCanaryRunId(String baseCanaryRunId) {
@@ -90,7 +133,13 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     * comparisons during future runs of this canary.
+     * </p>
+     * 
+     * @return The ID of the canary run that produced the screenshots that are used as the baseline for visual
+     *         monitoring comparisons during future runs of this canary.
      */
 
     public String getBaseCanaryRunId() {
@@ -98,7 +147,14 @@ public class VisualReferenceOutput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     * comparisons during future runs of this canary.
+     * </p>
+     * 
      * @param baseCanaryRunId
+     *        The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring
+     *        comparisons during future runs of this canary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

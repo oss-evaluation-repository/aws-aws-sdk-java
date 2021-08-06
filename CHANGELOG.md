@@ -1,3 +1,28 @@
+# __1.12.42__ __2021-08-06__
+## __Amazon Athena__
+  - ### Features
+    - Documentation updates for Athena.
+
+## __Amazon Chime SDK Identity__
+  - ### Features
+    - The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.
+
+## __Amazon Chime SDK Messaging__
+  - ### Features
+    - The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds support for agent status and hours of operation. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds support to track when a bucket access key was last used.
+
+## __Synthetics__
+  - ### Features
+    - Documentation updates for Visual Monitoring feature and other doc ticket fixes.
+
 # __1.12.41__ __2021-08-05__
 ## __Amazon Lex Model Building V2__
   - ### Features

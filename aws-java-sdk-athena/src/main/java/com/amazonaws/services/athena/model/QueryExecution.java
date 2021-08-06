@@ -45,7 +45,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
      * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
-     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * or <code>DESCRIBE TABLE</code>.
      * </p>
      */
     private String statementType;
@@ -176,14 +176,14 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
      * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
-     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * or <code>DESCRIBE TABLE</code>.
      * </p>
      * 
      * @param statementType
      *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
      *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
      *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
-     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.
      * @see StatementType
      */
 
@@ -196,13 +196,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
      * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
-     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * or <code>DESCRIBE TABLE</code>.
      * </p>
      * 
      * @return The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
      *         <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
      *         <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
-     *         DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     *         DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.
      * @see StatementType
      */
 
@@ -215,14 +215,14 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
      * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
-     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * or <code>DESCRIBE TABLE</code>.
      * </p>
      * 
      * @param statementType
      *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
      *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
      *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
-     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatementType
      */
@@ -237,14 +237,14 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
      * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
-     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * or <code>DESCRIBE TABLE</code>.
      * </p>
      * 
      * @param statementType
      *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
      *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
      *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
-     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatementType
      */

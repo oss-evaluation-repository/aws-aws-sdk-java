@@ -27,23 +27,16 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     * <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     * <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      */
     private String type;
     /**
@@ -100,13 +93,13 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
      * @param name
-     *        The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a
-     *        maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services
+     *        account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      */
 
     public void setName(String name) {
@@ -115,12 +108,12 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
-     * @return The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a
-     *         maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * @return The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services
+     *         account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      */
 
     public String getName() {
@@ -129,13 +122,13 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a maximum
-     * of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and
+     * can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * </p>
      * 
      * @param name
-     *        The name of the data catalog to update. The catalog name must be unique for the AWS account and can use a
-     *        maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services
+     *        account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,25 +139,13 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     * <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     * <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     *        <code>HIVE</code> for an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     *        <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @see DataCatalogType
      */
 
@@ -174,24 +155,12 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     * <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     * <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
-     * @return Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     *         <code>HIVE</code> for an external hive metastore.</p> <note>
-     *         <p>
-     *         Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *         in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *         <code>INVALID_INPUT</code> error.
-     *         </p>
+     * @return Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     *         <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @see DataCatalogType
      */
 
@@ -201,25 +170,13 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     * <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     * <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     *        <code>HIVE</code> for an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     *        <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */
@@ -231,25 +188,13 @@ public class UpdateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     * <code>HIVE</code> for an external hive metastore.
+     * Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     * <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * </p>
-     * <note>
-     * <p>
-     * Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your
-     * account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </note>
      * 
      * @param type
-     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or
-     *        <code>HIVE</code> for an external hive metastore.</p> <note>
-     *        <p>
-     *        Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists
-     *        in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an
-     *        <code>INVALID_INPUT</code> error.
-     *        </p>
+     *        Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog,
+     *        <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataCatalogType
      */

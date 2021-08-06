@@ -106,7 +106,13 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     private String runtimeVersion;
 
     private VpcConfigOutput vpcConfig;
-
+    /**
+     * <p>
+     * If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary
+     * run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.
+     * </p>
+     */
     private VisualReferenceOutput visualReference;
     /**
      * <p>
@@ -679,7 +685,16 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary
+     * run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.
+     * </p>
+     * 
      * @param visualReference
+     *        If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the
+     *        canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to
+     *        ignore during the visual monitoring comparison.
      */
 
     public void setVisualReference(VisualReferenceOutput visualReference) {
@@ -687,7 +702,15 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary
+     * run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.
+     * </p>
+     * 
+     * @return If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the
+     *         canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to
+     *         ignore during the visual monitoring comparison.
      */
 
     public VisualReferenceOutput getVisualReference() {
@@ -695,7 +718,16 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary
+     * run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.
+     * </p>
+     * 
      * @param visualReference
+     *        If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the
+     *        canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to
+     *        ignore during the visual monitoring comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

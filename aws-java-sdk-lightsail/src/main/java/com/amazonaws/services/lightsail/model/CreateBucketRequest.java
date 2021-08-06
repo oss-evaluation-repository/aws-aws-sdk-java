@@ -67,8 +67,8 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about versioning, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     * >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-     * Guide</i>.
+     * >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      */
     private Boolean enableObjectVersioning;
@@ -328,8 +328,8 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about versioning, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     * >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-     * Guide</i>.
+     * >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @param enableObjectVersioning
@@ -337,7 +337,7 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about versioning, see <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     *        >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     *        >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
      *        Developer Guide</i>.
      */
 
@@ -352,15 +352,15 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about versioning, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     * >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-     * Guide</i>.
+     * >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @return A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
      *         <p>
      *         For more information about versioning, see <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     *         >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     *         >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
      *         Developer Guide</i>.
      */
 
@@ -375,8 +375,8 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about versioning, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     * >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-     * Guide</i>.
+     * >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @param enableObjectVersioning
@@ -384,7 +384,7 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about versioning, see <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     *        >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     *        >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
      *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -401,15 +401,15 @@ public class CreateBucketRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about versioning, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     * >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-     * Guide</i>.
+     * >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * 
      * @return A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
      *         <p>
      *         For more information about versioning, see <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning"
-     *         >Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon Lightsail
+     *         >Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
      *         Developer Guide</i>.
      */
 

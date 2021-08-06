@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.42-SNAPSHOT</version>
+    <version>1.12.42</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-chimesdkidentity</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-chimesdkmessaging</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-route53recoverycluster</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1766,6 +1778,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Chime SDK Identity</title>
+                                  <packages>com.amazonaws.services.chimesdkidentity*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Chime SDK Messaging</title>
+                                  <packages>com.amazonaws.services.chimesdkmessaging*</packages>
+                              </group>
                               <group>
                                   <title>Route53 Recovery Cluster</title>
                                   <packages>com.amazonaws.services.route53recoverycluster*</packages>
