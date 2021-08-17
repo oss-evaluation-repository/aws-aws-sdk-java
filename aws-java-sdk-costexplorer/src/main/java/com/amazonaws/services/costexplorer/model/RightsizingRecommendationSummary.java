@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary of rightsizing recommendations
+ * The summary of rightsizing recommendations
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationSummary"
@@ -30,37 +30,37 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Total number of instance recommendations.
+     * The total number of instance recommendations.
      * </p>
      */
     private String totalRecommendationCount;
     /**
      * <p>
-     * Estimated total savings resulting from modifications, on a monthly basis.
+     * The estimated total savings resulting from modifications, on a monthly basis.
      * </p>
      */
     private String estimatedTotalMonthlySavingsAmount;
     /**
      * <p>
-     * The currency code that AWS used to calculate the savings.
+     * The currency code that Amazon Web Services used to calculate the savings.
      * </p>
      */
     private String savingsCurrencyCode;
     /**
      * <p>
-     * Savings percentage based on the recommended modifications, relative to the total On-Demand costs associated with
-     * these instances.
+     * The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that
+     * are associated with these instances.
      * </p>
      */
     private String savingsPercentage;
 
     /**
      * <p>
-     * Total number of instance recommendations.
+     * The total number of instance recommendations.
      * </p>
      * 
      * @param totalRecommendationCount
-     *        Total number of instance recommendations.
+     *        The total number of instance recommendations.
      */
 
     public void setTotalRecommendationCount(String totalRecommendationCount) {
@@ -69,10 +69,10 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Total number of instance recommendations.
+     * The total number of instance recommendations.
      * </p>
      * 
-     * @return Total number of instance recommendations.
+     * @return The total number of instance recommendations.
      */
 
     public String getTotalRecommendationCount() {
@@ -81,11 +81,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Total number of instance recommendations.
+     * The total number of instance recommendations.
      * </p>
      * 
      * @param totalRecommendationCount
-     *        Total number of instance recommendations.
+     *        The total number of instance recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Estimated total savings resulting from modifications, on a monthly basis.
+     * The estimated total savings resulting from modifications, on a monthly basis.
      * </p>
      * 
      * @param estimatedTotalMonthlySavingsAmount
-     *        Estimated total savings resulting from modifications, on a monthly basis.
+     *        The estimated total savings resulting from modifications, on a monthly basis.
      */
 
     public void setEstimatedTotalMonthlySavingsAmount(String estimatedTotalMonthlySavingsAmount) {
@@ -109,10 +109,10 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Estimated total savings resulting from modifications, on a monthly basis.
+     * The estimated total savings resulting from modifications, on a monthly basis.
      * </p>
      * 
-     * @return Estimated total savings resulting from modifications, on a monthly basis.
+     * @return The estimated total savings resulting from modifications, on a monthly basis.
      */
 
     public String getEstimatedTotalMonthlySavingsAmount() {
@@ -121,11 +121,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Estimated total savings resulting from modifications, on a monthly basis.
+     * The estimated total savings resulting from modifications, on a monthly basis.
      * </p>
      * 
      * @param estimatedTotalMonthlySavingsAmount
-     *        Estimated total savings resulting from modifications, on a monthly basis.
+     *        The estimated total savings resulting from modifications, on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the savings.
+     * The currency code that Amazon Web Services used to calculate the savings.
      * </p>
      * 
      * @param savingsCurrencyCode
-     *        The currency code that AWS used to calculate the savings.
+     *        The currency code that Amazon Web Services used to calculate the savings.
      */
 
     public void setSavingsCurrencyCode(String savingsCurrencyCode) {
@@ -149,10 +149,10 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the savings.
+     * The currency code that Amazon Web Services used to calculate the savings.
      * </p>
      * 
-     * @return The currency code that AWS used to calculate the savings.
+     * @return The currency code that Amazon Web Services used to calculate the savings.
      */
 
     public String getSavingsCurrencyCode() {
@@ -161,11 +161,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the savings.
+     * The currency code that Amazon Web Services used to calculate the savings.
      * </p>
      * 
      * @param savingsCurrencyCode
-     *        The currency code that AWS used to calculate the savings.
+     *        The currency code that Amazon Web Services used to calculate the savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,13 +176,13 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Savings percentage based on the recommended modifications, relative to the total On-Demand costs associated with
-     * these instances.
+     * The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that
+     * are associated with these instances.
      * </p>
      * 
      * @param savingsPercentage
-     *        Savings percentage based on the recommended modifications, relative to the total On-Demand costs
-     *        associated with these instances.
+     *        The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs
+     *        that are associated with these instances.
      */
 
     public void setSavingsPercentage(String savingsPercentage) {
@@ -191,12 +191,12 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Savings percentage based on the recommended modifications, relative to the total On-Demand costs associated with
-     * these instances.
+     * The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that
+     * are associated with these instances.
      * </p>
      * 
-     * @return Savings percentage based on the recommended modifications, relative to the total On-Demand costs
-     *         associated with these instances.
+     * @return The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs
+     *         that are associated with these instances.
      */
 
     public String getSavingsPercentage() {
@@ -205,13 +205,13 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * Savings percentage based on the recommended modifications, relative to the total On-Demand costs associated with
-     * these instances.
+     * The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that
+     * are associated with these instances.
      * </p>
      * 
      * @param savingsPercentage
-     *        Savings percentage based on the recommended modifications, relative to the total On-Demand costs
-     *        associated with these instances.
+     *        The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs
+     *        that are associated with these instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

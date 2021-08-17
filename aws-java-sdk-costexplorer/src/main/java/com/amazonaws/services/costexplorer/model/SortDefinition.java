@@ -30,24 +30,24 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key by which to sort the data.
+     * The key that's used to sort the data.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The order in which to sort the data.
+     * The order that's used to sort the data.
      * </p>
      */
     private String sortOrder;
 
     /**
      * <p>
-     * The key by which to sort the data.
+     * The key that's used to sort the data.
      * </p>
      * 
      * @param key
-     *        The key by which to sort the data.
+     *        The key that's used to sort the data.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key by which to sort the data.
+     * The key that's used to sort the data.
      * </p>
      * 
-     * @return The key by which to sort the data.
+     * @return The key that's used to sort the data.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key by which to sort the data.
+     * The key that's used to sort the data.
      * </p>
      * 
      * @param key
-     *        The key by which to sort the data.
+     *        The key that's used to sort the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order in which to sort the data.
+     * The order that's used to sort the data.
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the data.
+     *        The order that's used to sort the data.
      * @see SortOrder
      */
 
@@ -97,10 +97,10 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order in which to sort the data.
+     * The order that's used to sort the data.
      * </p>
      * 
-     * @return The order in which to sort the data.
+     * @return The order that's used to sort the data.
      * @see SortOrder
      */
 
@@ -110,11 +110,11 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order in which to sort the data.
+     * The order that's used to sort the data.
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the data.
+     *        The order that's used to sort the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -126,11 +126,11 @@ public class SortDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order in which to sort the data.
+     * The order that's used to sort the data.
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the data.
+     *        The order that's used to sort the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */

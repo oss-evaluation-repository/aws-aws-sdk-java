@@ -60,6 +60,11 @@ public class KeyPairInfoStaxUnmarshaller implements Unmarshaller<KeyPairInfo, St
                     continue;
                 }
 
+                if (context.testExpression("keyType", targetDepth)) {
+                    keyPairInfo.setKeyType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     keyPairInfo.withTags(new ArrayList<Tag>());
                     continue;

@@ -39,7 +39,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
     private Double threshold;
     /**
      * <p>
-     * The update to the frequency value at which subscribers will receive notifications.
+     * The update to the frequency value that subscribers receive notifications.
      * </p>
      */
     private String frequency;
@@ -57,7 +57,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<Subscriber> subscribers;
     /**
      * <p>
-     * The subscription's new name.
+     * The new name of the subscription.
      * </p>
      */
     private String subscriptionName;
@@ -144,11 +144,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The update to the frequency value at which subscribers will receive notifications.
+     * The update to the frequency value that subscribers receive notifications.
      * </p>
      * 
      * @param frequency
-     *        The update to the frequency value at which subscribers will receive notifications.
+     *        The update to the frequency value that subscribers receive notifications.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -158,10 +158,10 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The update to the frequency value at which subscribers will receive notifications.
+     * The update to the frequency value that subscribers receive notifications.
      * </p>
      * 
-     * @return The update to the frequency value at which subscribers will receive notifications.
+     * @return The update to the frequency value that subscribers receive notifications.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -171,11 +171,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The update to the frequency value at which subscribers will receive notifications.
+     * The update to the frequency value that subscribers receive notifications.
      * </p>
      * 
      * @param frequency
-     *        The update to the frequency value at which subscribers will receive notifications.
+     *        The update to the frequency value that subscribers receive notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */
@@ -187,11 +187,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The update to the frequency value at which subscribers will receive notifications.
+     * The update to the frequency value that subscribers receive notifications.
      * </p>
      * 
      * @param frequency
-     *        The update to the frequency value at which subscribers will receive notifications.
+     *        The update to the frequency value that subscribers receive notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */
@@ -343,11 +343,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The subscription's new name.
+     * The new name of the subscription.
      * </p>
      * 
      * @param subscriptionName
-     *        The subscription's new name.
+     *        The new name of the subscription.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -356,10 +356,10 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The subscription's new name.
+     * The new name of the subscription.
      * </p>
      * 
-     * @return The subscription's new name.
+     * @return The new name of the subscription.
      */
 
     public String getSubscriptionName() {
@@ -368,11 +368,11 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The subscription's new name.
+     * The new name of the subscription.
      * </p>
      * 
      * @param subscriptionName
-     *        The subscription's new name.
+     *        The new name of the subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

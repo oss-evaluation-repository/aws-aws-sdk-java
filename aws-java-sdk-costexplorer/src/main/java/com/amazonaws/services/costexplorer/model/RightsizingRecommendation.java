@@ -42,19 +42,19 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
     private CurrentInstance currentInstance;
     /**
      * <p>
-     * Recommendation to either terminate or modify the resource.
+     * A recommendation to either terminate or modify the resource.
      * </p>
      */
     private String rightsizingType;
     /**
      * <p>
-     * Details for modification recommendations.
+     * The details for the modification recommendations.
      * </p>
      */
     private ModifyRecommendationDetail modifyRecommendationDetail;
     /**
      * <p>
-     * Details for termination recommendations.
+     * The details for termination recommendations.
      * </p>
      */
     private TerminateRecommendationDetail terminateRecommendationDetail;
@@ -148,11 +148,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Recommendation to either terminate or modify the resource.
+     * A recommendation to either terminate or modify the resource.
      * </p>
      * 
      * @param rightsizingType
-     *        Recommendation to either terminate or modify the resource.
+     *        A recommendation to either terminate or modify the resource.
      * @see RightsizingType
      */
 
@@ -162,10 +162,10 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Recommendation to either terminate or modify the resource.
+     * A recommendation to either terminate or modify the resource.
      * </p>
      * 
-     * @return Recommendation to either terminate or modify the resource.
+     * @return A recommendation to either terminate or modify the resource.
      * @see RightsizingType
      */
 
@@ -175,11 +175,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Recommendation to either terminate or modify the resource.
+     * A recommendation to either terminate or modify the resource.
      * </p>
      * 
      * @param rightsizingType
-     *        Recommendation to either terminate or modify the resource.
+     *        A recommendation to either terminate or modify the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RightsizingType
      */
@@ -191,11 +191,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Recommendation to either terminate or modify the resource.
+     * A recommendation to either terminate or modify the resource.
      * </p>
      * 
      * @param rightsizingType
-     *        Recommendation to either terminate or modify the resource.
+     *        A recommendation to either terminate or modify the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RightsizingType
      */
@@ -207,11 +207,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for modification recommendations.
+     * The details for the modification recommendations.
      * </p>
      * 
      * @param modifyRecommendationDetail
-     *        Details for modification recommendations.
+     *        The details for the modification recommendations.
      */
 
     public void setModifyRecommendationDetail(ModifyRecommendationDetail modifyRecommendationDetail) {
@@ -220,10 +220,10 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for modification recommendations.
+     * The details for the modification recommendations.
      * </p>
      * 
-     * @return Details for modification recommendations.
+     * @return The details for the modification recommendations.
      */
 
     public ModifyRecommendationDetail getModifyRecommendationDetail() {
@@ -232,11 +232,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for modification recommendations.
+     * The details for the modification recommendations.
      * </p>
      * 
      * @param modifyRecommendationDetail
-     *        Details for modification recommendations.
+     *        The details for the modification recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +247,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for termination recommendations.
+     * The details for termination recommendations.
      * </p>
      * 
      * @param terminateRecommendationDetail
-     *        Details for termination recommendations.
+     *        The details for termination recommendations.
      */
 
     public void setTerminateRecommendationDetail(TerminateRecommendationDetail terminateRecommendationDetail) {
@@ -260,10 +260,10 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for termination recommendations.
+     * The details for termination recommendations.
      * </p>
      * 
-     * @return Details for termination recommendations.
+     * @return The details for termination recommendations.
      */
 
     public TerminateRecommendationDetail getTerminateRecommendationDetail() {
@@ -272,11 +272,11 @@ public class RightsizingRecommendation implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details for termination recommendations.
+     * The details for termination recommendations.
      * </p>
      * 
      * @param terminateRecommendationDetail
-     *        Details for termination recommendations.
+     *        The details for termination recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

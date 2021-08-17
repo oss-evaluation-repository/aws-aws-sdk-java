@@ -53,7 +53,7 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
     private String effectiveEnd;
     /**
      * <p>
-     * The number of rules associated with a specific Cost Category.
+     * The number of rules that are associated with a specific Cost Category.
      * </p>
      */
     private Integer numberOfRules;
@@ -220,11 +220,11 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of rules associated with a specific Cost Category.
+     * The number of rules that are associated with a specific Cost Category.
      * </p>
      * 
      * @param numberOfRules
-     *        The number of rules associated with a specific Cost Category.
+     *        The number of rules that are associated with a specific Cost Category.
      */
 
     public void setNumberOfRules(Integer numberOfRules) {
@@ -233,10 +233,10 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of rules associated with a specific Cost Category.
+     * The number of rules that are associated with a specific Cost Category.
      * </p>
      * 
-     * @return The number of rules associated with a specific Cost Category.
+     * @return The number of rules that are associated with a specific Cost Category.
      */
 
     public Integer getNumberOfRules() {
@@ -245,11 +245,11 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of rules associated with a specific Cost Category.
+     * The number of rules that are associated with a specific Cost Category.
      * </p>
      * 
      * @param numberOfRules
-     *        The number of rules associated with a specific Cost Category.
+     *        The number of rules that are associated with a specific Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

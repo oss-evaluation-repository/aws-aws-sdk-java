@@ -30,30 +30,30 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The comparing value used in the filter.
+     * The comparing value that's used in the filter.
      * </p>
      */
     private String numericOperator;
     /**
      * <p>
-     * The lower bound dollar value used in the filter.
+     * The lower bound dollar value that's used in the filter.
      * </p>
      */
     private Double startValue;
     /**
      * <p>
-     * The upper bound dollar value used in the filter.
+     * The upper bound dollar value that's used in the filter.
      * </p>
      */
     private Double endValue;
 
     /**
      * <p>
-     * The comparing value used in the filter.
+     * The comparing value that's used in the filter.
      * </p>
      * 
      * @param numericOperator
-     *        The comparing value used in the filter.
+     *        The comparing value that's used in the filter.
      * @see NumericOperator
      */
 
@@ -63,10 +63,10 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The comparing value used in the filter.
+     * The comparing value that's used in the filter.
      * </p>
      * 
-     * @return The comparing value used in the filter.
+     * @return The comparing value that's used in the filter.
      * @see NumericOperator
      */
 
@@ -76,11 +76,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The comparing value used in the filter.
+     * The comparing value that's used in the filter.
      * </p>
      * 
      * @param numericOperator
-     *        The comparing value used in the filter.
+     *        The comparing value that's used in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumericOperator
      */
@@ -92,11 +92,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The comparing value used in the filter.
+     * The comparing value that's used in the filter.
      * </p>
      * 
      * @param numericOperator
-     *        The comparing value used in the filter.
+     *        The comparing value that's used in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumericOperator
      */
@@ -108,11 +108,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The lower bound dollar value used in the filter.
+     * The lower bound dollar value that's used in the filter.
      * </p>
      * 
      * @param startValue
-     *        The lower bound dollar value used in the filter.
+     *        The lower bound dollar value that's used in the filter.
      */
 
     public void setStartValue(Double startValue) {
@@ -121,10 +121,10 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The lower bound dollar value used in the filter.
+     * The lower bound dollar value that's used in the filter.
      * </p>
      * 
-     * @return The lower bound dollar value used in the filter.
+     * @return The lower bound dollar value that's used in the filter.
      */
 
     public Double getStartValue() {
@@ -133,11 +133,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The lower bound dollar value used in the filter.
+     * The lower bound dollar value that's used in the filter.
      * </p>
      * 
      * @param startValue
-     *        The lower bound dollar value used in the filter.
+     *        The lower bound dollar value that's used in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper bound dollar value used in the filter.
+     * The upper bound dollar value that's used in the filter.
      * </p>
      * 
      * @param endValue
-     *        The upper bound dollar value used in the filter.
+     *        The upper bound dollar value that's used in the filter.
      */
 
     public void setEndValue(Double endValue) {
@@ -161,10 +161,10 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper bound dollar value used in the filter.
+     * The upper bound dollar value that's used in the filter.
      * </p>
      * 
-     * @return The upper bound dollar value used in the filter.
+     * @return The upper bound dollar value that's used in the filter.
      */
 
     public Double getEndValue() {
@@ -173,11 +173,11 @@ public class TotalImpactFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper bound dollar value used in the filter.
+     * The upper bound dollar value that's used in the filter.
      * </p>
      * 
      * @param endValue
-     *        The upper bound dollar value used in the filter.
+     *        The upper bound dollar value that's used in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

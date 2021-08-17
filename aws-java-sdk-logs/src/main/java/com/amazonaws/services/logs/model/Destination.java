@@ -49,7 +49,8 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
+     * An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against
+     * this destination.
      * </p>
      */
     private String accessPolicy;
@@ -194,12 +195,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
+     * An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against
+     * this destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that governs which AWS accounts can create subscription filters against this
-     *        destination.
+     *        An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
+     *        against this destination.
      */
 
     public void setAccessPolicy(String accessPolicy) {
@@ -208,11 +210,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
+     * An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against
+     * this destination.
      * </p>
      * 
-     * @return An IAM policy document that governs which AWS accounts can create subscription filters against this
-     *         destination.
+     * @return An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
+     *         against this destination.
      */
 
     public String getAccessPolicy() {
@@ -221,12 +224,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
+     * An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against
+     * this destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that governs which AWS accounts can create subscription filters against this
-     *        destination.
+     *        An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
+     *        against this destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,24 +30,24 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      */
     private String estimatedMonthlySavings;
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        Estimated savings resulting from modification, on a monthly basis.
+     *        The estimated savings that result from modification, on a monthly basis.
      */
 
     public void setEstimatedMonthlySavings(String estimatedMonthlySavings) {
@@ -56,10 +56,10 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
-     * @return Estimated savings resulting from modification, on a monthly basis.
+     * @return The estimated savings that result from modification, on a monthly basis.
      */
 
     public String getEstimatedMonthlySavings() {
@@ -68,11 +68,11 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        Estimated savings resulting from modification, on a monthly basis.
+     *        The estimated savings that result from modification, on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -96,10 +96,10 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that AWS used to calculate the costs for this instance.
+     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -108,11 +108,11 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

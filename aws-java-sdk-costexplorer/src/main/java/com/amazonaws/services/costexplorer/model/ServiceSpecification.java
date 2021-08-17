@@ -30,18 +30,18 @@ public class ServiceSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     * The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      * </p>
      */
     private EC2Specification eC2Specification;
 
     /**
      * <p>
-     * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     * The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      * </p>
      * 
      * @param eC2Specification
-     *        The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     *        The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      */
 
     public void setEC2Specification(EC2Specification eC2Specification) {
@@ -50,10 +50,10 @@ public class ServiceSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     * The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      * </p>
      * 
-     * @return The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     * @return The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      */
 
     public EC2Specification getEC2Specification() {
@@ -62,11 +62,11 @@ public class ServiceSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     * The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      * </p>
      * 
      * @param eC2Specification
-     *        The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+     *        The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

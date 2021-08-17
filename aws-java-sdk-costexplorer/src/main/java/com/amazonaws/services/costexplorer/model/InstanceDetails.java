@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the instances that AWS recommends that you purchase.
+ * Details about the instances that Amazon Web Services recommends that you purchase.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/InstanceDetails" target="_top">AWS API
@@ -30,42 +30,42 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private EC2InstanceDetails eC2InstanceDetails;
     /**
      * <p>
-     * The Amazon RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private RDSInstanceDetails rDSInstanceDetails;
     /**
      * <p>
-     * The Amazon Redshift instances that AWS recommends that you purchase.
+     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private RedshiftInstanceDetails redshiftInstanceDetails;
     /**
      * <p>
-     * The ElastiCache instances that AWS recommends that you purchase.
+     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private ElastiCacheInstanceDetails elastiCacheInstanceDetails;
     /**
      * <p>
-     * The Amazon ES instances that AWS recommends that you purchase.
+     * The Amazon ES instances that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private ESInstanceDetails eSInstanceDetails;
 
     /**
      * <p>
-     * The Amazon EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The Amazon EC2 instances that AWS recommends that you purchase.
+     *        The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      */
 
     public void setEC2InstanceDetails(EC2InstanceDetails eC2InstanceDetails) {
@@ -74,10 +74,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon EC2 instances that AWS recommends that you purchase.
+     * @return The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      */
 
     public EC2InstanceDetails getEC2InstanceDetails() {
@@ -86,11 +86,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The Amazon EC2 instances that AWS recommends that you purchase.
+     *        The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The Amazon RDS instances that AWS recommends that you purchase.
+     *        The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      */
 
     public void setRDSInstanceDetails(RDSInstanceDetails rDSInstanceDetails) {
@@ -114,10 +114,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon RDS instances that AWS recommends that you purchase.
+     * @return The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      */
 
     public RDSInstanceDetails getRDSInstanceDetails() {
@@ -126,11 +126,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The Amazon RDS instances that AWS recommends that you purchase.
+     *        The Amazon RDS instances that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that AWS recommends that you purchase.
+     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param redshiftInstanceDetails
-     *        The Amazon Redshift instances that AWS recommends that you purchase.
+     *        The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      */
 
     public void setRedshiftInstanceDetails(RedshiftInstanceDetails redshiftInstanceDetails) {
@@ -154,10 +154,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that AWS recommends that you purchase.
+     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon Redshift instances that AWS recommends that you purchase.
+     * @return The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      */
 
     public RedshiftInstanceDetails getRedshiftInstanceDetails() {
@@ -166,11 +166,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that AWS recommends that you purchase.
+     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param redshiftInstanceDetails
-     *        The Amazon Redshift instances that AWS recommends that you purchase.
+     *        The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that AWS recommends that you purchase.
+     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param elastiCacheInstanceDetails
-     *        The ElastiCache instances that AWS recommends that you purchase.
+     *        The ElastiCache instances that Amazon Web Services recommends that you purchase.
      */
 
     public void setElastiCacheInstanceDetails(ElastiCacheInstanceDetails elastiCacheInstanceDetails) {
@@ -194,10 +194,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that AWS recommends that you purchase.
+     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The ElastiCache instances that AWS recommends that you purchase.
+     * @return The ElastiCache instances that Amazon Web Services recommends that you purchase.
      */
 
     public ElastiCacheInstanceDetails getElastiCacheInstanceDetails() {
@@ -206,11 +206,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that AWS recommends that you purchase.
+     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param elastiCacheInstanceDetails
-     *        The ElastiCache instances that AWS recommends that you purchase.
+     *        The ElastiCache instances that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ES instances that AWS recommends that you purchase.
+     * The Amazon ES instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eSInstanceDetails
-     *        The Amazon ES instances that AWS recommends that you purchase.
+     *        The Amazon ES instances that Amazon Web Services recommends that you purchase.
      */
 
     public void setESInstanceDetails(ESInstanceDetails eSInstanceDetails) {
@@ -234,10 +234,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ES instances that AWS recommends that you purchase.
+     * The Amazon ES instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon ES instances that AWS recommends that you purchase.
+     * @return The Amazon ES instances that Amazon Web Services recommends that you purchase.
      */
 
     public ESInstanceDetails getESInstanceDetails() {
@@ -246,11 +246,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ES instances that AWS recommends that you purchase.
+     * The Amazon ES instances that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eSInstanceDetails
-     *        The Amazon ES instances that AWS recommends that you purchase.
+     *        The Amazon ES instances that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

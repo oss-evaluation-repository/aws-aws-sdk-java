@@ -30,48 +30,48 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected CPU utilization of the instance.
+     * The maximum observed or expected CPU utilization of the instance.
      * </p>
      */
     private String maxCpuUtilizationPercentage;
     /**
      * <p>
-     * Maximum observed or expected memory utilization of the instance.
+     * The maximum observed or expected memory utilization of the instance.
      * </p>
      */
     private String maxMemoryUtilizationPercentage;
     /**
      * <p>
-     * Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     * The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      * </p>
      */
     private String maxStorageUtilizationPercentage;
     /**
      * <p>
-     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * The EBS field that contains a list of EBS metrics that are associated with the current instance.
      * </p>
      */
     private EBSResourceUtilization eBSResourceUtilization;
     /**
      * <p>
-     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * The field that contains a list of disk (local storage) metrics that are associated with the current instance.
      * </p>
      */
     private DiskResourceUtilization diskResourceUtilization;
     /**
      * <p>
-     * The network field that contains a list of network metrics associated with the current instance.
+     * The network field that contains a list of network metrics that are associated with the current instance.
      * </p>
      */
     private NetworkResourceUtilization networkResourceUtilization;
 
     /**
      * <p>
-     * Maximum observed or expected CPU utilization of the instance.
+     * The maximum observed or expected CPU utilization of the instance.
      * </p>
      * 
      * @param maxCpuUtilizationPercentage
-     *        Maximum observed or expected CPU utilization of the instance.
+     *        The maximum observed or expected CPU utilization of the instance.
      */
 
     public void setMaxCpuUtilizationPercentage(String maxCpuUtilizationPercentage) {
@@ -80,10 +80,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected CPU utilization of the instance.
+     * The maximum observed or expected CPU utilization of the instance.
      * </p>
      * 
-     * @return Maximum observed or expected CPU utilization of the instance.
+     * @return The maximum observed or expected CPU utilization of the instance.
      */
 
     public String getMaxCpuUtilizationPercentage() {
@@ -92,11 +92,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected CPU utilization of the instance.
+     * The maximum observed or expected CPU utilization of the instance.
      * </p>
      * 
      * @param maxCpuUtilizationPercentage
-     *        Maximum observed or expected CPU utilization of the instance.
+     *        The maximum observed or expected CPU utilization of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected memory utilization of the instance.
+     * The maximum observed or expected memory utilization of the instance.
      * </p>
      * 
      * @param maxMemoryUtilizationPercentage
-     *        Maximum observed or expected memory utilization of the instance.
+     *        The maximum observed or expected memory utilization of the instance.
      */
 
     public void setMaxMemoryUtilizationPercentage(String maxMemoryUtilizationPercentage) {
@@ -120,10 +120,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected memory utilization of the instance.
+     * The maximum observed or expected memory utilization of the instance.
      * </p>
      * 
-     * @return Maximum observed or expected memory utilization of the instance.
+     * @return The maximum observed or expected memory utilization of the instance.
      */
 
     public String getMaxMemoryUtilizationPercentage() {
@@ -132,11 +132,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected memory utilization of the instance.
+     * The maximum observed or expected memory utilization of the instance.
      * </p>
      * 
      * @param maxMemoryUtilizationPercentage
-     *        Maximum observed or expected memory utilization of the instance.
+     *        The maximum observed or expected memory utilization of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     * The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      * </p>
      * 
      * @param maxStorageUtilizationPercentage
-     *        Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     *        The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      */
 
     public void setMaxStorageUtilizationPercentage(String maxStorageUtilizationPercentage) {
@@ -160,10 +160,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     * The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      * </p>
      * 
-     * @return Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     * @return The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      */
 
     public String getMaxStorageUtilizationPercentage() {
@@ -172,11 +172,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     * The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      * </p>
      * 
      * @param maxStorageUtilizationPercentage
-     *        Maximum observed or expected storage utilization of the instance (does not measure EBS storage).
+     *        The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * The EBS field that contains a list of EBS metrics that are associated with the current instance.
      * </p>
      * 
      * @param eBSResourceUtilization
-     *        The EBS field that contains a list of EBS metrics associated with the current instance.
+     *        The EBS field that contains a list of EBS metrics that are associated with the current instance.
      */
 
     public void setEBSResourceUtilization(EBSResourceUtilization eBSResourceUtilization) {
@@ -200,10 +200,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * The EBS field that contains a list of EBS metrics that are associated with the current instance.
      * </p>
      * 
-     * @return The EBS field that contains a list of EBS metrics associated with the current instance.
+     * @return The EBS field that contains a list of EBS metrics that are associated with the current instance.
      */
 
     public EBSResourceUtilization getEBSResourceUtilization() {
@@ -212,11 +212,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * The EBS field that contains a list of EBS metrics that are associated with the current instance.
      * </p>
      * 
      * @param eBSResourceUtilization
-     *        The EBS field that contains a list of EBS metrics associated with the current instance.
+     *        The EBS field that contains a list of EBS metrics that are associated with the current instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,12 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * The field that contains a list of disk (local storage) metrics that are associated with the current instance.
      * </p>
      * 
      * @param diskResourceUtilization
-     *        The field that contains a list of disk (local storage) metrics associated with the current instance.
+     *        The field that contains a list of disk (local storage) metrics that are associated with the current
+     *        instance.
      */
 
     public void setDiskResourceUtilization(DiskResourceUtilization diskResourceUtilization) {
@@ -240,10 +241,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * The field that contains a list of disk (local storage) metrics that are associated with the current instance.
      * </p>
      * 
-     * @return The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * @return The field that contains a list of disk (local storage) metrics that are associated with the current
+     *         instance.
      */
 
     public DiskResourceUtilization getDiskResourceUtilization() {
@@ -252,11 +254,12 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * The field that contains a list of disk (local storage) metrics that are associated with the current instance.
      * </p>
      * 
      * @param diskResourceUtilization
-     *        The field that contains a list of disk (local storage) metrics associated with the current instance.
+     *        The field that contains a list of disk (local storage) metrics that are associated with the current
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +270,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network field that contains a list of network metrics associated with the current instance.
+     * The network field that contains a list of network metrics that are associated with the current instance.
      * </p>
      * 
      * @param networkResourceUtilization
-     *        The network field that contains a list of network metrics associated with the current instance.
+     *        The network field that contains a list of network metrics that are associated with the current instance.
      */
 
     public void setNetworkResourceUtilization(NetworkResourceUtilization networkResourceUtilization) {
@@ -280,10 +283,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network field that contains a list of network metrics associated with the current instance.
+     * The network field that contains a list of network metrics that are associated with the current instance.
      * </p>
      * 
-     * @return The network field that contains a list of network metrics associated with the current instance.
+     * @return The network field that contains a list of network metrics that are associated with the current instance.
      */
 
     public NetworkResourceUtilization getNetworkResourceUtilization() {
@@ -292,11 +295,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The network field that contains a list of network metrics associated with the current instance.
+     * The network field that contains a list of network metrics that are associated with the current instance.
      * </p>
      * 
      * @param networkResourceUtilization
-     *        The network field that contains a list of network metrics associated with the current instance.
+     *        The network field that contains a list of network metrics that are associated with the current instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

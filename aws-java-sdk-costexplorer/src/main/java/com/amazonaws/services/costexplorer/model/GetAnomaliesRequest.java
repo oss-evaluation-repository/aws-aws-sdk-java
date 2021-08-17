@@ -53,8 +53,8 @@ public class GetAnomaliesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private TotalImpactFilter totalImpact;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
@@ -264,13 +264,13 @@ public class GetAnomaliesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -279,12 +279,12 @@ public class GetAnomaliesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -293,13 +293,13 @@ public class GetAnomaliesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

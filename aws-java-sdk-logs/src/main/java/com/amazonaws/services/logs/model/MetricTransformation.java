@@ -74,7 +74,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
      * see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      * </p>
      * </important>
      */
@@ -283,7 +283,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
      * see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      * </p>
      * </important>
      * 
@@ -303,7 +303,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      *         You can also set up a billing alarm to alert you if your charges are higher than expected. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"
-     *         > Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     *         > Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      *         </p>
      */
 
@@ -333,7 +333,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
      * see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      * </p>
      * </important>
      * 
@@ -354,7 +354,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      *        You can also set up a billing alarm to alert you if your charges are higher than expected. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"
-     *        > Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     *        > Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      *        </p>
      */
 
@@ -381,7 +381,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
      * see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      * </p>
      * </important>
      * 
@@ -402,7 +402,7 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
      *        You can also set up a billing alarm to alert you if your charges are higher than expected. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"
-     *        > Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+     *        > Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

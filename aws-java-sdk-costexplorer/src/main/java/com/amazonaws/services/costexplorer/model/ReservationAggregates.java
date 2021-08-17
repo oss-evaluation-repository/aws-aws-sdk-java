@@ -36,8 +36,8 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String utilizationPercentage;
     /**
      * <p>
-     * The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units
+     * are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      */
     private String utilizationPercentageInUnits;
@@ -49,8 +49,8 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String purchasedHours;
     /**
      * <p>
-     * How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      */
     private String purchasedUnits;
@@ -62,8 +62,8 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String totalActualHours;
     /**
      * <p>
-     * The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      */
     private String totalActualUnits;
@@ -75,45 +75,45 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String unusedHours;
     /**
      * <p>
-     * The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      */
     private String unusedUnits;
     /**
      * <p>
-     * How much your reservation would cost if charged On-Demand rates.
+     * How much your reservation costs if charged On-Demand rates.
      * </p>
      */
     private String onDemandCostOfRIHoursUsed;
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     * subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      */
     private String netRISavings;
     /**
      * <p>
-     * How much you could save if you use your entire reservation.
+     * How much you might save if you use your entire reservation.
      * </p>
      */
     private String totalPotentialRISavings;
     /**
      * <p>
-     * The upfront cost of your reservation, amortized over the reservation period.
+     * The upfront cost of your reservation. It's amortized over the reservation period.
      * </p>
      */
     private String amortizedUpfrontFee;
     /**
      * <p>
-     * The monthly cost of your reservation, amortized over the reservation period.
+     * The monthly cost of your reservation. It's amortized over the reservation period.
      * </p>
      */
     private String amortizedRecurringFee;
     /**
      * <p>
-     * The total cost of your reservation, amortized over the reservation period.
+     * The total cost of your reservation. It's amortized over the reservation period.
      * </p>
      */
     private String totalAmortizedFee;
@@ -125,13 +125,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String rICostForUnusedHours;
     /**
      * <p>
-     * The realized savings due to purchasing and using a reservation.
+     * The realized savings because of purchasing and using a reservation.
      * </p>
      */
     private String realizedSavings;
     /**
      * <p>
-     * The unrealized savings due to purchasing and using a reservation.
+     * The unrealized savings because of purchasing and using a reservation.
      * </p>
      */
     private String unrealizedSavings;
@@ -178,13 +178,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units
+     * are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param utilizationPercentageInUnits
-     *        The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public void setUtilizationPercentageInUnits(String utilizationPercentageInUnits) {
@@ -193,12 +193,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units
+     * are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
-     * @return The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized
-     *         units are available only for Amazon EC2 usage after November 11, 2017.
+     * @return The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units.
+     *         Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public String getUtilizationPercentageInUnits() {
@@ -207,13 +207,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units
+     * are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param utilizationPercentageInUnits
-     *        The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,13 +264,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param purchasedUnits
-     *        How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units
-     *        are available only for Amazon EC2 usage after November 11, 2017.
+     *        The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public void setPurchasedUnits(String purchasedUnits) {
@@ -279,12 +279,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
-     * @return How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units
-     *         are available only for Amazon EC2 usage after November 11, 2017.
+     * @return The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units.
+     *         Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public String getPurchasedUnits() {
@@ -293,13 +293,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units are
-     * available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param purchasedUnits
-     *        How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units
-     *        are available only for Amazon EC2 usage after November 11, 2017.
+     *        The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,13 +350,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param totalActualUnits
-     *        The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public void setTotalActualUnits(String totalActualUnits) {
@@ -365,12 +365,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
-     * @return The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized
-     *         units are available only for Amazon EC2 usage after November 11, 2017.
+     * @return The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units.
+     *         Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public String getTotalActualUnits() {
@@ -379,13 +379,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param totalActualUnits
-     *        The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,13 +436,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param unusedUnits
-     *        The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public void setUnusedUnits(String unusedUnits) {
@@ -451,12 +451,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
-     * @return The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized
-     *         units are available only for Amazon EC2 usage after November 11, 2017.
+     * @return The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units.
+     *         Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      */
 
     public String getUnusedUnits() {
@@ -465,13 +465,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized units
-     * are available only for Amazon EC2 usage after November 11, 2017.
+     * The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized
+     * units are available only for Amazon EC2 usage after November 11, 2017.
      * </p>
      * 
      * @param unusedUnits
-     *        The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized
-     *        units are available only for Amazon EC2 usage after November 11, 2017.
+     *        The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units.
+     *        Normalized units are available only for Amazon EC2 usage after November 11, 2017.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,11 +482,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much your reservation would cost if charged On-Demand rates.
+     * How much your reservation costs if charged On-Demand rates.
      * </p>
      * 
      * @param onDemandCostOfRIHoursUsed
-     *        How much your reservation would cost if charged On-Demand rates.
+     *        How much your reservation costs if charged On-Demand rates.
      */
 
     public void setOnDemandCostOfRIHoursUsed(String onDemandCostOfRIHoursUsed) {
@@ -495,10 +495,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much your reservation would cost if charged On-Demand rates.
+     * How much your reservation costs if charged On-Demand rates.
      * </p>
      * 
-     * @return How much your reservation would cost if charged On-Demand rates.
+     * @return How much your reservation costs if charged On-Demand rates.
      */
 
     public String getOnDemandCostOfRIHoursUsed() {
@@ -507,11 +507,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much your reservation would cost if charged On-Demand rates.
+     * How much your reservation costs if charged On-Demand rates.
      * </p>
      * 
      * @param onDemandCostOfRIHoursUsed
-     *        How much your reservation would cost if charged On-Demand rates.
+     *        How much your reservation costs if charged On-Demand rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,13 +522,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     * subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
      * @param netRISavings
-     *        How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     *        <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     *        How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     *        subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      */
 
     public void setNetRISavings(String netRISavings) {
@@ -537,12 +537,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     * subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
-     * @return How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     *         <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     * @return How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     *         subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      */
 
     public String getNetRISavings() {
@@ -551,13 +551,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     * subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
      * @param netRISavings
-     *        How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting
-     *        <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+     *        How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by
+     *        subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,11 +568,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you could save if you use your entire reservation.
+     * How much you might save if you use your entire reservation.
      * </p>
      * 
      * @param totalPotentialRISavings
-     *        How much you could save if you use your entire reservation.
+     *        How much you might save if you use your entire reservation.
      */
 
     public void setTotalPotentialRISavings(String totalPotentialRISavings) {
@@ -581,10 +581,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you could save if you use your entire reservation.
+     * How much you might save if you use your entire reservation.
      * </p>
      * 
-     * @return How much you could save if you use your entire reservation.
+     * @return How much you might save if you use your entire reservation.
      */
 
     public String getTotalPotentialRISavings() {
@@ -593,11 +593,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you could save if you use your entire reservation.
+     * How much you might save if you use your entire reservation.
      * </p>
      * 
      * @param totalPotentialRISavings
-     *        How much you could save if you use your entire reservation.
+     *        How much you might save if you use your entire reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,11 +608,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The upfront cost of your reservation, amortized over the reservation period.
+     * The upfront cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param amortizedUpfrontFee
-     *        The upfront cost of your reservation, amortized over the reservation period.
+     *        The upfront cost of your reservation. It's amortized over the reservation period.
      */
 
     public void setAmortizedUpfrontFee(String amortizedUpfrontFee) {
@@ -621,10 +621,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The upfront cost of your reservation, amortized over the reservation period.
+     * The upfront cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
-     * @return The upfront cost of your reservation, amortized over the reservation period.
+     * @return The upfront cost of your reservation. It's amortized over the reservation period.
      */
 
     public String getAmortizedUpfrontFee() {
@@ -633,11 +633,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The upfront cost of your reservation, amortized over the reservation period.
+     * The upfront cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param amortizedUpfrontFee
-     *        The upfront cost of your reservation, amortized over the reservation period.
+     *        The upfront cost of your reservation. It's amortized over the reservation period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -648,11 +648,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The monthly cost of your reservation, amortized over the reservation period.
+     * The monthly cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param amortizedRecurringFee
-     *        The monthly cost of your reservation, amortized over the reservation period.
+     *        The monthly cost of your reservation. It's amortized over the reservation period.
      */
 
     public void setAmortizedRecurringFee(String amortizedRecurringFee) {
@@ -661,10 +661,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The monthly cost of your reservation, amortized over the reservation period.
+     * The monthly cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
-     * @return The monthly cost of your reservation, amortized over the reservation period.
+     * @return The monthly cost of your reservation. It's amortized over the reservation period.
      */
 
     public String getAmortizedRecurringFee() {
@@ -673,11 +673,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The monthly cost of your reservation, amortized over the reservation period.
+     * The monthly cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param amortizedRecurringFee
-     *        The monthly cost of your reservation, amortized over the reservation period.
+     *        The monthly cost of your reservation. It's amortized over the reservation period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -688,11 +688,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total cost of your reservation, amortized over the reservation period.
+     * The total cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param totalAmortizedFee
-     *        The total cost of your reservation, amortized over the reservation period.
+     *        The total cost of your reservation. It's amortized over the reservation period.
      */
 
     public void setTotalAmortizedFee(String totalAmortizedFee) {
@@ -701,10 +701,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total cost of your reservation, amortized over the reservation period.
+     * The total cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
-     * @return The total cost of your reservation, amortized over the reservation period.
+     * @return The total cost of your reservation. It's amortized over the reservation period.
      */
 
     public String getTotalAmortizedFee() {
@@ -713,11 +713,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total cost of your reservation, amortized over the reservation period.
+     * The total cost of your reservation. It's amortized over the reservation period.
      * </p>
      * 
      * @param totalAmortizedFee
-     *        The total cost of your reservation, amortized over the reservation period.
+     *        The total cost of your reservation. It's amortized over the reservation period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -768,11 +768,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The realized savings due to purchasing and using a reservation.
+     * The realized savings because of purchasing and using a reservation.
      * </p>
      * 
      * @param realizedSavings
-     *        The realized savings due to purchasing and using a reservation.
+     *        The realized savings because of purchasing and using a reservation.
      */
 
     public void setRealizedSavings(String realizedSavings) {
@@ -781,10 +781,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The realized savings due to purchasing and using a reservation.
+     * The realized savings because of purchasing and using a reservation.
      * </p>
      * 
-     * @return The realized savings due to purchasing and using a reservation.
+     * @return The realized savings because of purchasing and using a reservation.
      */
 
     public String getRealizedSavings() {
@@ -793,11 +793,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The realized savings due to purchasing and using a reservation.
+     * The realized savings because of purchasing and using a reservation.
      * </p>
      * 
      * @param realizedSavings
-     *        The realized savings due to purchasing and using a reservation.
+     *        The realized savings because of purchasing and using a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -808,11 +808,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unrealized savings due to purchasing and using a reservation.
+     * The unrealized savings because of purchasing and using a reservation.
      * </p>
      * 
      * @param unrealizedSavings
-     *        The unrealized savings due to purchasing and using a reservation.
+     *        The unrealized savings because of purchasing and using a reservation.
      */
 
     public void setUnrealizedSavings(String unrealizedSavings) {
@@ -821,10 +821,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unrealized savings due to purchasing and using a reservation.
+     * The unrealized savings because of purchasing and using a reservation.
      * </p>
      * 
-     * @return The unrealized savings due to purchasing and using a reservation.
+     * @return The unrealized savings because of purchasing and using a reservation.
      */
 
     public String getUnrealizedSavings() {
@@ -833,11 +833,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unrealized savings due to purchasing and using a reservation.
+     * The unrealized savings because of purchasing and using a reservation.
      * </p>
      * 
      * @param unrealizedSavings
-     *        The unrealized savings due to purchasing and using a reservation.
+     *        The unrealized savings because of purchasing and using a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The combination of AWS service, linked account, Region, and usage type where a cost anomaly is observed.
+ * The combination of Amazon Web Services service, linked account, Region, and usage type where a cost anomaly is
+ * observed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause" target="_top">AWS API Documentation</a>
@@ -29,36 +30,36 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service name associated with the cost anomaly.
+     * The Amazon Web Services service name that's associated with the cost anomaly.
      * </p>
      */
     private String service;
     /**
      * <p>
-     * The AWS Region associated with the cost anomaly.
+     * The Amazon Web Services Region that's associated with the cost anomaly.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The linked account value associated with the cost anomaly.
+     * The member account value that's associated with the cost anomaly.
      * </p>
      */
     private String linkedAccount;
     /**
      * <p>
-     * The <code>UsageType</code> value associated with the cost anomaly.
+     * The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      */
     private String usageType;
 
     /**
      * <p>
-     * The AWS service name associated with the cost anomaly.
+     * The Amazon Web Services service name that's associated with the cost anomaly.
      * </p>
      * 
      * @param service
-     *        The AWS service name associated with the cost anomaly.
+     *        The Amazon Web Services service name that's associated with the cost anomaly.
      */
 
     public void setService(String service) {
@@ -67,10 +68,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service name associated with the cost anomaly.
+     * The Amazon Web Services service name that's associated with the cost anomaly.
      * </p>
      * 
-     * @return The AWS service name associated with the cost anomaly.
+     * @return The Amazon Web Services service name that's associated with the cost anomaly.
      */
 
     public String getService() {
@@ -79,11 +80,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service name associated with the cost anomaly.
+     * The Amazon Web Services service name that's associated with the cost anomaly.
      * </p>
      * 
      * @param service
-     *        The AWS service name associated with the cost anomaly.
+     *        The Amazon Web Services service name that's associated with the cost anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +95,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region associated with the cost anomaly.
+     * The Amazon Web Services Region that's associated with the cost anomaly.
      * </p>
      * 
      * @param region
-     *        The AWS Region associated with the cost anomaly.
+     *        The Amazon Web Services Region that's associated with the cost anomaly.
      */
 
     public void setRegion(String region) {
@@ -107,10 +108,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region associated with the cost anomaly.
+     * The Amazon Web Services Region that's associated with the cost anomaly.
      * </p>
      * 
-     * @return The AWS Region associated with the cost anomaly.
+     * @return The Amazon Web Services Region that's associated with the cost anomaly.
      */
 
     public String getRegion() {
@@ -119,11 +120,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region associated with the cost anomaly.
+     * The Amazon Web Services Region that's associated with the cost anomaly.
      * </p>
      * 
      * @param region
-     *        The AWS Region associated with the cost anomaly.
+     *        The Amazon Web Services Region that's associated with the cost anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +135,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The linked account value associated with the cost anomaly.
+     * The member account value that's associated with the cost anomaly.
      * </p>
      * 
      * @param linkedAccount
-     *        The linked account value associated with the cost anomaly.
+     *        The member account value that's associated with the cost anomaly.
      */
 
     public void setLinkedAccount(String linkedAccount) {
@@ -147,10 +148,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The linked account value associated with the cost anomaly.
+     * The member account value that's associated with the cost anomaly.
      * </p>
      * 
-     * @return The linked account value associated with the cost anomaly.
+     * @return The member account value that's associated with the cost anomaly.
      */
 
     public String getLinkedAccount() {
@@ -159,11 +160,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The linked account value associated with the cost anomaly.
+     * The member account value that's associated with the cost anomaly.
      * </p>
      * 
      * @param linkedAccount
-     *        The linked account value associated with the cost anomaly.
+     *        The member account value that's associated with the cost anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +175,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>UsageType</code> value associated with the cost anomaly.
+     * The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      * 
      * @param usageType
-     *        The <code>UsageType</code> value associated with the cost anomaly.
+     *        The <code>UsageType</code> value that's associated with the cost anomaly.
      */
 
     public void setUsageType(String usageType) {
@@ -187,10 +188,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>UsageType</code> value associated with the cost anomaly.
+     * The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      * 
-     * @return The <code>UsageType</code> value associated with the cost anomaly.
+     * @return The <code>UsageType</code> value that's associated with the cost anomaly.
      */
 
     public String getUsageType() {
@@ -199,11 +200,11 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>UsageType</code> value associated with the cost anomaly.
+     * The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      * 
      * @param usageType
-     *        The <code>UsageType</code> value associated with the cost anomaly.
+     *        The <code>UsageType</code> value that's associated with the cost anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

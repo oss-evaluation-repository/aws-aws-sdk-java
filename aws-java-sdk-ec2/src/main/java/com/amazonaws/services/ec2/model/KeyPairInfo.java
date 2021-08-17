@@ -34,10 +34,37 @@ public class KeyPairInfo implements Serializable, Cloneable {
     private String keyPairId;
     /**
      * <p>
-     * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key
-     * fingerprint as specified in section 4 of RFC4716.
+     * If you used <a>CreateKeyPair</a> to create the key pair:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String keyFingerprint;
     /**
@@ -46,6 +73,12 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * </p>
      */
     private String keyName;
+    /**
+     * <p>
+     * The type of key pair.
+     * </p>
+     */
+    private String keyType;
     /**
      * <p>
      * Any tags applied to the key pair.
@@ -95,15 +128,69 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key
-     * fingerprint as specified in section 4 of RFC4716.
+     * If you used <a>CreateKeyPair</a> to create the key pair:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyFingerprint
-     *        If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded
-     *        private key. If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the
-     *        MD5 public key fingerprint as specified in section 4 of RFC4716.
+     *        If you used <a>CreateKeyPair</a> to create the key pair:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *        OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of
+     *        RFC4716.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *        OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setKeyFingerprint(String keyFingerprint) {
@@ -112,14 +199,68 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key
-     * fingerprint as specified in section 4 of RFC4716.
+     * If you used <a>CreateKeyPair</a> to create the key pair:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded
-     *         private key. If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the
-     *         MD5 public key fingerprint as specified in section 4 of RFC4716.
+     * @return If you used <a>CreateKeyPair</a> to create the key pair:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *         OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of
+     *         RFC4716.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *         OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *         </p>
+     *         </li>
      */
 
     public String getKeyFingerprint() {
@@ -128,15 +269,69 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key
-     * fingerprint as specified in section 4 of RFC4716.
+     * If you used <a>CreateKeyPair</a> to create the key pair:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyFingerprint
-     *        If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded
-     *        private key. If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the
-     *        MD5 public key fingerprint as specified in section 4 of RFC4716.
+     *        If you used <a>CreateKeyPair</a> to create the key pair:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *        OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of
+     *        RFC4716.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     *        OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,6 +377,65 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     public KeyPairInfo withKeyName(String keyName) {
         setKeyName(keyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of key pair.
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair.
+     * @see KeyType
+     */
+
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
+    }
+
+    /**
+     * <p>
+     * The type of key pair.
+     * </p>
+     * 
+     * @return The type of key pair.
+     * @see KeyType
+     */
+
+    public String getKeyType() {
+        return this.keyType;
+    }
+
+    /**
+     * <p>
+     * The type of key pair.
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public KeyPairInfo withKeyType(String keyType) {
+        setKeyType(keyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of key pair.
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public KeyPairInfo withKeyType(KeyType keyType) {
+        this.keyType = keyType.toString();
         return this;
     }
 
@@ -276,6 +530,8 @@ public class KeyPairInfo implements Serializable, Cloneable {
             sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyName() != null)
             sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getKeyType() != null)
+            sb.append("KeyType: ").append(getKeyType()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -304,6 +560,10 @@ public class KeyPairInfo implements Serializable, Cloneable {
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
+        if (other.getKeyType() == null ^ this.getKeyType() == null)
+            return false;
+        if (other.getKeyType() != null && other.getKeyType().equals(this.getKeyType()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -319,6 +579,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyType() == null) ? 0 : getKeyType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

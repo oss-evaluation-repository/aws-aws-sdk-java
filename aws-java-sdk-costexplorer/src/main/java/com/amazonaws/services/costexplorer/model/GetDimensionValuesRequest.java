@@ -33,7 +33,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
     private String searchString;
     /**
      * <p>
-     * The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is
+     * The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is
      * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -76,13 +76,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     * LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web
+     * Services.
      * </p>
      * </li>
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -108,7 +109,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * SERVICE - The AWS service such as Amazon DynamoDB.
+     * SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      * </p>
      * </li>
      * <li>
@@ -125,7 +126,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -168,7 +169,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -178,7 +179,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -214,7 +215,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -225,7 +226,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -304,8 +305,8 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
@@ -352,15 +353,15 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is
+     * The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is
      * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date
-     *        is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     *        The start date and end date for retrieving the dimension values. The start date is inclusive, but the end
+     *        date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      */
@@ -371,13 +372,13 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is
+     * The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is
      * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
-     * @return The start and end dates for retrieving the dimension values. The start date is inclusive, but the end
+     * @return The start date and end date for retrieving the dimension values. The start date is inclusive, but the end
      *         date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      *         <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      *         including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -389,15 +390,15 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is
+     * The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is
      * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date
-     *        is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     *        The start date and end date for retrieving the dimension values. The start date is inclusive, but the end
+     *        date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -504,13 +505,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     * LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web
+     * Services.
      * </p>
      * </li>
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -536,7 +538,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * SERVICE - The AWS service such as Amazon DynamoDB.
+     * SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      * </p>
      * </li>
      * <li>
@@ -553,7 +555,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -596,7 +598,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -606,7 +608,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -642,7 +644,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -653,7 +655,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -690,13 +692,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     *        LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as
+     *        Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -722,7 +725,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        SERVICE - The AWS service such as Amazon DynamoDB.
+     *        SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      *        </p>
      *        </li>
      *        <li>
@@ -739,7 +742,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -782,7 +785,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -792,7 +795,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -828,7 +831,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -839,7 +842,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -883,13 +886,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     * LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web
+     * Services.
      * </p>
      * </li>
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -915,7 +919,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * SERVICE - The AWS service such as Amazon DynamoDB.
+     * SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      * </p>
      * </li>
      * <li>
@@ -932,7 +936,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -975,7 +979,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -985,7 +989,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1021,7 +1025,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1032,7 +1036,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1069,14 +1073,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web
-     *         Services.
+     *         LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as
+     *         Amazon Web Services.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *         The value field contains the AWS ID of the member account.
+     *         The value field contains the Amazon Web Services ID of the member account.
      *         </p>
      *         </li>
      *         <li>
@@ -1103,7 +1107,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         SERVICE - The AWS service such as Amazon DynamoDB.
+     *         SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      *         </p>
      *         </li>
      *         <li>
@@ -1120,7 +1124,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         REGION - The AWS Region.
+     *         REGION - The Amazon Web Services Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1163,7 +1167,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *         The value field contains the AWS ID of the member account.
+     *         The value field contains the Amazon Web Services ID of the member account.
      *         </p>
      *         </li>
      *         <li>
@@ -1173,7 +1177,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         REGION - The AWS Region.
+     *         REGION - The Amazon Web Services Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1209,7 +1213,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         REGION - The AWS Region.
+     *         REGION - The Amazon Web Services Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1220,7 +1224,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *         The value field contains the AWS ID of the member account.
+     *         The value field contains the Amazon Web Services ID of the member account.
      *         </p>
      *         </li>
      *         <li>
@@ -1264,13 +1268,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     * LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web
+     * Services.
      * </p>
      * </li>
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1296,7 +1301,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * SERVICE - The AWS service such as Amazon DynamoDB.
+     * SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      * </p>
      * </li>
      * <li>
@@ -1313,7 +1318,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1356,7 +1361,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1366,7 +1371,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1402,7 +1407,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1413,7 +1418,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1450,13 +1455,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     *        LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as
+     *        Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -1482,7 +1488,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        SERVICE - The AWS service such as Amazon DynamoDB.
+     *        SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      *        </p>
      *        </li>
      *        <li>
@@ -1499,7 +1505,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1542,7 +1548,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -1552,7 +1558,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1588,7 +1594,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1599,7 +1605,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -1645,13 +1651,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     * LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web
+     * Services.
      * </p>
      * </li>
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1677,7 +1684,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * SERVICE - The AWS service such as Amazon DynamoDB.
+     * SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      * </p>
      * </li>
      * <li>
@@ -1694,7 +1701,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1737,7 +1744,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1747,7 +1754,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1783,7 +1790,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * REGION - The AWS Region.
+     * REGION - The Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
@@ -1794,7 +1801,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
-     * value field contains the AWS ID of the member account.
+     * value field contains the Amazon Web Services ID of the member account.
      * </p>
      * </li>
      * <li>
@@ -1831,13 +1838,14 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.
+     *        LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as
+     *        Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -1863,7 +1871,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        SERVICE - The AWS service such as Amazon DynamoDB.
+     *        SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
      *        </p>
      *        </li>
      *        <li>
@@ -1880,7 +1888,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1923,7 +1931,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -1933,7 +1941,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1969,7 +1977,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        REGION - The AWS Region.
+     *        REGION - The Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1980,7 +1988,7 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
-     *        The value field contains the AWS ID of the member account.
+     *        The value field contains the Amazon Web Services ID of the member account.
      *        </p>
      *        </li>
      *        <li>
@@ -2538,13 +2546,13 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -2553,12 +2561,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -2567,13 +2575,13 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

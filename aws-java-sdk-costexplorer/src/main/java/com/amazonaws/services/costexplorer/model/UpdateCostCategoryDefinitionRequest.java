@@ -43,6 +43,12 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
     private java.util.List<CostCategoryRule> rules;
 
     private String defaultValue;
+    /**
+     * <p>
+     * The split charge rules used to allocate your charges between your Cost Category values.
+     * </p>
+     */
+    private java.util.List<CostCategorySplitChargeRule> splitChargeRules;
 
     /**
      * <p>
@@ -237,6 +243,76 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The split charge rules used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @return The split charge rules used to allocate your charges between your Cost Category values.
+     */
+
+    public java.util.List<CostCategorySplitChargeRule> getSplitChargeRules() {
+        return splitChargeRules;
+    }
+
+    /**
+     * <p>
+     * The split charge rules used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules used to allocate your charges between your Cost Category values.
+     */
+
+    public void setSplitChargeRules(java.util.Collection<CostCategorySplitChargeRule> splitChargeRules) {
+        if (splitChargeRules == null) {
+            this.splitChargeRules = null;
+            return;
+        }
+
+        this.splitChargeRules = new java.util.ArrayList<CostCategorySplitChargeRule>(splitChargeRules);
+    }
+
+    /**
+     * <p>
+     * The split charge rules used to allocate your charges between your Cost Category values.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSplitChargeRules(java.util.Collection)} or {@link #withSplitChargeRules(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules used to allocate your charges between your Cost Category values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCostCategoryDefinitionRequest withSplitChargeRules(CostCategorySplitChargeRule... splitChargeRules) {
+        if (this.splitChargeRules == null) {
+            setSplitChargeRules(new java.util.ArrayList<CostCategorySplitChargeRule>(splitChargeRules.length));
+        }
+        for (CostCategorySplitChargeRule ele : splitChargeRules) {
+            this.splitChargeRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The split charge rules used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules used to allocate your charges between your Cost Category values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCostCategoryDefinitionRequest withSplitChargeRules(java.util.Collection<CostCategorySplitChargeRule> splitChargeRules) {
+        setSplitChargeRules(splitChargeRules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +331,9 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
         if (getRules() != null)
             sb.append("Rules: ").append(getRules()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: ").append(getDefaultValue());
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
+        if (getSplitChargeRules() != null)
+            sb.append("SplitChargeRules: ").append(getSplitChargeRules());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +364,10 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
+        if (other.getSplitChargeRules() == null ^ this.getSplitChargeRules() == null)
+            return false;
+        if (other.getSplitChargeRules() != null && other.getSplitChargeRules().equals(this.getSplitChargeRules()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +380,7 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getRuleVersion() == null) ? 0 : getRuleVersion().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getSplitChargeRules() == null) ? 0 : getSplitChargeRules().hashCode());
         return hashCode;
     }
 

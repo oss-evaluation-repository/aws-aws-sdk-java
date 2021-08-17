@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The forecast created for your query.
+ * The forecast that's created for your query.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ForecastResult" target="_top">AWS API

@@ -74,6 +74,13 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SplitChargeRules", targetDepth)) {
+                    context.nextToken();
+                    costCategory.setSplitChargeRules(new ListUnmarshaller<CostCategorySplitChargeRule>(CostCategorySplitChargeRuleJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ProcessingStatus", targetDepth)) {
                     context.nextToken();
                     costCategory.setProcessingStatus(new ListUnmarshaller<CostCategoryProcessingStatus>(CostCategoryProcessingStatusJsonUnmarshaller

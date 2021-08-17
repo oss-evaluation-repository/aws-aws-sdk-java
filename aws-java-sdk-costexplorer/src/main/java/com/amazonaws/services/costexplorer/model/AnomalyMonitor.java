@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This object continuously inspects your account's cost data for anomalies, based on <code>MonitorType</code> and
+ * This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and
  * <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor
  * object.
  * </p>

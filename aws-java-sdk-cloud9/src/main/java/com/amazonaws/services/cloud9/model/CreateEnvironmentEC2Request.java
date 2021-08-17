@@ -145,6 +145,14 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String connectionType;
+    /**
+     * <p>
+     * Checks whether you have the required permissions for the action, without actually making the request, and
+     * provides an error response. If you have the required permissions, the error response is
+     * <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -965,6 +973,74 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Checks whether you have the required permissions for the action, without actually making the request, and
+     * provides an error response. If you have the required permissions, the error response is
+     * <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks whether you have the required permissions for the action, without actually making the request, and
+     *        provides an error response. If you have the required permissions, the error response is
+     *        <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks whether you have the required permissions for the action, without actually making the request, and
+     * provides an error response. If you have the required permissions, the error response is
+     * <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * </p>
+     * 
+     * @return Checks whether you have the required permissions for the action, without actually making the request, and
+     *         provides an error response. If you have the required permissions, the error response is
+     *         <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks whether you have the required permissions for the action, without actually making the request, and
+     * provides an error response. If you have the required permissions, the error response is
+     * <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks whether you have the required permissions for the action, without actually making the request, and
+     *        provides an error response. If you have the required permissions, the error response is
+     *        <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentEC2Request withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks whether you have the required permissions for the action, without actually making the request, and
+     * provides an error response. If you have the required permissions, the error response is
+     * <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     * </p>
+     * 
+     * @return Checks whether you have the required permissions for the action, without actually making the request, and
+     *         provides an error response. If you have the required permissions, the error response is
+     *         <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -995,7 +1071,9 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         if (getTags() != null)
             sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
         if (getConnectionType() != null)
-            sb.append("ConnectionType: ").append(getConnectionType());
+            sb.append("ConnectionType: ").append(getConnectionType()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -1050,6 +1128,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getConnectionType() != null && other.getConnectionType().equals(this.getConnectionType()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -1068,6 +1150,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getConnectionType() == null) ? 0 : getConnectionType().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+ * The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2Specification" target="_top">AWS API
@@ -30,18 +30,18 @@ public class EC2Specification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Whether you want a recommendation for standard or convertible reservations.
+     * Indicates whether you want a recommendation for standard or convertible reservations.
      * </p>
      */
     private String offeringClass;
 
     /**
      * <p>
-     * Whether you want a recommendation for standard or convertible reservations.
+     * Indicates whether you want a recommendation for standard or convertible reservations.
      * </p>
      * 
      * @param offeringClass
-     *        Whether you want a recommendation for standard or convertible reservations.
+     *        Indicates whether you want a recommendation for standard or convertible reservations.
      * @see OfferingClass
      */
 
@@ -51,10 +51,10 @@ public class EC2Specification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Whether you want a recommendation for standard or convertible reservations.
+     * Indicates whether you want a recommendation for standard or convertible reservations.
      * </p>
      * 
-     * @return Whether you want a recommendation for standard or convertible reservations.
+     * @return Indicates whether you want a recommendation for standard or convertible reservations.
      * @see OfferingClass
      */
 
@@ -64,11 +64,11 @@ public class EC2Specification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Whether you want a recommendation for standard or convertible reservations.
+     * Indicates whether you want a recommendation for standard or convertible reservations.
      * </p>
      * 
      * @param offeringClass
-     *        Whether you want a recommendation for standard or convertible reservations.
+     *        Indicates whether you want a recommendation for standard or convertible reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingClass
      */
@@ -80,11 +80,11 @@ public class EC2Specification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Whether you want a recommendation for standard or convertible reservations.
+     * Indicates whether you want a recommendation for standard or convertible reservations.
      * </p>
      * 
      * @param offeringClass
-     *        Whether you want a recommendation for standard or convertible reservations.
+     *        Indicates whether you want a recommendation for standard or convertible reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingClass
      */

@@ -31,9 +31,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, AWS CloudTrail,
- * and other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console,
- * CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and
+ * other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console,
+ * CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -52,8 +52,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of
- * particular API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.
+ * <b>Monitor CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of particular
+ * API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.
  * </p>
  * </li>
  * <li>

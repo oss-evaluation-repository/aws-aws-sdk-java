@@ -36,13 +36,13 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private String resourceId;
     /**
      * <p>
-     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      * </p>
      */
     private String instanceName;
     /**
      * <p>
-     * Cost allocation resource tags applied to the instance.
+     * Cost allocation resource tags that are applied to the instance.
      * </p>
      */
     private java.util.List<TagValues> tags;
@@ -60,37 +60,37 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private ResourceUtilization resourceUtilization;
     /**
      * <p>
-     * Number of hours during the lookback period covered by reservations.
+     * The number of hours during the lookback period that's covered by reservations.
      * </p>
      */
     private String reservationCoveredHoursInLookbackPeriod;
     /**
      * <p>
-     * Number of hours during the lookback period covered by Savings Plans.
+     * The number of hours during the lookback period that's covered by Savings Plans.
      * </p>
      */
     private String savingsPlansCoveredHoursInLookbackPeriod;
     /**
      * <p>
-     * Number of hours during the lookback period billed at On-Demand rates.
+     * The number of hours during the lookback period that's billed at On-Demand rates.
      * </p>
      */
     private String onDemandHoursInLookbackPeriod;
     /**
      * <p>
-     * The total number of hours the instance ran during the lookback period.
+     * The total number of hours that the instance ran during the lookback period.
      * </p>
      */
     private String totalRunningHoursInLookbackPeriod;
     /**
      * <p>
-     * Current On-Demand cost of operating this instance on a monthly basis.
+     * The current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      */
     private String monthlyCost;
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
@@ -137,11 +137,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      * </p>
      * 
      * @param instanceName
-     *        The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     *        The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      */
 
     public void setInstanceName(String instanceName) {
@@ -150,11 +150,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      * </p>
      * 
-     * @return The name you've given an instance. This field will show as blank if you haven't given the instance a
-     *         name.
+     * @return The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      */
 
     public String getInstanceName() {
@@ -163,11 +162,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      * </p>
      * 
      * @param instanceName
-     *        The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     *        The name that you given an instance. This field shows as blank if you haven't given the instance a name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +177,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Cost allocation resource tags applied to the instance.
+     * Cost allocation resource tags that are applied to the instance.
      * </p>
      * 
-     * @return Cost allocation resource tags applied to the instance.
+     * @return Cost allocation resource tags that are applied to the instance.
      */
 
     public java.util.List<TagValues> getTags() {
@@ -190,11 +189,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Cost allocation resource tags applied to the instance.
+     * Cost allocation resource tags that are applied to the instance.
      * </p>
      * 
      * @param tags
-     *        Cost allocation resource tags applied to the instance.
+     *        Cost allocation resource tags that are applied to the instance.
      */
 
     public void setTags(java.util.Collection<TagValues> tags) {
@@ -208,7 +207,7 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Cost allocation resource tags applied to the instance.
+     * Cost allocation resource tags that are applied to the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +216,7 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tags
-     *        Cost allocation resource tags applied to the instance.
+     *        Cost allocation resource tags that are applied to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +232,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Cost allocation resource tags applied to the instance.
+     * Cost allocation resource tags that are applied to the instance.
      * </p>
      * 
      * @param tags
-     *        Cost allocation resource tags applied to the instance.
+     *        Cost allocation resource tags that are applied to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,11 +327,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by reservations.
+     * The number of hours during the lookback period that's covered by reservations.
      * </p>
      * 
      * @param reservationCoveredHoursInLookbackPeriod
-     *        Number of hours during the lookback period covered by reservations.
+     *        The number of hours during the lookback period that's covered by reservations.
      */
 
     public void setReservationCoveredHoursInLookbackPeriod(String reservationCoveredHoursInLookbackPeriod) {
@@ -341,10 +340,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by reservations.
+     * The number of hours during the lookback period that's covered by reservations.
      * </p>
      * 
-     * @return Number of hours during the lookback period covered by reservations.
+     * @return The number of hours during the lookback period that's covered by reservations.
      */
 
     public String getReservationCoveredHoursInLookbackPeriod() {
@@ -353,11 +352,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by reservations.
+     * The number of hours during the lookback period that's covered by reservations.
      * </p>
      * 
      * @param reservationCoveredHoursInLookbackPeriod
-     *        Number of hours during the lookback period covered by reservations.
+     *        The number of hours during the lookback period that's covered by reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +367,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by Savings Plans.
+     * The number of hours during the lookback period that's covered by Savings Plans.
      * </p>
      * 
      * @param savingsPlansCoveredHoursInLookbackPeriod
-     *        Number of hours during the lookback period covered by Savings Plans.
+     *        The number of hours during the lookback period that's covered by Savings Plans.
      */
 
     public void setSavingsPlansCoveredHoursInLookbackPeriod(String savingsPlansCoveredHoursInLookbackPeriod) {
@@ -381,10 +380,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by Savings Plans.
+     * The number of hours during the lookback period that's covered by Savings Plans.
      * </p>
      * 
-     * @return Number of hours during the lookback period covered by Savings Plans.
+     * @return The number of hours during the lookback period that's covered by Savings Plans.
      */
 
     public String getSavingsPlansCoveredHoursInLookbackPeriod() {
@@ -393,11 +392,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period covered by Savings Plans.
+     * The number of hours during the lookback period that's covered by Savings Plans.
      * </p>
      * 
      * @param savingsPlansCoveredHoursInLookbackPeriod
-     *        Number of hours during the lookback period covered by Savings Plans.
+     *        The number of hours during the lookback period that's covered by Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,11 +407,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On-Demand rates.
+     * The number of hours during the lookback period that's billed at On-Demand rates.
      * </p>
      * 
      * @param onDemandHoursInLookbackPeriod
-     *        Number of hours during the lookback period billed at On-Demand rates.
+     *        The number of hours during the lookback period that's billed at On-Demand rates.
      */
 
     public void setOnDemandHoursInLookbackPeriod(String onDemandHoursInLookbackPeriod) {
@@ -421,10 +420,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On-Demand rates.
+     * The number of hours during the lookback period that's billed at On-Demand rates.
      * </p>
      * 
-     * @return Number of hours during the lookback period billed at On-Demand rates.
+     * @return The number of hours during the lookback period that's billed at On-Demand rates.
      */
 
     public String getOnDemandHoursInLookbackPeriod() {
@@ -433,11 +432,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On-Demand rates.
+     * The number of hours during the lookback period that's billed at On-Demand rates.
      * </p>
      * 
      * @param onDemandHoursInLookbackPeriod
-     *        Number of hours during the lookback period billed at On-Demand rates.
+     *        The number of hours during the lookback period that's billed at On-Demand rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,11 +447,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of hours the instance ran during the lookback period.
+     * The total number of hours that the instance ran during the lookback period.
      * </p>
      * 
      * @param totalRunningHoursInLookbackPeriod
-     *        The total number of hours the instance ran during the lookback period.
+     *        The total number of hours that the instance ran during the lookback period.
      */
 
     public void setTotalRunningHoursInLookbackPeriod(String totalRunningHoursInLookbackPeriod) {
@@ -461,10 +460,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of hours the instance ran during the lookback period.
+     * The total number of hours that the instance ran during the lookback period.
      * </p>
      * 
-     * @return The total number of hours the instance ran during the lookback period.
+     * @return The total number of hours that the instance ran during the lookback period.
      */
 
     public String getTotalRunningHoursInLookbackPeriod() {
@@ -473,11 +472,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of hours the instance ran during the lookback period.
+     * The total number of hours that the instance ran during the lookback period.
      * </p>
      * 
      * @param totalRunningHoursInLookbackPeriod
-     *        The total number of hours the instance ran during the lookback period.
+     *        The total number of hours that the instance ran during the lookback period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,11 +487,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On-Demand cost of operating this instance on a monthly basis.
+     * The current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
      * @param monthlyCost
-     *        Current On-Demand cost of operating this instance on a monthly basis.
+     *        The current On-Demand cost of operating this instance on a monthly basis.
      */
 
     public void setMonthlyCost(String monthlyCost) {
@@ -501,10 +500,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On-Demand cost of operating this instance on a monthly basis.
+     * The current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
-     * @return Current On-Demand cost of operating this instance on a monthly basis.
+     * @return The current On-Demand cost of operating this instance on a monthly basis.
      */
 
     public String getMonthlyCost() {
@@ -513,11 +512,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On-Demand cost of operating this instance on a monthly basis.
+     * The current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
      * @param monthlyCost
-     *        Current On-Demand cost of operating this instance on a monthly basis.
+     *        The current On-Demand cost of operating this instance on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,11 +527,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -541,10 +540,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that AWS used to calculate the costs for this instance.
+     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -553,11 +552,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

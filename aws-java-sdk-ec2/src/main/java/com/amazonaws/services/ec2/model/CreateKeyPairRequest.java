@@ -36,6 +36,16 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
     private String keyName;
     /**
      * <p>
+     * The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and
+     * EC2 Serial Console.
+     * </p>
+     * <p>
+     * Default: <code>rsa</code>
+     * </p>
+     */
+    private String keyType;
+    /**
+     * <p>
      * The tags to apply to the new key pair.
      * </p>
      */
@@ -113,6 +123,93 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
 
     public CreateKeyPairRequest withKeyName(String keyName) {
         setKeyName(keyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and
+     * EC2 Serial Console.
+     * </p>
+     * <p>
+     * Default: <code>rsa</code>
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance
+     *        Connect, and EC2 Serial Console.</p>
+     *        <p>
+     *        Default: <code>rsa</code>
+     * @see KeyType
+     */
+
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
+    }
+
+    /**
+     * <p>
+     * The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and
+     * EC2 Serial Console.
+     * </p>
+     * <p>
+     * Default: <code>rsa</code>
+     * </p>
+     * 
+     * @return The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance
+     *         Connect, and EC2 Serial Console.</p>
+     *         <p>
+     *         Default: <code>rsa</code>
+     * @see KeyType
+     */
+
+    public String getKeyType() {
+        return this.keyType;
+    }
+
+    /**
+     * <p>
+     * The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and
+     * EC2 Serial Console.
+     * </p>
+     * <p>
+     * Default: <code>rsa</code>
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance
+     *        Connect, and EC2 Serial Console.</p>
+     *        <p>
+     *        Default: <code>rsa</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public CreateKeyPairRequest withKeyType(String keyType) {
+        setKeyType(keyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and
+     * EC2 Serial Console.
+     * </p>
+     * <p>
+     * Default: <code>rsa</code>
+     * </p>
+     * 
+     * @param keyType
+     *        The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance
+     *        Connect, and EC2 Serial Console.</p>
+     *        <p>
+     *        Default: <code>rsa</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public CreateKeyPairRequest withKeyType(KeyType keyType) {
+        this.keyType = keyType.toString();
         return this;
     }
 
@@ -214,6 +311,8 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
         sb.append("{");
         if (getKeyName() != null)
             sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getKeyType() != null)
+            sb.append("KeyType: ").append(getKeyType()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
@@ -234,6 +333,10 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
+        if (other.getKeyType() == null ^ this.getKeyType() == null)
+            return false;
+        if (other.getKeyType() != null && other.getKeyType().equals(this.getKeyType()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -247,6 +350,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyType() == null) ? 0 : getKeyType().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }

@@ -98,8 +98,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<GroupDefinition> groupBy;
     /**
      * <p>
-     * The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     * <code>DAILY</code>.
+     * The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code>
+     * and <code>DAILY</code>.
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
@@ -203,8 +203,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> metrics;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
@@ -275,7 +275,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of objects that you returned for this request. If more objects are available, in the response,
-     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of
+     * objects.
      * </p>
      */
     private Integer maxResults;
@@ -831,8 +832,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     * <code>DAILY</code>.
+     * The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code>
+     * and <code>DAILY</code>.
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
@@ -844,8 +845,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param granularity
-     *        The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     *        <code>DAILY</code>.</p>
+     *        The granularity of the Amazon Web Services cost data for the reservation. Valid values are
+     *        <code>MONTHLY</code> and <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
      *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
@@ -863,8 +864,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     * <code>DAILY</code>.
+     * The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code>
+     * and <code>DAILY</code>.
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
@@ -875,8 +876,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * granularities.
      * </p>
      * 
-     * @return The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     *         <code>DAILY</code>.</p>
+     * @return The granularity of the Amazon Web Services cost data for the reservation. Valid values are
+     *         <code>MONTHLY</code> and <code>DAILY</code>.</p>
      *         <p>
      *         If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
      *         set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
@@ -894,8 +895,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     * <code>DAILY</code>.
+     * The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code>
+     * and <code>DAILY</code>.
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
@@ -907,8 +908,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param granularity
-     *        The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     *        <code>DAILY</code>.</p>
+     *        The granularity of the Amazon Web Services cost data for the reservation. Valid values are
+     *        <code>MONTHLY</code> and <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
      *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
@@ -928,8 +929,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     * <code>DAILY</code>.
+     * The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code>
+     * and <code>DAILY</code>.
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
@@ -941,8 +942,8 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param granularity
-     *        The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
-     *        <code>DAILY</code>.</p>
+     *        The granularity of the Amazon Web Services cost data for the reservation. Valid values are
+     *        <code>MONTHLY</code> and <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
      *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
@@ -1544,13 +1545,13 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -1559,12 +1560,12 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -1573,13 +1574,13 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1976,13 +1977,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of objects that you returned for this request. If more objects are available, in the response,
-     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of
+     * objects.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of objects that you returned for this request. If more objects are available, in the
-     *        response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
-     *        of objects.
+     *        response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get
+     *        the next batch of objects.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -1992,12 +1994,13 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of objects that you returned for this request. If more objects are available, in the response,
-     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of
+     * objects.
      * </p>
      * 
      * @return The maximum number of objects that you returned for this request. If more objects are available, in the
-     *         response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
-     *         of objects.
+     *         response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get
+     *         the next batch of objects.
      */
 
     public Integer getMaxResults() {
@@ -2007,13 +2010,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of objects that you returned for this request. If more objects are available, in the response,
-     * AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.
+     * Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of
+     * objects.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of objects that you returned for this request. If more objects are available, in the
-     *        response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch
-     *        of objects.
+     *        response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get
+     *        the next batch of objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

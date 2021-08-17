@@ -30,25 +30,25 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected cost to operate this instance type on a monthly basis.
+     * The expected cost to operate this instance type on a monthly basis.
      * </p>
      */
     private String estimatedMonthlyCost;
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      */
     private String estimatedMonthlySavings;
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
     /**
      * <p>
-     * Indicates whether this recommendation is the defaulted AWS recommendation.
+     * Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * </p>
      */
     private Boolean defaultTargetInstance;
@@ -60,7 +60,7 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
     private ResourceDetails resourceDetails;
     /**
      * <p>
-     * Expected utilization metrics for target instance type.
+     * The expected utilization metrics for target instance type.
      * </p>
      */
     private ResourceUtilization expectedResourceUtilization;
@@ -74,11 +74,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected cost to operate this instance type on a monthly basis.
+     * The expected cost to operate this instance type on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlyCost
-     *        Expected cost to operate this instance type on a monthly basis.
+     *        The expected cost to operate this instance type on a monthly basis.
      */
 
     public void setEstimatedMonthlyCost(String estimatedMonthlyCost) {
@@ -87,10 +87,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected cost to operate this instance type on a monthly basis.
+     * The expected cost to operate this instance type on a monthly basis.
      * </p>
      * 
-     * @return Expected cost to operate this instance type on a monthly basis.
+     * @return The expected cost to operate this instance type on a monthly basis.
      */
 
     public String getEstimatedMonthlyCost() {
@@ -99,11 +99,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected cost to operate this instance type on a monthly basis.
+     * The expected cost to operate this instance type on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlyCost
-     *        Expected cost to operate this instance type on a monthly basis.
+     *        The expected cost to operate this instance type on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        Estimated savings resulting from modification, on a monthly basis.
+     *        The estimated savings that result from modification, on a monthly basis.
      */
 
     public void setEstimatedMonthlySavings(String estimatedMonthlySavings) {
@@ -127,10 +127,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
-     * @return Estimated savings resulting from modification, on a monthly basis.
+     * @return The estimated savings that result from modification, on a monthly basis.
      */
 
     public String getEstimatedMonthlySavings() {
@@ -139,11 +139,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Estimated savings resulting from modification, on a monthly basis.
+     * The estimated savings that result from modification, on a monthly basis.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        Estimated savings resulting from modification, on a monthly basis.
+     *        The estimated savings that result from modification, on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -167,10 +167,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that AWS used to calculate the costs for this instance.
+     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -179,11 +179,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that AWS used to calculate the costs for this instance.
+     * The currency code that Amazon Web Services used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that AWS used to calculate the costs for this instance.
+     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +194,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether this recommendation is the defaulted AWS recommendation.
+     * Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * </p>
      * 
      * @param defaultTargetInstance
-     *        Indicates whether this recommendation is the defaulted AWS recommendation.
+     *        Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      */
 
     public void setDefaultTargetInstance(Boolean defaultTargetInstance) {
@@ -207,10 +207,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether this recommendation is the defaulted AWS recommendation.
+     * Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * </p>
      * 
-     * @return Indicates whether this recommendation is the defaulted AWS recommendation.
+     * @return Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      */
 
     public Boolean getDefaultTargetInstance() {
@@ -219,11 +219,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether this recommendation is the defaulted AWS recommendation.
+     * Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * </p>
      * 
      * @param defaultTargetInstance
-     *        Indicates whether this recommendation is the defaulted AWS recommendation.
+     *        Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,10 +234,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether this recommendation is the defaulted AWS recommendation.
+     * Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      * </p>
      * 
-     * @return Indicates whether this recommendation is the defaulted AWS recommendation.
+     * @return Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
      */
 
     public Boolean isDefaultTargetInstance() {
@@ -286,11 +286,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected utilization metrics for target instance type.
+     * The expected utilization metrics for target instance type.
      * </p>
      * 
      * @param expectedResourceUtilization
-     *        Expected utilization metrics for target instance type.
+     *        The expected utilization metrics for target instance type.
      */
 
     public void setExpectedResourceUtilization(ResourceUtilization expectedResourceUtilization) {
@@ -299,10 +299,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected utilization metrics for target instance type.
+     * The expected utilization metrics for target instance type.
      * </p>
      * 
-     * @return Expected utilization metrics for target instance type.
+     * @return The expected utilization metrics for target instance type.
      */
 
     public ResourceUtilization getExpectedResourceUtilization() {
@@ -311,11 +311,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expected utilization metrics for target instance type.
+     * The expected utilization metrics for target instance type.
      * </p>
      * 
      * @param expectedResourceUtilization
-     *        Expected utilization metrics for target instance type.
+     *        The expected utilization metrics for target instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

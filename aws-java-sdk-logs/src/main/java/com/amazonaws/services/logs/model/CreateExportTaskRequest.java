@@ -60,7 +60,7 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     private Long to;
     /**
      * <p>
-     * The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     * The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.
      * </p>
      */
     private String destination;
@@ -292,11 +292,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     * The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.
      * </p>
      * 
      * @param destination
-     *        The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     *        The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services
+     *        region.
      */
 
     public void setDestination(String destination) {
@@ -305,10 +306,11 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     * The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.
      * </p>
      * 
-     * @return The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     * @return The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services
+     *         region.
      */
 
     public String getDestination() {
@@ -317,11 +319,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     * The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.
      * </p>
      * 
      * @param destination
-     *        The name of S3 bucket for the exported log data. The bucket must be in the same AWS region.
+     *        The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services
+     *        region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

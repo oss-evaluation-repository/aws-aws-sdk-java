@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Attribute details on a specific Savings Plan.
+ * The attribute details on a specific Savings Plan.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansDetails" target="_top">AWS API
@@ -30,8 +30,8 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
-     * Regions.
+     * A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated
+     * and independent of the other Regions.
      * </p>
      */
     private String region;
@@ -43,20 +43,20 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
     private String instanceFamily;
     /**
      * <p>
-     * The unique ID used to distinguish Savings Plans from one another.
+     * The unique ID that's used to distinguish Savings Plans from one another.
      * </p>
      */
     private String offeringId;
 
     /**
      * <p>
-     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
-     * Regions.
+     * A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated
+     * and independent of the other Regions.
      * </p>
      * 
      * @param region
-     *        A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
-     *        other Regions.
+     *        A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is
+     *        isolated and independent of the other Regions.
      */
 
     public void setRegion(String region) {
@@ -65,12 +65,12 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
-     * Regions.
+     * A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated
+     * and independent of the other Regions.
      * </p>
      * 
-     * @return A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
-     *         other Regions.
+     * @return A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is
+     *         isolated and independent of the other Regions.
      */
 
     public String getRegion() {
@@ -79,13 +79,13 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
-     * Regions.
+     * A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated
+     * and independent of the other Regions.
      * </p>
      * 
      * @param region
-     *        A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
-     *        other Regions.
+     *        A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is
+     *        isolated and independent of the other Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique ID used to distinguish Savings Plans from one another.
+     * The unique ID that's used to distinguish Savings Plans from one another.
      * </p>
      * 
      * @param offeringId
-     *        The unique ID used to distinguish Savings Plans from one another.
+     *        The unique ID that's used to distinguish Savings Plans from one another.
      */
 
     public void setOfferingId(String offeringId) {
@@ -149,10 +149,10 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique ID used to distinguish Savings Plans from one another.
+     * The unique ID that's used to distinguish Savings Plans from one another.
      * </p>
      * 
-     * @return The unique ID used to distinguish Savings Plans from one another.
+     * @return The unique ID that's used to distinguish Savings Plans from one another.
      */
 
     public String getOfferingId() {
@@ -161,11 +161,11 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique ID used to distinguish Savings Plans from one another.
+     * The unique ID that's used to distinguish Savings Plans from one another.
      * </p>
      * 
      * @param offeringId
-     *        The unique ID used to distinguish Savings Plans from one another.
+     *        The unique ID that's used to distinguish Savings Plans from one another.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

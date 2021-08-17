@@ -48,14 +48,14 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String upfrontCost;
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+     * The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is
+     * calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
      * </p>
      */
     private String estimatedROI;
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      */
     private String currencyCode;
@@ -81,7 +81,8 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedOnDemandCostWithCurrentCommitment;
     /**
      * <p>
-     * The estimated savings amount based on the recommended Savings Plans over the length of the lookback period.
+     * The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
+     * period.
      * </p>
      */
     private String estimatedSavingsAmount;
@@ -94,8 +95,8 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedSavingsPercentage;
     /**
      * <p>
-     * The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage during
-     * the lookback period.
+     * The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the
+     * usage during the lookback period.
      * </p>
      */
     private String hourlyCommitmentToPurchase;
@@ -107,7 +108,7 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedAverageUtilization;
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans.
+     * The estimated monthly savings amount based on the recommended Savings Plans.
      * </p>
      */
     private String estimatedMonthlySavingsAmount;
@@ -252,13 +253,13 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+     * The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is
+     * calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
      * </p>
      * 
      * @param estimatedROI
-     *        The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     *        <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
+     *        The estimated return on investment that's based on the recommended Savings Plans that you purchased. This
+     *        is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
      */
 
     public void setEstimatedROI(String estimatedROI) {
@@ -267,12 +268,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+     * The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is
+     * calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
      * </p>
      * 
-     * @return The estimated return on investment based on the recommended Savings Plans purchased. This is calculated
-     *         as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
+     * @return The estimated return on investment that's based on the recommended Savings Plans that you purchased. This
+     *         is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
      */
 
     public String getEstimatedROI() {
@@ -281,13 +282,13 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+     * The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is
+     * calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
      * </p>
      * 
      * @param estimatedROI
-     *        The estimated return on investment based on the recommended Savings Plans purchased. This is calculated as
-     *        <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
+     *        The estimated return on investment that's based on the recommended Savings Plans that you purchased. This
+     *        is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code> 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +299,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code AWS used to generate the recommendations and present potential savings.
+     *        The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *        savings.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -311,10 +313,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
-     * @return The currency code AWS used to generate the recommendations and present potential savings.
+     * @return The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *         savings.
      */
 
     public String getCurrencyCode() {
@@ -323,11 +326,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code AWS used to generate the recommendations and present potential savings.
+     *        The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *        savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +474,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated savings amount based on the recommended Savings Plans over the length of the lookback period.
+     * The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
+     * period.
      * </p>
      * 
      * @param estimatedSavingsAmount
-     *        The estimated savings amount based on the recommended Savings Plans over the length of the lookback
+     *        The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
      *        period.
      */
 
@@ -484,11 +489,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated savings amount based on the recommended Savings Plans over the length of the lookback period.
+     * The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
+     * period.
      * </p>
      * 
-     * @return The estimated savings amount based on the recommended Savings Plans over the length of the lookback
-     *         period.
+     * @return The estimated savings amount that's based on the recommended Savings Plans over the length of the
+     *         lookback period.
      */
 
     public String getEstimatedSavingsAmount() {
@@ -497,11 +503,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated savings amount based on the recommended Savings Plans over the length of the lookback period.
+     * The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
+     * period.
      * </p>
      * 
      * @param estimatedSavingsAmount
-     *        The estimated savings amount based on the recommended Savings Plans over the length of the lookback
+     *        The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback
      *        period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -559,13 +566,13 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage during
-     * the lookback period.
+     * The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the
+     * usage during the lookback period.
      * </p>
      * 
      * @param hourlyCommitmentToPurchase
-     *        The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage
-     *        during the lookback period.
+     *        The recommended hourly commitment level for the Savings Plans type and the configuration that's based on
+     *        the usage during the lookback period.
      */
 
     public void setHourlyCommitmentToPurchase(String hourlyCommitmentToPurchase) {
@@ -574,12 +581,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage during
-     * the lookback period.
+     * The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the
+     * usage during the lookback period.
      * </p>
      * 
-     * @return The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage
-     *         during the lookback period.
+     * @return The recommended hourly commitment level for the Savings Plans type and the configuration that's based on
+     *         the usage during the lookback period.
      */
 
     public String getHourlyCommitmentToPurchase() {
@@ -588,13 +595,13 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage during
-     * the lookback period.
+     * The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the
+     * usage during the lookback period.
      * </p>
      * 
      * @param hourlyCommitmentToPurchase
-     *        The recommended hourly commitment level for the Savings Plans type, and configuration based on the usage
-     *        during the lookback period.
+     *        The recommended hourly commitment level for the Savings Plans type and the configuration that's based on
+     *        the usage during the lookback period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,11 +652,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans.
+     * The estimated monthly savings amount based on the recommended Savings Plans.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        The estimated monthly savings amount, based on the recommended Savings Plans.
+     *        The estimated monthly savings amount based on the recommended Savings Plans.
      */
 
     public void setEstimatedMonthlySavingsAmount(String estimatedMonthlySavingsAmount) {
@@ -658,10 +665,10 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans.
+     * The estimated monthly savings amount based on the recommended Savings Plans.
      * </p>
      * 
-     * @return The estimated monthly savings amount, based on the recommended Savings Plans.
+     * @return The estimated monthly savings amount based on the recommended Savings Plans.
      */
 
     public String getEstimatedMonthlySavingsAmount() {
@@ -670,11 +677,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans.
+     * The estimated monthly savings amount based on the recommended Savings Plans.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        The estimated monthly savings amount, based on the recommended Savings Plans.
+     *        The estimated monthly savings amount based on the recommended Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

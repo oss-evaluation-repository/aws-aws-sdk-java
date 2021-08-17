@@ -25,8 +25,8 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token for the next set of retrievable results. AWS provides the token when the response from a previous call
-     * has more results than the maximum page size.
+     * The token for the next set of retrievable results. Amazon Web Services provides the token when the response from
+     * a previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
@@ -52,13 +52,13 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token for the next set of retrievable results. AWS provides the token when the response from a previous call
-     * has more results than the maximum page size.
+     * The token for the next set of retrievable results. Amazon Web Services provides the token when the response from
+     * a previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token for the next set of retrievable results. AWS provides the token when the response from a
-     *        previous call has more results than the maximum page size.
+     *        The token for the next set of retrievable results. Amazon Web Services provides the token when the
+     *        response from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -67,12 +67,12 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token for the next set of retrievable results. AWS provides the token when the response from a previous call
-     * has more results than the maximum page size.
+     * The token for the next set of retrievable results. Amazon Web Services provides the token when the response from
+     * a previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token for the next set of retrievable results. AWS provides the token when the response from a
-     *         previous call has more results than the maximum page size.
+     * @return The token for the next set of retrievable results. Amazon Web Services provides the token when the
+     *         response from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -81,13 +81,13 @@ public class GetCostAndUsageWithResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token for the next set of retrievable results. AWS provides the token when the response from a previous call
-     * has more results than the maximum page size.
+     * The token for the next set of retrievable results. Amazon Web Services provides the token when the response from
+     * a previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token for the next set of retrievable results. AWS provides the token when the response from a
-     *        previous call has more results than the maximum page size.
+     *        The token for the next set of retrievable results. Amazon Web Services provides the token when the
+     *        response from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

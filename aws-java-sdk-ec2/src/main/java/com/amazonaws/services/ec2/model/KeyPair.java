@@ -33,7 +33,7 @@ public class KeyPair implements Serializable, Cloneable {
     private String keyFingerprint;
     /**
      * <p>
-     * An unencrypted PEM encoded RSA private key.
+     * An unencrypted PEM encoded RSA or ED25519 private key.
      * </p>
      */
     private String keyMaterial;
@@ -98,11 +98,11 @@ public class KeyPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An unencrypted PEM encoded RSA private key.
+     * An unencrypted PEM encoded RSA or ED25519 private key.
      * </p>
      * 
      * @param keyMaterial
-     *        An unencrypted PEM encoded RSA private key.
+     *        An unencrypted PEM encoded RSA or ED25519 private key.
      */
 
     public void setKeyMaterial(String keyMaterial) {
@@ -111,10 +111,10 @@ public class KeyPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An unencrypted PEM encoded RSA private key.
+     * An unencrypted PEM encoded RSA or ED25519 private key.
      * </p>
      * 
-     * @return An unencrypted PEM encoded RSA private key.
+     * @return An unencrypted PEM encoded RSA or ED25519 private key.
      */
 
     public String getKeyMaterial() {
@@ -123,11 +123,11 @@ public class KeyPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An unencrypted PEM encoded RSA private key.
+     * An unencrypted PEM encoded RSA or ED25519 private key.
      * </p>
      * 
      * @param keyMaterial
-     *        An unencrypted PEM encoded RSA private key.
+     *        An unencrypted PEM encoded RSA or ED25519 private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

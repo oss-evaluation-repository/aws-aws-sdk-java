@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Quantifies the anomaly. The higher score means that it is more anomalous.
+ * Quantifies the anomaly. The higher score means that it's more anomalous.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalyScore" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AnomalyScore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum score observed during the <code>AnomalyDateInterval</code>.
+     * The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      * </p>
      */
     private Double maxScore;
@@ -43,11 +43,11 @@ public class AnomalyScore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum score observed during the <code>AnomalyDateInterval</code>.
+     * The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      * </p>
      * 
      * @param maxScore
-     *        The maximum score observed during the <code>AnomalyDateInterval</code>.
+     *        The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      */
 
     public void setMaxScore(Double maxScore) {
@@ -56,10 +56,10 @@ public class AnomalyScore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum score observed during the <code>AnomalyDateInterval</code>.
+     * The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      * </p>
      * 
-     * @return The maximum score observed during the <code>AnomalyDateInterval</code>.
+     * @return The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      */
 
     public Double getMaxScore() {
@@ -68,11 +68,11 @@ public class AnomalyScore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum score observed during the <code>AnomalyDateInterval</code>.
+     * The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      * </p>
      * 
      * @param maxScore
-     *        The maximum score observed during the <code>AnomalyDateInterval</code>.
+     *        The maximum score that's observed during the <code>AnomalyDateInterval</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

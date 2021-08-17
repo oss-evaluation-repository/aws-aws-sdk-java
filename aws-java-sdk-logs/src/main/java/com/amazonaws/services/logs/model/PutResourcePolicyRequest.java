@@ -42,7 +42,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * group or log stream.
      * </p>
      * <p>
-     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     * CloudWatch Logs also supports <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     * >aws:SourceArn</a> and <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     * >aws:SourceAccount</a> condition context keys.
+     * </p>
+     * <p>
+     * In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making
+     * the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web
+     * Services account ID making that call.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      * </p>
      */
     private String policyDocument;
@@ -98,7 +111,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * group or log stream.
      * </p>
      * <p>
-     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     * CloudWatch Logs also supports <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     * >aws:SourceArn</a> and <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     * >aws:SourceAccount</a> condition context keys.
+     * </p>
+     * <p>
+     * In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making
+     * the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web
+     * Services account ID making that call.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      * </p>
      * 
      * @param policyDocument
@@ -110,7 +136,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        as a log group or log stream.
      *        </p>
      *        <p>
-     *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     *        CloudWatch Logs also supports <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     *        >aws:SourceArn</a> and <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     *        >aws:SourceAccount</a> condition context keys.
+     *        </p>
+     *        <p>
+     *        In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource
+     *        making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
+     *        the Amazon Web Services account ID making that call.
+     *        </p>
+     *        <p/>
+     *        <p>
+     *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -128,7 +167,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * group or log stream.
      * </p>
      * <p>
-     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     * CloudWatch Logs also supports <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     * >aws:SourceArn</a> and <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     * >aws:SourceAccount</a> condition context keys.
+     * </p>
+     * <p>
+     * In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making
+     * the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web
+     * Services account ID making that call.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      * </p>
      * 
      * @return Details of the new policy, including the identity of the principal that is enabled to put logs to this
@@ -139,7 +191,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         such as a log group or log stream.
      *         </p>
      *         <p>
-     *         <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     *         CloudWatch Logs also supports <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     *         >aws:SourceArn</a> and <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     *         >aws:SourceAccount</a> condition context keys.
+     *         </p>
+     *         <p>
+     *         In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource
+     *         making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
+     *         the Amazon Web Services account ID making that call.
+     *         </p>
+     *         <p/>
+     *         <p>
+     *         <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      */
 
     public String getPolicyDocument() {
@@ -157,7 +222,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * group or log stream.
      * </p>
      * <p>
-     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     * CloudWatch Logs also supports <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     * >aws:SourceArn</a> and <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     * >aws:SourceAccount</a> condition context keys.
+     * </p>
+     * <p>
+     * In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making
+     * the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web
+     * Services account ID making that call.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      * </p>
      * 
      * @param policyDocument
@@ -169,7 +247,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        as a log group or log stream.
      *        </p>
      *        <p>
-     *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
+     *        CloudWatch Logs also supports <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn"
+     *        >aws:SourceArn</a> and <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount"
+     *        >aws:SourceAccount</a> condition context keys.
+     *        </p>
+     *        <p>
+     *        In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource
+     *        making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
+     *        the Amazon Web Services account ID making that call.
+     *        </p>
+     *        <p/>
+     *        <p>
+     *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,8 +30,8 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that
+     * include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
      * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      */
@@ -44,7 +44,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
     private String savingsPlansType;
     /**
      * <p>
-     * The Savings Plans recommendation term in years, used to generate the recommendation.
+     * The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * </p>
      */
     private String termInYears;
@@ -75,14 +75,14 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that
+     * include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
      * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        that include the management account and member accounts if the value is set to <code>PAYER</code>. If the
      *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @see AccountScope
      */
@@ -93,13 +93,13 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that
+     * include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
      * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @return The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *         including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *         that include the management account and member accounts if the value is set to <code>PAYER</code>. If the
      *         value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @see AccountScope
      */
@@ -110,14 +110,14 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that
+     * include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
      * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        that include the management account and member accounts if the value is set to <code>PAYER</code>. If the
      *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
@@ -130,14 +130,14 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that
+     * include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
      * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        that include the management account and member accounts if the value is set to <code>PAYER</code>. If the
      *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
@@ -209,11 +209,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The Savings Plans recommendation term in years, used to generate the recommendation.
+     * The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * </p>
      * 
      * @param termInYears
-     *        The Savings Plans recommendation term in years, used to generate the recommendation.
+     *        The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * @see TermInYears
      */
 
@@ -223,10 +223,10 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The Savings Plans recommendation term in years, used to generate the recommendation.
+     * The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * </p>
      * 
-     * @return The Savings Plans recommendation term in years, used to generate the recommendation.
+     * @return The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * @see TermInYears
      */
 
@@ -236,11 +236,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The Savings Plans recommendation term in years, used to generate the recommendation.
+     * The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * </p>
      * 
      * @param termInYears
-     *        The Savings Plans recommendation term in years, used to generate the recommendation.
+     *        The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -252,11 +252,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * The Savings Plans recommendation term in years, used to generate the recommendation.
+     * The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * </p>
      * 
      * @param termInYears
-     *        The Savings Plans recommendation term in years, used to generate the recommendation.
+     *        The Savings Plans recommendation term in years. It's used to generate the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */

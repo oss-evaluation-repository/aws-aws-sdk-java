@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances
- * within the same instance families or across different instance families. You can also choose to view your estimated
- * savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
+ * You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes.
+ * You can choose to view recommendations for instances within the same instance families or across different instance
+ * families. You can also choose to view your estimated savings that are associated with recommendations with
+ * consideration of existing Savings Plans or RI benefits, or neither.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationConfiguration"
@@ -32,7 +33,7 @@ public class RightsizingRecommendationConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * The option to see recommendations within the same instance family, or recommendations for instances across other
+     * The option to see recommendations within the same instance family or recommendations for instances across other
      * families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * </p>
      */
@@ -47,12 +48,12 @@ public class RightsizingRecommendationConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * The option to see recommendations within the same instance family, or recommendations for instances across other
+     * The option to see recommendations within the same instance family or recommendations for instances across other
      * families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * </p>
      * 
      * @param recommendationTarget
-     *        The option to see recommendations within the same instance family, or recommendations for instances across
+     *        The option to see recommendations within the same instance family or recommendations for instances across
      *        other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * @see RecommendationTarget
      */
@@ -63,12 +64,12 @@ public class RightsizingRecommendationConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * The option to see recommendations within the same instance family, or recommendations for instances across other
+     * The option to see recommendations within the same instance family or recommendations for instances across other
      * families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * </p>
      * 
-     * @return The option to see recommendations within the same instance family, or recommendations for instances
-     *         across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
+     * @return The option to see recommendations within the same instance family or recommendations for instances across
+     *         other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * @see RecommendationTarget
      */
 
@@ -78,12 +79,12 @@ public class RightsizingRecommendationConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * The option to see recommendations within the same instance family, or recommendations for instances across other
+     * The option to see recommendations within the same instance family or recommendations for instances across other
      * families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * </p>
      * 
      * @param recommendationTarget
-     *        The option to see recommendations within the same instance family, or recommendations for instances across
+     *        The option to see recommendations within the same instance family or recommendations for instances across
      *        other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationTarget
@@ -96,12 +97,12 @@ public class RightsizingRecommendationConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * The option to see recommendations within the same instance family, or recommendations for instances across other
+     * The option to see recommendations within the same instance family or recommendations for instances across other
      * families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * </p>
      * 
      * @param recommendationTarget
-     *        The option to see recommendations within the same instance family, or recommendations for instances across
+     *        The option to see recommendations within the same instance family or recommendations for instances across
      *        other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationTarget

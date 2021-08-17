@@ -27,7 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For
  * example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
  * <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
- * <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks like:
+ * <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:
  * </p>
  * <p>
  * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
@@ -41,10 +41,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the
- * logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This
- * allows you to filter on more advanced options. For example, you can filter on
+ * logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing
+ * this, you can filter on more advanced options. For example, you can filter on
  * <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.
- * The <code>Expression</code> for that looks like this:
+ * The <code>Expression</code> for that is as follows:
  * </p>
  * <p>
  * <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
@@ -62,13 +62,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <note>
  * <p>
- * For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not
+ * For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't
  * supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also
  * limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
  * </p>
  * <p>
- * For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not
- * supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
+ * For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported.
+ * Dimensions are limited to <code>LINKED_ACCOUNT</code>.
  * </p>
  * </note>
  * 
@@ -110,7 +110,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
     private TagValues tags;
     /**
      * <p>
-     * The filter based on <code>CostCategory</code> values.
+     * The filter that's based on <code>CostCategory</code> values.
      * </p>
      */
     private CostCategoryValues costCategories;
@@ -377,11 +377,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter based on <code>CostCategory</code> values.
+     * The filter that's based on <code>CostCategory</code> values.
      * </p>
      * 
      * @param costCategories
-     *        The filter based on <code>CostCategory</code> values.
+     *        The filter that's based on <code>CostCategory</code> values.
      */
 
     public void setCostCategories(CostCategoryValues costCategories) {
@@ -390,10 +390,10 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter based on <code>CostCategory</code> values.
+     * The filter that's based on <code>CostCategory</code> values.
      * </p>
      * 
-     * @return The filter based on <code>CostCategory</code> values.
+     * @return The filter that's based on <code>CostCategory</code> values.
      */
 
     public CostCategoryValues getCostCategories() {
@@ -402,11 +402,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter based on <code>CostCategory</code> values.
+     * The filter that's based on <code>CostCategory</code> values.
      * </p>
      * 
      * @param costCategories
-     *        The filter based on <code>CostCategory</code> values.
+     *        The filter that's based on <code>CostCategory</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

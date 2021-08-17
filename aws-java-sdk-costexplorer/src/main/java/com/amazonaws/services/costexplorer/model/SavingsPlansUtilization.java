@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The measurement of how well you are using your existing Savings Plans.
+ * The measurement of how well you're using your existing Savings Plans.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilization" target="_top">AWS API
@@ -43,7 +43,7 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
     private String usedCommitment;
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      */
@@ -143,12 +143,12 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
      * @param unusedCommitment
-     *        The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     *        The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a
      *        specific period.
      */
 
@@ -158,11 +158,11 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
-     * @return The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     * @return The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a
      *         specific period.
      */
 
@@ -172,12 +172,12 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
      * @param unusedCommitment
-     *        The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     *        The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a
      *        specific period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -37,8 +37,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
     private DateInterval timePeriod;
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>
+     * . If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      */
@@ -93,8 +93,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
     private java.util.List<GroupDefinition> groupBy;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
@@ -165,15 +165,15 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>
+     * . If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * @see Granularity
      */
 
@@ -183,14 +183,14 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>
+     * . If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
-     * @return Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     *         <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *         <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
+     * @return Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
+     *         <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *         <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * @see Granularity
      */
 
@@ -200,15 +200,15 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>
+     * . If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -220,15 +220,15 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>
+     * . If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -636,13 +636,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -651,12 +651,12 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -665,13 +665,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

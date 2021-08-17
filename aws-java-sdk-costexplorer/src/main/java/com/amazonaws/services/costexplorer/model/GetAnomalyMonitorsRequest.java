@@ -33,14 +33,14 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<String> monitorArnList;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
     /**
      * <p>
-     * The number of entries a paginated response contains.
+     * The number of entries that a paginated response contains.
      * </p>
      */
     private Integer maxResults;
@@ -117,13 +117,13 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -132,12 +132,12 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -146,13 +146,13 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of entries a paginated response contains.
+     * The number of entries that a paginated response contains.
      * </p>
      * 
      * @param maxResults
-     *        The number of entries a paginated response contains.
+     *        The number of entries that a paginated response contains.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -176,10 +176,10 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of entries a paginated response contains.
+     * The number of entries that a paginated response contains.
      * </p>
      * 
-     * @return The number of entries a paginated response contains.
+     * @return The number of entries that a paginated response contains.
      */
 
     public Integer getMaxResults() {
@@ -188,11 +188,11 @@ public class GetAnomalyMonitorsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of entries a paginated response contains.
+     * The number of entries that a paginated response contains.
      * </p>
      * 
      * @param maxResults
-     *        The number of entries a paginated response contains.
+     *        The number of entries that a paginated response contains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

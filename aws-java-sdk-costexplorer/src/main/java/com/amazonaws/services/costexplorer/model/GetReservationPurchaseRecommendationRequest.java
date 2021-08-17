@@ -49,7 +49,8 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     private String accountScope;
     /**
      * <p>
-     * The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * The number of previous days that you want Amazon Web Services to consider when it calculates your
+     * recommendations.
      * </p>
      */
     private String lookbackPeriodInDays;
@@ -268,11 +269,13 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * The number of previous days that you want Amazon Web Services to consider when it calculates your
+     * recommendations.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The number of previous days that you want AWS to consider when it calculates your recommendations.
+     *        The number of previous days that you want Amazon Web Services to consider when it calculates your
+     *        recommendations.
      * @see LookbackPeriodInDays
      */
 
@@ -282,10 +285,12 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * The number of previous days that you want Amazon Web Services to consider when it calculates your
+     * recommendations.
      * </p>
      * 
-     * @return The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * @return The number of previous days that you want Amazon Web Services to consider when it calculates your
+     *         recommendations.
      * @see LookbackPeriodInDays
      */
 
@@ -295,11 +300,13 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * The number of previous days that you want Amazon Web Services to consider when it calculates your
+     * recommendations.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The number of previous days that you want AWS to consider when it calculates your recommendations.
+     *        The number of previous days that you want Amazon Web Services to consider when it calculates your
+     *        recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -311,11 +318,13 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The number of previous days that you want AWS to consider when it calculates your recommendations.
+     * The number of previous days that you want Amazon Web Services to consider when it calculates your
+     * recommendations.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        The number of previous days that you want AWS to consider when it calculates your recommendations.
+     *        The number of previous days that you want Amazon Web Services to consider when it calculates your
+     *        recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */

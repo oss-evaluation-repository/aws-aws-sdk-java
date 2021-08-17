@@ -30,7 +30,7 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     * The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      * </p>
      */
     private String address;
@@ -49,11 +49,11 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     * The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      * </p>
      * 
      * @param address
-     *        The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     *        The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      */
 
     public void setAddress(String address) {
@@ -62,10 +62,10 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     * The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      * </p>
      * 
-     * @return The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     * @return The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      */
 
     public String getAddress() {
@@ -74,11 +74,11 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     * The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      * </p>
      * 
      * @param address
-     *        The email address or SNS Amazon Resource Name (ARN), depending on the <code>Type</code>.
+     *        The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

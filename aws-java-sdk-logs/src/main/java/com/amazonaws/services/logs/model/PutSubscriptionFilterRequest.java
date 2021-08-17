@@ -75,7 +75,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An AWS Lambda function belonging to the same account as the subscription filter, for same-account delivery.
+     * A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      * </p>
      * </li>
      * </ul>
@@ -268,7 +268,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An AWS Lambda function belonging to the same account as the subscription filter, for same-account delivery.
+     * A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      * </p>
      * </li>
      * </ul>
@@ -303,8 +303,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An AWS Lambda function belonging to the same account as the subscription filter, for same-account
-     *        delivery.
+     *        A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      *        </p>
      *        </li>
      */
@@ -342,7 +341,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An AWS Lambda function belonging to the same account as the subscription filter, for same-account delivery.
+     * A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      * </p>
      * </li>
      * </ul>
@@ -376,8 +375,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         An AWS Lambda function belonging to the same account as the subscription filter, for same-account
-     *         delivery.
+     *         A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      *         </p>
      *         </li>
      */
@@ -415,7 +413,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An AWS Lambda function belonging to the same account as the subscription filter, for same-account delivery.
+     * A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      * </p>
      * </li>
      * </ul>
@@ -450,8 +448,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An AWS Lambda function belonging to the same account as the subscription filter, for same-account
-     *        delivery.
+     *        A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

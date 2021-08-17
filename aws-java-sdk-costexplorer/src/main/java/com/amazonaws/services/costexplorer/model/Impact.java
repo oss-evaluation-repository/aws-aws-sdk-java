@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The anomaly's dollar value.
+ * The dollar value of the anomaly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Impact" target="_top">AWS API Documentation</a>
@@ -29,24 +29,24 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum dollar value observed for an anomaly.
+     * The maximum dollar value that's observed for an anomaly.
      * </p>
      */
     private Double maxImpact;
     /**
      * <p>
-     * The cumulative dollar value observed for an anomaly.
+     * The cumulative dollar value that's observed for an anomaly.
      * </p>
      */
     private Double totalImpact;
 
     /**
      * <p>
-     * The maximum dollar value observed for an anomaly.
+     * The maximum dollar value that's observed for an anomaly.
      * </p>
      * 
      * @param maxImpact
-     *        The maximum dollar value observed for an anomaly.
+     *        The maximum dollar value that's observed for an anomaly.
      */
 
     public void setMaxImpact(Double maxImpact) {
@@ -55,10 +55,10 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum dollar value observed for an anomaly.
+     * The maximum dollar value that's observed for an anomaly.
      * </p>
      * 
-     * @return The maximum dollar value observed for an anomaly.
+     * @return The maximum dollar value that's observed for an anomaly.
      */
 
     public Double getMaxImpact() {
@@ -67,11 +67,11 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum dollar value observed for an anomaly.
+     * The maximum dollar value that's observed for an anomaly.
      * </p>
      * 
      * @param maxImpact
-     *        The maximum dollar value observed for an anomaly.
+     *        The maximum dollar value that's observed for an anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +82,11 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value observed for an anomaly.
+     * The cumulative dollar value that's observed for an anomaly.
      * </p>
      * 
      * @param totalImpact
-     *        The cumulative dollar value observed for an anomaly.
+     *        The cumulative dollar value that's observed for an anomaly.
      */
 
     public void setTotalImpact(Double totalImpact) {
@@ -95,10 +95,10 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value observed for an anomaly.
+     * The cumulative dollar value that's observed for an anomaly.
      * </p>
      * 
-     * @return The cumulative dollar value observed for an anomaly.
+     * @return The cumulative dollar value that's observed for an anomaly.
      */
 
     public Double getTotalImpact() {
@@ -107,11 +107,11 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value observed for an anomaly.
+     * The cumulative dollar value that's observed for an anomaly.
      * </p>
      * 
      * @param totalImpact
-     *        The cumulative dollar value observed for an anomaly.
+     *        The cumulative dollar value that's observed for an anomaly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

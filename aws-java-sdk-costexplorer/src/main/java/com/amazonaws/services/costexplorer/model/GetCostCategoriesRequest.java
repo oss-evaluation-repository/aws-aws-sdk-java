@@ -110,9 +110,9 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken
-     * value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in
-     * your next request.
+     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
+     * prior call in your next request.
      * </p>
      */
     private String nextPageToken;
@@ -790,15 +790,15 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken
-     * value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in
-     * your next request.
+     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
+     * prior call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, AWS returns a
-     *        NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from
-     *        the prior call in your next request.
+     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
+     *        NextPageToken from the prior call in your next request.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -807,14 +807,14 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken
-     * value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in
-     * your next request.
+     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
+     * prior call in your next request.
      * </p>
      * 
-     * @return If the number of objects that are still available for retrieval exceeds the limit, AWS returns a
-     *         NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken
-     *         from the prior call in your next request.
+     * @return If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *         returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
+     *         NextPageToken from the prior call in your next request.
      */
 
     public String getNextPageToken() {
@@ -823,15 +823,15 @@ public class GetCostCategoriesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken
-     * value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in
-     * your next request.
+     * If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a
+     * NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the
+     * prior call in your next request.
      * </p>
      * 
      * @param nextPageToken
-     *        If the number of objects that are still available for retrieval exceeds the limit, AWS returns a
-     *        NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from
-     *        the prior call in your next request.
+     *        If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services
+     *        returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the
+     *        NextPageToken from the prior call in your next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,6 +33,8 @@ public class UpdateEnvironmentRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> MANAGEDCREDENTIALSACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("managedCredentialsAction").build();
 
     private static final UpdateEnvironmentRequestMarshaller instance = new UpdateEnvironmentRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(updateEnvironmentRequest.getEnvironmentId(), ENVIRONMENTID_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateEnvironmentRequest.getManagedCredentialsAction(), MANAGEDCREDENTIALSACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

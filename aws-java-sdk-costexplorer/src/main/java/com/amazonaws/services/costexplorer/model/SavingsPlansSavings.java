@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account.
+ * The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansSavings" target="_top">AWS API
@@ -30,8 +30,8 @@ public class SavingsPlansSavings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when compared to
-     * the On-Demand equivalent of the same usage.
+     * The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the
+     * On-Demand equivalent of the same usage.
      * </p>
      */
     private String netSavings;
@@ -44,13 +44,13 @@ public class SavingsPlansSavings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when compared to
-     * the On-Demand equivalent of the same usage.
+     * The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the
+     * On-Demand equivalent of the same usage.
      * </p>
      * 
      * @param netSavings
-     *        The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when
-     *        compared to the On-Demand equivalent of the same usage.
+     *        The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared
+     *        to the On-Demand equivalent of the same usage.
      */
 
     public void setNetSavings(String netSavings) {
@@ -59,11 +59,11 @@ public class SavingsPlansSavings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when compared to
-     * the On-Demand equivalent of the same usage.
+     * The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the
+     * On-Demand equivalent of the same usage.
      * </p>
      * 
-     * @return The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when
+     * @return The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when
      *         compared to the On-Demand equivalent of the same usage.
      */
 
@@ -73,13 +73,13 @@ public class SavingsPlansSavings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when compared to
-     * the On-Demand equivalent of the same usage.
+     * The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the
+     * On-Demand equivalent of the same usage.
      * </p>
      * 
      * @param netSavings
-     *        The savings amount that you are accumulating for the usage that is covered by a Savings Plans, when
-     *        compared to the On-Demand equivalent of the same usage.
+     *        The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared
+     *        to the On-Demand equivalent of the same usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

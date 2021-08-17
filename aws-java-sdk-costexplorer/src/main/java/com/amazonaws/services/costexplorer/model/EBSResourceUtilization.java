@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The EBS field that contains a list of EBS metrics associated with the current instance.
+ * The EBS field that contains a list of EBS metrics that are associated with the current instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EBSResourceUtilization" target="_top">AWS API

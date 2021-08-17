@@ -27,8 +27,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the
+     * end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
@@ -36,15 +36,15 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     private DateInterval timePeriod;
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      */
     private String granularity;
     /**
      * <p>
-     * Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
+     * Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
@@ -68,7 +68,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into
      * account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results
      * aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+     * example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
      * <code>UsageType</code> or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
@@ -79,41 +79,43 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> metrics;
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
-     * two group by types.
+     * You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost
+     * categories, or any two group by types.
      * </p>
      * <p>
-     * When you group by tag key, you get all tag values, including empty strings.
-     * </p>
-     * <p>
-     * Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     * <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     * <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
      * <code>USAGE_TYPE</code>.
+     * </p>
+     * <p>
+     * When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty
+     * strings.
      * </p>
      */
     private java.util.List<GroupDefinition> groupBy;
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the
+     * end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     *        exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     *        Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive,
+     *        but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and
+     *        <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        <code>2017-05-01</code>.
      */
 
     public void setTimePeriod(DateInterval timePeriod) {
@@ -122,16 +124,17 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the
+     * end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
-     * @return Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     *         exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *         <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *         including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     * @return Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive,
+     *         but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and
+     *         <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *         <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *         <code>2017-05-01</code>.
      */
 
     public DateInterval getTimePeriod() {
@@ -140,17 +143,18 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     * exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
+     * Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the
+     * end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving AWS costs. The start date is inclusive, but the end date is
-     *        exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-     *        <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     *        including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+     *        Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive,
+     *        but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and
+     *        <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+     *        <code>2017-05-01</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,15 +165,15 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * @see Granularity
      */
 
@@ -179,14 +183,14 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
-     * @return Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     *         <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *         either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * @return Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     *         <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *         <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * @see Granularity
      */
 
@@ -196,15 +200,15 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -216,15 +220,15 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     * Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
-     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+     *        Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or
+     *        <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the
+     *        <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -236,7 +240,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
+     * Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
@@ -244,10 +248,10 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param filter
-     *        Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
-     *        <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
-     *        service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
-     *        more information, see <a
+     *        Filters Amazon Web Services costs by different dimensions. For example, you can specify
+     *        <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that
+     *        account's usage of that service. You can nest <code>Expression</code> objects to define any combination of
+     *        dimension filters. For more information, see <a
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a>.
      */
@@ -258,17 +262,17 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
+     * Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p>
      * 
-     * @return Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
-     *         <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
-     *         service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
-     *         more information, see <a
+     * @return Filters Amazon Web Services costs by different dimensions. For example, you can specify
+     *         <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that
+     *         account's usage of that service. You can nest <code>Expression</code> objects to define any combination
+     *         of dimension filters. For more information, see <a
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a>.
      */
@@ -279,7 +283,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
+     * Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
@@ -287,10 +291,10 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param filter
-     *        Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
-     *        <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
-     *        service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
-     *        more information, see <a
+     *        Filters Amazon Web Services costs by different dimensions. For example, you can specify
+     *        <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that
+     *        account's usage of that service. You can nest <code>Expression</code> objects to define any combination of
+     *        dimension filters. For more information, see <a
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -317,7 +321,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into
      * account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results
      * aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+     * example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
      * <code>UsageType</code> or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
@@ -338,7 +342,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *         If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *         taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of
      *         Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *         in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
+     *         in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code>
      *         metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *         </p>
      *         </note>
@@ -366,7 +370,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into
      * account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results
      * aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+     * example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
      * <code>UsageType</code> or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
@@ -388,7 +392,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>
@@ -421,7 +425,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into
      * account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results
      * aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+     * example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
      * <code>UsageType</code> or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
@@ -448,7 +452,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>
@@ -483,7 +487,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into
      * account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results
      * aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for
-     * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+     * example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
      * <code>UsageType</code> or <code>UsageTypeGroups</code>.
      * </p>
      * </note>
@@ -505,7 +509,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
      *        taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of
      *        Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured
-     *        in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics,
+     *        in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics,
      *        filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.
      *        </p>
      *        </note>
@@ -521,29 +525,31 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
-     * two group by types.
+     * You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost
+     * categories, or any two group by types.
      * </p>
      * <p>
-     * When you group by tag key, you get all tag values, including empty strings.
-     * </p>
-     * <p>
-     * Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     * <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     * <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
      * <code>USAGE_TYPE</code>.
      * </p>
+     * <p>
+     * When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty
+     * strings.
+     * </p>
      * 
-     * @return You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories,
-     *         or any two group by types.</p>
+     * @return You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+     *         cost categories, or any two group by types.</p>
      *         <p>
-     *         When you group by tag key, you get all tag values, including empty strings.
+     *         Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     *         <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     *         <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
+     *         <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.
      *         </p>
      *         <p>
-     *         Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     *         <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     *         <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
-     *         <code>USAGE_TYPE</code>.
+     *         When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values,
+     *         including empty strings.
      */
 
     public java.util.List<GroupDefinition> getGroupBy() {
@@ -552,30 +558,31 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
-     * two group by types.
+     * You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost
+     * categories, or any two group by types.
      * </p>
      * <p>
-     * When you group by tag key, you get all tag values, including empty strings.
-     * </p>
-     * <p>
-     * Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     * <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     * <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
      * <code>USAGE_TYPE</code>.
+     * </p>
+     * <p>
+     * When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty
+     * strings.
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
-     *        any two group by types.</p>
+     *        You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+     *        cost categories, or any two group by types.</p>
      *        <p>
-     *        When you group by tag key, you get all tag values, including empty strings.
+     *        Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     *        <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     *        <code>USAGE_TYPE</code>.
      *        </p>
      *        <p>
-     *        Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     *        <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     *        <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
-     *        <code>USAGE_TYPE</code>.
+     *        When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including
+     *        empty strings.
      */
 
     public void setGroupBy(java.util.Collection<GroupDefinition> groupBy) {
@@ -589,17 +596,18 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
-     * two group by types.
+     * You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost
+     * categories, or any two group by types.
      * </p>
      * <p>
-     * When you group by tag key, you get all tag values, including empty strings.
-     * </p>
-     * <p>
-     * Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     * <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     * <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
      * <code>USAGE_TYPE</code>.
+     * </p>
+     * <p>
+     * When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty
+     * strings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -608,16 +616,16 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
-     *        any two group by types.</p>
+     *        You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+     *        cost categories, or any two group by types.</p>
      *        <p>
-     *        When you group by tag key, you get all tag values, including empty strings.
+     *        Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     *        <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     *        <code>USAGE_TYPE</code>.
      *        </p>
      *        <p>
-     *        Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     *        <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     *        <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
-     *        <code>USAGE_TYPE</code>.
+     *        When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including
+     *        empty strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,30 +641,31 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
-     * two group by types.
+     * You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost
+     * categories, or any two group by types.
      * </p>
      * <p>
-     * When you group by tag key, you get all tag values, including empty strings.
-     * </p>
-     * <p>
-     * Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     * <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     * <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
      * <code>USAGE_TYPE</code>.
+     * </p>
+     * <p>
+     * When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty
+     * strings.
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
-     *        any two group by types.</p>
+     *        You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+     *        cost categories, or any two group by types.</p>
      *        <p>
-     *        When you group by tag key, you get all tag values, including empty strings.
+     *        Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+     *        <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     *        <code>USAGE_TYPE</code>.
      *        </p>
      *        <p>
-     *        Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     *        <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-     *        <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
-     *        <code>USAGE_TYPE</code>.
+     *        When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including
+     *        empty strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -667,13 +676,13 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -682,12 +691,12 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
-     * @return The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *         call has more results than the maximum page size.
+     * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextPageToken() {
@@ -696,13 +705,13 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
-     * more results than the maximum page size.
+     * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
+     * previous call has more results than the maximum page size.
      * </p>
      * 
      * @param nextPageToken
-     *        The token to retrieve the next set of results. AWS provides the token when the response from a previous
-     *        call has more results than the maximum page size.
+     *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

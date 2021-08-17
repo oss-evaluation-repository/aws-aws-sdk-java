@@ -44,6 +44,10 @@ public class CreateKeyPairRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("KeyName", StringUtils.fromString(createKeyPairRequest.getKeyName()));
         }
 
+        if (createKeyPairRequest.getKeyType() != null) {
+            request.addParameter("KeyType", StringUtils.fromString(createKeyPairRequest.getKeyType()));
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> createKeyPairRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createKeyPairRequest
                 .getTagSpecifications();
         if (!createKeyPairRequestTagSpecificationsList.isEmpty() || !createKeyPairRequestTagSpecificationsList.isAutoConstruct()) {

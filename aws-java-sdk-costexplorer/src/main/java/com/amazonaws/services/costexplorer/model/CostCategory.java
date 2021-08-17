@@ -37,13 +37,13 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
     private String costCategoryArn;
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The effective state data of your Cost Category.
      * </p>
      */
     private String effectiveStart;
     /**
      * <p>
-     * The Cost Category's effective end date.
+     * The effective end data of your Cost Category.
      * </p>
      */
     private String effectiveEnd;
@@ -53,11 +53,17 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
     private String ruleVersion;
     /**
      * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The rules are processed in order. If there are multiple rules that match the line item, then the first rule to
+     * match is used to determine that Cost Category value.
      * </p>
      */
     private java.util.List<CostCategoryRule> rules;
+    /**
+     * <p>
+     * The split charge rules that are used to allocate your charges between your Cost Category values.
+     * </p>
+     */
+    private java.util.List<CostCategorySplitChargeRule> splitChargeRules;
     /**
      * <p>
      * The list of processing statuses for Cost Management products for a specific cost category.
@@ -109,11 +115,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The effective state data of your Cost Category.
      * </p>
      * 
      * @param effectiveStart
-     *        The Cost Category's effective start date.
+     *        The effective state data of your Cost Category.
      */
 
     public void setEffectiveStart(String effectiveStart) {
@@ -122,10 +128,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The effective state data of your Cost Category.
      * </p>
      * 
-     * @return The Cost Category's effective start date.
+     * @return The effective state data of your Cost Category.
      */
 
     public String getEffectiveStart() {
@@ -134,11 +140,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective start date.
+     * The effective state data of your Cost Category.
      * </p>
      * 
      * @param effectiveStart
-     *        The Cost Category's effective start date.
+     *        The effective state data of your Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +155,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective end date.
+     * The effective end data of your Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The Cost Category's effective end date.
+     *        The effective end data of your Cost Category.
      */
 
     public void setEffectiveEnd(String effectiveEnd) {
@@ -162,10 +168,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective end date.
+     * The effective end data of your Cost Category.
      * </p>
      * 
-     * @return The Cost Category's effective end date.
+     * @return The effective end data of your Cost Category.
      */
 
     public String getEffectiveEnd() {
@@ -174,11 +180,11 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cost Category's effective end date.
+     * The effective end data of your Cost Category.
      * </p>
      * 
      * @param effectiveEnd
-     *        The Cost Category's effective end date.
+     *        The effective end data of your Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,12 +261,12 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The rules are processed in order. If there are multiple rules that match the line item, then the first rule to
+     * match is used to determine that Cost Category value.
      * </p>
      * 
-     * @return Rules are processed in order. If there are multiple rules that match the line item, then the first rule
-     *         to match is used to determine that Cost Category value.
+     * @return The rules are processed in order. If there are multiple rules that match the line item, then the first
+     *         rule to match is used to determine that Cost Category value.
      */
 
     public java.util.List<CostCategoryRule> getRules() {
@@ -269,13 +275,13 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The rules are processed in order. If there are multiple rules that match the line item, then the first rule to
+     * match is used to determine that Cost Category value.
      * </p>
      * 
      * @param rules
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The rules are processed in order. If there are multiple rules that match the line item, then the first
+     *        rule to match is used to determine that Cost Category value.
      */
 
     public void setRules(java.util.Collection<CostCategoryRule> rules) {
@@ -289,8 +295,8 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The rules are processed in order. If there are multiple rules that match the line item, then the first rule to
+     * match is used to determine that Cost Category value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -299,8 +305,8 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param rules
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The rules are processed in order. If there are multiple rules that match the line item, then the first
+     *        rule to match is used to determine that Cost Category value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,18 +322,88 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The rules are processed in order. If there are multiple rules that match the line item, then the first rule to
+     * match is used to determine that Cost Category value.
      * </p>
      * 
      * @param rules
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The rules are processed in order. If there are multiple rules that match the line item, then the first
+     *        rule to match is used to determine that Cost Category value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CostCategory withRules(java.util.Collection<CostCategoryRule> rules) {
         setRules(rules);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The split charge rules that are used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @return The split charge rules that are used to allocate your charges between your Cost Category values.
+     */
+
+    public java.util.List<CostCategorySplitChargeRule> getSplitChargeRules() {
+        return splitChargeRules;
+    }
+
+    /**
+     * <p>
+     * The split charge rules that are used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules that are used to allocate your charges between your Cost Category values.
+     */
+
+    public void setSplitChargeRules(java.util.Collection<CostCategorySplitChargeRule> splitChargeRules) {
+        if (splitChargeRules == null) {
+            this.splitChargeRules = null;
+            return;
+        }
+
+        this.splitChargeRules = new java.util.ArrayList<CostCategorySplitChargeRule>(splitChargeRules);
+    }
+
+    /**
+     * <p>
+     * The split charge rules that are used to allocate your charges between your Cost Category values.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSplitChargeRules(java.util.Collection)} or {@link #withSplitChargeRules(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules that are used to allocate your charges between your Cost Category values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategory withSplitChargeRules(CostCategorySplitChargeRule... splitChargeRules) {
+        if (this.splitChargeRules == null) {
+            setSplitChargeRules(new java.util.ArrayList<CostCategorySplitChargeRule>(splitChargeRules.length));
+        }
+        for (CostCategorySplitChargeRule ele : splitChargeRules) {
+            this.splitChargeRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The split charge rules that are used to allocate your charges between your Cost Category values.
+     * </p>
+     * 
+     * @param splitChargeRules
+     *        The split charge rules that are used to allocate your charges between your Cost Category values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategory withSplitChargeRules(java.util.Collection<CostCategorySplitChargeRule> splitChargeRules) {
+        setSplitChargeRules(splitChargeRules);
         return this;
     }
 
@@ -451,6 +527,8 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
             sb.append("RuleVersion: ").append(getRuleVersion()).append(",");
         if (getRules() != null)
             sb.append("Rules: ").append(getRules()).append(",");
+        if (getSplitChargeRules() != null)
+            sb.append("SplitChargeRules: ").append(getSplitChargeRules()).append(",");
         if (getProcessingStatus() != null)
             sb.append("ProcessingStatus: ").append(getProcessingStatus()).append(",");
         if (getDefaultValue() != null)
@@ -493,6 +571,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getSplitChargeRules() == null ^ this.getSplitChargeRules() == null)
+            return false;
+        if (other.getSplitChargeRules() != null && other.getSplitChargeRules().equals(this.getSplitChargeRules()) == false)
+            return false;
         if (other.getProcessingStatus() == null ^ this.getProcessingStatus() == null)
             return false;
         if (other.getProcessingStatus() != null && other.getProcessingStatus().equals(this.getProcessingStatus()) == false)
@@ -515,6 +597,7 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRuleVersion() == null) ? 0 : getRuleVersion().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getSplitChargeRules() == null) ? 0 : getSplitChargeRules().hashCode());
         hashCode = prime * hashCode + ((getProcessingStatus() == null) ? 0 : getProcessingStatus().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         return hashCode;

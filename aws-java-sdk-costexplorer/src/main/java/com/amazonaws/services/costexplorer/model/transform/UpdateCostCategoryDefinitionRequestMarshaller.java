@@ -36,6 +36,8 @@ public class UpdateCostCategoryDefinitionRequestMarshaller {
             .marshallLocationName("Rules").build();
     private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
+    private static final MarshallingInfo<List> SPLITCHARGERULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SplitChargeRules").build();
 
     private static final UpdateCostCategoryDefinitionRequestMarshaller instance = new UpdateCostCategoryDefinitionRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class UpdateCostCategoryDefinitionRequestMarshaller {
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getRuleVersion(), RULEVERSION_BINDING);
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getSplitChargeRules(), SPLITCHARGERULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

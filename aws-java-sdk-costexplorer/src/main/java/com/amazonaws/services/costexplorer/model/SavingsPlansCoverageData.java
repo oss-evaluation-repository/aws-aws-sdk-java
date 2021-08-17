@@ -31,37 +31,37 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your AWS usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      * </p>
      */
     private String spendCoveredBySavingsPlans;
     /**
      * <p>
-     * The cost of your AWS usage at the public On-Demand rate.
+     * The cost of your Amazon Web Services usage at the public On-Demand rate.
      * </p>
      */
     private String onDemandCost;
     /**
      * <p>
-     * The total cost of your AWS usage, regardless of your purchase option.
+     * The total cost of your Amazon Web Services usage, regardless of your purchase option.
      * </p>
      */
     private String totalCost;
     /**
      * <p>
      * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
-     * in an account(or set of accounts).
+     * in an account (or set of accounts).
      * </p>
      */
     private String coveragePercentage;
 
     /**
      * <p>
-     * The amount of your AWS usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      * </p>
      * 
      * @param spendCoveredBySavingsPlans
-     *        The amount of your AWS usage that is covered by a Savings Plans.
+     *        The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      */
 
     public void setSpendCoveredBySavingsPlans(String spendCoveredBySavingsPlans) {
@@ -70,10 +70,10 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your AWS usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      * </p>
      * 
-     * @return The amount of your AWS usage that is covered by a Savings Plans.
+     * @return The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      */
 
     public String getSpendCoveredBySavingsPlans() {
@@ -82,11 +82,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The amount of your AWS usage that is covered by a Savings Plans.
+     * The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      * </p>
      * 
      * @param spendCoveredBySavingsPlans
-     *        The amount of your AWS usage that is covered by a Savings Plans.
+     *        The amount of your Amazon Web Services usage that is covered by a Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The cost of your AWS usage at the public On-Demand rate.
+     * The cost of your Amazon Web Services usage at the public On-Demand rate.
      * </p>
      * 
      * @param onDemandCost
-     *        The cost of your AWS usage at the public On-Demand rate.
+     *        The cost of your Amazon Web Services usage at the public On-Demand rate.
      */
 
     public void setOnDemandCost(String onDemandCost) {
@@ -110,10 +110,10 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The cost of your AWS usage at the public On-Demand rate.
+     * The cost of your Amazon Web Services usage at the public On-Demand rate.
      * </p>
      * 
-     * @return The cost of your AWS usage at the public On-Demand rate.
+     * @return The cost of your Amazon Web Services usage at the public On-Demand rate.
      */
 
     public String getOnDemandCost() {
@@ -122,11 +122,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The cost of your AWS usage at the public On-Demand rate.
+     * The cost of your Amazon Web Services usage at the public On-Demand rate.
      * </p>
      * 
      * @param onDemandCost
-     *        The cost of your AWS usage at the public On-Demand rate.
+     *        The cost of your Amazon Web Services usage at the public On-Demand rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The total cost of your AWS usage, regardless of your purchase option.
+     * The total cost of your Amazon Web Services usage, regardless of your purchase option.
      * </p>
      * 
      * @param totalCost
-     *        The total cost of your AWS usage, regardless of your purchase option.
+     *        The total cost of your Amazon Web Services usage, regardless of your purchase option.
      */
 
     public void setTotalCost(String totalCost) {
@@ -150,10 +150,10 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The total cost of your AWS usage, regardless of your purchase option.
+     * The total cost of your Amazon Web Services usage, regardless of your purchase option.
      * </p>
      * 
-     * @return The total cost of your AWS usage, regardless of your purchase option.
+     * @return The total cost of your Amazon Web Services usage, regardless of your purchase option.
      */
 
     public String getTotalCost() {
@@ -162,11 +162,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The total cost of your AWS usage, regardless of your purchase option.
+     * The total cost of your Amazon Web Services usage, regardless of your purchase option.
      * </p>
      * 
      * @param totalCost
-     *        The total cost of your AWS usage, regardless of your purchase option.
+     *        The total cost of your Amazon Web Services usage, regardless of your purchase option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,12 +178,12 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
-     * in an account(or set of accounts).
+     * in an account (or set of accounts).
      * </p>
      * 
      * @param coveragePercentage
      *        The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans
-     *        usage in an account(or set of accounts).
+     *        usage in an account (or set of accounts).
      */
 
     public void setCoveragePercentage(String coveragePercentage) {
@@ -193,11 +193,11 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
-     * in an account(or set of accounts).
+     * in an account (or set of accounts).
      * </p>
      * 
      * @return The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings
-     *         Plans usage in an account(or set of accounts).
+     *         Plans usage in an account (or set of accounts).
      */
 
     public String getCoveragePercentage() {
@@ -207,12 +207,12 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
-     * in an account(or set of accounts).
+     * in an account (or set of accounts).
      * </p>
      * 
      * @param coveragePercentage
      *        The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans
-     *        usage in an account(or set of accounts).
+     *        usage in an account (or set of accounts).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

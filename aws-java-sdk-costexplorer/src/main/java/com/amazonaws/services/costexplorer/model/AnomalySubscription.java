@@ -62,7 +62,7 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
     private Double threshold;
     /**
      * <p>
-     * The frequency at which anomaly reports are sent over email.
+     * The frequency that anomaly reports are sent over email.
      * </p>
      */
     private String frequency;
@@ -335,11 +335,11 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency at which anomaly reports are sent over email.
+     * The frequency that anomaly reports are sent over email.
      * </p>
      * 
      * @param frequency
-     *        The frequency at which anomaly reports are sent over email.
+     *        The frequency that anomaly reports are sent over email.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -349,10 +349,10 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency at which anomaly reports are sent over email.
+     * The frequency that anomaly reports are sent over email.
      * </p>
      * 
-     * @return The frequency at which anomaly reports are sent over email.
+     * @return The frequency that anomaly reports are sent over email.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -362,11 +362,11 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency at which anomaly reports are sent over email.
+     * The frequency that anomaly reports are sent over email.
      * </p>
      * 
      * @param frequency
-     *        The frequency at which anomaly reports are sent over email.
+     *        The frequency that anomaly reports are sent over email.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */
@@ -378,11 +378,11 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency at which anomaly reports are sent over email.
+     * The frequency that anomaly reports are sent over email.
      * </p>
      * 
      * @param frequency
-     *        The frequency at which anomaly reports are sent over email.
+     *        The frequency that anomaly reports are sent over email.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */

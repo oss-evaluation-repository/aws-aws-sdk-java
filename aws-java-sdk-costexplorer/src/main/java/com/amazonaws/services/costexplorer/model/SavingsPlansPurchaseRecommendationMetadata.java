@@ -42,7 +42,7 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
     private String generationTimestamp;
     /**
      * <p>
-     * Additional metadata that may be applicable to the recommendation.
+     * Additional metadata that might be applicable to the recommendation.
      * </p>
      */
     private String additionalMetadata;
@@ -129,11 +129,11 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * Additional metadata that may be applicable to the recommendation.
+     * Additional metadata that might be applicable to the recommendation.
      * </p>
      * 
      * @param additionalMetadata
-     *        Additional metadata that may be applicable to the recommendation.
+     *        Additional metadata that might be applicable to the recommendation.
      */
 
     public void setAdditionalMetadata(String additionalMetadata) {
@@ -142,10 +142,10 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * Additional metadata that may be applicable to the recommendation.
+     * Additional metadata that might be applicable to the recommendation.
      * </p>
      * 
-     * @return Additional metadata that may be applicable to the recommendation.
+     * @return Additional metadata that might be applicable to the recommendation.
      */
 
     public String getAdditionalMetadata() {
@@ -154,11 +154,11 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
     /**
      * <p>
-     * Additional metadata that may be applicable to the recommendation.
+     * Additional metadata that might be applicable to the recommendation.
      * </p>
      * 
      * @param additionalMetadata
-     *        Additional metadata that may be applicable to the recommendation.
+     *        Additional metadata that might be applicable to the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,13 +35,20 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - Key Management Service</a>.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * The key-value pairs to use for the tags.
+     * </p>
+     * <p>
+     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
+     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
+     * about using tags to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     * Services resources using tags</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
@@ -108,13 +115,13 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - Key Management Service</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *        Resource Names - Key Management Service</a>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -125,12 +132,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - Key Management Service</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *         Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *         Resource Names - Key Management Service</a>.
      */
 
     public String getKmsKeyId() {
@@ -141,13 +148,13 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - Key Management Service</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *        Resource Names - Key Management Service</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,8 +167,21 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The key-value pairs to use for the tags.
      * </p>
+     * <p>
+     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
+     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
+     * about using tags to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     * Services resources using tags</a>.
+     * </p>
      * 
-     * @return The key-value pairs to use for the tags.
+     * @return The key-value pairs to use for the tags.</p>
+     *         <p>
+     *         CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
+     *         groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
+     *         For more information about using tags to control access, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     *         Services resources using tags</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -175,9 +195,22 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The key-value pairs to use for the tags.
      * </p>
+     * <p>
+     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
+     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
+     * about using tags to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     * Services resources using tags</a>.
+     * </p>
      * 
      * @param tags
-     *        The key-value pairs to use for the tags.
+     *        The key-value pairs to use for the tags.</p>
+     *        <p>
+     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
+     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
+     *        For more information about using tags to control access, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     *        Services resources using tags</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -188,9 +221,22 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The key-value pairs to use for the tags.
      * </p>
+     * <p>
+     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
+     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
+     * about using tags to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     * Services resources using tags</a>.
+     * </p>
      * 
      * @param tags
-     *        The key-value pairs to use for the tags.
+     *        The key-value pairs to use for the tags.</p>
+     *        <p>
+     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
+     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
+     *        For more information about using tags to control access, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
+     *        Services resources using tags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

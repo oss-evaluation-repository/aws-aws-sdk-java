@@ -67,7 +67,11 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private BatchGetObjectAttributes getObjectAttributes;
-
+    /**
+     * <p>
+     * Lists parent objects that are associated with a given object in pagination fashion.
+     * </p>
+     */
     private BatchListObjectParents listObjectParents;
     /**
      * <p>
@@ -383,7 +387,12 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Lists parent objects that are associated with a given object in pagination fashion.
+     * </p>
+     * 
      * @param listObjectParents
+     *        Lists parent objects that are associated with a given object in pagination fashion.
      */
 
     public void setListObjectParents(BatchListObjectParents listObjectParents) {
@@ -391,7 +400,11 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * Lists parent objects that are associated with a given object in pagination fashion.
+     * </p>
+     * 
+     * @return Lists parent objects that are associated with a given object in pagination fashion.
      */
 
     public BatchListObjectParents getListObjectParents() {
@@ -399,7 +412,12 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Lists parent objects that are associated with a given object in pagination fashion.
+     * </p>
+     * 
      * @param listObjectParents
+     *        Lists parent objects that are associated with a given object in pagination fashion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

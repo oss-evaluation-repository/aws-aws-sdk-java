@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The field that contains a list of disk (local storage) metrics associated with the current instance.
+ * The field that contains a list of disk (local storage) metrics that are associated with the current instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DiskResourceUtilization" target="_top">AWS API

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Access denied. Check your permissions.
+ * Access denied or directory not found. Either you don't have permissions for this directory or the directory does not
+ * exist. Try calling <a>ListDirectories</a> and check your permissions.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

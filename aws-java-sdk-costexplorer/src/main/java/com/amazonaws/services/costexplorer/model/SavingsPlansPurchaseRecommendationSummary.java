@@ -30,13 +30,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     * The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      * </p>
      */
     private String estimatedROI;
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      */
     private String currencyCode;
@@ -73,7 +73,7 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
     private String dailyCommitmentToPurchase;
     /**
      * <p>
-     * The recommended hourly commitment based on the recommendation parameters.
+     * The recommended hourly commitment that's based on the recommendation parameters.
      * </p>
      */
     private String hourlyCommitmentToPurchase;
@@ -86,25 +86,25 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
     private String estimatedSavingsPercentage;
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     * The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      * </p>
      */
     private String estimatedMonthlySavingsAmount;
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
+     * selected time period and the Savings Plans you own.
      * </p>
      */
     private String estimatedOnDemandCostWithCurrentCommitment;
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     * The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      * </p>
      * 
      * @param estimatedROI
-     *        The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     *        The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      */
 
     public void setEstimatedROI(String estimatedROI) {
@@ -113,10 +113,10 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     * The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      * </p>
      * 
-     * @return The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     * @return The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      */
 
     public String getEstimatedROI() {
@@ -125,11 +125,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     * The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      * </p>
      * 
      * @param estimatedROI
-     *        The estimated return on investment based on the recommended Savings Plans and estimated savings.
+     *        The estimated return on investment that's based on the recommended Savings Plans and estimated savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,12 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code AWS used to generate the recommendations and present potential savings.
+     *        The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *        savings.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -153,10 +154,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
-     * @return The currency code AWS used to generate the recommendations and present potential savings.
+     * @return The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *         savings.
      */
 
     public String getCurrencyCode() {
@@ -165,11 +167,12 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The currency code AWS used to generate the recommendations and present potential savings.
+     * The currency code that Amazon Web Services used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code AWS used to generate the recommendations and present potential savings.
+     *        The currency code that Amazon Web Services used to generate the recommendations and present potential
+     *        savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +392,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The recommended hourly commitment based on the recommendation parameters.
+     * The recommended hourly commitment that's based on the recommendation parameters.
      * </p>
      * 
      * @param hourlyCommitmentToPurchase
-     *        The recommended hourly commitment based on the recommendation parameters.
+     *        The recommended hourly commitment that's based on the recommendation parameters.
      */
 
     public void setHourlyCommitmentToPurchase(String hourlyCommitmentToPurchase) {
@@ -402,10 +405,10 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The recommended hourly commitment based on the recommendation parameters.
+     * The recommended hourly commitment that's based on the recommendation parameters.
      * </p>
      * 
-     * @return The recommended hourly commitment based on the recommendation parameters.
+     * @return The recommended hourly commitment that's based on the recommendation parameters.
      */
 
     public String getHourlyCommitmentToPurchase() {
@@ -414,11 +417,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The recommended hourly commitment based on the recommendation parameters.
+     * The recommended hourly commitment that's based on the recommendation parameters.
      * </p>
      * 
      * @param hourlyCommitmentToPurchase
-     *        The recommended hourly commitment based on the recommendation parameters.
+     *        The recommended hourly commitment that's based on the recommendation parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,11 +478,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     * The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     *        The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      */
 
     public void setEstimatedMonthlySavingsAmount(String estimatedMonthlySavingsAmount) {
@@ -488,10 +491,10 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     * The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      * </p>
      * 
-     * @return The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     * @return The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      */
 
     public String getEstimatedMonthlySavingsAmount() {
@@ -500,11 +503,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     * The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      * </p>
      * 
      * @param estimatedMonthlySavingsAmount
-     *        The estimated monthly savings amount, based on the recommended Savings Plans purchase.
+     *        The estimated monthly savings amount that's based on the recommended Savings Plans purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,13 +518,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
+     * selected time period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
-     *        selected time period and the Savings Plans you own.
+     *        The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
+     *        the selected time period and the Savings Plans you own.
      */
 
     public void setEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
@@ -530,12 +533,12 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
+     * selected time period and the Savings Plans you own.
      * </p>
      * 
-     * @return The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
-     *         selected time period and the Savings Plans you own.
+     * @return The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
+     *         the selected time period and the Savings Plans you own.
      */
 
     public String getEstimatedOnDemandCostWithCurrentCommitment() {
@@ -544,13 +547,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
 
     /**
      * <p>
-     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
-     * time period and the Savings Plans you own.
+     * The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the
+     * selected time period and the Savings Plans you own.
      * </p>
      * 
      * @param estimatedOnDemandCostWithCurrentCommitment
-     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
-     *        selected time period and the Savings Plans you own.
+     *        The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of
+     *        the selected time period and the Savings Plans you own.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
