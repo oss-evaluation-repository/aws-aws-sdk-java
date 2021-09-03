@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetOutpostRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     */
     private String outpostId;
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      */
 
     public void setOutpostId(String outpostId) {
@@ -36,7 +46,11 @@ public class GetOutpostRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
+     * @return The ID of the Outpost.
      */
 
     public String getOutpostId() {
@@ -44,7 +58,12 @@ public class GetOutpostRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,13 @@ public class GetEventPredictionResultJsonUnmarshaller implements Unmarshaller<Ge
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("externalModelOutputs", targetDepth)) {
+                    context.nextToken();
+                    getEventPredictionResult.setExternalModelOutputs(new ListUnmarshaller<ExternalModelOutputs>(ExternalModelOutputsJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

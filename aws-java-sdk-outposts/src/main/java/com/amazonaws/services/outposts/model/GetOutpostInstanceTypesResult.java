@@ -26,7 +26,11 @@ public class GetOutpostInstanceTypesResult extends com.amazonaws.AmazonWebServic
     private java.util.List<InstanceTypeItem> instanceTypes;
 
     private String nextToken;
-
+    /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     */
     private String outpostId;
 
     private String outpostArn;
@@ -110,7 +114,12 @@ public class GetOutpostInstanceTypesResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      */
 
     public void setOutpostId(String outpostId) {
@@ -118,7 +127,11 @@ public class GetOutpostInstanceTypesResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
+     * @return The ID of the Outpost.
      */
 
     public String getOutpostId() {
@@ -126,7 +139,12 @@ public class GetOutpostInstanceTypesResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

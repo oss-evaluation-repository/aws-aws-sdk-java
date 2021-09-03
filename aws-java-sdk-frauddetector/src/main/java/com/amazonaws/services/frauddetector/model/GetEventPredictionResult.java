@@ -38,6 +38,12 @@ public class GetEventPredictionResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<RuleResult> ruleResults;
+    /**
+     * <p>
+     * The model scores for Amazon SageMaker models.
+     * </p>
+     */
+    private java.util.List<ExternalModelOutputs> externalModelOutputs;
 
     /**
      * <p>
@@ -204,6 +210,76 @@ public class GetEventPredictionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The model scores for Amazon SageMaker models.
+     * </p>
+     * 
+     * @return The model scores for Amazon SageMaker models.
+     */
+
+    public java.util.List<ExternalModelOutputs> getExternalModelOutputs() {
+        return externalModelOutputs;
+    }
+
+    /**
+     * <p>
+     * The model scores for Amazon SageMaker models.
+     * </p>
+     * 
+     * @param externalModelOutputs
+     *        The model scores for Amazon SageMaker models.
+     */
+
+    public void setExternalModelOutputs(java.util.Collection<ExternalModelOutputs> externalModelOutputs) {
+        if (externalModelOutputs == null) {
+            this.externalModelOutputs = null;
+            return;
+        }
+
+        this.externalModelOutputs = new java.util.ArrayList<ExternalModelOutputs>(externalModelOutputs);
+    }
+
+    /**
+     * <p>
+     * The model scores for Amazon SageMaker models.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExternalModelOutputs(java.util.Collection)} or {@link #withExternalModelOutputs(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param externalModelOutputs
+     *        The model scores for Amazon SageMaker models.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEventPredictionResult withExternalModelOutputs(ExternalModelOutputs... externalModelOutputs) {
+        if (this.externalModelOutputs == null) {
+            setExternalModelOutputs(new java.util.ArrayList<ExternalModelOutputs>(externalModelOutputs.length));
+        }
+        for (ExternalModelOutputs ele : externalModelOutputs) {
+            this.externalModelOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model scores for Amazon SageMaker models.
+     * </p>
+     * 
+     * @param externalModelOutputs
+     *        The model scores for Amazon SageMaker models.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEventPredictionResult withExternalModelOutputs(java.util.Collection<ExternalModelOutputs> externalModelOutputs) {
+        setExternalModelOutputs(externalModelOutputs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -218,7 +294,9 @@ public class GetEventPredictionResult extends com.amazonaws.AmazonWebServiceResu
         if (getModelScores() != null)
             sb.append("ModelScores: ").append(getModelScores()).append(",");
         if (getRuleResults() != null)
-            sb.append("RuleResults: ").append(getRuleResults());
+            sb.append("RuleResults: ").append(getRuleResults()).append(",");
+        if (getExternalModelOutputs() != null)
+            sb.append("ExternalModelOutputs: ").append(getExternalModelOutputs());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +319,10 @@ public class GetEventPredictionResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getRuleResults() != null && other.getRuleResults().equals(this.getRuleResults()) == false)
             return false;
+        if (other.getExternalModelOutputs() == null ^ this.getExternalModelOutputs() == null)
+            return false;
+        if (other.getExternalModelOutputs() != null && other.getExternalModelOutputs().equals(this.getExternalModelOutputs()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +333,7 @@ public class GetEventPredictionResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getModelScores() == null) ? 0 : getModelScores().hashCode());
         hashCode = prime * hashCode + ((getRuleResults() == null) ? 0 : getRuleResults().hashCode());
+        hashCode = prime * hashCode + ((getExternalModelOutputs() == null) ? 0 : getExternalModelOutputs().hashCode());
         return hashCode;
     }
 

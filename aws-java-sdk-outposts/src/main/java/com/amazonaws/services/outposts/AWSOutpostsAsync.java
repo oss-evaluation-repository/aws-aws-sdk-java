@@ -37,6 +37,37 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
+     * Creates an order for an Outpost.
+     * </p>
+     * 
+     * @param createOrderRequest
+     * @return A Java Future containing the result of the CreateOrder operation returned by the service.
+     * @sample AWSOutpostsAsync.CreateOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrderResult> createOrderAsync(CreateOrderRequest createOrderRequest);
+
+    /**
+     * <p>
+     * Creates an order for an Outpost.
+     * </p>
+     * 
+     * @param createOrderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOrder operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.CreateOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrderResult> createOrderAsync(CreateOrderRequest createOrderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOrderRequest, CreateOrderResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Outpost.
      * </p>
      * <p>

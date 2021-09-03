@@ -1,3 +1,24 @@
+# __1.12.62__ __2021-09-03__
+## __AWS Outposts__
+  - ### Features
+    - This release adds a new API CreateOrder.
+
+## __Amazon Chime SDK Identity__
+  - ### Features
+    - Documentation updates for Chime
+
+## __Amazon Chime SDK Messaging__
+  - ### Features
+    - Documentation updates for Chime
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Added support for CodeInconsistencies detectors
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - Enhanced GetEventPrediction API response to include risk scores from imported SageMaker models
+
 # __1.12.61__ __2021-09-02__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

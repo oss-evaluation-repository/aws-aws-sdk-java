@@ -46,6 +46,31 @@ public interface AWSOutposts {
 
     /**
      * <p>
+     * Creates an order for an Outpost.
+     * </p>
+     * 
+     * @param createOrderRequest
+     * @return Result of the CreateOrder operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded a service quota.
+     * @sample AWSOutposts.CreateOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateOrderResult createOrder(CreateOrderRequest createOrderRequest);
+
+    /**
+     * <p>
      * Creates an Outpost.
      * </p>
      * <p>

@@ -148,6 +148,73 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
     /**
      * <p>
+     * Creates an order for an Outpost.
+     * </p>
+     * 
+     * @param createOrderRequest
+     * @return Result of the CreateOrder operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded a service quota.
+     * @sample AWSOutposts.CreateOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateOrderResult createOrder(CreateOrderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOrder(request);
+    }
+
+    @SdkInternalApi
+    final CreateOrderResult executeCreateOrder(CreateOrderRequest createOrderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOrderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOrderRequest> request = null;
+        Response<CreateOrderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOrderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOrderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOrderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOrderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an Outpost.
      * </p>
      * <p>

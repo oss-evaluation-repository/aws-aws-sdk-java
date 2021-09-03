@@ -28,6 +28,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
     }
 
     @Override
+    public CreateOrderResult createOrder(CreateOrderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateOutpostResult createOutpost(CreateOutpostRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -20460,6 +20460,9 @@
       }, {
         "name" : "SecurityIssues",
         "value" : "SecurityIssues"
+      }, {
+        "name" : "CodeInconsistencies",
+        "value" : "CodeInconsistencies"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.codegurureviewer.enum.RecommendationCategory",

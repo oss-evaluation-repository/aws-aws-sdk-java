@@ -29,7 +29,8 @@ public enum RecommendationCategory {
     PythonBestPractices("PythonBestPractices"),
     JavaBestPractices("JavaBestPractices"),
     ResourceLeaks("ResourceLeaks"),
-    SecurityIssues("SecurityIssues");
+    SecurityIssues("SecurityIssues"),
+    CodeInconsistencies("CodeInconsistencies");
 
     private String value;
 

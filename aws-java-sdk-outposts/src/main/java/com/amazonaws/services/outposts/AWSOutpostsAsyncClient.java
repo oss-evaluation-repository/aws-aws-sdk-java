@@ -77,6 +77,39 @@ public class AWSOutpostsAsyncClient extends AWSOutpostsClient implements AWSOutp
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOrderResult> createOrderAsync(CreateOrderRequest request) {
+
+        return createOrderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOrderResult> createOrderAsync(final CreateOrderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOrderRequest, CreateOrderResult> asyncHandler) {
+        final CreateOrderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOrderResult>() {
+            @Override
+            public CreateOrderResult call() throws Exception {
+                CreateOrderResult result = null;
+
+                try {
+                    result = executeCreateOrder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOutpostResult> createOutpostAsync(CreateOutpostRequest request) {
 
         return createOutpostAsync(request, null);

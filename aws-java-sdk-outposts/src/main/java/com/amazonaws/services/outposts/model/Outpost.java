@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Outpost implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     */
     private String outpostId;
 
     private String ownerId;
@@ -55,7 +60,12 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     private String siteArn;
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      */
 
     public void setOutpostId(String outpostId) {
@@ -63,7 +73,11 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
+     * @return The ID of the Outpost.
      */
 
     public String getOutpostId() {
@@ -71,7 +85,12 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the Outpost.
+     * </p>
+     * 
      * @param outpostId
+     *        The ID of the Outpost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
