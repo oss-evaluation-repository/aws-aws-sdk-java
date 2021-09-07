@@ -43,7 +43,7 @@ public class SamplingRule implements Serializable, Cloneable, StructuredPojo {
     private String ruleARN;
     /**
      * <p>
-     * Matches the ARN of the AWS resource on which the service runs.
+     * Matches the ARN of the Amazon Web Services resource on which the service runs.
      * </p>
      */
     private String resourceARN;
@@ -191,11 +191,11 @@ public class SamplingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Matches the ARN of the AWS resource on which the service runs.
+     * Matches the ARN of the Amazon Web Services resource on which the service runs.
      * </p>
      * 
      * @param resourceARN
-     *        Matches the ARN of the AWS resource on which the service runs.
+     *        Matches the ARN of the Amazon Web Services resource on which the service runs.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -204,10 +204,10 @@ public class SamplingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Matches the ARN of the AWS resource on which the service runs.
+     * Matches the ARN of the Amazon Web Services resource on which the service runs.
      * </p>
      * 
-     * @return Matches the ARN of the AWS resource on which the service runs.
+     * @return Matches the ARN of the Amazon Web Services resource on which the service runs.
      */
 
     public String getResourceARN() {
@@ -216,11 +216,11 @@ public class SamplingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Matches the ARN of the AWS resource on which the service runs.
+     * Matches the ARN of the Amazon Web Services resource on which the service runs.
      * </p>
      * 
      * @param resourceARN
-     *        Matches the ARN of the AWS resource on which the service runs.
+     *        Matches the ARN of the Amazon Web Services resource on which the service runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

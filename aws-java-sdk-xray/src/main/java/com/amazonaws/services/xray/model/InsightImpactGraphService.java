@@ -42,20 +42,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on Amazon
-     * EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     * Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for
+     * an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application
+     * used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
@@ -80,7 +81,7 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
     private java.util.List<String> names;
     /**
      * <p>
-     * Identifier of the AWS account in which the service runs.
+     * Identifier of the Amazon Web Services account in which the service runs.
      * </p>
      */
     private String accountId;
@@ -138,20 +139,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on Amazon
-     * EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     * Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for
+     * an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application
+     * used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
@@ -166,20 +168,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on
-     *        Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     *        Amazon Web Services Resource - The type of an Amazon Web Services resource. For example,
+     *        AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB
+     *        table that the application used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *        DynamoDB that didn't target a specific table.
+     *        Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *        downstream calls to Amazon DynamoDB that didn't target a specific table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *        DynamoDB that didn't target a specific table.
+     *        Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *        downstream calls to Amazon DynamoDB that didn't target a specific table.
      *        </p>
      *        </li>
      *        <li>
@@ -200,20 +203,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on Amazon
-     * EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     * Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for
+     * an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application
+     * used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
@@ -227,20 +231,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      *         <ul>
      *         <li>
      *         <p>
-     *         AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on
-     *         Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     *         Amazon Web Services Resource - The type of an Amazon Web Services resource. For example,
+     *         AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon
+     *         DynamoDB table that the application used.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *         DynamoDB that didn't target a specific table.
+     *         Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *         downstream calls to Amazon DynamoDB that didn't target a specific table.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *         DynamoDB that didn't target a specific table.
+     *         Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *         downstream calls to Amazon DynamoDB that didn't target a specific table.
      *         </p>
      *         </li>
      *         <li>
@@ -261,20 +266,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on Amazon
-     * EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     * Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for
+     * an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application
+     * used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that
-     * didn't target a specific table.
+     * Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     * downstream calls to Amazon DynamoDB that didn't target a specific table.
      * </p>
      * </li>
      * <li>
@@ -289,20 +295,21 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Resource - The type of an AWS resource. For example, AWS::EC2::Instance for an application running on
-     *        Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.
+     *        Amazon Web Services Resource - The type of an Amazon Web Services resource. For example,
+     *        AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB
+     *        table that the application used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *        DynamoDB that didn't target a specific table.
+     *        Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *        downstream calls to Amazon DynamoDB that didn't target a specific table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS Service - The type of an AWS service. For example, AWS::DynamoDB for downstream calls to Amazon
-     *        DynamoDB that didn't target a specific table.
+     *        Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for
+     *        downstream calls to Amazon DynamoDB that didn't target a specific table.
      *        </p>
      *        </li>
      *        <li>
@@ -430,11 +437,11 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the AWS account in which the service runs.
+     * Identifier of the Amazon Web Services account in which the service runs.
      * </p>
      * 
      * @param accountId
-     *        Identifier of the AWS account in which the service runs.
+     *        Identifier of the Amazon Web Services account in which the service runs.
      */
 
     public void setAccountId(String accountId) {
@@ -443,10 +450,10 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the AWS account in which the service runs.
+     * Identifier of the Amazon Web Services account in which the service runs.
      * </p>
      * 
-     * @return Identifier of the AWS account in which the service runs.
+     * @return Identifier of the Amazon Web Services account in which the service runs.
      */
 
     public String getAccountId() {
@@ -455,11 +462,11 @@ public class InsightImpactGraphService implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the AWS account in which the service runs.
+     * Identifier of the Amazon Web Services account in which the service runs.
      * </p>
      * 
      * @param accountId
-     *        Identifier of the AWS account in which the service runs.
+     *        Identifier of the Amazon Web Services account in which the service runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

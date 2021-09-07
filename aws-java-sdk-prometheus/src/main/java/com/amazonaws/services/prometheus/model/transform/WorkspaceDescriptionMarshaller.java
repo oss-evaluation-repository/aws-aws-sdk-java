@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.prometheus.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prometheusEndpoint").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
 
@@ -61,6 +65,7 @@ public class WorkspaceDescriptionMarshaller {
             protocolMarshaller.marshall(workspaceDescription.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getPrometheusEndpoint(), PROMETHEUSENDPOINT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

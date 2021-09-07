@@ -30,6 +30,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      */
     private java.util.List<EvaluationResult> predictorEvaluationResults;
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
      * strategy optimizes predictor accuracy.
@@ -39,6 +45,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String autoMLOverrideStrategy;
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     */
+    private String optimizationMetric;
 
     /**
      * <p>
@@ -111,6 +123,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
      * strategy optimizes predictor accuracy.
@@ -120,8 +138,15 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
-     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        AutoML strategy optimizes predictor accuracy.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @see AutoMLOverrideStrategy
@@ -132,6 +157,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
      * strategy optimizes predictor accuracy.
@@ -140,8 +171,15 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * This parameter is only valid for predictors trained using AutoML.
      * </p>
      * 
-     * @return The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
-     *         AutoML strategy optimizes predictor accuracy.</p>
+     * @return <p>
+     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *         Support or your account manager to learn more about access privileges.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
+     *         AutoML strategy optimizes predictor accuracy.
+     *         </p>
      *         <p>
      *         This parameter is only valid for predictors trained using AutoML.
      * @see AutoMLOverrideStrategy
@@ -152,6 +190,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
      * strategy optimizes predictor accuracy.
@@ -161,8 +205,15 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
-     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        AutoML strategy optimizes predictor accuracy.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -175,6 +226,12 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
      * strategy optimizes predictor accuracy.
@@ -184,8 +241,15 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
-     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        AutoML strategy optimizes predictor accuracy.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -194,6 +258,65 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
 
     public GetAccuracyMetricsResult withAutoMLOverrideStrategy(AutoMLOverrideStrategy autoMLOverrideStrategy) {
         this.autoMLOverrideStrategy = autoMLOverrideStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @see OptimizationMetric
+     */
+
+    public void setOptimizationMetric(String optimizationMetric) {
+        this.optimizationMetric = optimizationMetric;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @return The accuracy metric used to optimize the predictor.
+     * @see OptimizationMetric
+     */
+
+    public String getOptimizationMetric() {
+        return this.optimizationMetric;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMetric
+     */
+
+    public GetAccuracyMetricsResult withOptimizationMetric(String optimizationMetric) {
+        setOptimizationMetric(optimizationMetric);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMetric
+     */
+
+    public GetAccuracyMetricsResult withOptimizationMetric(OptimizationMetric optimizationMetric) {
+        this.optimizationMetric = optimizationMetric.toString();
         return this;
     }
 
@@ -212,7 +335,9 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
         if (getPredictorEvaluationResults() != null)
             sb.append("PredictorEvaluationResults: ").append(getPredictorEvaluationResults()).append(",");
         if (getAutoMLOverrideStrategy() != null)
-            sb.append("AutoMLOverrideStrategy: ").append(getAutoMLOverrideStrategy());
+            sb.append("AutoMLOverrideStrategy: ").append(getAutoMLOverrideStrategy()).append(",");
+        if (getOptimizationMetric() != null)
+            sb.append("OptimizationMetric: ").append(getOptimizationMetric());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +360,10 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getAutoMLOverrideStrategy() != null && other.getAutoMLOverrideStrategy().equals(this.getAutoMLOverrideStrategy()) == false)
             return false;
+        if (other.getOptimizationMetric() == null ^ this.getOptimizationMetric() == null)
+            return false;
+        if (other.getOptimizationMetric() != null && other.getOptimizationMetric().equals(this.getOptimizationMetric()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +374,7 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getPredictorEvaluationResults() == null) ? 0 : getPredictorEvaluationResults().hashCode());
         hashCode = prime * hashCode + ((getAutoMLOverrideStrategy() == null) ? 0 : getAutoMLOverrideStrategy().hashCode());
+        hashCode = prime * hashCode + ((getOptimizationMetric() == null) ? 0 : getOptimizationMetric().hashCode());
         return hashCode;
     }
 

@@ -34,6 +34,8 @@ public class MetricsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WeightedQuantileLosses").build();
     private static final MarshallingInfo<List> ERRORMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ErrorMetrics").build();
+    private static final MarshallingInfo<Double> AVERAGEWEIGHTEDQUANTILELOSS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AverageWeightedQuantileLoss").build();
 
     private static final MetricsMarshaller instance = new MetricsMarshaller();
 
@@ -54,6 +56,7 @@ public class MetricsMarshaller {
             protocolMarshaller.marshall(metrics.getRMSE(), RMSE_BINDING);
             protocolMarshaller.marshall(metrics.getWeightedQuantileLosses(), WEIGHTEDQUANTILELOSSES_BINDING);
             protocolMarshaller.marshall(metrics.getErrorMetrics(), ERRORMETRICS_BINDING);
+            protocolMarshaller.marshall(metrics.getAverageWeightedQuantileLoss(), AVERAGEWEIGHTEDQUANTILELOSS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

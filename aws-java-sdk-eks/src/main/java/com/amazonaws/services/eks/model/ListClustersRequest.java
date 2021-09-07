@@ -50,6 +50,12 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * </p>
+     */
+    private java.util.List<String> include;
 
     /**
      * <p>
@@ -204,6 +210,76 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * </p>
+     * 
+     * @return Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     */
+
+    public java.util.List<String> getInclude() {
+        return include;
+    }
+
+    /**
+     * <p>
+     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * </p>
+     * 
+     * @param include
+     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     */
+
+    public void setInclude(java.util.Collection<String> include) {
+        if (include == null) {
+            this.include = null;
+            return;
+        }
+
+        this.include = new java.util.ArrayList<String>(include);
+    }
+
+    /**
+     * <p>
+     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclude(java.util.Collection)} or {@link #withInclude(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param include
+     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListClustersRequest withInclude(String... include) {
+        if (this.include == null) {
+            setInclude(new java.util.ArrayList<String>(include.length));
+        }
+        for (String ele : include) {
+            this.include.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * </p>
+     * 
+     * @param include
+     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListClustersRequest withInclude(java.util.Collection<String> include) {
+        setInclude(include);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -218,7 +294,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getInclude() != null)
+            sb.append("Include: ").append(getInclude());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +319,10 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getInclude() == null ^ this.getInclude() == null)
+            return false;
+        if (other.getInclude() != null && other.getInclude().equals(this.getInclude()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +333,7 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInclude() == null) ? 0 : getInclude().hashCode());
         return hashCode;
     }
 

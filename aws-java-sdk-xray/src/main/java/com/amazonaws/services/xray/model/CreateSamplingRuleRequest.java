@@ -34,8 +34,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
-     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference</i>.
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * The following restrictions apply to tags:
@@ -68,7 +68,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      * </p>
      * </li>
      * </ul>
@@ -118,8 +118,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
-     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference</i>.
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * The following restrictions apply to tags:
@@ -152,15 +152,15 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      * </p>
      * </li>
      * </ul>
      * 
      * @return A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
      *         information about ways to use tags, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *         <i>AWS General Reference</i>.</p>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
      *         <p>
      *         The following restrictions apply to tags:
      *         </p>
@@ -192,7 +192,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *         Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      *         </p>
      *         </li>
      */
@@ -204,8 +204,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
-     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference</i>.
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * The following restrictions apply to tags:
@@ -238,7 +238,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      * </p>
      * </li>
      * </ul>
@@ -246,8 +246,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
      *        information about ways to use tags, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference</i>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
      *        <p>
      *        The following restrictions apply to tags:
      *        </p>
@@ -279,7 +279,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      *        </p>
      *        </li>
      */
@@ -296,8 +296,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
-     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference</i>.
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * The following restrictions apply to tags:
@@ -330,7 +330,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      * </p>
      * </li>
      * </ul>
@@ -343,8 +343,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
      *        information about ways to use tags, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference</i>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
      *        <p>
      *        The following restrictions apply to tags:
      *        </p>
@@ -376,7 +376,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -395,8 +395,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
-     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference</i>.
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * The following restrictions apply to tags:
@@ -429,7 +429,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      * </p>
      * </li>
      * </ul>
@@ -437,8 +437,8 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
      *        information about ways to use tags, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference</i>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
      *        <p>
      *        The following restrictions apply to tags:
      *        </p>
@@ -470,7 +470,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

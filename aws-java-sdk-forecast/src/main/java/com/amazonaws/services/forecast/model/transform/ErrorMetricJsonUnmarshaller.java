@@ -60,6 +60,14 @@ public class ErrorMetricJsonUnmarshaller implements Unmarshaller<ErrorMetric, Js
                     context.nextToken();
                     errorMetric.setRMSE(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("MASE", targetDepth)) {
+                    context.nextToken();
+                    errorMetric.setMASE(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("MAPE", targetDepth)) {
+                    context.nextToken();
+                    errorMetric.setMAPE(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

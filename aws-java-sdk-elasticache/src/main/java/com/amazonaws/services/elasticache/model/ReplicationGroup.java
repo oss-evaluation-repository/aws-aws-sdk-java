@@ -216,7 +216,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String aRN;
     /**
      * <p>
-     * The list of user group IDs that have access to the replication group.
+     * The ID of the user group associated to the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIds;
@@ -1716,10 +1716,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs that have access to the replication group.
+     * The ID of the user group associated to the replication group.
      * </p>
      * 
-     * @return The list of user group IDs that have access to the replication group.
+     * @return The ID of the user group associated to the replication group.
      */
 
     public java.util.List<String> getUserGroupIds() {
@@ -1731,11 +1731,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs that have access to the replication group.
+     * The ID of the user group associated to the replication group.
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user group IDs that have access to the replication group.
+     *        The ID of the user group associated to the replication group.
      */
 
     public void setUserGroupIds(java.util.Collection<String> userGroupIds) {
@@ -1749,7 +1749,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs that have access to the replication group.
+     * The ID of the user group associated to the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1758,7 +1758,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user group IDs that have access to the replication group.
+     *        The ID of the user group associated to the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1774,11 +1774,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs that have access to the replication group.
+     * The ID of the user group associated to the replication group.
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user group IDs that have access to the replication group.
+     *        The ID of the user group associated to the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

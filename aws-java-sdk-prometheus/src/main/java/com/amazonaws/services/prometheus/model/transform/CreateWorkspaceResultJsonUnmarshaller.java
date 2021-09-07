@@ -56,6 +56,11 @@ public class CreateWorkspaceResultJsonUnmarshaller implements Unmarshaller<Creat
                     context.nextToken();
                     createWorkspaceResult.setStatus(WorkspaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    createWorkspaceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("workspaceId", targetDepth)) {
                     context.nextToken();
                     createWorkspaceResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticache.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The default user assigned to the user group.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DefaultUserAssociatedToUserGroupException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {

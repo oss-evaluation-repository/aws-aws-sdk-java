@@ -301,19 +301,20 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String authTokenUpdateStrategy;
     /**
      * <p>
-     * The user group you are associating with the replication group.
+     * The ID of the user group you are associating with the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAdd;
     /**
      * <p>
-     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can
+     * access the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemove;
     /**
      * <p>
-     * Removes the user groups that can access this replication group.
+     * Removes the user group associated with this replication group.
      * </p>
      */
     private Boolean removeUserGroups;
@@ -2214,10 +2215,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group you are associating with the replication group.
+     * The ID of the user group you are associating with the replication group.
      * </p>
      * 
-     * @return The user group you are associating with the replication group.
+     * @return The ID of the user group you are associating with the replication group.
      */
 
     public java.util.List<String> getUserGroupIdsToAdd() {
@@ -2229,11 +2230,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group you are associating with the replication group.
+     * The ID of the user group you are associating with the replication group.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The user group you are associating with the replication group.
+     *        The ID of the user group you are associating with the replication group.
      */
 
     public void setUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
@@ -2247,7 +2248,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group you are associating with the replication group.
+     * The ID of the user group you are associating with the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2256,7 +2257,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The user group you are associating with the replication group.
+     *        The ID of the user group you are associating with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2272,11 +2273,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group you are associating with the replication group.
+     * The ID of the user group you are associating with the replication group.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The user group you are associating with the replication group.
+     *        The ID of the user group you are associating with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2287,10 +2288,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can
+     * access the replication group.
      * </p>
      * 
-     * @return The user group to remove, meaning the users in the group no longer can access the replication group.
+     * @return The ID of the user group to disassociate from the replication group, meaning the users in the group no
+     *         longer can access the replication group.
      */
 
     public java.util.List<String> getUserGroupIdsToRemove() {
@@ -2302,11 +2305,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can
+     * access the replication group.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     *        The ID of the user group to disassociate from the replication group, meaning the users in the group no
+     *        longer can access the replication group.
      */
 
     public void setUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
@@ -2320,7 +2325,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can
+     * access the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2329,7 +2335,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     *        The ID of the user group to disassociate from the replication group, meaning the users in the group no
+     *        longer can access the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2345,11 +2352,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can
+     * access the replication group.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     *        The ID of the user group to disassociate from the replication group, meaning the users in the group no
+     *        longer can access the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2360,11 +2369,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Removes the user groups that can access this replication group.
+     * Removes the user group associated with this replication group.
      * </p>
      * 
      * @param removeUserGroups
-     *        Removes the user groups that can access this replication group.
+     *        Removes the user group associated with this replication group.
      */
 
     public void setRemoveUserGroups(Boolean removeUserGroups) {
@@ -2373,10 +2382,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Removes the user groups that can access this replication group.
+     * Removes the user group associated with this replication group.
      * </p>
      * 
-     * @return Removes the user groups that can access this replication group.
+     * @return Removes the user group associated with this replication group.
      */
 
     public Boolean getRemoveUserGroups() {
@@ -2385,11 +2394,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Removes the user groups that can access this replication group.
+     * Removes the user group associated with this replication group.
      * </p>
      * 
      * @param removeUserGroups
-     *        Removes the user groups that can access this replication group.
+     *        Removes the user group associated with this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2400,10 +2409,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Removes the user groups that can access this replication group.
+     * Removes the user group associated with this replication group.
      * </p>
      * 
-     * @return Removes the user groups that can access this replication group.
+     * @return Removes the user group associated with this replication group.
      */
 
     public Boolean isRemoveUserGroups() {

@@ -33,6 +33,10 @@ public class ErrorMetricMarshaller {
             .marshallLocationName("WAPE").build();
     private static final MarshallingInfo<Double> RMSE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RMSE").build();
+    private static final MarshallingInfo<Double> MASE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MASE").build();
+    private static final MarshallingInfo<Double> MAPE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MAPE").build();
 
     private static final ErrorMetricMarshaller instance = new ErrorMetricMarshaller();
 
@@ -53,6 +57,8 @@ public class ErrorMetricMarshaller {
             protocolMarshaller.marshall(errorMetric.getForecastType(), FORECASTTYPE_BINDING);
             protocolMarshaller.marshall(errorMetric.getWAPE(), WAPE_BINDING);
             protocolMarshaller.marshall(errorMetric.getRMSE(), RMSE_BINDING);
+            protocolMarshaller.marshall(errorMetric.getMASE(), MASE_BINDING);
+            protocolMarshaller.marshall(errorMetric.getMAPE(), MAPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

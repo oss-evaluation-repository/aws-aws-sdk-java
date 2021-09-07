@@ -79,6 +79,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DeregisterClusterResult deregisterCluster(DeregisterClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAddonResult describeAddon(DescribeAddonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +155,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public ListUpdatesResult listUpdates(ListUpdatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterClusterResult registerCluster(RegisterClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

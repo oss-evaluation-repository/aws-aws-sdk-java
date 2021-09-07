@@ -26,9 +26,9 @@ import com.amazonaws.services.ssmcontacts.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover
- * from incidents affecting their AWS-hosted applications. An incident is any unplanned interruption or reduction in
- * quality of services.
+ * Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from
+ * incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or
+ * reduction in quality of services.
  * </p>
  * <p>
  * Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant
@@ -677,7 +677,7 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
     /**
      * <p>
      * Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in
-     * the console or with the <code>ActivateChannel</code> action. Incident Manager can't engage a contact channel
+     * the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel
      * until it has been activated.
      * </p>
      * 
@@ -692,7 +692,7 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
     /**
      * <p>
      * Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in
-     * the console or with the <code>ActivateChannel</code> action. Incident Manager can't engage a contact channel
+     * the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel
      * until it has been activated.
      * </p>
      * 

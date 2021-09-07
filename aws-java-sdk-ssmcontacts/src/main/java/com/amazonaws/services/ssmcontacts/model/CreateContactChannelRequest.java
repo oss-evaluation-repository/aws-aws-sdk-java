@@ -93,7 +93,7 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean deferActivation;
     /**
      * <p>
-     * A token ensuring that the action is called only once with the specified details.
+     * A token ensuring that the operation is called only once with the specified details.
      * </p>
      */
     private String idempotencyToken;
@@ -576,11 +576,11 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token ensuring that the action is called only once with the specified details.
+     * A token ensuring that the operation is called only once with the specified details.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token ensuring that the action is called only once with the specified details.
+     *        A token ensuring that the operation is called only once with the specified details.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -589,10 +589,10 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token ensuring that the action is called only once with the specified details.
+     * A token ensuring that the operation is called only once with the specified details.
      * </p>
      * 
-     * @return A token ensuring that the action is called only once with the specified details.
+     * @return A token ensuring that the operation is called only once with the specified details.
      */
 
     public String getIdempotencyToken() {
@@ -601,11 +601,11 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token ensuring that the action is called only once with the specified details.
+     * A token ensuring that the operation is called only once with the specified details.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token ensuring that the action is called only once with the specified details.
+     *        A token ensuring that the operation is called only once with the specified details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

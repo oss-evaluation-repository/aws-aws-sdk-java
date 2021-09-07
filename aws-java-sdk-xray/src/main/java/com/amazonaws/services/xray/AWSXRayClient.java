@@ -51,8 +51,8 @@ import com.amazonaws.services.xray.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing
- * those traces.
+ * Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service maps and other data created
+ * by processing those traces.
  * </p>
  */
 @ThreadSafe
@@ -414,11 +414,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
-     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
-     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
-     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
-     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with <a
+     * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>, and evaluate
+     * each rule in ascending order of <i>priority</i> for each request. If a rule matches, the service records a trace,
+     * borrowing it from the reservoir size. After 10 seconds, the service reports back to X-Ray with <a
+     * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> to get
+     * updated versions of each in-use rule. The updated rule contains a trace quota that the service can use instead of
+     * borrowing from the reservoir.
      * </p>
      * 
      * @param createSamplingRuleRequest
@@ -1195,8 +1197,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * <p>
      * Retrieves a document that describes services that process incoming requests, and downstream services that they
      * call as a result. Root services process incoming requests and make calls to downstream services. Root services
-     * are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
-     * services can be other applications, AWS resources, HTTP web APIs, or SQL databases.
+     * are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray
+     * SDK</a>. Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL
+     * databases.
      * </p>
      * 
      * @param getServiceGraphRequest
@@ -1396,7 +1399,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * <p>
      * For a full list of indexed fields and keywords that you can use in filter expressions, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
-     * the <i>AWS X-Ray Developer Guide</i>.
+     * the <i>Amazon Web Services X-Ray Developer Guide</i>.
      * </p>
      * 
      * @param getTraceSummariesRequest
@@ -1455,7 +1458,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.
+     * Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1576,7 +1579,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Used by the AWS X-Ray daemon to upload telemetry.
+     * Used by the Amazon Web Services X-Ray daemon to upload telemetry.
      * </p>
      * 
      * @param putTelemetryRecordsRequest
@@ -1635,14 +1638,15 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a>
-     * generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document
-     * can be a completed segment, an in-progress segment, or an array of subsegments.
+     * Uploads segment documents to Amazon Web Services X-Ray. The <a
+     * href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to
+     * the X-Ray daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress
+     * segment, or an array of subsegments.
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a
-     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
-     * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray
+     * Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">
      * <b>Required segment document fields</b>
@@ -1768,7 +1772,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Applies tags to an existing AWS X-Ray group or sampling rule.
+     * Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1832,8 +1836,8 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
-     * Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system tags (those with an
-     * <code>aws:</code> prefix).
+     * Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system tags
+     * (those with an <code>aws:</code> prefix).
      * </p>
      * 
      * @param untagResourceRequest

@@ -49,7 +49,7 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
     private com.amazonaws.internal.SdkInternalList<String> userIds;
     /**
      * <p>
-     * A list of updates being applied to the user groups.
+     * A list of updates being applied to the user group.
      * </p>
      */
     private UserGroupPendingChanges pendingChanges;
@@ -261,11 +261,11 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of updates being applied to the user groups.
+     * A list of updates being applied to the user group.
      * </p>
      * 
      * @param pendingChanges
-     *        A list of updates being applied to the user groups.
+     *        A list of updates being applied to the user group.
      */
 
     public void setPendingChanges(UserGroupPendingChanges pendingChanges) {
@@ -274,10 +274,10 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of updates being applied to the user groups.
+     * A list of updates being applied to the user group.
      * </p>
      * 
-     * @return A list of updates being applied to the user groups.
+     * @return A list of updates being applied to the user group.
      */
 
     public UserGroupPendingChanges getPendingChanges() {
@@ -286,11 +286,11 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of updates being applied to the user groups.
+     * A list of updates being applied to the user group.
      * </p>
      * 
      * @param pendingChanges
-     *        A list of updates being applied to the user groups.
+     *        A list of updates being applied to the user group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

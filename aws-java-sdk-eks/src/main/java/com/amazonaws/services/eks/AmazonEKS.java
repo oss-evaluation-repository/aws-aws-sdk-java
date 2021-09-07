@@ -450,6 +450,33 @@ public interface AmazonEKS {
 
     /**
      * <p>
+     * Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+     * </p>
+     * 
+     * @param deregisterClusterRequest
+     * @return Result of the DeregisterCluster operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.DeregisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeregisterClusterResult deregisterCluster(DeregisterClusterRequest deregisterClusterRequest);
+
+    /**
+     * <p>
      * Describes an Amazon EKS add-on.
      * </p>
      * 
@@ -851,6 +878,50 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     ListUpdatesResult listUpdates(ListUpdatesRequest listUpdatesRequest);
+
+    /**
+     * <p>
+     * Connects a Kubernetes cluster to the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the
+     * cluster and its nodes.
+     * </p>
+     * <p>
+     * Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code> to add it to
+     * the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Second, a <a href=
+     * "https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml"
+     * >Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the
+     * Kubernetes cluster through it's native provider to provide visibility.
+     * </p>
+     * <p>
+     * After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane.
+     * If the Manifest is not applied within a set amount of time, then the connected cluster will no longer be visible
+     * and must be deregistered. See <a>DeregisterCluster</a>.
+     * </p>
+     * 
+     * @param registerClusterRequest
+     * @return Result of the RegisterCluster operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have encountered a service limit on the specified resource.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.RegisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RegisterClusterResult registerCluster(RegisterClusterRequest registerClusterRequest);
 
     /**
      * <p>

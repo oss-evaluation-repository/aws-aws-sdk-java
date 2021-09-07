@@ -27,9 +27,9 @@ import com.amazonaws.services.ssmcontacts.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover
- * from incidents affecting their AWS-hosted applications. An incident is any unplanned interruption or reduction in
- * quality of services.
+ * Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from
+ * incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or
+ * reduction in quality of services.
  * </p>
  * <p>
  * Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant
@@ -57,7 +57,7 @@ public interface AWSSSMContacts {
      * @param acceptPageRequest
      * @return Result of the AcceptPage operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -65,7 +65,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.AcceptPage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/AcceptPage" target="_top">AWS API
      *      Documentation</a>
@@ -81,7 +81,7 @@ public interface AWSSSMContacts {
      * @param activateContactChannelRequest
      * @return Result of the ActivateContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -89,7 +89,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ActivateContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ActivateContactChannel"
      *      target="_top">AWS API Documentation</a>
@@ -105,7 +105,7 @@ public interface AWSSSMContacts {
      * @param createContactRequest
      * @return Result of the CreateContact operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ConflictException
      *         Updating or deleting a resource causes an inconsistent state.
      * @throws InternalServerException
@@ -115,9 +115,9 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @sample AWSSSMContacts.CreateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContact" target="_top">AWS API
      *      Documentation</a>
@@ -132,17 +132,17 @@ public interface AWSSSMContacts {
      * @param createContactChannelRequest
      * @return Result of the CreateContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ConflictException
      *         Updating or deleting a resource causes an inconsistent state.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.CreateContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContactChannel"
      *      target="_top">AWS API Documentation</a>
@@ -157,7 +157,7 @@ public interface AWSSSMContacts {
      * @param deactivateContactChannelRequest
      * @return Result of the DeactivateContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -165,7 +165,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DeactivateContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeactivateContactChannel"
      *      target="_top">AWS API Documentation</a>
@@ -182,7 +182,7 @@ public interface AWSSSMContacts {
      * @param deleteContactRequest
      * @return Result of the DeleteContact operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -190,7 +190,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DeleteContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContact" target="_top">AWS API
      *      Documentation</a>
@@ -207,7 +207,7 @@ public interface AWSSSMContacts {
      * @param deleteContactChannelRequest
      * @return Result of the DeleteContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -215,7 +215,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DeleteContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContactChannel"
      *      target="_top">AWS API Documentation</a>
@@ -231,9 +231,9 @@ public interface AWSSSMContacts {
      * @param describeEngagementRequest
      * @return Result of the DescribeEngagement operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -241,7 +241,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DescribeEngagement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribeEngagement"
      *      target="_top">AWS API Documentation</a>
@@ -256,9 +256,9 @@ public interface AWSSSMContacts {
      * @param describePageRequest
      * @return Result of the DescribePage operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -266,7 +266,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DescribePage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribePage" target="_top">AWS API
      *      Documentation</a>
@@ -281,7 +281,7 @@ public interface AWSSSMContacts {
      * @param getContactRequest
      * @return Result of the GetContact operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -289,9 +289,9 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @sample AWSSSMContacts.GetContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContact" target="_top">AWS API
      *      Documentation</a>
@@ -306,9 +306,9 @@ public interface AWSSSMContacts {
      * @param getContactChannelRequest
      * @return Result of the GetContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -316,7 +316,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.GetContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactChannel" target="_top">AWS
      *      API Documentation</a>
@@ -331,7 +331,7 @@ public interface AWSSSMContacts {
      * @param getContactPolicyRequest
      * @return Result of the GetContactPolicy operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -339,7 +339,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.GetContactPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -354,9 +354,9 @@ public interface AWSSSMContacts {
      * @param listContactChannelsRequest
      * @return Result of the ListContactChannels operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -364,7 +364,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListContactChannels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContactChannels"
      *      target="_top">AWS API Documentation</a>
@@ -379,13 +379,13 @@ public interface AWSSSMContacts {
      * @param listContactsRequest
      * @return Result of the ListContacts operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListContacts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContacts" target="_top">AWS API
      *      Documentation</a>
@@ -400,13 +400,13 @@ public interface AWSSSMContacts {
      * @param listEngagementsRequest
      * @return Result of the ListEngagements operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListEngagements
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListEngagements" target="_top">AWS
      *      API Documentation</a>
@@ -421,7 +421,7 @@ public interface AWSSSMContacts {
      * @param listPageReceiptsRequest
      * @return Result of the ListPageReceipts operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -429,7 +429,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListPageReceipts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageReceipts" target="_top">AWS
      *      API Documentation</a>
@@ -444,7 +444,7 @@ public interface AWSSSMContacts {
      * @param listPagesByContactRequest
      * @return Result of the ListPagesByContact operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -452,7 +452,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListPagesByContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByContact"
      *      target="_top">AWS API Documentation</a>
@@ -467,7 +467,7 @@ public interface AWSSSMContacts {
      * @param listPagesByEngagementRequest
      * @return Result of the ListPagesByEngagement operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -475,7 +475,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.ListPagesByEngagement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByEngagement"
      *      target="_top">AWS API Documentation</a>
@@ -490,13 +490,13 @@ public interface AWSSSMContacts {
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @sample AWSSSMContacts.ListTagsForResource
@@ -513,11 +513,11 @@ public interface AWSSSMContacts {
      * @param putContactPolicyRequest
      * @return Result of the PutContactPolicy operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ConflictException
      *         Updating or deleting a resource causes an inconsistent state.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
      * @throws ThrottlingException
@@ -533,16 +533,16 @@ public interface AWSSSMContacts {
     /**
      * <p>
      * Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in
-     * the console or with the <code>ActivateChannel</code> action. Incident Manager can't engage a contact channel
+     * the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel
      * until it has been activated.
      * </p>
      * 
      * @param sendActivationCodeRequest
      * @return Result of the SendActivationCode operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -552,7 +552,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.SendActivationCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode"
      *      target="_top">AWS API Documentation</a>
@@ -568,9 +568,9 @@ public interface AWSSSMContacts {
      * @param startEngagementRequest
      * @return Result of the StartEngagement operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -578,7 +578,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.StartEngagement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/StartEngagement" target="_top">AWS
      *      API Documentation</a>
@@ -594,9 +594,9 @@ public interface AWSSSMContacts {
      * @param stopEngagementRequest
      * @return Result of the StopEngagement operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
      * @throws ThrottlingException
@@ -618,7 +618,7 @@ public interface AWSSSMContacts {
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
@@ -628,7 +628,7 @@ public interface AWSSSMContacts {
      * @throws ServiceQuotaExceededException
      *         Request would cause a service quota to be exceeded.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -643,13 +643,13 @@ public interface AWSSSMContacts {
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @sample AWSSSMContacts.UntagResource
@@ -666,7 +666,7 @@ public interface AWSSSMContacts {
      * @param updateContactRequest
      * @return Result of the UpdateContact operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -676,9 +676,9 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @sample AWSSSMContacts.UpdateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContact" target="_top">AWS API
      *      Documentation</a>
@@ -693,11 +693,11 @@ public interface AWSSSMContacts {
      * @param updateContactChannelRequest
      * @return Result of the UpdateContactChannel operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have sufficient access to perform this action.
+     *         You don't have sufficient access to perform this operation.
      * @throws ConflictException
      *         Updating or deleting a resource causes an inconsistent state.
      * @throws DataEncryptionException
-     *         The action failed to due an encryption key error.
+     *         The operation failed to due an encryption key error.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @throws ResourceNotFoundException
@@ -705,7 +705,7 @@ public interface AWSSSMContacts {
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.UpdateContactChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContactChannel"
      *      target="_top">AWS API Documentation</a>

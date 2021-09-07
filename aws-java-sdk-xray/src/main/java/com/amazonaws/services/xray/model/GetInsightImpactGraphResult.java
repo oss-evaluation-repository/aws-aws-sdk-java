@@ -55,7 +55,7 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
     private java.util.Date serviceGraphEndTime;
     /**
      * <p>
-     * The AWS instrumented services related to the insight.
+     * The Amazon Web Services instrumented services related to the insight.
      * </p>
      */
     private java.util.List<InsightImpactGraphService> services;
@@ -268,10 +268,10 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS instrumented services related to the insight.
+     * The Amazon Web Services instrumented services related to the insight.
      * </p>
      * 
-     * @return The AWS instrumented services related to the insight.
+     * @return The Amazon Web Services instrumented services related to the insight.
      */
 
     public java.util.List<InsightImpactGraphService> getServices() {
@@ -280,11 +280,11 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS instrumented services related to the insight.
+     * The Amazon Web Services instrumented services related to the insight.
      * </p>
      * 
      * @param services
-     *        The AWS instrumented services related to the insight.
+     *        The Amazon Web Services instrumented services related to the insight.
      */
 
     public void setServices(java.util.Collection<InsightImpactGraphService> services) {
@@ -298,7 +298,7 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS instrumented services related to the insight.
+     * The Amazon Web Services instrumented services related to the insight.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -307,7 +307,7 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param services
-     *        The AWS instrumented services related to the insight.
+     *        The Amazon Web Services instrumented services related to the insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,11 +323,11 @@ public class GetInsightImpactGraphResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS instrumented services related to the insight.
+     * The Amazon Web Services instrumented services related to the insight.
      * </p>
      * 
      * @param services
-     *        The AWS instrumented services related to the insight.
+     *        The Amazon Web Services instrumented services related to the insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

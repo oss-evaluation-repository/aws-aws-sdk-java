@@ -115,6 +115,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      */
     private Boolean performAutoML;
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
      * that minimizes training time, use <code>LatencyOptimized</code>.
@@ -254,6 +260,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     */
+    private String optimizationMetric;
 
     /**
      * <p>
@@ -869,6 +881,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
      * that minimizes training time, use <code>LatencyOptimized</code>.
@@ -878,8 +896,15 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
-     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @see AutoMLOverrideStrategy
@@ -890,6 +915,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
      * that minimizes training time, use <code>LatencyOptimized</code>.
@@ -898,8 +929,15 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * This parameter is only valid for predictors trained using AutoML.
      * </p>
      * 
-     * @return Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
-     *         strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     * @return <p>
+     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *         Support or your account manager to learn more about access privileges.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *         strategy that minimizes training time, use <code>LatencyOptimized</code>.
+     *         </p>
      *         <p>
      *         This parameter is only valid for predictors trained using AutoML.
      * @see AutoMLOverrideStrategy
@@ -910,6 +948,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
      * that minimizes training time, use <code>LatencyOptimized</code>.
@@ -919,8 +963,15 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
-     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -933,6 +984,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
+     * or your account manager to learn more about access privileges.
+     * </p>
+     * </note>
      * <p>
      * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
      * that minimizes training time, use <code>LatencyOptimized</code>.
@@ -942,8 +999,15 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param autoMLOverrideStrategy
+     *        <p>
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
+     *        Support or your account manager to learn more about access privileges.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
-     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.
+     *        </p>
      *        <p>
      *        This parameter is only valid for predictors trained using AutoML.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1976,6 +2040,65 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @see OptimizationMetric
+     */
+
+    public void setOptimizationMetric(String optimizationMetric) {
+        this.optimizationMetric = optimizationMetric;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @return The accuracy metric used to optimize the predictor.
+     * @see OptimizationMetric
+     */
+
+    public String getOptimizationMetric() {
+        return this.optimizationMetric;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMetric
+     */
+
+    public CreatePredictorRequest withOptimizationMetric(String optimizationMetric) {
+        setOptimizationMetric(optimizationMetric);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The accuracy metric used to optimize the predictor.
+     * </p>
+     * 
+     * @param optimizationMetric
+     *        The accuracy metric used to optimize the predictor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMetric
+     */
+
+    public CreatePredictorRequest withOptimizationMetric(OptimizationMetric optimizationMetric) {
+        this.optimizationMetric = optimizationMetric.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2014,7 +2137,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEncryptionConfig() != null)
             sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getOptimizationMetric() != null)
+            sb.append("OptimizationMetric: ").append(getOptimizationMetric());
         sb.append("}");
         return sb.toString();
     }
@@ -2085,6 +2210,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getOptimizationMetric() == null ^ this.getOptimizationMetric() == null)
+            return false;
+        if (other.getOptimizationMetric() != null && other.getOptimizationMetric().equals(this.getOptimizationMetric()) == false)
+            return false;
         return true;
     }
 
@@ -2107,6 +2236,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getFeaturizationConfig() == null) ? 0 : getFeaturizationConfig().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getOptimizationMetric() == null) ? 0 : getOptimizationMetric().hashCode());
         return hashCode;
     }
 

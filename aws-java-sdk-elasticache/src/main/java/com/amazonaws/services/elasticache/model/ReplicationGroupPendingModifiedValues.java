@@ -53,7 +53,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     private String authTokenStatus;
     /**
      * <p>
-     * The user groups being modified.
+     * The user group being modified.
      * </p>
      */
     private UserGroupsUpdateStatus userGroups;
@@ -298,11 +298,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The user groups being modified.
+     * The user group being modified.
      * </p>
      * 
      * @param userGroups
-     *        The user groups being modified.
+     *        The user group being modified.
      */
 
     public void setUserGroups(UserGroupsUpdateStatus userGroups) {
@@ -311,10 +311,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The user groups being modified.
+     * The user group being modified.
      * </p>
      * 
-     * @return The user groups being modified.
+     * @return The user group being modified.
      */
 
     public UserGroupsUpdateStatus getUserGroups() {
@@ -323,11 +323,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The user groups being modified.
+     * The user group being modified.
      * </p>
      * 
      * @param userGroups
-     *        The user groups being modified.
+     *        The user group being modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

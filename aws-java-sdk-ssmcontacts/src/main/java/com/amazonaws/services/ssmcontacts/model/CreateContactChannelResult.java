@@ -25,18 +25,18 @@ public class CreateContactChannelResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact channel.
      * </p>
      */
     private String contactChannelArn;
 
     /**
      * <p>
-     * The ARN of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact channel.
      * </p>
      * 
      * @param contactChannelArn
-     *        The ARN of the contact channel.
+     *        The Amazon Resource Name (ARN) of the contact channel.
      */
 
     public void setContactChannelArn(String contactChannelArn) {
@@ -45,10 +45,10 @@ public class CreateContactChannelResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact channel.
      * </p>
      * 
-     * @return The ARN of the contact channel.
+     * @return The Amazon Resource Name (ARN) of the contact channel.
      */
 
     public String getContactChannelArn() {
@@ -57,11 +57,11 @@ public class CreateContactChannelResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact channel.
      * </p>
      * 
      * @param contactChannelArn
-     *        The ARN of the contact channel.
+     *        The Amazon Resource Name (ARN) of the contact channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

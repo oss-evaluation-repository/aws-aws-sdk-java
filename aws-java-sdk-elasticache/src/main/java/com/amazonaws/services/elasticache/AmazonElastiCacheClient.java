@@ -2434,6 +2434,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws DefaultUserAssociatedToUserGroupException
+     *         The default user assigned to the user group.
      * @sample AmazonElastiCache.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser" target="_top">AWS API
      *      Documentation</a>

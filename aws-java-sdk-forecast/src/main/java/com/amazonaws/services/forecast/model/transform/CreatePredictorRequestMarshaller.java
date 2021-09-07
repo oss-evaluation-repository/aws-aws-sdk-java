@@ -57,6 +57,8 @@ public class CreatePredictorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> OPTIMIZATIONMETRIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptimizationMetric").build();
 
     private static final CreatePredictorRequestMarshaller instance = new CreatePredictorRequestMarshaller();
 
@@ -88,6 +90,7 @@ public class CreatePredictorRequestMarshaller {
             protocolMarshaller.marshall(createPredictorRequest.getFeaturizationConfig(), FEATURIZATIONCONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getOptimizationMetric(), OPTIMIZATIONMETRIC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

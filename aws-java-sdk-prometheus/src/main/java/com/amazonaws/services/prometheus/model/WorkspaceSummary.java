@@ -54,6 +54,12 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     private WorkspaceStatus status;
     /**
      * <p>
+     * The tags of this workspace.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
      * Unique string identifying this workspace.
      * </p>
      */
@@ -221,6 +227,74 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The tags of this workspace.
+     * </p>
+     * 
+     * @return The tags of this workspace.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of this workspace.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of this workspace.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags of this workspace.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of this workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see WorkspaceSummary#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * Unique string identifying this workspace.
      * </p>
      * 
@@ -279,6 +353,8 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getWorkspaceId() != null)
             sb.append("WorkspaceId: ").append(getWorkspaceId());
         sb.append("}");
@@ -311,6 +387,10 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
@@ -327,6 +407,7 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }

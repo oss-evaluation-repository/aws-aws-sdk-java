@@ -58,7 +58,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
      * for the group.
      * </p>
      * </li>
@@ -199,7 +199,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
      * for the group.
      * </p>
      * </li>
@@ -216,7 +216,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *        The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon
      *        EventBridge for the group.
      *        </p>
      *        </li>
@@ -239,7 +239,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
      * for the group.
      * </p>
      * </li>
@@ -255,7 +255,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *         The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon
      *         EventBridge for the group.
      *         </p>
      *         </li>
@@ -278,7 +278,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
      * for the group.
      * </p>
      * </li>
@@ -295,7 +295,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *        The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon
      *        EventBridge for the group.
      *        </p>
      *        </li>

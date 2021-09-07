@@ -33,7 +33,7 @@ public class UpdateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
     private String contactChannelId;
     /**
      * <p>
-     * The name of the contact channel
+     * The name of the contact channel.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class UpdateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the contact channel
+     * The name of the contact channel.
      * </p>
      * 
      * @param name
-     *        The name of the contact channel
+     *        The name of the contact channel.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class UpdateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the contact channel
+     * The name of the contact channel.
      * </p>
      * 
-     * @return The name of the contact channel
+     * @return The name of the contact channel.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class UpdateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the contact channel
+     * The name of the contact channel.
      * </p>
      * 
      * @param name
-     *        The name of the contact channel
+     *        The name of the contact channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

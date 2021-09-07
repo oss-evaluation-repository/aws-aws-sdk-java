@@ -415,6 +415,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest request) {
+
+        return deregisterClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(final DeregisterClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterClusterRequest, DeregisterClusterResult> asyncHandler) {
+        final DeregisterClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterClusterResult>() {
+            @Override
+            public DeregisterClusterResult call() throws Exception {
+                DeregisterClusterResult result = null;
+
+                try {
+                    result = executeDeregisterCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request) {
 
         return describeAddonAsync(request, null);
@@ -897,6 +930,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListUpdates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(RegisterClusterRequest request) {
+
+        return registerClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(final RegisterClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterClusterRequest, RegisterClusterResult> asyncHandler) {
+        final RegisterClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterClusterResult>() {
+            @Override
+            public RegisterClusterResult call() throws Exception {
+                RegisterClusterResult result = null;
+
+                try {
+                    result = executeRegisterCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

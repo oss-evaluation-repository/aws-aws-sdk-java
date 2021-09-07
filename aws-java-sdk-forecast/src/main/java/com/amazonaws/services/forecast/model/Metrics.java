@@ -45,11 +45,18 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<WeightedQuantileLoss> weightedQuantileLosses;
     /**
      * <p>
-     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
-     * error (WAPE).
+     * Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean
+     * absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error
+     * (WAPE).
      * </p>
      */
     private java.util.List<ErrorMetric> errorMetrics;
+    /**
+     * <p>
+     * The average value of all weighted quantile losses.
+     * </p>
+     */
+    private Double averageWeightedQuantileLoss;
 
     /**
      * <p>
@@ -171,12 +178,14 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
-     * error (WAPE).
+     * Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean
+     * absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error
+     * (WAPE).
      * </p>
      * 
-     * @return Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
-     *         percentage error (WAPE).
+     * @return Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE),
+     *         mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage
+     *         error (WAPE).
      */
 
     public java.util.List<ErrorMetric> getErrorMetrics() {
@@ -185,13 +194,15 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
-     * error (WAPE).
+     * Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean
+     * absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error
+     * (WAPE).
      * </p>
      * 
      * @param errorMetrics
-     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
-     *        percentage error (WAPE).
+     *        Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE),
+     *        mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage
+     *        error (WAPE).
      */
 
     public void setErrorMetrics(java.util.Collection<ErrorMetric> errorMetrics) {
@@ -205,8 +216,9 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
-     * error (WAPE).
+     * Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean
+     * absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error
+     * (WAPE).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -215,8 +227,9 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param errorMetrics
-     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
-     *        percentage error (WAPE).
+     *        Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE),
+     *        mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage
+     *        error (WAPE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,18 +245,60 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
-     * error (WAPE).
+     * Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean
+     * absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error
+     * (WAPE).
      * </p>
      * 
      * @param errorMetrics
-     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
-     *        percentage error (WAPE).
+     *        Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE),
+     *        mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage
+     *        error (WAPE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Metrics withErrorMetrics(java.util.Collection<ErrorMetric> errorMetrics) {
         setErrorMetrics(errorMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The average value of all weighted quantile losses.
+     * </p>
+     * 
+     * @param averageWeightedQuantileLoss
+     *        The average value of all weighted quantile losses.
+     */
+
+    public void setAverageWeightedQuantileLoss(Double averageWeightedQuantileLoss) {
+        this.averageWeightedQuantileLoss = averageWeightedQuantileLoss;
+    }
+
+    /**
+     * <p>
+     * The average value of all weighted quantile losses.
+     * </p>
+     * 
+     * @return The average value of all weighted quantile losses.
+     */
+
+    public Double getAverageWeightedQuantileLoss() {
+        return this.averageWeightedQuantileLoss;
+    }
+
+    /**
+     * <p>
+     * The average value of all weighted quantile losses.
+     * </p>
+     * 
+     * @param averageWeightedQuantileLoss
+     *        The average value of all weighted quantile losses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Metrics withAverageWeightedQuantileLoss(Double averageWeightedQuantileLoss) {
+        setAverageWeightedQuantileLoss(averageWeightedQuantileLoss);
         return this;
     }
 
@@ -264,7 +319,9 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
         if (getWeightedQuantileLosses() != null)
             sb.append("WeightedQuantileLosses: ").append(getWeightedQuantileLosses()).append(",");
         if (getErrorMetrics() != null)
-            sb.append("ErrorMetrics: ").append(getErrorMetrics());
+            sb.append("ErrorMetrics: ").append(getErrorMetrics()).append(",");
+        if (getAverageWeightedQuantileLoss() != null)
+            sb.append("AverageWeightedQuantileLoss: ").append(getAverageWeightedQuantileLoss());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +348,10 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorMetrics() != null && other.getErrorMetrics().equals(this.getErrorMetrics()) == false)
             return false;
+        if (other.getAverageWeightedQuantileLoss() == null ^ this.getAverageWeightedQuantileLoss() == null)
+            return false;
+        if (other.getAverageWeightedQuantileLoss() != null && other.getAverageWeightedQuantileLoss().equals(this.getAverageWeightedQuantileLoss()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +363,7 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRMSE() == null) ? 0 : getRMSE().hashCode());
         hashCode = prime * hashCode + ((getWeightedQuantileLosses() == null) ? 0 : getWeightedQuantileLosses().hashCode());
         hashCode = prime * hashCode + ((getErrorMetrics() == null) ? 0 : getErrorMetrics().hashCode());
+        hashCode = prime * hashCode + ((getAverageWeightedQuantileLoss() == null) ? 0 : getAverageWeightedQuantileLoss().hashCode());
         return hashCode;
     }
 

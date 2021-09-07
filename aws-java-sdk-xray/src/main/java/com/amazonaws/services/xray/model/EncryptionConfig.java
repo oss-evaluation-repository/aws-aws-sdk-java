@@ -30,7 +30,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the customer master key (CMK) used for encryption, if applicable.
+     * The ID of the KMS key used for encryption, if applicable.
      * </p>
      */
     private String keyId;
@@ -43,19 +43,19 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
     private String status;
     /**
      * <p>
-     * The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for default
-     * encryption.
+     * The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+     * default encryption.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The ID of the customer master key (CMK) used for encryption, if applicable.
+     * The ID of the KMS key used for encryption, if applicable.
      * </p>
      * 
      * @param keyId
-     *        The ID of the customer master key (CMK) used for encryption, if applicable.
+     *        The ID of the KMS key used for encryption, if applicable.
      */
 
     public void setKeyId(String keyId) {
@@ -64,10 +64,10 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the customer master key (CMK) used for encryption, if applicable.
+     * The ID of the KMS key used for encryption, if applicable.
      * </p>
      * 
-     * @return The ID of the customer master key (CMK) used for encryption, if applicable.
+     * @return The ID of the KMS key used for encryption, if applicable.
      */
 
     public String getKeyId() {
@@ -76,11 +76,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the customer master key (CMK) used for encryption, if applicable.
+     * The ID of the KMS key used for encryption, if applicable.
      * </p>
      * 
      * @param keyId
-     *        The ID of the customer master key (CMK) used for encryption, if applicable.
+     *        The ID of the KMS key used for encryption, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +158,12 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for default
-     * encryption.
+     * The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+     * default encryption.
      * </p>
      * 
      * @param type
-     *        The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for
+     *        The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
      *        default encryption.
      * @see EncryptionType
      */
@@ -174,12 +174,12 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for default
-     * encryption.
+     * The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+     * default encryption.
      * </p>
      * 
-     * @return The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for
-     *         default encryption.
+     * @return The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code>
+     *         for default encryption.
      * @see EncryptionType
      */
 
@@ -189,12 +189,12 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for default
-     * encryption.
+     * The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+     * default encryption.
      * </p>
      * 
      * @param type
-     *        The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for
+     *        The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
      *        default encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
@@ -207,12 +207,12 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for default
-     * encryption.
+     * The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+     * default encryption.
      * </p>
      * 
      * @param type
-     *        The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set to <code>NONE</code> for
+     *        The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
      *        default encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType

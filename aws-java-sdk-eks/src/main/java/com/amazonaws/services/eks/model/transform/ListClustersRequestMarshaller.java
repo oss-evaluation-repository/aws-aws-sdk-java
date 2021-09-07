@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.eks.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ListClustersRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<List> INCLUDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("include").build();
 
     private static final ListClustersRequestMarshaller instance = new ListClustersRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class ListClustersRequestMarshaller {
         try {
             protocolMarshaller.marshall(listClustersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listClustersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listClustersRequest.getInclude(), INCLUDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

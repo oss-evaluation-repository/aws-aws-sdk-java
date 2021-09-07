@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.prometheus.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -34,6 +36,8 @@ public class CreateWorkspaceRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateWorkspaceRequestMarshaller instance = new CreateWorkspaceRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateWorkspaceRequestMarshaller {
         try {
             protocolMarshaller.marshall(createWorkspaceRequest.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createWorkspaceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

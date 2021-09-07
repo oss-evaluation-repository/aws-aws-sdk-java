@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The action failed to due an encryption key error.
+ * The operation failed to due an encryption key error.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

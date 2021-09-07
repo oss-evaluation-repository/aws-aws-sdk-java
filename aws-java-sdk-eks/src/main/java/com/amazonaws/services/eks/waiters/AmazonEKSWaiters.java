@@ -51,7 +51,7 @@ public class AmazonEKSWaiters {
 
         return new WaiterBuilder<DescribeClusterRequest, DescribeClusterResult>()
                 .withSdkFunction(new DescribeClusterFunction(client))
-                .withAcceptors(new ClusterDeleted.IsACTIVEMatcher(), new ClusterDeleted.IsCREATINGMatcher(),
+                .withAcceptors(new ClusterDeleted.IsACTIVEMatcher(), new ClusterDeleted.IsCREATINGMatcher(), new ClusterDeleted.IsPENDINGMatcher(),
                         new ClusterDeleted.IsResourceNotFoundExceptionMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();

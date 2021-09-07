@@ -573,6 +573,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+     * </p>
+     * 
+     * @param deregisterClusterRequest
+     * @return A Java Future containing the result of the DeregisterCluster operation returned by the service.
+     * @sample AmazonEKSAsync.DeregisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest deregisterClusterRequest);
+
+    /**
+     * <p>
+     * Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+     * </p>
+     * 
+     * @param deregisterClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterCluster operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DeregisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest deregisterClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterClusterRequest, DeregisterClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes an Amazon EKS add-on.
      * </p>
      * 
@@ -1087,6 +1118,75 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<ListUpdatesResult> listUpdatesAsync(ListUpdatesRequest listUpdatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListUpdatesRequest, ListUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Connects a Kubernetes cluster to the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the
+     * cluster and its nodes.
+     * </p>
+     * <p>
+     * Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code> to add it to
+     * the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Second, a <a href=
+     * "https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml"
+     * >Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the
+     * Kubernetes cluster through it's native provider to provide visibility.
+     * </p>
+     * <p>
+     * After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane.
+     * If the Manifest is not applied within a set amount of time, then the connected cluster will no longer be visible
+     * and must be deregistered. See <a>DeregisterCluster</a>.
+     * </p>
+     * 
+     * @param registerClusterRequest
+     * @return A Java Future containing the result of the RegisterCluster operation returned by the service.
+     * @sample AmazonEKSAsync.RegisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(RegisterClusterRequest registerClusterRequest);
+
+    /**
+     * <p>
+     * Connects a Kubernetes cluster to the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the
+     * cluster and its nodes.
+     * </p>
+     * <p>
+     * Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code> to add it to
+     * the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Second, a <a href=
+     * "https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml"
+     * >Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the
+     * Kubernetes cluster through it's native provider to provide visibility.
+     * </p>
+     * <p>
+     * After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane.
+     * If the Manifest is not applied within a set amount of time, then the connected cluster will no longer be visible
+     * and must be deregistered. See <a>DeregisterCluster</a>.
+     * </p>
+     * 
+     * @param registerClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCluster operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.RegisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(RegisterClusterRequest registerClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterClusterRequest, RegisterClusterResult> asyncHandler);
 
     /**
      * <p>

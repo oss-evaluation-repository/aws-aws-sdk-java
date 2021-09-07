@@ -132,6 +132,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<EncryptionConfig> encryptionConfig;
+    /**
+     * <p>
+     * The configuration used to connect to a cluster for registration.
+     * </p>
+     */
+    private ConnectorConfigResponse connectorConfig;
 
     /**
      * <p>
@@ -905,6 +911,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration used to connect to a cluster for registration.
+     * </p>
+     * 
+     * @param connectorConfig
+     *        The configuration used to connect to a cluster for registration.
+     */
+
+    public void setConnectorConfig(ConnectorConfigResponse connectorConfig) {
+        this.connectorConfig = connectorConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration used to connect to a cluster for registration.
+     * </p>
+     * 
+     * @return The configuration used to connect to a cluster for registration.
+     */
+
+    public ConnectorConfigResponse getConnectorConfig() {
+        return this.connectorConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration used to connect to a cluster for registration.
+     * </p>
+     * 
+     * @param connectorConfig
+     *        The configuration used to connect to a cluster for registration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withConnectorConfig(ConnectorConfigResponse connectorConfig) {
+        setConnectorConfig(connectorConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -947,7 +993,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getEncryptionConfig() != null)
-            sb.append("EncryptionConfig: ").append(getEncryptionConfig());
+            sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
+        if (getConnectorConfig() != null)
+            sb.append("ConnectorConfig: ").append(getConnectorConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1026,6 +1074,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
             return false;
+        if (other.getConnectorConfig() == null ^ this.getConnectorConfig() == null)
+            return false;
+        if (other.getConnectorConfig() != null && other.getConnectorConfig().equals(this.getConnectorConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1050,6 +1102,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
+        hashCode = prime * hashCode + ((getConnectorConfig() == null) ? 0 : getConnectorConfig().hashCode());
         return hashCode;
     }
 

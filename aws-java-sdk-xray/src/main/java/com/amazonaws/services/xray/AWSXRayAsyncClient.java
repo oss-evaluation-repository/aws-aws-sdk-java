@@ -31,8 +31,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing
- * those traces.
+ * Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service maps and other data created
+ * by processing those traces.
  * </p>
  */
 @ThreadSafe

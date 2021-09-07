@@ -994,6 +994,75 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Deregisters a connected cluster to remove it from the Amazon EKS control plane.
+     * </p>
+     * 
+     * @param deregisterClusterRequest
+     * @return Result of the DeregisterCluster operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.DeregisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeregisterClusterResult deregisterCluster(DeregisterClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterCluster(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterClusterResult executeDeregisterCluster(DeregisterClusterRequest deregisterClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterClusterRequest> request = null;
+        Response<DeregisterClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes an Amazon EKS add-on.
      * </p>
      * 
@@ -2024,6 +2093,92 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUpdatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUpdatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Connects a Kubernetes cluster to the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the
+     * cluster and its nodes.
+     * </p>
+     * <p>
+     * Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code> to add it to
+     * the Amazon EKS control plane.
+     * </p>
+     * <p>
+     * Second, a <a href=
+     * "https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml"
+     * >Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the
+     * Kubernetes cluster through it's native provider to provide visibility.
+     * </p>
+     * <p>
+     * After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane.
+     * If the Manifest is not applied within a set amount of time, then the connected cluster will no longer be visible
+     * and must be deregistered. See <a>DeregisterCluster</a>.
+     * </p>
+     * 
+     * @param registerClusterRequest
+     * @return Result of the RegisterCluster operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have encountered a service limit on the specified resource.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.RegisterCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RegisterClusterResult registerCluster(RegisterClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterCluster(request);
+    }
+
+    @SdkInternalApi
+    final RegisterClusterResult executeRegisterCluster(RegisterClusterRequest registerClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterClusterRequest> request = null;
+        Response<RegisterClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

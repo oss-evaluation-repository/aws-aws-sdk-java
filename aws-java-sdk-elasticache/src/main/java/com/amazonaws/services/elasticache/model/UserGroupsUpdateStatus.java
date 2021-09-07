@@ -28,23 +28,23 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to add.
+     * The ID of the user group to add.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAdd;
     /**
      * <p>
-     * The list of user group IDs to remove.
+     * The ID of the user group to remove.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemove;
 
     /**
      * <p>
-     * The list of user group IDs to add.
+     * The ID of the user group to add.
      * </p>
      * 
-     * @return The list of user group IDs to add.
+     * @return The ID of the user group to add.
      */
 
     public java.util.List<String> getUserGroupIdsToAdd() {
@@ -56,11 +56,11 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to add.
+     * The ID of the user group to add.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The list of user group IDs to add.
+     *        The ID of the user group to add.
      */
 
     public void setUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
@@ -74,7 +74,7 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to add.
+     * The ID of the user group to add.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The list of user group IDs to add.
+     *        The ID of the user group to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to add.
+     * The ID of the user group to add.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        The list of user group IDs to add.
+     *        The ID of the user group to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,10 +114,10 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to remove.
+     * The ID of the user group to remove.
      * </p>
      * 
-     * @return The list of user group IDs to remove.
+     * @return The ID of the user group to remove.
      */
 
     public java.util.List<String> getUserGroupIdsToRemove() {
@@ -129,11 +129,11 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to remove.
+     * The ID of the user group to remove.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The list of user group IDs to remove.
+     *        The ID of the user group to remove.
      */
 
     public void setUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
@@ -147,7 +147,7 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to remove.
+     * The ID of the user group to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -156,7 +156,7 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The list of user group IDs to remove.
+     *        The ID of the user group to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class UserGroupsUpdateStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of user group IDs to remove.
+     * The ID of the user group to remove.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        The list of user group IDs to remove.
+     *        The ID of the user group to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

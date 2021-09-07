@@ -159,6 +159,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest request) {
+
+        return deregisterClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterClusterRequest, DeregisterClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request) {
 
         return describeAddonAsync(request, null);
@@ -351,6 +364,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListUpdatesResult> listUpdatesAsync(ListUpdatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUpdatesRequest, ListUpdatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(RegisterClusterRequest request) {
+
+        return registerClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterClusterResult> registerClusterAsync(RegisterClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterClusterRequest, RegisterClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

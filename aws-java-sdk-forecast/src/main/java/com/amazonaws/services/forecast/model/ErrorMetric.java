@@ -31,7 +31,7 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Forecast type used to compute WAPE and RMSE.
+     * The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      * </p>
      */
     private String forecastType;
@@ -47,14 +47,26 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double rMSE;
+    /**
+     * <p>
+     * The Mean Absolute Scaled Error (MASE)
+     * </p>
+     */
+    private Double mASE;
+    /**
+     * <p>
+     * The Mean Absolute Percentage Error (MAPE)
+     * </p>
+     */
+    private Double mAPE;
 
     /**
      * <p>
-     * The Forecast type used to compute WAPE and RMSE.
+     * The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      * </p>
      * 
      * @param forecastType
-     *        The Forecast type used to compute WAPE and RMSE.
+     *        The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      */
 
     public void setForecastType(String forecastType) {
@@ -63,10 +75,10 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Forecast type used to compute WAPE and RMSE.
+     * The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      * </p>
      * 
-     * @return The Forecast type used to compute WAPE and RMSE.
+     * @return The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      */
 
     public String getForecastType() {
@@ -75,11 +87,11 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Forecast type used to compute WAPE and RMSE.
+     * The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      * </p>
      * 
      * @param forecastType
-     *        The Forecast type used to compute WAPE and RMSE.
+     *        The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,6 +181,86 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Mean Absolute Scaled Error (MASE)
+     * </p>
+     * 
+     * @param mASE
+     *        The Mean Absolute Scaled Error (MASE)
+     */
+
+    public void setMASE(Double mASE) {
+        this.mASE = mASE;
+    }
+
+    /**
+     * <p>
+     * The Mean Absolute Scaled Error (MASE)
+     * </p>
+     * 
+     * @return The Mean Absolute Scaled Error (MASE)
+     */
+
+    public Double getMASE() {
+        return this.mASE;
+    }
+
+    /**
+     * <p>
+     * The Mean Absolute Scaled Error (MASE)
+     * </p>
+     * 
+     * @param mASE
+     *        The Mean Absolute Scaled Error (MASE)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorMetric withMASE(Double mASE) {
+        setMASE(mASE);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Mean Absolute Percentage Error (MAPE)
+     * </p>
+     * 
+     * @param mAPE
+     *        The Mean Absolute Percentage Error (MAPE)
+     */
+
+    public void setMAPE(Double mAPE) {
+        this.mAPE = mAPE;
+    }
+
+    /**
+     * <p>
+     * The Mean Absolute Percentage Error (MAPE)
+     * </p>
+     * 
+     * @return The Mean Absolute Percentage Error (MAPE)
+     */
+
+    public Double getMAPE() {
+        return this.mAPE;
+    }
+
+    /**
+     * <p>
+     * The Mean Absolute Percentage Error (MAPE)
+     * </p>
+     * 
+     * @param mAPE
+     *        The Mean Absolute Percentage Error (MAPE)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorMetric withMAPE(Double mAPE) {
+        setMAPE(mAPE);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +277,11 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
         if (getWAPE() != null)
             sb.append("WAPE: ").append(getWAPE()).append(",");
         if (getRMSE() != null)
-            sb.append("RMSE: ").append(getRMSE());
+            sb.append("RMSE: ").append(getRMSE()).append(",");
+        if (getMASE() != null)
+            sb.append("MASE: ").append(getMASE()).append(",");
+        if (getMAPE() != null)
+            sb.append("MAPE: ").append(getMAPE());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +308,14 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRMSE() != null && other.getRMSE().equals(this.getRMSE()) == false)
             return false;
+        if (other.getMASE() == null ^ this.getMASE() == null)
+            return false;
+        if (other.getMASE() != null && other.getMASE().equals(this.getMASE()) == false)
+            return false;
+        if (other.getMAPE() == null ^ this.getMAPE() == null)
+            return false;
+        if (other.getMAPE() != null && other.getMAPE().equals(this.getMAPE()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +327,8 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getForecastType() == null) ? 0 : getForecastType().hashCode());
         hashCode = prime * hashCode + ((getWAPE() == null) ? 0 : getWAPE().hashCode());
         hashCode = prime * hashCode + ((getRMSE() == null) ? 0 : getRMSE().hashCode());
+        hashCode = prime * hashCode + ((getMASE() == null) ? 0 : getMASE().hashCode());
+        hashCode = prime * hashCode + ((getMAPE() == null) ? 0 : getMAPE().hashCode());
         return hashCode;
     }
 
