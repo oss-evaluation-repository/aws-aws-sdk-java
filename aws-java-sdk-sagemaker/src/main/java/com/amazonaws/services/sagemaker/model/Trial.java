@@ -61,7 +61,11 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * Who created the trial.
+     * </p>
+     */
     private UserContext createdBy;
     /**
      * <p>
@@ -320,7 +324,12 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the trial.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the trial.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -328,7 +337,11 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Who created the trial.
+     * </p>
+     * 
+     * @return Who created the trial.
      */
 
     public UserContext getCreatedBy() {
@@ -336,7 +349,12 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the trial.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the trial.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

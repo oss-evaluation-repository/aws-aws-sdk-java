@@ -130,6 +130,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
      * </p>
      */
     private String treatmentName;
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     */
+    private Integer priority;
 
     /**
      * <p>
@@ -882,6 +889,52 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @param priority
+     *        Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *        multiple messages scheduled to be displayed at the same moment.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @return Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *         multiple messages scheduled to be displayed at the same moment.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @param priority
+     *        Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *        multiple messages scheduled to be displayed at the same moment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteCampaignRequest withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -924,7 +977,9 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         if (getTreatmentDescription() != null)
             sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
-            sb.append("TreatmentName: ").append(getTreatmentName());
+            sb.append("TreatmentName: ").append(getTreatmentName()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -1003,6 +1058,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getTreatmentName() != null && other.getTreatmentName().equals(this.getTreatmentName()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         return true;
     }
 
@@ -1027,6 +1086,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTemplateConfiguration() == null) ? 0 : getTemplateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         return hashCode;
     }
 

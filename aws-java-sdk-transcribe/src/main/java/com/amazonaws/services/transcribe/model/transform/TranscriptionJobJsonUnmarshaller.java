@@ -128,6 +128,10 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Subtitles", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setSubtitles(SubtitlesOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

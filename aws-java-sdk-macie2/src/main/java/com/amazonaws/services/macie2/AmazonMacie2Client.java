@@ -3064,7 +3064,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about all the Amazon Macie membership invitations that were received by an account.
+     * Retrieves information about the Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -3122,6 +3122,63 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInvitationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInvitationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about all the managed data identifiers that Amazon Macie currently provides.
+     * </p>
+     * 
+     * @param listManagedDataIdentifiersRequest
+     * @return Result of the ListManagedDataIdentifiers operation returned by the service.
+     * @sample AmazonMacie2.ListManagedDataIdentifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListManagedDataIdentifiersResult listManagedDataIdentifiers(ListManagedDataIdentifiersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListManagedDataIdentifiers(request);
+    }
+
+    @SdkInternalApi
+    final ListManagedDataIdentifiersResult executeListManagedDataIdentifiers(ListManagedDataIdentifiersRequest listManagedDataIdentifiersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listManagedDataIdentifiersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListManagedDataIdentifiersRequest> request = null;
+        Response<ListManagedDataIdentifiersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListManagedDataIdentifiersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listManagedDataIdentifiersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListManagedDataIdentifiers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListManagedDataIdentifiersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListManagedDataIdentifiersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

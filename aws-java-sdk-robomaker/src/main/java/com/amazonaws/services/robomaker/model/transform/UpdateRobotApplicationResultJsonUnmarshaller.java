@@ -78,6 +78,10 @@ public class UpdateRobotApplicationResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     updateRobotApplicationResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("environment", targetDepth)) {
+                    context.nextToken();
+                    updateRobotApplicationResult.setEnvironment(EnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

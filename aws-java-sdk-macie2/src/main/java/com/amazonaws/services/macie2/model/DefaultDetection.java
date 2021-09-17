@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a type of sensitive data that was detected by managed data identifiers and produced a
+ * Provides information about a type of sensitive data that was detected by a managed data identifier and produced a
  * sensitive data finding.
  * </p>
  * 

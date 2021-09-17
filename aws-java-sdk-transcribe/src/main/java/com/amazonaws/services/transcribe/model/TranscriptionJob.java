@@ -195,6 +195,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     */
+    private SubtitlesOutput subtitles;
 
     /**
      * <p>
@@ -1439,6 +1445,46 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     * 
+     * @param subtitles
+     *        Generate subtitles for your batch transcription job.
+     */
+
+    public void setSubtitles(SubtitlesOutput subtitles) {
+        this.subtitles = subtitles;
+    }
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     * 
+     * @return Generate subtitles for your batch transcription job.
+     */
+
+    public SubtitlesOutput getSubtitles() {
+        return this.subtitles;
+    }
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     * 
+     * @param subtitles
+     *        Generate subtitles for your batch transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withSubtitles(SubtitlesOutput subtitles) {
+        setSubtitles(subtitles);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1487,7 +1533,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (getIdentifiedLanguageScore() != null)
             sb.append("IdentifiedLanguageScore: ").append(getIdentifiedLanguageScore()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSubtitles() != null)
+            sb.append("Subtitles: ").append(getSubtitles());
         sb.append("}");
         return sb.toString();
     }
@@ -1578,6 +1626,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSubtitles() == null ^ this.getSubtitles() == null)
+            return false;
+        if (other.getSubtitles() != null && other.getSubtitles().equals(this.getSubtitles()) == false)
+            return false;
         return true;
     }
 
@@ -1605,6 +1657,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
         hashCode = prime * hashCode + ((getIdentifiedLanguageScore() == null) ? 0 : getIdentifiedLanguageScore().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
         return hashCode;
     }
 

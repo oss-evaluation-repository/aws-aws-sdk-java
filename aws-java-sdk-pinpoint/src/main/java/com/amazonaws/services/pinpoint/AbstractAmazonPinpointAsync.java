@@ -93,6 +93,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateInAppTemplateResult> createInAppTemplateAsync(CreateInAppTemplateRequest request) {
+
+        return createInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInAppTemplateResult> createInAppTemplateAsync(CreateInAppTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateInAppTemplateRequest, CreateInAppTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateJourneyResult> createJourneyAsync(CreateJourneyRequest request) {
 
         return createJourneyAsync(request, null);
@@ -335,6 +348,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<DeleteGcmChannelResult> deleteGcmChannelAsync(DeleteGcmChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGcmChannelRequest, DeleteGcmChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInAppTemplateResult> deleteInAppTemplateAsync(DeleteInAppTemplateRequest request) {
+
+        return deleteInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInAppTemplateResult> deleteInAppTemplateAsync(DeleteInAppTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteInAppTemplateRequest, DeleteInAppTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -790,6 +816,32 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetImportJobsResult> getImportJobsAsync(GetImportJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImportJobsRequest, GetImportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppMessagesResult> getInAppMessagesAsync(GetInAppMessagesRequest request) {
+
+        return getInAppMessagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppMessagesResult> getInAppMessagesAsync(GetInAppMessagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInAppMessagesRequest, GetInAppMessagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppTemplateResult> getInAppTemplateAsync(GetInAppTemplateRequest request) {
+
+        return getInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppTemplateResult> getInAppTemplateAsync(GetInAppTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInAppTemplateRequest, GetInAppTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1351,6 +1403,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<UpdateGcmChannelResult> updateGcmChannelAsync(UpdateGcmChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGcmChannelRequest, UpdateGcmChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInAppTemplateResult> updateInAppTemplateAsync(UpdateInAppTemplateRequest request) {
+
+        return updateInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInAppTemplateResult> updateInAppTemplateAsync(UpdateInAppTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInAppTemplateRequest, UpdateInAppTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

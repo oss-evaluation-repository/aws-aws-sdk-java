@@ -8177,6 +8177,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Retry the execution of the pipeline.
+     * </p>
+     * 
+     * @param retryPipelineExecutionRequest
+     * @return A Java Future containing the result of the RetryPipelineExecution operation returned by the service.
+     * @sample AmazonSageMakerAsync.RetryPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(RetryPipelineExecutionRequest retryPipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Retry the execution of the pipeline.
+     * </p>
+     * 
+     * @param retryPipelineExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RetryPipelineExecution operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.RetryPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(RetryPipelineExecutionRequest retryPipelineExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<RetryPipelineExecutionRequest, RetryPipelineExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of
      * <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a
      * ascending or descending order.

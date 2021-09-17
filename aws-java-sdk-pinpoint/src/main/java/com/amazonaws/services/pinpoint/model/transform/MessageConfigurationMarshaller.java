@@ -43,6 +43,8 @@ public class MessageConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCMMessage").build();
     private static final MarshallingInfo<StructuredPojo> SMSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMSMessage").build();
+    private static final MarshallingInfo<StructuredPojo> INAPPMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InAppMessage").build();
 
     private static final MessageConfigurationMarshaller instance = new MessageConfigurationMarshaller();
 
@@ -68,6 +70,7 @@ public class MessageConfigurationMarshaller {
             protocolMarshaller.marshall(messageConfiguration.getEmailMessage(), EMAILMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getSMSMessage(), SMSMESSAGE_BINDING);
+            protocolMarshaller.marshall(messageConfiguration.getInAppMessage(), INAPPMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

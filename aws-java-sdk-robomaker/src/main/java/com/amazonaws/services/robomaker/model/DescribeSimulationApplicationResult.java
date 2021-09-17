@@ -84,6 +84,18 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The object that contains the Docker image URI used to create the simulation application.
+     * </p>
+     */
+    private Environment environment;
+    /**
+     * <p>
+     * A SHA256 identifier for the Docker image that you use for your simulation application.
+     * </p>
+     */
+    private String imageDigest;
 
     /**
      * <p>
@@ -544,6 +556,86 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The object that contains the Docker image URI used to create the simulation application.
+     * </p>
+     * 
+     * @param environment
+     *        The object that contains the Docker image URI used to create the simulation application.
+     */
+
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The object that contains the Docker image URI used to create the simulation application.
+     * </p>
+     * 
+     * @return The object that contains the Docker image URI used to create the simulation application.
+     */
+
+    public Environment getEnvironment() {
+        return this.environment;
+    }
+
+    /**
+     * <p>
+     * The object that contains the Docker image URI used to create the simulation application.
+     * </p>
+     * 
+     * @param environment
+     *        The object that contains the Docker image URI used to create the simulation application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSimulationApplicationResult withEnvironment(Environment environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A SHA256 identifier for the Docker image that you use for your simulation application.
+     * </p>
+     * 
+     * @param imageDigest
+     *        A SHA256 identifier for the Docker image that you use for your simulation application.
+     */
+
+    public void setImageDigest(String imageDigest) {
+        this.imageDigest = imageDigest;
+    }
+
+    /**
+     * <p>
+     * A SHA256 identifier for the Docker image that you use for your simulation application.
+     * </p>
+     * 
+     * @return A SHA256 identifier for the Docker image that you use for your simulation application.
+     */
+
+    public String getImageDigest() {
+        return this.imageDigest;
+    }
+
+    /**
+     * <p>
+     * A SHA256 identifier for the Docker image that you use for your simulation application.
+     * </p>
+     * 
+     * @param imageDigest
+     *        A SHA256 identifier for the Docker image that you use for your simulation application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSimulationApplicationResult withImageDigest(String imageDigest) {
+        setImageDigest(imageDigest);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -574,7 +666,11 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getImageDigest() != null)
+            sb.append("ImageDigest: ").append(getImageDigest());
         sb.append("}");
         return sb.toString();
     }
@@ -629,6 +725,14 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getImageDigest() == null ^ this.getImageDigest() == null)
+            return false;
+        if (other.getImageDigest() != null && other.getImageDigest().equals(this.getImageDigest()) == false)
+            return false;
         return true;
     }
 
@@ -647,6 +751,8 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         return hashCode;
     }
 

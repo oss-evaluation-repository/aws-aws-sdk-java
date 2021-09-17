@@ -2642,6 +2642,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(RetryPipelineExecutionRequest request) {
+
+        return retryPipelineExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(RetryPipelineExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RetryPipelineExecutionRequest, RetryPipelineExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchResult> searchAsync(SearchRequest request) {
 
         return searchAsync(request, null);

@@ -35,6 +35,8 @@ public class CampaignLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
     private static final MarshallingInfo<Integer> TOTAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Total").build();
+    private static final MarshallingInfo<Integer> SESSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Session").build();
 
     private static final CampaignLimitsMarshaller instance = new CampaignLimitsMarshaller();
 
@@ -56,6 +58,7 @@ public class CampaignLimitsMarshaller {
             protocolMarshaller.marshall(campaignLimits.getMaximumDuration(), MAXIMUMDURATION_BINDING);
             protocolMarshaller.marshall(campaignLimits.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(campaignLimits.getTotal(), TOTAL_BINDING);
+            protocolMarshaller.marshall(campaignLimits.getSession(), SESSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

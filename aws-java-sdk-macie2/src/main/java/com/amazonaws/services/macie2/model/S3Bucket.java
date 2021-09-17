@@ -81,7 +81,7 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The display name and Amazon Web Services account ID for the user who owns the bucket.
+     * The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      * </p>
      */
     private S3BucketOwner owner;
@@ -491,11 +491,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and Amazon Web Services account ID for the user who owns the bucket.
+     * The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param owner
-     *        The display name and Amazon Web Services account ID for the user who owns the bucket.
+     *        The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      */
 
     public void setOwner(S3BucketOwner owner) {
@@ -504,10 +504,10 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and Amazon Web Services account ID for the user who owns the bucket.
+     * The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
-     * @return The display name and Amazon Web Services account ID for the user who owns the bucket.
+     * @return The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      */
 
     public S3BucketOwner getOwner() {
@@ -516,11 +516,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and Amazon Web Services account ID for the user who owns the bucket.
+     * The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param owner
-     *        The display name and Amazon Web Services account ID for the user who owns the bucket.
+     *        The display name and canonical user ID for the Amazon Web Services account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

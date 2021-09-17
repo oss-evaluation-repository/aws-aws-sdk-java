@@ -72,7 +72,7 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
-     * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
+     * sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a
      * keyword to text that matches the regex pattern.
      * </p>
      */
@@ -484,14 +484,14 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
-     * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
+     * sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a
      * keyword to text that matches the regex pattern.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
-     *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
-     *        proximity of a keyword to text that matches the regex pattern.
+     *        character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on
+     *        the proximity of a keyword to text that matches the regex pattern.
      */
 
     public void setMaximumMatchDistance(Integer maximumMatchDistance) {
@@ -501,13 +501,13 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
-     * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
+     * sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a
      * keyword to text that matches the regex pattern.
      * </p>
      * 
      * @return The maximum number of characters that can exist between text that matches the regex pattern and the
-     *         character sequences specified by the keywords array. Macie includes or excludes a result based on the
-     *         proximity of a keyword to text that matches the regex pattern.
+     *         character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on
+     *         the proximity of a keyword to text that matches the regex pattern.
      */
 
     public Integer getMaximumMatchDistance() {
@@ -517,14 +517,14 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
-     * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
+     * sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a
      * keyword to text that matches the regex pattern.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
-     *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
-     *        proximity of a keyword to text that matches the regex pattern.
+     *        character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on
+     *        the proximity of a keyword to text that matches the regex pattern.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

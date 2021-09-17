@@ -62,7 +62,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String projectStatus;
-
+    /**
+     * <p>
+     * Who created the project.
+     * </p>
+     */
     private UserContext createdBy;
     /**
      * <p>
@@ -351,7 +355,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the project.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the project.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -359,7 +368,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Who created the project.
+     * </p>
+     * 
+     * @return Who created the project.
      */
 
     public UserContext getCreatedBy() {
@@ -367,7 +380,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the project.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

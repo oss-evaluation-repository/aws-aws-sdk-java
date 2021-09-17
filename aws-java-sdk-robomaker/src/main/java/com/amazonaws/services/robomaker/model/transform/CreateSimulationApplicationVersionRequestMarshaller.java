@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class CreateSimulationApplicationVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("application").build();
     private static final MarshallingInfo<String> CURRENTREVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentRevisionId").build();
+    private static final MarshallingInfo<List> S3ETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("s3Etags").build();
+    private static final MarshallingInfo<String> IMAGEDIGEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageDigest").build();
 
     private static final CreateSimulationApplicationVersionRequestMarshaller instance = new CreateSimulationApplicationVersionRequestMarshaller();
 
@@ -50,6 +55,8 @@ public class CreateSimulationApplicationVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createSimulationApplicationVersionRequest.getApplication(), APPLICATION_BINDING);
             protocolMarshaller.marshall(createSimulationApplicationVersionRequest.getCurrentRevisionId(), CURRENTREVISIONID_BINDING);
+            protocolMarshaller.marshall(createSimulationApplicationVersionRequest.getS3Etags(), S3ETAGS_BINDING);
+            protocolMarshaller.marshall(createSimulationApplicationVersionRequest.getImageDigest(), IMAGEDIGEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

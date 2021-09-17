@@ -213,6 +213,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> languageOptions;
     /**
      * <p>
+     * Add subtitles to your batch transcription job.
+     * </p>
+     */
+    private Subtitles subtitles;
+    /**
+     * <p>
      * Add tags to an Amazon Transcribe transcription job.
      * </p>
      */
@@ -1566,6 +1572,46 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Add subtitles to your batch transcription job.
+     * </p>
+     * 
+     * @param subtitles
+     *        Add subtitles to your batch transcription job.
+     */
+
+    public void setSubtitles(Subtitles subtitles) {
+        this.subtitles = subtitles;
+    }
+
+    /**
+     * <p>
+     * Add subtitles to your batch transcription job.
+     * </p>
+     * 
+     * @return Add subtitles to your batch transcription job.
+     */
+
+    public Subtitles getSubtitles() {
+        return this.subtitles;
+    }
+
+    /**
+     * <p>
+     * Add subtitles to your batch transcription job.
+     * </p>
+     * 
+     * @param subtitles
+     *        Add subtitles to your batch transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withSubtitles(Subtitles subtitles) {
+        setSubtitles(subtitles);
+        return this;
+    }
+
+    /**
+     * <p>
      * Add tags to an Amazon Transcribe transcription job.
      * </p>
      * 
@@ -1676,6 +1722,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             sb.append("IdentifyLanguage: ").append(getIdentifyLanguage()).append(",");
         if (getLanguageOptions() != null)
             sb.append("LanguageOptions: ").append(getLanguageOptions()).append(",");
+        if (getSubtitles() != null)
+            sb.append("Subtitles: ").append(getSubtitles()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1752,6 +1800,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLanguageOptions() != null && other.getLanguageOptions().equals(this.getLanguageOptions()) == false)
             return false;
+        if (other.getSubtitles() == null ^ this.getSubtitles() == null)
+            return false;
+        if (other.getSubtitles() != null && other.getSubtitles().equals(this.getSubtitles()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1779,6 +1831,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
         hashCode = prime * hashCode + ((getIdentifyLanguage() == null) ? 0 : getIdentifyLanguage().hashCode());
         hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
+        hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

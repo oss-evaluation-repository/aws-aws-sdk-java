@@ -63,6 +63,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreateInAppTemplateResult createInAppTemplate(CreateInAppTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateJourneyResult createJourney(CreateJourneyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +159,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInAppTemplateResult deleteInAppTemplate(DeleteInAppTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -329,6 +339,16 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetImportJobsResult getImportJobs(GetImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInAppMessagesResult getInAppMessages(GetInAppMessagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInAppTemplateResult getInAppTemplate(GetInAppTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -544,6 +564,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInAppTemplateResult updateInAppTemplate(UpdateInAppTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

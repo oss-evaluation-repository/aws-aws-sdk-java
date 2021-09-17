@@ -61,6 +61,8 @@ public class WriteCampaignRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentDescription").build();
     private static final MarshallingInfo<String> TREATMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentName").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Priority").build();
 
     private static final WriteCampaignRequestMarshaller instance = new WriteCampaignRequestMarshaller();
 
@@ -94,6 +96,7 @@ public class WriteCampaignRequestMarshaller {
             protocolMarshaller.marshall(writeCampaignRequest.getTemplateConfiguration(), TEMPLATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getTreatmentDescription(), TREATMENTDESCRIPTION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getTreatmentName(), TREATMENTNAME_BINDING);
+            protocolMarshaller.marshall(writeCampaignRequest.getPriority(), PRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

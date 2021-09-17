@@ -59,6 +59,8 @@ public class StartTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
     private static final MarshallingInfo<List> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SUBTITLES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Subtitles").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -93,6 +95,7 @@ public class StartTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startTranscriptionJobRequest.getContentRedaction(), CONTENTREDACTION_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getSubtitles(), SUBTITLES_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

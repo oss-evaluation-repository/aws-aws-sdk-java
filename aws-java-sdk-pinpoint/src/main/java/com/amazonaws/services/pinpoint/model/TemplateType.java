@@ -23,7 +23,8 @@ public enum TemplateType {
     EMAIL("EMAIL"),
     SMS("SMS"),
     VOICE("VOICE"),
-    PUSH("PUSH");
+    PUSH("PUSH"),
+    INAPP("INAPP");
 
     private String value;
 

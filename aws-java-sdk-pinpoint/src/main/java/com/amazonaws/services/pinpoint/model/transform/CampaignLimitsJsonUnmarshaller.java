@@ -64,6 +64,10 @@ public class CampaignLimitsJsonUnmarshaller implements Unmarshaller<CampaignLimi
                     context.nextToken();
                     campaignLimits.setTotal(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Session", targetDepth)) {
+                    context.nextToken();
+                    campaignLimits.setSession(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -1478,6 +1478,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(ListManagedDataIdentifiersRequest request) {
+
+        return listManagedDataIdentifiersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(final ListManagedDataIdentifiersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListManagedDataIdentifiersRequest, ListManagedDataIdentifiersResult> asyncHandler) {
+        final ListManagedDataIdentifiersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListManagedDataIdentifiersResult>() {
+            @Override
+            public ListManagedDataIdentifiersResult call() throws Exception {
+                ListManagedDataIdentifiersResult result = null;
+
+                try {
+                    result = executeListManagedDataIdentifiers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest request) {
 
         return listMembersAsync(request, null);

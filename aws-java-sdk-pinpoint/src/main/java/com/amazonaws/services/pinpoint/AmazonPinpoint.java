@@ -245,6 +245,32 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Creates a new message template for messages using the in-app message channel.
+     * </p>
+     * 
+     * @param createInAppTemplateRequest
+     * @return Result of the CreateInAppTemplate operation returned by the service.
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @sample AmazonPinpoint.CreateInAppTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateInAppTemplateResult createInAppTemplate(CreateInAppTemplateRequest createInAppTemplateRequest);
+
+    /**
+     * <p>
      * Creates a journey for an application.
      * </p>
      * 
@@ -817,6 +843,37 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest);
+
+    /**
+     * <p>
+     * Deletes a message template for messages sent using the in-app message channel.
+     * </p>
+     * 
+     * @param deleteInAppTemplateRequest
+     * @return Result of the DeleteInAppTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeleteInAppTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteInAppTemplateResult deleteInAppTemplate(DeleteInAppTemplateRequest deleteInAppTemplateRequest);
 
     /**
      * <p>
@@ -1903,6 +1960,68 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves the in-app messages targeted for the provided endpoint ID.
+     * </p>
+     * 
+     * @param getInAppMessagesRequest
+     * @return Result of the GetInAppMessages operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetInAppMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInAppMessagesResult getInAppMessages(GetInAppMessagesRequest getInAppMessagesRequest);
+
+    /**
+     * <p>
+     * Retrieves the content and settings of a message template for messages sent through the in-app channel.
+     * </p>
+     * 
+     * @param getInAppTemplateRequest
+     * @return Result of the GetInAppTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetInAppTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInAppTemplateResult getInAppTemplate(GetInAppTemplateRequest getInAppTemplateRequest);
 
     /**
      * <p>
@@ -3203,6 +3322,37 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
+
+    /**
+     * <p>
+     * Updates an existing message template for messages sent through the in-app message channel.
+     * </p>
+     * 
+     * @param updateInAppTemplateRequest
+     * @return Result of the UpdateInAppTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateInAppTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateInAppTemplateResult updateInAppTemplate(UpdateInAppTemplateRequest updateInAppTemplateRequest);
 
     /**
      * <p>

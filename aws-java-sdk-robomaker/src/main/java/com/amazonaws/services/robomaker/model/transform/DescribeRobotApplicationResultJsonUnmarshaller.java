@@ -83,6 +83,14 @@ public class DescribeRobotApplicationResultJsonUnmarshaller implements Unmarshal
                     describeRobotApplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("environment", targetDepth)) {
+                    context.nextToken();
+                    describeRobotApplicationResult.setEnvironment(EnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("imageDigest", targetDepth)) {
+                    context.nextToken();
+                    describeRobotApplicationResult.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

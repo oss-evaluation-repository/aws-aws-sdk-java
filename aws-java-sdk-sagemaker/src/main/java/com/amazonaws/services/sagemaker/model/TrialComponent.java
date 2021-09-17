@@ -73,7 +73,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * Who created the trial component.
+     * </p>
+     */
     private UserContext createdBy;
     /**
      * <p>
@@ -442,7 +446,12 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the trial component.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the trial component.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -450,7 +459,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Who created the trial component.
+     * </p>
+     * 
+     * @return Who created the trial component.
      */
 
     public UserContext getCreatedBy() {
@@ -458,7 +471,12 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the trial component.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

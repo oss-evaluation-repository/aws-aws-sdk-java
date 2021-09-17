@@ -33,7 +33,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String clientToken;
     /**
      * <p>
-     * The custom data identifiers to use for data analysis and classification.
+     * An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To
+     * use only managed data identifiers, don't specify a value for this property and specify a value other than NONE
+     * for the managedDataIdentifierSelector property.
      * </p>
      */
     private java.util.List<String> customDataIdentifierIds;
@@ -45,7 +47,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String description;
     /**
      * <p>
-     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is
+     * created (true). To analyze only those objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.
+     * </p>
+     * <p>
+     * If you configure the job to run only once, don't specify a value for this property.
      * </p>
      */
     private Boolean initialRun;
@@ -71,6 +78,55 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String jobType;
     /**
      * <p>
+     * An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not
+     * use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you
+     * specify for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * </p>
+     */
+    private java.util.List<String> managedDataIdentifierIds;
+    /**
+     * <p>
+     * The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid
+     * values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
+     * any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
+     * property.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
+     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
+     * identifiers as they are released.
+     * </p>
+     */
+    private String managedDataIdentifierSelector;
+    /**
+     * <p>
      * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      */
@@ -83,9 +139,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private S3JobDefinition s3JobDefinition;
     /**
      * <p>
-     * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
-     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+     * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the
+     * percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the
+     * objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      */
     private Integer samplingPercentage;
@@ -149,10 +205,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The custom data identifiers to use for data analysis and classification.
+     * An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To
+     * use only managed data identifiers, don't specify a value for this property and specify a value other than NONE
+     * for the managedDataIdentifierSelector property.
      * </p>
      * 
-     * @return The custom data identifiers to use for data analysis and classification.
+     * @return An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes
+     *         data. To use only managed data identifiers, don't specify a value for this property and specify a value
+     *         other than NONE for the managedDataIdentifierSelector property.
      */
 
     public java.util.List<String> getCustomDataIdentifierIds() {
@@ -161,11 +221,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The custom data identifiers to use for data analysis and classification.
+     * An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To
+     * use only managed data identifiers, don't specify a value for this property and specify a value other than NONE
+     * for the managedDataIdentifierSelector property.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers to use for data analysis and classification.
+     *        An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes
+     *        data. To use only managed data identifiers, don't specify a value for this property and specify a value
+     *        other than NONE for the managedDataIdentifierSelector property.
      */
 
     public void setCustomDataIdentifierIds(java.util.Collection<String> customDataIdentifierIds) {
@@ -179,7 +243,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The custom data identifiers to use for data analysis and classification.
+     * An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To
+     * use only managed data identifiers, don't specify a value for this property and specify a value other than NONE
+     * for the managedDataIdentifierSelector property.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,7 +254,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers to use for data analysis and classification.
+     *        An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes
+     *        data. To use only managed data identifiers, don't specify a value for this property and specify a value
+     *        other than NONE for the managedDataIdentifierSelector property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +272,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The custom data identifiers to use for data analysis and classification.
+     * An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To
+     * use only managed data identifiers, don't specify a value for this property and specify a value other than NONE
+     * for the managedDataIdentifierSelector property.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers to use for data analysis and classification.
+     *        An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes
+     *        data. To use only managed data identifiers, don't specify a value for this property and specify a value
+     *        other than NONE for the managedDataIdentifierSelector property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +331,20 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is
+     * created (true). To analyze only those objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.
+     * </p>
+     * <p>
+     * If you configure the job to run only once, don't specify a value for this property.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     *        For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job
+     *        is created (true). To analyze only those objects that are created or changed after you create the job and
+     *        before the job's first scheduled run, set this value to false.</p>
+     *        <p>
+     *        If you configure the job to run only once, don't specify a value for this property.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -272,10 +353,19 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is
+     * created (true). To analyze only those objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.
+     * </p>
+     * <p>
+     * If you configure the job to run only once, don't specify a value for this property.
      * </p>
      * 
-     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * @return For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the
+     *         job is created (true). To analyze only those objects that are created or changed after you create the job
+     *         and before the job's first scheduled run, set this value to false.</p>
+     *         <p>
+     *         If you configure the job to run only once, don't specify a value for this property.
      */
 
     public Boolean getInitialRun() {
@@ -284,11 +374,20 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is
+     * created (true). To analyze only those objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.
+     * </p>
+     * <p>
+     * If you configure the job to run only once, don't specify a value for this property.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     *        For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job
+     *        is created (true). To analyze only those objects that are created or changed after you create the job and
+     *        before the job's first scheduled run, set this value to false.</p>
+     *        <p>
+     *        If you configure the job to run only once, don't specify a value for this property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,10 +398,19 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is
+     * created (true). To analyze only those objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.
+     * </p>
+     * <p>
+     * If you configure the job to run only once, don't specify a value for this property.
      * </p>
      * 
-     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
+     * @return For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the
+     *         job is created (true). To analyze only those objects that are created or changed after you create the job
+     *         and before the job's first scheduled run, set this value to false.</p>
+     *         <p>
+     *         If you configure the job to run only once, don't specify a value for this property.
      */
 
     public Boolean isInitialRun() {
@@ -478,6 +586,423 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not
+     * use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you
+     * specify for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * </p>
+     * 
+     * @return An array of unique identifiers, one for each managed data identifier for the job to include (use) or
+     *         exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier
+     *         selection type that you specify for the job (managedDataIdentifierSelector).</p>
+     *         <p>
+     *         To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     */
+
+    public java.util.List<String> getManagedDataIdentifierIds() {
+        return managedDataIdentifierIds;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not
+     * use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you
+     * specify for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier for the job to include (use) or
+     *        exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier
+     *        selection type that you specify for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     */
+
+    public void setManagedDataIdentifierIds(java.util.Collection<String> managedDataIdentifierIds) {
+        if (managedDataIdentifierIds == null) {
+            this.managedDataIdentifierIds = null;
+            return;
+        }
+
+        this.managedDataIdentifierIds = new java.util.ArrayList<String>(managedDataIdentifierIds);
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not
+     * use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you
+     * specify for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setManagedDataIdentifierIds(java.util.Collection)} or
+     * {@link #withManagedDataIdentifierIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier for the job to include (use) or
+     *        exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier
+     *        selection type that you specify for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassificationJobRequest withManagedDataIdentifierIds(String... managedDataIdentifierIds) {
+        if (this.managedDataIdentifierIds == null) {
+            setManagedDataIdentifierIds(new java.util.ArrayList<String>(managedDataIdentifierIds.length));
+        }
+        for (String ele : managedDataIdentifierIds) {
+            this.managedDataIdentifierIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not
+     * use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you
+     * specify for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier for the job to include (use) or
+     *        exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier
+     *        selection type that you specify for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassificationJobRequest withManagedDataIdentifierIds(java.util.Collection<String> managedDataIdentifierIds) {
+        setManagedDataIdentifierIds(managedDataIdentifierIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid
+     * values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
+     * any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
+     * property.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
+     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
+     * identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type to apply when determining which managed data identifiers the job uses to analyze data.
+     *        Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
+     *        specify any values for the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
+     *        managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
+     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
+     *        managed data identifiers as they are released.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public void setManagedDataIdentifierSelector(String managedDataIdentifierSelector) {
+        this.managedDataIdentifierSelector = managedDataIdentifierSelector;
+    }
+
+    /**
+     * <p>
+     * The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid
+     * values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
+     * any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
+     * property.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
+     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
+     * identifiers as they are released.
+     * </p>
+     * 
+     * @return The selection type to apply when determining which managed data identifiers the job uses to analyze data.
+     *         Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
+     *         specify any values for the managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *         specified by the managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom
+     *         data identifier for the job (customDataIdentifierIds) and don't specify any values for the
+     *         managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
+     *         specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses
+     *         new managed data identifiers as they are released.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public String getManagedDataIdentifierSelector() {
+        return this.managedDataIdentifierSelector;
+    }
+
+    /**
+     * <p>
+     * The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid
+     * values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
+     * any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
+     * property.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
+     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
+     * identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type to apply when determining which managed data identifiers the job uses to analyze data.
+     *        Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
+     *        specify any values for the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
+     *        managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
+     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
+     *        managed data identifiers as they are released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public CreateClassificationJobRequest withManagedDataIdentifierSelector(String managedDataIdentifierSelector) {
+        setManagedDataIdentifierSelector(managedDataIdentifierSelector);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid
+     * values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
+     * any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
+     * property.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
+     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
+     * identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type to apply when determining which managed data identifiers the job uses to analyze data.
+     *        Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
+     *        specify any values for the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
+     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
+     *        managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
+     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
+     *        managed data identifiers as they are released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public CreateClassificationJobRequest withManagedDataIdentifierSelector(ManagedDataIdentifierSelector managedDataIdentifierSelector) {
+        this.managedDataIdentifierSelector = managedDataIdentifierSelector.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
@@ -558,16 +1083,16 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
-     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+     * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the
+     * percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the
+     * objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
-     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
-     *        objects.
+     *        The sampling depth, as a percentage, for the job to apply when processing objects. This value determines
+     *        the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
+     *        selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in
+     *        those objects.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -576,13 +1101,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
-     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+     * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the
+     * percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the
+     * objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
-     * @return The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *         percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
+     * @return The sampling depth, as a percentage, for the job to apply when processing objects. This value determines
+     *         the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
      *         selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in
      *         those objects.
      */
@@ -593,16 +1118,16 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
-     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+     * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the
+     * percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the
+     * objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
-     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
-     *        objects.
+     *        The sampling depth, as a percentage, for the job to apply when processing objects. This value determines
+     *        the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
+     *        selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in
+     *        those objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -768,6 +1293,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
             sb.append("InitialRun: ").append(getInitialRun()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
+        if (getManagedDataIdentifierIds() != null)
+            sb.append("ManagedDataIdentifierIds: ").append(getManagedDataIdentifierIds()).append(",");
+        if (getManagedDataIdentifierSelector() != null)
+            sb.append("ManagedDataIdentifierSelector: ").append(getManagedDataIdentifierSelector()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getS3JobDefinition() != null)
@@ -812,6 +1341,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
+        if (other.getManagedDataIdentifierIds() == null ^ this.getManagedDataIdentifierIds() == null)
+            return false;
+        if (other.getManagedDataIdentifierIds() != null && other.getManagedDataIdentifierIds().equals(this.getManagedDataIdentifierIds()) == false)
+            return false;
+        if (other.getManagedDataIdentifierSelector() == null ^ this.getManagedDataIdentifierSelector() == null)
+            return false;
+        if (other.getManagedDataIdentifierSelector() != null
+                && other.getManagedDataIdentifierSelector().equals(this.getManagedDataIdentifierSelector()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -845,6 +1383,8 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInitialRun() == null) ? 0 : getInitialRun().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getManagedDataIdentifierIds() == null) ? 0 : getManagedDataIdentifierIds().hashCode());
+        hashCode = prime * hashCode + ((getManagedDataIdentifierSelector() == null) ? 0 : getManagedDataIdentifierSelector().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getS3JobDefinition() == null) ? 0 : getS3JobDefinition().hashCode());
         hashCode = prime * hashCode + ((getSamplingPercentage() == null) ? 0 : getSamplingPercentage().hashCode());

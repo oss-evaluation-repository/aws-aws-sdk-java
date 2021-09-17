@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the location of 1-15 occurrences of sensitive data that was detected by managed data identifiers or a
+ * Specifies the location of 1-15 occurrences of sensitive data that was detected by a managed data identifier or a
  * custom data identifier and produced a sensitive data finding.
  * </p>
  * 

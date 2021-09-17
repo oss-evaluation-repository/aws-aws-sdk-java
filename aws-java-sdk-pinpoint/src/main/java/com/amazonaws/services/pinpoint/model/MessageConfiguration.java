@@ -85,6 +85,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private CampaignSmsMessage sMSMessage;
+    /**
+     * <p>
+     * The in-app message configuration.
+     * </p>
+     */
+    private CampaignInAppMessage inAppMessage;
 
     /**
      * <p>
@@ -462,6 +468,46 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The in-app message configuration.
+     * </p>
+     * 
+     * @param inAppMessage
+     *        The in-app message configuration.
+     */
+
+    public void setInAppMessage(CampaignInAppMessage inAppMessage) {
+        this.inAppMessage = inAppMessage;
+    }
+
+    /**
+     * <p>
+     * The in-app message configuration.
+     * </p>
+     * 
+     * @return The in-app message configuration.
+     */
+
+    public CampaignInAppMessage getInAppMessage() {
+        return this.inAppMessage;
+    }
+
+    /**
+     * <p>
+     * The in-app message configuration.
+     * </p>
+     * 
+     * @param inAppMessage
+     *        The in-app message configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageConfiguration withInAppMessage(CampaignInAppMessage inAppMessage) {
+        setInAppMessage(inAppMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -488,7 +534,9 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
         if (getGCMMessage() != null)
             sb.append("GCMMessage: ").append(getGCMMessage()).append(",");
         if (getSMSMessage() != null)
-            sb.append("SMSMessage: ").append(getSMSMessage());
+            sb.append("SMSMessage: ").append(getSMSMessage()).append(",");
+        if (getInAppMessage() != null)
+            sb.append("InAppMessage: ").append(getInAppMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +583,10 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getSMSMessage() != null && other.getSMSMessage().equals(this.getSMSMessage()) == false)
             return false;
+        if (other.getInAppMessage() == null ^ this.getInAppMessage() == null)
+            return false;
+        if (other.getInAppMessage() != null && other.getInAppMessage().equals(this.getInAppMessage()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +603,7 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getEmailMessage() == null) ? 0 : getEmailMessage().hashCode());
         hashCode = prime * hashCode + ((getGCMMessage() == null) ? 0 : getGCMMessage().hashCode());
         hashCode = prime * hashCode + ((getSMSMessage() == null) ? 0 : getSMSMessage().hashCode());
+        hashCode = prime * hashCode + ((getInAppMessage() == null) ? 0 : getInAppMessage().hashCode());
         return hashCode;
     }
 

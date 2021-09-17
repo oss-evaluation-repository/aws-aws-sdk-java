@@ -1019,6 +1019,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public RetryPipelineExecutionResult retryPipelineExecution(RetryPipelineExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchResult search(SearchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -52,7 +52,7 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time.
+     * operation completes no more than once.
      * </p>
      */
     private String clientRequestToken;
@@ -250,12 +250,12 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time.
+     * operation completes no more than once.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *        idempotent operation completes no more than one time.
+     *        idempotent operation completes no more than once.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -265,11 +265,11 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time.
+     * operation completes no more than once.
      * </p>
      * 
      * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *         idempotent operation completes no more than one time.
+     *         idempotent operation completes no more than once.
      */
 
     public String getClientRequestToken() {
@@ -279,12 +279,12 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
-     * operation completes no more than one time.
+     * operation completes no more than once.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
-     *        idempotent operation completes no more than one time.
+     *        idempotent operation completes no more than once.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

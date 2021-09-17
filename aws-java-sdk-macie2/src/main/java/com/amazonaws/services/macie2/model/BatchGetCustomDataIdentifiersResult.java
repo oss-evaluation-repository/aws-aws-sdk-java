@@ -32,8 +32,8 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
     private java.util.List<BatchGetCustomDataIdentifierSummary> customDataIdentifiers;
     /**
      * <p>
-     * An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an
-     * existing custom data identifier.
+     * An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but
+     * doesn't correlate to an existing custom data identifier.
      * </p>
      */
     private java.util.List<String> notFoundIdentifierIds;
@@ -111,12 +111,12 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an
-     * existing custom data identifier.
+     * An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but
+     * doesn't correlate to an existing custom data identifier.
      * </p>
      * 
-     * @return An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate
-     *         to an existing custom data identifier.
+     * @return An array of custom data identifier IDs, one for each custom data identifier that was specified in the
+     *         request but doesn't correlate to an existing custom data identifier.
      */
 
     public java.util.List<String> getNotFoundIdentifierIds() {
@@ -125,13 +125,13 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an
-     * existing custom data identifier.
+     * An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but
+     * doesn't correlate to an existing custom data identifier.
      * </p>
      * 
      * @param notFoundIdentifierIds
-     *        An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate
-     *        to an existing custom data identifier.
+     *        An array of custom data identifier IDs, one for each custom data identifier that was specified in the
+     *        request but doesn't correlate to an existing custom data identifier.
      */
 
     public void setNotFoundIdentifierIds(java.util.Collection<String> notFoundIdentifierIds) {
@@ -145,8 +145,8 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an
-     * existing custom data identifier.
+     * An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but
+     * doesn't correlate to an existing custom data identifier.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -155,8 +155,8 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param notFoundIdentifierIds
-     *        An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate
-     *        to an existing custom data identifier.
+     *        An array of custom data identifier IDs, one for each custom data identifier that was specified in the
+     *        request but doesn't correlate to an existing custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,13 +172,13 @@ public class BatchGetCustomDataIdentifiersResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an
-     * existing custom data identifier.
+     * An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but
+     * doesn't correlate to an existing custom data identifier.
      * </p>
      * 
      * @param notFoundIdentifierIds
-     *        An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate
-     *        to an existing custom data identifier.
+     *        An array of custom data identifier IDs, one for each custom data identifier that was specified in the
+     *        request but doesn't correlate to an existing custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

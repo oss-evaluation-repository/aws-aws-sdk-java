@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the user who created or modified an experiment, trial, or trial component.
+ * Information about the user who created or modified an experiment, trial, trial component, or project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserContext" target="_top">AWS API

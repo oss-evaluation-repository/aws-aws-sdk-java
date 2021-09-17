@@ -42,6 +42,10 @@ public class CreateClassificationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initialRun").build();
     private static final MarshallingInfo<String> JOBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobType").build();
+    private static final MarshallingInfo<List> MANAGEDDATAIDENTIFIERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("managedDataIdentifierIds").build();
+    private static final MarshallingInfo<String> MANAGEDDATAIDENTIFIERSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("managedDataIdentifierSelector").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> S3JOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -74,6 +78,8 @@ public class CreateClassificationJobRequestMarshaller {
             protocolMarshaller.marshall(createClassificationJobRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getInitialRun(), INITIALRUN_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getJobType(), JOBTYPE_BINDING);
+            protocolMarshaller.marshall(createClassificationJobRequest.getManagedDataIdentifierIds(), MANAGEDDATAIDENTIFIERIDS_BINDING);
+            protocolMarshaller.marshall(createClassificationJobRequest.getManagedDataIdentifierSelector(), MANAGEDDATAIDENTIFIERSELECTOR_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getS3JobDefinition(), S3JOBDEFINITION_BINDING);
             protocolMarshaller.marshall(createClassificationJobRequest.getSamplingPercentage(), SAMPLINGPERCENTAGE_BINDING);

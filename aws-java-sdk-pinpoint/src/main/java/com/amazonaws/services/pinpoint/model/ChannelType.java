@@ -31,7 +31,8 @@ public enum ChannelType {
     VOICE("VOICE"),
     EMAIL("EMAIL"),
     BAIDU("BAIDU"),
-    CUSTOM("CUSTOM");
+    CUSTOM("CUSTOM"),
+    IN_APP("IN_APP");
 
     private String value;
 

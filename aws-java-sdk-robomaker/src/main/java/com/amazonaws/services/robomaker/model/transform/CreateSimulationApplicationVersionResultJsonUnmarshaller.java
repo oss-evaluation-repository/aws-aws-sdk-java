@@ -88,6 +88,10 @@ public class CreateSimulationApplicationVersionResultJsonUnmarshaller implements
                     context.nextToken();
                     createSimulationApplicationVersionResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("environment", targetDepth)) {
+                    context.nextToken();
+                    createSimulationApplicationVersionResult.setEnvironment(EnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

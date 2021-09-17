@@ -178,6 +178,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Integer version;
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     */
+    private Integer priority;
 
     /**
      * <p>
@@ -1250,6 +1257,52 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @param priority
+     *        Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *        multiple messages scheduled to be displayed at the same moment.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @return Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *         multiple messages scheduled to be displayed at the same moment.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     * multiple messages scheduled to be displayed at the same moment.
+     * </p>
+     * 
+     * @param priority
+     *        Defines the priority of the campaign, used to decide the order of messages displayed to user if there are
+     *        multiple messages scheduled to be displayed at the same moment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1308,7 +1361,9 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         if (getTreatmentName() != null)
             sb.append("TreatmentName: ").append(getTreatmentName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -1419,6 +1474,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         return true;
     }
 
@@ -1451,6 +1510,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         return hashCode;
     }
 

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The category of sensitive data that was detected and produced the finding. Possible values are:
+ * For a finding, the category of sensitive data that was detected and produced the finding. For a managed data
+ * identifier, the category of sensitive data that the managed data identifier detects. Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

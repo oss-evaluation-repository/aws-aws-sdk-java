@@ -91,7 +91,7 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
     private java.util.Date creationTime;
     /**
      * <p>
-     * Who created the component.
+     * Who created the trial component.
      * </p>
      */
     private UserContext createdBy;
@@ -561,11 +561,11 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who created the component.
+     * Who created the trial component.
      * </p>
      * 
      * @param createdBy
-     *        Who created the component.
+     *        Who created the trial component.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -574,10 +574,10 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who created the component.
+     * Who created the trial component.
      * </p>
      * 
-     * @return Who created the component.
+     * @return Who created the trial component.
      */
 
     public UserContext getCreatedBy() {
@@ -586,11 +586,11 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Who created the component.
+     * Who created the trial component.
      * </p>
      * 
      * @param createdBy
-     *        Who created the component.
+     *        Who created the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -3934,6 +3934,27 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Retry the execution of the pipeline.
+     * </p>
+     * 
+     * @param retryPipelineExecutionRequest
+     * @return Result of the RetryPipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.RetryPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RetryPipelineExecutionResult retryPipelineExecution(RetryPipelineExecutionRequest retryPipelineExecutionRequest);
+
+    /**
+     * <p>
      * Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of
      * <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a
      * ascending or descending order.

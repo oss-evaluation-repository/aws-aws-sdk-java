@@ -1360,7 +1360,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about all the Amazon Macie membership invitations that were received by an account.
+     * Retrieves information about the Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -1373,7 +1373,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about all the Amazon Macie membership invitations that were received by an account.
+     * Retrieves information about the Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -1388,6 +1388,39 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<ListInvitationsResult> listInvitationsAsync(ListInvitationsRequest listInvitationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInvitationsRequest, ListInvitationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about all the managed data identifiers that Amazon Macie currently provides.
+     * </p>
+     * 
+     * @param listManagedDataIdentifiersRequest
+     * @return A Java Future containing the result of the ListManagedDataIdentifiers operation returned by the service.
+     * @sample AmazonMacie2Async.ListManagedDataIdentifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(
+            ListManagedDataIdentifiersRequest listManagedDataIdentifiersRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the managed data identifiers that Amazon Macie currently provides.
+     * </p>
+     * 
+     * @param listManagedDataIdentifiersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListManagedDataIdentifiers operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.ListManagedDataIdentifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(
+            ListManagedDataIdentifiersRequest listManagedDataIdentifiersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListManagedDataIdentifiersRequest, ListManagedDataIdentifiersResult> asyncHandler);
 
     /**
      * <p>

@@ -34,7 +34,7 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
      * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
      * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
-     * personally identifiable information, such as driver's license identification numbers.
+     * personally identifiable information, such as passport numbers.
      * </p>
      */
     private String category;
@@ -58,15 +58,14 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
      * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
      * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
-     * personally identifiable information, such as driver's license identification numbers.
+     * personally identifiable information, such as passport numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
      *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
      *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
-     *        identification numbers, or personally identifiable information, such as driver's license identification
-     *        numbers.
+     *        identification numbers, or personally identifiable information, such as passport numbers.
      * @see SensitiveDataItemCategory
      */
 
@@ -79,14 +78,13 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
      * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
      * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
-     * personally identifiable information, such as driver's license identification numbers.
+     * personally identifiable information, such as passport numbers.
      * </p>
      * 
      * @return The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
      *         private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
      *         card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
-     *         identification numbers, or personally identifiable information, such as driver's license identification
-     *         numbers.
+     *         identification numbers, or personally identifiable information, such as passport numbers.
      * @see SensitiveDataItemCategory
      */
 
@@ -99,15 +97,14 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
      * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
      * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
-     * personally identifiable information, such as driver's license identification numbers.
+     * personally identifiable information, such as passport numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
      *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
      *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
-     *        identification numbers, or personally identifiable information, such as driver's license identification
-     *        numbers.
+     *        identification numbers, or personally identifiable information, such as passport numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */
@@ -122,15 +119,14 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
      * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
      * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
-     * personally identifiable information, such as driver's license identification numbers.
+     * personally identifiable information, such as passport numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
      *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
      *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
-     *        identification numbers, or personally identifiable information, such as driver's license identification
-     *        numbers.
+     *        identification numbers, or personally identifiable information, such as passport numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */

@@ -1204,7 +1204,7 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about all the Amazon Macie membership invitations that were received by an account.
+     * Retrieves information about the Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -1229,6 +1229,19 @@ public interface AmazonMacie2 {
      *      Documentation</a>
      */
     ListInvitationsResult listInvitations(ListInvitationsRequest listInvitationsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the managed data identifiers that Amazon Macie currently provides.
+     * </p>
+     * 
+     * @param listManagedDataIdentifiersRequest
+     * @return Result of the ListManagedDataIdentifiers operation returned by the service.
+     * @sample AmazonMacie2.ListManagedDataIdentifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListManagedDataIdentifiersResult listManagedDataIdentifiers(ListManagedDataIdentifiersRequest listManagedDataIdentifiersRequest);
 
     /**
      * <p>

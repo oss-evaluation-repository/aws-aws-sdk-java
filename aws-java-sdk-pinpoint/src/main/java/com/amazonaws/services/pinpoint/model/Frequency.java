@@ -25,7 +25,8 @@ public enum Frequency {
     DAILY("DAILY"),
     WEEKLY("WEEKLY"),
     MONTHLY("MONTHLY"),
-    EVENT("EVENT");
+    EVENT("EVENT"),
+    IN_APP_EVENT("IN_APP_EVENT");
 
     private String value;
 

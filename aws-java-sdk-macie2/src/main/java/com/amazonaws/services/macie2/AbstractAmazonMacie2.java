@@ -238,6 +238,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public ListManagedDataIdentifiersResult listManagedDataIdentifiers(ListManagedDataIdentifiersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMembersResult listMembers(ListMembersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

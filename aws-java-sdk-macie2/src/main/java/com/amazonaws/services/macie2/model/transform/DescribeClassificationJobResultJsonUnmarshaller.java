@@ -94,6 +94,16 @@ public class DescribeClassificationJobResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     describeClassificationJobResult.setLastRunTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("managedDataIdentifierIds", targetDepth)) {
+                    context.nextToken();
+                    describeClassificationJobResult.setManagedDataIdentifierIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("managedDataIdentifierSelector", targetDepth)) {
+                    context.nextToken();
+                    describeClassificationJobResult.setManagedDataIdentifierSelector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     describeClassificationJobResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

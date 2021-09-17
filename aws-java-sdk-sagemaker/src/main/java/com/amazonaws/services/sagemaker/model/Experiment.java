@@ -61,7 +61,11 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * Who created the experiment.
+     * </p>
+     */
     private UserContext createdBy;
     /**
      * <p>
@@ -311,7 +315,12 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the experiment.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the experiment.
      */
 
     public void setCreatedBy(UserContext createdBy) {
@@ -319,7 +328,11 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Who created the experiment.
+     * </p>
+     * 
+     * @return Who created the experiment.
      */
 
     public UserContext getCreatedBy() {
@@ -327,7 +340,12 @@ public class Experiment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Who created the experiment.
+     * </p>
+     * 
      * @param createdBy
+     *        Who created the experiment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

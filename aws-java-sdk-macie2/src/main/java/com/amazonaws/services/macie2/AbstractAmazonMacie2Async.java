@@ -584,6 +584,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(ListManagedDataIdentifiersRequest request) {
+
+        return listManagedDataIdentifiersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedDataIdentifiersResult> listManagedDataIdentifiersAsync(ListManagedDataIdentifiersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListManagedDataIdentifiersRequest, ListManagedDataIdentifiersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest request) {
 
         return listMembersAsync(request, null);

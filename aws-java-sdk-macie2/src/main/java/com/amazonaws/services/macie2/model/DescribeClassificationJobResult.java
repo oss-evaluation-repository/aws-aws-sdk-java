@@ -37,7 +37,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private java.util.Date createdAt;
     /**
      * <p>
-     * The custom data identifiers that the job uses to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
+     * is null if the job uses only managed data identifiers to analyze data.
      * </p>
      */
     private java.util.List<String> customDataIdentifierIds;
@@ -49,7 +50,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String description;
     /**
      * <p>
-     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
+     * For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     * immediately after the job was created (true). If you configured the job to analyze only those objects that were
+     * created or changed after the job was created and before the job's first scheduled run, this value is false. This
+     * value is also false for a one-time job.
      * </p>
      */
     private Boolean initialRun;
@@ -90,7 +94,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -144,6 +148,50 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private java.util.Date lastRunTime;
     /**
      * <p>
+     * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
+     * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
+     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
+     * managed data identifier selection type is ALL or the job uses only custom data identifiers
+     * (customDataIdentifierIds) to analyze data.
+     * </p>
+     */
+    private java.util.List<String> managedDataIdentifierIds;
+    /**
+     * <p>
+     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
+     * recurring job, the job also uses new managed data identifiers as they are released.
+     * </p>
+     */
+    private String managedDataIdentifierSelector;
+    /**
+     * <p>
      * The custom name of the job.
      * </p>
      */
@@ -162,7 +210,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private Integer samplingPercentage;
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      * </p>
      */
     private JobScheduleFrequency scheduleFrequency;
@@ -269,10 +317,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The custom data identifiers that the job uses to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
+     * is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
-     * @return The custom data identifiers that the job uses to analyze data.
+     * @return An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
+     *         This value is null if the job uses only managed data identifiers to analyze data.
      */
 
     public java.util.List<String> getCustomDataIdentifierIds() {
@@ -281,11 +331,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The custom data identifiers that the job uses to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
+     * is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers that the job uses to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
+     *        This value is null if the job uses only managed data identifiers to analyze data.
      */
 
     public void setCustomDataIdentifierIds(java.util.Collection<String> customDataIdentifierIds) {
@@ -299,7 +351,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The custom data identifiers that the job uses to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
+     * is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -308,7 +361,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers that the job uses to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
+     *        This value is null if the job uses only managed data identifiers to analyze data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +378,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The custom data identifiers that the job uses to analyze data.
+     * An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value
+     * is null if the job uses only managed data identifiers to analyze data.
      * </p>
      * 
      * @param customDataIdentifierIds
-     *        The custom data identifiers that the job uses to analyze data.
+     *        An array of unique identifiers, one for each custom data identifier that the job uses to analyze data.
+     *        This value is null if the job uses only managed data identifiers to analyze data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,12 +435,17 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
+     * For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     * immediately after the job was created (true). If you configured the job to analyze only those objects that were
+     * created or changed after the job was created and before the job's first scheduled run, this value is false. This
+     * value is also false for a one-time job.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
-     *        created.
+     *        For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     *        immediately after the job was created (true). If you configured the job to analyze only those objects that
+     *        were created or changed after the job was created and before the job's first scheduled run, this value is
+     *        false. This value is also false for a one-time job.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -393,11 +454,16 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
+     * For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     * immediately after the job was created (true). If you configured the job to analyze only those objects that were
+     * created or changed after the job was created and before the job's first scheduled run, this value is false. This
+     * value is also false for a one-time job.
      * </p>
      * 
-     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
-     *         created.
+     * @return For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     *         immediately after the job was created (true). If you configured the job to analyze only those objects
+     *         that were created or changed after the job was created and before the job's first scheduled run, this
+     *         value is false. This value is also false for a one-time job.
      */
 
     public Boolean getInitialRun() {
@@ -406,12 +472,17 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
+     * For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     * immediately after the job was created (true). If you configured the job to analyze only those objects that were
+     * created or changed after the job was created and before the job's first scheduled run, this value is false. This
+     * value is also false for a one-time job.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
-     *        created.
+     *        For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     *        immediately after the job was created (true). If you configured the job to analyze only those objects that
+     *        were created or changed after the job was created and before the job's first scheduled run, this value is
+     *        false. This value is also false for a one-time job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +493,16 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
+     * For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     * immediately after the job was created (true). If you configured the job to analyze only those objects that were
+     * created or changed after the job was created and before the job's first scheduled run, this value is false. This
+     * value is also false for a one-time job.
      * </p>
      * 
-     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
-     *         created.
+     * @return For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects
+     *         immediately after the job was created (true). If you configured the job to analyze only those objects
+     *         that were created or changed after the job was created and before the job's first scheduled run, this
+     *         value is false. This value is also false for a one-time job.
      */
 
     public Boolean isInitialRun() {
@@ -538,7 +614,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -579,8 +655,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -627,7 +703,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -667,9 +743,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly
-     *         sensitive data discovery quota for your account or one or more member accounts that the job analyzes data
-     *         for.
+     *         PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *         discovery quota for your account or one or more member accounts that the job analyzes data for.
      *         </p>
      *         </li>
      *         <li>
@@ -717,7 +792,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -758,8 +833,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -808,7 +883,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -849,8 +924,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -1127,6 +1202,387 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
+     * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
+     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
+     * managed data identifier selection type is ALL or the job uses only custom data identifiers
+     * (customDataIdentifierIds) to analyze data.
+     * </p>
+     * 
+     * @return An array of unique identifiers, one for each managed data identifier that the job is explicitly
+     *         configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on
+     *         the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This
+     *         value is null if the job's managed data identifier selection type is ALL or the job uses only custom data
+     *         identifiers (customDataIdentifierIds) to analyze data.
+     */
+
+    public java.util.List<String> getManagedDataIdentifierIds() {
+        return managedDataIdentifierIds;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
+     * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
+     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
+     * managed data identifier selection type is ALL or the job uses only custom data identifiers
+     * (customDataIdentifierIds) to analyze data.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
+     *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
+     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
+     *        (customDataIdentifierIds) to analyze data.
+     */
+
+    public void setManagedDataIdentifierIds(java.util.Collection<String> managedDataIdentifierIds) {
+        if (managedDataIdentifierIds == null) {
+            this.managedDataIdentifierIds = null;
+            return;
+        }
+
+        this.managedDataIdentifierIds = new java.util.ArrayList<String>(managedDataIdentifierIds);
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
+     * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
+     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
+     * managed data identifier selection type is ALL or the job uses only custom data identifiers
+     * (customDataIdentifierIds) to analyze data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setManagedDataIdentifierIds(java.util.Collection)} or
+     * {@link #withManagedDataIdentifierIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
+     *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
+     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
+     *        (customDataIdentifierIds) to analyze data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withManagedDataIdentifierIds(String... managedDataIdentifierIds) {
+        if (this.managedDataIdentifierIds == null) {
+            setManagedDataIdentifierIds(new java.util.ArrayList<String>(managedDataIdentifierIds.length));
+        }
+        for (String ele : managedDataIdentifierIds) {
+            this.managedDataIdentifierIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
+     * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
+     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
+     * managed data identifier selection type is ALL or the job uses only custom data identifiers
+     * (customDataIdentifierIds) to analyze data.
+     * </p>
+     * 
+     * @param managedDataIdentifierIds
+     *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
+     *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
+     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
+     *        (customDataIdentifierIds) to analyze data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withManagedDataIdentifierIds(java.util.Collection<String> managedDataIdentifierIds) {
+        setManagedDataIdentifierIds(managedDataIdentifierIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
+     * recurring job, the job also uses new managed data identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
+     *        values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
+     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public void setManagedDataIdentifierSelector(String managedDataIdentifierSelector) {
+        this.managedDataIdentifierSelector = managedDataIdentifierSelector;
+    }
+
+    /**
+     * <p>
+     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
+     * recurring job, the job also uses new managed data identifiers as they are released.
+     * </p>
+     * 
+     * @return The selection type that determines which managed data identifiers the job uses to analyze data. Possible
+     *         values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *         specified by the managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NONE - Don't use any managed data identifiers.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
+     *         for a recurring job, the job also uses new managed data identifiers as they are released.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public String getManagedDataIdentifierSelector() {
+        return this.managedDataIdentifierSelector;
+    }
+
+    /**
+     * <p>
+     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
+     * recurring job, the job also uses new managed data identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
+     *        values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
+     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public DescribeClassificationJobResult withManagedDataIdentifierSelector(String managedDataIdentifierSelector) {
+        setManagedDataIdentifierSelector(managedDataIdentifierSelector);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
+     * by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - Don't use any managed data identifiers.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
+     * recurring job, the job also uses new managed data identifiers as they are released.
+     * </p>
+     * 
+     * @param managedDataIdentifierSelector
+     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
+     *        values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
+     *        specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - Don't use any managed data identifiers.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
+     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDataIdentifierSelector
+     */
+
+    public DescribeClassificationJobResult withManagedDataIdentifierSelector(ManagedDataIdentifierSelector managedDataIdentifierSelector) {
+        this.managedDataIdentifierSelector = managedDataIdentifierSelector.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The custom name of the job.
      * </p>
      * 
@@ -1250,11 +1706,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      */
 
     public void setScheduleFrequency(JobScheduleFrequency scheduleFrequency) {
@@ -1263,11 +1719,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      * </p>
      * 
-     * @return The recurrence pattern for running the job. If the job is configured to run only once, this value is
-     *         null.
+     * @return The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      */
 
     public JobScheduleFrequency getScheduleFrequency() {
@@ -1276,11 +1731,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. This value is null if the job is configured to run only once.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1486,6 +1941,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             sb.append("LastRunErrorStatus: ").append(getLastRunErrorStatus()).append(",");
         if (getLastRunTime() != null)
             sb.append("LastRunTime: ").append(getLastRunTime()).append(",");
+        if (getManagedDataIdentifierIds() != null)
+            sb.append("ManagedDataIdentifierIds: ").append(getManagedDataIdentifierIds()).append(",");
+        if (getManagedDataIdentifierSelector() != null)
+            sb.append("ManagedDataIdentifierSelector: ").append(getManagedDataIdentifierSelector()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getS3JobDefinition() != null)
@@ -1558,6 +2017,15 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getLastRunTime() != null && other.getLastRunTime().equals(this.getLastRunTime()) == false)
             return false;
+        if (other.getManagedDataIdentifierIds() == null ^ this.getManagedDataIdentifierIds() == null)
+            return false;
+        if (other.getManagedDataIdentifierIds() != null && other.getManagedDataIdentifierIds().equals(this.getManagedDataIdentifierIds()) == false)
+            return false;
+        if (other.getManagedDataIdentifierSelector() == null ^ this.getManagedDataIdentifierSelector() == null)
+            return false;
+        if (other.getManagedDataIdentifierSelector() != null
+                && other.getManagedDataIdentifierSelector().equals(this.getManagedDataIdentifierSelector()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -1605,6 +2073,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getLastRunErrorStatus() == null) ? 0 : getLastRunErrorStatus().hashCode());
         hashCode = prime * hashCode + ((getLastRunTime() == null) ? 0 : getLastRunTime().hashCode());
+        hashCode = prime * hashCode + ((getManagedDataIdentifierIds() == null) ? 0 : getManagedDataIdentifierIds().hashCode());
+        hashCode = prime * hashCode + ((getManagedDataIdentifierSelector() == null) ? 0 : getManagedDataIdentifierSelector().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getS3JobDefinition() == null) ? 0 : getS3JobDefinition().hashCode());
         hashCode = prime * hashCode + ((getSamplingPercentage() == null) ? 0 : getSamplingPercentage().hashCode());

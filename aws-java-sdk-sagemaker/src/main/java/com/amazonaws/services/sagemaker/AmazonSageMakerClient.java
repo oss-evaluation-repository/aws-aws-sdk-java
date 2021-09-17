@@ -12478,6 +12478,70 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Retry the execution of the pipeline.
+     * </p>
+     * 
+     * @param retryPipelineExecutionRequest
+     * @return Result of the RetryPipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.RetryPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RetryPipelineExecutionResult retryPipelineExecution(RetryPipelineExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetryPipelineExecution(request);
+    }
+
+    @SdkInternalApi
+    final RetryPipelineExecutionResult executeRetryPipelineExecution(RetryPipelineExecutionRequest retryPipelineExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(retryPipelineExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RetryPipelineExecutionRequest> request = null;
+        Response<RetryPipelineExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RetryPipelineExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retryPipelineExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetryPipelineExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RetryPipelineExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RetryPipelineExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of
      * <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a
      * ascending or descending order.

@@ -77,6 +77,8 @@ public class CampaignResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentName").build();
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Priority").build();
 
     private static final CampaignResponseMarshaller instance = new CampaignResponseMarshaller();
 
@@ -118,6 +120,7 @@ public class CampaignResponseMarshaller {
             protocolMarshaller.marshall(campaignResponse.getTreatmentDescription(), TREATMENTDESCRIPTION_BINDING);
             protocolMarshaller.marshall(campaignResponse.getTreatmentName(), TREATMENTNAME_BINDING);
             protocolMarshaller.marshall(campaignResponse.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(campaignResponse.getPriority(), PRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -421,6 +421,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateInAppTemplateResult> createInAppTemplateAsync(CreateInAppTemplateRequest request) {
+
+        return createInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInAppTemplateResult> createInAppTemplateAsync(final CreateInAppTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateInAppTemplateRequest, CreateInAppTemplateResult> asyncHandler) {
+        final CreateInAppTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateInAppTemplateResult>() {
+            @Override
+            public CreateInAppTemplateResult call() throws Exception {
+                CreateInAppTemplateResult result = null;
+
+                try {
+                    result = executeCreateInAppTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateJourneyResult> createJourneyAsync(CreateJourneyRequest request) {
 
         return createJourneyAsync(request, null);
@@ -1033,6 +1066,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeDeleteGcmChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInAppTemplateResult> deleteInAppTemplateAsync(DeleteInAppTemplateRequest request) {
+
+        return deleteInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInAppTemplateResult> deleteInAppTemplateAsync(final DeleteInAppTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInAppTemplateRequest, DeleteInAppTemplateResult> asyncHandler) {
+        final DeleteInAppTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInAppTemplateResult>() {
+            @Override
+            public DeleteInAppTemplateResult call() throws Exception {
+                DeleteInAppTemplateResult result = null;
+
+                try {
+                    result = executeDeleteInAppTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2189,6 +2255,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetImportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppMessagesResult> getInAppMessagesAsync(GetInAppMessagesRequest request) {
+
+        return getInAppMessagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppMessagesResult> getInAppMessagesAsync(final GetInAppMessagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInAppMessagesRequest, GetInAppMessagesResult> asyncHandler) {
+        final GetInAppMessagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInAppMessagesResult>() {
+            @Override
+            public GetInAppMessagesResult call() throws Exception {
+                GetInAppMessagesResult result = null;
+
+                try {
+                    result = executeGetInAppMessages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppTemplateResult> getInAppTemplateAsync(GetInAppTemplateRequest request) {
+
+        return getInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInAppTemplateResult> getInAppTemplateAsync(final GetInAppTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInAppTemplateRequest, GetInAppTemplateResult> asyncHandler) {
+        final GetInAppTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInAppTemplateResult>() {
+            @Override
+            public GetInAppTemplateResult call() throws Exception {
+                GetInAppTemplateResult result = null;
+
+                try {
+                    result = executeGetInAppTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3610,6 +3742,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeUpdateGcmChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInAppTemplateResult> updateInAppTemplateAsync(UpdateInAppTemplateRequest request) {
+
+        return updateInAppTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInAppTemplateResult> updateInAppTemplateAsync(final UpdateInAppTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInAppTemplateRequest, UpdateInAppTemplateResult> asyncHandler) {
+        final UpdateInAppTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInAppTemplateResult>() {
+            @Override
+            public UpdateInAppTemplateResult call() throws Exception {
+                UpdateInAppTemplateResult result = null;
+
+                try {
+                    result = executeUpdateInAppTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -27,20 +27,18 @@ public class BatchGetCustomDataIdentifiersRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information
-     * about.
+     * An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * </p>
      */
     private java.util.List<String> ids;
 
     /**
      * <p>
-     * An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information
-     * about.
+     * An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * </p>
      * 
-     * @return An array of strings that lists the unique identifiers for the custom data identifiers to retrieve
-     *         information about.
+     * @return An array of custom data identifier IDs, one for each custom data identifier to retrieve information
+     *         about.
      */
 
     public java.util.List<String> getIds() {
@@ -49,13 +47,11 @@ public class BatchGetCustomDataIdentifiersRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information
-     * about.
+     * An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * </p>
      * 
      * @param ids
-     *        An array of strings that lists the unique identifiers for the custom data identifiers to retrieve
-     *        information about.
+     *        An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      */
 
     public void setIds(java.util.Collection<String> ids) {
@@ -69,8 +65,7 @@ public class BatchGetCustomDataIdentifiersRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information
-     * about.
+     * An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +74,7 @@ public class BatchGetCustomDataIdentifiersRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param ids
-     *        An array of strings that lists the unique identifiers for the custom data identifiers to retrieve
-     *        information about.
+     *        An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +90,11 @@ public class BatchGetCustomDataIdentifiersRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information
-     * about.
+     * An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * </p>
      * 
      * @param ids
-     *        An array of strings that lists the unique identifiers for the custom data identifiers to retrieve
-     *        information about.
+     *        An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

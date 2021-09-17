@@ -73,7 +73,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -332,7 +332,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -373,8 +373,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -421,7 +421,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -461,9 +461,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly
-     *         sensitive data discovery quota for your account or one or more member accounts that the job analyzes data
-     *         for.
+     *         PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *         discovery quota for your account or one or more member accounts that the job analyzes data for.
      *         </p>
      *         </li>
      *         <li>
@@ -511,7 +510,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -552,8 +551,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -602,7 +601,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
      * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
@@ -643,8 +642,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
-     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
+     *        PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data
+     *        discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>

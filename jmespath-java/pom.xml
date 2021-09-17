@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.69-SNAPSHOT</version>
+    <version>1.12.69</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>jmespath-java</artifactId>
@@ -43,7 +43,7 @@
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
           <scope>test</scope>
-          <version>4.12</version>
+          <version>4.13.1</version>
       </dependency>
   </dependencies>
 

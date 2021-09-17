@@ -35,6 +35,8 @@ public enum PinpointActions implements Action {
     CreateExportJob("pinpoint:CreateExportJob"),
     /** Action for the CreateImportJob operation. */
     CreateImportJob("pinpoint:CreateImportJob"),
+    /** Action for the CreateInAppTemplate operation. */
+    CreateInAppTemplate("pinpoint:CreateInAppTemplate"),
     /** Action for the CreateJourney operation. */
     CreateJourney("pinpoint:CreateJourney"),
     /** Action for the CreatePushTemplate operation. */
@@ -73,6 +75,8 @@ public enum PinpointActions implements Action {
     DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */
     DeleteGcmChannel("pinpoint:DeleteGcmChannel"),
+    /** Action for the DeleteInAppTemplate operation. */
+    DeleteInAppTemplate("pinpoint:DeleteInAppTemplate"),
     /** Action for the DeleteJourney operation. */
     DeleteJourney("pinpoint:DeleteJourney"),
     /** Action for the DeletePushTemplate operation. */
@@ -143,6 +147,10 @@ public enum PinpointActions implements Action {
     GetImportJob("pinpoint:GetImportJob"),
     /** Action for the GetImportJobs operation. */
     GetImportJobs("pinpoint:GetImportJobs"),
+    /** Action for the GetInAppMessages operation. */
+    GetInAppMessages("pinpoint:GetInAppMessages"),
+    /** Action for the GetInAppTemplate operation. */
+    GetInAppTemplate("pinpoint:GetInAppTemplate"),
     /** Action for the GetJourney operation. */
     GetJourney("pinpoint:GetJourney"),
     /** Action for the GetJourneyDateRangeKpi operation. */
@@ -229,6 +237,8 @@ public enum PinpointActions implements Action {
     UpdateEndpointsBatch("pinpoint:UpdateEndpointsBatch"),
     /** Action for the UpdateGcmChannel operation. */
     UpdateGcmChannel("pinpoint:UpdateGcmChannel"),
+    /** Action for the UpdateInAppTemplate operation. */
+    UpdateInAppTemplate("pinpoint:UpdateInAppTemplate"),
     /** Action for the UpdateJourney operation. */
     UpdateJourney("pinpoint:UpdateJourney"),
     /** Action for the UpdateJourneyState operation. */

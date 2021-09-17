@@ -6673,6 +6673,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(RetryPipelineExecutionRequest request) {
+
+        return retryPipelineExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryPipelineExecutionResult> retryPipelineExecutionAsync(final RetryPipelineExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetryPipelineExecutionRequest, RetryPipelineExecutionResult> asyncHandler) {
+        final RetryPipelineExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RetryPipelineExecutionResult>() {
+            @Override
+            public RetryPipelineExecutionResult call() throws Exception {
+                RetryPipelineExecutionResult result = null;
+
+                try {
+                    result = executeRetryPipelineExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchResult> searchAsync(SearchRequest request) {
 
         return searchAsync(request, null);
