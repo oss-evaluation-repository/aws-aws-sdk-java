@@ -89,7 +89,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer warmCount;
-
+    /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * </p>
+     */
     private ColdStorageOptions coldStorageOptions;
 
     /**
@@ -622,7 +626,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * </p>
+     * 
      * @param coldStorageOptions
+     *        Specifies the <code>ColdStorageOptions</code> config for a Domain
      */
 
     public void setColdStorageOptions(ColdStorageOptions coldStorageOptions) {
@@ -630,7 +639,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * </p>
+     * 
+     * @return Specifies the <code>ColdStorageOptions</code> config for a Domain
      */
 
     public ColdStorageOptions getColdStorageOptions() {
@@ -638,7 +651,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * </p>
+     * 
      * @param coldStorageOptions
+     *        Specifies the <code>ColdStorageOptions</code> config for a Domain
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

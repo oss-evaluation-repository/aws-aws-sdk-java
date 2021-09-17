@@ -52,6 +52,10 @@ public class DomainInfoJsonUnmarshaller implements Unmarshaller<DomainInfo, Json
                     context.nextToken();
                     domainInfo.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineType", targetDepth)) {
+                    context.nextToken();
+                    domainInfo.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

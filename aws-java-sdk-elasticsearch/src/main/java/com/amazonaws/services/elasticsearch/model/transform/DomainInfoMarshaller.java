@@ -29,6 +29,8 @@ public class DomainInfoMarshaller {
 
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineType").build();
 
     private static final DomainInfoMarshaller instance = new DomainInfoMarshaller();
 
@@ -47,6 +49,7 @@ public class DomainInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(domainInfo.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(domainInfo.getEngineType(), ENGINETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

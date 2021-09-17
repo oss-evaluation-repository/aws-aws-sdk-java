@@ -17,13 +17,28 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies the configuration for cold storage options such as enabled
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ColdStorageOptions implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Enable cold storage option. Accepted values true or false
+     * </p>
+     */
     private Boolean enabled;
 
     /**
+     * <p>
+     * Enable cold storage option. Accepted values true or false
+     * </p>
+     * 
      * @param enabled
+     *        Enable cold storage option. Accepted values true or false
      */
 
     public void setEnabled(Boolean enabled) {
@@ -31,7 +46,11 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * Enable cold storage option. Accepted values true or false
+     * </p>
+     * 
+     * @return Enable cold storage option. Accepted values true or false
      */
 
     public Boolean getEnabled() {
@@ -39,7 +58,12 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Enable cold storage option. Accepted values true or false
+     * </p>
+     * 
      * @param enabled
+     *        Enable cold storage option. Accepted values true or false
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -49,7 +73,11 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * Enable cold storage option. Accepted values true or false
+     * </p>
+     * 
+     * @return Enable cold storage option. Accepted values true or false
      */
 
     public Boolean isEnabled() {

@@ -91,7 +91,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
     private Integer warmCount;
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      * </p>
      */
     private ColdStorageOptions coldStorageOptions;
@@ -670,11 +670,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      * </p>
      * 
      * @param coldStorageOptions
-     *        Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     *        Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      */
 
     public void setColdStorageOptions(ColdStorageOptions coldStorageOptions) {
@@ -683,10 +683,10 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      * </p>
      * 
-     * @return Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * @return Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      */
 
     public ColdStorageOptions getColdStorageOptions() {
@@ -695,11 +695,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      * </p>
      * 
      * @param coldStorageOptions
-     *        Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     *        Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

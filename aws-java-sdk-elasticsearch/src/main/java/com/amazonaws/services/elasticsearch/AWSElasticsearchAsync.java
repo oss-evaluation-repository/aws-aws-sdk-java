@@ -957,6 +957,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param listDomainNamesRequest
+     *        Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
      * @return A Java Future containing the result of the ListDomainNames operation returned by the service.
      * @sample AWSElasticsearchAsync.ListDomainNames
      */
@@ -968,6 +969,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param listDomainNamesRequest
+     *        Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

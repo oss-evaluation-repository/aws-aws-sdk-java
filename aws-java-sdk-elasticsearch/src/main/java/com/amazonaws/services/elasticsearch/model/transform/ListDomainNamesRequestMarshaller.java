@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListDomainNamesRequestMarshaller {
 
+    private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("engineType").build();
+
     private static final ListDomainNamesRequestMarshaller instance = new ListDomainNamesRequestMarshaller();
 
     public static ListDomainNamesRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class ListDomainNamesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listDomainNamesRequest.getEngineType(), ENGINETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

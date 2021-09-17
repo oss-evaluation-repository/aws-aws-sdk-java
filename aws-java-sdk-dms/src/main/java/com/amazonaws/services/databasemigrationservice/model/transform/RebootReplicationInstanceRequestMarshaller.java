@@ -31,6 +31,8 @@ public class RebootReplicationInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceArn").build();
     private static final MarshallingInfo<Boolean> FORCEFAILOVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceFailover").build();
+    private static final MarshallingInfo<Boolean> FORCEPLANNEDFAILOVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForcePlannedFailover").build();
 
     private static final RebootReplicationInstanceRequestMarshaller instance = new RebootReplicationInstanceRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class RebootReplicationInstanceRequestMarshaller {
         try {
             protocolMarshaller.marshall(rebootReplicationInstanceRequest.getReplicationInstanceArn(), REPLICATIONINSTANCEARN_BINDING);
             protocolMarshaller.marshall(rebootReplicationInstanceRequest.getForceFailover(), FORCEFAILOVER_BINDING);
+            protocolMarshaller.marshall(rebootReplicationInstanceRequest.getForcePlannedFailover(), FORCEPLANNEDFAILOVER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

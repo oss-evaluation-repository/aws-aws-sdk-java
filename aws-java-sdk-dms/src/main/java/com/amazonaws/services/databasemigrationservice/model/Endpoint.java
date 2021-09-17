@@ -185,8 +185,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
-     * must allow the <code>iam:PassRole</code> action.
+     * <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role. The
+     * role must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1234,8 +1234,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
-     * must allow the <code>iam:PassRole</code> action.
+     * <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role. The
+     * role must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1260,8 +1260,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
-     *        role must allow the <code>iam:PassRole</code> action.
+     *        <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The role must allow the <code>iam:PassRole</code> action.
      *        </p>
      *        </li>
      *        <li>
@@ -1293,8 +1293,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
-     * must allow the <code>iam:PassRole</code> action.
+     * <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role. The
+     * role must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1318,8 +1318,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
-     *         role must allow the <code>iam:PassRole</code> action.
+     *         <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role.
+     *         The role must allow the <code>iam:PassRole</code> action.
      *         </p>
      *         </li>
      *         <li>
@@ -1351,8 +1351,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
-     * must allow the <code>iam:PassRole</code> action.
+     * <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role. The
+     * role must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1377,8 +1377,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
-     *        role must allow the <code>iam:PassRole</code> action.
+     *        <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The role must allow the <code>iam:PassRole</code> action.
      *        </p>
      *        </li>
      *        <li>

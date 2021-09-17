@@ -322,6 +322,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * Creates a replication subnet group given a list of the subnet IDs in a VPC.
      * </p>
+     * <p>
+     * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
+     * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
+     * </p>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return A Java Future containing the result of the CreateReplicationSubnetGroup operation returned by the
@@ -336,6 +340,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     /**
      * <p>
      * Creates a replication subnet group given a list of the subnet IDs in a VPC.
+     * </p>
+     * <p>
+     * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
+     * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
      * </p>
      * 
      * @param createReplicationSubnetGroupRequest
@@ -1912,6 +1920,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * Reloads the target database table with the source data.
      * </p>
+     * <p>
+     * You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw
+     * an <code>InvalidResourceStateFault</code> exception.
+     * </p>
      * 
      * @param reloadTablesRequest
      * @return A Java Future containing the result of the ReloadTables operation returned by the service.
@@ -1924,6 +1936,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     /**
      * <p>
      * Reloads the target database table with the source data.
+     * </p>
+     * <p>
+     * You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw
+     * an <code>InvalidResourceStateFault</code> exception.
      * </p>
      * 
      * @param reloadTablesRequest

@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account.
+ * The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and
+ * their respective engine types.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,17 +26,17 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of domain names.
+     * List of domain names and respective engine types.
      * </p>
      */
     private java.util.List<DomainInfo> domainNames;
 
     /**
      * <p>
-     * List of domain names.
+     * List of domain names and respective engine types.
      * </p>
      * 
-     * @return List of domain names.
+     * @return List of domain names and respective engine types.
      */
 
     public java.util.List<DomainInfo> getDomainNames() {
@@ -44,11 +45,11 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of domain names.
+     * List of domain names and respective engine types.
      * </p>
      * 
      * @param domainNames
-     *        List of domain names.
+     *        List of domain names and respective engine types.
      */
 
     public void setDomainNames(java.util.Collection<DomainInfo> domainNames) {
@@ -62,7 +63,7 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of domain names.
+     * List of domain names and respective engine types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +72,7 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param domainNames
-     *        List of domain names.
+     *        List of domain names and respective engine types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +88,11 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of domain names.
+     * List of domain names and respective engine types.
      * </p>
      * 
      * @param domainNames
-     *        List of domain names.
+     *        List of domain names and respective engine types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

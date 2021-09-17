@@ -672,6 +672,7 @@ public interface AmazonOpenSearch {
      * </p>
      * 
      * @param listDomainNamesRequest
+     *        Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
      * @return Result of the ListDomainNames operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies settings for cold storage.
+ * Specifies the configuration for cold storage options such as enabled
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * True to enable cold storage for an Elasticsearch domain.
+     * Enable cold storage option. Accepted values true or false
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * True to enable cold storage for an Elasticsearch domain.
+     * Enable cold storage option. Accepted values true or false
      * </p>
      * 
      * @param enabled
-     *        True to enable cold storage for an Elasticsearch domain.
+     *        Enable cold storage option. Accepted values true or false
      */
 
     public void setEnabled(Boolean enabled) {
@@ -47,10 +47,10 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * True to enable cold storage for an Elasticsearch domain.
+     * Enable cold storage option. Accepted values true or false
      * </p>
      * 
-     * @return True to enable cold storage for an Elasticsearch domain.
+     * @return Enable cold storage option. Accepted values true or false
      */
 
     public Boolean getEnabled() {
@@ -59,11 +59,11 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * True to enable cold storage for an Elasticsearch domain.
+     * Enable cold storage option. Accepted values true or false
      * </p>
      * 
      * @param enabled
-     *        True to enable cold storage for an Elasticsearch domain.
+     *        Enable cold storage option. Accepted values true or false
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,10 +74,10 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * True to enable cold storage for an Elasticsearch domain.
+     * Enable cold storage option. Accepted values true or false
      * </p>
      * 
-     * @return True to enable cold storage for an Elasticsearch domain.
+     * @return Enable cold storage option. Accepted values true or false
      */
 
     public Boolean isEnabled() {
