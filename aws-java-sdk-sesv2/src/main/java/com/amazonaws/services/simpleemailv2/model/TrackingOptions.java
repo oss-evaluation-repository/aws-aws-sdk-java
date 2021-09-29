@@ -24,8 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * links, those links are changed slightly in order to track when recipients click them.
  * </p>
  * <p>
- * These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to
- * use a domain that you operate for these images and links.
+ * These images and links include references to a domain operated by Amazon Web Services. You can optionally configure
+ * the Amazon SES to use a domain that you operate for these images and links.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TrackingOptions" target="_top">AWS API
@@ -36,18 +36,18 @@ public class TrackingOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domain that you want to use for tracking open and click events.
+     * The domain to use for tracking open and click events.
      * </p>
      */
     private String customRedirectDomain;
 
     /**
      * <p>
-     * The domain that you want to use for tracking open and click events.
+     * The domain to use for tracking open and click events.
      * </p>
      * 
      * @param customRedirectDomain
-     *        The domain that you want to use for tracking open and click events.
+     *        The domain to use for tracking open and click events.
      */
 
     public void setCustomRedirectDomain(String customRedirectDomain) {
@@ -56,10 +56,10 @@ public class TrackingOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domain that you want to use for tracking open and click events.
+     * The domain to use for tracking open and click events.
      * </p>
      * 
-     * @return The domain that you want to use for tracking open and click events.
+     * @return The domain to use for tracking open and click events.
      */
 
     public String getCustomRedirectDomain() {
@@ -68,11 +68,11 @@ public class TrackingOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domain that you want to use for tracking open and click events.
+     * The domain to use for tracking open and click events.
      * </p>
      * 
      * @param customRedirectDomain
-     *        The domain that you want to use for tracking open and click events.
+     *        The domain to use for tracking open and click events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

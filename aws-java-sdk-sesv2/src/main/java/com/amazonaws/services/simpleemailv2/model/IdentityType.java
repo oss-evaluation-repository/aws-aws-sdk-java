@@ -15,21 +15,7 @@ package com.amazonaws.services.simpleemailv2.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The email identity type. The identity type can be one of the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>EMAIL_ADDRESS</code> – The identity is an email address.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DOMAIN</code> – The identity is a domain.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IdentityType {

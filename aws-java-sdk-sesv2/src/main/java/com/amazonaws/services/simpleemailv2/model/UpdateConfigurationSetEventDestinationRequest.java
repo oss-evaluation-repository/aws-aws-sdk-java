@@ -30,13 +30,13 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to modify.
+     * The name of the configuration set that contains the event destination to modify.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * The name of the event destination that you want to modify.
+     * The name of the event destination.
      * </p>
      */
     private String eventDestinationName;
@@ -49,11 +49,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to modify.
+     * The name of the configuration set that contains the event destination to modify.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to modify.
+     *        The name of the configuration set that contains the event destination to modify.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -62,10 +62,10 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to modify.
+     * The name of the configuration set that contains the event destination to modify.
      * </p>
      * 
-     * @return The name of the configuration set that contains the event destination that you want to modify.
+     * @return The name of the configuration set that contains the event destination to modify.
      */
 
     public String getConfigurationSetName() {
@@ -74,11 +74,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to modify.
+     * The name of the configuration set that contains the event destination to modify.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to modify.
+     *        The name of the configuration set that contains the event destination to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to modify.
+     * The name of the event destination.
      * </p>
      * 
      * @param eventDestinationName
-     *        The name of the event destination that you want to modify.
+     *        The name of the event destination.
      */
 
     public void setEventDestinationName(String eventDestinationName) {
@@ -102,10 +102,10 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to modify.
+     * The name of the event destination.
      * </p>
      * 
-     * @return The name of the event destination that you want to modify.
+     * @return The name of the event destination.
      */
 
     public String getEventDestinationName() {
@@ -114,11 +114,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to modify.
+     * The name of the event destination.
      * </p>
      * 
      * @param eventDestinationName
-     *        The name of the event destination that you want to modify.
+     *        The name of the event destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

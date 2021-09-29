@@ -52,33 +52,14 @@ import com.amazonaws.services.simpleemailv2.model.transform.*;
  * <p>
  * <fullname>Amazon SES API v2</fullname>
  * <p>
- * Welcome to the Amazon SES API v2 Reference. This guide provides information about the Amazon SES API v2, including
- * supported operations, data types, parameters, and schemas.
+ * <a href="http://aws.amazon.com/ses">Amazon SES</a> is an Amazon Web Services service that you can use to send email
+ * messages to your customers.
  * </p>
  * <p>
- * <a href="https://aws.amazon.com/pinpoint">Amazon SES</a> is an AWS service that you can use to send email messages to
- * your customers.
- * </p>
- * <p>
- * If you're new to Amazon SES API v2, you might find it helpful to also review the <a
+ * If you're new to Amazon SES API v2, you might find it helpful to review the <a
  * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon Simple Email Service Developer Guide</a>. The
  * <i>Amazon SES Developer Guide</i> provides information and code samples that demonstrate how to use Amazon SES API v2
  * features programmatically.
- * </p>
- * <p>
- * The Amazon SES API v2 is available in several AWS Regions and it provides an endpoint for each of these Regions. For
- * a list of all the Regions and endpoints where the API is currently available, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region">AWS Service Endpoints</a> in the <i>Amazon
- * Web Services General Reference</i>. To learn more about AWS Regions, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing AWS Regions</a> in the <i>Amazon Web
- * Services General Reference</i>.
- * </p>
- * <p>
- * In each Region, AWS maintains multiple Availability Zones. These Availability Zones are physically isolated from each
- * other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These
- * Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing
- * latency. To learn more about the number of Availability Zones that are available in each Region, see <a
- * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
  * </p>
  */
 @ThreadSafe
@@ -541,8 +522,9 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
     /**
      * <p>
      * Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are
-     * associated with your AWS account. You can associate a pool with a configuration set. When you send an email that
-     * uses that configuration set, the message is sent from one of the addresses in the associated pool.
+     * associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you
+     * send an email that uses that configuration set, the message is sent from one of the addresses in the associated
+     * pool.
      * </p>
      * 
      * @param createDedicatedIpPoolRequest
@@ -715,8 +697,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * Alternatively, you can perform the verification process by providing your own public-private key pair. This
      * verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
      * <code>CreateEmailIdentity</code> operation has to include the <code>DkimSigningAttributes</code> object. When you
-     * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
-     * that you want to use for DKIM authentication) and a private key.
+     * specify this object, you provide a selector (a component of the DNS record name that identifies the public key to
+     * use for DKIM authentication) and a private key.
      * </p>
      * <p>
      * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
@@ -1282,7 +1264,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -1696,8 +1678,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Obtain information about the email-sending status and capabilities of your Amazon SES account in the current AWS
-     * Region.
+     * Obtain information about the email-sending status and capabilities of your Amazon SES account in the current
+     * Amazon Web Services Region.
      * </p>
      * 
      * @param getAccountRequest
@@ -2216,7 +2198,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * List the dedicated IP addresses that are associated with your AWS account.
+     * List the dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      * 
      * @param getDedicatedIpsRequest
@@ -2284,18 +2266,19 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
-     * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
+     * that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the
+     * features and cost of a Deliverability dashboard subscription, see <a
+     * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param getDeliverabilityDashboardOptionsRequest
-     *        Retrieve information about the status of the Deliverability dashboard for your AWS account. When the
-     *        Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for
-     *        your domains. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services
+     *        account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and
+     *        other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.</p>
      *        <p>
      *        When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other
-     *        fees that you accrue by using Amazon SES and other AWS services. For more information about the features
-     *        and cost of a Deliverability dashboard subscription, see <a
+     *        fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information
+     *        about the features and cost of a Deliverability dashboard subscription, see <a
      *        href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
      * @return Result of the GetDeliverabilityDashboardOptions operation returned by the service.
      * @throws TooManyRequestsException
@@ -2898,7 +2881,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * </p>
      * 
      * @param listConfigurationSetsRequest
-     *        A request to obtain a list of configuration sets for your Amazon SES account in the current AWS Region.
+     *        A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web
+     *        Services Region.
      * @return Result of the ListConfigurationSets operation returned by the service.
      * @throws TooManyRequestsException
      *         Too many requests have been made to the operation.
@@ -3075,7 +3059,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Lists the existing custom verification email templates for your account in the current AWS Region.
+     * Lists the existing custom verification email templates for your account in the current Amazon Web Services
+     * Region.
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
@@ -3146,7 +3131,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * List all of the dedicated IP pools that exist in your AWS account in the current Region.
+     * List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region.
      * </p>
      * 
      * @param listDedicatedIpPoolsRequest
@@ -3340,15 +3325,15 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Returns a list of all of the email identities that are associated with your AWS account. An identity can be
-     * either an email address or a domain. This operation returns identities that are verified as well as those that
-     * aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.
+     * Returns a list of all of the email identities that are associated with your Amazon Web Services account. An
+     * identity can be either an email address or a domain. This operation returns identities that are verified as well
+     * as those that aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.
      * </p>
      * 
      * @param listEmailIdentitiesRequest
-     *        A request to list all of the email identities associated with your AWS account. This list includes
-     *        identities that you've already verified, identities that are unverified, and identities that were verified
-     *        in the past, but are no longer verified.
+     *        A request to list all of the email identities associated with your Amazon Web Services account. This list
+     *        includes identities that you've already verified, identities that are unverified, and identities that were
+     *        verified in the past, but are no longer verified.
      * @return Result of the ListEmailIdentities operation returned by the service.
      * @throws TooManyRequestsException
      *         Too many requests have been made to the operation.
@@ -3404,15 +3389,15 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Lists the email templates present in your Amazon SES account in the current AWS Region.
+     * Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listEmailTemplatesRequest
-     *        Represents a request to list the email templates present in your Amazon SES account in the current AWS
-     *        Region. For more information, see the <a
+     *        Represents a request to list the email templates present in your Amazon SES account in the current Amazon
+     *        Web Services Region. For more information, see the <a
      *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
      *        Developer Guide</a>.
      * @return Result of the ListEmailTemplates operation returned by the service.
@@ -3976,7 +3961,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
     /**
      * <p>
      * Enable or disable collection of reputation metrics for emails that you send using a particular configuration set
-     * in a specific AWS Region.
+     * in a specific Amazon Web Services Region.
      * </p>
      * 
      * @param putConfigurationSetReputationOptionsRequest
@@ -4041,7 +4026,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region.
+     * Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param putConfigurationSetSendingOptionsRequest
@@ -4241,7 +4227,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * </p>
      * <note>
      * <p>
-     * The dedicated IP address that you specify must already exist, and must be associated with your AWS account.
+     * The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web
+     * Services account.
      * </p>
      * <p>
      * The dedicated IP pool you specify must already exist. You can create a new pool by using the
@@ -4377,8 +4364,9 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
-     * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
+     * that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the
+     * features and cost of a Deliverability dashboard subscription, see <a
+     * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param putDeliverabilityDashboardOptionRequest
@@ -4387,8 +4375,8 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      *        Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p>
      *        <p>
      *        When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other
-     *        fees that you accrue by using Amazon SES and other AWS services. For more information about the features
-     *        and cost of a Deliverability dashboard subscription, see <a
+     *        fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information
+     *        about the features and cost of a Deliverability dashboard subscription, see <a
      *        href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
      * @return Result of the PutDeliverabilityDashboardOption operation returned by the service.
      * @throws AlreadyExistsException
@@ -4590,6 +4578,11 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
      * <li>
      * <p>
      * Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Update the key length that should be used for Easy DKIM.
      * </p>
      * </li>
      * <li>
@@ -4954,9 +4947,9 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and
-     * attempts to verify it. As a result of executing this operation, a customized verification email is sent to the
-     * specified address.
+     * Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services
+     * Region and attempts to verify it. As a result of executing this operation, a customized verification email is
+     * sent to the specified address.
      * </p>
      * <p>
      * To use this operation, you must first create a custom verification email template. For more information about
@@ -5037,7 +5030,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Sends an email message. You can use the Amazon SES API v2 to send two types of messages:
+     * Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:
      * </p>
      * <ul>
      * <li>

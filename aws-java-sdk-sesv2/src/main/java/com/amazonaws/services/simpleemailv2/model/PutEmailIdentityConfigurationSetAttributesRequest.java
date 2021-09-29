@@ -30,24 +30,24 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The email address or domain that you want to associate with a configuration set.
+     * The email address or domain to associate with a configuration set.
      * </p>
      */
     private String emailIdentity;
     /**
      * <p>
-     * The configuration set that you want to associate with an email identity.
+     * The configuration set to associate with an email identity.
      * </p>
      */
     private String configurationSetName;
 
     /**
      * <p>
-     * The email address or domain that you want to associate with a configuration set.
+     * The email address or domain to associate with a configuration set.
      * </p>
      * 
      * @param emailIdentity
-     *        The email address or domain that you want to associate with a configuration set.
+     *        The email address or domain to associate with a configuration set.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -56,10 +56,10 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The email address or domain that you want to associate with a configuration set.
+     * The email address or domain to associate with a configuration set.
      * </p>
      * 
-     * @return The email address or domain that you want to associate with a configuration set.
+     * @return The email address or domain to associate with a configuration set.
      */
 
     public String getEmailIdentity() {
@@ -68,11 +68,11 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The email address or domain that you want to associate with a configuration set.
+     * The email address or domain to associate with a configuration set.
      * </p>
      * 
      * @param emailIdentity
-     *        The email address or domain that you want to associate with a configuration set.
+     *        The email address or domain to associate with a configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The configuration set that you want to associate with an email identity.
+     * The configuration set to associate with an email identity.
      * </p>
      * 
      * @param configurationSetName
-     *        The configuration set that you want to associate with an email identity.
+     *        The configuration set to associate with an email identity.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -96,10 +96,10 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The configuration set that you want to associate with an email identity.
+     * The configuration set to associate with an email identity.
      * </p>
      * 
-     * @return The configuration set that you want to associate with an email identity.
+     * @return The configuration set to associate with an email identity.
      */
 
     public String getConfigurationSetName() {
@@ -108,11 +108,11 @@ public class PutEmailIdentityConfigurationSetAttributesRequest extends com.amazo
 
     /**
      * <p>
-     * The configuration set that you want to associate with an email identity.
+     * The configuration set to associate with an email identity.
      * </p>
      * 
      * @param configurationSetName
-     *        The configuration set that you want to associate with an email identity.
+     *        The configuration set to associate with an email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

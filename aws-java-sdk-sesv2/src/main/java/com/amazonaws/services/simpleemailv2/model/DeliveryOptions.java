@@ -38,7 +38,7 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
     private String tlsPolicy;
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      */
     private String sendingPoolName;
@@ -124,11 +124,11 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
      * @param sendingPoolName
-     *        The name of the dedicated IP pool that you want to associate with the configuration set.
+     *        The name of the dedicated IP pool to associate with the configuration set.
      */
 
     public void setSendingPoolName(String sendingPoolName) {
@@ -137,10 +137,10 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
-     * @return The name of the dedicated IP pool that you want to associate with the configuration set.
+     * @return The name of the dedicated IP pool to associate with the configuration set.
      */
 
     public String getSendingPoolName() {
@@ -149,11 +149,11 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
      * @param sendingPoolName
-     *        The name of the dedicated IP pool that you want to associate with the configuration set.
+     *        The name of the dedicated IP pool to associate with the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

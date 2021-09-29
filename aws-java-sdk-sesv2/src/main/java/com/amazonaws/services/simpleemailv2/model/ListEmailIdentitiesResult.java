@@ -29,7 +29,7 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array that includes all of the email identities associated with your AWS account.
+     * An array that includes all of the email identities associated with your Amazon Web Services account.
      * </p>
      */
     private java.util.List<IdentityInfo> emailIdentities;
@@ -44,10 +44,10 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array that includes all of the email identities associated with your AWS account.
+     * An array that includes all of the email identities associated with your Amazon Web Services account.
      * </p>
      * 
-     * @return An array that includes all of the email identities associated with your AWS account.
+     * @return An array that includes all of the email identities associated with your Amazon Web Services account.
      */
 
     public java.util.List<IdentityInfo> getEmailIdentities() {
@@ -56,11 +56,11 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array that includes all of the email identities associated with your AWS account.
+     * An array that includes all of the email identities associated with your Amazon Web Services account.
      * </p>
      * 
      * @param emailIdentities
-     *        An array that includes all of the email identities associated with your AWS account.
+     *        An array that includes all of the email identities associated with your Amazon Web Services account.
      */
 
     public void setEmailIdentities(java.util.Collection<IdentityInfo> emailIdentities) {
@@ -74,7 +74,7 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array that includes all of the email identities associated with your AWS account.
+     * An array that includes all of the email identities associated with your Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param emailIdentities
-     *        An array that includes all of the email identities associated with your AWS account.
+     *        An array that includes all of the email identities associated with your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class ListEmailIdentitiesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array that includes all of the email identities associated with your AWS account.
+     * An array that includes all of the email identities associated with your Amazon Web Services account.
      * </p>
      * 
      * @param emailIdentities
-     *        An array that includes all of the email identities associated with your AWS account.
+     *        An array that includes all of the email identities associated with your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

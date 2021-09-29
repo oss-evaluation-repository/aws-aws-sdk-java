@@ -68,13 +68,18 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private String functionName;
     /**
      * <p>
-     * If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * When true, the event source mapping is active. When false, Lambda pauses polling and invocation.
+     * </p>
+     * <p>
+     * Default: True
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
      * </p>
      * <ul>
      * <li>
@@ -108,8 +113,15 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer batchSize;
     /**
      * <p>
-     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
-     * seconds.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
@@ -417,11 +429,16 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * When true, the event source mapping is active. When false, Lambda pauses polling and invocation.
+     * </p>
+     * <p>
+     * Default: True
      * </p>
      * 
      * @param enabled
-     *        If true, the event source mapping is active. Set to false to pause polling and invocation.
+     *        When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+     *        <p>
+     *        Default: True
      */
 
     public void setEnabled(Boolean enabled) {
@@ -430,10 +447,15 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * When true, the event source mapping is active. When false, Lambda pauses polling and invocation.
+     * </p>
+     * <p>
+     * Default: True
      * </p>
      * 
-     * @return If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * @return When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+     *         <p>
+     *         Default: True
      */
 
     public Boolean getEnabled() {
@@ -442,11 +464,16 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * When true, the event source mapping is active. When false, Lambda pauses polling and invocation.
+     * </p>
+     * <p>
+     * Default: True
      * </p>
      * 
      * @param enabled
-     *        If true, the event source mapping is active. Set to false to pause polling and invocation.
+     *        When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+     *        <p>
+     *        Default: True
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,10 +484,15 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * When true, the event source mapping is active. When false, Lambda pauses polling and invocation.
+     * </p>
+     * <p>
+     * Default: True
      * </p>
      * 
-     * @return If true, the event source mapping is active. Set to false to pause polling and invocation.
+     * @return When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+     *         <p>
+     *         Default: True
      */
 
     public Boolean isEnabled() {
@@ -469,7 +501,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
      * </p>
      * <ul>
      * <li>
@@ -501,7 +535,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param batchSize
-     *        The maximum number of items to retrieve in a single batch.</p>
+     *        The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *        function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *        payload limit for synchronous invocation (6 MB).</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -537,7 +573,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
      * </p>
      * <ul>
      * <li>
@@ -568,7 +606,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The maximum number of items to retrieve in a single batch.</p>
+     * @return The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *         function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *         payload limit for synchronous invocation (6 MB).</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -604,7 +644,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
      * </p>
      * <ul>
      * <li>
@@ -636,7 +678,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param batchSize
-     *        The maximum number of items to retrieve in a single batch.</p>
+     *        The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *        function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *        payload limit for synchronous invocation (6 MB).</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -674,13 +718,26 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
-     * seconds.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
-     *        function, in seconds.
+     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *        gathering records before invoking the function.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -689,12 +746,25 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
-     * seconds.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
-     * @return (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
-     *         function, in seconds.
+     * @return (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *         gathering records before invoking the function.</p>
+     *         <p>
+     *         Default: 0
+     *         </p>
+     *         <p>
+     *         Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *         <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -703,13 +773,26 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
-     * seconds.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
-     *        function, in seconds.
+     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *        gathering records before invoking the function.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

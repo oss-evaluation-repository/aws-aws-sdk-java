@@ -30,24 +30,24 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to delete.
+     * The name of the configuration set that contains the event destination to delete.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * The name of the event destination that you want to delete.
+     * The name of the event destination to delete.
      * </p>
      */
     private String eventDestinationName;
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to delete.
+     * The name of the configuration set that contains the event destination to delete.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to delete.
+     *        The name of the configuration set that contains the event destination to delete.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -56,10 +56,10 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to delete.
+     * The name of the configuration set that contains the event destination to delete.
      * </p>
      * 
-     * @return The name of the configuration set that contains the event destination that you want to delete.
+     * @return The name of the configuration set that contains the event destination to delete.
      */
 
     public String getConfigurationSetName() {
@@ -68,11 +68,11 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to delete.
+     * The name of the configuration set that contains the event destination to delete.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to delete.
+     *        The name of the configuration set that contains the event destination to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to delete.
+     * The name of the event destination to delete.
      * </p>
      * 
      * @param eventDestinationName
-     *        The name of the event destination that you want to delete.
+     *        The name of the event destination to delete.
      */
 
     public void setEventDestinationName(String eventDestinationName) {
@@ -96,10 +96,10 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to delete.
+     * The name of the event destination to delete.
      * </p>
      * 
-     * @return The name of the event destination that you want to delete.
+     * @return The name of the event destination to delete.
      */
 
     public String getEventDestinationName() {
@@ -108,11 +108,11 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the event destination that you want to delete.
+     * The name of the event destination to delete.
      * </p>
      * 
      * @param eventDestinationName
-     *        The name of the event destination that you want to delete.
+     *        The name of the event destination to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

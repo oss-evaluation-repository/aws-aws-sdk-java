@@ -66,6 +66,18 @@ public class DkimAttributesJsonUnmarshaller implements Unmarshaller<DkimAttribut
                     context.nextToken();
                     dkimAttributes.setSigningAttributesOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NextSigningKeyLength", targetDepth)) {
+                    context.nextToken();
+                    dkimAttributes.setNextSigningKeyLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentSigningKeyLength", targetDepth)) {
+                    context.nextToken();
+                    dkimAttributes.setCurrentSigningKeyLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastKeyGenerationTimestamp", targetDepth)) {
+                    context.nextToken();
+                    dkimAttributes.setLastKeyGenerationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

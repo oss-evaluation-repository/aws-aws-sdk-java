@@ -33,6 +33,8 @@ public class ListLayersRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> COMPATIBLEARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("CompatibleArchitecture").build();
 
     private static final ListLayersRequestMarshaller instance = new ListLayersRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListLayersRequestMarshaller {
             protocolMarshaller.marshall(listLayersRequest.getCompatibleRuntime(), COMPATIBLERUNTIME_BINDING);
             protocolMarshaller.marshall(listLayersRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listLayersRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(listLayersRequest.getCompatibleArchitecture(), COMPATIBLEARCHITECTURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

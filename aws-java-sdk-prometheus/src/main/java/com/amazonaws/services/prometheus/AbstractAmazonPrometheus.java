@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.prometheus.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.prometheus.waiters.AmazonPrometheusWaiters;
 
 /**
  * Abstract implementation of {@code AmazonPrometheus}. Convenient method forms pass through to the corresponding
@@ -28,7 +29,27 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public CreateAlertManagerDefinitionResult createAlertManagerDefinition(CreateAlertManagerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRuleGroupsNamespaceResult createRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkspaceResult createWorkspace(CreateWorkspaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAlertManagerDefinitionResult deleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRuleGroupsNamespaceResult deleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +59,22 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public DescribeAlertManagerDefinitionResult describeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRuleGroupsNamespaceResult describeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeWorkspaceResult describeWorkspace(DescribeWorkspaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRuleGroupsNamespacesResult listRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +85,16 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
 
     @Override
     public ListWorkspacesResult listWorkspaces(ListWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAlertManagerDefinitionResult putAlertManagerDefinition(PutAlertManagerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRuleGroupsNamespaceResult putRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +120,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonPrometheusWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

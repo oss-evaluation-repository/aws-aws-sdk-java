@@ -80,6 +80,9 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
      * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
+     * <p>
+     * Note that Lambda configures the comparison using the <code>StringLike</code> operator.
+     * </p>
      */
     private String sourceArn;
     /**
@@ -431,10 +434,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
      * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
+     * <p>
+     * Note that Lambda configures the comparison using the <code>StringLike</code> operator.
+     * </p>
      * 
      * @param sourceArn
      *        For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
-     *        For example, an Amazon S3 bucket or Amazon SNS topic.
+     *        For example, an Amazon S3 bucket or Amazon SNS topic.</p>
+     *        <p>
+     *        Note that Lambda configures the comparison using the <code>StringLike</code> operator.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -446,9 +454,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
      * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
+     * <p>
+     * Note that Lambda configures the comparison using the <code>StringLike</code> operator.
+     * </p>
      * 
      * @return For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
-     *         For example, an Amazon S3 bucket or Amazon SNS topic.
+     *         For example, an Amazon S3 bucket or Amazon SNS topic.</p>
+     *         <p>
+     *         Note that Lambda configures the comparison using the <code>StringLike</code> operator.
      */
 
     public String getSourceArn() {
@@ -460,10 +473,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
      * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
+     * <p>
+     * Note that Lambda configures the comparison using the <code>StringLike</code> operator.
+     * </p>
      * 
      * @param sourceArn
      *        For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
-     *        For example, an Amazon S3 bucket or Amazon SNS topic.
+     *        For example, an Amazon S3 bucket or Amazon SNS topic.</p>
+     *        <p>
+     *        Note that Lambda configures the comparison using the <code>StringLike</code> operator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

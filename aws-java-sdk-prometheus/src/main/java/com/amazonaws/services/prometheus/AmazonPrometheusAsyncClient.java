@@ -76,6 +76,72 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAlertManagerDefinitionResult> createAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request) {
+
+        return createAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAlertManagerDefinitionResult> createAlertManagerDefinitionAsync(final CreateAlertManagerDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAlertManagerDefinitionRequest, CreateAlertManagerDefinitionResult> asyncHandler) {
+        final CreateAlertManagerDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAlertManagerDefinitionResult>() {
+            @Override
+            public CreateAlertManagerDefinitionResult call() throws Exception {
+                CreateAlertManagerDefinitionResult result = null;
+
+                try {
+                    result = executeCreateAlertManagerDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupsNamespaceResult> createRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request) {
+
+        return createRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupsNamespaceResult> createRuleGroupsNamespaceAsync(final CreateRuleGroupsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRuleGroupsNamespaceRequest, CreateRuleGroupsNamespaceResult> asyncHandler) {
+        final CreateRuleGroupsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRuleGroupsNamespaceResult>() {
+            @Override
+            public CreateRuleGroupsNamespaceResult call() throws Exception {
+                CreateRuleGroupsNamespaceResult result = null;
+
+                try {
+                    result = executeCreateRuleGroupsNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request) {
 
         return createWorkspaceAsync(request, null);
@@ -93,6 +159,72 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
 
                 try {
                     result = executeCreateWorkspace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertManagerDefinitionResult> deleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request) {
+
+        return deleteAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertManagerDefinitionResult> deleteAlertManagerDefinitionAsync(final DeleteAlertManagerDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAlertManagerDefinitionRequest, DeleteAlertManagerDefinitionResult> asyncHandler) {
+        final DeleteAlertManagerDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAlertManagerDefinitionResult>() {
+            @Override
+            public DeleteAlertManagerDefinitionResult call() throws Exception {
+                DeleteAlertManagerDefinitionResult result = null;
+
+                try {
+                    result = executeDeleteAlertManagerDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupsNamespaceResult> deleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request) {
+
+        return deleteRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupsNamespaceResult> deleteRuleGroupsNamespaceAsync(final DeleteRuleGroupsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupsNamespaceRequest, DeleteRuleGroupsNamespaceResult> asyncHandler) {
+        final DeleteRuleGroupsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRuleGroupsNamespaceResult>() {
+            @Override
+            public DeleteRuleGroupsNamespaceResult call() throws Exception {
+                DeleteRuleGroupsNamespaceResult result = null;
+
+                try {
+                    result = executeDeleteRuleGroupsNamespace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -142,6 +274,73 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAlertManagerDefinitionResult> describeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request) {
+
+        return describeAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAlertManagerDefinitionResult> describeAlertManagerDefinitionAsync(
+            final DescribeAlertManagerDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAlertManagerDefinitionRequest, DescribeAlertManagerDefinitionResult> asyncHandler) {
+        final DescribeAlertManagerDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAlertManagerDefinitionResult>() {
+            @Override
+            public DescribeAlertManagerDefinitionResult call() throws Exception {
+                DescribeAlertManagerDefinitionResult result = null;
+
+                try {
+                    result = executeDescribeAlertManagerDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupsNamespaceResult> describeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request) {
+
+        return describeRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupsNamespaceResult> describeRuleGroupsNamespaceAsync(final DescribeRuleGroupsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRuleGroupsNamespaceRequest, DescribeRuleGroupsNamespaceResult> asyncHandler) {
+        final DescribeRuleGroupsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRuleGroupsNamespaceResult>() {
+            @Override
+            public DescribeRuleGroupsNamespaceResult call() throws Exception {
+                DescribeRuleGroupsNamespaceResult result = null;
+
+                try {
+                    result = executeDescribeRuleGroupsNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeWorkspaceResult> describeWorkspaceAsync(DescribeWorkspaceRequest request) {
 
         return describeWorkspaceAsync(request, null);
@@ -159,6 +358,39 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
 
                 try {
                     result = executeDescribeWorkspace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsNamespacesResult> listRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request) {
+
+        return listRuleGroupsNamespacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsNamespacesResult> listRuleGroupsNamespacesAsync(final ListRuleGroupsNamespacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRuleGroupsNamespacesRequest, ListRuleGroupsNamespacesResult> asyncHandler) {
+        final ListRuleGroupsNamespacesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRuleGroupsNamespacesResult>() {
+            @Override
+            public ListRuleGroupsNamespacesResult call() throws Exception {
+                ListRuleGroupsNamespacesResult result = null;
+
+                try {
+                    result = executeListRuleGroupsNamespaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -225,6 +457,72 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
 
                 try {
                     result = executeListWorkspaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAlertManagerDefinitionResult> putAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request) {
+
+        return putAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAlertManagerDefinitionResult> putAlertManagerDefinitionAsync(final PutAlertManagerDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAlertManagerDefinitionRequest, PutAlertManagerDefinitionResult> asyncHandler) {
+        final PutAlertManagerDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAlertManagerDefinitionResult>() {
+            @Override
+            public PutAlertManagerDefinitionResult call() throws Exception {
+                PutAlertManagerDefinitionResult result = null;
+
+                try {
+                    result = executePutAlertManagerDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRuleGroupsNamespaceResult> putRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request) {
+
+        return putRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRuleGroupsNamespaceResult> putRuleGroupsNamespaceAsync(final PutRuleGroupsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRuleGroupsNamespaceRequest, PutRuleGroupsNamespaceResult> asyncHandler) {
+        final PutRuleGroupsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRuleGroupsNamespaceResult>() {
+            @Override
+            public PutRuleGroupsNamespaceResult call() throws Exception {
+                PutRuleGroupsNamespaceResult result = null;
+
+                try {
+                    result = executePutRuleGroupsNamespace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

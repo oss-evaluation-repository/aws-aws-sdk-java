@@ -33,7 +33,7 @@ public class DeleteEmailIdentityPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The email identity for which you want to delete a policy.
+     * The email identity.
      * </p>
      */
     private String emailIdentity;
@@ -50,11 +50,11 @@ public class DeleteEmailIdentityPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The email identity for which you want to delete a policy.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity for which you want to delete a policy.
+     *        The email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -63,10 +63,10 @@ public class DeleteEmailIdentityPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The email identity for which you want to delete a policy.
+     * The email identity.
      * </p>
      * 
-     * @return The email identity for which you want to delete a policy.
+     * @return The email identity.
      */
 
     public String getEmailIdentity() {
@@ -75,11 +75,11 @@ public class DeleteEmailIdentityPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The email identity for which you want to delete a policy.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity for which you want to delete a policy.
+     *        The email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

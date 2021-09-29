@@ -30,25 +30,8 @@ public class IdentityInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email identity type. The identity type can be one of the following:
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DOMAIN</code> – The identity is a domain.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String identityType;
     /**
@@ -71,44 +54,12 @@ public class IdentityInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email identity type. The identity type can be one of the following:
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DOMAIN</code> – The identity is a domain.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        The email identity type. The identity type can be one of the following:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DOMAIN</code> – The identity is a domain.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     *        </p>
-     *        </li>
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity
+     *        types.
      * @see IdentityType
      */
 
@@ -118,43 +69,11 @@ public class IdentityInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email identity type. The identity type can be one of the following:
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DOMAIN</code> – The identity is a domain.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The email identity type. The identity type can be one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DOMAIN</code> – The identity is a domain.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     *         </p>
-     *         </li>
+     * @return The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity
+     *         types.
      * @see IdentityType
      */
 
@@ -164,44 +83,12 @@ public class IdentityInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email identity type. The identity type can be one of the following:
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DOMAIN</code> – The identity is a domain.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        The email identity type. The identity type can be one of the following:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DOMAIN</code> – The identity is a domain.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     *        </p>
-     *        </li>
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -213,44 +100,12 @@ public class IdentityInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email identity type. The identity type can be one of the following:
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DOMAIN</code> – The identity is a domain.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        The email identity type. The identity type can be one of the following:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>EMAIL_ADDRESS</code> – The identity is an email address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DOMAIN</code> – The identity is a domain.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-     *        </p>
-     *        </li>
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */

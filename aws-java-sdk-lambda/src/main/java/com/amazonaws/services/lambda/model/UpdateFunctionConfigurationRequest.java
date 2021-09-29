@@ -158,7 +158,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * that override the values in the container image Docker file.
      * </p>
      */
     private ImageConfig imageConfig;
@@ -1118,12 +1118,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * that override the values in the container image Docker file.
      * </p>
      * 
      * @param imageConfig
      *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *        values</a> that override the values in the container image Dockerfile.
+     *        values</a> that override the values in the container image Docker file.
      */
 
     public void setImageConfig(ImageConfig imageConfig) {
@@ -1133,11 +1133,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * that override the values in the container image Docker file.
      * </p>
      * 
      * @return <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *         values</a> that override the values in the container image Dockerfile.
+     *         values</a> that override the values in the container image Docker file.
      */
 
     public ImageConfig getImageConfig() {
@@ -1147,12 +1147,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * that override the values in the container image Docker file.
      * </p>
      * 
      * @param imageConfig
      *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *        values</a> that override the values in the container image Dockerfile.
+     *        values</a> that override the values in the container image Docker file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

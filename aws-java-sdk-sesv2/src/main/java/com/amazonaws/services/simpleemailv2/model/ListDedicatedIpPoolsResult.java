@@ -28,7 +28,8 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current
+     * Region.
      * </p>
      */
     private java.util.List<String> dedicatedIpPools;
@@ -42,10 +43,12 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current
+     * Region.
      * </p>
      * 
-     * @return A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * @return A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the
+     *         current Region.
      */
 
     public java.util.List<String> getDedicatedIpPools() {
@@ -54,11 +57,13 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current
+     * Region.
      * </p>
      * 
      * @param dedicatedIpPools
-     *        A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     *        A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the
+     *        current Region.
      */
 
     public void setDedicatedIpPools(java.util.Collection<String> dedicatedIpPools) {
@@ -72,7 +77,8 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current
+     * Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +87,8 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dedicatedIpPools
-     *        A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     *        A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the
+     *        current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +104,13 @@ public class ListDedicatedIpPoolsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     * A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current
+     * Region.
      * </p>
      * 
      * @param dedicatedIpPools
-     *        A list of all of the dedicated IP pools that are associated with your AWS account in the current Region.
+     *        A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the
+     *        current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

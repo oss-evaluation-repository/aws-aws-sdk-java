@@ -56,6 +56,10 @@ public class DkimSigningAttributesJsonUnmarshaller implements Unmarshaller<DkimS
                     context.nextToken();
                     dkimSigningAttributes.setDomainSigningPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NextSigningKeyLength", targetDepth)) {
+                    context.nextToken();
+                    dkimSigningAttributes.setNextSigningKeyLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

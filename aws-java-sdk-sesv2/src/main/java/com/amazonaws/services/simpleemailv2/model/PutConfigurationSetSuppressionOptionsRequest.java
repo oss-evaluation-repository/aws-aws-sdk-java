@@ -30,7 +30,7 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to change the suppression list preferences for.
+     * The name of the configuration set to change the suppression list preferences for.
      * </p>
      */
     private String configurationSetName;
@@ -58,11 +58,11 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to change the suppression list preferences for.
+     * The name of the configuration set to change the suppression list preferences for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to change the suppression list preferences for.
+     *        The name of the configuration set to change the suppression list preferences for.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -71,10 +71,10 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to change the suppression list preferences for.
+     * The name of the configuration set to change the suppression list preferences for.
      * </p>
      * 
-     * @return The name of the configuration set that you want to change the suppression list preferences for.
+     * @return The name of the configuration set to change the suppression list preferences for.
      */
 
     public String getConfigurationSetName() {
@@ -83,11 +83,11 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to change the suppression list preferences for.
+     * The name of the configuration set to change the suppression list preferences for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to change the suppression list preferences for.
+     *        The name of the configuration set to change the suppression list preferences for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

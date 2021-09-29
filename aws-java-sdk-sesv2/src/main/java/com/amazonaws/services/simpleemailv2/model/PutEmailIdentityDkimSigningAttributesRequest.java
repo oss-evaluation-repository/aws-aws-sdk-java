@@ -30,13 +30,13 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The email identity that you want to configure DKIM for.
+     * The email identity.
      * </p>
      */
     private String emailIdentity;
     /**
      * <p>
-     * The method that you want to use to configure DKIM for the identity. There are two possible values:
+     * The method to use to configure DKIM for the identity. There are the following possible values:
      * </p>
      * <ul>
      * <li>
@@ -56,19 +56,19 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * An object that contains information about the private key and selector that you want to use to configure DKIM for
-     * the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM) for the
-     * identity.
+     * the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      */
     private DkimSigningAttributes signingAttributes;
 
     /**
      * <p>
-     * The email identity that you want to configure DKIM for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to configure DKIM for.
+     *        The email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -77,10 +77,10 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The email identity that you want to configure DKIM for.
+     * The email identity.
      * </p>
      * 
-     * @return The email identity that you want to configure DKIM for.
+     * @return The email identity.
      */
 
     public String getEmailIdentity() {
@@ -89,11 +89,11 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The email identity that you want to configure DKIM for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to configure DKIM for.
+     *        The email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +104,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The method that you want to use to configure DKIM for the identity. There are two possible values:
+     * The method to use to configure DKIM for the identity. There are the following possible values:
      * </p>
      * <ul>
      * <li>
@@ -121,7 +121,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        The method that you want to use to configure DKIM for the identity. There are two possible values:</p>
+     *        The method to use to configure DKIM for the identity. There are the following possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -143,7 +143,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The method that you want to use to configure DKIM for the identity. There are two possible values:
+     * The method to use to configure DKIM for the identity. There are the following possible values:
      * </p>
      * <ul>
      * <li>
@@ -159,7 +159,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
      * </li>
      * </ul>
      * 
-     * @return The method that you want to use to configure DKIM for the identity. There are two possible values:</p>
+     * @return The method to use to configure DKIM for the identity. There are the following possible values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -181,7 +181,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The method that you want to use to configure DKIM for the identity. There are two possible values:
+     * The method to use to configure DKIM for the identity. There are the following possible values:
      * </p>
      * <ul>
      * <li>
@@ -198,7 +198,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        The method that you want to use to configure DKIM for the identity. There are two possible values:</p>
+     *        The method to use to configure DKIM for the identity. There are the following possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -222,7 +222,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The method that you want to use to configure DKIM for the identity. There are two possible values:
+     * The method to use to configure DKIM for the identity. There are the following possible values:
      * </p>
      * <ul>
      * <li>
@@ -239,7 +239,7 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        The method that you want to use to configure DKIM for the identity. There are two possible values:</p>
+     *        The method to use to configure DKIM for the identity. There are the following possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -264,14 +264,14 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * An object that contains information about the private key and selector that you want to use to configure DKIM for
-     * the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM) for the
-     * identity.
+     * the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * 
      * @param signingAttributes
      *        An object that contains information about the private key and selector that you want to use to configure
-     *        DKIM for the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM)
-     *        for the identity.
+     *        DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to
+     *        be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      */
 
     public void setSigningAttributes(DkimSigningAttributes signingAttributes) {
@@ -281,13 +281,14 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * An object that contains information about the private key and selector that you want to use to configure DKIM for
-     * the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM) for the
-     * identity.
+     * the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * 
      * @return An object that contains information about the private key and selector that you want to use to configure
-     *         DKIM for the identity. This object is only required if you want to configure Bring Your Own DKIM
-     *         (BYODKIM) for the identity.
+     *         DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length
+     *         to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     *         DKIM</a>.
      */
 
     public DkimSigningAttributes getSigningAttributes() {
@@ -297,14 +298,14 @@ public class PutEmailIdentityDkimSigningAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * An object that contains information about the private key and selector that you want to use to configure DKIM for
-     * the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM) for the
-     * identity.
+     * the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * 
      * @param signingAttributes
      *        An object that contains information about the private key and selector that you want to use to configure
-     *        DKIM for the identity. This object is only required if you want to configure Bring Your Own DKIM (BYODKIM)
-     *        for the identity.
+     *        DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to
+     *        be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

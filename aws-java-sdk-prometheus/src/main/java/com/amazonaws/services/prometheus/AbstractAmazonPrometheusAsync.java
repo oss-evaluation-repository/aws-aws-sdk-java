@@ -28,6 +28,32 @@ public class AbstractAmazonPrometheusAsync extends AbstractAmazonPrometheus impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAlertManagerDefinitionResult> createAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request) {
+
+        return createAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAlertManagerDefinitionResult> createAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAlertManagerDefinitionRequest, CreateAlertManagerDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupsNamespaceResult> createRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request) {
+
+        return createRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupsNamespaceResult> createRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRuleGroupsNamespaceRequest, CreateRuleGroupsNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request) {
 
         return createWorkspaceAsync(request, null);
@@ -36,6 +62,32 @@ public class AbstractAmazonPrometheusAsync extends AbstractAmazonPrometheus impl
     @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkspaceRequest, CreateWorkspaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertManagerDefinitionResult> deleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request) {
+
+        return deleteAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertManagerDefinitionResult> deleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAlertManagerDefinitionRequest, DeleteAlertManagerDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupsNamespaceResult> deleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request) {
+
+        return deleteRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupsNamespaceResult> deleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupsNamespaceRequest, DeleteRuleGroupsNamespaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +106,32 @@ public class AbstractAmazonPrometheusAsync extends AbstractAmazonPrometheus impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAlertManagerDefinitionResult> describeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request) {
+
+        return describeAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAlertManagerDefinitionResult> describeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAlertManagerDefinitionRequest, DescribeAlertManagerDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupsNamespaceResult> describeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request) {
+
+        return describeRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupsNamespaceResult> describeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRuleGroupsNamespaceRequest, DescribeRuleGroupsNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeWorkspaceResult> describeWorkspaceAsync(DescribeWorkspaceRequest request) {
 
         return describeWorkspaceAsync(request, null);
@@ -62,6 +140,19 @@ public class AbstractAmazonPrometheusAsync extends AbstractAmazonPrometheus impl
     @Override
     public java.util.concurrent.Future<DescribeWorkspaceResult> describeWorkspaceAsync(DescribeWorkspaceRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceRequest, DescribeWorkspaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsNamespacesResult> listRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request) {
+
+        return listRuleGroupsNamespacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsNamespacesResult> listRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRuleGroupsNamespacesRequest, ListRuleGroupsNamespacesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,6 +179,32 @@ public class AbstractAmazonPrometheusAsync extends AbstractAmazonPrometheus impl
     @Override
     public java.util.concurrent.Future<ListWorkspacesResult> listWorkspacesAsync(ListWorkspacesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkspacesRequest, ListWorkspacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAlertManagerDefinitionResult> putAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request) {
+
+        return putAlertManagerDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAlertManagerDefinitionResult> putAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAlertManagerDefinitionRequest, PutAlertManagerDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRuleGroupsNamespaceResult> putRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request) {
+
+        return putRuleGroupsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRuleGroupsNamespaceResult> putRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRuleGroupsNamespaceRequest, PutRuleGroupsNamespaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

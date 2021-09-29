@@ -90,6 +90,8 @@ public class FunctionConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningProfileVersionArn").build();
     private static final MarshallingInfo<String> SIGNINGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningJobArn").build();
+    private static final MarshallingInfo<List> ARCHITECTURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Architectures").build();
 
     private static final FunctionConfigurationMarshaller instance = new FunctionConfigurationMarshaller();
 
@@ -138,6 +140,7 @@ public class FunctionConfigurationMarshaller {
             protocolMarshaller.marshall(functionConfiguration.getImageConfigResponse(), IMAGECONFIGRESPONSE_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getSigningProfileVersionArn(), SIGNINGPROFILEVERSIONARN_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getSigningJobArn(), SIGNINGJOBARN_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getArchitectures(), ARCHITECTURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

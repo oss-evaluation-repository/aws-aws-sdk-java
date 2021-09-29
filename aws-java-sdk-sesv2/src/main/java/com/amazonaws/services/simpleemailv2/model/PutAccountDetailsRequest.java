@@ -60,7 +60,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<String> additionalContactEmailAddresses;
     /**
      * <p>
-     * Indicates whether or not your account should have production access in the current AWS Region.
+     * Indicates whether or not your account should have production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -349,7 +349,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether or not your account should have production access in the current AWS Region.
+     * Indicates whether or not your account should have production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -364,7 +364,8 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param productionAccessEnabled
-     *        Indicates whether or not your account should have production access in the current AWS Region.</p>
+     *        Indicates whether or not your account should have production access in the current Amazon Web Services
+     *        Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -383,7 +384,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether or not your account should have production access in the current AWS Region.
+     * Indicates whether or not your account should have production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -397,7 +398,8 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * on your specific use case.
      * </p>
      * 
-     * @return Indicates whether or not your account should have production access in the current AWS Region.</p>
+     * @return Indicates whether or not your account should have production access in the current Amazon Web Services
+     *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -416,7 +418,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether or not your account should have production access in the current AWS Region.
+     * Indicates whether or not your account should have production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -431,7 +433,8 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param productionAccessEnabled
-     *        Indicates whether or not your account should have production access in the current AWS Region.</p>
+     *        Indicates whether or not your account should have production access in the current Amazon Web Services
+     *        Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -452,7 +455,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether or not your account should have production access in the current AWS Region.
+     * Indicates whether or not your account should have production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -466,7 +469,8 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * on your specific use case.
      * </p>
      * 
-     * @return Indicates whether or not your account should have production access in the current AWS Region.</p>
+     * @return Indicates whether or not your account should have production access in the current Amazon Web Services
+     *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails

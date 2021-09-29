@@ -30,7 +30,7 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to associate with a dedicated IP pool.
+     * The name of the configuration set to associate with a dedicated IP pool.
      * </p>
      */
     private String configurationSetName;
@@ -44,18 +44,18 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
     private String tlsPolicy;
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      */
     private String sendingPoolName;
 
     /**
      * <p>
-     * The name of the configuration set that you want to associate with a dedicated IP pool.
+     * The name of the configuration set to associate with a dedicated IP pool.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to associate with a dedicated IP pool.
+     *        The name of the configuration set to associate with a dedicated IP pool.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -64,10 +64,10 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to associate with a dedicated IP pool.
+     * The name of the configuration set to associate with a dedicated IP pool.
      * </p>
      * 
-     * @return The name of the configuration set that you want to associate with a dedicated IP pool.
+     * @return The name of the configuration set to associate with a dedicated IP pool.
      */
 
     public String getConfigurationSetName() {
@@ -76,11 +76,11 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to associate with a dedicated IP pool.
+     * The name of the configuration set to associate with a dedicated IP pool.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to associate with a dedicated IP pool.
+     *        The name of the configuration set to associate with a dedicated IP pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
      * @param sendingPoolName
-     *        The name of the dedicated IP pool that you want to associate with the configuration set.
+     *        The name of the dedicated IP pool to associate with the configuration set.
      */
 
     public void setSendingPoolName(String sendingPoolName) {
@@ -183,10 +183,10 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
-     * @return The name of the dedicated IP pool that you want to associate with the configuration set.
+     * @return The name of the dedicated IP pool to associate with the configuration set.
      */
 
     public String getSendingPoolName() {
@@ -195,11 +195,11 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the dedicated IP pool that you want to associate with the configuration set.
+     * The name of the dedicated IP pool to associate with the configuration set.
      * </p>
      * 
      * @param sendingPoolName
-     *        The name of the dedicated IP pool that you want to associate with the configuration set.
+     *        The name of the dedicated IP pool to associate with the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,8 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the configuration set.
+     * The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters,
+     * numbers, hyphens (-) and underscores (_) only.
      * </p>
      */
     private String configurationSetName;
@@ -62,7 +63,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     private SendingOptions sendingOptions;
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * An array of objects that define the tags (keys and values) to associate with the configuration set.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -71,11 +72,13 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the configuration set.
+     * The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters,
+     * numbers, hyphens (-) and underscores (_) only.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set.
+     *        The name of the configuration set. The name can contain up to 64 alphanumeric characters, including
+     *        letters, numbers, hyphens (-) and underscores (_) only.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -84,10 +87,12 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the configuration set.
+     * The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters,
+     * numbers, hyphens (-) and underscores (_) only.
      * </p>
      * 
-     * @return The name of the configuration set.
+     * @return The name of the configuration set. The name can contain up to 64 alphanumeric characters, including
+     *         letters, numbers, hyphens (-) and underscores (_) only.
      */
 
     public String getConfigurationSetName() {
@@ -96,11 +101,13 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the configuration set.
+     * The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters,
+     * numbers, hyphens (-) and underscores (_) only.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set.
+     *        The name of the configuration set. The name can contain up to 64 alphanumeric characters, including
+     *        letters, numbers, hyphens (-) and underscores (_) only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +294,10 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * An array of objects that define the tags (keys and values) to associate with the configuration set.
      * </p>
      * 
-     * @return An array of objects that define the tags (keys and values) that you want to associate with the
-     *         configuration set.
+     * @return An array of objects that define the tags (keys and values) to associate with the configuration set.
      */
 
     public java.util.List<Tag> getTags() {
@@ -300,12 +306,11 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * An array of objects that define the tags (keys and values) to associate with the configuration set.
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the
-     *        configuration set.
+     *        An array of objects that define the tags (keys and values) to associate with the configuration set.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -319,7 +324,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * An array of objects that define the tags (keys and values) to associate with the configuration set.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -328,8 +333,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the
-     *        configuration set.
+     *        An array of objects that define the tags (keys and values) to associate with the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,12 +349,11 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * An array of objects that define the tags (keys and values) to associate with the configuration set.
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the
-     *        configuration set.
+     *        An array of objects that define the tags (keys and values) to associate with the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

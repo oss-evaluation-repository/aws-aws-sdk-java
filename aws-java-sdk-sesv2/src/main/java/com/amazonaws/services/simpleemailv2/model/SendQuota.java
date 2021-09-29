@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An object that contains information about the per-day and per-second sending limits for your Amazon SES account in
- * the current AWS Region.
+ * the current Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendQuota" target="_top">AWS API
@@ -31,34 +31,35 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is
-     * also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
+     * This value is also called your <i>sending quota</i>.
      * </p>
      */
     private Double max24HourSend;
     /**
      * <p>
-     * The maximum number of emails that you can send per second in the current AWS Region. This value is also called
-     * your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     * The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value
+     * is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
      * </p>
      */
     private Double maxSendRate;
     /**
      * <p>
-     * The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     * The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24
+     * hours.
      * </p>
      */
     private Double sentLast24Hours;
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is
-     * also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
+     * This value is also called your <i>sending quota</i>.
      * </p>
      * 
      * @param max24HourSend
-     *        The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value
-     *        is also called your <i>sending quota</i>.
+     *        The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
+     *        period. This value is also called your <i>sending quota</i>.
      */
 
     public void setMax24HourSend(Double max24HourSend) {
@@ -67,12 +68,12 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is
-     * also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
+     * This value is also called your <i>sending quota</i>.
      * </p>
      * 
-     * @return The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This
-     *         value is also called your <i>sending quota</i>.
+     * @return The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
+     *         period. This value is also called your <i>sending quota</i>.
      */
 
     public Double getMax24HourSend() {
@@ -81,13 +82,13 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is
-     * also called your <i>sending quota</i>.
+     * The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period.
+     * This value is also called your <i>sending quota</i>.
      * </p>
      * 
      * @param max24HourSend
-     *        The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value
-     *        is also called your <i>sending quota</i>.
+     *        The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour
+     *        period. This value is also called your <i>sending quota</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +99,14 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send per second in the current AWS Region. This value is also called
-     * your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     * The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value
+     * is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
      * </p>
      * 
      * @param maxSendRate
-     *        The maximum number of emails that you can send per second in the current AWS Region. This value is also
-     *        called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     *        The maximum number of emails that you can send per second in the current Amazon Web Services Region. This
+     *        value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second)
+     *        rate</i>.
      */
 
     public void setMaxSendRate(Double maxSendRate) {
@@ -113,12 +115,13 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send per second in the current AWS Region. This value is also called
-     * your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     * The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value
+     * is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
      * </p>
      * 
-     * @return The maximum number of emails that you can send per second in the current AWS Region. This value is also
-     *         called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     * @return The maximum number of emails that you can send per second in the current Amazon Web Services Region. This
+     *         value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second)
+     *         rate</i>.
      */
 
     public Double getMaxSendRate() {
@@ -127,13 +130,14 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of emails that you can send per second in the current AWS Region. This value is also called
-     * your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     * The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value
+     * is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
      * </p>
      * 
      * @param maxSendRate
-     *        The maximum number of emails that you can send per second in the current AWS Region. This value is also
-     *        called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.
+     *        The maximum number of emails that you can send per second in the current Amazon Web Services Region. This
+     *        value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second)
+     *        rate</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +148,13 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     * The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24
+     * hours.
      * </p>
      * 
      * @param sentLast24Hours
-     *        The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     *        The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
+     *        past 24 hours.
      */
 
     public void setSentLast24Hours(Double sentLast24Hours) {
@@ -157,10 +163,12 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     * The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24
+     * hours.
      * </p>
      * 
-     * @return The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     * @return The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
+     *         past 24 hours.
      */
 
     public Double getSentLast24Hours() {
@@ -169,11 +177,13 @@ public class SendQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     * The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24
+     * hours.
      * </p>
      * 
      * @param sentLast24Hours
-     *        The number of emails sent from your Amazon SES account in the current AWS Region over the past 24 hours.
+     *        The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
+     *        past 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

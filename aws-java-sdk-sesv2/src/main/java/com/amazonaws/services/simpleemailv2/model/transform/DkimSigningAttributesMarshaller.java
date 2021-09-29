@@ -31,6 +31,8 @@ public class DkimSigningAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSigningSelector").build();
     private static final MarshallingInfo<String> DOMAINSIGNINGPRIVATEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSigningPrivateKey").build();
+    private static final MarshallingInfo<String> NEXTSIGNINGKEYLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextSigningKeyLength").build();
 
     private static final DkimSigningAttributesMarshaller instance = new DkimSigningAttributesMarshaller();
 
@@ -50,6 +52,7 @@ public class DkimSigningAttributesMarshaller {
         try {
             protocolMarshaller.marshall(dkimSigningAttributes.getDomainSigningSelector(), DOMAINSIGNINGSELECTOR_BINDING);
             protocolMarshaller.marshall(dkimSigningAttributes.getDomainSigningPrivateKey(), DOMAINSIGNINGPRIVATEKEY_BINDING);
+            protocolMarshaller.marshall(dkimSigningAttributes.getNextSigningKeyLength(), NEXTSIGNINGKEYLENGTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

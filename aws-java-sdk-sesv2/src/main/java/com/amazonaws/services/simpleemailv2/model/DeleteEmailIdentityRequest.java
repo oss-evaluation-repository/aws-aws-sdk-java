@@ -32,18 +32,18 @@ public class DeleteEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (that is, the email address or domain) that you want to delete.
+     * The identity (that is, the email address or domain) to delete.
      * </p>
      */
     private String emailIdentity;
 
     /**
      * <p>
-     * The identity (that is, the email address or domain) that you want to delete.
+     * The identity (that is, the email address or domain) to delete.
      * </p>
      * 
      * @param emailIdentity
-     *        The identity (that is, the email address or domain) that you want to delete.
+     *        The identity (that is, the email address or domain) to delete.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -52,10 +52,10 @@ public class DeleteEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (that is, the email address or domain) that you want to delete.
+     * The identity (that is, the email address or domain) to delete.
      * </p>
      * 
-     * @return The identity (that is, the email address or domain) that you want to delete.
+     * @return The identity (that is, the email address or domain) to delete.
      */
 
     public String getEmailIdentity() {
@@ -64,11 +64,11 @@ public class DeleteEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (that is, the email address or domain) that you want to delete.
+     * The identity (that is, the email address or domain) to delete.
      * </p>
      * 
      * @param emailIdentity
-     *        The identity (that is, the email address or domain) that you want to delete.
+     *        The identity (that is, the email address or domain) to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

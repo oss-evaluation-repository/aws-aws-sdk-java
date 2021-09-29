@@ -220,6 +220,13 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String signingJobArn;
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> architectures;
 
     /**
      * <p>
@@ -1800,6 +1807,117 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @return The instruction set architecture that the function supports. Architecture is a string array with one of
+     *         the valid values. The default architecture value is <code>x86_64</code>.
+     * @see Architecture
+     */
+
+    public java.util.List<String> getArchitectures() {
+        if (architectures == null) {
+            architectures = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return architectures;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Architecture is a string array with one of
+     *        the valid values. The default architecture value is <code>x86_64</code>.
+     * @see Architecture
+     */
+
+    public void setArchitectures(java.util.Collection<String> architectures) {
+        if (architectures == null) {
+            this.architectures = null;
+            return;
+        }
+
+        this.architectures = new com.amazonaws.internal.SdkInternalList<String>(architectures);
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArchitectures(java.util.Collection)} or {@link #withArchitectures(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Architecture is a string array with one of
+     *        the valid values. The default architecture value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public GetFunctionConfigurationResult withArchitectures(String... architectures) {
+        if (this.architectures == null) {
+            setArchitectures(new com.amazonaws.internal.SdkInternalList<String>(architectures.length));
+        }
+        for (String ele : architectures) {
+            this.architectures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Architecture is a string array with one of
+     *        the valid values. The default architecture value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public GetFunctionConfigurationResult withArchitectures(java.util.Collection<String> architectures) {
+        setArchitectures(architectures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Architecture is a string array with one of the valid
+     * values. The default architecture value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Architecture is a string array with one of
+     *        the valid values. The default architecture value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public GetFunctionConfigurationResult withArchitectures(Architecture... architectures) {
+        com.amazonaws.internal.SdkInternalList<String> architecturesCopy = new com.amazonaws.internal.SdkInternalList<String>(architectures.length);
+        for (Architecture value : architectures) {
+            architecturesCopy.add(value.toString());
+        }
+        if (getArchitectures() == null) {
+            setArchitectures(architecturesCopy);
+        } else {
+            getArchitectures().addAll(architecturesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1872,7 +1990,9 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
         if (getSigningProfileVersionArn() != null)
             sb.append("SigningProfileVersionArn: ").append(getSigningProfileVersionArn()).append(",");
         if (getSigningJobArn() != null)
-            sb.append("SigningJobArn: ").append(getSigningJobArn());
+            sb.append("SigningJobArn: ").append(getSigningJobArn()).append(",");
+        if (getArchitectures() != null)
+            sb.append("Architectures: ").append(getArchitectures());
         sb.append("}");
         return sb.toString();
     }
@@ -2011,6 +2131,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSigningJobArn() != null && other.getSigningJobArn().equals(this.getSigningJobArn()) == false)
             return false;
+        if (other.getArchitectures() == null ^ this.getArchitectures() == null)
+            return false;
+        if (other.getArchitectures() != null && other.getArchitectures().equals(this.getArchitectures()) == false)
+            return false;
         return true;
     }
 
@@ -2050,6 +2174,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getImageConfigResponse() == null) ? 0 : getImageConfigResponse().hashCode());
         hashCode = prime * hashCode + ((getSigningProfileVersionArn() == null) ? 0 : getSigningProfileVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
+        hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
         return hashCode;
     }
 

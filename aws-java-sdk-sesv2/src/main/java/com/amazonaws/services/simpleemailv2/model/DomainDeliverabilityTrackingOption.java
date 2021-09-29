@@ -33,8 +33,8 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard
-     * subscription.
+     * A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     * Deliverability dashboard subscription.
      * </p>
      */
     private String domain;
@@ -53,13 +53,13 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard
-     * subscription.
+     * A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     * Deliverability dashboard subscription.
      * </p>
      * 
      * @param domain
-     *        A verified domain that’s associated with your AWS account and currently has an active Deliverability
-     *        dashboard subscription.
+     *        A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     *        Deliverability dashboard subscription.
      */
 
     public void setDomain(String domain) {
@@ -68,12 +68,12 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard
-     * subscription.
+     * A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     * Deliverability dashboard subscription.
      * </p>
      * 
-     * @return A verified domain that’s associated with your AWS account and currently has an active Deliverability
-     *         dashboard subscription.
+     * @return A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     *         Deliverability dashboard subscription.
      */
 
     public String getDomain() {
@@ -82,13 +82,13 @@ public class DomainDeliverabilityTrackingOption implements Serializable, Cloneab
 
     /**
      * <p>
-     * A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard
-     * subscription.
+     * A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     * Deliverability dashboard subscription.
      * </p>
      * 
      * @param domain
-     *        A verified domain that’s associated with your AWS account and currently has an active Deliverability
-     *        dashboard subscription.
+     *        A verified domain that’s associated with your Amazon Web Services account and currently has an active
+     *        Deliverability dashboard subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,14 +50,30 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private java.util.Date startingPositionTimestamp;
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
+     * </p>
+     * <p>
+     * Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      */
     private Integer batchSize;
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
@@ -319,11 +335,29 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
+     * </p>
+     * <p>
+     * Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param batchSize
-     *        The maximum number of items to retrieve in a single batch.
+     *        The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *        function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *        payload limit for synchronous invocation (6 MB).</p>
+     *        <p>
+     *        Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default
+     *        is 100.
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -332,10 +366,28 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
+     * </p>
+     * <p>
+     * Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
-     * @return The maximum number of items to retrieve in a single batch.
+     * @return The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *         function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *         payload limit for synchronous invocation (6 MB).</p>
+     *         <p>
+     *         Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default
+     *         is 100.
+     *         </p>
+     *         <p>
+     *         Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *         <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public Integer getBatchSize() {
@@ -344,11 +396,29 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The maximum number of items to retrieve in a single batch.
+     * The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     * function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit
+     * for synchronous invocation (6 MB).
+     * </p>
+     * <p>
+     * Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param batchSize
-     *        The maximum number of items to retrieve in a single batch.
+     *        The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
+     *        function. Lambda passes all of the records in the batch to the function in a single call, up to the
+     *        payload limit for synchronous invocation (6 MB).</p>
+     *        <p>
+     *        Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default
+     *        is 100.
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,13 +429,26 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     *        function, in seconds. The default value is zero.
+     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *        gathering records before invoking the function.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -374,12 +457,25 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
-     * @return (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     *         function, in seconds. The default value is zero.
+     * @return (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *         gathering records before invoking the function.</p>
+     *         <p>
+     *         Default: 0
+     *         </p>
+     *         <p>
+     *         Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *         <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -388,13 +484,26 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.
+     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
+     * records before invoking the function.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the
-     *        function, in seconds. The default value is zero.
+     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
+     *        gathering records before invoking the function.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
+     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

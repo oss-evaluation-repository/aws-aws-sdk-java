@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class UpdateFunctionCodeRequestMarshaller {
             .marshallLocationName("DryRun").build();
     private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
+    private static final MarshallingInfo<List> ARCHITECTURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Architectures").build();
 
     private static final UpdateFunctionCodeRequestMarshaller instance = new UpdateFunctionCodeRequestMarshaller();
 
@@ -71,6 +74,7 @@ public class UpdateFunctionCodeRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionCodeRequest.getPublish(), PUBLISH_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getDryRun(), DRYRUN_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getRevisionId(), REVISIONID_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getArchitectures(), ARCHITECTURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

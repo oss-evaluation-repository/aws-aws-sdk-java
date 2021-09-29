@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM).
+ * An object that contains configuration for Bring Your Own DKIM (BYODKIM), or, for Easy DKIM
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimSigningAttributes" target="_top">AWS API
@@ -30,27 +30,33 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A string that's used to identify a public key in the DNS configuration for a domain.
+     * [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      * </p>
      */
     private String domainSigningSelector;
     /**
      * <p>
-     * A private key that's used to generate a DKIM signature.
+     * [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.
      * </p>
      * <p>
-     * The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     * The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      * </p>
      */
     private String domainSigningPrivateKey;
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     */
+    private String nextSigningKeyLength;
 
     /**
      * <p>
-     * A string that's used to identify a public key in the DNS configuration for a domain.
+     * [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      * </p>
      * 
      * @param domainSigningSelector
-     *        A string that's used to identify a public key in the DNS configuration for a domain.
+     *        [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      */
 
     public void setDomainSigningSelector(String domainSigningSelector) {
@@ -59,10 +65,11 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A string that's used to identify a public key in the DNS configuration for a domain.
+     * [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      * </p>
      * 
-     * @return A string that's used to identify a public key in the DNS configuration for a domain.
+     * @return [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a
+     *         domain.
      */
 
     public String getDomainSigningSelector() {
@@ -71,11 +78,11 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A string that's used to identify a public key in the DNS configuration for a domain.
+     * [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      * </p>
      * 
      * @param domainSigningSelector
-     *        A string that's used to identify a public key in the DNS configuration for a domain.
+     *        [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,16 +93,16 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A private key that's used to generate a DKIM signature.
+     * [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.
      * </p>
      * <p>
-     * The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     * The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      * </p>
      * 
      * @param domainSigningPrivateKey
-     *        A private key that's used to generate a DKIM signature.</p>
+     *        [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
      *        <p>
-     *        The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     *        The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      */
 
     public void setDomainSigningPrivateKey(String domainSigningPrivateKey) {
@@ -104,15 +111,15 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A private key that's used to generate a DKIM signature.
+     * [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.
      * </p>
      * <p>
-     * The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     * The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      * </p>
      * 
-     * @return A private key that's used to generate a DKIM signature.</p>
+     * @return [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
      *         <p>
-     *         The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     *         The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      */
 
     public String getDomainSigningPrivateKey() {
@@ -121,21 +128,84 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A private key that's used to generate a DKIM signature.
+     * [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.
      * </p>
      * <p>
-     * The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     * The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      * </p>
      * 
      * @param domainSigningPrivateKey
-     *        A private key that's used to generate a DKIM signature.</p>
+     *        [Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
      *        <p>
-     *        The private key must use 1024-bit RSA encryption, and must be encoded using base64 encoding.
+     *        The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DkimSigningAttributes withDomainSigningPrivateKey(String domainSigningPrivateKey) {
         setDomainSigningPrivateKey(domainSigningPrivateKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @see DkimSigningKeyLength
+     */
+
+    public void setNextSigningKeyLength(String nextSigningKeyLength) {
+        this.nextSigningKeyLength = nextSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @return [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *         per day.
+     * @see DkimSigningKeyLength
+     */
+
+    public String getNextSigningKeyLength() {
+        return this.nextSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimSigningAttributes withNextSigningKeyLength(String nextSigningKeyLength) {
+        setNextSigningKeyLength(nextSigningKeyLength);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimSigningAttributes withNextSigningKeyLength(DkimSigningKeyLength nextSigningKeyLength) {
+        this.nextSigningKeyLength = nextSigningKeyLength.toString();
         return this;
     }
 
@@ -154,7 +224,9 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
         if (getDomainSigningSelector() != null)
             sb.append("DomainSigningSelector: ").append(getDomainSigningSelector()).append(",");
         if (getDomainSigningPrivateKey() != null)
-            sb.append("DomainSigningPrivateKey: ").append("***Sensitive Data Redacted***");
+            sb.append("DomainSigningPrivateKey: ").append("***Sensitive Data Redacted***").append(",");
+        if (getNextSigningKeyLength() != null)
+            sb.append("NextSigningKeyLength: ").append(getNextSigningKeyLength());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +249,10 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
             return false;
         if (other.getDomainSigningPrivateKey() != null && other.getDomainSigningPrivateKey().equals(this.getDomainSigningPrivateKey()) == false)
             return false;
+        if (other.getNextSigningKeyLength() == null ^ this.getNextSigningKeyLength() == null)
+            return false;
+        if (other.getNextSigningKeyLength() != null && other.getNextSigningKeyLength().equals(this.getNextSigningKeyLength()) == false)
+            return false;
         return true;
     }
 
@@ -187,6 +263,7 @@ public class DkimSigningAttributes implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getDomainSigningSelector() == null) ? 0 : getDomainSigningSelector().hashCode());
         hashCode = prime * hashCode + ((getDomainSigningPrivateKey() == null) ? 0 : getDomainSigningPrivateKey().hashCode());
+        hashCode = prime * hashCode + ((getNextSigningKeyLength() == null) ? 0 : getNextSigningKeyLength().hashCode());
         return hashCode;
     }
 

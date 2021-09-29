@@ -32,7 +32,7 @@ public class UpdateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the template you want to update.
+     * The name of the template.
      * </p>
      */
     private String templateName;
@@ -45,11 +45,11 @@ public class UpdateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the template you want to update.
+     * The name of the template.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to update.
+     *        The name of the template.
      */
 
     public void setTemplateName(String templateName) {
@@ -58,10 +58,10 @@ public class UpdateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the template you want to update.
+     * The name of the template.
      * </p>
      * 
-     * @return The name of the template you want to update.
+     * @return The name of the template.
      */
 
     public String getTemplateName() {
@@ -70,11 +70,11 @@ public class UpdateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the template you want to update.
+     * The name of the template.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to update.
+     *        The name of the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

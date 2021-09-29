@@ -36,6 +36,12 @@ public class DkimAttributesMarshaller {
             .marshallLocationName("Tokens").build();
     private static final MarshallingInfo<String> SIGNINGATTRIBUTESORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAttributesOrigin").build();
+    private static final MarshallingInfo<String> NEXTSIGNINGKEYLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextSigningKeyLength").build();
+    private static final MarshallingInfo<String> CURRENTSIGNINGKEYLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentSigningKeyLength").build();
+    private static final MarshallingInfo<java.util.Date> LASTKEYGENERATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastKeyGenerationTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final DkimAttributesMarshaller instance = new DkimAttributesMarshaller();
 
@@ -57,6 +63,9 @@ public class DkimAttributesMarshaller {
             protocolMarshaller.marshall(dkimAttributes.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(dkimAttributes.getTokens(), TOKENS_BINDING);
             protocolMarshaller.marshall(dkimAttributes.getSigningAttributesOrigin(), SIGNINGATTRIBUTESORIGIN_BINDING);
+            protocolMarshaller.marshall(dkimAttributes.getNextSigningKeyLength(), NEXTSIGNINGKEYLENGTH_BINDING);
+            protocolMarshaller.marshall(dkimAttributes.getCurrentSigningKeyLength(), CURRENTSIGNINGKEYLENGTH_BINDING);
+            protocolMarshaller.marshall(dkimAttributes.getLastKeyGenerationTimestamp(), LASTKEYGENERATIONTIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

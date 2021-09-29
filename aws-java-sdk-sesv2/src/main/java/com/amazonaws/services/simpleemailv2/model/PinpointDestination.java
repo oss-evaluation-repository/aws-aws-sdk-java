@@ -34,18 +34,18 @@ public class PinpointDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      * </p>
      */
     private String applicationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     *        The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      */
 
     public void setApplicationArn(String applicationArn) {
@@ -54,10 +54,10 @@ public class PinpointDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     * @return The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      */
 
     public String getApplicationArn() {
@@ -66,11 +66,11 @@ public class PinpointDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     * The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.
+     *        The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

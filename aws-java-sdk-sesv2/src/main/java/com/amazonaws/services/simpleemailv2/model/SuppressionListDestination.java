@@ -30,7 +30,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of action that you want to perform on the address. Acceptable values:
+     * The type of action to perform on the address. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -50,7 +50,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of action that you want to perform on the address. Acceptable values:
+     * The type of action to perform on the address. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -67,7 +67,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param suppressionListImportAction
-     *        The type of action that you want to perform on the address. Acceptable values:</p>
+     *        The type of action to perform on the address. The following are possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -89,7 +89,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of action that you want to perform on the address. Acceptable values:
+     * The type of action to perform on the address. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -105,7 +105,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
      * </li>
      * </ul>
      * 
-     * @return The type of action that you want to perform on the address. Acceptable values:</p>
+     * @return The type of action to perform on the address. The following are possible values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -127,7 +127,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of action that you want to perform on the address. Acceptable values:
+     * The type of action to perform on the address. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -144,7 +144,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param suppressionListImportAction
-     *        The type of action that you want to perform on the address. Acceptable values:</p>
+     *        The type of action to perform on the address. The following are possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -168,7 +168,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of action that you want to perform on the address. Acceptable values:
+     * The type of action to perform on the address. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -185,7 +185,7 @@ public class SuppressionListDestination implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param suppressionListImportAction
-     *        The type of action that you want to perform on the address. Acceptable values:</p>
+     *        The type of action to perform on the address. The following are possible values:</p>
      *        <ul>
      *        <li>
      *        <p>

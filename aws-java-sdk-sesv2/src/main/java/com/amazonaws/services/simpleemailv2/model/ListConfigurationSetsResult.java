@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of configuration sets in your Amazon SES account in the current AWS Region.
+ * A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListConfigurationSets" target="_top">AWS API
@@ -28,7 +28,8 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     * An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      */
     private java.util.List<String> configurationSets;
@@ -43,11 +44,12 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     * An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return An array that contains all of the configuration sets in your Amazon SES account in the current AWS
-     *         Region.
+     * @return An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     *         Services Region.
      */
 
     public java.util.List<String> getConfigurationSets() {
@@ -56,11 +58,13 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     * An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param configurationSets
-     *        An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     *        An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     *        Services Region.
      */
 
     public void setConfigurationSets(java.util.Collection<String> configurationSets) {
@@ -74,7 +78,8 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     * An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +88,8 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param configurationSets
-     *        An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     *        An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +105,13 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     * An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param configurationSets
-     *        An array that contains all of the configuration sets in your Amazon SES account in the current AWS Region.
+     *        An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

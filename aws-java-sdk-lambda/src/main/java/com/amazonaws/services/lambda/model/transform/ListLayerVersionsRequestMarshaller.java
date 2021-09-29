@@ -35,6 +35,8 @@ public class ListLayerVersionsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> COMPATIBLEARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("CompatibleArchitecture").build();
 
     private static final ListLayerVersionsRequestMarshaller instance = new ListLayerVersionsRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class ListLayerVersionsRequestMarshaller {
             protocolMarshaller.marshall(listLayerVersionsRequest.getLayerName(), LAYERNAME_BINDING);
             protocolMarshaller.marshall(listLayerVersionsRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listLayerVersionsRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(listLayerVersionsRequest.getCompatibleArchitecture(), COMPATIBLEARCHITECTURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

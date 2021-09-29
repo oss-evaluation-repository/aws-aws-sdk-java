@@ -30,7 +30,7 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The verified email identity that you want to set up the custom MAIL FROM domain for.
+     * The verified email identity.
      * </p>
      */
     private String emailIdentity;
@@ -60,10 +60,10 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
     private String mailFromDomain;
     /**
      * <p>
-     * The action that you want to take if the required MX record isn't found when you send an email. When you set this
-     * value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
-     * you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-     * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+     * The action to take if the required MX record isn't found when you send an email. When you set this value to
+     * <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
+     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code>
+     * error, and doesn't attempt to deliver the email.
      * </p>
      * <p>
      * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -74,11 +74,11 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The verified email identity that you want to set up the custom MAIL FROM domain for.
+     * The verified email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The verified email identity that you want to set up the custom MAIL FROM domain for.
+     *        The verified email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -87,10 +87,10 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The verified email identity that you want to set up the custom MAIL FROM domain for.
+     * The verified email identity.
      * </p>
      * 
-     * @return The verified email identity that you want to set up the custom MAIL FROM domain for.
+     * @return The verified email identity.
      */
 
     public String getEmailIdentity() {
@@ -99,11 +99,11 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The verified email identity that you want to set up the custom MAIL FROM domain for.
+     * The verified email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The verified email identity that you want to set up the custom MAIL FROM domain for.
+     *        The verified email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,10 +262,10 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The action that you want to take if the required MX record isn't found when you send an email. When you set this
-     * value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
-     * you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-     * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+     * The action to take if the required MX record isn't found when you send an email. When you set this value to
+     * <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
+     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code>
+     * error, and doesn't attempt to deliver the email.
      * </p>
      * <p>
      * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -273,9 +273,9 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param behaviorOnMxFailure
-     *        The action that you want to take if the required MX record isn't found when you send an email. When you
-     *        set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL
-     *        FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     *        The action to take if the required MX record isn't found when you send an email. When you set this value
+     *        to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
+     *        you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
      *        <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
      *        <p>
      *        These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -289,19 +289,19 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The action that you want to take if the required MX record isn't found when you send an email. When you set this
-     * value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
-     * you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-     * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+     * The action to take if the required MX record isn't found when you send an email. When you set this value to
+     * <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
+     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code>
+     * error, and doesn't attempt to deliver the email.
      * </p>
      * <p>
      * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
      * <code>Failed</code>, and <code>TemporaryFailure</code> states.
      * </p>
      * 
-     * @return The action that you want to take if the required MX record isn't found when you send an email. When you
-     *         set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL
-     *         FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * @return The action to take if the required MX record isn't found when you send an email. When you set this value
+     *         to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain.
+     *         When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
      *         <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
      *         <p>
      *         These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -315,10 +315,10 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The action that you want to take if the required MX record isn't found when you send an email. When you set this
-     * value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
-     * you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-     * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+     * The action to take if the required MX record isn't found when you send an email. When you set this value to
+     * <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
+     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code>
+     * error, and doesn't attempt to deliver the email.
      * </p>
      * <p>
      * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -326,9 +326,9 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param behaviorOnMxFailure
-     *        The action that you want to take if the required MX record isn't found when you send an email. When you
-     *        set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL
-     *        FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     *        The action to take if the required MX record isn't found when you send an email. When you set this value
+     *        to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
+     *        you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
      *        <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
      *        <p>
      *        These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -344,10 +344,10 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The action that you want to take if the required MX record isn't found when you send an email. When you set this
-     * value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
-     * you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-     * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+     * The action to take if the required MX record isn't found when you send an email. When you set this value to
+     * <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
+     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code>
+     * error, and doesn't attempt to deliver the email.
      * </p>
      * <p>
      * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,
@@ -355,9 +355,9 @@ public class PutEmailIdentityMailFromAttributesRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param behaviorOnMxFailure
-     *        The action that you want to take if the required MX record isn't found when you send an email. When you
-     *        set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL
-     *        FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     *        The action to take if the required MX record isn't found when you send an email. When you set this value
+     *        to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When
+     *        you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
      *        <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
      *        <p>
      *        These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>,

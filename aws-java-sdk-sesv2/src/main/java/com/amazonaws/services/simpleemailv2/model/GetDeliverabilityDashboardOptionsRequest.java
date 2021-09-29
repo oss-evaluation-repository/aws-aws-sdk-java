@@ -19,15 +19,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability
- * dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also
- * gain the ability to perform predictive inbox placement tests.
+ * Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account. When the
+ * Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your
+ * domains. You also gain the ability to perform predictive inbox placement tests.
  * </p>
  * <p>
  * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that
- * you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
- * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
- * Pricing</a>.
+ * you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and
+ * cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+ * Pinpoint Pricing</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions"

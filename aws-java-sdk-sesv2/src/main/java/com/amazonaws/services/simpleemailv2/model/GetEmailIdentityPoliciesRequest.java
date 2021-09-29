@@ -30,18 +30,18 @@ public class GetEmailIdentityPoliciesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The email identity that you want to retrieve policies for.
+     * The email identity.
      * </p>
      */
     private String emailIdentity;
 
     /**
      * <p>
-     * The email identity that you want to retrieve policies for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to retrieve policies for.
+     *        The email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -50,10 +50,10 @@ public class GetEmailIdentityPoliciesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The email identity that you want to retrieve policies for.
+     * The email identity.
      * </p>
      * 
-     * @return The email identity that you want to retrieve policies for.
+     * @return The email identity.
      */
 
     public String getEmailIdentity() {
@@ -62,11 +62,11 @@ public class GetEmailIdentityPoliciesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The email identity that you want to retrieve policies for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to retrieve policies for.
+     *        The email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

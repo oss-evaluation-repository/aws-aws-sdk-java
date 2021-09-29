@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Enable or disable collection of reputation metrics for emails that you send using this configuration set in the
- * current AWS Region.
+ * current Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReputationOptions" target="_top">AWS API

@@ -30,7 +30,7 @@ public class PutConfigurationSetReputationOptionsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     * The name of the configuration set.
      * </p>
      */
     private String configurationSetName;
@@ -44,11 +44,11 @@ public class PutConfigurationSetReputationOptionsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     *        The name of the configuration set.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -57,10 +57,10 @@ public class PutConfigurationSetReputationOptionsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     * The name of the configuration set.
      * </p>
      * 
-     * @return The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     * @return The name of the configuration set.
      */
 
     public String getConfigurationSetName() {
@@ -69,11 +69,11 @@ public class PutConfigurationSetReputationOptionsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable reputation metric tracking for.
+     *        The name of the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class PutEmailIdentityFeedbackAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The email identity that you want to configure bounce and complaint feedback forwarding for.
+     * The email identity.
      * </p>
      */
     private String emailIdentity;
@@ -53,11 +53,11 @@ public class PutEmailIdentityFeedbackAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The email identity that you want to configure bounce and complaint feedback forwarding for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to configure bounce and complaint feedback forwarding for.
+     *        The email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -66,10 +66,10 @@ public class PutEmailIdentityFeedbackAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The email identity that you want to configure bounce and complaint feedback forwarding for.
+     * The email identity.
      * </p>
      * 
-     * @return The email identity that you want to configure bounce and complaint feedback forwarding for.
+     * @return The email identity.
      */
 
     public String getEmailIdentity() {
@@ -78,11 +78,11 @@ public class PutEmailIdentityFeedbackAttributesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The email identity that you want to configure bounce and complaint feedback forwarding for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to configure bounce and complaint feedback forwarding for.
+     *        The email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

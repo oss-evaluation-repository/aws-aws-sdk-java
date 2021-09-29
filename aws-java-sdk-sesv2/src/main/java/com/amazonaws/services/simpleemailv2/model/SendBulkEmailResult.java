@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SendBulkEmailResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * One object per intended recipient. Check each response object and retry any messages with a failure status.
+     * </p>
+     */
     private java.util.List<BulkEmailEntryResult> bulkEmailEntryResults;
 
     /**
-     * @return
+     * <p>
+     * One object per intended recipient. Check each response object and retry any messages with a failure status.
+     * </p>
+     * 
+     * @return One object per intended recipient. Check each response object and retry any messages with a failure
+     *         status.
      */
 
     public java.util.List<BulkEmailEntryResult> getBulkEmailEntryResults() {
@@ -37,7 +47,13 @@ public class SendBulkEmailResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * One object per intended recipient. Check each response object and retry any messages with a failure status.
+     * </p>
+     * 
      * @param bulkEmailEntryResults
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status.
      */
 
     public void setBulkEmailEntryResults(java.util.Collection<BulkEmailEntryResult> bulkEmailEntryResults) {
@@ -51,12 +67,17 @@ public class SendBulkEmailResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * One object per intended recipient. Check each response object and retry any messages with a failure status.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBulkEmailEntryResults(java.util.Collection)} or
      * {@link #withBulkEmailEntryResults(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param bulkEmailEntryResults
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +92,13 @@ public class SendBulkEmailResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * One object per intended recipient. Check each response object and retry any messages with a failure status.
+     * </p>
+     * 
      * @param bulkEmailEntryResults
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

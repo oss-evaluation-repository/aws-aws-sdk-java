@@ -30,18 +30,18 @@ public class GetConfigurationSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the configuration set that you want to obtain more information about.
+     * The name of the configuration set.
      * </p>
      */
     private String configurationSetName;
 
     /**
      * <p>
-     * The name of the configuration set that you want to obtain more information about.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to obtain more information about.
+     *        The name of the configuration set.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -50,10 +50,10 @@ public class GetConfigurationSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the configuration set that you want to obtain more information about.
+     * The name of the configuration set.
      * </p>
      * 
-     * @return The name of the configuration set that you want to obtain more information about.
+     * @return The name of the configuration set.
      */
 
     public String getConfigurationSetName() {
@@ -62,11 +62,11 @@ public class GetConfigurationSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the configuration set that you want to obtain more information about.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to obtain more information about.
+     *        The name of the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the dedicated IP addresses that are associated with your AWS account.
+ * Information about the dedicated IP addresses that are associated with your Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIps" target="_top">AWS API
@@ -28,7 +28,7 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of dedicated IP addresses that are associated with your AWS account.
+     * A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      */
     private java.util.List<DedicatedIp> dedicatedIps;
@@ -43,10 +43,10 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of dedicated IP addresses that are associated with your AWS account.
+     * A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      * 
-     * @return A list of dedicated IP addresses that are associated with your AWS account.
+     * @return A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      */
 
     public java.util.List<DedicatedIp> getDedicatedIps() {
@@ -55,11 +55,11 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of dedicated IP addresses that are associated with your AWS account.
+     * A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      * 
      * @param dedicatedIps
-     *        A list of dedicated IP addresses that are associated with your AWS account.
+     *        A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      */
 
     public void setDedicatedIps(java.util.Collection<DedicatedIp> dedicatedIps) {
@@ -73,7 +73,7 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of dedicated IP addresses that are associated with your AWS account.
+     * A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param dedicatedIps
-     *        A list of dedicated IP addresses that are associated with your AWS account.
+     *        A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class GetDedicatedIpsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of dedicated IP addresses that are associated with your AWS account.
+     * A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * </p>
      * 
      * @param dedicatedIps
-     *        A list of dedicated IP addresses that are associated with your AWS account.
+     *        A list of dedicated IP addresses that are associated with your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

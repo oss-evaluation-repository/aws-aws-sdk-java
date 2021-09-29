@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.
+ * A list of details about the email-sending capabilities of your Amazon SES account in the current Amazon Web Services
+ * Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccount" target="_top">AWS API
@@ -61,7 +62,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String enforcementStatus;
     /**
      * <p>
-     * Indicates whether or not your account has production access in the current AWS Region.
+     * Indicates whether or not your account has production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -79,20 +80,21 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
+     * in the current Amazon Web Services Region.
      * </p>
      */
     private SendQuota sendQuota;
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services
+     * Region.
      * </p>
      */
     private Boolean sendingEnabled;
     /**
      * <p>
      * An object that contains information about the email address suppression preferences for your account in the
-     * current AWS Region.
+     * current Amazon Web Services Region.
      * </p>
      */
     private SuppressionAttributes suppressionAttributes;
@@ -322,7 +324,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not your account has production access in the current AWS Region.
+     * Indicates whether or not your account has production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -337,7 +339,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param productionAccessEnabled
-     *        Indicates whether or not your account has production access in the current AWS Region.</p>
+     *        Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -356,7 +358,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not your account has production access in the current AWS Region.
+     * Indicates whether or not your account has production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -370,7 +372,8 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * on your specific use case.
      * </p>
      * 
-     * @return Indicates whether or not your account has production access in the current AWS Region.</p>
+     * @return Indicates whether or not your account has production access in the current Amazon Web Services
+     *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -389,7 +392,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not your account has production access in the current AWS Region.
+     * Indicates whether or not your account has production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -404,7 +407,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param productionAccessEnabled
-     *        Indicates whether or not your account has production access in the current AWS Region.</p>
+     *        Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -425,7 +428,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not your account has production access in the current AWS Region.
+     * Indicates whether or not your account has production access in the current Amazon Web Services Region.
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
@@ -439,7 +442,8 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * on your specific use case.
      * </p>
      * 
-     * @return Indicates whether or not your account has production access in the current AWS Region.</p>
+     * @return Indicates whether or not your account has production access in the current Amazon Web Services
+     *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
      *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
@@ -459,12 +463,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
+     * in the current Amazon Web Services Region.
      * </p>
      * 
      * @param sendQuota
      *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *        account in the current AWS Region.
+     *        account in the current Amazon Web Services Region.
      */
 
     public void setSendQuota(SendQuota sendQuota) {
@@ -474,11 +478,11 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
+     * in the current Amazon Web Services Region.
      * </p>
      * 
      * @return An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *         account in the current AWS Region.
+     *         account in the current Amazon Web Services Region.
      */
 
     public SendQuota getSendQuota() {
@@ -488,12 +492,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
+     * in the current Amazon Web Services Region.
      * </p>
      * 
      * @param sendQuota
      *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *        account in the current AWS Region.
+     *        account in the current Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,11 +508,13 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param sendingEnabled
-     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web
+     *        Services Region.
      */
 
     public void setSendingEnabled(Boolean sendingEnabled) {
@@ -517,10 +523,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services
+     * Region.
      * </p>
      * 
-     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web
+     *         Services Region.
      */
 
     public Boolean getSendingEnabled() {
@@ -529,11 +537,13 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param sendingEnabled
-     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,10 +554,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services
+     * Region.
      * </p>
      * 
-     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web
+     *         Services Region.
      */
 
     public Boolean isSendingEnabled() {
@@ -557,12 +569,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the email address suppression preferences for your account in the
-     * current AWS Region.
+     * current Amazon Web Services Region.
      * </p>
      * 
      * @param suppressionAttributes
      *        An object that contains information about the email address suppression preferences for your account in
-     *        the current AWS Region.
+     *        the current Amazon Web Services Region.
      */
 
     public void setSuppressionAttributes(SuppressionAttributes suppressionAttributes) {
@@ -572,11 +584,11 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the email address suppression preferences for your account in the
-     * current AWS Region.
+     * current Amazon Web Services Region.
      * </p>
      * 
      * @return An object that contains information about the email address suppression preferences for your account in
-     *         the current AWS Region.
+     *         the current Amazon Web Services Region.
      */
 
     public SuppressionAttributes getSuppressionAttributes() {
@@ -586,12 +598,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * An object that contains information about the email address suppression preferences for your account in the
-     * current AWS Region.
+     * current Amazon Web Services Region.
      * </p>
      * 
      * @param suppressionAttributes
      *        An object that contains information about the email address suppression preferences for your account in
-     *        the current AWS Region.
+     *        the current Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

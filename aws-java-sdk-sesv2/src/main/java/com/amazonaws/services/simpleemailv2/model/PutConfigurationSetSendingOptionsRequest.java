@@ -30,7 +30,7 @@ public class PutConfigurationSetSendingOptionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set to enable or disable email sending for.
      * </p>
      */
     private String configurationSetName;
@@ -44,11 +44,11 @@ public class PutConfigurationSetSendingOptionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set to enable or disable email sending for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable email sending for.
+     *        The name of the configuration set to enable or disable email sending for.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -57,10 +57,10 @@ public class PutConfigurationSetSendingOptionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set to enable or disable email sending for.
      * </p>
      * 
-     * @return The name of the configuration set that you want to enable or disable email sending for.
+     * @return The name of the configuration set to enable or disable email sending for.
      */
 
     public String getConfigurationSetName() {
@@ -69,11 +69,11 @@ public class PutConfigurationSetSendingOptionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set to enable or disable email sending for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable email sending for.
+     *        The name of the configuration set to enable or disable email sending for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

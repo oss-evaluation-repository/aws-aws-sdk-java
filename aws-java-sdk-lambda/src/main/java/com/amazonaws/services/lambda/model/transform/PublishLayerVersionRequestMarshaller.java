@@ -38,6 +38,8 @@ public class PublishLayerVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompatibleRuntimes").build();
     private static final MarshallingInfo<String> LICENSEINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LicenseInfo").build();
+    private static final MarshallingInfo<List> COMPATIBLEARCHITECTURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompatibleArchitectures").build();
 
     private static final PublishLayerVersionRequestMarshaller instance = new PublishLayerVersionRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class PublishLayerVersionRequestMarshaller {
             protocolMarshaller.marshall(publishLayerVersionRequest.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(publishLayerVersionRequest.getCompatibleRuntimes(), COMPATIBLERUNTIMES_BINDING);
             protocolMarshaller.marshall(publishLayerVersionRequest.getLicenseInfo(), LICENSEINFO_BINDING);
+            protocolMarshaller.marshall(publishLayerVersionRequest.getCompatibleArchitectures(), COMPATIBLEARCHITECTURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,20 +30,20 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The email address or domain that you want to verify.
+     * The email address or domain to verify.
      * </p>
      */
     private String emailIdentity;
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) to associate with the email identity.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
      * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
-     * DKIM authentication purposes, as opposed to the default method, <a
+     * DKIM authentication purposes, or, configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * <p>
@@ -61,11 +61,11 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The email address or domain that you want to verify.
+     * The email address or domain to verify.
      * </p>
      * 
      * @param emailIdentity
-     *        The email address or domain that you want to verify.
+     *        The email address or domain to verify.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -74,10 +74,10 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The email address or domain that you want to verify.
+     * The email address or domain to verify.
      * </p>
      * 
-     * @return The email address or domain that you want to verify.
+     * @return The email address or domain to verify.
      */
 
     public String getEmailIdentity() {
@@ -86,11 +86,11 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The email address or domain that you want to verify.
+     * The email address or domain to verify.
      * </p>
      * 
      * @param emailIdentity
-     *        The email address or domain that you want to verify.
+     *        The email address or domain to verify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,10 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) to associate with the email identity.
      * </p>
      * 
-     * @return An array of objects that define the tags (keys and values) that you want to associate with the email
-     *         identity.
+     * @return An array of objects that define the tags (keys and values) to associate with the email identity.
      */
 
     public java.util.List<Tag> getTags() {
@@ -114,12 +113,11 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) to associate with the email identity.
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the email
-     *        identity.
+     *        An array of objects that define the tags (keys and values) to associate with the email identity.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -133,7 +131,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) to associate with the email identity.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -142,8 +140,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the email
-     *        identity.
+     *        An array of objects that define the tags (keys and values) to associate with the email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +156,11 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) to associate with the email identity.
      * </p>
      * 
      * @param tags
-     *        An array of objects that define the tags (keys and values) that you want to associate with the email
-     *        identity.
+     *        An array of objects that define the tags (keys and values) to associate with the email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,7 +172,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
-     * DKIM authentication purposes, as opposed to the default method, <a
+     * DKIM authentication purposes, or, configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * <p>
@@ -185,7 +181,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dkimSigningAttributes
      *        If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
-     *        (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *        (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a
      *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
      *        <p>
      *        You can only specify this object if the email identity is a domain, as opposed to an address.
@@ -198,7 +194,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
-     * DKIM authentication purposes, as opposed to the default method, <a
+     * DKIM authentication purposes, or, configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * <p>
@@ -206,7 +202,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
-     *         (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *         (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a
      *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
      *         <p>
      *         You can only specify this object if the email identity is a domain, as opposed to an address.
@@ -219,7 +215,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
-     * DKIM authentication purposes, as opposed to the default method, <a
+     * DKIM authentication purposes, or, configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
      * </p>
      * <p>
@@ -228,7 +224,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dkimSigningAttributes
      *        If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
-     *        (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *        (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a
      *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
      *        <p>
      *        You can only specify this object if the email identity is a domain, as opposed to an address.

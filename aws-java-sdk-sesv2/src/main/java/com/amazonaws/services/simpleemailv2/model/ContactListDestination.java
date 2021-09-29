@@ -36,7 +36,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
     private String contactListName;
     /**
      * <p>
-     * &gt;The type of action that you want to perform on the addresses. Acceptable values:
+     * &gt;The type of action to perform on the addresses. The following are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -95,7 +95,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * &gt;The type of action that you want to perform on the addresses. Acceptable values:
+     * &gt;The type of action to perform on the addresses. The following are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -111,7 +111,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
      * </ul>
      * 
      * @param contactListImportAction
-     *        &gt;The type of action that you want to perform on the addresses. Acceptable values:</p>
+     *        &gt;The type of action to perform on the addresses. The following are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -133,7 +133,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * &gt;The type of action that you want to perform on the addresses. Acceptable values:
+     * &gt;The type of action to perform on the addresses. The following are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -148,7 +148,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
      * </li>
      * </ul>
      * 
-     * @return &gt;The type of action that you want to perform on the addresses. Acceptable values:</p>
+     * @return &gt;The type of action to perform on the addresses. The following are the possible values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -170,7 +170,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * &gt;The type of action that you want to perform on the addresses. Acceptable values:
+     * &gt;The type of action to perform on the addresses. The following are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -186,7 +186,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
      * </ul>
      * 
      * @param contactListImportAction
-     *        &gt;The type of action that you want to perform on the addresses. Acceptable values:</p>
+     *        &gt;The type of action to perform on the addresses. The following are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -210,7 +210,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * &gt;The type of action that you want to perform on the addresses. Acceptable values:
+     * &gt;The type of action to perform on the addresses. The following are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -226,7 +226,7 @@ public class ContactListDestination implements Serializable, Cloneable, Structur
      * </ul>
      * 
      * @param contactListImportAction
-     *        &gt;The type of action that you want to perform on the addresses. Acceptable values:</p>
+     *        &gt;The type of action to perform on the addresses. The following are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>

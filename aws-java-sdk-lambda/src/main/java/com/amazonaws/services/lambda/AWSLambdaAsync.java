@@ -92,7 +92,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Grants an Amazon Web Services service or another account permission to use a function. You can apply the policy
      * at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a
      * qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-     * function.
+     * function. Note: Lambda does not support adding policies to version $LATEST.
      * </p>
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. For Amazon Web
@@ -122,7 +122,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Grants an Amazon Web Services service or another account permission to use a function. You can apply the policy
      * at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a
      * qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-     * function.
+     * function. Note: Lambda does not support adding policies to version $LATEST.
      * </p>
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. For Amazon Web
@@ -238,8 +238,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * triggers the function.
      * </p>
      * <p>
-     * For details about each event source type, see the following topics. In particular, each of the topics describes
-     * the required and optional parameters for the specific event source.
+     * For details about each event source type, see the following topics.
      * </p>
      * <ul>
      * <li>
@@ -256,8 +255,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an SQS
-     * queue as an event source</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an
+     * Amazon SQS queue as an event source</a>
      * </p>
      * </li>
      * <li>
@@ -325,8 +324,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * triggers the function.
      * </p>
      * <p>
-     * For details about each event source type, see the following topics. In particular, each of the topics describes
-     * the required and optional parameters for the specific event source.
+     * For details about each event source type, see the following topics.
      * </p>
      * <ul>
      * <li>
@@ -343,8 +341,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an SQS
-     * queue as an event source</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an
+     * Amazon SQS queue as an event source</a>
      * </p>
      * </li>
      * <li>
@@ -430,7 +428,9 @@ public interface AWSLambdaAsync extends AWSLambda {
      * You set the package type to <code>Zip</code> if the deployment package is a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
      * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
-     * also specify the handler and runtime properties.
+     * also specify the handler and runtime properties. The code in the deployment package must be compatible with the
+     * target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). If you do not
+     * specify the architecture, the default value is <code>x86-64</code>.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -499,7 +499,9 @@ public interface AWSLambdaAsync extends AWSLambda {
      * You set the package type to <code>Zip</code> if the deployment package is a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
      * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
-     * also specify the handler and runtime properties.
+     * also specify the handler and runtime properties. The code in the deployment package must be compatible with the
+     * target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). If you do not
+     * specify the architecture, the default value is <code>x86-64</code>.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -1794,7 +1796,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
      * layer</a>. Versions that have been deleted aren't listed. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
-     * versions that indicate that they're compatible with that runtime.
+     * versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include
+     * only layer versions that are compatible with that architecture.
      * </p>
      * 
      * @param listLayerVersionsRequest
@@ -1810,7 +1813,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
      * layer</a>. Versions that have been deleted aren't listed. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
-     * versions that indicate that they're compatible with that runtime.
+     * versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include
+     * only layer versions that are compatible with that architecture.
      * </p>
      * 
      * @param listLayerVersionsRequest
@@ -1828,10 +1832,12 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layers</a> and
-     * shows information about the latest version of each. Specify a <a
+     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda layers</a> and shows
+     * information about the latest version of each. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
-     * layers that indicate that they're compatible with that runtime.
+     * layers that indicate that they're compatible with that runtime. Specify a compatible architecture to include only
+     * layers that are compatible with that <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.
      * </p>
      * 
      * @param listLayersRequest
@@ -1844,10 +1850,12 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layers</a> and
-     * shows information about the latest version of each. Specify a <a
+     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda layers</a> and shows
+     * information about the latest version of each. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
-     * layers that indicate that they're compatible with that runtime.
+     * layers that indicate that they're compatible with that runtime. Specify a compatible architecture to include only
+     * layers that are compatible with that <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.
      * </p>
      * 
      * @param listLayersRequest

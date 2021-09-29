@@ -28,7 +28,7 @@ public class GetEmailTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template.
      * </p>
      */
     private String templateName;
@@ -41,11 +41,11 @@ public class GetEmailTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to retrieve.
+     *        The name of the template.
      */
 
     public void setTemplateName(String templateName) {
@@ -54,10 +54,10 @@ public class GetEmailTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template.
      * </p>
      * 
-     * @return The name of the template you want to retrieve.
+     * @return The name of the template.
      */
 
     public String getTemplateName() {
@@ -66,11 +66,11 @@ public class GetEmailTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to retrieve.
+     *        The name of the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

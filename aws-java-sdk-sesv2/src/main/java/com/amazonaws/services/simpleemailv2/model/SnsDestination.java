@@ -31,23 +31,23 @@ public class SnsDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     * information about Amazon SNS topics, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      */
     private String topicArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     * information about Amazon SNS topics, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     *        information about Amazon SNS topics, see the <a
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information
+     *        about Amazon SNS topics, see the <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
@@ -57,13 +57,13 @@ public class SnsDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     * information about Amazon SNS topics, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     *         information about Amazon SNS topics, see the <a
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information
+     *         about Amazon SNS topics, see the <a
      *         href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
@@ -73,14 +73,14 @@ public class SnsDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     * information about Amazon SNS topics, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more
-     *        information about Amazon SNS topics, see the <a
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information
+     *        about Amazon SNS topics, see the <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

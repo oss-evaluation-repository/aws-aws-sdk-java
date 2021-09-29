@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.prometheus.model.*;
+import com.amazonaws.services.prometheus.waiters.AmazonPrometheusWaiters;
 
 /**
  * Interface for accessing Amazon Prometheus Service.
@@ -40,6 +41,62 @@ public interface AmazonPrometheus {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "aps";
+
+    /**
+     * <p>
+     * Create an alert manager definition.
+     * </p>
+     * 
+     * @param createAlertManagerDefinitionRequest
+     *        Represents the input of a CreateAlertManagerDefinition operation.
+     * @return Result of the CreateAlertManagerDefinition operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @sample AmazonPrometheus.CreateAlertManagerDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAlertManagerDefinitionResult createAlertManagerDefinition(CreateAlertManagerDefinitionRequest createAlertManagerDefinitionRequest);
+
+    /**
+     * <p>
+     * Create a rule group namespace.
+     * </p>
+     * 
+     * @param createRuleGroupsNamespaceRequest
+     *        Represents the input of a CreateRuleGroupsNamespace operation.
+     * @return Result of the CreateRuleGroupsNamespace operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @sample AmazonPrometheus.CreateRuleGroupsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateRuleGroupsNamespaceResult createRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest createRuleGroupsNamespaceRequest);
 
     /**
      * <p>
@@ -69,6 +126,58 @@ public interface AmazonPrometheus {
 
     /**
      * <p>
+     * Deletes an alert manager definition.
+     * </p>
+     * 
+     * @param deleteAlertManagerDefinitionRequest
+     *        Represents the input of a DeleteAlertManagerDefinition operation.
+     * @return Result of the DeleteAlertManagerDefinition operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DeleteAlertManagerDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAlertManagerDefinitionResult deleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest deleteAlertManagerDefinitionRequest);
+
+    /**
+     * <p>
+     * Delete a rule groups namespace.
+     * </p>
+     * 
+     * @param deleteRuleGroupsNamespaceRequest
+     *        Represents the input of a DeleteRuleGroupsNamespace operation.
+     * @return Result of the DeleteRuleGroupsNamespace operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DeleteRuleGroupsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteRuleGroupsNamespaceResult deleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest deleteRuleGroupsNamespaceRequest);
+
+    /**
+     * <p>
      * Deletes an AMP workspace.
      * </p>
      * 
@@ -77,6 +186,8 @@ public interface AmazonPrometheus {
      * @return Result of the DeleteWorkspace operation returned by the service.
      * @throws ThrottlingException
      *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws ResourceNotFoundException
@@ -90,6 +201,54 @@ public interface AmazonPrometheus {
      *      Documentation</a>
      */
     DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest deleteWorkspaceRequest);
+
+    /**
+     * <p>
+     * Describes an alert manager definition.
+     * </p>
+     * 
+     * @param describeAlertManagerDefinitionRequest
+     *        Represents the input of a DescribeAlertManagerDefinition operation.
+     * @return Result of the DescribeAlertManagerDefinition operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DescribeAlertManagerDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAlertManagerDefinitionResult describeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest describeAlertManagerDefinitionRequest);
+
+    /**
+     * <p>
+     * Describe a rule groups namespace.
+     * </p>
+     * 
+     * @param describeRuleGroupsNamespaceRequest
+     *        Represents the input of a DescribeRuleGroupsNamespace operation.
+     * @return Result of the DescribeRuleGroupsNamespace operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.DescribeRuleGroupsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRuleGroupsNamespaceResult describeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest describeRuleGroupsNamespaceRequest);
 
     /**
      * <p>
@@ -114,6 +273,30 @@ public interface AmazonPrometheus {
      *      Documentation</a>
      */
     DescribeWorkspaceResult describeWorkspace(DescribeWorkspaceRequest describeWorkspaceRequest);
+
+    /**
+     * <p>
+     * Lists rule groups namespaces.
+     * </p>
+     * 
+     * @param listRuleGroupsNamespacesRequest
+     *        Represents the input of a ListRuleGroupsNamespaces operation.
+     * @return Result of the ListRuleGroupsNamespaces operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @sample AmazonPrometheus.ListRuleGroupsNamespaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRuleGroupsNamespacesResult listRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest listRuleGroupsNamespacesRequest);
 
     /**
      * <p>
@@ -159,6 +342,62 @@ public interface AmazonPrometheus {
      *      Documentation</a>
      */
     ListWorkspacesResult listWorkspaces(ListWorkspacesRequest listWorkspacesRequest);
+
+    /**
+     * <p>
+     * Update an alert manager definition.
+     * </p>
+     * 
+     * @param putAlertManagerDefinitionRequest
+     *        Represents the input of a PutAlertManagerDefinition operation.
+     * @return Result of the PutAlertManagerDefinition operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @sample AmazonPrometheus.PutAlertManagerDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAlertManagerDefinitionResult putAlertManagerDefinition(PutAlertManagerDefinitionRequest putAlertManagerDefinitionRequest);
+
+    /**
+     * <p>
+     * Update a rule groups namespace.
+     * </p>
+     * 
+     * @param putRuleGroupsNamespaceRequest
+     *        Represents the input of a PutRuleGroupsNamespace operation.
+     * @return Result of the PutRuleGroupsNamespace operation returned by the service.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @sample AmazonPrometheus.PutRuleGroupsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutRuleGroupsNamespaceResult putRuleGroupsNamespace(PutRuleGroupsNamespaceRequest putRuleGroupsNamespaceRequest);
 
     /**
      * <p>
@@ -256,5 +495,7 @@ public interface AmazonPrometheus {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonPrometheusWaiters waiters();
 
 }

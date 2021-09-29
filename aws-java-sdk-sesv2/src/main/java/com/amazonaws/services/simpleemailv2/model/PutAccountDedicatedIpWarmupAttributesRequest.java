@@ -31,8 +31,8 @@ public class PutAccountDedicatedIpWarmupAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon
-     * SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set
-     * to <code>false</code> to disable it.
+     * SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.
      * </p>
      */
     private Boolean autoWarmupEnabled;
@@ -40,14 +40,14 @@ public class PutAccountDedicatedIpWarmupAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon
-     * SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set
-     * to <code>false</code> to disable it.
+     * SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.
      * </p>
      * 
      * @param autoWarmupEnabled
      *        Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your
-     *        Amazon SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up
-     *        feature, or set to <code>false</code> to disable it.
+     *        Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the
+     *        automatic warm-up feature, or set to <code>false</code> to disable it.
      */
 
     public void setAutoWarmupEnabled(Boolean autoWarmupEnabled) {
@@ -57,13 +57,13 @@ public class PutAccountDedicatedIpWarmupAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon
-     * SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set
-     * to <code>false</code> to disable it.
+     * SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.
      * </p>
      * 
      * @return Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with
-     *         your Amazon SES account in the current AWS Region. Set to <code>true</code> to enable the automatic
-     *         warm-up feature, or set to <code>false</code> to disable it.
+     *         your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the
+     *         automatic warm-up feature, or set to <code>false</code> to disable it.
      */
 
     public Boolean getAutoWarmupEnabled() {
@@ -73,14 +73,14 @@ public class PutAccountDedicatedIpWarmupAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon
-     * SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set
-     * to <code>false</code> to disable it.
+     * SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.
      * </p>
      * 
      * @param autoWarmupEnabled
      *        Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your
-     *        Amazon SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up
-     *        feature, or set to <code>false</code> to disable it.
+     *        Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the
+     *        automatic warm-up feature, or set to <code>false</code> to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,13 +92,13 @@ public class PutAccountDedicatedIpWarmupAttributesRequest extends com.amazonaws.
     /**
      * <p>
      * Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon
-     * SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set
-     * to <code>false</code> to disable it.
+     * SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.
      * </p>
      * 
      * @return Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with
-     *         your Amazon SES account in the current AWS Region. Set to <code>true</code> to enable the automatic
-     *         warm-up feature, or set to <code>false</code> to disable it.
+     *         your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the
+     *         automatic warm-up feature, or set to <code>false</code> to disable it.
      */
 
     public Boolean isAutoWarmupEnabled() {

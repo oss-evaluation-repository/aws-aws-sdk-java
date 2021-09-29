@@ -83,7 +83,8 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String invocationType;
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      */
     private String logType;
@@ -562,11 +563,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      * 
      * @param logType
-     *        Set to <code>Tail</code> to include the execution log in the response.
+     *        Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked
+     *        functions only.
      * @see LogType
      */
 
@@ -576,10 +579,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      * 
-     * @return Set to <code>Tail</code> to include the execution log in the response.
+     * @return Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked
+     *         functions only.
      * @see LogType
      */
 
@@ -589,11 +594,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      * 
      * @param logType
-     *        Set to <code>Tail</code> to include the execution log in the response.
+     *        Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked
+     *        functions only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogType
      */
@@ -605,11 +612,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      * 
      * @param logType
-     *        Set to <code>Tail</code> to include the execution log in the response.
+     *        Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked
+     *        functions only.
      * @see LogType
      */
 
@@ -619,11 +628,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>Tail</code> to include the execution log in the response.
+     * Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions
+     * only.
      * </p>
      * 
      * @param logType
-     *        Set to <code>Tail</code> to include the execution log in the response.
+     *        Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked
+     *        functions only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogType
      */

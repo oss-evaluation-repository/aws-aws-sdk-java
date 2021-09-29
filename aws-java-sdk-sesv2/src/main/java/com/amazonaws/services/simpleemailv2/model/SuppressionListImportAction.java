@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The type of action that you want to perform on the address. Acceptable values:
+ * The type of action to perform on the address. The following are possible values:
  * </p>
  * <ul>
  * <li>

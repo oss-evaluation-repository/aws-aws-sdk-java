@@ -107,6 +107,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String revisionId;
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> architectures;
 
     /**
      * <p>
@@ -689,6 +696,117 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @return The instruction set architecture that the function supports. Enter a string array with one of the valid
+     *         values. The default value is <code>x86_64</code>.
+     * @see Architecture
+     */
+
+    public java.util.List<String> getArchitectures() {
+        if (architectures == null) {
+            architectures = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return architectures;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Enter a string array with one of the valid
+     *        values. The default value is <code>x86_64</code>.
+     * @see Architecture
+     */
+
+    public void setArchitectures(java.util.Collection<String> architectures) {
+        if (architectures == null) {
+            this.architectures = null;
+            return;
+        }
+
+        this.architectures = new com.amazonaws.internal.SdkInternalList<String>(architectures);
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArchitectures(java.util.Collection)} or {@link #withArchitectures(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Enter a string array with one of the valid
+     *        values. The default value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public UpdateFunctionCodeRequest withArchitectures(String... architectures) {
+        if (this.architectures == null) {
+            setArchitectures(new com.amazonaws.internal.SdkInternalList<String>(architectures.length));
+        }
+        for (String ele : architectures) {
+            this.architectures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Enter a string array with one of the valid
+     *        values. The default value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public UpdateFunctionCodeRequest withArchitectures(java.util.Collection<String> architectures) {
+        setArchitectures(architectures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function supports. Enter a string array with one of the valid
+     *        values. The default value is <code>x86_64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public UpdateFunctionCodeRequest withArchitectures(Architecture... architectures) {
+        com.amazonaws.internal.SdkInternalList<String> architecturesCopy = new com.amazonaws.internal.SdkInternalList<String>(architectures.length);
+        for (Architecture value : architectures) {
+            architecturesCopy.add(value.toString());
+        }
+        if (getArchitectures() == null) {
+            setArchitectures(architecturesCopy);
+        } else {
+            getArchitectures().addAll(architecturesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -717,7 +835,9 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDryRun() != null)
             sb.append("DryRun: ").append(getDryRun()).append(",");
         if (getRevisionId() != null)
-            sb.append("RevisionId: ").append(getRevisionId());
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getArchitectures() != null)
+            sb.append("Architectures: ").append(getArchitectures());
         sb.append("}");
         return sb.toString();
     }
@@ -768,6 +888,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
             return false;
+        if (other.getArchitectures() == null ^ this.getArchitectures() == null)
+            return false;
+        if (other.getArchitectures() != null && other.getArchitectures().equals(this.getArchitectures()) == false)
+            return false;
         return true;
     }
 
@@ -785,6 +909,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
         return hashCode;
     }
 

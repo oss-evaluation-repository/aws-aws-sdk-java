@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An object that contains information about the email address suppression preferences for your account in the current
- * AWS Region.
+ * Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressionAttributes" target="_top">AWS API

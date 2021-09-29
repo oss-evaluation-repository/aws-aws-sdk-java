@@ -35,8 +35,8 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability
-     * to send email.
+     * If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your
+     * account's ability to send email.
      * </p>
      * </note>
      */
@@ -49,8 +49,8 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability
-     * to send email.
+     * If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your
+     * account's ability to send email.
      * </p>
      * </note>
      * 
@@ -58,8 +58,8 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      *        Enables or disables your account's ability to send email. Set to <code>true</code> to enable email
      *        sending, or set to <code>false</code> to disable email sending.</p> <note>
      *        <p>
-     *        If AWS paused your account's ability to send email, you can't use this operation to resume your account's
-     *        ability to send email.
+     *        If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume
+     *        your account's ability to send email.
      *        </p>
      */
 
@@ -74,16 +74,16 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability
-     * to send email.
+     * If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your
+     * account's ability to send email.
      * </p>
      * </note>
      * 
      * @return Enables or disables your account's ability to send email. Set to <code>true</code> to enable email
      *         sending, or set to <code>false</code> to disable email sending.</p> <note>
      *         <p>
-     *         If AWS paused your account's ability to send email, you can't use this operation to resume your account's
-     *         ability to send email.
+     *         If Amazon Web Services paused your account's ability to send email, you can't use this operation to
+     *         resume your account's ability to send email.
      *         </p>
      */
 
@@ -98,8 +98,8 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability
-     * to send email.
+     * If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your
+     * account's ability to send email.
      * </p>
      * </note>
      * 
@@ -107,8 +107,8 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      *        Enables or disables your account's ability to send email. Set to <code>true</code> to enable email
      *        sending, or set to <code>false</code> to disable email sending.</p> <note>
      *        <p>
-     *        If AWS paused your account's ability to send email, you can't use this operation to resume your account's
-     *        ability to send email.
+     *        If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume
+     *        your account's ability to send email.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -125,16 +125,16 @@ public class PutAccountSendingAttributesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability
-     * to send email.
+     * If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your
+     * account's ability to send email.
      * </p>
      * </note>
      * 
      * @return Enables or disables your account's ability to send email. Set to <code>true</code> to enable email
      *         sending, or set to <code>false</code> to disable email sending.</p> <note>
      *         <p>
-     *         If AWS paused your account's ability to send email, you can't use this operation to resume your account's
-     *         ability to send email.
+     *         If Amazon Web Services paused your account's ability to send email, you can't use this operation to
+     *         resume your account's ability to send email.
      *         </p>
      */
 

@@ -28,7 +28,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The email identity type.
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * </p>
      */
     private String identityType;
@@ -90,11 +90,11 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The email identity type.
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * </p>
      * 
      * @param identityType
-     *        The email identity type.
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * @see IdentityType
      */
 
@@ -104,10 +104,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The email identity type.
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * </p>
      * 
-     * @return The email identity type.
+     * @return The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * @see IdentityType
      */
 
@@ -117,11 +117,11 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The email identity type.
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * </p>
      * 
      * @param identityType
-     *        The email identity type.
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -133,11 +133,11 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The email identity type.
+     * The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * </p>
      * 
      * @param identityType
-     *        The email identity type.
+     *        The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */

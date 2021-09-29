@@ -19,9 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to list all of the email identities associated with your AWS account. This list includes identities that
- * you've already verified, identities that are unverified, and identities that were verified in the past, but are no
- * longer verified.
+ * A request to list all of the email identities associated with your Amazon Web Services account. This list includes
+ * identities that you've already verified, identities that are unverified, and identities that were verified in the
+ * past, but are no longer verified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentities" target="_top">AWS API

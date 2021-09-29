@@ -40,6 +40,8 @@ public class LayerVersionsListItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompatibleRuntimes").build();
     private static final MarshallingInfo<String> LICENSEINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LicenseInfo").build();
+    private static final MarshallingInfo<List> COMPATIBLEARCHITECTURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompatibleArchitectures").build();
 
     private static final LayerVersionsListItemMarshaller instance = new LayerVersionsListItemMarshaller();
 
@@ -63,6 +65,7 @@ public class LayerVersionsListItemMarshaller {
             protocolMarshaller.marshall(layerVersionsListItem.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(layerVersionsListItem.getCompatibleRuntimes(), COMPATIBLERUNTIMES_BINDING);
             protocolMarshaller.marshall(layerVersionsListItem.getLicenseInfo(), LICENSEINFO_BINDING);
+            protocolMarshaller.marshall(layerVersionsListItem.getCompatibleArchitectures(), COMPATIBLEARCHITECTURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

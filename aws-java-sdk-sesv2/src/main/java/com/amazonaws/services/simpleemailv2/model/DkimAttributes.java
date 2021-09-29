@@ -99,7 +99,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> tokens;
     /**
      * <p>
-     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * A string that indicates how DKIM was configured for the identity. These are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -117,6 +117,24 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String signingAttributesOrigin;
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     */
+    private String nextSigningKeyLength;
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the DKIM key pair in use.
+     * </p>
+     */
+    private String currentSigningKeyLength;
+    /**
+     * <p>
+     * [Easy DKIM] The last time a key pair was generated for this identity.
+     * </p>
+     */
+    private java.util.Date lastKeyGenerationTimestamp;
 
     /**
      * <p>
@@ -645,7 +663,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * A string that indicates how DKIM was configured for the identity. These are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -663,7 +681,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -686,7 +704,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * A string that indicates how DKIM was configured for the identity. These are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -703,7 +721,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     * @return A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -726,7 +744,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * A string that indicates how DKIM was configured for the identity. These are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -744,7 +762,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -769,7 +787,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * A string that indicates how DKIM was configured for the identity. These are the possible values:
      * </p>
      * <ul>
      * <li>
@@ -787,7 +805,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param signingAttributesOrigin
-     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -811,6 +829,168 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @see DkimSigningKeyLength
+     */
+
+    public void setNextSigningKeyLength(String nextSigningKeyLength) {
+        this.nextSigningKeyLength = nextSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @return [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *         per day.
+     * @see DkimSigningKeyLength
+     */
+
+    public String getNextSigningKeyLength() {
+        return this.nextSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimAttributes withNextSigningKeyLength(String nextSigningKeyLength) {
+        setNextSigningKeyLength(nextSigningKeyLength);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+     * </p>
+     * 
+     * @param nextSigningKeyLength
+     *        [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once
+     *        per day.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimAttributes withNextSigningKeyLength(DkimSigningKeyLength nextSigningKeyLength) {
+        this.nextSigningKeyLength = nextSigningKeyLength.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the DKIM key pair in use.
+     * </p>
+     * 
+     * @param currentSigningKeyLength
+     *        [Easy DKIM] The key length of the DKIM key pair in use.
+     * @see DkimSigningKeyLength
+     */
+
+    public void setCurrentSigningKeyLength(String currentSigningKeyLength) {
+        this.currentSigningKeyLength = currentSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the DKIM key pair in use.
+     * </p>
+     * 
+     * @return [Easy DKIM] The key length of the DKIM key pair in use.
+     * @see DkimSigningKeyLength
+     */
+
+    public String getCurrentSigningKeyLength() {
+        return this.currentSigningKeyLength;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the DKIM key pair in use.
+     * </p>
+     * 
+     * @param currentSigningKeyLength
+     *        [Easy DKIM] The key length of the DKIM key pair in use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimAttributes withCurrentSigningKeyLength(String currentSigningKeyLength) {
+        setCurrentSigningKeyLength(currentSigningKeyLength);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The key length of the DKIM key pair in use.
+     * </p>
+     * 
+     * @param currentSigningKeyLength
+     *        [Easy DKIM] The key length of the DKIM key pair in use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningKeyLength
+     */
+
+    public DkimAttributes withCurrentSigningKeyLength(DkimSigningKeyLength currentSigningKeyLength) {
+        this.currentSigningKeyLength = currentSigningKeyLength.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The last time a key pair was generated for this identity.
+     * </p>
+     * 
+     * @param lastKeyGenerationTimestamp
+     *        [Easy DKIM] The last time a key pair was generated for this identity.
+     */
+
+    public void setLastKeyGenerationTimestamp(java.util.Date lastKeyGenerationTimestamp) {
+        this.lastKeyGenerationTimestamp = lastKeyGenerationTimestamp;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The last time a key pair was generated for this identity.
+     * </p>
+     * 
+     * @return [Easy DKIM] The last time a key pair was generated for this identity.
+     */
+
+    public java.util.Date getLastKeyGenerationTimestamp() {
+        return this.lastKeyGenerationTimestamp;
+    }
+
+    /**
+     * <p>
+     * [Easy DKIM] The last time a key pair was generated for this identity.
+     * </p>
+     * 
+     * @param lastKeyGenerationTimestamp
+     *        [Easy DKIM] The last time a key pair was generated for this identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DkimAttributes withLastKeyGenerationTimestamp(java.util.Date lastKeyGenerationTimestamp) {
+        setLastKeyGenerationTimestamp(lastKeyGenerationTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -829,7 +1009,13 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
         if (getTokens() != null)
             sb.append("Tokens: ").append(getTokens()).append(",");
         if (getSigningAttributesOrigin() != null)
-            sb.append("SigningAttributesOrigin: ").append(getSigningAttributesOrigin());
+            sb.append("SigningAttributesOrigin: ").append(getSigningAttributesOrigin()).append(",");
+        if (getNextSigningKeyLength() != null)
+            sb.append("NextSigningKeyLength: ").append(getNextSigningKeyLength()).append(",");
+        if (getCurrentSigningKeyLength() != null)
+            sb.append("CurrentSigningKeyLength: ").append(getCurrentSigningKeyLength()).append(",");
+        if (getLastKeyGenerationTimestamp() != null)
+            sb.append("LastKeyGenerationTimestamp: ").append(getLastKeyGenerationTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -860,6 +1046,18 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSigningAttributesOrigin() != null && other.getSigningAttributesOrigin().equals(this.getSigningAttributesOrigin()) == false)
             return false;
+        if (other.getNextSigningKeyLength() == null ^ this.getNextSigningKeyLength() == null)
+            return false;
+        if (other.getNextSigningKeyLength() != null && other.getNextSigningKeyLength().equals(this.getNextSigningKeyLength()) == false)
+            return false;
+        if (other.getCurrentSigningKeyLength() == null ^ this.getCurrentSigningKeyLength() == null)
+            return false;
+        if (other.getCurrentSigningKeyLength() != null && other.getCurrentSigningKeyLength().equals(this.getCurrentSigningKeyLength()) == false)
+            return false;
+        if (other.getLastKeyGenerationTimestamp() == null ^ this.getLastKeyGenerationTimestamp() == null)
+            return false;
+        if (other.getLastKeyGenerationTimestamp() != null && other.getLastKeyGenerationTimestamp().equals(this.getLastKeyGenerationTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -872,6 +1070,9 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTokens() == null) ? 0 : getTokens().hashCode());
         hashCode = prime * hashCode + ((getSigningAttributesOrigin() == null) ? 0 : getSigningAttributesOrigin().hashCode());
+        hashCode = prime * hashCode + ((getNextSigningKeyLength() == null) ? 0 : getNextSigningKeyLength().hashCode());
+        hashCode = prime * hashCode + ((getCurrentSigningKeyLength() == null) ? 0 : getCurrentSigningKeyLength().hashCode());
+        hashCode = prime * hashCode + ((getLastKeyGenerationTimestamp() == null) ? 0 : getLastKeyGenerationTimestamp().hashCode());
         return hashCode;
     }
 

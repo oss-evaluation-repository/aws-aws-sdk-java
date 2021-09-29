@@ -43,6 +43,13 @@ public class ListLayersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Integer maxItems;
+    /**
+     * <p>
+     * The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     * architecture</a>.
+     * </p>
+     */
+    private String compatibleArchitecture;
 
     /**
      * <p>
@@ -184,6 +191,73 @@ public class ListLayersRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     * architecture</a>.
+     * </p>
+     * 
+     * @param compatibleArchitecture
+     *        The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     *        architecture</a>.
+     * @see Architecture
+     */
+
+    public void setCompatibleArchitecture(String compatibleArchitecture) {
+        this.compatibleArchitecture = compatibleArchitecture;
+    }
+
+    /**
+     * <p>
+     * The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     * architecture</a>.
+     * </p>
+     * 
+     * @return The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     *         set architecture</a>.
+     * @see Architecture
+     */
+
+    public String getCompatibleArchitecture() {
+        return this.compatibleArchitecture;
+    }
+
+    /**
+     * <p>
+     * The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     * architecture</a>.
+     * </p>
+     * 
+     * @param compatibleArchitecture
+     *        The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     *        architecture</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public ListLayersRequest withCompatibleArchitecture(String compatibleArchitecture) {
+        setCompatibleArchitecture(compatibleArchitecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     * architecture</a>.
+     * </p>
+     * 
+     * @param compatibleArchitecture
+     *        The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set
+     *        architecture</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public ListLayersRequest withCompatibleArchitecture(Architecture compatibleArchitecture) {
+        this.compatibleArchitecture = compatibleArchitecture.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +274,9 @@ public class ListLayersRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: ").append(getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
+        if (getCompatibleArchitecture() != null)
+            sb.append("CompatibleArchitecture: ").append(getCompatibleArchitecture());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +303,10 @@ public class ListLayersRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
+        if (other.getCompatibleArchitecture() == null ^ this.getCompatibleArchitecture() == null)
+            return false;
+        if (other.getCompatibleArchitecture() != null && other.getCompatibleArchitecture().equals(this.getCompatibleArchitecture()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +318,7 @@ public class ListLayersRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getCompatibleRuntime() == null) ? 0 : getCompatibleRuntime().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getCompatibleArchitecture() == null) ? 0 : getCompatibleArchitecture().hashCode());
         return hashCode;
     }
 

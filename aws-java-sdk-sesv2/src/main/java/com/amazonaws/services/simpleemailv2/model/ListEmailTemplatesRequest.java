@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to list the email templates present in your Amazon SES account in the current AWS Region. For
- * more information, see the <a
+ * Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web
+ * Services Region. For more information, see the <a
  * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
  * Guide</a>.
  * </p>

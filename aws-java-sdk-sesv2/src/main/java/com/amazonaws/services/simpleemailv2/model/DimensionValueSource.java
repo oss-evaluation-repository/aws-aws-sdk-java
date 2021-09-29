@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If you want
- * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
- * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use your own
- * email headers, choose <code>emailHeader</code>. If you want to use link tags, choose <code>linkTags</code>.
+ * The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the
+ * message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+ * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email
+ * headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -31,7 +31,7 @@ public class GetDedicatedIpRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP
-     * address that's assocaited with your AWS account.
+     * address that's assocaited with your Amazon Web Services account.
      * </p>
      */
     private String ip;
@@ -39,12 +39,12 @@ public class GetDedicatedIpRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP
-     * address that's assocaited with your AWS account.
+     * address that's assocaited with your Amazon Web Services account.
      * </p>
      * 
      * @param ip
      *        The IP address that you want to obtain more information about. The value you specify has to be a dedicated
-     *        IP address that's assocaited with your AWS account.
+     *        IP address that's assocaited with your Amazon Web Services account.
      */
 
     public void setIp(String ip) {
@@ -54,11 +54,11 @@ public class GetDedicatedIpRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP
-     * address that's assocaited with your AWS account.
+     * address that's assocaited with your Amazon Web Services account.
      * </p>
      * 
      * @return The IP address that you want to obtain more information about. The value you specify has to be a
-     *         dedicated IP address that's assocaited with your AWS account.
+     *         dedicated IP address that's assocaited with your Amazon Web Services account.
      */
 
     public String getIp() {
@@ -68,12 +68,12 @@ public class GetDedicatedIpRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP
-     * address that's assocaited with your AWS account.
+     * address that's assocaited with your Amazon Web Services account.
      * </p>
      * 
      * @param ip
      *        The IP address that you want to obtain more information about. The value you specify has to be a dedicated
-     *        IP address that's assocaited with your AWS account.
+     *        IP address that's assocaited with your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

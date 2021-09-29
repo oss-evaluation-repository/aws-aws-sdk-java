@@ -32,8 +32,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address that you want to use as the "From" address for the email. The address that you specify has to
-     * be verified.
+     * The email address to use as the "From" address for the email. The address that you specify has to be verified.
      * </p>
      */
     private String fromEmailAddress;
@@ -116,7 +115,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<MessageTag> emailTags;
     /**
      * <p>
-     * The name of the configuration set that you want to use when sending the email.
+     * The name of the configuration set to use when sending the email.
      * </p>
      */
     private String configurationSetName;
@@ -130,13 +129,12 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address that you want to use as the "From" address for the email. The address that you specify has to
-     * be verified.
+     * The email address to use as the "From" address for the email. The address that you specify has to be verified.
      * </p>
      * 
      * @param fromEmailAddress
-     *        The email address that you want to use as the "From" address for the email. The address that you specify
-     *        has to be verified.
+     *        The email address to use as the "From" address for the email. The address that you specify has to be
+     *        verified.
      */
 
     public void setFromEmailAddress(String fromEmailAddress) {
@@ -145,12 +143,11 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address that you want to use as the "From" address for the email. The address that you specify has to
-     * be verified.
+     * The email address to use as the "From" address for the email. The address that you specify has to be verified.
      * </p>
      * 
-     * @return The email address that you want to use as the "From" address for the email. The address that you specify
-     *         has to be verified.
+     * @return The email address to use as the "From" address for the email. The address that you specify has to be
+     *         verified.
      */
 
     public String getFromEmailAddress() {
@@ -159,13 +156,12 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address that you want to use as the "From" address for the email. The address that you specify has to
-     * be verified.
+     * The email address to use as the "From" address for the email. The address that you specify has to be verified.
      * </p>
      * 
      * @param fromEmailAddress
-     *        The email address that you want to use as the "From" address for the email. The address that you specify
-     *        has to be verified.
+     *        The email address to use as the "From" address for the email. The address that you specify has to be
+     *        verified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,11 +728,11 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the configuration set that you want to use when sending the email.
+     * The name of the configuration set to use when sending the email.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to use when sending the email.
+     *        The name of the configuration set to use when sending the email.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -745,10 +741,10 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the configuration set that you want to use when sending the email.
+     * The name of the configuration set to use when sending the email.
      * </p>
      * 
-     * @return The name of the configuration set that you want to use when sending the email.
+     * @return The name of the configuration set to use when sending the email.
      */
 
     public String getConfigurationSetName() {
@@ -757,11 +753,11 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the configuration set that you want to use when sending the email.
+     * The name of the configuration set to use when sending the email.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to use when sending the email.
+     *        The name of the configuration set to use when sending the email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

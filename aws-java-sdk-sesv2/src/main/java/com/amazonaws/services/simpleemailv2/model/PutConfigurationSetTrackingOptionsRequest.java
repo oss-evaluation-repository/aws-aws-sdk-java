@@ -30,24 +30,24 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to add a custom tracking domain to.
+     * The name of the configuration set.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * The domain that you want to use to track open and click events.
+     * The domain to use to track open and click events.
      * </p>
      */
     private String customRedirectDomain;
 
     /**
      * <p>
-     * The name of the configuration set that you want to add a custom tracking domain to.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to add a custom tracking domain to.
+     *        The name of the configuration set.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -56,10 +56,10 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to add a custom tracking domain to.
+     * The name of the configuration set.
      * </p>
      * 
-     * @return The name of the configuration set that you want to add a custom tracking domain to.
+     * @return The name of the configuration set.
      */
 
     public String getConfigurationSetName() {
@@ -68,11 +68,11 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to add a custom tracking domain to.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to add a custom tracking domain to.
+     *        The name of the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The domain that you want to use to track open and click events.
+     * The domain to use to track open and click events.
      * </p>
      * 
      * @param customRedirectDomain
-     *        The domain that you want to use to track open and click events.
+     *        The domain to use to track open and click events.
      */
 
     public void setCustomRedirectDomain(String customRedirectDomain) {
@@ -96,10 +96,10 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The domain that you want to use to track open and click events.
+     * The domain to use to track open and click events.
      * </p>
      * 
-     * @return The domain that you want to use to track open and click events.
+     * @return The domain to use to track open and click events.
      */
 
     public String getCustomRedirectDomain() {
@@ -108,11 +108,11 @@ public class PutConfigurationSetTrackingOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The domain that you want to use to track open and click events.
+     * The domain to use to track open and click events.
      * </p>
      * 
      * @param customRedirectDomain
-     *        The domain that you want to use to track open and click events.
+     *        The domain to use to track open and click events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

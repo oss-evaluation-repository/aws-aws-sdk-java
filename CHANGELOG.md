@@ -1,3 +1,16 @@
+# __1.12.77__ __2021-09-29__
+## __AWS Lambda__
+  - ### Features
+    - Adds support for Lambda functions powered by AWS Graviton2 processors. Customers can now select the CPU architecture for their functions.
+
+## __Amazon Prometheus Service__
+  - ### Features
+    - This release adds alert manager and rule group namespace APIs
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This release includes the ability to use 2048 bits RSA key pairs for DKIM in SES, either with Easy DKIM or Bring Your Own DKIM.
+
 # __1.12.76__ __2021-09-28__
 ## __AWS Transfer Family__
   - ### Features

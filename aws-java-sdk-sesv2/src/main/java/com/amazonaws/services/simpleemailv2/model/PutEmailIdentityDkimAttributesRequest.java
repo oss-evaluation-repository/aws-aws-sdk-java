@@ -30,7 +30,7 @@ public class PutEmailIdentityDkimAttributesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The email identity that you want to change the DKIM settings for.
+     * The email identity.
      * </p>
      */
     private String emailIdentity;
@@ -47,11 +47,11 @@ public class PutEmailIdentityDkimAttributesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The email identity that you want to change the DKIM settings for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to change the DKIM settings for.
+     *        The email identity.
      */
 
     public void setEmailIdentity(String emailIdentity) {
@@ -60,10 +60,10 @@ public class PutEmailIdentityDkimAttributesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The email identity that you want to change the DKIM settings for.
+     * The email identity.
      * </p>
      * 
-     * @return The email identity that you want to change the DKIM settings for.
+     * @return The email identity.
      */
 
     public String getEmailIdentity() {
@@ -72,11 +72,11 @@ public class PutEmailIdentityDkimAttributesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The email identity that you want to change the DKIM settings for.
+     * The email identity.
      * </p>
      * 
      * @param emailIdentity
-     *        The email identity that you want to change the DKIM settings for.
+     *        The email identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
