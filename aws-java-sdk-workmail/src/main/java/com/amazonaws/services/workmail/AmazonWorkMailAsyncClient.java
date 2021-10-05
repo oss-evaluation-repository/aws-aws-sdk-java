@@ -812,6 +812,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(DescribeInboundDmarcSettingsRequest request) {
+
+        return describeInboundDmarcSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(final DescribeInboundDmarcSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInboundDmarcSettingsRequest, DescribeInboundDmarcSettingsResult> asyncHandler) {
+        final DescribeInboundDmarcSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInboundDmarcSettingsResult>() {
+            @Override
+            public DescribeInboundDmarcSettingsResult call() throws Exception {
+                DescribeInboundDmarcSettingsResult result = null;
+
+                try {
+                    result = executeDescribeInboundDmarcSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest request) {
 
         return describeMailboxExportJobAsync(request, null);
@@ -1626,6 +1659,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executePutAccessControlRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest request) {
+
+        return putInboundDmarcSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(final PutInboundDmarcSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutInboundDmarcSettingsRequest, PutInboundDmarcSettingsResult> asyncHandler) {
+        final PutInboundDmarcSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutInboundDmarcSettingsResult>() {
+            @Override
+            public PutInboundDmarcSettingsResult call() throws Exception {
+                PutInboundDmarcSettingsResult result = null;
+
+                try {
+                    result = executePutInboundDmarcSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -38,7 +38,8 @@ public enum ScalableDimension {
     CassandraTableWriteCapacityUnits("cassandra:table:WriteCapacityUnits"),
     KafkaBrokerStorageVolumeSize("kafka:broker-storage:VolumeSize"),
     ElasticacheReplicationGroupNodeGroups("elasticache:replication-group:NodeGroups"),
-    ElasticacheReplicationGroupReplicas("elasticache:replication-group:Replicas");
+    ElasticacheReplicationGroupReplicas("elasticache:replication-group:Replicas"),
+    NeptuneClusterReadReplicaCount("neptune:cluster:ReadReplicaCount");
 
     private String value;
 

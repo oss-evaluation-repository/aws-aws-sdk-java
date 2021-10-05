@@ -52,8 +52,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -88,8 +88,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -138,6 +138,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -159,7 +165,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -197,8 +203,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -252,17 +258,22 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
     /**
      * <p>
-     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a
-     * subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     * subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      * <code>NextToken</code> value, if applicable.
      * </p>
      */
@@ -441,8 +452,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -477,8 +488,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -527,6 +538,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -541,8 +558,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *        Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -577,8 +594,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
-     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -629,6 +646,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -649,8 +672,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -685,8 +708,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -735,6 +758,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -748,9 +777,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
-     *         the Spot Fleet request ID. Example:
-     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *         Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *         Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -785,8 +813,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier
-     *         is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *         resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -838,6 +866,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
+     *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -858,8 +892,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -894,8 +928,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -944,6 +978,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -958,8 +998,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *        Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -994,8 +1034,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
-     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1046,6 +1086,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1072,7 +1118,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1110,8 +1156,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1165,6 +1211,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1183,7 +1234,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1221,8 +1272,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1278,6 +1329,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        ElastiCache replication group.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
+     *        </p>
+     *        </li>
      * @see ScalableDimension
      */
 
@@ -1303,7 +1360,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1341,8 +1398,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1396,6 +1453,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1413,7 +1475,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *         </p>
      *         </li>
      *         <li>
@@ -1451,8 +1513,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *         model endpoint variant.
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         endpoint variant.
      *         </p>
      *         </li>
      *         <li>
@@ -1508,6 +1570,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         ElastiCache replication group.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *         cluster.
+     *         </p>
+     *         </li>
      * @see ScalableDimension
      */
 
@@ -1533,7 +1601,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1571,8 +1639,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1626,6 +1694,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1644,7 +1717,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1682,8 +1755,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1737,6 +1810,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      *        ElastiCache replication group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1766,7 +1845,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1804,8 +1883,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1859,6 +1938,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1877,7 +1961,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1915,8 +1999,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1970,6 +2054,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      *        ElastiCache replication group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1997,7 +2087,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -2035,8 +2125,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -2090,6 +2180,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2108,7 +2203,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -2146,8 +2241,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -2203,6 +2298,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        ElastiCache replication group.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -2214,21 +2315,21 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a
-     * subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     * subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      * <code>NextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
-     *        value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     *        value in a subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      *        <code>NextToken</code> value, if applicable.
      */
 
@@ -2238,20 +2339,20 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a
-     * subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     * subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      * <code>NextToken</code> value, if applicable.
      * </p>
      * 
-     * @return The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
+     * @return The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.</p>
      *         <p>
      *         If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *         with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
-     *         value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     *         value in a subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      *         <code>NextToken</code> value, if applicable.
      */
 
@@ -2261,21 +2362,21 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a
-     * subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     * subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      * <code>NextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
-     *        value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a
+     *        value in a subsequent call. If this parameter is not used, the operation returns up to 10 results and a
      *        <code>NextToken</code> value, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

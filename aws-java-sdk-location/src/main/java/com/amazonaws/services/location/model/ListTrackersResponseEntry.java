@@ -47,8 +47,8 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
      * The pricing plan for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -170,15 +170,15 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
      * The pricing plan for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -191,14 +191,14 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
      * The pricing plan for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return The pricing plan for the specified tracker resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -211,15 +211,15 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
      * The pricing plan for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -234,15 +234,15 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
      * The pricing plan for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */

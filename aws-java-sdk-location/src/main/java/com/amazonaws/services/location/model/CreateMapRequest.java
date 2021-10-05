@@ -68,8 +68,8 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Specifies the pricing plan for your map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -356,15 +356,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Specifies the pricing plan for your map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for your map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -377,14 +377,14 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Specifies the pricing plan for your map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return Specifies the pricing plan for your map resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -397,15 +397,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Specifies the pricing plan for your map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for your map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -420,15 +420,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Specifies the pricing plan for your map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for your map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */

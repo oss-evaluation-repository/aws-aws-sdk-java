@@ -45,9 +45,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      */
     private String dataSource;
@@ -84,9 +84,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @param dataSource
@@ -104,9 +104,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional details on data providers, see the <a
+     *        For additional details on data providers, see <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *        Location Service data providers page</a>.
+     *        Location Service data providers</a>.
      */
 
     public void setDataSource(String dataSource) {
@@ -130,9 +130,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @return The data provider of geospatial data. Indicates one of the available providers:</p>
@@ -149,9 +149,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional details on data providers, see the <a
+     *         For additional details on data providers, see <a
      *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *         Location Service data providers page</a>.
+     *         Location Service data providers</a>.
      */
 
     public String getDataSource() {
@@ -175,9 +175,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @param dataSource
@@ -195,9 +195,9 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional details on data providers, see the <a
+     *        For additional details on data providers, see <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *        Location Service data providers page</a>.
+     *        Location Service data providers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

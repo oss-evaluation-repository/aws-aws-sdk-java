@@ -31,7 +31,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
+     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles:
      * </p>
      * <ul>
      * <li>
@@ -64,13 +65,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     * VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      * </p>
      * </li>
      * </ul>
@@ -97,7 +98,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
+     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles:
      * </p>
      * <ul>
      * <li>
@@ -130,13 +132,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     * VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      * </p>
      * </li>
      * </ul>
@@ -145,8 +147,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *        <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *        <p>
-     *        Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
-     *        styles:
+     *        Valid fonts stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *        </p>
      *        <ul>
      *        <li>
@@ -179,13 +181,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     *        Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      *        Technologies</a> styles:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     *        VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      *        </p>
      *        </li>
      */
@@ -200,7 +202,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
+     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles:
      * </p>
      * <ul>
      * <li>
@@ -233,13 +236,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     * VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      * </p>
      * </li>
      * </ul>
@@ -247,8 +250,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *         <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *         <p>
-     *         Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
-     *         styles:
+     *         Valid fonts stacks for <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *         </p>
      *         <ul>
      *         <li>
@@ -282,13 +285,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     *         Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      *         Technologies</a> styles:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     *         VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      *         </p>
      *         </li>
      */
@@ -303,7 +306,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
+     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles:
      * </p>
      * <ul>
      * <li>
@@ -336,13 +340,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     * VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      * </p>
      * </li>
      * </ul>
@@ -351,8 +355,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *        <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *        <p>
-     *        Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
-     *        styles:
+     *        Valid fonts stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *        </p>
      *        <ul>
      *        <li>
@@ -385,13 +389,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     *        Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      *        Technologies</a> styles:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
+     *        VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

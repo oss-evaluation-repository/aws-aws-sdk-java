@@ -68,21 +68,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -93,7 +78,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -108,27 +113,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -156,21 +156,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -181,7 +166,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -196,27 +201,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -393,21 +393,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -418,7 +403,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -433,27 +438,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -480,21 +480,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet requests
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        AppStream 2.0 fleets
      *        </p>
      *        </li>
@@ -505,7 +490,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
      *        </p>
      *        </li>
      *        <li>
@@ -520,27 +525,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        DynamoDB tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Lambda provisioned concurrency
+     *        DynamoDB tables and global secondary indexes
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
      *        </p>
      *        </li>
      *        <li>
@@ -572,21 +572,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -597,7 +582,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -612,27 +617,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -658,21 +658,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         ECS services
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleet requests
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EMR clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         AppStream 2.0 fleets
      *         </p>
      *         </li>
@@ -683,7 +668,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon SageMaker endpoint variants
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Neptune clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleets
      *         </p>
      *         </li>
      *         <li>
@@ -698,27 +703,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         DynamoDB tables
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB global secondary indexes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Lambda provisioned concurrency
+     *         DynamoDB tables and global secondary indexes
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
      *         </p>
      *         </li>
      *         <li>
@@ -750,21 +750,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -775,7 +760,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -790,27 +795,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -837,21 +837,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet requests
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        AppStream 2.0 fleets
      *        </p>
      *        </li>
@@ -862,7 +847,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
      *        </p>
      *        </li>
      *        <li>
@@ -877,27 +882,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        DynamoDB tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Lambda provisioned concurrency
+     *        DynamoDB tables and global secondary indexes
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
      *        </p>
      *        </li>
      *        <li>
@@ -930,21 +930,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -955,7 +940,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -970,27 +975,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -1017,21 +1017,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet requests
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        AppStream 2.0 fleets
      *        </p>
      *        </li>
@@ -1042,7 +1027,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
      *        </p>
      *        </li>
      *        <li>
@@ -1057,27 +1062,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        DynamoDB tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Lambda provisioned concurrency
+     *        DynamoDB tables and global secondary indexes
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
      *        </p>
      *        </li>
      *        <li>
@@ -1108,21 +1108,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -1133,7 +1118,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -1148,27 +1153,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -1194,21 +1194,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         ECS services
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleet requests
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EMR clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         AppStream 2.0 fleets
      *         </p>
      *         </li>
@@ -1219,7 +1204,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon SageMaker endpoint variants
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Neptune clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleets
      *         </p>
      *         </li>
      *         <li>
@@ -1234,27 +1239,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         DynamoDB tables
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB global secondary indexes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Lambda provisioned concurrency
+     *         DynamoDB tables and global secondary indexes
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
      *         </p>
      *         </li>
      *         <li>
@@ -1285,21 +1285,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleet requests
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * AppStream 2.0 fleets
      * </p>
      * </li>
@@ -1310,7 +1295,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Neptune clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
      * </p>
      * </li>
      * <li>
@@ -1325,27 +1330,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * DynamoDB tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * Lambda provisioned concurrency
+     * DynamoDB tables and global secondary indexes
      * </p>
      * </li>
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -1372,21 +1372,6 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleet requests
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        AppStream 2.0 fleets
      *        </p>
      *        </li>
@@ -1397,7 +1382,27 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
      *        </p>
      *        </li>
      *        <li>
@@ -1412,27 +1417,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        DynamoDB tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Lambda provisioned concurrency
+     *        DynamoDB tables and global secondary indexes
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
      *        </p>
      *        </li>
      *        <li>

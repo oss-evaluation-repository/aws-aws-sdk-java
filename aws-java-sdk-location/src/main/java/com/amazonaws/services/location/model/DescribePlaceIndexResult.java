@@ -48,9 +48,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      */
     private String dataSource;
@@ -90,8 +90,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -179,9 +179,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @param dataSource
@@ -199,9 +199,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional details on data providers, see the <a
+     *        For additional details on data providers, see <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *        Location Service data providers page</a>.
+     *        Location Service data providers</a>.
      */
 
     public void setDataSource(String dataSource) {
@@ -225,9 +225,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @return The data provider of geospatial data. Indicates one of the available providers:</p>
@@ -244,9 +244,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional details on data providers, see the <a
+     *         For additional details on data providers, see <a
      *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *         Location Service data providers page</a>.
+     *         Location Service data providers</a>.
      */
 
     public String getDataSource() {
@@ -270,9 +270,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see the <a
+     * For additional details on data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
-     * Service data providers page</a>.
+     * Service data providers</a>.
      * </p>
      * 
      * @param dataSource
@@ -290,9 +290,9 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional details on data providers, see the <a
+     *        For additional details on data providers, see <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     *        Location Service data providers page</a>.
+     *        Location Service data providers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,15 +505,15 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -526,14 +526,14 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return The pricing plan selected for the specified place index resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -546,15 +546,15 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -569,15 +569,15 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */

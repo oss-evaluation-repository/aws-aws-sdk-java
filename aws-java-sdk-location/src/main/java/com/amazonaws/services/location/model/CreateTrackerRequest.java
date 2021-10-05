@@ -40,11 +40,40 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String kmsKeyId;
     /**
      * <p>
+     * Specifies the position filtering for the tracker resource.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     * location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds
+     * is stored for each unique device ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored.
+     * Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+     * Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * </p>
+     */
+    private String positionFiltering;
+    /**
+     * <p>
      * Specifies the pricing plan for the tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -72,7 +101,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * <p>
-     * Valid Values: <code>Esri</code> | <code>Here</code>
+     * Valid values: <code>Esri</code> | <code>Here</code>
      * </p>
      */
     private String pricingPlanDataSource;
@@ -234,18 +263,261 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Specifies the position filtering for the tracker resource.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     * location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds
+     * is stored for each unique device ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored.
+     * Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+     * Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        Specifies the position filtering for the tracker resource.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     *        location update is stored. If your update frequency is more often than 30 seconds, only one update per 30
+     *        seconds is stored for each unique device ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+     *        ignored. Location updates within this distance are neither evaluated against linked geofence collections,
+     *        nor stored. This helps control costs by reducing the number of geofence evaluations and device positions
+     *        to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory
+     *        on a map.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * @see PositionFiltering
+     */
+
+    public void setPositionFiltering(String positionFiltering) {
+        this.positionFiltering = positionFiltering;
+    }
+
+    /**
+     * <p>
+     * Specifies the position filtering for the tracker resource.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     * location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds
+     * is stored for each unique device ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored.
+     * Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+     * Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * </p>
+     * 
+     * @return Specifies the position filtering for the tracker resource.</p>
+     *         <p>
+     *         Valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not
+     *         every location update is stored. If your update frequency is more often than 30 seconds, only one update
+     *         per 30 seconds is stored for each unique device ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+     *         ignored. Location updates within this distance are neither evaluated against linked geofence collections,
+     *         nor stored. This helps control costs by reducing the number of geofence evaluations and device positions
+     *         to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory
+     *         on a map.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * @see PositionFiltering
+     */
+
+    public String getPositionFiltering() {
+        return this.positionFiltering;
+    }
+
+    /**
+     * <p>
+     * Specifies the position filtering for the tracker resource.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     * location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds
+     * is stored for each unique device ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored.
+     * Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+     * Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        Specifies the position filtering for the tracker resource.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     *        location update is stored. If your update frequency is more often than 30 seconds, only one update per 30
+     *        seconds is stored for each unique device ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+     *        ignored. Location updates within this distance are neither evaluated against linked geofence collections,
+     *        nor stored. This helps control costs by reducing the number of geofence evaluations and device positions
+     *        to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory
+     *        on a map.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositionFiltering
+     */
+
+    public CreateTrackerRequest withPositionFiltering(String positionFiltering) {
+        setPositionFiltering(positionFiltering);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the position filtering for the tracker resource.
+     * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     * location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds
+     * is stored for each unique device ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored.
+     * Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+     * Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        Specifies the position filtering for the tracker resource.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every
+     *        location update is stored. If your update frequency is more often than 30 seconds, only one update per 30
+     *        seconds is stored for each unique device ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+     *        ignored. Location updates within this distance are neither evaluated against linked geofence collections,
+     *        nor stored. This helps control costs by reducing the number of geofence evaluations and device positions
+     *        to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory
+     *        on a map.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This field is optional. If not specified, the default value is <code>TimeBased</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositionFiltering
+     */
+
+    public CreateTrackerRequest withPositionFiltering(PositionFiltering positionFiltering) {
+        this.positionFiltering = positionFiltering.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the pricing plan for the tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for the tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -258,14 +530,14 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Specifies the pricing plan for the tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return Specifies the pricing plan for the tracker resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -278,15 +550,15 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Specifies the pricing plan for the tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for the tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -301,15 +573,15 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Specifies the pricing plan for the tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        Specifies the pricing plan for the tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -343,7 +615,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * <p>
-     * Valid Values: <code>Esri</code> | <code>Here</code>
+     * Valid values: <code>Esri</code> | <code>Here</code>
      * </p>
      * 
      * @param pricingPlanDataSource
@@ -369,7 +641,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        </note>
      *        <p>
-     *        Valid Values: <code>Esri</code> | <code>Here</code>
+     *        Valid values: <code>Esri</code> | <code>Here</code>
      */
 
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -400,7 +672,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * <p>
-     * Valid Values: <code>Esri</code> | <code>Here</code>
+     * Valid values: <code>Esri</code> | <code>Here</code>
      * </p>
      * 
      * @return Specifies the data provider for the tracker resource.</p>
@@ -425,7 +697,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         </note>
      *         <p>
-     *         Valid Values: <code>Esri</code> | <code>Here</code>
+     *         Valid values: <code>Esri</code> | <code>Here</code>
      */
 
     public String getPricingPlanDataSource() {
@@ -456,7 +728,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * <p>
-     * Valid Values: <code>Esri</code> | <code>Here</code>
+     * Valid values: <code>Esri</code> | <code>Here</code>
      * </p>
      * 
      * @param pricingPlanDataSource
@@ -482,7 +754,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        </note>
      *        <p>
-     *        Valid Values: <code>Esri</code> | <code>Here</code>
+     *        Valid values: <code>Esri</code> | <code>Here</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,6 +1205,8 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Description: ").append(getDescription()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getPositionFiltering() != null)
+            sb.append("PositionFiltering: ").append(getPositionFiltering()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getPricingPlanDataSource() != null)
@@ -963,6 +1237,10 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getPositionFiltering() == null ^ this.getPositionFiltering() == null)
+            return false;
+        if (other.getPositionFiltering() != null && other.getPositionFiltering().equals(this.getPositionFiltering()) == false)
+            return false;
         if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
@@ -989,6 +1267,7 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPositionFiltering() == null) ? 0 : getPositionFiltering().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

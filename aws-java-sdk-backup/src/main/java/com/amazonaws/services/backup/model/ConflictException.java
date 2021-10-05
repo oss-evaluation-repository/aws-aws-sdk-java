@@ -24,9 +24,9 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     private static final long serialVersionUID = 1L;
 
     private String code;
-
+    /** <p/> */
     private String type;
-
+    /** <p/> */
     private String context;
 
     /**
@@ -68,6 +68,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @param type
      */
 
@@ -77,6 +79,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -86,6 +90,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @param type
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,6 +102,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @param context
      */
 
@@ -105,6 +113,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -114,6 +124,8 @@ public class ConflictException extends com.amazonaws.services.backup.model.AWSBa
     }
 
     /**
+     * <p/>
+     * 
      * @param context
      * @return Returns a reference to this object so that method calls can be chained together.
      */

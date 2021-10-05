@@ -303,6 +303,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(DescribeInboundDmarcSettingsRequest request) {
+
+        return describeInboundDmarcSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(DescribeInboundDmarcSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInboundDmarcSettingsRequest, DescribeInboundDmarcSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest request) {
 
         return describeMailboxExportJobAsync(request, null);
@@ -627,6 +640,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(PutAccessControlRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccessControlRuleRequest, PutAccessControlRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest request) {
+
+        return putInboundDmarcSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutInboundDmarcSettingsRequest, PutInboundDmarcSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

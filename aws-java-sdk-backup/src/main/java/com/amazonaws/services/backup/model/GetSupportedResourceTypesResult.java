@@ -30,6 +30,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
      * </p>
      * </li>
@@ -50,12 +55,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>RDS</code> for Amazon Relational Database Service
+     * <code>FSX</code> for Amazon FSx
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Aurora</code> for Amazon Aurora
+     * <code>RDS</code> for Amazon Relational Database Service
      * </p>
      * </li>
      * <li>
@@ -74,6 +79,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
      * </p>
      * </li>
@@ -94,12 +104,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>RDS</code> for Amazon Relational Database Service
+     * <code>FSX</code> for Amazon FSx
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Aurora</code> for Amazon Aurora
+     * <code>RDS</code> for Amazon Relational Database Service
      * </p>
      * </li>
      * <li>
@@ -111,6 +121,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * 
      * @return Contains a string with the supported Amazon Web Services resource types:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>DynamoDB</code> for Amazon DynamoDB
@@ -133,12 +148,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RDS</code> for Amazon Relational Database Service
+     *         <code>FSX</code> for Amazon FSx
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Aurora</code> for Amazon Aurora
+     *         <code>RDS</code> for Amazon Relational Database Service
      *         </p>
      *         </li>
      *         <li>
@@ -157,6 +172,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * Contains a string with the supported Amazon Web Services resource types:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
@@ -179,12 +199,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>RDS</code> for Amazon Relational Database Service
+     * <code>FSX</code> for Amazon FSx
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Aurora</code> for Amazon Aurora
+     * <code>RDS</code> for Amazon Relational Database Service
      * </p>
      * </li>
      * <li>
@@ -197,6 +217,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * @param resourceTypes
      *        Contains a string with the supported Amazon Web Services resource types:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>DynamoDB</code> for Amazon DynamoDB
@@ -219,12 +244,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RDS</code> for Amazon Relational Database Service
+     *        <code>FSX</code> for Amazon FSx
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Aurora</code> for Amazon Aurora
+     *        <code>RDS</code> for Amazon Relational Database Service
      *        </p>
      *        </li>
      *        <li>
@@ -250,6 +275,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
      * </p>
      * </li>
@@ -270,12 +300,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>RDS</code> for Amazon Relational Database Service
+     * <code>FSX</code> for Amazon FSx
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Aurora</code> for Amazon Aurora
+     * <code>RDS</code> for Amazon Relational Database Service
      * </p>
      * </li>
      * <li>
@@ -293,6 +323,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * @param resourceTypes
      *        Contains a string with the supported Amazon Web Services resource types:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>DynamoDB</code> for Amazon DynamoDB
@@ -315,12 +350,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RDS</code> for Amazon Relational Database Service
+     *        <code>FSX</code> for Amazon FSx
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Aurora</code> for Amazon Aurora
+     *        <code>RDS</code> for Amazon Relational Database Service
      *        </p>
      *        </li>
      *        <li>
@@ -348,6 +383,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
      * </p>
      * </li>
@@ -368,12 +408,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>RDS</code> for Amazon Relational Database Service
+     * <code>FSX</code> for Amazon FSx
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Aurora</code> for Amazon Aurora
+     * <code>RDS</code> for Amazon Relational Database Service
      * </p>
      * </li>
      * <li>
@@ -386,6 +426,11 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * @param resourceTypes
      *        Contains a string with the supported Amazon Web Services resource types:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>DynamoDB</code> for Amazon DynamoDB
@@ -408,12 +453,12 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RDS</code> for Amazon Relational Database Service
+     *        <code>FSX</code> for Amazon FSx
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Aurora</code> for Amazon Aurora
+     *        <code>RDS</code> for Amazon Relational Database Service
      *        </p>
      *        </li>
      *        <li>

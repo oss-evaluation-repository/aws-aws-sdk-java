@@ -226,6 +226,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CancelCapacityReservationFleetsResult cancelCapacityReservationFleets(CancelCapacityReservationFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelConversionTaskResult cancelConversionTask(CancelConversionTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -282,6 +287,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCapacityReservationFleetResult createCapacityReservationFleet(CreateCapacityReservationFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -975,6 +985,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeByoipCidrsResult describeByoipCidrs(DescribeByoipCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCapacityReservationFleetsResult describeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2156,6 +2171,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyCapacityReservationResult modifyCapacityReservation(ModifyCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyCapacityReservationFleetResult modifyCapacityReservationFleet(ModifyCapacityReservationFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

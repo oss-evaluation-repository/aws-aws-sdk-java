@@ -32,7 +32,8 @@ public enum ServiceNamespace {
     Lambda("lambda"),
     Cassandra("cassandra"),
     Kafka("kafka"),
-    Elasticache("elasticache");
+    Elasticache("elasticache"),
+    Neptune("neptune");
 
     private String value;
 

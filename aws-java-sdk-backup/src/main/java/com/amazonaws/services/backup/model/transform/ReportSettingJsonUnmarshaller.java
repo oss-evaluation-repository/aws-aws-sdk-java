@@ -52,6 +52,16 @@ public class ReportSettingJsonUnmarshaller implements Unmarshaller<ReportSetting
                     context.nextToken();
                     reportSetting.setReportTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FrameworkArns", targetDepth)) {
+                    context.nextToken();
+                    reportSetting.setFrameworkArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("NumberOfFrameworks", targetDepth)) {
+                    context.nextToken();
+                    reportSetting.setNumberOfFrameworks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

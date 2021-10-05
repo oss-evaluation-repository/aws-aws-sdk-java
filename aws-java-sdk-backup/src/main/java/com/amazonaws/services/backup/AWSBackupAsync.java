@@ -240,8 +240,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * Creates a framework with one or more controls. A framework is a collection of controls that you can use to
      * evaluate your backup practices. By using pre-built customizable controls to define your policies, you can
-     * evaluate whether your backup practices comply with your policies. To get insights into the compliance status of
-     * your frameworks, you can set up automatic daily reports.
+     * evaluate whether your backup practices comply with your policies and which resources are not yet in compliance.
      * </p>
      * 
      * @param createFrameworkRequest
@@ -256,8 +255,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * Creates a framework with one or more controls. A framework is a collection of controls that you can use to
      * evaluate your backup practices. By using pre-built customizable controls to define your policies, you can
-     * evaluate whether your backup practices comply with your policies. To get insights into the compliance status of
-     * your frameworks, you can set up automatic daily reports.
+     * evaluate whether your backup practices comply with your policies and which resources are not yet in compliance.
      * </p>
      * 
      * @param createFrameworkRequest

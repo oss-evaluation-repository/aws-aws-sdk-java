@@ -33,6 +33,8 @@ public class CreateTrackerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> POSITIONFILTERING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PositionFiltering").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
     private static final MarshallingInfo<String> PRICINGPLANDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class CreateTrackerRequestMarshaller {
         try {
             protocolMarshaller.marshall(createTrackerRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createTrackerRequest.getPositionFiltering(), POSITIONFILTERING_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getPricingPlan(), PRICINGPLAN_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getPricingPlanDataSource(), PRICINGPLANDATASOURCE_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getTags(), TAGS_BINDING);

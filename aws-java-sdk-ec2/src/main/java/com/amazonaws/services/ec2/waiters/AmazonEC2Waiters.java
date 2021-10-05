@@ -409,7 +409,7 @@ public class AmazonEC2Waiters {
     public Waiter<DescribeSnapshotsRequest> snapshotCompleted() {
 
         return new WaiterBuilder<DescribeSnapshotsRequest, DescribeSnapshotsResult>().withSdkFunction(new DescribeSnapshotsFunction(client))
-                .withAcceptors(new SnapshotCompleted.IsCompletedMatcher())
+                .withAcceptors(new SnapshotCompleted.IsCompletedMatcher(), new SnapshotCompleted.IsErrorMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }

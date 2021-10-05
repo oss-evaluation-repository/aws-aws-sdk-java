@@ -133,6 +133,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DescribeInboundDmarcSettingsResult describeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeMailboxExportJobResult describeMailboxExportJob(DescribeMailboxExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,6 +259,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public PutAccessControlRuleResult putAccessControlRule(PutAccessControlRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutInboundDmarcSettingsResult putInboundDmarcSettings(PutInboundDmarcSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

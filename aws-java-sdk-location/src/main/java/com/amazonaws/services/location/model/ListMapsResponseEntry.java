@@ -59,8 +59,8 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
      * The pricing plan for the specified map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -250,15 +250,15 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
      * The pricing plan for the specified map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -271,14 +271,14 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
      * The pricing plan for the specified map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return The pricing plan for the specified map resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -291,15 +291,15 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
      * The pricing plan for the specified map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -314,15 +314,15 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
      * The pricing plan for the specified map resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan for the specified map resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */

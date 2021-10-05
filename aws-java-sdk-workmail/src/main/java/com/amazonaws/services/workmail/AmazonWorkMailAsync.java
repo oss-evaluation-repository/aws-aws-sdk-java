@@ -806,6 +806,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the settings in a DMARC policy for a specified organization.
+     * </p>
+     * 
+     * @param describeInboundDmarcSettingsRequest
+     * @return A Java Future containing the result of the DescribeInboundDmarcSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.DescribeInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(
+            DescribeInboundDmarcSettingsRequest describeInboundDmarcSettingsRequest);
+
+    /**
+     * <p>
+     * Lists the settings in a DMARC policy for a specified organization.
+     * </p>
+     * 
+     * @param describeInboundDmarcSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInboundDmarcSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.DescribeInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInboundDmarcSettingsResult> describeInboundDmarcSettingsAsync(
+            DescribeInboundDmarcSettingsRequest describeInboundDmarcSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInboundDmarcSettingsRequest, DescribeInboundDmarcSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the current status of a mailbox export job.
      * </p>
      * 
@@ -1610,6 +1645,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(PutAccessControlRuleRequest putAccessControlRuleRequest,
             com.amazonaws.handlers.AsyncHandler<PutAccessControlRuleRequest, PutAccessControlRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or disables a DMARC policy for a given organization.
+     * </p>
+     * 
+     * @param putInboundDmarcSettingsRequest
+     * @return A Java Future containing the result of the PutInboundDmarcSettings operation returned by the service.
+     * @sample AmazonWorkMailAsync.PutInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest putInboundDmarcSettingsRequest);
+
+    /**
+     * <p>
+     * Enables or disables a DMARC policy for a given organization.
+     * </p>
+     * 
+     * @param putInboundDmarcSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInboundDmarcSettings operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.PutInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInboundDmarcSettingsResult> putInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest putInboundDmarcSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInboundDmarcSettingsRequest, PutInboundDmarcSettingsResult> asyncHandler);
 
     /**
      * <p>

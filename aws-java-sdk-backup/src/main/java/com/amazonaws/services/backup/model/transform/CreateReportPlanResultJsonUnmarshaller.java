@@ -56,6 +56,10 @@ public class CreateReportPlanResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createReportPlanResult.setReportPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreationTime", targetDepth)) {
+                    context.nextToken();
+                    createReportPlanResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

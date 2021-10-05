@@ -205,7 +205,13 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * When true, specifies not returning the partition column schema. Useful when you are interested only in other
+     * partition attributes such as partition values or location. This approach avoids the problem of a large response
+     * by not returning duplicate data.
+     * </p>
+     */
     private Boolean excludeColumnSchema;
 
     /**
@@ -1320,7 +1326,16 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * When true, specifies not returning the partition column schema. Useful when you are interested only in other
+     * partition attributes such as partition values or location. This approach avoids the problem of a large response
+     * by not returning duplicate data.
+     * </p>
+     * 
      * @param excludeColumnSchema
+     *        When true, specifies not returning the partition column schema. Useful when you are interested only in
+     *        other partition attributes such as partition values or location. This approach avoids the problem of a
+     *        large response by not returning duplicate data.
      */
 
     public void setExcludeColumnSchema(Boolean excludeColumnSchema) {
@@ -1328,7 +1343,15 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * When true, specifies not returning the partition column schema. Useful when you are interested only in other
+     * partition attributes such as partition values or location. This approach avoids the problem of a large response
+     * by not returning duplicate data.
+     * </p>
+     * 
+     * @return When true, specifies not returning the partition column schema. Useful when you are interested only in
+     *         other partition attributes such as partition values or location. This approach avoids the problem of a
+     *         large response by not returning duplicate data.
      */
 
     public Boolean getExcludeColumnSchema() {
@@ -1336,7 +1359,16 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * When true, specifies not returning the partition column schema. Useful when you are interested only in other
+     * partition attributes such as partition values or location. This approach avoids the problem of a large response
+     * by not returning duplicate data.
+     * </p>
+     * 
      * @param excludeColumnSchema
+     *        When true, specifies not returning the partition column schema. Useful when you are interested only in
+     *        other partition attributes such as partition values or location. This approach avoids the problem of a
+     *        large response by not returning duplicate data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1346,7 +1378,15 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * When true, specifies not returning the partition column schema. Useful when you are interested only in other
+     * partition attributes such as partition values or location. This approach avoids the problem of a large response
+     * by not returning duplicate data.
+     * </p>
+     * 
+     * @return When true, specifies not returning the partition column schema. Useful when you are interested only in
+     *         other partition attributes such as partition values or location. This approach avoids the problem of a
+     *         large response by not returning duplicate data.
      */
 
     public Boolean isExcludeColumnSchema() {

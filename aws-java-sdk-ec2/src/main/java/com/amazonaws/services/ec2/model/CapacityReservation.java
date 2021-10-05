@@ -226,6 +226,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private String outpostArn;
+    /**
+     * <p>
+     * The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity
+     * Reservations that were created by a Capacity Reservation Fleet.
+     * </p>
+     */
+    private String capacityReservationFleetId;
 
     /**
      * <p>
@@ -1811,6 +1818,52 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity
+     * Reservations that were created by a Capacity Reservation Fleet.
+     * </p>
+     * 
+     * @param capacityReservationFleetId
+     *        The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for
+     *        Capacity Reservations that were created by a Capacity Reservation Fleet.
+     */
+
+    public void setCapacityReservationFleetId(String capacityReservationFleetId) {
+        this.capacityReservationFleetId = capacityReservationFleetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity
+     * Reservations that were created by a Capacity Reservation Fleet.
+     * </p>
+     * 
+     * @return The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for
+     *         Capacity Reservations that were created by a Capacity Reservation Fleet.
+     */
+
+    public String getCapacityReservationFleetId() {
+        return this.capacityReservationFleetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity
+     * Reservations that were created by a Capacity Reservation Fleet.
+     * </p>
+     * 
+     * @param capacityReservationFleetId
+     *        The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for
+     *        Capacity Reservations that were created by a Capacity Reservation Fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withCapacityReservationFleetId(String capacityReservationFleetId) {
+        setCapacityReservationFleetId(capacityReservationFleetId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1861,7 +1914,9 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getOutpostArn() != null)
-            sb.append("OutpostArn: ").append(getOutpostArn());
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getCapacityReservationFleetId() != null)
+            sb.append("CapacityReservationFleetId: ").append(getCapacityReservationFleetId());
         sb.append("}");
         return sb.toString();
     }
@@ -1956,6 +2011,10 @@ public class CapacityReservation implements Serializable, Cloneable {
             return false;
         if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
+        if (other.getCapacityReservationFleetId() == null ^ this.getCapacityReservationFleetId() == null)
+            return false;
+        if (other.getCapacityReservationFleetId() != null && other.getCapacityReservationFleetId().equals(this.getCapacityReservationFleetId()) == false)
+            return false;
         return true;
     }
 
@@ -1984,6 +2043,7 @@ public class CapacityReservation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationFleetId() == null) ? 0 : getCapacityReservationFleetId().hashCode());
         return hashCode;
     }
 

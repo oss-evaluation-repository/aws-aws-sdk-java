@@ -38,8 +38,7 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes whether the control scope includes a specific resource identified by its unique Amazon Resource Name
-     * (ARN).
+     * The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * </p>
      */
     private java.util.List<String> complianceResourceIds;
@@ -59,12 +58,10 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes whether the control scope includes a specific resource identified by its unique Amazon Resource Name
-     * (ARN).
+     * The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * </p>
      * 
-     * @return Describes whether the control scope includes a specific resource identified by its unique Amazon Resource
-     *         Name (ARN).
+     * @return The ID of the only Amazon Web Services resource that you want your control scope to contain.
      */
 
     public java.util.List<String> getComplianceResourceIds() {
@@ -73,13 +70,11 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes whether the control scope includes a specific resource identified by its unique Amazon Resource Name
-     * (ARN).
+     * The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * </p>
      * 
      * @param complianceResourceIds
-     *        Describes whether the control scope includes a specific resource identified by its unique Amazon Resource
-     *        Name (ARN).
+     *        The ID of the only Amazon Web Services resource that you want your control scope to contain.
      */
 
     public void setComplianceResourceIds(java.util.Collection<String> complianceResourceIds) {
@@ -93,8 +88,7 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes whether the control scope includes a specific resource identified by its unique Amazon Resource Name
-     * (ARN).
+     * The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -103,8 +97,7 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param complianceResourceIds
-     *        Describes whether the control scope includes a specific resource identified by its unique Amazon Resource
-     *        Name (ARN).
+     *        The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,13 +113,11 @@ public class ControlScope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes whether the control scope includes a specific resource identified by its unique Amazon Resource Name
-     * (ARN).
+     * The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * </p>
      * 
      * @param complianceResourceIds
-     *        Describes whether the control scope includes a specific resource identified by its unique Amazon Resource
-     *        Name (ARN).
+     *        The ID of the only Amazon Web Services resource that you want your control scope to contain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,14 @@ public class CreateReportPlanResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String reportPlanArn;
+    /**
+     * <p>
+     * The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
+     * </p>
+     */
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -124,6 +132,58 @@ public class CreateReportPlanResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
+     * </p>
+     * 
+     * @param creationTime
+     *        The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The
+     *        value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
+     * </p>
+     * 
+     * @return The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The
+     *         value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *         represents Friday, January 26, 2018 12:11:30.087 AM.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
+     * </p>
+     * 
+     * @param creationTime
+     *        The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The
+     *        value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReportPlanResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -138,7 +198,9 @@ public class CreateReportPlanResult extends com.amazonaws.AmazonWebServiceResult
         if (getReportPlanName() != null)
             sb.append("ReportPlanName: ").append(getReportPlanName()).append(",");
         if (getReportPlanArn() != null)
-            sb.append("ReportPlanArn: ").append(getReportPlanArn());
+            sb.append("ReportPlanArn: ").append(getReportPlanArn()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -161,6 +223,10 @@ public class CreateReportPlanResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getReportPlanArn() != null && other.getReportPlanArn().equals(this.getReportPlanArn()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         return true;
     }
 
@@ -171,6 +237,7 @@ public class CreateReportPlanResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getReportPlanName() == null) ? 0 : getReportPlanName().hashCode());
         hashCode = prime * hashCode + ((getReportPlanArn() == null) ? 0 : getReportPlanArn().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

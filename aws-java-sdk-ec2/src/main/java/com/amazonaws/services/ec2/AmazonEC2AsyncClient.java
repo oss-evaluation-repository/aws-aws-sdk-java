@@ -1511,6 +1511,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CancelCapacityReservationFleetsResult> cancelCapacityReservationFleetsAsync(
+            CancelCapacityReservationFleetsRequest request) {
+
+        return cancelCapacityReservationFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityReservationFleetsResult> cancelCapacityReservationFleetsAsync(
+            final CancelCapacityReservationFleetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationFleetsRequest, CancelCapacityReservationFleetsResult> asyncHandler) {
+        final CancelCapacityReservationFleetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelCapacityReservationFleetsResult>() {
+            @Override
+            public CancelCapacityReservationFleetsResult call() throws Exception {
+                CancelCapacityReservationFleetsResult result = null;
+
+                try {
+                    result = executeCancelCapacityReservationFleets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(CancelConversionTaskRequest request) {
 
         return cancelConversionTaskAsync(request, null);
@@ -1882,6 +1917,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeCreateCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationFleetResult> createCapacityReservationFleetAsync(CreateCapacityReservationFleetRequest request) {
+
+        return createCapacityReservationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationFleetResult> createCapacityReservationFleetAsync(
+            final CreateCapacityReservationFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationFleetRequest, CreateCapacityReservationFleetResult> asyncHandler) {
+        final CreateCapacityReservationFleetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCapacityReservationFleetResult>() {
+            @Override
+            public CreateCapacityReservationFleetResult call() throws Exception {
+                CreateCapacityReservationFleetResult result = null;
+
+                try {
+                    result = executeCreateCapacityReservationFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6422,6 +6491,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeByoipCidrs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCapacityReservationFleetsResult> describeCapacityReservationFleetsAsync(
+            DescribeCapacityReservationFleetsRequest request) {
+
+        return describeCapacityReservationFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCapacityReservationFleetsResult> describeCapacityReservationFleetsAsync(
+            final DescribeCapacityReservationFleetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCapacityReservationFleetsRequest, DescribeCapacityReservationFleetsResult> asyncHandler) {
+        final DescribeCapacityReservationFleetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCapacityReservationFleetsResult>() {
+            @Override
+            public DescribeCapacityReservationFleetsResult call() throws Exception {
+                DescribeCapacityReservationFleetsResult result = null;
+
+                try {
+                    result = executeDescribeCapacityReservationFleets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -13854,6 +13958,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCapacityReservationFleetResult> modifyCapacityReservationFleetAsync(ModifyCapacityReservationFleetRequest request) {
+
+        return modifyCapacityReservationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCapacityReservationFleetResult> modifyCapacityReservationFleetAsync(
+            final ModifyCapacityReservationFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyCapacityReservationFleetRequest, ModifyCapacityReservationFleetResult> asyncHandler) {
+        final ModifyCapacityReservationFleetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyCapacityReservationFleetResult>() {
+            @Override
+            public ModifyCapacityReservationFleetResult call() throws Exception {
+                ModifyCapacityReservationFleetResult result = null;
+
+                try {
+                    result = executeModifyCapacityReservationFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -52,8 +52,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -88,8 +88,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -138,6 +138,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -158,7 +164,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -196,8 +202,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -249,6 +255,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      * ElastiCache replication group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
      * </ul>
@@ -392,8 +403,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -428,8 +439,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -478,6 +489,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -492,8 +509,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *        Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -528,8 +545,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
-     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -580,6 +597,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -600,8 +623,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -636,8 +659,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -686,6 +709,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -699,9 +728,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
-     *         the Spot Fleet request ID. Example:
-     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *         Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *         Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -736,8 +764,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier
-     *         is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *         resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -789,6 +817,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
+     *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -809,8 +843,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet
+     * request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -845,8 +879,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
-     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource
+     * ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
      * <li>
@@ -895,6 +929,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:mycluster</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -909,8 +949,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     *        Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -945,8 +985,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
-     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -997,6 +1037,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1022,7 +1068,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1060,8 +1106,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1115,6 +1161,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1133,7 +1184,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1171,8 +1222,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1228,6 +1279,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        ElastiCache replication group.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
+     *        </p>
+     *        </li>
      * @see ScalableDimension
      */
 
@@ -1252,7 +1309,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1290,8 +1347,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1345,6 +1402,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1362,7 +1424,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *         </p>
      *         </li>
      *         <li>
@@ -1400,8 +1462,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *         model endpoint variant.
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         endpoint variant.
      *         </p>
      *         </li>
      *         <li>
@@ -1457,6 +1519,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         ElastiCache replication group.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *         cluster.
+     *         </p>
+     *         </li>
      * @see ScalableDimension
      */
 
@@ -1481,7 +1549,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1519,8 +1587,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1574,6 +1642,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1592,7 +1665,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1630,8 +1703,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1685,6 +1758,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      *        ElastiCache replication group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1713,7 +1792,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1751,8 +1830,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -1806,6 +1885,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1824,7 +1908,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1862,8 +1946,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -1917,6 +2001,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      *        ElastiCache replication group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1943,7 +2033,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      * </p>
      * </li>
      * <li>
@@ -1981,8 +2071,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
-     * endpoint variant.
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * variant.
      * </p>
      * </li>
      * <li>
@@ -2036,6 +2126,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * ElastiCache replication group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2054,7 +2149,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -2092,8 +2187,8 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
-     *        model endpoint variant.
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        endpoint variant.
      *        </p>
      *        </li>
      *        <li>
@@ -2147,6 +2242,12 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon
      *        ElastiCache replication group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
+     *        cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

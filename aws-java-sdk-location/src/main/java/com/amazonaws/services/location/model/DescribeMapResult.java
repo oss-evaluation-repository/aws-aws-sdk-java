@@ -74,7 +74,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      */
     private String pricingPlan;
@@ -390,14 +390,14 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified map resource.</p>
      * 
      *        <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * @see PricingPlan
      */
 
@@ -411,13 +411,13 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * 
      * @return The pricing plan selected for the specified map resource.</p>
      * 
      *         <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * @see PricingPlan
      */
 
@@ -431,14 +431,14 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified map resource.</p>
      * 
      *        <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -454,14 +454,14 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified map resource.</p>
      * 
      *        <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */

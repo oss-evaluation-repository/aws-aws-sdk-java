@@ -46,11 +46,17 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
     private String kmsKeyId;
     /**
      * <p>
+     * The position filtering method of the tracker resource.
+     * </p>
+     */
+    private String positionFiltering;
+    /**
+     * <p>
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      */
     private String pricingPlan;
@@ -237,18 +243,77 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The position filtering method of the tracker resource.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        The position filtering method of the tracker resource.
+     * @see PositionFiltering
+     */
+
+    public void setPositionFiltering(String positionFiltering) {
+        this.positionFiltering = positionFiltering;
+    }
+
+    /**
+     * <p>
+     * The position filtering method of the tracker resource.
+     * </p>
+     * 
+     * @return The position filtering method of the tracker resource.
+     * @see PositionFiltering
+     */
+
+    public String getPositionFiltering() {
+        return this.positionFiltering;
+    }
+
+    /**
+     * <p>
+     * The position filtering method of the tracker resource.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        The position filtering method of the tracker resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositionFiltering
+     */
+
+    public DescribeTrackerResult withPositionFiltering(String positionFiltering) {
+        setPositionFiltering(positionFiltering);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position filtering method of the tracker resource.
+     * </p>
+     * 
+     * @param positionFiltering
+     *        The position filtering method of the tracker resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositionFiltering
+     */
+
+    public DescribeTrackerResult withPositionFiltering(PositionFiltering positionFiltering) {
+        this.positionFiltering = positionFiltering.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -261,14 +326,14 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @return The pricing plan selected for the specified tracker resource.</p>
      *         <p>
-     *         For additional details and restrictions on each pricing plan option, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         For additional details and restrictions on each pricing plan option, see <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @see PricingPlan
      */
 
@@ -281,15 +346,15 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -304,15 +369,15 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
-     * For additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * For additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * </p>
      * 
      * @param pricingPlan
      *        The pricing plan selected for the specified tracker resource.</p>
      *        <p>
-     *        For additional details and restrictions on each pricing plan option, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        For additional details and restrictions on each pricing plan option, see <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -622,6 +687,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("Description: ").append(getDescription()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getPositionFiltering() != null)
+            sb.append("PositionFiltering: ").append(getPositionFiltering()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getPricingPlanDataSource() != null)
@@ -660,6 +727,10 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getPositionFiltering() == null ^ this.getPositionFiltering() == null)
+            return false;
+        if (other.getPositionFiltering() != null && other.getPositionFiltering().equals(this.getPositionFiltering()) == false)
+            return false;
         if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
@@ -695,6 +766,7 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPositionFiltering() == null) ? 0 : getPositionFiltering().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

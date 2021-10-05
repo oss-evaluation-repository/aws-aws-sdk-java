@@ -54,7 +54,11 @@ public class ReportPlan implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * </p>
+     * <p>
+     * If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this
+     * API resource also describes the report coverage by Amazon Web Services Regions and frameworks.
      * </p>
      */
     private ReportSetting reportSetting;
@@ -237,14 +241,23 @@ public class ReportPlan implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * </p>
+     * <p>
+     * If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this
+     * API resource also describes the report coverage by Amazon Web Services Regions and frameworks.
      * </p>
      * 
      * @param reportSetting
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are:</p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        </p>
+     *        <p>
+     *        If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     *        <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web
+     *        Services Regions and frameworks.
      */
 
     public void setReportSetting(ReportSetting reportSetting) {
@@ -257,13 +270,22 @@ public class ReportPlan implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * </p>
+     * <p>
+     * If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this
+     * API resource also describes the report coverage by Amazon Web Services Regions and frameworks.
      * </p>
      * 
      * @return Identifies the report template for the report. Reports are built using a report template. The report
      *         templates are:</p>
      *         <p>
-     *         <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *         <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *         </p>
+     *         <p>
+     *         If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     *         <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon
+     *         Web Services Regions and frameworks.
      */
 
     public ReportSetting getReportSetting() {
@@ -276,14 +298,23 @@ public class ReportPlan implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * </p>
+     * <p>
+     * If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this
+     * API resource also describes the report coverage by Amazon Web Services Regions and frameworks.
      * </p>
      * 
      * @param reportSetting
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are:</p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        </p>
+     *        <p>
+     *        If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     *        <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web
+     *        Services Regions and frameworks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

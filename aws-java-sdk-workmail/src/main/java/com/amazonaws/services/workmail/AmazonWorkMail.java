@@ -645,6 +645,24 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the settings in a DMARC policy for a specified organization.
+     * </p>
+     * 
+     * @param describeInboundDmarcSettingsRequest
+     * @return Result of the DescribeInboundDmarcSettings operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DescribeInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInboundDmarcSettingsResult describeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest describeInboundDmarcSettingsRequest);
+
+    /**
+     * <p>
      * Describes the current status of a mailbox export job.
      * </p>
      * 
@@ -1188,6 +1206,24 @@ public interface AmazonWorkMail {
      *      API Documentation</a>
      */
     PutAccessControlRuleResult putAccessControlRule(PutAccessControlRuleRequest putAccessControlRuleRequest);
+
+    /**
+     * <p>
+     * Enables or disables a DMARC policy for a given organization.
+     * </p>
+     * 
+     * @param putInboundDmarcSettingsRequest
+     * @return Result of the PutInboundDmarcSettings operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.PutInboundDmarcSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutInboundDmarcSettingsResult putInboundDmarcSettings(PutInboundDmarcSettingsRequest putInboundDmarcSettingsRequest);
 
     /**
      * <p>

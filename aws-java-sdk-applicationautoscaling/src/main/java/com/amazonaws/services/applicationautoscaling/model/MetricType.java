@@ -39,7 +39,8 @@ public enum MetricType {
     KafkaBrokerStorageUtilization("KafkaBrokerStorageUtilization"),
     ElastiCachePrimaryEngineCPUUtilization("ElastiCachePrimaryEngineCPUUtilization"),
     ElastiCacheReplicaEngineCPUUtilization("ElastiCacheReplicaEngineCPUUtilization"),
-    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage"),
+    NeptuneReaderAverageCPUUtilization("NeptuneReaderAverageCPUUtilization");
 
     private String value;
 

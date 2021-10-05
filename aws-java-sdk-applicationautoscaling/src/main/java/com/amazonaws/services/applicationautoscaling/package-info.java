@@ -68,12 +68,17 @@
  * </li>
  * <li>
  * <p>
+ * Amazon Neptune clusters
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Amazon SageMaker endpoint variants
  * </p>
  * </li>
  * <li>
  * <p>
- * Spot Fleet (Amazon EC2) requests
+ * Spot Fleets (Amazon EC2)
  * </p>
  * </li>
  * <li>

@@ -58,7 +58,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error.
+     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
      * </p>
      * </note>
      * <p>
@@ -76,7 +76,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * <code>Here</code> – For additional information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s coverage in
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car
      * routing coverage</a> and <a
@@ -320,7 +320,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error.
+     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
      * </p>
      * </note>
      * <p>
@@ -338,7 +338,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * <code>Here</code> – For additional information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s coverage in
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car
      * routing coverage</a> and <a
@@ -357,7 +357,8 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        Specifies the data provider of traffic and road network data.</p> <note>
      *        <p>
      *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *        returns an error.
+     *        returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
+     *        than 400 km.
      *        </p>
      *        </note>
      *        <p>
@@ -376,7 +377,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        <code>Here</code> – For additional information about <a
-     *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *        coverage in your region of interest, see <a
      *        href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html"
      *        >HERE car routing coverage</a> and <a
@@ -402,7 +403,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error.
+     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
      * </p>
      * </note>
      * <p>
@@ -420,7 +421,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * <code>Here</code> – For additional information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s coverage in
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car
      * routing coverage</a> and <a
@@ -438,7 +439,8 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * @return Specifies the data provider of traffic and road network data.</p> <note>
      *         <p>
      *         This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *         returns an error.
+     *         returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
+     *         than 400 km.
      *         </p>
      *         </note>
      *         <p>
@@ -457,7 +459,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *         <li>
      *         <p>
      *         <code>Here</code> – For additional information about <a
-     *         href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *         coverage in your region of interest, see <a
      *         href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html"
      *         >HERE car routing coverage</a> and <a href=
@@ -483,7 +485,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error.
+     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
      * </p>
      * </note>
      * <p>
@@ -501,7 +503,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * <code>Here</code> – For additional information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s coverage in
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car
      * routing coverage</a> and <a
@@ -520,7 +522,8 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        Specifies the data provider of traffic and road network data.</p> <note>
      *        <p>
      *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *        returns an error.
+     *        returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
+     *        than 400 km.
      *        </p>
      *        </note>
      *        <p>
@@ -539,7 +542,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        <code>Here</code> – For additional information about <a
-     *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *        coverage in your region of interest, see <a
      *        href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html"
      *        >HERE car routing coverage</a> and <a

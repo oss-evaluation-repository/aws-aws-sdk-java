@@ -546,6 +546,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CancelCapacityReservationFleetsResult> cancelCapacityReservationFleetsAsync(
+            CancelCapacityReservationFleetsRequest request) {
+
+        return cancelCapacityReservationFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityReservationFleetsResult> cancelCapacityReservationFleetsAsync(
+            CancelCapacityReservationFleetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationFleetsRequest, CancelCapacityReservationFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(CancelConversionTaskRequest request) {
 
         return cancelConversionTaskAsync(request, null);
@@ -707,6 +722,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(CreateCapacityReservationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationRequest, CreateCapacityReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationFleetResult> createCapacityReservationFleetAsync(CreateCapacityReservationFleetRequest request) {
+
+        return createCapacityReservationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationFleetResult> createCapacityReservationFleetAsync(CreateCapacityReservationFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationFleetRequest, CreateCapacityReservationFleetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2618,6 +2646,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeByoipCidrsRequest, DescribeByoipCidrsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCapacityReservationFleetsResult> describeCapacityReservationFleetsAsync(
+            DescribeCapacityReservationFleetsRequest request) {
+
+        return describeCapacityReservationFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCapacityReservationFleetsResult> describeCapacityReservationFleetsAsync(
+            DescribeCapacityReservationFleetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCapacityReservationFleetsRequest, DescribeCapacityReservationFleetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -6238,6 +6281,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifyCapacityReservationResult> modifyCapacityReservationAsync(ModifyCapacityReservationRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyCapacityReservationRequest, ModifyCapacityReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCapacityReservationFleetResult> modifyCapacityReservationFleetAsync(ModifyCapacityReservationFleetRequest request) {
+
+        return modifyCapacityReservationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCapacityReservationFleetResult> modifyCapacityReservationFleetAsync(ModifyCapacityReservationFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyCapacityReservationFleetRequest, ModifyCapacityReservationFleetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

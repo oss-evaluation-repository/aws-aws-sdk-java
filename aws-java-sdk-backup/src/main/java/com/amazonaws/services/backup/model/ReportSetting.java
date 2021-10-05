@@ -34,10 +34,22 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      */
     private String reportTemplate;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * </p>
+     */
+    private java.util.List<String> frameworkArns;
+    /**
+     * <p>
+     * The number of frameworks a report covers.
+     * </p>
+     */
+    private Integer numberOfFrameworks;
 
     /**
      * <p>
@@ -45,14 +57,14 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @param reportTemplate
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are:</p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      */
 
     public void setReportTemplate(String reportTemplate) {
@@ -65,13 +77,13 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @return Identifies the report template for the report. Reports are built using a report template. The report
      *         templates are:</p>
      *         <p>
-     *         <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *         <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      */
 
     public String getReportTemplate() {
@@ -84,19 +96,129 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @param reportTemplate
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are:</p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportSetting withReportTemplate(String reportTemplate) {
         setReportTemplate(reportTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     */
+
+    public java.util.List<String> getFrameworkArns() {
+        return frameworkArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * </p>
+     * 
+     * @param frameworkArns
+     *        The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     */
+
+    public void setFrameworkArns(java.util.Collection<String> frameworkArns) {
+        if (frameworkArns == null) {
+            this.frameworkArns = null;
+            return;
+        }
+
+        this.frameworkArns = new java.util.ArrayList<String>(frameworkArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFrameworkArns(java.util.Collection)} or {@link #withFrameworkArns(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param frameworkArns
+     *        The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withFrameworkArns(String... frameworkArns) {
+        if (this.frameworkArns == null) {
+            setFrameworkArns(new java.util.ArrayList<String>(frameworkArns.length));
+        }
+        for (String ele : frameworkArns) {
+            this.frameworkArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * </p>
+     * 
+     * @param frameworkArns
+     *        The Amazon Resource Names (ARNs) of the frameworks a report covers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withFrameworkArns(java.util.Collection<String> frameworkArns) {
+        setFrameworkArns(frameworkArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of frameworks a report covers.
+     * </p>
+     * 
+     * @param numberOfFrameworks
+     *        The number of frameworks a report covers.
+     */
+
+    public void setNumberOfFrameworks(Integer numberOfFrameworks) {
+        this.numberOfFrameworks = numberOfFrameworks;
+    }
+
+    /**
+     * <p>
+     * The number of frameworks a report covers.
+     * </p>
+     * 
+     * @return The number of frameworks a report covers.
+     */
+
+    public Integer getNumberOfFrameworks() {
+        return this.numberOfFrameworks;
+    }
+
+    /**
+     * <p>
+     * The number of frameworks a report covers.
+     * </p>
+     * 
+     * @param numberOfFrameworks
+     *        The number of frameworks a report covers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withNumberOfFrameworks(Integer numberOfFrameworks) {
+        setNumberOfFrameworks(numberOfFrameworks);
         return this;
     }
 
@@ -113,7 +235,11 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReportTemplate() != null)
-            sb.append("ReportTemplate: ").append(getReportTemplate());
+            sb.append("ReportTemplate: ").append(getReportTemplate()).append(",");
+        if (getFrameworkArns() != null)
+            sb.append("FrameworkArns: ").append(getFrameworkArns()).append(",");
+        if (getNumberOfFrameworks() != null)
+            sb.append("NumberOfFrameworks: ").append(getNumberOfFrameworks());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +258,14 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReportTemplate() != null && other.getReportTemplate().equals(this.getReportTemplate()) == false)
             return false;
+        if (other.getFrameworkArns() == null ^ this.getFrameworkArns() == null)
+            return false;
+        if (other.getFrameworkArns() != null && other.getFrameworkArns().equals(this.getFrameworkArns()) == false)
+            return false;
+        if (other.getNumberOfFrameworks() == null ^ this.getNumberOfFrameworks() == null)
+            return false;
+        if (other.getNumberOfFrameworks() != null && other.getNumberOfFrameworks().equals(this.getNumberOfFrameworks()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +275,8 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReportTemplate() == null) ? 0 : getReportTemplate().hashCode());
+        hashCode = prime * hashCode + ((getFrameworkArns() == null) ? 0 : getFrameworkArns().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfFrameworks() == null) ? 0 : getNumberOfFrameworks().hashCode());
         return hashCode;
     }
 

@@ -60,6 +60,10 @@ public class DescribeTrackerResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeTrackerResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PositionFiltering", targetDepth)) {
+                    context.nextToken();
+                    describeTrackerResult.setPositionFiltering(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PricingPlan", targetDepth)) {
                     context.nextToken();
                     describeTrackerResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));

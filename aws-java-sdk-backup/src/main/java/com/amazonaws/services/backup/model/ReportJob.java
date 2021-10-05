@@ -49,7 +49,7 @@ public class ReportJob implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      */
     private String reportTemplate;
@@ -193,14 +193,14 @@ public class ReportJob implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @param reportTemplate
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are: </p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      */
 
     public void setReportTemplate(String reportTemplate) {
@@ -213,13 +213,13 @@ public class ReportJob implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @return Identifies the report template for the report. Reports are built using a report template. The report
      *         templates are: </p>
      *         <p>
-     *         <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *         <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      */
 
     public String getReportTemplate() {
@@ -232,14 +232,14 @@ public class ReportJob implements Serializable, Cloneable, StructuredPojo {
      * are:
      * </p>
      * <p>
-     * <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * </p>
      * 
      * @param reportTemplate
      *        Identifies the report template for the report. Reports are built using a report template. The report
      *        templates are: </p>
      *        <p>
-     *        <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+     *        <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
