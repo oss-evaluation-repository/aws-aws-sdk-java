@@ -36,6 +36,10 @@ public class S3TargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionName").build();
     private static final MarshallingInfo<Integer> SAMPLESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SampleSize").build();
+    private static final MarshallingInfo<String> EVENTQUEUEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventQueueArn").build();
+    private static final MarshallingInfo<String> DLQEVENTQUEUEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DlqEventQueueArn").build();
 
     private static final S3TargetMarshaller instance = new S3TargetMarshaller();
 
@@ -57,6 +61,8 @@ public class S3TargetMarshaller {
             protocolMarshaller.marshall(s3Target.getExclusions(), EXCLUSIONS_BINDING);
             protocolMarshaller.marshall(s3Target.getConnectionName(), CONNECTIONNAME_BINDING);
             protocolMarshaller.marshall(s3Target.getSampleSize(), SAMPLESIZE_BINDING);
+            protocolMarshaller.marshall(s3Target.getEventQueueArn(), EVENTQUEUEARN_BINDING);
+            protocolMarshaller.marshall(s3Target.getDlqEventQueueArn(), DLQEVENTQUEUEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

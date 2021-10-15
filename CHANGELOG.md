@@ -1,3 +1,16 @@
+# __1.12.89__ __2021-10-15__
+## __AWS Glue__
+  - ### Features
+    - Enable S3 event base crawler API.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - EFS adds documentation for a new exception for short identifiers to be thrown after its migration to long resource identifiers.
+
+## __Amazon Simple Notification Service__
+  - ### Bugfixes
+    - Add additional validation to the SNS SigningCert
+
 # __1.12.88__ __2021-10-14__
 ## __AWS RoboMaker__
   - ### Features

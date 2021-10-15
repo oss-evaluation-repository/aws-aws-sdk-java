@@ -56,22 +56,21 @@ public interface IDynamoDBMapper {
     <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config);
 
     /**
-     * Loads an object with the hash key given and a configuration override. This configuration
-     * overrides the default provided at object construction.
+     * Returns an object with the given hash key, or null if no such item exists.
      *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
     <T extends Object> T load(Class<T> clazz, Object hashKey, DynamoDBMapperConfig config);
 
     /**
-     * Loads an object with the hash key given, using the default configuration.
+     * Returns an object with the given hash key, or null if no such item exists.
      *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
     <T extends Object> T load(Class<T> clazz, Object hashKey);
 
     /**
-     * Loads an object with a hash and range key, using the default configuration.
+     * Returns an object with the given hash and range key, or null if no such item exists.
      *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
@@ -88,7 +87,7 @@ public interface IDynamoDBMapper {
     <T extends Object> T load(T keyObject);
 
     /**
-     * Returns an object whose keys match those of the prototype key object given, or null if no
+     * Returns an object whose keys match those of the given prototype key object, or null if no
      * such item exists.
      *
      * @param keyObject
@@ -100,7 +99,7 @@ public interface IDynamoDBMapper {
     <T extends Object> T load(T keyObject, DynamoDBMapperConfig config);
 
     /**
-     * Returns an object with the given hash key, or null if no such object exists.
+     * Returns an object with the given hash key and range key, or null if no such object exists.
      *
      * @param clazz
      *            The class to load, corresponding to a DynamoDB table.

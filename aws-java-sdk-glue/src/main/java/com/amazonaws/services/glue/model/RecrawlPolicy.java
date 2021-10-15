@@ -43,6 +43,9 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      * A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last
      * crawler run.
      * </p>
+     * <p>
+     * A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.
+     * </p>
      */
     private String recrawlBehavior;
 
@@ -58,6 +61,9 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      * A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last
      * crawler run.
      * </p>
+     * <p>
+     * A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.
+     * </p>
      * 
      * @param recrawlBehavior
      *        Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the
@@ -68,6 +74,10 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the
      *        last crawler run.
+     *        </p>
+     *        <p>
+     *        A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3
+     *        events.
      * @see RecrawlBehavior
      */
 
@@ -87,6 +97,9 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      * A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last
      * crawler run.
      * </p>
+     * <p>
+     * A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.
+     * </p>
      * 
      * @return Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the
      *         last crawler run.</p>
@@ -96,6 +109,10 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the
      *         last crawler run.
+     *         </p>
+     *         <p>
+     *         A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3
+     *         events.
      * @see RecrawlBehavior
      */
 
@@ -115,6 +132,9 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      * A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last
      * crawler run.
      * </p>
+     * <p>
+     * A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.
+     * </p>
      * 
      * @param recrawlBehavior
      *        Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the
@@ -125,6 +145,10 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the
      *        last crawler run.
+     *        </p>
+     *        <p>
+     *        A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3
+     *        events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecrawlBehavior
      */
@@ -146,6 +170,9 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      * A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last
      * crawler run.
      * </p>
+     * <p>
+     * A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.
+     * </p>
      * 
      * @param recrawlBehavior
      *        Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the
@@ -156,6 +183,10 @@ public class RecrawlPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the
      *        last crawler run.
+     *        </p>
+     *        <p>
+     *        A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3
+     *        events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecrawlBehavior
      */

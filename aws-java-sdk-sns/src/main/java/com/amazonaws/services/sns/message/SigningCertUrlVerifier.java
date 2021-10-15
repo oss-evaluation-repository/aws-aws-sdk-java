@@ -14,6 +14,7 @@ package com.amazonaws.services.sns.message;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.util.StringUtils;
 import java.net.URI;
 
 /**

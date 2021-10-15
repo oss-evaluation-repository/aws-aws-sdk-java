@@ -1577,12 +1577,20 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this operation to set the account preference in the current Amazon Web Services Region to use either long 17
-     * character (63 bit) or short 8 character (32 bit) IDs for new EFS file systems and mount targets created. All
-     * existing resource IDs are not affected by any changes you make. You can set the ID preference during the opt-in
-     * period as EFS transitions to long resource IDs. For more information, see <a
-     * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.
+     * Use this operation to set the account preference in the current Amazon Web Services Region to use long 17
+     * character (63 bit) or short 8 character (32 bit) resource IDs for new EFS file system and mount target resources.
+     * All existing resource IDs are not affected by any changes you make. You can set the ID preference during the
+     * opt-in period as EFS transitions to long resource IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+     * IDs</a>.
      * </p>
+     * <note>
+     * <p>
+     * Starting in October, 2021, you will receive an error if you try to set the account preference to use the short 8
+     * character format resource ID. Contact Amazon Web Services support if you receive an error and need to use short
+     * IDs for file system and mount target resources.
+     * </p>
+     * </note>
      * 
      * @param putAccountPreferencesRequest
      * @return A Java Future containing the result of the PutAccountPreferences operation returned by the service.
@@ -1594,12 +1602,20 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this operation to set the account preference in the current Amazon Web Services Region to use either long 17
-     * character (63 bit) or short 8 character (32 bit) IDs for new EFS file systems and mount targets created. All
-     * existing resource IDs are not affected by any changes you make. You can set the ID preference during the opt-in
-     * period as EFS transitions to long resource IDs. For more information, see <a
-     * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.
+     * Use this operation to set the account preference in the current Amazon Web Services Region to use long 17
+     * character (63 bit) or short 8 character (32 bit) resource IDs for new EFS file system and mount target resources.
+     * All existing resource IDs are not affected by any changes you make. You can set the ID preference during the
+     * opt-in period as EFS transitions to long resource IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+     * IDs</a>.
      * </p>
+     * <note>
+     * <p>
+     * Starting in October, 2021, you will receive an error if you try to set the account preference to use the short 8
+     * character format resource ID. Contact Amazon Web Services support if you receive an error and need to use short
+     * IDs for file system and mount target resources.
+     * </p>
+     * </note>
      * 
      * @param putAccountPreferencesRequest
      * @param asyncHandler
@@ -1655,9 +1671,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
      * EFS File System Policy</a>.
      * </p>
+     * <note>
      * <p>
      * EFS file system policies have a 20,000 character limit.
      * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
      * </p>
@@ -1680,9 +1698,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
      * EFS File System Policy</a>.
      * </p>
+     * <note>
      * <p>
      * EFS file system policies have a 20,000 character limit.
      * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
      * </p>
@@ -1710,14 +1730,12 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * Management</a>.
      * </p>
      * <p>
-     * A <code>LifecycleConfiguration</code> applies to all files in a file system.
-     * </p>
-     * <p>
      * Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system.
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and disables lifecycle management.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management for the file
+     * system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -1731,7 +1749,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <li>
      * <p>
      * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved
-     * to the IA storage class. The array can contain only one <code>LifecyclePolicy</code> item.
+     * to the IA storage class. Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a
+     * single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate
+     * <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.
      * </p>
      * </li>
      * </ul>
@@ -1762,14 +1782,12 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * Management</a>.
      * </p>
      * <p>
-     * A <code>LifecycleConfiguration</code> applies to all files in a file system.
-     * </p>
-     * <p>
      * Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system.
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and disables lifecycle management.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management for the file
+     * system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -1783,7 +1801,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <li>
      * <p>
      * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved
-     * to the IA storage class. The array can contain only one <code>LifecyclePolicy</code> item.
+     * to the IA storage class. Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a
+     * single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate
+     * <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.
      * </p>
      * </li>
      * </ul>

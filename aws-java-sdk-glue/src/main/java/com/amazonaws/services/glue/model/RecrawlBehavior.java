@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RecrawlBehavior {
 
     CRAWL_EVERYTHING("CRAWL_EVERYTHING"),
-    CRAWL_NEW_FOLDERS_ONLY("CRAWL_NEW_FOLDERS_ONLY");
+    CRAWL_NEW_FOLDERS_ONLY("CRAWL_NEW_FOLDERS_ONLY"),
+    CRAWL_EVENT_MODE("CRAWL_EVENT_MODE");
 
     private String value;
 
