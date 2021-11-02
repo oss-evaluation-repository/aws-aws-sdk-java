@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * A collection of studio resources.
- * </p>
+ * <zonbook></zonbook><xhtml></xhtml>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio" target="_top">AWS API
  *      Documentation</a>
@@ -36,11 +34,9 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String adminRoleArn;
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      */
     private String clientToken;
@@ -117,19 +113,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -138,18 +130,14 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
-     * @return To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *         should not reuse the same client token for other API requests. If you retry a request that completed
-     *         successfully using the same client token and the same parameters, the retry succeeds without performing
-     *         any further actions. If you retry a successful request using the same client token, but one or more of
-     *         the parameters are different, the retry fails with a ValidationException error.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *         ensure idempotency.
      */
 
     public String getClientToken() {
@@ -158,19 +146,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,7 +408,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getStudioEncryptionConfiguration() != null)
             sb.append("StudioEncryptionConfiguration: ").append(getStudioEncryptionConfiguration()).append(",");
         if (getStudioName() != null)

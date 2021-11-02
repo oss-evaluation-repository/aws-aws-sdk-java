@@ -108,6 +108,11 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     continue;
                 }
 
+                if (context.testExpression("ResponseHeadersPolicyId", targetDepth)) {
+                    defaultCacheBehavior.setResponseHeadersPolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ForwardedValues", targetDepth)) {
                     defaultCacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

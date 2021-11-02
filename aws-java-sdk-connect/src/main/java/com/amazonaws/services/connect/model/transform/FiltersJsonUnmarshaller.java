@@ -54,12 +54,6 @@ public class FiltersJsonUnmarshaller implements Unmarshaller<Filters, JsonUnmars
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("RoutingProfiles", targetDepth)) {
-                    context.nextToken();
-                    filters.setRoutingProfiles(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("Channels", targetDepth)) {
                     context.nextToken();
                     filters.setChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

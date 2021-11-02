@@ -15,7 +15,7 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <zonbook></zonbook><xhtml></xhtml>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StreamingSessionStatusCode {
@@ -30,7 +30,11 @@ public enum StreamingSessionStatusCode {
     NETWORK_CONNECTION_ERROR("NETWORK_CONNECTION_ERROR"),
     INITIALIZATION_SCRIPT_ERROR("INITIALIZATION_SCRIPT_ERROR"),
     DECRYPT_STREAMING_IMAGE_ERROR("DECRYPT_STREAMING_IMAGE_ERROR"),
-    NETWORK_INTERFACE_ERROR("NETWORK_INTERFACE_ERROR");
+    NETWORK_INTERFACE_ERROR("NETWORK_INTERFACE_ERROR"),
+    STREAMING_SESSION_STOPPED("STREAMING_SESSION_STOPPED"),
+    STREAMING_SESSION_STARTED("STREAMING_SESSION_STARTED"),
+    STREAMING_SESSION_STOP_IN_PROGRESS("STREAMING_SESSION_STOP_IN_PROGRESS"),
+    STREAMING_SESSION_START_IN_PROGRESS("STREAMING_SESSION_START_IN_PROGRESS");
 
     private String value;
 

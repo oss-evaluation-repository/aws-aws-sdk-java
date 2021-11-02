@@ -216,6 +216,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResponseHeadersPolicyResult> createResponseHeadersPolicyAsync(CreateResponseHeadersPolicyRequest request) {
+
+        return createResponseHeadersPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResponseHeadersPolicyResult> createResponseHeadersPolicyAsync(CreateResponseHeadersPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateResponseHeadersPolicyRequest, CreateResponseHeadersPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(CreateStreamingDistributionRequest request) {
 
         return createStreamingDistributionAsync(request, null);
@@ -388,6 +401,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRealtimeLogConfigRequest, DeleteRealtimeLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResponseHeadersPolicyResult> deleteResponseHeadersPolicyAsync(DeleteResponseHeadersPolicyRequest request) {
+
+        return deleteResponseHeadersPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResponseHeadersPolicyResult> deleteResponseHeadersPolicyAsync(DeleteResponseHeadersPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResponseHeadersPolicyRequest, DeleteResponseHeadersPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -685,6 +711,32 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetResponseHeadersPolicyResult> getResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest request) {
+
+        return getResponseHeadersPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResponseHeadersPolicyResult> getResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResponseHeadersPolicyRequest, GetResponseHeadersPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResponseHeadersPolicyConfigResult> getResponseHeadersPolicyConfigAsync(GetResponseHeadersPolicyConfigRequest request) {
+
+        return getResponseHeadersPolicyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResponseHeadersPolicyConfigResult> getResponseHeadersPolicyConfigAsync(GetResponseHeadersPolicyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResponseHeadersPolicyConfigRequest, GetResponseHeadersPolicyConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest request) {
 
         return getStreamingDistributionAsync(request, null);
@@ -823,6 +875,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListDistributionsByResponseHeadersPolicyIdResult> listDistributionsByResponseHeadersPolicyIdAsync(
+            ListDistributionsByResponseHeadersPolicyIdRequest request) {
+
+        return listDistributionsByResponseHeadersPolicyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByResponseHeadersPolicyIdResult> listDistributionsByResponseHeadersPolicyIdAsync(
+            ListDistributionsByResponseHeadersPolicyIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByResponseHeadersPolicyIdRequest, ListDistributionsByResponseHeadersPolicyIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request) {
 
         return listDistributionsByWebACLIdAsync(request, null);
@@ -939,6 +1006,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRealtimeLogConfigsRequest, ListRealtimeLogConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResponseHeadersPoliciesResult> listResponseHeadersPoliciesAsync(ListResponseHeadersPoliciesRequest request) {
+
+        return listResponseHeadersPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResponseHeadersPoliciesResult> listResponseHeadersPoliciesAsync(ListResponseHeadersPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResponseHeadersPoliciesRequest, ListResponseHeadersPoliciesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1153,6 +1233,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRealtimeLogConfigRequest, UpdateRealtimeLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResponseHeadersPolicyResult> updateResponseHeadersPolicyAsync(UpdateResponseHeadersPolicyRequest request) {
+
+        return updateResponseHeadersPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResponseHeadersPolicyResult> updateResponseHeadersPolicyAsync(UpdateResponseHeadersPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateResponseHeadersPolicyRequest, UpdateResponseHeadersPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

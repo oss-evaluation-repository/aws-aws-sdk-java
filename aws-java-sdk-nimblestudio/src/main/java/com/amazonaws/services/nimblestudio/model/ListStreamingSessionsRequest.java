@@ -27,25 +27,25 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that created the streaming session.
+     * Filters the request to streaming sessions created by the given user.
      * </p>
      */
     private String createdBy;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The user ID of the user that owns the streaming session.
+     * Filters the request to streaming session owned by the given user
      * </p>
      */
     private String ownedBy;
     /**
      * <p>
-     * A collection of session IDs.
+     * Filters the request to only the provided session IDs.
      * </p>
      */
     private String sessionIds;
@@ -58,11 +58,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that created the streaming session.
+     * Filters the request to streaming sessions created by the given user.
      * </p>
      * 
      * @param createdBy
-     *        The user ID of the user that created the streaming session.
+     *        Filters the request to streaming sessions created by the given user.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -71,10 +71,10 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that created the streaming session.
+     * Filters the request to streaming sessions created by the given user.
      * </p>
      * 
-     * @return The user ID of the user that created the streaming session.
+     * @return Filters the request to streaming sessions created by the given user.
      */
 
     public String getCreatedBy() {
@@ -83,11 +83,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that created the streaming session.
+     * Filters the request to streaming sessions created by the given user.
      * </p>
      * 
      * @param createdBy
-     *        The user ID of the user that created the streaming session.
+     *        Filters the request to streaming sessions created by the given user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,10 +111,10 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -123,11 +123,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that owns the streaming session.
+     * Filters the request to streaming session owned by the given user
      * </p>
      * 
      * @param ownedBy
-     *        The user ID of the user that owns the streaming session.
+     *        Filters the request to streaming session owned by the given user
      */
 
     public void setOwnedBy(String ownedBy) {
@@ -151,10 +151,10 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that owns the streaming session.
+     * Filters the request to streaming session owned by the given user
      * </p>
      * 
-     * @return The user ID of the user that owns the streaming session.
+     * @return Filters the request to streaming session owned by the given user
      */
 
     public String getOwnedBy() {
@@ -163,11 +163,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user ID of the user that owns the streaming session.
+     * Filters the request to streaming session owned by the given user
      * </p>
      * 
      * @param ownedBy
-     *        The user ID of the user that owns the streaming session.
+     *        Filters the request to streaming session owned by the given user
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A collection of session IDs.
+     * Filters the request to only the provided session IDs.
      * </p>
      * 
      * @param sessionIds
-     *        A collection of session IDs.
+     *        Filters the request to only the provided session IDs.
      */
 
     public void setSessionIds(String sessionIds) {
@@ -191,10 +191,10 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A collection of session IDs.
+     * Filters the request to only the provided session IDs.
      * </p>
      * 
-     * @return A collection of session IDs.
+     * @return Filters the request to only the provided session IDs.
      */
 
     public String getSessionIds() {
@@ -203,11 +203,11 @@ public class ListStreamingSessionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A collection of session IDs.
+     * Filters the request to only the provided session IDs.
      * </p>
      * 
      * @param sessionIds
-     *        A collection of session IDs.
+     *        Filters the request to only the provided session IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

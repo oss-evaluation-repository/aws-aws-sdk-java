@@ -15,7 +15,10 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct
+ * access keys.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessDeniedException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

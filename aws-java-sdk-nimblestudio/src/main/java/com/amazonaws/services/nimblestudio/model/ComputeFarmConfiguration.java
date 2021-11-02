@@ -136,7 +136,7 @@ public class ComputeFarmConfiguration implements Serializable, Cloneable, Struct
         if (getActiveDirectoryUser() != null)
             sb.append("ActiveDirectoryUser: ").append(getActiveDirectoryUser()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint());
+            sb.append("Endpoint: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

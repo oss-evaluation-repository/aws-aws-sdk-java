@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.connect.model.transform;
+package com.amazonaws.services.nimblestudio.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.connect.model.*;
+import com.amazonaws.services.nimblestudio.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * RoutingProfileReference JSON Unmarshaller
+ * StartStreamingSessionResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RoutingProfileReferenceJsonUnmarshaller implements Unmarshaller<RoutingProfileReference, JsonUnmarshallerContext> {
+public class StartStreamingSessionResultJsonUnmarshaller implements Unmarshaller<StartStreamingSessionResult, JsonUnmarshallerContext> {
 
-    public RoutingProfileReference unmarshall(JsonUnmarshallerContext context) throws Exception {
-        RoutingProfileReference routingProfileReference = new RoutingProfileReference();
+    public StartStreamingSessionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        StartStreamingSessionResult startStreamingSessionResult = new StartStreamingSessionResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class RoutingProfileReferenceJsonUnmarshaller implements Unmarshaller<Rou
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return null;
+            return startStreamingSessionResult;
         }
 
         while (true) {
@@ -48,13 +48,9 @@ public class RoutingProfileReferenceJsonUnmarshaller implements Unmarshaller<Rou
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Id", targetDepth)) {
+                if (context.testExpression("session", targetDepth)) {
                     context.nextToken();
-                    routingProfileReference.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Arn", targetDepth)) {
-                    context.nextToken();
-                    routingProfileReference.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    startStreamingSessionResult.setSession(StreamingSessionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +61,14 @@ public class RoutingProfileReferenceJsonUnmarshaller implements Unmarshaller<Rou
             token = context.nextToken();
         }
 
-        return routingProfileReference;
+        return startStreamingSessionResult;
     }
 
-    private static RoutingProfileReferenceJsonUnmarshaller instance;
+    private static StartStreamingSessionResultJsonUnmarshaller instance;
 
-    public static RoutingProfileReferenceJsonUnmarshaller getInstance() {
+    public static StartStreamingSessionResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new RoutingProfileReferenceJsonUnmarshaller();
+            instance = new StartStreamingSessionResultJsonUnmarshaller();
         return instance;
     }
 }

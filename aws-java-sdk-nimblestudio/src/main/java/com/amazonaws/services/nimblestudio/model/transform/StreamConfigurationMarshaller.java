@@ -34,6 +34,8 @@ public class StreamConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2InstanceTypes").build();
     private static final MarshallingInfo<Integer> MAXSESSIONLENGTHINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSessionLengthInMinutes").build();
+    private static final MarshallingInfo<Integer> MAXSTOPPEDSESSIONLENGTHINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxStoppedSessionLengthInMinutes").build();
     private static final MarshallingInfo<List> STREAMINGIMAGEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamingImageIds").build();
 
@@ -56,6 +58,7 @@ public class StreamConfigurationMarshaller {
             protocolMarshaller.marshall(streamConfiguration.getClipboardMode(), CLIPBOARDMODE_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getEc2InstanceTypes(), EC2INSTANCETYPES_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getMaxSessionLengthInMinutes(), MAXSESSIONLENGTHINMINUTES_BINDING);
+            protocolMarshaller.marshall(streamConfiguration.getMaxStoppedSessionLengthInMinutes(), MAXSTOPPEDSESSIONLENGTHINMINUTES_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getStreamingImageIds(), STREAMINGIMAGEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

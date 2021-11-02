@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * A collection of launch profiles.
- * </p>
+ * <zonbook></zonbook><xhtml></xhtml>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfile" target="_top">AWS API
  *      Documentation</a>
@@ -30,11 +28,9 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      */
     private String clientToken;
@@ -44,7 +40,12 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support
+     * the specified instance types.
+     * </p>
+     */
     private java.util.List<String> ec2SubnetIds;
     /**
      * <p>
@@ -85,19 +86,15 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -106,18 +103,14 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
-     * @return To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *         should not reuse the same client token for other API requests. If you retry a request that completed
-     *         successfully using the same client token and the same parameters, the retry succeeds without performing
-     *         any further actions. If you retry a successful request using the same client token, but one or more of
-     *         the parameters are different, the retry fails with a ValidationException error.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *         ensure idempotency.
      */
 
     public String getClientToken() {
@@ -126,19 +119,15 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +177,13 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support
+     * the specified instance types.
+     * </p>
+     * 
+     * @return Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must
+     *         support the specified instance types.
      */
 
     public java.util.List<String> getEc2SubnetIds() {
@@ -196,7 +191,14 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support
+     * the specified instance types.
+     * </p>
+     * 
      * @param ec2SubnetIds
+     *        Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must
+     *        support the specified instance types.
      */
 
     public void setEc2SubnetIds(java.util.Collection<String> ec2SubnetIds) {
@@ -210,12 +212,18 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support
+     * the specified instance types.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEc2SubnetIds(java.util.Collection)} or {@link #withEc2SubnetIds(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param ec2SubnetIds
+     *        Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must
+     *        support the specified instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,7 +238,14 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support
+     * the specified instance types.
+     * </p>
+     * 
      * @param ec2SubnetIds
+     *        Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must
+     *        support the specified instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,13 +601,13 @@ public class CreateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEc2SubnetIds() != null)
             sb.append("Ec2SubnetIds: ").append(getEc2SubnetIds()).append(",");
         if (getLaunchProfileProtocolVersions() != null)
             sb.append("LaunchProfileProtocolVersions: ").append(getLaunchProfileProtocolVersions()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getStreamConfiguration() != null)
             sb.append("StreamConfiguration: ").append(getStreamConfiguration()).append(",");
         if (getStudioComponentIds() != null)

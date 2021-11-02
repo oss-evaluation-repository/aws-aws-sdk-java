@@ -15,8 +15,7 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StreamingImageEncryptionConfigurationKeyType {

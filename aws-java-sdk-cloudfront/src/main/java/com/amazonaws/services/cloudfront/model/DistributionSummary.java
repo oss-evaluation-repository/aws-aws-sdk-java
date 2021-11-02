@@ -36,7 +36,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      */
     private String aRN;
@@ -205,13 +205,13 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public void setARN(String aRN) {
@@ -222,12 +222,12 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the distribution. For example:
      *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *         <code>123456789012</code> is your account ID.
+     *         <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public String getARN() {
@@ -238,13 +238,13 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,6 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <zonbook></zonbook><xhtml></xhtml>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingImage" target="_top">AWS API
  *      Documentation</a>
@@ -23,10 +24,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateStreamingImageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The streaming image.
+     * </p>
+     */
     private StreamingImage streamingImage;
 
     /**
+     * <p>
+     * The streaming image.
+     * </p>
+     * 
      * @param streamingImage
+     *        The streaming image.
      */
 
     public void setStreamingImage(StreamingImage streamingImage) {
@@ -34,7 +45,11 @@ public class CreateStreamingImageResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The streaming image.
+     * </p>
+     * 
+     * @return The streaming image.
      */
 
     public StreamingImage getStreamingImage() {
@@ -42,7 +57,12 @@ public class CreateStreamingImageResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The streaming image.
+     * </p>
+     * 
      * @param streamingImage
+     *        The streaming image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

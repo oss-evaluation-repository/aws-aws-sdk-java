@@ -36,7 +36,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     * <code>123456789012</code> is your account ID.
+     * <code>123456789012</code> is your Amazon Web Services account ID.
      * </p>
      */
     private String aRN;
@@ -75,15 +75,15 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     private Aliases aliases;
     /**
      * <p>
-     * A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for private
-     * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
-     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
-     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
-     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
-     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
-     * updated distribution.
+     * A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed
+     * URLs for private content. If you want to require signed URLs in requests for objects in the target origin that
+     * match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>,
+     * and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require
+     * signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or
+     * remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently
+     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you
+     * want to include in the updated distribution.
      * </p>
      * <p>
      * For more information, see <a
@@ -155,13 +155,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     * <code>123456789012</code> is your account ID.
+     * <code>123456789012</code> is your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public void setARN(String aRN) {
@@ -172,12 +172,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     * <code>123456789012</code> is your account ID.
+     * <code>123456789012</code> is your Amazon Web Services account ID.
      * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the streaming distribution. For example:
      *         <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     *         <code>123456789012</code> is your account ID.
+     *         <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public String getARN() {
@@ -188,13 +188,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     * <code>123456789012</code> is your account ID.
+     * <code>123456789012</code> is your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,15 +426,15 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for private
-     * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
-     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
-     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
-     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
-     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
-     * updated distribution.
+     * A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed
+     * URLs for private content. If you want to require signed URLs in requests for objects in the target origin that
+     * match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>,
+     * and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require
+     * signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or
+     * remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently
+     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you
+     * want to include in the updated distribution.
      * </p>
      * <p>
      * For more information, see <a
@@ -443,9 +443,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for
-     *        private content. If you want to require signed URLs in requests for objects in the target origin that
-     *        match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     *        A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create
+     *        signed URLs for private content. If you want to require signed URLs in requests for objects in the target
+     *        origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      *        <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
      *        .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
@@ -464,15 +464,15 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for private
-     * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
-     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
-     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
-     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
-     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
-     * updated distribution.
+     * A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed
+     * URLs for private content. If you want to require signed URLs in requests for objects in the target origin that
+     * match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>,
+     * and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require
+     * signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or
+     * remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently
+     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you
+     * want to include in the updated distribution.
      * </p>
      * <p>
      * For more information, see <a
@@ -480,9 +480,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for
-     *         private content. If you want to require signed URLs in requests for objects in the target origin that
-     *         match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * @return A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create
+     *         signed URLs for private content. If you want to require signed URLs in requests for objects in the target
+     *         origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      *         <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
      *         .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *         specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
@@ -501,15 +501,15 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for private
-     * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
-     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
-     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
-     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
-     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
-     * updated distribution.
+     * A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed
+     * URLs for private content. If you want to require signed URLs in requests for objects in the target origin that
+     * match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>,
+     * and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require
+     * signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or
+     * remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently
+     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you
+     * want to include in the updated distribution.
      * </p>
      * <p>
      * For more information, see <a
@@ -518,9 +518,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies the accounts, if any, that you want to allow to create signed URLs for
-     *        private content. If you want to require signed URLs in requests for objects in the target origin that
-     *        match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     *        A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create
+     *        signed URLs for private content. If you want to require signed URLs in requests for objects in the target
+     *        origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      *        <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
      *        .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit

@@ -76,6 +76,14 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                     context.nextToken();
                     streamingSession.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("startedAt", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("startedBy", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     streamingSession.setState(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +95,18 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     streamingSession.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("stopAt", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStopAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("stoppedAt", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStoppedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("stoppedBy", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStoppedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamingImageId", targetDepth)) {
                     context.nextToken();

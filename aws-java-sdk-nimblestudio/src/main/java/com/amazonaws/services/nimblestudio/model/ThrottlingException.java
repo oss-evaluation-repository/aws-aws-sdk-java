@@ -15,7 +15,9 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request throughput limit was exceeded.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThrottlingException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

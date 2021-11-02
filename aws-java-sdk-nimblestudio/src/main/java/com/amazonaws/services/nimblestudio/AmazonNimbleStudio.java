@@ -18,12 +18,22 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.nimblestudio.model.*;
+import com.amazonaws.services.nimblestudio.waiters.AmazonNimbleStudioWaiters;
 
 /**
  * Interface for accessing AmazonNimbleStudio.
  * <p>
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.nimblestudio.AbstractAmazonNimbleStudio} instead.
+ * </p>
+ * <p>
+ * <p>
+ * Welcome to the Amazon Nimble Studio API reference. This API reference provides methods, schema, resources,
+ * parameters, and more to help you get the most out of Nimble Studio.
+ * </p>
+ * <p>
+ * Nimble Studio is a virtual studio that empowers visual effects, animation, and interactive content teams to create
+ * content securely within a scalable, private cloud service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,24 +53,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param acceptEulasRequest
-     *        A collection of EULA acceptances.
      * @return Result of the AcceptEulas operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.AcceptEulas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/AcceptEulas" target="_top">AWS API
      *      Documentation</a>
@@ -73,24 +84,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createLaunchProfileRequest
-     *        A collection of launch profiles.
      * @return Result of the CreateLaunchProfile operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -103,24 +115,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingImageRequest
-     *        A collection of streaming images.
      * @return Result of the CreateStreamingImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -136,24 +149,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionRequest
-     *        A collection of streaming sessions.
      * @return Result of the CreateStreamingSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -170,24 +184,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
-     *        A list collection streams.
      * @return Result of the CreateStreamingSessionStream operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingSessionStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream"
      *      target="_top">AWS API Documentation</a>
@@ -231,24 +246,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioRequest
-     *        A collection of studio resources.
      * @return Result of the CreateStudio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio" target="_top">AWS API
      *      Documentation</a>
@@ -261,24 +277,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioComponentRequest
-     *        The studio components.
      * @return Result of the CreateStudioComponent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudioComponent" target="_top">AWS
      *      API Documentation</a>
@@ -292,22 +309,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteLaunchProfileRequest
      * @return Result of the DeleteLaunchProfile operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -321,22 +340,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteLaunchProfileMemberRequest
      * @return Result of the DeleteLaunchProfileMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfileMember"
      *      target="_top">AWS API Documentation</a>
@@ -350,22 +371,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteStreamingImageRequest
      * @return Result of the DeleteStreamingImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -386,22 +409,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteStreamingSessionRequest
      * @return Result of the DeleteStreamingSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -415,22 +440,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteStudioRequest
      * @return Result of the DeleteStudio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudio" target="_top">AWS API
      *      Documentation</a>
@@ -444,22 +471,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteStudioComponentRequest
      * @return Result of the DeleteStudioComponent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioComponent" target="_top">AWS
      *      API Documentation</a>
@@ -473,22 +502,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param deleteStudioMemberRequest
      * @return Result of the DeleteStudioMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudioMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioMember" target="_top">AWS API
      *      Documentation</a>
@@ -502,22 +533,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getEulaRequest
      * @return Result of the GetEula operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetEula
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetEula" target="_top">AWS API
      *      Documentation</a>
@@ -531,22 +564,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getLaunchProfileRequest
      * @return Result of the GetLaunchProfile operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -562,22 +597,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getLaunchProfileDetailsRequest
      * @return Result of the GetLaunchProfileDetails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileDetails" target="_top">AWS
      *      API Documentation</a>
@@ -591,22 +628,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getLaunchProfileInitializationRequest
      * @return Result of the GetLaunchProfileInitialization operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileInitialization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileInitialization"
      *      target="_top">AWS API Documentation</a>
@@ -620,22 +659,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getLaunchProfileMemberRequest
      * @return Result of the GetLaunchProfileMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileMember" target="_top">AWS
      *      API Documentation</a>
@@ -649,22 +690,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getStreamingImageRequest
      * @return Result of the GetStreamingImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingImage" target="_top">AWS API
      *      Documentation</a>
@@ -676,27 +719,29 @@ public interface AmazonNimbleStudio {
      * Gets StreamingSession resource.
      * </p>
      * <p>
-     * Invoke this operation to poll for a streaming session state while creating or deleting a session.
+     * anvoke this operation to poll for a streaming session state while creating or deleting a session.
      * </p>
      * 
      * @param getStreamingSessionRequest
      * @return Result of the GetStreamingSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession" target="_top">AWS API
      *      Documentation</a>
@@ -717,22 +762,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getStreamingSessionStreamRequest
      * @return Result of the GetStreamingSessionStream operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingSessionStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionStream"
      *      target="_top">AWS API Documentation</a>
@@ -746,22 +793,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getStudioRequest
      * @return Result of the GetStudio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudio" target="_top">AWS API
      *      Documentation</a>
@@ -775,22 +824,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getStudioComponentRequest
      * @return Result of the GetStudioComponent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioComponent" target="_top">AWS API
      *      Documentation</a>
@@ -804,22 +855,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param getStudioMemberRequest
      * @return Result of the GetStudioMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudioMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioMember" target="_top">AWS API
      *      Documentation</a>
@@ -833,22 +886,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listEulaAcceptancesRequest
      * @return Result of the ListEulaAcceptances operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListEulaAcceptances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulaAcceptances" target="_top">AWS API
      *      Documentation</a>
@@ -862,22 +917,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listEulasRequest
      * @return Result of the ListEulas operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListEulas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas" target="_top">AWS API
      *      Documentation</a>
@@ -891,22 +948,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listLaunchProfileMembersRequest
      * @return Result of the ListLaunchProfileMembers operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListLaunchProfileMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfileMembers"
      *      target="_top">AWS API Documentation</a>
@@ -920,22 +979,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listLaunchProfilesRequest
      * @return Result of the ListLaunchProfiles operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListLaunchProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfiles" target="_top">AWS API
      *      Documentation</a>
@@ -953,22 +1014,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listStreamingImagesRequest
      * @return Result of the ListStreamingImages operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStreamingImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingImages" target="_top">AWS API
      *      Documentation</a>
@@ -982,22 +1045,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listStreamingSessionsRequest
      * @return Result of the ListStreamingSessions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStreamingSessions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessions" target="_top">AWS
      *      API Documentation</a>
@@ -1011,22 +1076,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listStudioComponentsRequest
      * @return Result of the ListStudioComponents operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudioComponents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioComponents" target="_top">AWS
      *      API Documentation</a>
@@ -1040,22 +1107,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listStudioMembersRequest
      * @return Result of the ListStudioMembers operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudioMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1069,22 +1138,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listStudiosRequest
      * @return Result of the ListStudios operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudios
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios" target="_top">AWS API
      *      Documentation</a>
@@ -1103,22 +1174,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -1131,24 +1204,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param putLaunchProfileMembersRequest
-     *        Information about a launch profile membership.
      * @return Result of the PutLaunchProfileMembers operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.PutLaunchProfileMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutLaunchProfileMembers" target="_top">AWS
      *      API Documentation</a>
@@ -1161,24 +1235,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param putStudioMembersRequest
-     *        A launch profile membership collection.
      * @return Result of the PutStudioMembers operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.PutStudioMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutStudioMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1187,7 +1262,39 @@ public interface AmazonNimbleStudio {
 
     /**
      * <p>
-     * Repairs the SSO configuration for a given studio.
+     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
+     * state between the STOPPED and READY states.
+     * </p>
+     * 
+     * @param startStreamingSessionRequest
+     * @return Result of the StartStreamingSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
+     * @throws ValidationException
+     *         One of the parameters in the request is invalid.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
+     * @sample AmazonNimbleStudio.StartStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartStreamingSessionResult startStreamingSession(StartStreamingSessionRequest startStreamingSessionRequest);
+
+    /**
+     * <p>
+     * Repairs the Amazon Web Services SSO configuration for a given studio.
      * </p>
      * <p>
      * If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will
@@ -1204,22 +1311,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param startStudioSSOConfigurationRepairRequest
      * @return Result of the StartStudioSSOConfigurationRepair operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.StartStudioSSOConfigurationRepair
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair"
      *      target="_top">AWS API Documentation</a>
@@ -1228,28 +1337,61 @@ public interface AmazonNimbleStudio {
 
     /**
      * <p>
+     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
+     * state between the READY and STOPPED states.
+     * </p>
+     * 
+     * @param stopStreamingSessionRequest
+     * @return Result of the StopStreamingSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
+     * @throws ValidationException
+     *         One of the parameters in the request is invalid.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
+     * @sample AmazonNimbleStudio.StopStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopStreamingSessionResult stopStreamingSession(StopStreamingSessionRequest stopStreamingSessionRequest);
+
+    /**
+     * <p>
      * Creates tags for a resource, given its ARN.
      * </p>
      * 
      * @param tagResourceRequest
-     *        The ARN for the role that manages access.
      * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1263,22 +1405,24 @@ public interface AmazonNimbleStudio {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1291,24 +1435,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileRequest
-     *        The launch profile ID.
      * @return Result of the UpdateLaunchProfile operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -1321,24 +1466,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileMemberRequest
-     *        The principal ID.
      * @return Result of the UpdateLaunchProfileMember operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfileMember"
      *      target="_top">AWS API Documentation</a>
@@ -1351,24 +1497,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStreamingImageRequest
-     *        The streaming image ID.
      * @return Result of the UpdateStreamingImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -1384,24 +1531,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioRequest
-     *        The studio ID.
      * @return Result of the UpdateStudio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudio" target="_top">AWS API
      *      Documentation</a>
@@ -1414,24 +1562,25 @@ public interface AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioComponentRequest
-     *        The studio component ID.
      * @return Result of the UpdateStudioComponent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
      * @throws ValidationException
      *         One of the parameters in the request is invalid.
-     * @throws InternalServerErrorException
-     *         A service fault has occurred. Please retry your request and contact Amazon Web Services Support if this
-     *         error continues.
-     * @throws ServiceQuotaExceededException
-     *         This request would cause a service quota to be exceeded. Please use the Amazon Web Services Service
-     *         Quotas console to request an increase.
      * @throws AccessDeniedException
-     *         You do not have permission to perform this action.
-     * @throws ResourceNotFoundException
-     *         A requested resource was not found.
-     * @throws ThrottlingException
-     *         The request was denied due to request throttling. Please retry your request.
-     * @throws ConflictException
-     *         This request conflicts with another concurrent request. Please retry your request.
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @throws ServiceQuotaExceededException
+     *         Your current quota does not allow you to perform the request action. You can request increases for some
+     *         quotas, and other quotas cannot be increased.</p>
+     *         <p>
+     *         Please use AWS Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudioComponent" target="_top">AWS
      *      API Documentation</a>
@@ -1460,5 +1609,7 @@ public interface AmazonNimbleStudio {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonNimbleStudioWaiters waiters();
 
 }

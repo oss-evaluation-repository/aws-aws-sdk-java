@@ -27,7 +27,7 @@ public class GetStudioMemberRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      */
     private String principalId;
@@ -40,11 +40,11 @@ public class GetStudioMemberRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public void setPrincipalId(String principalId) {
@@ -53,10 +53,10 @@ public class GetStudioMemberRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
-     * @return The principal ID.
+     * @return The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public String getPrincipalId() {
@@ -65,11 +65,11 @@ public class GetStudioMemberRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

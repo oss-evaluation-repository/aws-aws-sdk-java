@@ -272,13 +272,13 @@ public class SharedFileSystemConfiguration implements Serializable, Cloneable, S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint()).append(",");
+            sb.append("Endpoint: ").append("***Sensitive Data Redacted***").append(",");
         if (getFileSystemId() != null)
             sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getLinuxMountPoint() != null)
-            sb.append("LinuxMountPoint: ").append(getLinuxMountPoint()).append(",");
+            sb.append("LinuxMountPoint: ").append("***Sensitive Data Redacted***").append(",");
         if (getShareName() != null)
-            sb.append("ShareName: ").append(getShareName()).append(",");
+            sb.append("ShareName: ").append("***Sensitive Data Redacted***").append(",");
         if (getWindowsMountDrive() != null)
             sb.append("WindowsMountDrive: ").append(getWindowsMountDrive());
         sb.append("}");

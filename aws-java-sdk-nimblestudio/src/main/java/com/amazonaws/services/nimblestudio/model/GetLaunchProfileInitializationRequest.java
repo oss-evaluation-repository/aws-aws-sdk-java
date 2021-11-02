@@ -27,13 +27,13 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      */
     private String launchProfileId;
     /**
      * <p>
-     * A collection of launch profile protocol versions.
+     * The launch profile protocol versions supported by the client.
      * </p>
      */
     private java.util.List<String> launchProfileProtocolVersions;
@@ -45,7 +45,7 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
     private String launchPurpose;
     /**
      * <p>
-     * The platform.
+     * The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      * </p>
      */
     private String platform;
@@ -58,11 +58,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -71,10 +71,10 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The Launch Profile ID.
      */
 
     public String getLaunchProfileId() {
@@ -83,11 +83,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,10 +98,10 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A collection of launch profile protocol versions.
+     * The launch profile protocol versions supported by the client.
      * </p>
      * 
-     * @return A collection of launch profile protocol versions.
+     * @return The launch profile protocol versions supported by the client.
      */
 
     public java.util.List<String> getLaunchProfileProtocolVersions() {
@@ -110,11 +110,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A collection of launch profile protocol versions.
+     * The launch profile protocol versions supported by the client.
      * </p>
      * 
      * @param launchProfileProtocolVersions
-     *        A collection of launch profile protocol versions.
+     *        The launch profile protocol versions supported by the client.
      */
 
     public void setLaunchProfileProtocolVersions(java.util.Collection<String> launchProfileProtocolVersions) {
@@ -128,7 +128,7 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A collection of launch profile protocol versions.
+     * The launch profile protocol versions supported by the client.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param launchProfileProtocolVersions
-     *        A collection of launch profile protocol versions.
+     *        The launch profile protocol versions supported by the client.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A collection of launch profile protocol versions.
+     * The launch profile protocol versions supported by the client.
      * </p>
      * 
      * @param launchProfileProtocolVersions
-     *        A collection of launch profile protocol versions.
+     *        The launch profile protocol versions supported by the client.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +208,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The platform.
+     * The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      * </p>
      * 
      * @param platform
-     *        The platform.
+     *        The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      */
 
     public void setPlatform(String platform) {
@@ -221,10 +221,10 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The platform.
+     * The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      * </p>
      * 
-     * @return The platform.
+     * @return The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      */
 
     public String getPlatform() {
@@ -233,11 +233,11 @@ public class GetLaunchProfileInitializationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The platform.
+     * The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      * </p>
      * 
      * @param platform
-     *        The platform.
+     *        The platform where this Launch Profile will be used, either WINDOWS or LINUX.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class GetStreamingSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      */
     private String sessionId;
@@ -40,11 +40,11 @@ public class GetStreamingSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session ID.
+     *        The streaming session ID.
      */
 
     public void setSessionId(String sessionId) {
@@ -53,10 +53,10 @@ public class GetStreamingSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
-     * @return The session ID.
+     * @return The streaming session ID.
      */
 
     public String getSessionId() {
@@ -65,11 +65,11 @@ public class GetStreamingSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session ID.
+     *        The streaming session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

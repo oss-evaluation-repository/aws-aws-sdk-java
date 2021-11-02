@@ -24,6 +24,15 @@ import com.amazonaws.services.nimblestudio.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.nimblestudio.AbstractAmazonNimbleStudioAsync} instead.
  * </p>
+ * <p>
+ * <p>
+ * Welcome to the Amazon Nimble Studio API reference. This API reference provides methods, schema, resources,
+ * parameters, and more to help you get the most out of Nimble Studio.
+ * </p>
+ * <p>
+ * Nimble Studio is a virtual studio that empowers visual effects, animation, and interactive content teams to create
+ * content securely within a scalable, private cloud service.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
@@ -34,7 +43,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param acceptEulasRequest
-     *        A collection of EULA acceptances.
      * @return A Java Future containing the result of the AcceptEulas operation returned by the service.
      * @sample AmazonNimbleStudioAsync.AcceptEulas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/AcceptEulas" target="_top">AWS API
@@ -48,7 +56,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param acceptEulasRequest
-     *        A collection of EULA acceptances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -67,7 +74,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createLaunchProfileRequest
-     *        A collection of launch profiles.
      * @return A Java Future containing the result of the CreateLaunchProfile operation returned by the service.
      * @sample AmazonNimbleStudioAsync.CreateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfile" target="_top">AWS API
@@ -81,7 +87,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createLaunchProfileRequest
-     *        A collection of launch profiles.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -100,7 +105,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingImageRequest
-     *        A collection of streaming images.
      * @return A Java Future containing the result of the CreateStreamingImage operation returned by the service.
      * @sample AmazonNimbleStudioAsync.CreateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingImage" target="_top">AWS
@@ -114,7 +118,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingImageRequest
-     *        A collection of streaming images.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -136,7 +139,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionRequest
-     *        A collection of streaming sessions.
      * @return A Java Future containing the result of the CreateStreamingSession operation returned by the service.
      * @sample AmazonNimbleStudioAsync.CreateStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession" target="_top">AWS
@@ -153,7 +155,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionRequest
-     *        A collection of streaming sessions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -176,7 +177,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
-     *        A list collection streams.
      * @return A Java Future containing the result of the CreateStreamingSessionStream operation returned by the
      *         service.
      * @sample AmazonNimbleStudioAsync.CreateStreamingSessionStream
@@ -196,7 +196,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
-     *        A list collection streams.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -248,7 +247,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioRequest
-     *        A collection of studio resources.
      * @return A Java Future containing the result of the CreateStudio operation returned by the service.
      * @sample AmazonNimbleStudioAsync.CreateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio" target="_top">AWS API
@@ -293,7 +291,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioRequest
-     *        A collection of studio resources.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -312,7 +309,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioComponentRequest
-     *        The studio components.
      * @return A Java Future containing the result of the CreateStudioComponent operation returned by the service.
      * @sample AmazonNimbleStudioAsync.CreateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudioComponent" target="_top">AWS
@@ -326,7 +322,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param createStudioComponentRequest
-     *        The studio components.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -771,7 +766,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Gets StreamingSession resource.
      * </p>
      * <p>
-     * Invoke this operation to poll for a streaming session state while creating or deleting a session.
+     * anvoke this operation to poll for a streaming session state while creating or deleting a session.
      * </p>
      * 
      * @param getStreamingSessionRequest
@@ -787,7 +782,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Gets StreamingSession resource.
      * </p>
      * <p>
-     * Invoke this operation to poll for a streaming session state while creating or deleting a session.
+     * anvoke this operation to poll for a streaming session state while creating or deleting a session.
      * </p>
      * 
      * @param getStreamingSessionRequest
@@ -1277,7 +1272,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param putLaunchProfileMembersRequest
-     *        Information about a launch profile membership.
      * @return A Java Future containing the result of the PutLaunchProfileMembers operation returned by the service.
      * @sample AmazonNimbleStudioAsync.PutLaunchProfileMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutLaunchProfileMembers" target="_top">AWS
@@ -1291,7 +1285,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param putLaunchProfileMembersRequest
-     *        Information about a launch profile membership.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1310,7 +1303,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param putStudioMembersRequest
-     *        A launch profile membership collection.
      * @return A Java Future containing the result of the PutStudioMembers operation returned by the service.
      * @sample AmazonNimbleStudioAsync.PutStudioMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutStudioMembers" target="_top">AWS API
@@ -1324,7 +1316,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param putStudioMembersRequest
-     *        A launch profile membership collection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1339,7 +1330,40 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Repairs the SSO configuration for a given studio.
+     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
+     * state between the STOPPED and READY states.
+     * </p>
+     * 
+     * @param startStreamingSessionRequest
+     * @return A Java Future containing the result of the StartStreamingSession operation returned by the service.
+     * @sample AmazonNimbleStudioAsync.StartStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(StartStreamingSessionRequest startStreamingSessionRequest);
+
+    /**
+     * <p>
+     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
+     * state between the STOPPED and READY states.
+     * </p>
+     * 
+     * @param startStreamingSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartStreamingSession operation returned by the service.
+     * @sample AmazonNimbleStudioAsyncHandler.StartStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(StartStreamingSessionRequest startStreamingSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartStreamingSessionRequest, StartStreamingSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Repairs the Amazon Web Services SSO configuration for a given studio.
      * </p>
      * <p>
      * If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will
@@ -1366,7 +1390,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Repairs the SSO configuration for a given studio.
+     * Repairs the Amazon Web Services SSO configuration for a given studio.
      * </p>
      * <p>
      * If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will
@@ -1398,11 +1422,43 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
+     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
+     * state between the READY and STOPPED states.
+     * </p>
+     * 
+     * @param stopStreamingSessionRequest
+     * @return A Java Future containing the result of the StopStreamingSession operation returned by the service.
+     * @sample AmazonNimbleStudioAsync.StopStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(StopStreamingSessionRequest stopStreamingSessionRequest);
+
+    /**
+     * <p>
+     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
+     * state between the READY and STOPPED states.
+     * </p>
+     * 
+     * @param stopStreamingSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopStreamingSession operation returned by the service.
+     * @sample AmazonNimbleStudioAsyncHandler.StopStreamingSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(StopStreamingSessionRequest stopStreamingSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopStreamingSessionRequest, StopStreamingSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates tags for a resource, given its ARN.
      * </p>
      * 
      * @param tagResourceRequest
-     *        The ARN for the role that manages access.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonNimbleStudioAsync.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/TagResource" target="_top">AWS API
@@ -1416,7 +1472,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param tagResourceRequest
-     *        The ARN for the role that manages access.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1466,7 +1521,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileRequest
-     *        The launch profile ID.
      * @return A Java Future containing the result of the UpdateLaunchProfile operation returned by the service.
      * @sample AmazonNimbleStudioAsync.UpdateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfile" target="_top">AWS API
@@ -1480,7 +1534,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileRequest
-     *        The launch profile ID.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1499,7 +1552,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileMemberRequest
-     *        The principal ID.
      * @return A Java Future containing the result of the UpdateLaunchProfileMember operation returned by the service.
      * @sample AmazonNimbleStudioAsync.UpdateLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfileMember"
@@ -1514,7 +1566,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateLaunchProfileMemberRequest
-     *        The principal ID.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1534,7 +1585,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStreamingImageRequest
-     *        The streaming image ID.
      * @return A Java Future containing the result of the UpdateStreamingImage operation returned by the service.
      * @sample AmazonNimbleStudioAsync.UpdateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStreamingImage" target="_top">AWS
@@ -1548,7 +1598,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStreamingImageRequest
-     *        The streaming image ID.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1570,7 +1619,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioRequest
-     *        The studio ID.
      * @return A Java Future containing the result of the UpdateStudio operation returned by the service.
      * @sample AmazonNimbleStudioAsync.UpdateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudio" target="_top">AWS API
@@ -1587,7 +1635,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioRequest
-     *        The studio ID.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1606,7 +1653,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioComponentRequest
-     *        The studio component ID.
      * @return A Java Future containing the result of the UpdateStudioComponent operation returned by the service.
      * @sample AmazonNimbleStudioAsync.UpdateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudioComponent" target="_top">AWS
@@ -1620,7 +1666,6 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * 
      * @param updateStudioComponentRequest
-     *        The studio component ID.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

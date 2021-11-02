@@ -24,6 +24,15 @@ import java.util.concurrent.ExecutorService;
  * Client for accessing AmazonNimbleStudio asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <p>
+ * Welcome to the Amazon Nimble Studio API reference. This API reference provides methods, schema, resources,
+ * parameters, and more to help you get the most out of Nimble Studio.
+ * </p>
+ * <p>
+ * Nimble Studio is a virtual studio that empowers visual effects, animation, and interactive content teams to create
+ * content securely within a scalable, private cloud service.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -1294,6 +1303,39 @@ public class AmazonNimbleStudioAsyncClient extends AmazonNimbleStudioClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(StartStreamingSessionRequest request) {
+
+        return startStreamingSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(final StartStreamingSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartStreamingSessionRequest, StartStreamingSessionResult> asyncHandler) {
+        final StartStreamingSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartStreamingSessionResult>() {
+            @Override
+            public StartStreamingSessionResult call() throws Exception {
+                StartStreamingSessionResult result = null;
+
+                try {
+                    result = executeStartStreamingSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartStudioSSOConfigurationRepairResult> startStudioSSOConfigurationRepairAsync(
             StartStudioSSOConfigurationRepairRequest request) {
 
@@ -1313,6 +1355,39 @@ public class AmazonNimbleStudioAsyncClient extends AmazonNimbleStudioClient impl
 
                 try {
                     result = executeStartStudioSSOConfigurationRepair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(StopStreamingSessionRequest request) {
+
+        return stopStreamingSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(final StopStreamingSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopStreamingSessionRequest, StopStreamingSessionResult> asyncHandler) {
+        final StopStreamingSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopStreamingSessionResult>() {
+            @Override
+            public StopStreamingSessionResult call() throws Exception {
+                StopStreamingSessionResult result = null;
+
+                try {
+                    result = executeStopStreamingSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

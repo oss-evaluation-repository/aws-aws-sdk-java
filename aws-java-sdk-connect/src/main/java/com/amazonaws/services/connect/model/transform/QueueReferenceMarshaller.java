@@ -31,8 +31,6 @@ public class QueueReferenceMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
-    private static final MarshallingInfo<String> QUEUETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("QueueType").build();
 
     private static final QueueReferenceMarshaller instance = new QueueReferenceMarshaller();
 
@@ -52,7 +50,6 @@ public class QueueReferenceMarshaller {
         try {
             protocolMarshaller.marshall(queueReference.getId(), ID_BINDING);
             protocolMarshaller.marshall(queueReference.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(queueReference.getQueueType(), QUEUETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

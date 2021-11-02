@@ -62,6 +62,10 @@ public class StreamConfigurationCreateJsonUnmarshaller implements Unmarshaller<S
                     context.nextToken();
                     streamConfigurationCreate.setMaxSessionLengthInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("maxStoppedSessionLengthInMinutes", targetDepth)) {
+                    context.nextToken();
+                    streamConfigurationCreate.setMaxStoppedSessionLengthInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("streamingImageIds", targetDepth)) {
                     context.nextToken();
                     streamConfigurationCreate.setStreamingImageIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

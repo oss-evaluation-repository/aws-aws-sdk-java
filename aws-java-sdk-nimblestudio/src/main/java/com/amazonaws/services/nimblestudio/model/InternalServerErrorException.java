@@ -15,7 +15,9 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * An internal error has occurred. Please retry your request.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

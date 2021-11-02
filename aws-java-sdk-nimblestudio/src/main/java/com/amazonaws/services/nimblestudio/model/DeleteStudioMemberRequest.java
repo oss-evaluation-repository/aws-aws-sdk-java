@@ -27,17 +27,15 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      */
     private String principalId;
@@ -50,19 +48,15 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -71,18 +65,14 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
-     * @return To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *         should not reuse the same client token for other API requests. If you retry a request that completed
-     *         successfully using the same client token and the same parameters, the retry succeeds without performing
-     *         any further actions. If you retry a successful request using the same client token, but one or more of
-     *         the parameters are different, the retry fails with a ValidationException error.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *         ensure idempotency.
      */
 
     public String getClientToken() {
@@ -91,19 +81,15 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +100,11 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public void setPrincipalId(String principalId) {
@@ -127,10 +113,10 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
-     * @return The principal ID.
+     * @return The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public String getPrincipalId() {
@@ -139,11 +125,11 @@ public class DeleteStudioMemberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

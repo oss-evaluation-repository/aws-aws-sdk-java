@@ -109,6 +109,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateResponseHeadersPolicyResult createResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -170,6 +175,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeleteRealtimeLogConfigResult deleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResponseHeadersPolicyResult deleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -284,6 +294,16 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public GetResponseHeadersPolicyResult getResponseHeadersPolicy(GetResponseHeadersPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResponseHeadersPolicyConfigResult getResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -334,6 +354,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListDistributionsByResponseHeadersPolicyIdResult listDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -375,6 +400,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public ListRealtimeLogConfigsResult listRealtimeLogConfigs(ListRealtimeLogConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResponseHeadersPoliciesResult listResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -455,6 +485,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public UpdateRealtimeLogConfigResult updateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResponseHeadersPolicyResult updateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

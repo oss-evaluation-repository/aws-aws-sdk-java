@@ -33,6 +33,8 @@ public class StudioMembershipMarshaller {
             .marshallLocationName("persona").build();
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalId").build();
+    private static final MarshallingInfo<String> SID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sid").build();
 
     private static final StudioMembershipMarshaller instance = new StudioMembershipMarshaller();
 
@@ -53,6 +55,7 @@ public class StudioMembershipMarshaller {
             protocolMarshaller.marshall(studioMembership.getIdentityStoreId(), IDENTITYSTOREID_BINDING);
             protocolMarshaller.marshall(studioMembership.getPersona(), PERSONA_BINDING);
             protocolMarshaller.marshall(studioMembership.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(studioMembership.getSid(), SID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

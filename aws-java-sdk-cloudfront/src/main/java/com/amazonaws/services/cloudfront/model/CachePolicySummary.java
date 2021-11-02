@@ -29,7 +29,7 @@ public class CachePolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code>
-     * (created in this account).
+     * (created in this Amazon Web Services account).
      * </p>
      */
     private String type;
@@ -43,12 +43,12 @@ public class CachePolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code>
-     * (created in this account).
+     * (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @see CachePolicyType
      */
 
@@ -59,11 +59,11 @@ public class CachePolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code>
-     * (created in this account).
+     * (created in this Amazon Web Services account).
      * </p>
      * 
      * @return The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-     *         <code>custom</code> (created in this account).
+     *         <code>custom</code> (created in this Amazon Web Services account).
      * @see CachePolicyType
      */
 
@@ -74,12 +74,12 @@ public class CachePolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code>
-     * (created in this account).
+     * (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CachePolicyType
      */
@@ -92,12 +92,12 @@ public class CachePolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code>
-     * (created in this account).
+     * (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CachePolicyType
      */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified real-time log configuration belongs to a different account.
+ * The specified real-time log configuration belongs to a different Amazon Web Services account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

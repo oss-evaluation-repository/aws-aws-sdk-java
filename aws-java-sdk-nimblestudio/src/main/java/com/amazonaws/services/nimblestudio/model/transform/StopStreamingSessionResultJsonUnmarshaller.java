@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.connect.model.transform;
+package com.amazonaws.services.nimblestudio.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.connect.model.*;
+import com.amazonaws.services.nimblestudio.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * InstanceReference JSON Unmarshaller
+ * StopStreamingSessionResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceReferenceJsonUnmarshaller implements Unmarshaller<InstanceReference, JsonUnmarshallerContext> {
+public class StopStreamingSessionResultJsonUnmarshaller implements Unmarshaller<StopStreamingSessionResult, JsonUnmarshallerContext> {
 
-    public InstanceReference unmarshall(JsonUnmarshallerContext context) throws Exception {
-        InstanceReference instanceReference = new InstanceReference();
+    public StopStreamingSessionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        StopStreamingSessionResult stopStreamingSessionResult = new StopStreamingSessionResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class InstanceReferenceJsonUnmarshaller implements Unmarshaller<InstanceR
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return null;
+            return stopStreamingSessionResult;
         }
 
         while (true) {
@@ -48,13 +48,9 @@ public class InstanceReferenceJsonUnmarshaller implements Unmarshaller<InstanceR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Id", targetDepth)) {
+                if (context.testExpression("session", targetDepth)) {
                     context.nextToken();
-                    instanceReference.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Arn", targetDepth)) {
-                    context.nextToken();
-                    instanceReference.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    stopStreamingSessionResult.setSession(StreamingSessionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +61,14 @@ public class InstanceReferenceJsonUnmarshaller implements Unmarshaller<InstanceR
             token = context.nextToken();
         }
 
-        return instanceReference;
+        return stopStreamingSessionResult;
     }
 
-    private static InstanceReferenceJsonUnmarshaller instance;
+    private static StopStreamingSessionResultJsonUnmarshaller instance;
 
-    public static InstanceReferenceJsonUnmarshaller getInstance() {
+    public static StopStreamingSessionResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new InstanceReferenceJsonUnmarshaller();
+            instance = new StopStreamingSessionResultJsonUnmarshaller();
         return instance;
     }
 }

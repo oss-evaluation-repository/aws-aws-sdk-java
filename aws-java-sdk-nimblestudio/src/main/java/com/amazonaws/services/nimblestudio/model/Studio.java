@@ -18,6 +18,29 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a studio resource.
+ * </p>
+ * <p>
+ * A studio is the core resource used with Nimble Studio. You must create a studio first, before any other resource type
+ * can be created. All other resources you create and manage in Nimble Studio are contained within a studio.
+ * </p>
+ * <p>
+ * When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are
+ * assumed by your users when they log in to the Nimble Studio portal via Amazon Web Services SSO and your identity
+ * source.
+ * </p>
+ * <p>
+ * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
+ * properly.
+ * </p>
+ * <p>
+ * The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function
+ * properly.
+ * </p>
+ * <p>
+ * Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Studio" target="_top">AWS API
  *      Documentation</a>
@@ -59,7 +82,7 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble portal.
+     * Web Services SSO users to log in to Nimble Studio portal.
      * </p>
      */
     private String ssoClientId;
@@ -334,12 +357,12 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble portal.
+     * Web Services SSO users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
      *        The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable
-     *        Amazon Web Services SSO users to log in to Nimble portal.
+     *        Amazon Web Services SSO users to log in to Nimble Studio portal.
      */
 
     public void setSsoClientId(String ssoClientId) {
@@ -349,11 +372,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble portal.
+     * Web Services SSO users to log in to Nimble Studio portal.
      * </p>
      * 
      * @return The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to
-     *         enable Amazon Web Services SSO users to log in to Nimble portal.
+     *         enable Amazon Web Services SSO users to log in to Nimble Studio portal.
      */
 
     public String getSsoClientId() {
@@ -363,12 +386,12 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon
-     * Web Services SSO users to log in to Nimble portal.
+     * Web Services SSO users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
      *        The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable
-     *        Amazon Web Services SSO users to log in to Nimble portal.
+     *        Amazon Web Services SSO users to log in to Nimble Studio portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -868,7 +891,7 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getHomeRegion() != null)
             sb.append("HomeRegion: ").append(getHomeRegion()).append(",");
         if (getSsoClientId() != null)

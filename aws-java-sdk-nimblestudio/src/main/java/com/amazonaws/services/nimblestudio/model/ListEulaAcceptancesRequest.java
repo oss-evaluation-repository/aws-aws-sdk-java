@@ -27,13 +27,13 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that have been previously accepted.
      * </p>
      */
     private java.util.List<String> eulaIds;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
@@ -46,10 +46,10 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that have been previously accepted.
      * </p>
      * 
-     * @return A collection of EULA IDs.
+     * @return The list of EULA IDs that have been previously accepted.
      */
 
     public java.util.List<String> getEulaIds() {
@@ -58,11 +58,11 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that have been previously accepted.
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that have been previously accepted.
      */
 
     public void setEulaIds(java.util.Collection<String> eulaIds) {
@@ -76,7 +76,7 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that have been previously accepted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that have been previously accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that have been previously accepted.
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that have been previously accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,10 +129,10 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -141,11 +141,11 @@ public class ListEulaAcceptancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

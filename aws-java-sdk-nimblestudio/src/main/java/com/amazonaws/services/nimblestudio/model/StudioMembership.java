@@ -18,6 +18,20 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A studio member is an association of a user from your studio identity source to elevated permissions that they are
+ * granted in the studio.
+ * </p>
+ * <p>
+ * When you add a user to your studio using the Nimble Studio console, they are given access to the studio's AWS SSO
+ * application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by
+ * the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio
+ * membership.
+ * </p>
+ * <p>
+ * When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they
+ * are granted permissions specified by the Studio's Admin IAM role.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioMembership" target="_top">AWS API
  *      Documentation</a>
@@ -43,6 +57,12 @@ public class StudioMembership implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The Active Directory Security Identifier for this user, if available.
+     * </p>
+     */
+    private String sid;
 
     /**
      * <p>
@@ -184,6 +204,46 @@ public class StudioMembership implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Active Directory Security Identifier for this user, if available.
+     * </p>
+     * 
+     * @param sid
+     *        The Active Directory Security Identifier for this user, if available.
+     */
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    /**
+     * <p>
+     * The Active Directory Security Identifier for this user, if available.
+     * </p>
+     * 
+     * @return The Active Directory Security Identifier for this user, if available.
+     */
+
+    public String getSid() {
+        return this.sid;
+    }
+
+    /**
+     * <p>
+     * The Active Directory Security Identifier for this user, if available.
+     * </p>
+     * 
+     * @param sid
+     *        The Active Directory Security Identifier for this user, if available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StudioMembership withSid(String sid) {
+        setSid(sid);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +260,9 @@ public class StudioMembership implements Serializable, Cloneable, StructuredPojo
         if (getPersona() != null)
             sb.append("Persona: ").append(getPersona()).append(",");
         if (getPrincipalId() != null)
-            sb.append("PrincipalId: ").append(getPrincipalId());
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getSid() != null)
+            sb.append("Sid: ").append(getSid());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +289,10 @@ public class StudioMembership implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
             return false;
+        if (other.getSid() == null ^ this.getSid() == null)
+            return false;
+        if (other.getSid() != null && other.getSid().equals(this.getSid()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +304,7 @@ public class StudioMembership implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getIdentityStoreId() == null) ? 0 : getIdentityStoreId().hashCode());
         hashCode = prime * hashCode + ((getPersona() == null) ? 0 : getPersona().hashCode());
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getSid() == null) ? 0 : getSid().hashCode());
         return hashCode;
     }
 

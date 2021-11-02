@@ -18,8 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponentSummary" target="_top">AWS API
  *      Documentation</a>
@@ -497,9 +496,9 @@ public class StudioComponentSummary implements Serializable, Cloneable, Structur
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getStudioComponentId() != null)
             sb.append("StudioComponentId: ").append(getStudioComponentId()).append(",");
         if (getSubtype() != null)

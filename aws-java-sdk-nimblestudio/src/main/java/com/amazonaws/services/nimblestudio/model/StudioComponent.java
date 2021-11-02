@@ -19,8 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A network that is used by a studio’s users and workflows, including render farm, Active Directory, licensing, and
- * file system.
+ * A studio component represents a network resource to be used by a studio's users and workflows. A typical studio
+ * contains studio components for each of the following: render farm, Active Directory, licensing, and file system.
+ * </p>
+ * <p>
+ * Access to a studio component is managed by specifying security groups for the resource, as well as its endpoint.
+ * </p>
+ * <p>
+ * A studio component also has a set of initialization scripts that are returned by
+ * <code>GetLaunchProfileInitialization</code>. These initialization scripts run on streaming sessions when they start.
+ * They provide users with flexibility in controlling how the studio resources are configured on a streaming session.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponent" target="_top">AWS API
@@ -1073,15 +1081,15 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEc2SecurityGroupIds() != null)
             sb.append("Ec2SecurityGroupIds: ").append(getEc2SecurityGroupIds()).append(",");
         if (getInitializationScripts() != null)
             sb.append("InitializationScripts: ").append(getInitializationScripts()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getScriptParameters() != null)
-            sb.append("ScriptParameters: ").append(getScriptParameters()).append(",");
+            sb.append("ScriptParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusCode() != null)

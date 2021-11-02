@@ -31,10 +31,6 @@ public class DimensionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Queue").build();
     private static final MarshallingInfo<String> CHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Channel").build();
-    private static final MarshallingInfo<StructuredPojo> ROUTINGPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingProfile").build();
-    private static final MarshallingInfo<StructuredPojo> INSTANCEREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceReference").build();
 
     private static final DimensionsMarshaller instance = new DimensionsMarshaller();
 
@@ -54,8 +50,6 @@ public class DimensionsMarshaller {
         try {
             protocolMarshaller.marshall(dimensions.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(dimensions.getChannel(), CHANNEL_BINDING);
-            protocolMarshaller.marshall(dimensions.getRoutingProfile(), ROUTINGPROFILE_BINDING);
-            protocolMarshaller.marshall(dimensions.getInstanceReference(), INSTANCEREFERENCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

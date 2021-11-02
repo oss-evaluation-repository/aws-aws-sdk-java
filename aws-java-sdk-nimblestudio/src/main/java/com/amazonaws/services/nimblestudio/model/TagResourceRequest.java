@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * The ARN for the role that manages access.
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/TagResource" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +28,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * </p>
      */
     private String resourceArn;
@@ -43,11 +41,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the target resource for tagging operations.
+     *        The Amazon Resource Name (ARN) of the resource you want to add tags to.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +54,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * </p>
      * 
-     * @return The ARN of the target resource for tagging operations.
+     * @return The Amazon Resource Name (ARN) of the resource you want to add tags to.
      */
 
     public String getResourceArn() {
@@ -68,11 +66,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the target resource for tagging operations.
+     *        The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

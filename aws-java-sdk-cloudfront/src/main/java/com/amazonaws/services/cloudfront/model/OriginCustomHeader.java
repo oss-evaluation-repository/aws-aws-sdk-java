@@ -149,7 +149,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
         if (getHeaderName() != null)
             sb.append("HeaderName: ").append(getHeaderName()).append(",");
         if (getHeaderValue() != null)
-            sb.append("HeaderValue: ").append(getHeaderValue());
+            sb.append("HeaderValue: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

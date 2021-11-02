@@ -68,9 +68,9 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     private StreamingLoggingConfig logging;
     /**
      * <p>
-     * A complex type that specifies any accounts that you want to permit to create signed URLs for private content. If
-     * you want the distribution to use signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for
+     * private content. If you want the distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -380,17 +380,17 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies any accounts that you want to permit to create signed URLs for private content. If
-     * you want the distribution to use signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for
+     * private content. If you want the distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies any accounts that you want to permit to create signed URLs for private
-     *        content. If you want the distribution to use signed URLs, include this element; if you want the
-     *        distribution to use public URLs, remove this element. For more information, see <a
+     *        A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
+     *        URLs for private content. If you want the distribution to use signed URLs, include this element; if you
+     *        want the distribution to use public URLs, remove this element. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -401,16 +401,16 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies any accounts that you want to permit to create signed URLs for private content. If
-     * you want the distribution to use signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for
+     * private content. If you want the distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies any accounts that you want to permit to create signed URLs for private
-     *         content. If you want the distribution to use signed URLs, include this element; if you want the
-     *         distribution to use public URLs, remove this element. For more information, see <a
+     * @return A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
+     *         URLs for private content. If you want the distribution to use signed URLs, include this element; if you
+     *         want the distribution to use public URLs, remove this element. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *         Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -421,17 +421,17 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies any accounts that you want to permit to create signed URLs for private content. If
-     * you want the distribution to use signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for
+     * private content. If you want the distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies any accounts that you want to permit to create signed URLs for private
-     *        content. If you want the distribution to use signed URLs, include this element; if you want the
-     *        distribution to use public URLs, remove this element. For more information, see <a
+     *        A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
+     *        URLs for private content. If you want the distribution to use signed URLs, include this element; if you
+     *        want the distribution to use public URLs, remove this element. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

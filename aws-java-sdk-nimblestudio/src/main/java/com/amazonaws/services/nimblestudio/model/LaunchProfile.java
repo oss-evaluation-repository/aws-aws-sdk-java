@@ -18,6 +18,15 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A launch profile controls your artist workforce’s access to studio components, like compute farms, shared file
+ * systems, managed file systems, and license server configurations, as well as instance types and Amazon Machine Images
+ * (AMIs).
+ * </p>
+ * 
+ * <pre>
+ * <code> &lt;p&gt;Studio administrators create launch profiles in the Nimble Studio console. Artists can use their launch profiles to launch an instance from the Nimble Studio portal. Each user’s launch profile defines how they can launch a streaming session. By default, studio admins can use all launch profiles.&lt;/p&gt; </code>
+ * </pre>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfile" target="_top">AWS API
  *      Documentation</a>
@@ -941,7 +950,7 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEc2SubnetIds() != null)
             sb.append("Ec2SubnetIds: ").append(getEc2SubnetIds()).append(",");
         if (getLaunchProfileId() != null)
@@ -949,7 +958,7 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
         if (getLaunchProfileProtocolVersions() != null)
             sb.append("LaunchProfileProtocolVersions: ").append(getLaunchProfileProtocolVersions()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusCode() != null)

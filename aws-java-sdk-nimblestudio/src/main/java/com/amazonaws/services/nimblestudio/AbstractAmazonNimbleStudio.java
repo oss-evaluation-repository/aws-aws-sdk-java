@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.nimblestudio.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.nimblestudio.waiters.AmazonNimbleStudioWaiters;
 
 /**
  * Abstract implementation of {@code AmazonNimbleStudio}. Convenient method forms pass through to the corresponding
@@ -213,7 +214,17 @@ public class AbstractAmazonNimbleStudio implements AmazonNimbleStudio {
     }
 
     @Override
+    public StartStreamingSessionResult startStreamingSession(StartStreamingSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartStudioSSOConfigurationRepairResult startStudioSSOConfigurationRepair(StartStudioSSOConfigurationRepairRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopStreamingSessionResult stopStreamingSession(StopStreamingSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,6 +270,11 @@ public class AbstractAmazonNimbleStudio implements AmazonNimbleStudio {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonNimbleStudioWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

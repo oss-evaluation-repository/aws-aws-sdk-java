@@ -15,7 +15,9 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified resource could not be found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

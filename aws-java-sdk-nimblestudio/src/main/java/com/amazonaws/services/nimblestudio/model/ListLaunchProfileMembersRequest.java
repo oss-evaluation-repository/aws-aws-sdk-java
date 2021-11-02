@@ -27,19 +27,19 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      */
     private String launchProfileId;
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
@@ -52,11 +52,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -65,10 +65,10 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The Launch Profile ID.
      */
 
     public String getLaunchProfileId() {
@@ -77,11 +77,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -105,10 +105,10 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
-     * @return The maximum number of results to be returned per request.
+     * @return The max number of results to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -117,11 +117,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,10 +145,10 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -157,11 +157,11 @@ public class ListLaunchProfileMembersRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

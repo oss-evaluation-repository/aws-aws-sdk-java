@@ -332,11 +332,11 @@ public class TestResult implements Serializable, Cloneable {
         if (getComputeUtilization() != null)
             sb.append("ComputeUtilization: ").append(getComputeUtilization()).append(",");
         if (getFunctionExecutionLogs() != null)
-            sb.append("FunctionExecutionLogs: ").append(getFunctionExecutionLogs()).append(",");
+            sb.append("FunctionExecutionLogs: ").append("***Sensitive Data Redacted***").append(",");
         if (getFunctionErrorMessage() != null)
-            sb.append("FunctionErrorMessage: ").append(getFunctionErrorMessage()).append(",");
+            sb.append("FunctionErrorMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getFunctionOutput() != null)
-            sb.append("FunctionOutput: ").append(getFunctionOutput());
+            sb.append("FunctionOutput: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -1,3 +1,16 @@
+# __1.12.101__ __2021-11-02__
+## __Amazon CloudFront__
+  - ### Features
+    - CloudFront now supports response headers policies to add HTTP headers to the responses that CloudFront sends to viewers. You can use these policies to add CORS headers, control browser caching, and more, without modifying your origin or writing any code.
+
+## __Amazon Connect Service__
+  - ### Features
+    - Amazon Connect Chat now supports real-time message streaming.
+
+## __AmazonNimbleStudio__
+  - ### Features
+    - Amazon Nimble Studio adds support for users to stop and start streaming sessions.
+
 # __1.12.100__ __2021-11-01__
 ## __AWS Network Manager__
   - ### Features

@@ -42,13 +42,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
+     * cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in a trusted signer’s account. The signed URL or cookie contains information about which public key
-     * CloudFront should use to verify the signature. For more information, see <a
+     * key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -186,6 +187,12 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private String originRequestPolicyId;
+    /**
+     * <p>
+     * The identifier for a response headers policy.
+     * </p>
+     */
+    private String responseHeadersPolicyId;
     /**
      * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
@@ -335,13 +342,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
+     * cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in a trusted signer’s account. The signed URL or cookie contains information about which public key
-     * CloudFront should use to verify the signature. For more information, see <a
+     * key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -352,13 +360,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *        A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or
+     *        signed cookies.
      *        </p>
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in a trusted signer’s account. The signed URL or cookie contains information about
-     *        which public key CloudFront should use to verify the signature. For more information, see <a
+     *        CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains
+     *        information about which public key CloudFront should use to verify the signature. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -374,13 +384,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
+     * cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in a trusted signer’s account. The signed URL or cookie contains information about which public key
-     * CloudFront should use to verify the signature. For more information, see <a
+     * key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -390,13 +401,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         </p>
      *         </important>
      *         <p>
-     *         A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *         A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or
+     *         signed cookies.
      *         </p>
      *         <p>
      *         When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *         requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *         CloudFront key pair in a trusted signer’s account. The signed URL or cookie contains information about
-     *         which public key CloudFront should use to verify the signature. For more information, see <a
+     *         CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains
+     *         information about which public key CloudFront should use to verify the signature. For more information,
+     *         see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *         private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -412,13 +425,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
+     * cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in a trusted signer’s account. The signed URL or cookie contains information about which public key
-     * CloudFront should use to verify the signature. For more information, see <a
+     * key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -429,13 +443,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *        A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or
+     *        signed cookies.
      *        </p>
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in a trusted signer’s account. The signed URL or cookie contains information about
-     *        which public key CloudFront should use to verify the signature. For more information, see <a
+     *        CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains
+     *        information about which public key CloudFront should use to verify the signature. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1509,6 +1525,46 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The identifier for a response headers policy.
+     * </p>
+     * 
+     * @param responseHeadersPolicyId
+     *        The identifier for a response headers policy.
+     */
+
+    public void setResponseHeadersPolicyId(String responseHeadersPolicyId) {
+        this.responseHeadersPolicyId = responseHeadersPolicyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for a response headers policy.
+     * </p>
+     * 
+     * @return The identifier for a response headers policy.
+     */
+
+    public String getResponseHeadersPolicyId() {
+        return this.responseHeadersPolicyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for a response headers policy.
+     * </p>
+     * 
+     * @param responseHeadersPolicyId
+     *        The identifier for a response headers policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DefaultCacheBehavior withResponseHeadersPolicyId(String responseHeadersPolicyId) {
+        setResponseHeadersPolicyId(responseHeadersPolicyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
      * field. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with
@@ -2094,6 +2150,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
             sb.append("CachePolicyId: ").append(getCachePolicyId()).append(",");
         if (getOriginRequestPolicyId() != null)
             sb.append("OriginRequestPolicyId: ").append(getOriginRequestPolicyId()).append(",");
+        if (getResponseHeadersPolicyId() != null)
+            sb.append("ResponseHeadersPolicyId: ").append(getResponseHeadersPolicyId()).append(",");
         if (getForwardedValues() != null)
             sb.append("ForwardedValues: ").append(getForwardedValues()).append(",");
         if (getMinTTL() != null)
@@ -2168,6 +2226,10 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getOriginRequestPolicyId() != null && other.getOriginRequestPolicyId().equals(this.getOriginRequestPolicyId()) == false)
             return false;
+        if (other.getResponseHeadersPolicyId() == null ^ this.getResponseHeadersPolicyId() == null)
+            return false;
+        if (other.getResponseHeadersPolicyId() != null && other.getResponseHeadersPolicyId().equals(this.getResponseHeadersPolicyId()) == false)
+            return false;
         if (other.getForwardedValues() == null ^ this.getForwardedValues() == null)
             return false;
         if (other.getForwardedValues() != null && other.getForwardedValues().equals(this.getForwardedValues()) == false)
@@ -2205,6 +2267,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRealtimeLogConfigArn() == null) ? 0 : getRealtimeLogConfigArn().hashCode());
         hashCode = prime * hashCode + ((getCachePolicyId() == null) ? 0 : getCachePolicyId().hashCode());
         hashCode = prime * hashCode + ((getOriginRequestPolicyId() == null) ? 0 : getOriginRequestPolicyId().hashCode());
+        hashCode = prime * hashCode + ((getResponseHeadersPolicyId() == null) ? 0 : getResponseHeadersPolicyId().hashCode());
         hashCode = prime * hashCode + ((getForwardedValues() == null) ? 0 : getForwardedValues().hashCode());
         hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode());
         hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode());

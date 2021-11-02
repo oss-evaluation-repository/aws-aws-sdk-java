@@ -21,9 +21,7 @@ import javax.annotation.Generated;
 public enum Grouping {
 
     QUEUE("QUEUE"),
-    CHANNEL("CHANNEL"),
-    ROUTING_PROFILE("ROUTING_PROFILE"),
-    INSTANCE("INSTANCE");
+    CHANNEL("CHANNEL");
 
     private String value;
 

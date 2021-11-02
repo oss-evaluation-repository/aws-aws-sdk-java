@@ -44,17 +44,18 @@ public class OriginShield implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The Region for Origin Shield.
+     * The Amazon Web Services Region for Origin Shield.
      * </p>
      * <p>
-     * Specify the Region that has the lowest latency to your origin. To specify a region, use the region code, not the
-     * region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     * Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the
+     * region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
      * </p>
      * <p>
-     * When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of Regions
-     * that you can specify, and for help choosing the best Region for your origin, see <a href=
+     * When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For
+     * the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your
+     * origin, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     * >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String originShieldRegion;
@@ -149,30 +150,34 @@ public class OriginShield implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region for Origin Shield.
+     * The Amazon Web Services Region for Origin Shield.
      * </p>
      * <p>
-     * Specify the Region that has the lowest latency to your origin. To specify a region, use the region code, not the
-     * region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     * Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the
+     * region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
      * </p>
      * <p>
-     * When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of Regions
-     * that you can specify, and for help choosing the best Region for your origin, see <a href=
+     * When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For
+     * the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your
+     * origin, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     * >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originShieldRegion
-     *        The Region for Origin Shield.</p>
+     *        The Amazon Web Services Region for Origin Shield.</p>
      *        <p>
-     *        Specify the Region that has the lowest latency to your origin. To specify a region, use the region code,
-     *        not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     *        Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region,
+     *        use the region code, not the region name. For example, specify the US East (Ohio) region as
+     *        <code>us-east-2</code>.
      *        </p>
      *        <p>
-     *        When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of
-     *        Regions that you can specify, and for help choosing the best Region for your origin, see <a href=
+     *        When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+     *        Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+     *        Region for your origin, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     *        >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer
+     *        Guide</i>.
      */
 
     public void setOriginShieldRegion(String originShieldRegion) {
@@ -181,29 +186,33 @@ public class OriginShield implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region for Origin Shield.
+     * The Amazon Web Services Region for Origin Shield.
      * </p>
      * <p>
-     * Specify the Region that has the lowest latency to your origin. To specify a region, use the region code, not the
-     * region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     * Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the
+     * region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
      * </p>
      * <p>
-     * When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of Regions
-     * that you can specify, and for help choosing the best Region for your origin, see <a href=
+     * When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For
+     * the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your
+     * origin, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     * >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return The Region for Origin Shield.</p>
+     * @return The Amazon Web Services Region for Origin Shield.</p>
      *         <p>
-     *         Specify the Region that has the lowest latency to your origin. To specify a region, use the region code,
-     *         not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     *         Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region,
+     *         use the region code, not the region name. For example, specify the US East (Ohio) region as
+     *         <code>us-east-2</code>.
      *         </p>
      *         <p>
-     *         When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of
-     *         Regions that you can specify, and for help choosing the best Region for your origin, see <a href=
+     *         When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+     *         Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+     *         Region for your origin, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     *         >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer
+     *         Guide</i>.
      */
 
     public String getOriginShieldRegion() {
@@ -212,30 +221,34 @@ public class OriginShield implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region for Origin Shield.
+     * The Amazon Web Services Region for Origin Shield.
      * </p>
      * <p>
-     * Specify the Region that has the lowest latency to your origin. To specify a region, use the region code, not the
-     * region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     * Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the
+     * region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
      * </p>
      * <p>
-     * When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of Regions
-     * that you can specify, and for help choosing the best Region for your origin, see <a href=
+     * When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For
+     * the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your
+     * origin, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     * >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originShieldRegion
-     *        The Region for Origin Shield.</p>
+     *        The Amazon Web Services Region for Origin Shield.</p>
      *        <p>
-     *        Specify the Region that has the lowest latency to your origin. To specify a region, use the region code,
-     *        not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.
+     *        Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region,
+     *        use the region code, not the region name. For example, specify the US East (Ohio) region as
+     *        <code>us-east-2</code>.
      *        </p>
      *        <p>
-     *        When you enable CloudFront Origin Shield, you must specify the Region for Origin Shield. For the list of
-     *        Regions that you can specify, and for help choosing the best Region for your origin, see <a href=
+     *        When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+     *        Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+     *        Region for your origin, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region"
-     *        >Choosing the Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        >Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

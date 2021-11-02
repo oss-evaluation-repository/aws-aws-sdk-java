@@ -27,25 +27,25 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      */
     private String principalId;
     /**
      * <p>
-     * A list of states.
+     * Filter this request to launch profiles in any of the given states.
      * </p>
      */
     private java.util.List<String> states;
@@ -58,11 +58,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -71,10 +71,10 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
-     * @return The maximum number of results to be returned per request.
+     * @return The max number of results to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -83,11 +83,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,10 +111,10 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -123,11 +123,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public void setPrincipalId(String principalId) {
@@ -151,10 +151,10 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
-     * @return The principal ID.
+     * @return The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public String getPrincipalId() {
@@ -163,11 +163,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of states.
+     * Filter this request to launch profiles in any of the given states.
      * </p>
      * 
-     * @return A list of states.
+     * @return Filter this request to launch profiles in any of the given states.
      */
 
     public java.util.List<String> getStates() {
@@ -190,11 +190,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of states.
+     * Filter this request to launch profiles in any of the given states.
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filter this request to launch profiles in any of the given states.
      */
 
     public void setStates(java.util.Collection<String> states) {
@@ -208,7 +208,7 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of states.
+     * Filter this request to launch profiles in any of the given states.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +217,7 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filter this request to launch profiles in any of the given states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of states.
+     * Filter this request to launch profiles in any of the given states.
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filter this request to launch profiles in any of the given states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

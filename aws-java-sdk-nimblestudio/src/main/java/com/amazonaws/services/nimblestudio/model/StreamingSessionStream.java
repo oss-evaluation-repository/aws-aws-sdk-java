@@ -18,6 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A stream is an active connection to a streaming session, enabling a studio user to control the streaming session
+ * using a compatible client. Streaming session streams are compatible with the NICE DCV web client, included in the
+ * Nimble Studio portal, or the NICE DCV desktop client.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSessionStream" target="_top">AWS API
  *      Documentation</a>
@@ -459,7 +464,7 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
         if (getStreamId() != null)
             sb.append("StreamId: ").append(getStreamId()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl());
+            sb.append("Url: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

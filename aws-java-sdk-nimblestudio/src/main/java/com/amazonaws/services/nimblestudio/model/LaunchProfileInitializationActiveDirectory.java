@@ -18,6 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationActiveDirectory"
  *      target="_top">AWS API Documentation</a>
@@ -424,7 +425,7 @@ public class LaunchProfileInitializationActiveDirectory implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputerAttributes() != null)
-            sb.append("ComputerAttributes: ").append(getComputerAttributes()).append(",");
+            sb.append("ComputerAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getDirectoryId() != null)
             sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getDirectoryName() != null)
@@ -436,7 +437,7 @@ public class LaunchProfileInitializationActiveDirectory implements Serializable,
         if (getStudioComponentId() != null)
             sb.append("StudioComponentId: ").append(getStudioComponentId()).append(",");
         if (getStudioComponentName() != null)
-            sb.append("StudioComponentName: ").append(getStudioComponentName());
+            sb.append("StudioComponentName: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

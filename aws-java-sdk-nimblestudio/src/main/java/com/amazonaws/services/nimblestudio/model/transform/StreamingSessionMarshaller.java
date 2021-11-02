@@ -43,12 +43,22 @@ public class StreamingSessionMarshaller {
             .marshallLocationName("ownedBy").build();
     private static final MarshallingInfo<String> SESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sessionId").build();
+    private static final MarshallingInfo<java.util.Date> STARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> STARTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("startedBy").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusCode").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<java.util.Date> STOPAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> STOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> STOPPEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stoppedBy").build();
     private static final MarshallingInfo<String> STREAMINGIMAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamingImageId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -83,9 +93,14 @@ public class StreamingSessionMarshaller {
             protocolMarshaller.marshall(streamingSession.getLaunchProfileId(), LAUNCHPROFILEID_BINDING);
             protocolMarshaller.marshall(streamingSession.getOwnedBy(), OWNEDBY_BINDING);
             protocolMarshaller.marshall(streamingSession.getSessionId(), SESSIONID_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStartedAt(), STARTEDAT_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(streamingSession.getState(), STATE_BINDING);
             protocolMarshaller.marshall(streamingSession.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(streamingSession.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStopAt(), STOPAT_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStoppedAt(), STOPPEDAT_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStoppedBy(), STOPPEDBY_BINDING);
             protocolMarshaller.marshall(streamingSession.getStreamingImageId(), STREAMINGIMAGEID_BINDING);
             protocolMarshaller.marshall(streamingSession.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(streamingSession.getTerminateAt(), TERMINATEAT_BINDING);

@@ -53,6 +53,8 @@ public enum CloudFrontActions implements Action {
     CreatePublicKey("cloudfront:CreatePublicKey"),
     /** Action for the CreateRealtimeLogConfig operation. */
     CreateRealtimeLogConfig("cloudfront:CreateRealtimeLogConfig"),
+    /** Action for the CreateResponseHeadersPolicy operation. */
+    CreateResponseHeadersPolicy("cloudfront:CreateResponseHeadersPolicy"),
     /** Action for the CreateStreamingDistribution operation. */
     CreateStreamingDistribution("cloudfront:CreateStreamingDistribution"),
     /** Action for the CreateStreamingDistributionWithTags operation. */
@@ -79,6 +81,8 @@ public enum CloudFrontActions implements Action {
     DeletePublicKey("cloudfront:DeletePublicKey"),
     /** Action for the DeleteRealtimeLogConfig operation. */
     DeleteRealtimeLogConfig("cloudfront:DeleteRealtimeLogConfig"),
+    /** Action for the DeleteResponseHeadersPolicy operation. */
+    DeleteResponseHeadersPolicy("cloudfront:DeleteResponseHeadersPolicy"),
     /** Action for the DeleteStreamingDistribution operation. */
     DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
     /** Action for the DescribeFunction operation. */
@@ -123,6 +127,10 @@ public enum CloudFrontActions implements Action {
     GetPublicKeyConfig("cloudfront:GetPublicKeyConfig"),
     /** Action for the GetRealtimeLogConfig operation. */
     GetRealtimeLogConfig("cloudfront:GetRealtimeLogConfig"),
+    /** Action for the GetResponseHeadersPolicy operation. */
+    GetResponseHeadersPolicy("cloudfront:GetResponseHeadersPolicy"),
+    /** Action for the GetResponseHeadersPolicyConfig operation. */
+    GetResponseHeadersPolicyConfig("cloudfront:GetResponseHeadersPolicyConfig"),
     /** Action for the GetStreamingDistribution operation. */
     GetStreamingDistribution("cloudfront:GetStreamingDistribution"),
     /** Action for the GetStreamingDistributionConfig operation. */
@@ -143,6 +151,8 @@ public enum CloudFrontActions implements Action {
     ListDistributionsByOriginRequestPolicyId("cloudfront:ListDistributionsByOriginRequestPolicyId"),
     /** Action for the ListDistributionsByRealtimeLogConfig operation. */
     ListDistributionsByRealtimeLogConfig("cloudfront:ListDistributionsByRealtimeLogConfig"),
+    /** Action for the ListDistributionsByResponseHeadersPolicyId operation. */
+    ListDistributionsByResponseHeadersPolicyId("cloudfront:ListDistributionsByResponseHeadersPolicyId"),
     /** Action for the ListDistributionsByWebACLId operation. */
     ListDistributionsByWebACLId("cloudfront:ListDistributionsByWebACLId"),
     /** Action for the ListFieldLevelEncryptionConfigs operation. */
@@ -161,6 +171,8 @@ public enum CloudFrontActions implements Action {
     ListPublicKeys("cloudfront:ListPublicKeys"),
     /** Action for the ListRealtimeLogConfigs operation. */
     ListRealtimeLogConfigs("cloudfront:ListRealtimeLogConfigs"),
+    /** Action for the ListResponseHeadersPolicies operation. */
+    ListResponseHeadersPolicies("cloudfront:ListResponseHeadersPolicies"),
     /** Action for the ListStreamingDistributions operation. */
     ListStreamingDistributions("cloudfront:ListStreamingDistributions"),
     /** Action for the ListTagsForResource operation. */
@@ -193,6 +205,8 @@ public enum CloudFrontActions implements Action {
     UpdatePublicKey("cloudfront:UpdatePublicKey"),
     /** Action for the UpdateRealtimeLogConfig operation. */
     UpdateRealtimeLogConfig("cloudfront:UpdateRealtimeLogConfig"),
+    /** Action for the UpdateResponseHeadersPolicy operation. */
+    UpdateResponseHeadersPolicy("cloudfront:UpdateResponseHeadersPolicy"),
     /** Action for the UpdateStreamingDistribution operation. */
     UpdateStreamingDistribution("cloudfront:UpdateStreamingDistribution"),
 

@@ -37,7 +37,7 @@ public class Distribution implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      */
     private String aRN;
@@ -74,9 +74,9 @@ public class Distribution implements Serializable, Cloneable {
      * </important>
      * <p>
      * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains a list of account IDs and the
-     * active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or
-     * signed cookies.
+     * distribution to serve private content using trusted signers. This field contains a list of Amazon Web Services
+     * account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures
+     * of signed URLs or signed cookies.
      * </p>
      */
     private ActiveTrustedSigners activeTrustedSigners;
@@ -180,13 +180,13 @@ public class Distribution implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public void setARN(String aRN) {
@@ -197,12 +197,12 @@ public class Distribution implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the distribution. For example:
      *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *         <code>123456789012</code> is your account ID.
+     *         <code>123456789012</code> is your Amazon Web Services account ID.
      */
 
     public String getARN() {
@@ -213,13 +213,13 @@ public class Distribution implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your account ID.
+     * your Amazon Web Services account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your account ID.
+     *        <code>123456789012</code> is your Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,9 +408,9 @@ public class Distribution implements Serializable, Cloneable {
      * </important>
      * <p>
      * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains a list of account IDs and the
-     * active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or
-     * signed cookies.
+     * distribution to serve private content using trusted signers. This field contains a list of Amazon Web Services
+     * account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures
+     * of signed URLs or signed cookies.
      * </p>
      * 
      * @param activeTrustedSigners
@@ -420,9 +420,9 @@ public class Distribution implements Serializable, Cloneable {
      *        </important>
      *        <p>
      *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     *        distribution to serve private content using trusted signers. This field contains a list of account IDs and
-     *        the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed
-     *        URLs or signed cookies.
+     *        distribution to serve private content using trusted signers. This field contains a list of Amazon Web
+     *        Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify
+     *        the signatures of signed URLs or signed cookies.
      */
 
     public void setActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -437,9 +437,9 @@ public class Distribution implements Serializable, Cloneable {
      * </important>
      * <p>
      * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains a list of account IDs and the
-     * active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or
-     * signed cookies.
+     * distribution to serve private content using trusted signers. This field contains a list of Amazon Web Services
+     * account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures
+     * of signed URLs or signed cookies.
      * </p>
      * 
      * @return <p>
@@ -448,9 +448,9 @@ public class Distribution implements Serializable, Cloneable {
      *         </important>
      *         <p>
      *         CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     *         distribution to serve private content using trusted signers. This field contains a list of account IDs
-     *         and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of
-     *         signed URLs or signed cookies.
+     *         distribution to serve private content using trusted signers. This field contains a list of Amazon Web
+     *         Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to
+     *         verify the signatures of signed URLs or signed cookies.
      */
 
     public ActiveTrustedSigners getActiveTrustedSigners() {
@@ -465,9 +465,9 @@ public class Distribution implements Serializable, Cloneable {
      * </important>
      * <p>
      * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains a list of account IDs and the
-     * active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or
-     * signed cookies.
+     * distribution to serve private content using trusted signers. This field contains a list of Amazon Web Services
+     * account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures
+     * of signed URLs or signed cookies.
      * </p>
      * 
      * @param activeTrustedSigners
@@ -477,9 +477,9 @@ public class Distribution implements Serializable, Cloneable {
      *        </important>
      *        <p>
      *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
-     *        distribution to serve private content using trusted signers. This field contains a list of account IDs and
-     *        the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed
-     *        URLs or signed cookies.
+     *        distribution to serve private content using trusted signers. This field contains a list of Amazon Web
+     *        Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify
+     *        the signatures of signed URLs or signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

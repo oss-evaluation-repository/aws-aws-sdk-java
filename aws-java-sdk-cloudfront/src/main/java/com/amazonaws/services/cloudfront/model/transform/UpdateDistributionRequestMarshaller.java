@@ -555,6 +555,10 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                             xmlWriter.startElement("OriginRequestPolicyId").value(defaultCacheBehavior.getOriginRequestPolicyId()).endElement();
                         }
 
+                        if (defaultCacheBehavior.getResponseHeadersPolicyId() != null) {
+                            xmlWriter.startElement("ResponseHeadersPolicyId").value(defaultCacheBehavior.getResponseHeadersPolicyId()).endElement();
+                        }
+
                         {
                             ForwardedValues forwardedValues = defaultCacheBehavior.getForwardedValues();
                             if (forwardedValues != null) {
@@ -901,6 +905,11 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
                                 if (cacheBehaviorsItemsListValue.getOriginRequestPolicyId() != null) {
                                     xmlWriter.startElement("OriginRequestPolicyId").value(cacheBehaviorsItemsListValue.getOriginRequestPolicyId()).endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getResponseHeadersPolicyId() != null) {
+                                    xmlWriter.startElement("ResponseHeadersPolicyId").value(cacheBehaviorsItemsListValue.getResponseHeadersPolicyId())
+                                            .endElement();
                                 }
 
                                 {

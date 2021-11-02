@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the maximum number of cache policies for this account. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly
- * known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+ * You have reached the maximum number of cache policies for this Amazon Web Services account. For more information, see
+ * <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+ * (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

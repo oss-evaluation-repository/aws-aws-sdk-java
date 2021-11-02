@@ -25,18 +25,18 @@ public class UpdateLaunchProfileMemberResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The member.
+     * The updated member.
      * </p>
      */
     private LaunchProfileMembership member;
 
     /**
      * <p>
-     * The member.
+     * The updated member.
      * </p>
      * 
      * @param member
-     *        The member.
+     *        The updated member.
      */
 
     public void setMember(LaunchProfileMembership member) {
@@ -45,10 +45,10 @@ public class UpdateLaunchProfileMemberResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The member.
+     * The updated member.
      * </p>
      * 
-     * @return The member.
+     * @return The updated member.
      */
 
     public LaunchProfileMembership getMember() {
@@ -57,11 +57,11 @@ public class UpdateLaunchProfileMemberResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The member.
+     * The updated member.
      * </p>
      * 
      * @param member
-     *        The member.
+     *        The updated member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

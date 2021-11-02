@@ -785,6 +785,59 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a response headers policy.
+     * </p>
+     * <p>
+     * A response headers policy contains information about a set of HTTP response headers and their values. To create a
+     * response headers policy, you provide some metadata about the policy, and a set of configurations that specify the
+     * response headers.
+     * </p>
+     * <p>
+     * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
+     * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to
+     * HTTP responses that it sends for requests that match the cache behavior.
+     * </p>
+     * 
+     * @param createResponseHeadersPolicyRequest
+     * @return A Java Future containing the result of the CreateResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResponseHeadersPolicyResult> createResponseHeadersPolicyAsync(
+            CreateResponseHeadersPolicyRequest createResponseHeadersPolicyRequest);
+
+    /**
+     * <p>
+     * Creates a response headers policy.
+     * </p>
+     * <p>
+     * A response headers policy contains information about a set of HTTP response headers and their values. To create a
+     * response headers policy, you provide some metadata about the policy, and a set of configurations that specify the
+     * response headers.
+     * </p>
+     * <p>
+     * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
+     * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to
+     * HTTP responses that it sends for requests that match the cache behavior.
+     * </p>
+     * 
+     * @param createResponseHeadersPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResponseHeadersPolicyResult> createResponseHeadersPolicyAsync(
+            CreateResponseHeadersPolicyRequest createResponseHeadersPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateResponseHeadersPolicyRequest, CreateResponseHeadersPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on
      * December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
      * announcement</a> on the Amazon CloudFront discussion forum.
@@ -1431,6 +1484,55 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest deleteRealtimeLogConfigRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRealtimeLogConfigRequest, DeleteRealtimeLogConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a response headers policy.
+     * </p>
+     * <p>
+     * You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions
+     * to remove the response headers policy from all cache behaviors, then delete the response headers policy.
+     * </p>
+     * <p>
+     * To delete a response headers policy, you must provide the policy’s identifier and version. To get these values,
+     * you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.
+     * </p>
+     * 
+     * @param deleteResponseHeadersPolicyRequest
+     * @return A Java Future containing the result of the DeleteResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResponseHeadersPolicyResult> deleteResponseHeadersPolicyAsync(
+            DeleteResponseHeadersPolicyRequest deleteResponseHeadersPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a response headers policy.
+     * </p>
+     * <p>
+     * You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions
+     * to remove the response headers policy from all cache behaviors, then delete the response headers policy.
+     * </p>
+     * <p>
+     * To delete a response headers policy, you must provide the policy’s identifier and version. To get these values,
+     * you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.
+     * </p>
+     * 
+     * @param deleteResponseHeadersPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResponseHeadersPolicyResult> deleteResponseHeadersPolicyAsync(
+            DeleteResponseHeadersPolicyRequest deleteResponseHeadersPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResponseHeadersPolicyRequest, DeleteResponseHeadersPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2436,6 +2538,98 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy
+     * was last modified).
+     * </p>
+     * <p>
+     * To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is
+     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
+     * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
+     * </p>
+     * 
+     * @param getResponseHeadersPolicyRequest
+     * @return A Java Future containing the result of the GetResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResponseHeadersPolicyResult> getResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest getResponseHeadersPolicyRequest);
+
+    /**
+     * <p>
+     * Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy
+     * was last modified).
+     * </p>
+     * <p>
+     * To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is
+     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
+     * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
+     * </p>
+     * 
+     * @param getResponseHeadersPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResponseHeadersPolicyResult> getResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest getResponseHeadersPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResponseHeadersPolicyRequest, GetResponseHeadersPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a response headers policy configuration.
+     * </p>
+     * <p>
+     * To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers
+     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
+     * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
+     * </p>
+     * 
+     * @param getResponseHeadersPolicyConfigRequest
+     * @return A Java Future containing the result of the GetResponseHeadersPolicyConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.GetResponseHeadersPolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResponseHeadersPolicyConfigResult> getResponseHeadersPolicyConfigAsync(
+            GetResponseHeadersPolicyConfigRequest getResponseHeadersPolicyConfigRequest);
+
+    /**
+     * <p>
+     * Gets a response headers policy configuration.
+     * </p>
+     * <p>
+     * To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers
+     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
+     * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
+     * </p>
+     * 
+     * @param getResponseHeadersPolicyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResponseHeadersPolicyConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.GetResponseHeadersPolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResponseHeadersPolicyConfigResult> getResponseHeadersPolicyConfigAsync(
+            GetResponseHeadersPolicyConfigRequest getResponseHeadersPolicyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResponseHeadersPolicyConfigRequest, GetResponseHeadersPolicyConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a specified RTMP distribution, including the distribution configuration.
      * </p>
      * 
@@ -2510,7 +2704,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
-     * custom policies created in your account.
+     * custom policies created in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -2533,7 +2727,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
-     * custom policies created in your account.
+     * custom policies created in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -2914,6 +3108,57 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * response headers policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByResponseHeadersPolicyIdRequest
+     * @return A Java Future containing the result of the ListDistributionsByResponseHeadersPolicyId operation returned
+     *         by the service.
+     * @sample AmazonCloudFrontAsync.ListDistributionsByResponseHeadersPolicyId
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByResponseHeadersPolicyIdResult> listDistributionsByResponseHeadersPolicyIdAsync(
+            ListDistributionsByResponseHeadersPolicyIdRequest listDistributionsByResponseHeadersPolicyIdRequest);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * response headers policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByResponseHeadersPolicyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDistributionsByResponseHeadersPolicyId operation returned
+     *         by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByResponseHeadersPolicyId
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByResponseHeadersPolicyIdResult> listDistributionsByResponseHeadersPolicyIdAsync(
+            ListDistributionsByResponseHeadersPolicyIdRequest listDistributionsByResponseHeadersPolicyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByResponseHeadersPolicyIdRequest, ListDistributionsByResponseHeadersPolicyIdResult> asyncHandler);
+
+    /**
+     * <p>
      * List the distributions that are associated with a specified WAF web ACL.
      * </p>
      * 
@@ -3019,7 +3264,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of all CloudFront functions in your account.
+     * Gets a list of all CloudFront functions in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally apply a filter to return only the functions that are in the specified stage, either
@@ -3042,7 +3287,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of all CloudFront functions in your account.
+     * Gets a list of all CloudFront functions in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally apply a filter to return only the functions that are in the specified stage, either
@@ -3150,7 +3395,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
-     * custom policies created in your account.
+     * custom policies created in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -3174,7 +3419,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
-     * custom policies created in your account.
+     * custom policies created in your Amazon Web Services account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -3270,6 +3515,59 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest listRealtimeLogConfigsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRealtimeLogConfigsRequest, ListRealtimeLogConfigsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of response headers policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to get only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listResponseHeadersPoliciesRequest
+     * @return A Java Future containing the result of the ListResponseHeadersPolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListResponseHeadersPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResponseHeadersPoliciesResult> listResponseHeadersPoliciesAsync(
+            ListResponseHeadersPoliciesRequest listResponseHeadersPoliciesRequest);
+
+    /**
+     * <p>
+     * Gets a list of response headers policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to get only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listResponseHeadersPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResponseHeadersPolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListResponseHeadersPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResponseHeadersPoliciesResult> listResponseHeadersPoliciesAsync(
+            ListResponseHeadersPoliciesRequest listResponseHeadersPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResponseHeadersPoliciesRequest, ListResponseHeadersPoliciesResult> asyncHandler);
 
     /**
      * <p>
@@ -4258,6 +4556,83 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest updateRealtimeLogConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRealtimeLogConfigRequest, UpdateRealtimeLogConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a response headers policy.
+     * </p>
+     * <p>
+     * When you update a response headers policy, the entire policy is replaced. You cannot update some policy fields
+     * independent of others. To update a response headers policy configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modify the fields in the response headers policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration,
+     * including the fields that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateResponseHeadersPolicyRequest
+     * @return A Java Future containing the result of the UpdateResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResponseHeadersPolicyResult> updateResponseHeadersPolicyAsync(
+            UpdateResponseHeadersPolicyRequest updateResponseHeadersPolicyRequest);
+
+    /**
+     * <p>
+     * Updates a response headers policy.
+     * </p>
+     * <p>
+     * When you update a response headers policy, the entire policy is replaced. You cannot update some policy fields
+     * independent of others. To update a response headers policy configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modify the fields in the response headers policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration,
+     * including the fields that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateResponseHeadersPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResponseHeadersPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateResponseHeadersPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResponseHeadersPolicyResult> updateResponseHeadersPolicyAsync(
+            UpdateResponseHeadersPolicyRequest updateResponseHeadersPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResponseHeadersPolicyRequest, UpdateResponseHeadersPolicyResult> asyncHandler);
 
     /**
      * <p>

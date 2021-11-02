@@ -21,7 +21,6 @@ import javax.annotation.Generated;
 public enum Unit {
 
     SECONDS("SECONDS"),
-    MILLISECONDS("MILLISECONDS"),
     COUNT("COUNT"),
     PERCENT("PERCENT");
 

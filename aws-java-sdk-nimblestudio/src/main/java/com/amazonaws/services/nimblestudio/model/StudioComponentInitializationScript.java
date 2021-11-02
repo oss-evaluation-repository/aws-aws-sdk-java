@@ -273,7 +273,7 @@ public class StudioComponentInitializationScript implements Serializable, Clonea
         if (getRunContext() != null)
             sb.append("RunContext: ").append(getRunContext()).append(",");
         if (getScript() != null)
-            sb.append("Script: ").append(getScript());
+            sb.append("Script: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

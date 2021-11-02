@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A streaming session is a virtual workstation created using a particular launch profile.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSession" target="_top">AWS API
  *      Documentation</a>
@@ -69,6 +72,18 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private String sessionId;
     /**
      * <p>
+     * The time the session entered START_IN_PROGRESS state.
+     * </p>
+     */
+    private java.util.Date startedAt;
+    /**
+     * <p>
+     * The user ID of the user that started the streaming session.
+     * </p>
+     */
+    private String startedBy;
+    /**
+     * <p>
      * The current state.
      * </p>
      */
@@ -85,6 +100,24 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String statusMessage;
+    /**
+     * <p>
+     * The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.
+     * </p>
+     */
+    private java.util.Date stopAt;
+    /**
+     * <p>
+     * The time the session entered STOP_IN_PROGRESS state.
+     * </p>
+     */
+    private java.util.Date stoppedAt;
+    /**
+     * <p>
+     * The user ID of the user that stopped the streaming session.
+     * </p>
+     */
+    private String stoppedBy;
     /**
      * <p>
      * The ID of the streaming image.
@@ -398,6 +431,86 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The time the session entered START_IN_PROGRESS state.
+     * </p>
+     * 
+     * @param startedAt
+     *        The time the session entered START_IN_PROGRESS state.
+     */
+
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * <p>
+     * The time the session entered START_IN_PROGRESS state.
+     * </p>
+     * 
+     * @return The time the session entered START_IN_PROGRESS state.
+     */
+
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * <p>
+     * The time the session entered START_IN_PROGRESS state.
+     * </p>
+     * 
+     * @param startedAt
+     *        The time the session entered START_IN_PROGRESS state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that started the streaming session.
+     * </p>
+     * 
+     * @param startedBy
+     *        The user ID of the user that started the streaming session.
+     */
+
+    public void setStartedBy(String startedBy) {
+        this.startedBy = startedBy;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that started the streaming session.
+     * </p>
+     * 
+     * @return The user ID of the user that started the streaming session.
+     */
+
+    public String getStartedBy() {
+        return this.startedBy;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that started the streaming session.
+     * </p>
+     * 
+     * @param startedBy
+     *        The user ID of the user that started the streaming session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStartedBy(String startedBy) {
+        setStartedBy(startedBy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current state.
      * </p>
      * 
@@ -551,6 +664,129 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     public StreamingSession withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.
+     * </p>
+     * 
+     * @param stopAt
+     *        The time the streaming session will automatically be stopped if the user doesn’t stop the session
+     *        themselves.
+     */
+
+    public void setStopAt(java.util.Date stopAt) {
+        this.stopAt = stopAt;
+    }
+
+    /**
+     * <p>
+     * The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.
+     * </p>
+     * 
+     * @return The time the streaming session will automatically be stopped if the user doesn’t stop the session
+     *         themselves.
+     */
+
+    public java.util.Date getStopAt() {
+        return this.stopAt;
+    }
+
+    /**
+     * <p>
+     * The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.
+     * </p>
+     * 
+     * @param stopAt
+     *        The time the streaming session will automatically be stopped if the user doesn’t stop the session
+     *        themselves.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStopAt(java.util.Date stopAt) {
+        setStopAt(stopAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the session entered STOP_IN_PROGRESS state.
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The time the session entered STOP_IN_PROGRESS state.
+     */
+
+    public void setStoppedAt(java.util.Date stoppedAt) {
+        this.stoppedAt = stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The time the session entered STOP_IN_PROGRESS state.
+     * </p>
+     * 
+     * @return The time the session entered STOP_IN_PROGRESS state.
+     */
+
+    public java.util.Date getStoppedAt() {
+        return this.stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The time the session entered STOP_IN_PROGRESS state.
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The time the session entered STOP_IN_PROGRESS state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStoppedAt(java.util.Date stoppedAt) {
+        setStoppedAt(stoppedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that stopped the streaming session.
+     * </p>
+     * 
+     * @param stoppedBy
+     *        The user ID of the user that stopped the streaming session.
+     */
+
+    public void setStoppedBy(String stoppedBy) {
+        this.stoppedBy = stoppedBy;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that stopped the streaming session.
+     * </p>
+     * 
+     * @return The user ID of the user that stopped the streaming session.
+     */
+
+    public String getStoppedBy() {
+        return this.stoppedBy;
+    }
+
+    /**
+     * <p>
+     * The user ID of the user that stopped the streaming session.
+     * </p>
+     * 
+     * @param stoppedBy
+     *        The user ID of the user that stopped the streaming session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStoppedBy(String stoppedBy) {
+        setStoppedBy(stoppedBy);
         return this;
     }
 
@@ -808,12 +1044,22 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             sb.append("OwnedBy: ").append(getOwnedBy()).append(",");
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
+        if (getStartedBy() != null)
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusCode() != null)
             sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getStopAt() != null)
+            sb.append("StopAt: ").append(getStopAt()).append(",");
+        if (getStoppedAt() != null)
+            sb.append("StoppedAt: ").append(getStoppedAt()).append(",");
+        if (getStoppedBy() != null)
+            sb.append("StoppedBy: ").append(getStoppedBy()).append(",");
         if (getStreamingImageId() != null)
             sb.append("StreamingImageId: ").append(getStreamingImageId()).append(",");
         if (getTags() != null)
@@ -866,6 +1112,14 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
             return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
+        if (other.getStartedBy() == null ^ this.getStartedBy() == null)
+            return false;
+        if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -877,6 +1131,18 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getStopAt() == null ^ this.getStopAt() == null)
+            return false;
+        if (other.getStopAt() != null && other.getStopAt().equals(this.getStopAt()) == false)
+            return false;
+        if (other.getStoppedAt() == null ^ this.getStoppedAt() == null)
+            return false;
+        if (other.getStoppedAt() != null && other.getStoppedAt().equals(this.getStoppedAt()) == false)
+            return false;
+        if (other.getStoppedBy() == null ^ this.getStoppedBy() == null)
+            return false;
+        if (other.getStoppedBy() != null && other.getStoppedBy().equals(this.getStoppedBy()) == false)
             return false;
         if (other.getStreamingImageId() == null ^ this.getStreamingImageId() == null)
             return false;
@@ -913,9 +1179,14 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLaunchProfileId() == null) ? 0 : getLaunchProfileId().hashCode());
         hashCode = prime * hashCode + ((getOwnedBy() == null) ? 0 : getOwnedBy().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStopAt() == null) ? 0 : getStopAt().hashCode());
+        hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
+        hashCode = prime * hashCode + ((getStoppedBy() == null) ? 0 : getStoppedBy().hashCode());
         hashCode = prime * hashCode + ((getStreamingImageId() == null) ? 0 : getStreamingImageId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTerminateAt() == null) ? 0 : getTerminateAt().hashCode());

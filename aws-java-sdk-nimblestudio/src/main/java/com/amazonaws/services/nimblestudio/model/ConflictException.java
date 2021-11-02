@@ -15,7 +15,9 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Another operation is in progress.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

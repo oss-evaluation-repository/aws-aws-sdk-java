@@ -232,7 +232,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
+     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
      * CloudFront distribution, you need to create a second alias resource record set when both of the following are
      * true:
      * </p>
@@ -251,11 +251,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
-     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
+     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
      * Services Integration Developer Guide</i>.
      * </p>
      * <p>
-     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
+     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
      * DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution
      * regardless of the IP address format of the viewer request.
      * </p>
@@ -1666,7 +1666,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
+     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
      * CloudFront distribution, you need to create a second alias resource record set when both of the following are
      * true:
      * </p>
@@ -1685,11 +1685,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
-     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
+     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
      * Services Integration Developer Guide</i>.
      * </p>
      * <p>
-     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
+     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
      * DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution
      * regardless of the IP address format of the viewer request.
      * </p>
@@ -1710,7 +1710,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
+     *        If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
      *        your CloudFront distribution, you need to create a second alias resource record set when both of the
      *        following are true:
      *        </p>
@@ -1729,11 +1729,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
-     *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53
+     *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53
      *        Amazon Web Services Integration Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
+     *        If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
      *        another DNS service, you don't need to make any changes. A CNAME record will route traffic to your
      *        distribution regardless of the IP address format of the viewer request.
      */
@@ -1760,7 +1760,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
+     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
      * CloudFront distribution, you need to create a second alias resource record set when both of the following are
      * true:
      * </p>
@@ -1779,11 +1779,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
-     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
+     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
      * Services Integration Developer Guide</i>.
      * </p>
      * <p>
-     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
+     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
      * DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution
      * regardless of the IP address format of the viewer request.
      * </p>
@@ -1803,7 +1803,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
+     *         If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
      *         your CloudFront distribution, you need to create a second alias resource record set when both of the
      *         following are true:
      *         </p>
@@ -1822,11 +1822,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
-     *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route
-     *         53 Amazon Web Services Integration Developer Guide</i>.
+     *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the
+     *         <i>Route 53 Amazon Web Services Integration Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
+     *         If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
      *         another DNS service, you don't need to make any changes. A CNAME record will route traffic to your
      *         distribution regardless of the IP address format of the viewer request.
      */
@@ -1853,7 +1853,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
+     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
      * CloudFront distribution, you need to create a second alias resource record set when both of the following are
      * true:
      * </p>
@@ -1872,11 +1872,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
-     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
+     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
      * Services Integration Developer Guide</i>.
      * </p>
      * <p>
-     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
+     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
      * DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution
      * regardless of the IP address format of the viewer request.
      * </p>
@@ -1897,7 +1897,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
+     *        If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
      *        your CloudFront distribution, you need to create a second alias resource record set when both of the
      *        following are true:
      *        </p>
@@ -1916,11 +1916,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
-     *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53
+     *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53
      *        Amazon Web Services Integration Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
+     *        If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
      *        another DNS service, you don't need to make any changes. A CNAME record will route traffic to your
      *        distribution regardless of the IP address format of the viewer request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1949,7 +1949,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
+     * If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your
      * CloudFront distribution, you need to create a second alias resource record set when both of the following are
      * true:
      * </p>
@@ -1968,11 +1968,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
-     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
+     * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web
      * Services Integration Developer Guide</i>.
      * </p>
      * <p>
-     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
+     * If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another
      * DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution
      * regardless of the IP address format of the viewer request.
      * </p>
@@ -1992,7 +1992,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
+     *         If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to
      *         your CloudFront distribution, you need to create a second alias resource record set when both of the
      *         following are true:
      *         </p>
@@ -2011,11 +2011,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
-     *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route
-     *         53 Amazon Web Services Integration Developer Guide</i>.
+     *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the
+     *         <i>Route 53 Amazon Web Services Integration Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
+     *         If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with
      *         another DNS service, you don't need to make any changes. A CNAME record will route traffic to your
      *         distribution regardless of the IP address format of the viewer request.
      */

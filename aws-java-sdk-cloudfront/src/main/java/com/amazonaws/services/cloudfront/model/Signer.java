@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
- * signatures of signed URLs and signed cookies.
+ * A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to
+ * verify the signatures of signed URLs and signed cookies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Signer" target="_top">AWS API
@@ -29,9 +29,9 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
-     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
-     * CloudFront distribution, the value of this field is <code>self</code>.
+     * An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify
+     * the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is
+     * the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      */
     private String awsAccountNumber;
@@ -44,15 +44,16 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
-     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
-     * CloudFront distribution, the value of this field is <code>self</code>.
+     * An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify
+     * the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is
+     * the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
      * @param awsAccountNumber
-     *        An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *        signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
-     *        that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     *        An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to
+     *        verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the
+     *        key pairs is the same account that owns the CloudFront distribution, the value of this field is
+     *        <code>self</code>.
      */
 
     public void setAwsAccountNumber(String awsAccountNumber) {
@@ -61,14 +62,15 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
-     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
-     * CloudFront distribution, the value of this field is <code>self</code>.
+     * An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify
+     * the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is
+     * the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
-     * @return An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *         signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
-     *         that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     * @return An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use
+     *         to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns
+     *         the key pairs is the same account that owns the CloudFront distribution, the value of this field is
+     *         <code>self</code>.
      */
 
     public String getAwsAccountNumber() {
@@ -77,15 +79,16 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
-     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
-     * CloudFront distribution, the value of this field is <code>self</code>.
+     * An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify
+     * the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is
+     * the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
      * @param awsAccountNumber
-     *        An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *        signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
-     *        that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     *        An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to
+     *        verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the
+     *        key pairs is the same account that owns the CloudFront distribution, the value of this field is
+     *        <code>self</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

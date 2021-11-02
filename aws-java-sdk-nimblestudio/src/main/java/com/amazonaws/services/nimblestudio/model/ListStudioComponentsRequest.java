@@ -27,19 +27,19 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of states.
+     * Filters the request to studio components that are in one of the given states.
      * </p>
      */
     private java.util.List<String> states;
@@ -51,18 +51,18 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
     private String studioId;
     /**
      * <p>
-     * The types.
+     * Filters the request to studio components that are of one of the given types.
      * </p>
      */
     private java.util.List<String> types;
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -71,10 +71,10 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
-     * @return The maximum number of results to be returned per request.
+     * @return The max number of results to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -83,11 +83,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per request.
+     * The max number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request.
+     *        The max number of results to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,10 +111,10 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -123,11 +123,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,10 +138,10 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of states.
+     * Filters the request to studio components that are in one of the given states.
      * </p>
      * 
-     * @return A list of states.
+     * @return Filters the request to studio components that are in one of the given states.
      */
 
     public java.util.List<String> getStates() {
@@ -150,11 +150,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of states.
+     * Filters the request to studio components that are in one of the given states.
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filters the request to studio components that are in one of the given states.
      */
 
     public void setStates(java.util.Collection<String> states) {
@@ -168,7 +168,7 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of states.
+     * Filters the request to studio components that are in one of the given states.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -177,7 +177,7 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filters the request to studio components that are in one of the given states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of states.
+     * Filters the request to studio components that are in one of the given states.
      * </p>
      * 
      * @param states
-     *        A list of states.
+     *        Filters the request to studio components that are in one of the given states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,10 +248,10 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The types.
+     * Filters the request to studio components that are of one of the given types.
      * </p>
      * 
-     * @return The types.
+     * @return Filters the request to studio components that are of one of the given types.
      */
 
     public java.util.List<String> getTypes() {
@@ -260,11 +260,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The types.
+     * Filters the request to studio components that are of one of the given types.
      * </p>
      * 
      * @param types
-     *        The types.
+     *        Filters the request to studio components that are of one of the given types.
      */
 
     public void setTypes(java.util.Collection<String> types) {
@@ -278,7 +278,7 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The types.
+     * Filters the request to studio components that are of one of the given types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -287,7 +287,7 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param types
-     *        The types.
+     *        Filters the request to studio components that are of one of the given types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +303,11 @@ public class ListStudioComponentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The types.
+     * Filters the request to studio components that are of one of the given types.
      * </p>
      * 
      * @param types
-     *        The types.
+     *        Filters the request to studio components that are of one of the given types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

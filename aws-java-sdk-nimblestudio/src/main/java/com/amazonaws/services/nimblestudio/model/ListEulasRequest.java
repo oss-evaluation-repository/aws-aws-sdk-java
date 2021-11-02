@@ -27,23 +27,23 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that should be returned
      * </p>
      */
     private java.util.List<String> eulaIds;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that should be returned
      * </p>
      * 
-     * @return A collection of EULA IDs.
+     * @return The list of EULA IDs that should be returned
      */
 
     public java.util.List<String> getEulaIds() {
@@ -52,11 +52,11 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that should be returned
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that should be returned
      */
 
     public void setEulaIds(java.util.Collection<String> eulaIds) {
@@ -70,7 +70,7 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that should be returned
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that should be returned
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A collection of EULA IDs.
+     * The list of EULA IDs that should be returned
      * </p>
      * 
      * @param eulaIds
-     *        A collection of EULA IDs.
+     *        The list of EULA IDs that should be returned
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +110,11 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -123,10 +123,10 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return The token to request the next page of results.
      */
 
     public String getNextToken() {
@@ -135,11 +135,11 @@ public class ListEulasRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * The token to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        The token to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

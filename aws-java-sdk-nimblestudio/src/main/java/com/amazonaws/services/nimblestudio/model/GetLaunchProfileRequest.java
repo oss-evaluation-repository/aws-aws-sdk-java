@@ -27,7 +27,7 @@ public class GetLaunchProfileRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      */
     private String launchProfileId;
@@ -40,11 +40,11 @@ public class GetLaunchProfileRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -53,10 +53,10 @@ public class GetLaunchProfileRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The Launch Profile ID.
      */
 
     public String getLaunchProfileId() {
@@ -65,11 +65,11 @@ public class GetLaunchProfileRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

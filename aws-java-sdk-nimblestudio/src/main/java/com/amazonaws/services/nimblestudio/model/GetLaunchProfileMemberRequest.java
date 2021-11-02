@@ -27,13 +27,13 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      */
     private String launchProfileId;
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      */
     private String principalId;
@@ -46,11 +46,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -59,10 +59,10 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The Launch Profile ID.
      */
 
     public String getLaunchProfileId() {
@@ -71,11 +71,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch profile ID.
+     * The Launch Profile ID.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The Launch Profile ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public void setPrincipalId(String principalId) {
@@ -99,10 +99,10 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
-     * @return The principal ID.
+     * @return The principal ID. This currently supports a Amazon Web Services SSO UserId.
      */
 
     public String getPrincipalId() {
@@ -111,11 +111,11 @@ public class GetLaunchProfileMemberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principal ID.
+     * The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * </p>
      * 
      * @param principalId
-     *        The principal ID.
+     *        The principal ID. This currently supports a Amazon Web Services SSO UserId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

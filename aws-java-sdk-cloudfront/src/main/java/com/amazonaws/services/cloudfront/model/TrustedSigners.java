@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
+ * A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs
+ * and signed cookies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TrustedSigners" target="_top">AWS API
@@ -28,20 +29,20 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
+     * use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The number of accounts in the list.
+     * The number of Amazon Web Services accounts in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * A list of account identifiers.
+     * A list of Amazon Web Services account identifiers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
@@ -58,7 +59,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        A list of account identifiers.
+     *        A list of Amazon Web Services account identifiers.
      */
     public TrustedSigners(java.util.List<String> items) {
         setItems(items);
@@ -66,13 +67,14 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
+     * use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify
-     *        the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     *        This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that
+     *        CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *        <code>false</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -81,12 +83,13 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
+     * use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify
-     *         the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * @return This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that
+     *         CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *         <code>false</code>.
      */
 
     public Boolean getEnabled() {
@@ -95,13 +98,14 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
+     * use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify
-     *        the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     *        This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that
+     *        CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,12 +116,13 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
+     * use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the accounts have public keys that CloudFront can use to verify
-     *         the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
+     * @return This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that
+     *         CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *         <code>false</code>.
      */
 
     public Boolean isEnabled() {
@@ -126,11 +131,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts in the list.
+     * The number of Amazon Web Services accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of accounts in the list.
+     *        The number of Amazon Web Services accounts in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -139,10 +144,10 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts in the list.
+     * The number of Amazon Web Services accounts in the list.
      * </p>
      * 
-     * @return The number of accounts in the list.
+     * @return The number of Amazon Web Services accounts in the list.
      */
 
     public Integer getQuantity() {
@@ -151,11 +156,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts in the list.
+     * The number of Amazon Web Services accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of accounts in the list.
+     *        The number of Amazon Web Services accounts in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +171,10 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of account identifiers.
+     * A list of Amazon Web Services account identifiers.
      * </p>
      * 
-     * @return A list of account identifiers.
+     * @return A list of Amazon Web Services account identifiers.
      */
 
     public java.util.List<String> getItems() {
@@ -181,11 +186,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of account identifiers.
+     * A list of Amazon Web Services account identifiers.
      * </p>
      * 
      * @param items
-     *        A list of account identifiers.
+     *        A list of Amazon Web Services account identifiers.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -199,7 +204,7 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of account identifiers.
+     * A list of Amazon Web Services account identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -208,7 +213,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A list of account identifiers.
+     *        A list of Amazon Web Services account identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +229,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of account identifiers.
+     * A list of Amazon Web Services account identifiers.
      * </p>
      * 
      * @param items
-     *        A list of account identifiers.
+     *        A list of Amazon Web Services account identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

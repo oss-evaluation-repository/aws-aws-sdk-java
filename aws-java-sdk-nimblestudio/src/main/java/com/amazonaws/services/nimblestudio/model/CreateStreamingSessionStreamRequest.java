@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * A list collection streams.
- * </p>
+ * <zonbook></zonbook><xhtml></xhtml>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream"
  *      target="_top">AWS API Documentation</a>
@@ -30,11 +28,9 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      */
     private String clientToken;
@@ -46,7 +42,7 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
     private Integer expirationInSeconds;
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      */
     private String sessionId;
@@ -59,19 +55,15 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -80,18 +72,14 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
-     * @return To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *         should not reuse the same client token for other API requests. If you retry a request that completed
-     *         successfully using the same client token and the same parameters, the retry succeeds without performing
-     *         any further actions. If you retry a successful request using the same client token, but one or more of
-     *         the parameters are different, the retry fails with a ValidationException error.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *         ensure idempotency.
      */
 
     public String getClientToken() {
@@ -100,19 +88,15 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To make an idempotent API request using one of these actions, specify a client token in the request. You should
-     * not reuse the same client token for other API requests. If you retry a request that completed successfully using
-     * the same client token and the same parameters, the retry succeeds without performing any further actions. If you
-     * retry a successful request using the same client token, but one or more of the parameters are different, the
-     * retry fails with a ValidationException error.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
+     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
+     * idempotency.
      * </p>
      * 
      * @param clientToken
-     *        To make an idempotent API request using one of these actions, specify a client token in the request. You
-     *        should not reuse the same client token for other API requests. If you retry a request that completed
-     *        successfully using the same client token and the same parameters, the retry succeeds without performing
-     *        any further actions. If you retry a successful request using the same client token, but one or more of the
-     *        parameters are different, the retry fails with a ValidationException error.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
+     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
+     *        ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +147,11 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session ID.
+     *        The streaming session ID.
      */
 
     public void setSessionId(String sessionId) {
@@ -176,10 +160,10 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
-     * @return The session ID.
+     * @return The streaming session ID.
      */
 
     public String getSessionId() {
@@ -188,11 +172,11 @@ public class CreateStreamingSessionStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The session ID.
+     * The streaming session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session ID.
+     *        The streaming session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

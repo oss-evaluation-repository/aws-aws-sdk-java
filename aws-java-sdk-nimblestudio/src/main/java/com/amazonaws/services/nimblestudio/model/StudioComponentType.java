@@ -15,7 +15,7 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <zonbook></zonbook><xhtml></xhtml>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StudioComponentType {

@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * An array of tag keys to delete.
+     * One or more tag keys. Specify only the tag keys, not the tag values.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the target resource for tagging operations.
+     *        Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      * </p>
      * 
-     * @return The ARN of the target resource for tagging operations.
+     * @return Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the target resource for tagging operations.
+     * Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the target resource for tagging operations.
+     *        Identifies the Amazon Resource Name(ARN) key from which you are removing tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of tag keys to delete.
+     * One or more tag keys. Specify only the tag keys, not the tag values.
      * </p>
      * 
-     * @return An array of tag keys to delete.
+     * @return One or more tag keys. Specify only the tag keys, not the tag values.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of tag keys to delete.
+     * One or more tag keys. Specify only the tag keys, not the tag values.
      * </p>
      * 
      * @param tagKeys
-     *        An array of tag keys to delete.
+     *        One or more tag keys. Specify only the tag keys, not the tag values.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of tag keys to delete.
+     * One or more tag keys. Specify only the tag keys, not the tag values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        An array of tag keys to delete.
+     *        One or more tag keys. Specify only the tag keys, not the tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of tag keys to delete.
+     * One or more tag keys. Specify only the tag keys, not the tag values.
      * </p>
      * 
      * @param tagKeys
-     *        An array of tag keys to delete.
+     *        One or more tag keys. Specify only the tag keys, not the tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

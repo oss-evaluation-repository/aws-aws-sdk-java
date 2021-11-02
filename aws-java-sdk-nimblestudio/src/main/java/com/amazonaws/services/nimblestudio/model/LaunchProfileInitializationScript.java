@@ -18,6 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationScript"
  *      target="_top">AWS API Documentation</a>
@@ -177,11 +178,11 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScript() != null)
-            sb.append("Script: ").append(getScript()).append(",");
+            sb.append("Script: ").append("***Sensitive Data Redacted***").append(",");
         if (getStudioComponentId() != null)
             sb.append("StudioComponentId: ").append(getStudioComponentId()).append(",");
         if (getStudioComponentName() != null)
-            sb.append("StudioComponentName: ").append(getStudioComponentName());
+            sb.append("StudioComponentName: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

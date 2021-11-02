@@ -37,7 +37,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your account.
+     * <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -70,7 +70,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your account.
+     * <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -85,7 +85,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your account.
+     *        <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      *        </p>
      *        </li>
      * @see CachePolicyType
@@ -107,7 +107,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your account.
+     * <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -121,7 +121,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>custom</code> – Returns only the custom policies created in your account.
+     *         <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      *         </p>
      *         </li>
      * @see CachePolicyType
@@ -143,7 +143,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your account.
+     * <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -158,7 +158,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your account.
+     *        <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -182,7 +182,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your account.
+     * <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      * </p>
      * </li>
      * </ul>
@@ -197,7 +197,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your account.
+     *        <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -18,6 +18,20 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a streaming image resource.
+ * </p>
+ * <p>
+ * Streaming images are used by studio users to select which operating system and software they want to use in a Nimble
+ * Studio streaming session.
+ * </p>
+ * <p>
+ * Amazon provides a number of streaming images that include popular 3rd-party software.
+ * </p>
+ * <p>
+ * You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you
+ * create for this purpose. You can also include software that your users require.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingImage" target="_top">AWS API
  *      Documentation</a>
@@ -746,7 +760,7 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEc2ImageId() != null)
             sb.append("Ec2ImageId: ").append(getEc2ImageId()).append(",");
         if (getEncryptionConfiguration() != null)
@@ -754,7 +768,7 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
         if (getEulaIds() != null)
             sb.append("EulaIds: ").append(getEulaIds()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getPlatform() != null)

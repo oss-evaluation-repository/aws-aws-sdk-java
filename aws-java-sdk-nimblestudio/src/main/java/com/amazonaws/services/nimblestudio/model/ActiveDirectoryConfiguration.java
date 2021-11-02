@@ -213,7 +213,7 @@ public class ActiveDirectoryConfiguration implements Serializable, Cloneable, St
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputerAttributes() != null)
-            sb.append("ComputerAttributes: ").append(getComputerAttributes()).append(",");
+            sb.append("ComputerAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getDirectoryId() != null)
             sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getOrganizationalUnitDistinguishedName() != null)

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Configuration for streaming workstations created using this launch profile.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamConfigurationCreate" target="_top">AWS
  *      API Documentation</a>
@@ -40,11 +43,20 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
     private java.util.List<String> ec2InstanceTypes;
     /**
      * <p>
-     * The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically
-     * terminates the session.
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
      * </p>
      */
     private Integer maxSessionLengthInMinutes;
+    /**
+     * <p>
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
+     * </p>
+     */
+    private Integer maxStoppedSessionLengthInMinutes;
     /**
      * <p>
      * The streaming images that users can select from when launching a streaming session with this launch profile.
@@ -224,13 +236,15 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically
-     * terminates the session.
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
      * </p>
      * 
      * @param maxSessionLengthInMinutes
-     *        The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio
-     *        automatically terminates the session.
+     *        The length of time, in minutes, that a streaming session can be active before it is stopped or terminated.
+     *        After this point, Nimble Studio automatically terminates or stops the session. The default length of time
+     *        is 690 minutes, and the maximum length of time is 30 days.
      */
 
     public void setMaxSessionLengthInMinutes(Integer maxSessionLengthInMinutes) {
@@ -239,12 +253,14 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically
-     * terminates the session.
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
      * </p>
      * 
-     * @return The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio
-     *         automatically terminates the session.
+     * @return The length of time, in minutes, that a streaming session can be active before it is stopped or
+     *         terminated. After this point, Nimble Studio automatically terminates or stops the session. The default
+     *         length of time is 690 minutes, and the maximum length of time is 30 days.
      */
 
     public Integer getMaxSessionLengthInMinutes() {
@@ -253,18 +269,72 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically
-     * terminates the session.
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
      * </p>
      * 
      * @param maxSessionLengthInMinutes
-     *        The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio
-     *        automatically terminates the session.
+     *        The length of time, in minutes, that a streaming session can be active before it is stopped or terminated.
+     *        After this point, Nimble Studio automatically terminates or stops the session. The default length of time
+     *        is 690 minutes, and the maximum length of time is 30 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StreamConfigurationCreate withMaxSessionLengthInMinutes(Integer maxSessionLengthInMinutes) {
         setMaxSessionLengthInMinutes(maxSessionLengthInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
+     * </p>
+     * 
+     * @param maxStoppedSessionLengthInMinutes
+     *        The length of time, in minutes, that a streaming session can be active before it is stopped or terminated.
+     *        After this point, Nimble Studio automatically terminates or stops the session. The default length of time
+     *        is 690 minutes, and the maximum length of time is 30 days.
+     */
+
+    public void setMaxStoppedSessionLengthInMinutes(Integer maxStoppedSessionLengthInMinutes) {
+        this.maxStoppedSessionLengthInMinutes = maxStoppedSessionLengthInMinutes;
+    }
+
+    /**
+     * <p>
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
+     * </p>
+     * 
+     * @return The length of time, in minutes, that a streaming session can be active before it is stopped or
+     *         terminated. After this point, Nimble Studio automatically terminates or stops the session. The default
+     *         length of time is 690 minutes, and the maximum length of time is 30 days.
+     */
+
+    public Integer getMaxStoppedSessionLengthInMinutes() {
+        return this.maxStoppedSessionLengthInMinutes;
+    }
+
+    /**
+     * <p>
+     * The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After
+     * this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690
+     * minutes, and the maximum length of time is 30 days.
+     * </p>
+     * 
+     * @param maxStoppedSessionLengthInMinutes
+     *        The length of time, in minutes, that a streaming session can be active before it is stopped or terminated.
+     *        After this point, Nimble Studio automatically terminates or stops the session. The default length of time
+     *        is 690 minutes, and the maximum length of time is 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamConfigurationCreate withMaxStoppedSessionLengthInMinutes(Integer maxStoppedSessionLengthInMinutes) {
+        setMaxStoppedSessionLengthInMinutes(maxStoppedSessionLengthInMinutes);
         return this;
     }
 
@@ -360,6 +430,8 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
             sb.append("Ec2InstanceTypes: ").append(getEc2InstanceTypes()).append(",");
         if (getMaxSessionLengthInMinutes() != null)
             sb.append("MaxSessionLengthInMinutes: ").append(getMaxSessionLengthInMinutes()).append(",");
+        if (getMaxStoppedSessionLengthInMinutes() != null)
+            sb.append("MaxStoppedSessionLengthInMinutes: ").append(getMaxStoppedSessionLengthInMinutes()).append(",");
         if (getStreamingImageIds() != null)
             sb.append("StreamingImageIds: ").append(getStreamingImageIds());
         sb.append("}");
@@ -388,6 +460,11 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
             return false;
         if (other.getMaxSessionLengthInMinutes() != null && other.getMaxSessionLengthInMinutes().equals(this.getMaxSessionLengthInMinutes()) == false)
             return false;
+        if (other.getMaxStoppedSessionLengthInMinutes() == null ^ this.getMaxStoppedSessionLengthInMinutes() == null)
+            return false;
+        if (other.getMaxStoppedSessionLengthInMinutes() != null
+                && other.getMaxStoppedSessionLengthInMinutes().equals(this.getMaxStoppedSessionLengthInMinutes()) == false)
+            return false;
         if (other.getStreamingImageIds() == null ^ this.getStreamingImageIds() == null)
             return false;
         if (other.getStreamingImageIds() != null && other.getStreamingImageIds().equals(this.getStreamingImageIds()) == false)
@@ -403,6 +480,7 @@ public class StreamConfigurationCreate implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getClipboardMode() == null) ? 0 : getClipboardMode().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceTypes() == null) ? 0 : getEc2InstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionLengthInMinutes() == null) ? 0 : getMaxSessionLengthInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getMaxStoppedSessionLengthInMinutes() == null) ? 0 : getMaxStoppedSessionLengthInMinutes().hashCode());
         hashCode = prime * hashCode + ((getStreamingImageIds() == null) ? 0 : getStreamingImageIds().hashCode());
         return hashCode;
     }

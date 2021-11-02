@@ -113,6 +113,11 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
+                if (context.testExpression("ResponseHeadersPolicyId", targetDepth)) {
+                    cacheBehavior.setResponseHeadersPolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ForwardedValues", targetDepth)) {
                     cacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

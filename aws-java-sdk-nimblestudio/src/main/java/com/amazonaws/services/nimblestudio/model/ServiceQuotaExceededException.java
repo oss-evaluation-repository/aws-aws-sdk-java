@@ -15,7 +15,13 @@ package com.amazonaws.services.nimblestudio.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Your current quota does not allow you to perform the request action. You can request increases for some quotas, and
+ * other quotas cannot be increased.
+ * </p>
+ * <p>
+ * Please use AWS Service Quotas to request an increase.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceQuotaExceededException extends com.amazonaws.services.nimblestudio.model.AmazonNimbleStudioException {

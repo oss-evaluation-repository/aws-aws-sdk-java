@@ -18,6 +18,13 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A Launch Profile Initialization contains information required for a workstation or server to connect to a launch
+ * profile
+ * </p>
+ * <p>
+ * This includes scripts, endpoints, security groups, subnets, and other configuration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitialization" target="_top">AWS
  *      API Documentation</a>
@@ -575,7 +582,7 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
         if (getLaunchPurpose() != null)
             sb.append("LaunchPurpose: ").append(getLaunchPurpose()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
         if (getSystemInitializationScripts() != null)

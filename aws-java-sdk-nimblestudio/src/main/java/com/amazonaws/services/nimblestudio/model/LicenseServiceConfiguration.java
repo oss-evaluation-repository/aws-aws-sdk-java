@@ -88,7 +88,7 @@ public class LicenseServiceConfiguration implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint());
+            sb.append("Endpoint: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

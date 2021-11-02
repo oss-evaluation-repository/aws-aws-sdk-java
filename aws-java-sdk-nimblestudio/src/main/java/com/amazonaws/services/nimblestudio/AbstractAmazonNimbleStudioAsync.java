@@ -509,6 +509,19 @@ public class AbstractAmazonNimbleStudioAsync extends AbstractAmazonNimbleStudio 
     }
 
     @Override
+    public java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(StartStreamingSessionRequest request) {
+
+        return startStreamingSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamingSessionResult> startStreamingSessionAsync(StartStreamingSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartStreamingSessionRequest, StartStreamingSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartStudioSSOConfigurationRepairResult> startStudioSSOConfigurationRepairAsync(
             StartStudioSSOConfigurationRepairRequest request) {
 
@@ -519,6 +532,19 @@ public class AbstractAmazonNimbleStudioAsync extends AbstractAmazonNimbleStudio 
     public java.util.concurrent.Future<StartStudioSSOConfigurationRepairResult> startStudioSSOConfigurationRepairAsync(
             StartStudioSSOConfigurationRepairRequest request,
             com.amazonaws.handlers.AsyncHandler<StartStudioSSOConfigurationRepairRequest, StartStudioSSOConfigurationRepairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(StopStreamingSessionRequest request) {
+
+        return stopStreamingSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamingSessionResult> stopStreamingSessionAsync(StopStreamingSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopStreamingSessionRequest, StopStreamingSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -29,7 +29,7 @@ public class OriginRequestPolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     * <code>custom</code> (created in this account).
+     * <code>custom</code> (created in this Amazon Web Services account).
      * </p>
      */
     private String type;
@@ -43,12 +43,12 @@ public class OriginRequestPolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     * <code>custom</code> (created in this account).
+     * <code>custom</code> (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @see OriginRequestPolicyType
      */
 
@@ -59,11 +59,11 @@ public class OriginRequestPolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     * <code>custom</code> (created in this account).
+     * <code>custom</code> (created in this Amazon Web Services account).
      * </p>
      * 
      * @return The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     *         <code>custom</code> (created in this account).
+     *         <code>custom</code> (created in this Amazon Web Services account).
      * @see OriginRequestPolicyType
      */
 
@@ -74,12 +74,12 @@ public class OriginRequestPolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     * <code>custom</code> (created in this account).
+     * <code>custom</code> (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginRequestPolicyType
      */
@@ -92,12 +92,12 @@ public class OriginRequestPolicySummary implements Serializable, Cloneable {
     /**
      * <p>
      * The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     * <code>custom</code> (created in this account).
+     * <code>custom</code> (created in this Amazon Web Services account).
      * </p>
      * 
      * @param type
      *        The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-     *        <code>custom</code> (created in this account).
+     *        <code>custom</code> (created in this Amazon Web Services account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginRequestPolicyType
      */
