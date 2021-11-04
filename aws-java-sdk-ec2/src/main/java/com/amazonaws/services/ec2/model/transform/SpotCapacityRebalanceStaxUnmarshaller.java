@@ -47,6 +47,11 @@ public class SpotCapacityRebalanceStaxUnmarshaller implements Unmarshaller<SpotC
                     spotCapacityRebalance.setReplacementStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("terminationDelay", targetDepth)) {
+                    spotCapacityRebalance.setTerminationDelay(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotCapacityRebalance;

@@ -40,8 +40,9 @@ import com.amazonaws.services.connect.model.*;
  * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
  * </p>
  * <p>
- * You can connect programmatically to an AWS service by using an endpoint. For a list of Amazon Connect endpoints, see
- * <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
+ * You can connect programmatically to an Amazon Web Services service by using an endpoint. For a list of Amazon Connect
+ * endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect
+ * Endpoints</a>.
  * </p>
  * <note>
  * <p>
@@ -527,7 +528,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Creates an AWS resource association with an Amazon Connect instance.
+     * Creates an Amazon Web Services resource association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -542,7 +543,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Creates an AWS resource association with an Amazon Connect instance.
+     * Creates an Amazon Web Services resource association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -658,6 +659,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest createRoutingProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoutingProfileRequest, CreateRoutingProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a security profile.
+     * </p>
+     * 
+     * @param createSecurityProfileRequest
+     * @return A Java Future containing the result of the CreateSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsync.CreateSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityProfileResult> createSecurityProfileAsync(CreateSecurityProfileRequest createSecurityProfileRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a security profile.
+     * </p>
+     * 
+     * @param createSecurityProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityProfileResult> createSecurityProfileAsync(CreateSecurityProfileRequest createSecurityProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSecurityProfileRequest, CreateSecurityProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -844,8 +882,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Deletes an AWS resource association from an Amazon Connect instance. The association must not have any use cases
-     * associated with it.
+     * Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not
+     * have any use cases associated with it.
      * </p>
      * 
      * @param deleteIntegrationAssociationRequest
@@ -860,8 +898,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Deletes an AWS resource association from an Amazon Connect instance. The association must not have any use cases
-     * associated with it.
+     * Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not
+     * have any use cases associated with it.
      * </p>
      * 
      * @param deleteIntegrationAssociationRequest
@@ -909,6 +947,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest deleteQuickConnectRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteQuickConnectRequest, DeleteQuickConnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a security profile.
+     * </p>
+     * 
+     * @param deleteSecurityProfileRequest
+     * @return A Java Future containing the result of the DeleteSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSecurityProfileResult> deleteSecurityProfileAsync(DeleteSecurityProfileRequest deleteSecurityProfileRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a security profile.
+     * </p>
+     * 
+     * @param deleteSecurityProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSecurityProfileResult> deleteSecurityProfileAsync(DeleteSecurityProfileRequest deleteSecurityProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityProfileRequest, DeleteSecurityProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -1347,6 +1422,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DescribeRoutingProfileResult> describeRoutingProfileAsync(DescribeRoutingProfileRequest describeRoutingProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRoutingProfileRequest, DescribeRoutingProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Gets basic information about the security profle.
+     * </p>
+     * 
+     * @param describeSecurityProfileRequest
+     * @return A Java Future containing the result of the DescribeSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityProfileResult> describeSecurityProfileAsync(DescribeSecurityProfileRequest describeSecurityProfileRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Gets basic information about the security profle.
+     * </p>
+     * 
+     * @param describeSecurityProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityProfileResult> describeSecurityProfileAsync(DescribeSecurityProfileRequest describeSecurityProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityProfileRequest, DescribeSecurityProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -2239,7 +2351,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Provides summary information about the AWS resource associations for the specified Amazon Connect instance.
+     * Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect
+     * instance.
      * </p>
      * 
      * @param listIntegrationAssociationsRequest
@@ -2253,7 +2366,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Provides summary information about the AWS resource associations for the specified Amazon Connect instance.
+     * Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect
+     * instance.
      * </p>
      * 
      * @param listIntegrationAssociationsRequest
@@ -2650,6 +2764,50 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists the permissions granted to a security profile.
+     * </p>
+     * 
+     * @param listSecurityProfilePermissionsRequest
+     * @return A Java Future containing the result of the ListSecurityProfilePermissions operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.ListSecurityProfilePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityProfilePermissionsResult> listSecurityProfilePermissionsAsync(
+            ListSecurityProfilePermissionsRequest listSecurityProfilePermissionsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Lists the permissions granted to a security profile.
+     * </p>
+     * 
+     * @param listSecurityProfilePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSecurityProfilePermissions operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.ListSecurityProfilePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityProfilePermissionsResult> listSecurityProfilePermissionsAsync(
+            ListSecurityProfilePermissionsRequest listSecurityProfilePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityProfilePermissionsRequest, ListSecurityProfilePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Provides summary information about the security profiles for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -2667,6 +2825,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListSecurityProfilesResult> listSecurityProfilesAsync(ListSecurityProfilesRequest listSecurityProfilesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Provides summary information about the security profiles for the specified Amazon Connect instance.
      * </p>
@@ -4094,6 +4255,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateRoutingProfileQueuesResult> updateRoutingProfileQueuesAsync(
             UpdateRoutingProfileQueuesRequest updateRoutingProfileQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRoutingProfileQueuesRequest, UpdateRoutingProfileQueuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates a security profile.
+     * </p>
+     * 
+     * @param updateSecurityProfileRequest
+     * @return A Java Future containing the result of the UpdateSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityProfileResult> updateSecurityProfileAsync(UpdateSecurityProfileRequest updateSecurityProfileRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Updates a security profile.
+     * </p>
+     * 
+     * @param updateSecurityProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSecurityProfile operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateSecurityProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityProfileResult> updateSecurityProfileAsync(UpdateSecurityProfileRequest updateSecurityProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityProfileRequest, UpdateSecurityProfileResult> asyncHandler);
 
     /**
      * <p>

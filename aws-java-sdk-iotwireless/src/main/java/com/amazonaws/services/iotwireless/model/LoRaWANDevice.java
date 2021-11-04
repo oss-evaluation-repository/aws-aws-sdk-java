@@ -71,6 +71,8 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
      */
     private AbpV10X abpV1_0_x;
 
+    private FPorts fPorts;
+
     /**
      * <p>
      * The DevEUI value.
@@ -352,6 +354,32 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param fPorts
+     */
+
+    public void setFPorts(FPorts fPorts) {
+        this.fPorts = fPorts;
+    }
+
+    /**
+     * @return
+     */
+
+    public FPorts getFPorts() {
+        return this.fPorts;
+    }
+
+    /**
+     * @param fPorts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANDevice withFPorts(FPorts fPorts) {
+        setFPorts(fPorts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +404,9 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
         if (getAbpV1_1() != null)
             sb.append("AbpV1_1: ").append(getAbpV1_1()).append(",");
         if (getAbpV1_0_x() != null)
-            sb.append("AbpV1_0_x: ").append(getAbpV1_0_x());
+            sb.append("AbpV1_0_x: ").append(getAbpV1_0_x()).append(",");
+        if (getFPorts() != null)
+            sb.append("FPorts: ").append(getFPorts());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +449,10 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAbpV1_0_x() != null && other.getAbpV1_0_x().equals(this.getAbpV1_0_x()) == false)
             return false;
+        if (other.getFPorts() == null ^ this.getFPorts() == null)
+            return false;
+        if (other.getFPorts() != null && other.getFPorts().equals(this.getFPorts()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +468,7 @@ public class LoRaWANDevice implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOtaaV1_0_x() == null) ? 0 : getOtaaV1_0_x().hashCode());
         hashCode = prime * hashCode + ((getAbpV1_1() == null) ? 0 : getAbpV1_1().hashCode());
         hashCode = prime * hashCode + ((getAbpV1_0_x() == null) ? 0 : getAbpV1_0_x().hashCode());
+        hashCode = prime * hashCode + ((getFPorts() == null) ? 0 : getFPorts().hashCode());
         return hashCode;
     }
 

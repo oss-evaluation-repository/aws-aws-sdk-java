@@ -47,6 +47,11 @@ public class FleetSpotCapacityRebalanceRequestStaxUnmarshaller implements Unmars
                     fleetSpotCapacityRebalanceRequest.setReplacementStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TerminationDelay", targetDepth)) {
+                    fleetSpotCapacityRebalanceRequest.setTerminationDelay(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fleetSpotCapacityRebalanceRequest;

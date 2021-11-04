@@ -325,7 +325,8 @@ public class TokenBucket {
      * Sleep for a given amount of seconds.
      * @param seconds The amount of time to sleep in seconds.
      */
-    private static void sleep(double seconds) {
+    // Package private for testing
+    void sleep(double seconds) {
         long millisToSleep = (long) (seconds * 1000);
         try {
             Thread.sleep(millisToSleep);

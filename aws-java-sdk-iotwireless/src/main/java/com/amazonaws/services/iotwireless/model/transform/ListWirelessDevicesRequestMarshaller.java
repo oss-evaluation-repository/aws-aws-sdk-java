@@ -39,6 +39,10 @@ public class ListWirelessDevicesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("serviceProfileId").build();
     private static final MarshallingInfo<String> WIRELESSDEVICETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("wirelessDeviceType").build();
+    private static final MarshallingInfo<String> FUOTATASKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fuotaTaskId").build();
+    private static final MarshallingInfo<String> MULTICASTGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("multicastGroupId").build();
 
     private static final ListWirelessDevicesRequestMarshaller instance = new ListWirelessDevicesRequestMarshaller();
 
@@ -62,6 +66,8 @@ public class ListWirelessDevicesRequestMarshaller {
             protocolMarshaller.marshall(listWirelessDevicesRequest.getDeviceProfileId(), DEVICEPROFILEID_BINDING);
             protocolMarshaller.marshall(listWirelessDevicesRequest.getServiceProfileId(), SERVICEPROFILEID_BINDING);
             protocolMarshaller.marshall(listWirelessDevicesRequest.getWirelessDeviceType(), WIRELESSDEVICETYPE_BINDING);
+            protocolMarshaller.marshall(listWirelessDevicesRequest.getFuotaTaskId(), FUOTATASKID_BINDING);
+            protocolMarshaller.marshall(listWirelessDevicesRequest.getMulticastGroupId(), MULTICASTGROUPID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

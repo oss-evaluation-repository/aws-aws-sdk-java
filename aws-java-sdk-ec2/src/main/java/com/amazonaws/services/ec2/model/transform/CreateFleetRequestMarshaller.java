@@ -61,6 +61,11 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                         request.addParameter("SpotOptions.MaintenanceStrategies.CapacityRebalance.ReplacementStrategy",
                                 StringUtils.fromString(capacityRebalance.getReplacementStrategy()));
                     }
+
+                    if (capacityRebalance.getTerminationDelay() != null) {
+                        request.addParameter("SpotOptions.MaintenanceStrategies.CapacityRebalance.TerminationDelay",
+                                StringUtils.fromInteger(capacityRebalance.getTerminationDelay()));
+                    }
                 }
             }
 

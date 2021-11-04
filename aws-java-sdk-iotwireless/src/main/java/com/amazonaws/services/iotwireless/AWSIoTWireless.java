@@ -70,6 +70,85 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Associate a multicast group with a FUOTA task.
+     * </p>
+     * 
+     * @param associateMulticastGroupWithFuotaTaskRequest
+     * @return Result of the AssociateMulticastGroupWithFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.AssociateMulticastGroupWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateMulticastGroupWithFuotaTaskResult associateMulticastGroupWithFuotaTask(
+            AssociateMulticastGroupWithFuotaTaskRequest associateMulticastGroupWithFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Associate a wireless device with a FUOTA task.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithFuotaTaskRequest
+     * @return Result of the AssociateWirelessDeviceWithFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.AssociateWirelessDeviceWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateWirelessDeviceWithFuotaTaskResult associateWirelessDeviceWithFuotaTask(
+            AssociateWirelessDeviceWithFuotaTaskRequest associateWirelessDeviceWithFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Associates a wireless device with a multicast group.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithMulticastGroupRequest
+     * @return Result of the AssociateWirelessDeviceWithMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.AssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateWirelessDeviceWithMulticastGroupResult associateWirelessDeviceWithMulticastGroup(
+            AssociateWirelessDeviceWithMulticastGroupRequest associateWirelessDeviceWithMulticastGroupRequest);
+
+    /**
+     * <p>
      * Associates a wireless device with a thing.
      * </p>
      * 
@@ -147,6 +226,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Cancels an existing multicast group session.
+     * </p>
+     * 
+     * @param cancelMulticastGroupSessionRequest
+     * @return Result of the CancelMulticastGroupSession operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.CancelMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelMulticastGroupSessionResult cancelMulticastGroupSession(CancelMulticastGroupSessionRequest cancelMulticastGroupSessionRequest);
+
+    /**
+     * <p>
      * Creates a new destination that maps a device message to an AWS IoT rule.
      * </p>
      * 
@@ -192,6 +296,56 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     CreateDeviceProfileResult createDeviceProfile(CreateDeviceProfileRequest createDeviceProfileRequest);
+
+    /**
+     * <p>
+     * Creates a FUOTA task.
+     * </p>
+     * 
+     * @param createFuotaTaskRequest
+     * @return Result of the CreateFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.CreateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateFuotaTaskResult createFuotaTask(CreateFuotaTaskRequest createFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Creates a multicast group.
+     * </p>
+     * 
+     * @param createMulticastGroupRequest
+     * @return Result of the CreateMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.CreateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMulticastGroupResult createMulticastGroup(CreateMulticastGroupRequest createMulticastGroupRequest);
 
     /**
      * <p>
@@ -367,6 +521,54 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Deletes a FUOTA task.
+     * </p>
+     * 
+     * @param deleteFuotaTaskRequest
+     * @return Result of the DeleteFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteFuotaTaskResult deleteFuotaTask(DeleteFuotaTaskRequest deleteFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Deletes a multicast group if it is not in use by a fuota task.
+     * </p>
+     * 
+     * @param deleteMulticastGroupRequest
+     * @return Result of the DeleteMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMulticastGroupResult deleteMulticastGroup(DeleteMulticastGroupRequest deleteMulticastGroupRequest);
+
+    /**
+     * <p>
      * Deletes a service profile.
      * </p>
      * 
@@ -510,6 +712,83 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Disassociates a multicast group from a fuota task.
+     * </p>
+     * 
+     * @param disassociateMulticastGroupFromFuotaTaskRequest
+     * @return Result of the DisassociateMulticastGroupFromFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.DisassociateMulticastGroupFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateMulticastGroupFromFuotaTaskResult disassociateMulticastGroupFromFuotaTask(
+            DisassociateMulticastGroupFromFuotaTaskRequest disassociateMulticastGroupFromFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a FUOTA task.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromFuotaTaskRequest
+     * @return Result of the DisassociateWirelessDeviceFromFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.DisassociateWirelessDeviceFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateWirelessDeviceFromFuotaTaskResult disassociateWirelessDeviceFromFuotaTask(
+            DisassociateWirelessDeviceFromFuotaTaskRequest disassociateWirelessDeviceFromFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a multicast group.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromMulticastGroupRequest
+     * @return Result of the DisassociateWirelessDeviceFromMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.DisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateWirelessDeviceFromMulticastGroupResult disassociateWirelessDeviceFromMulticastGroup(
+            DisassociateWirelessDeviceFromMulticastGroupRequest disassociateWirelessDeviceFromMulticastGroupRequest);
+
+    /**
+     * <p>
      * Disassociates a wireless device from its currently associated thing.
      * </p>
      * 
@@ -633,6 +912,29 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Gets information about a FUOTA task.
+     * </p>
+     * 
+     * @param getFuotaTaskRequest
+     * @return Result of the GetFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetFuotaTaskResult getFuotaTask(GetFuotaTaskRequest getFuotaTaskRequest);
+
+    /**
+     * <p>
      * Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
      * for wireless device log options or wireless gateway log options.
      * </p>
@@ -657,6 +959,52 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Gets information about a multicast group.
+     * </p>
+     * 
+     * @param getMulticastGroupRequest
+     * @return Result of the GetMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMulticastGroupResult getMulticastGroup(GetMulticastGroupRequest getMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Gets information about a multicast group session.
+     * </p>
+     * 
+     * @param getMulticastGroupSessionRequest
+     * @return Result of the GetMulticastGroupSession operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMulticastGroupSessionResult getMulticastGroupSession(GetMulticastGroupSessionRequest getMulticastGroupSessionRequest);
+
+    /**
+     * <p>
      * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are
      * <code>null</code>, returns all partner accounts.
      * </p>
@@ -676,6 +1024,29 @@ public interface AWSIoTWireless {
      *      API Documentation</a>
      */
     GetPartnerAccountResult getPartnerAccount(GetPartnerAccountRequest getPartnerAccountRequest);
+
+    /**
+     * <p>
+     * Get the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param getResourceEventConfigurationRequest
+     * @return Result of the GetResourceEventConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceEventConfigurationResult getResourceEventConfiguration(GetResourceEventConfigurationRequest getResourceEventConfigurationRequest);
 
     /**
      * <p>
@@ -976,6 +1347,71 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Lists the FUOTA tasks registered to your AWS account.
+     * </p>
+     * 
+     * @param listFuotaTasksRequest
+     * @return Result of the ListFuotaTasks operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListFuotaTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFuotaTasksResult listFuotaTasks(ListFuotaTasksRequest listFuotaTasksRequest);
+
+    /**
+     * <p>
+     * Lists the multicast groups registered to your AWS account.
+     * </p>
+     * 
+     * @param listMulticastGroupsRequest
+     * @return Result of the ListMulticastGroups operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListMulticastGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMulticastGroupsResult listMulticastGroups(ListMulticastGroupsRequest listMulticastGroupsRequest);
+
+    /**
+     * <p>
+     * List all multicast groups associated with a fuota task.
+     * </p>
+     * 
+     * @param listMulticastGroupsByFuotaTaskRequest
+     * @return Result of the ListMulticastGroupsByFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListMulticastGroupsByFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMulticastGroupsByFuotaTaskResult listMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest listMulticastGroupsByFuotaTaskRequest);
+
+    /**
+     * <p>
      * Lists the partner accounts associated with your AWS account.
      * </p>
      * 
@@ -1176,6 +1612,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Sends the specified data to a multicast group.
+     * </p>
+     * 
+     * @param sendDataToMulticastGroupRequest
+     * @return Result of the SendDataToMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.SendDataToMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendDataToMulticastGroupResult sendDataToMulticastGroup(SendDataToMulticastGroupRequest sendDataToMulticastGroupRequest);
+
+    /**
+     * <p>
      * Sends a decrypted application data frame to a device.
      * </p>
      * 
@@ -1194,6 +1655,106 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     SendDataToWirelessDeviceResult sendDataToWirelessDevice(SendDataToWirelessDeviceRequest sendDataToWirelessDeviceRequest);
+
+    /**
+     * <p>
+     * Starts a bulk association of all qualifying wireless devices with a multicast group.
+     * </p>
+     * 
+     * @param startBulkAssociateWirelessDeviceWithMulticastGroupRequest
+     * @return Result of the StartBulkAssociateWirelessDeviceWithMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartBulkAssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartBulkAssociateWirelessDeviceWithMulticastGroupResult startBulkAssociateWirelessDeviceWithMulticastGroup(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest startBulkAssociateWirelessDeviceWithMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+     * </p>
+     * 
+     * @param startBulkDisassociateWirelessDeviceFromMulticastGroupRequest
+     * @return Result of the StartBulkDisassociateWirelessDeviceFromMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartBulkDisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartBulkDisassociateWirelessDeviceFromMulticastGroupResult startBulkDisassociateWirelessDeviceFromMulticastGroup(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest startBulkDisassociateWirelessDeviceFromMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Starts a FUOTA task.
+     * </p>
+     * 
+     * @param startFuotaTaskRequest
+     * @return Result of the StartFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.StartFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartFuotaTaskResult startFuotaTask(StartFuotaTaskRequest startFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Starts a multicast group session.
+     * </p>
+     * 
+     * @param startMulticastGroupSessionRequest
+     * @return Result of the StartMulticastGroupSession operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMulticastGroupSessionResult startMulticastGroupSession(StartMulticastGroupSessionRequest startMulticastGroupSessionRequest);
 
     /**
      * <p>
@@ -1289,6 +1850,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Updates properties of a FUOTA task.
+     * </p>
+     * 
+     * @param updateFuotaTaskRequest
+     * @return Result of the UpdateFuotaTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateFuotaTaskResult updateFuotaTask(UpdateFuotaTaskRequest updateFuotaTaskRequest);
+
+    /**
+     * <p>
      * Set default log level, or log levels by resource types. This can be for wireless device log options or wireless
      * gateways log options and is used to control the log messages that'll be displayed in CloudWatch.
      * </p>
@@ -1315,6 +1901,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Updates properties of a multicast group session.
+     * </p>
+     * 
+     * @param updateMulticastGroupRequest
+     * @return Result of the UpdateMulticastGroup operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMulticastGroupResult updateMulticastGroup(UpdateMulticastGroupRequest updateMulticastGroupRequest);
+
+    /**
+     * <p>
      * Updates properties of a partner account.
      * </p>
      * 
@@ -1333,6 +1944,31 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePartnerAccountResult updatePartnerAccount(UpdatePartnerAccountRequest updatePartnerAccountRequest);
+
+    /**
+     * <p>
+     * Update the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param updateResourceEventConfigurationRequest
+     * @return Result of the UpdateResourceEventConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourceEventConfigurationResult updateResourceEventConfiguration(UpdateResourceEventConfigurationRequest updateResourceEventConfigurationRequest);
 
     /**
      * <p>

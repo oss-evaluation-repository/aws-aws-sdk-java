@@ -33,6 +33,21 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public AssociateMulticastGroupWithFuotaTaskResult associateMulticastGroupWithFuotaTask(AssociateMulticastGroupWithFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateWirelessDeviceWithFuotaTaskResult associateWirelessDeviceWithFuotaTask(AssociateWirelessDeviceWithFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateWirelessDeviceWithMulticastGroupResult associateWirelessDeviceWithMulticastGroup(AssociateWirelessDeviceWithMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateWirelessDeviceWithThingResult associateWirelessDeviceWithThing(AssociateWirelessDeviceWithThingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +63,27 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public CancelMulticastGroupSessionResult cancelMulticastGroupSession(CancelMulticastGroupSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDestinationResult createDestination(CreateDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateDeviceProfileResult createDeviceProfile(CreateDeviceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFuotaTaskResult createFuotaTask(CreateFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMulticastGroupResult createMulticastGroup(CreateMulticastGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +123,16 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public DeleteFuotaTaskResult deleteFuotaTask(DeleteFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMulticastGroupResult deleteMulticastGroup(DeleteMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteServiceProfileResult deleteServiceProfile(DeleteServiceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +163,22 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public DisassociateMulticastGroupFromFuotaTaskResult disassociateMulticastGroupFromFuotaTask(DisassociateMulticastGroupFromFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateWirelessDeviceFromFuotaTaskResult disassociateWirelessDeviceFromFuotaTask(DisassociateWirelessDeviceFromFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateWirelessDeviceFromMulticastGroupResult disassociateWirelessDeviceFromMulticastGroup(
+            DisassociateWirelessDeviceFromMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateWirelessDeviceFromThingResult disassociateWirelessDeviceFromThing(DisassociateWirelessDeviceFromThingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,12 +204,32 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public GetFuotaTaskResult getFuotaTask(GetFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLogLevelsByResourceTypesResult getLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetMulticastGroupResult getMulticastGroup(GetMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMulticastGroupSessionResult getMulticastGroupSession(GetMulticastGroupSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPartnerAccountResult getPartnerAccount(GetPartnerAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourceEventConfigurationResult getResourceEventConfiguration(GetResourceEventConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +299,21 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public ListFuotaTasksResult listFuotaTasks(ListFuotaTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMulticastGroupsResult listMulticastGroups(ListMulticastGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMulticastGroupsByFuotaTaskResult listMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPartnerAccountsResult listPartnerAccounts(ListPartnerAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -268,7 +359,34 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public SendDataToMulticastGroupResult sendDataToMulticastGroup(SendDataToMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendDataToWirelessDeviceResult sendDataToWirelessDevice(SendDataToWirelessDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBulkAssociateWirelessDeviceWithMulticastGroupResult startBulkAssociateWirelessDeviceWithMulticastGroup(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBulkDisassociateWirelessDeviceFromMulticastGroupResult startBulkDisassociateWirelessDeviceFromMulticastGroup(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartFuotaTaskResult startFuotaTask(StartFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMulticastGroupSessionResult startMulticastGroupSession(StartMulticastGroupSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -293,12 +411,27 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public UpdateFuotaTaskResult updateFuotaTask(UpdateFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLogLevelsByResourceTypesResult updateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateMulticastGroupResult updateMulticastGroup(UpdateMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdatePartnerAccountResult updatePartnerAccount(UpdatePartnerAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourceEventConfigurationResult updateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

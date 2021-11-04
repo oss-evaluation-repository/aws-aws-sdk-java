@@ -76,6 +76,12 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<EdgeModelSummary> models;
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     */
+    private String agentVersion;
 
     /**
      * <p>
@@ -428,6 +434,46 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @param agentVersion
+     *        Edge Manager agent version.
+     */
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @return Edge Manager agent version.
+     */
+
+    public String getAgentVersion() {
+        return this.agentVersion;
+    }
+
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @param agentVersion
+     *        Edge Manager agent version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceSummary withAgentVersion(String agentVersion) {
+        setAgentVersion(agentVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -454,7 +500,9 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
         if (getLatestHeartbeat() != null)
             sb.append("LatestHeartbeat: ").append(getLatestHeartbeat()).append(",");
         if (getModels() != null)
-            sb.append("Models: ").append(getModels());
+            sb.append("Models: ").append(getModels()).append(",");
+        if (getAgentVersion() != null)
+            sb.append("AgentVersion: ").append(getAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -501,6 +549,10 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModels() != null && other.getModels().equals(this.getModels()) == false)
             return false;
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
+            return false;
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -517,6 +569,7 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegistrationTime() == null) ? 0 : getRegistrationTime().hashCode());
         hashCode = prime * hashCode + ((getLatestHeartbeat() == null) ? 0 : getLatestHeartbeat().hashCode());
         hashCode = prime * hashCode + ((getModels() == null) ? 0 : getModels().hashCode());
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         return hashCode;
     }
 

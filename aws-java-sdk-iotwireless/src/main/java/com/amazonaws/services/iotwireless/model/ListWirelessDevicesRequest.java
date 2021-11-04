@@ -63,6 +63,10 @@ public class ListWirelessDevicesRequest extends com.amazonaws.AmazonWebServiceRe
      */
     private String wirelessDeviceType;
 
+    private String fuotaTaskId;
+
+    private String multicastGroupId;
+
     /**
      * <p>
      * The maximum number of results to return in this operation.
@@ -329,6 +333,58 @@ public class ListWirelessDevicesRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * @param fuotaTaskId
+     */
+
+    public void setFuotaTaskId(String fuotaTaskId) {
+        this.fuotaTaskId = fuotaTaskId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getFuotaTaskId() {
+        return this.fuotaTaskId;
+    }
+
+    /**
+     * @param fuotaTaskId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWirelessDevicesRequest withFuotaTaskId(String fuotaTaskId) {
+        setFuotaTaskId(fuotaTaskId);
+        return this;
+    }
+
+    /**
+     * @param multicastGroupId
+     */
+
+    public void setMulticastGroupId(String multicastGroupId) {
+        this.multicastGroupId = multicastGroupId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getMulticastGroupId() {
+        return this.multicastGroupId;
+    }
+
+    /**
+     * @param multicastGroupId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWirelessDevicesRequest withMulticastGroupId(String multicastGroupId) {
+        setMulticastGroupId(multicastGroupId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -351,7 +407,11 @@ public class ListWirelessDevicesRequest extends com.amazonaws.AmazonWebServiceRe
         if (getServiceProfileId() != null)
             sb.append("ServiceProfileId: ").append(getServiceProfileId()).append(",");
         if (getWirelessDeviceType() != null)
-            sb.append("WirelessDeviceType: ").append(getWirelessDeviceType());
+            sb.append("WirelessDeviceType: ").append(getWirelessDeviceType()).append(",");
+        if (getFuotaTaskId() != null)
+            sb.append("FuotaTaskId: ").append(getFuotaTaskId()).append(",");
+        if (getMulticastGroupId() != null)
+            sb.append("MulticastGroupId: ").append(getMulticastGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +450,14 @@ public class ListWirelessDevicesRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getWirelessDeviceType() != null && other.getWirelessDeviceType().equals(this.getWirelessDeviceType()) == false)
             return false;
+        if (other.getFuotaTaskId() == null ^ this.getFuotaTaskId() == null)
+            return false;
+        if (other.getFuotaTaskId() != null && other.getFuotaTaskId().equals(this.getFuotaTaskId()) == false)
+            return false;
+        if (other.getMulticastGroupId() == null ^ this.getMulticastGroupId() == null)
+            return false;
+        if (other.getMulticastGroupId() != null && other.getMulticastGroupId().equals(this.getMulticastGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +472,8 @@ public class ListWirelessDevicesRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDeviceProfileId() == null) ? 0 : getDeviceProfileId().hashCode());
         hashCode = prime * hashCode + ((getServiceProfileId() == null) ? 0 : getServiceProfileId().hashCode());
         hashCode = prime * hashCode + ((getWirelessDeviceType() == null) ? 0 : getWirelessDeviceType().hashCode());
+        hashCode = prime * hashCode + ((getFuotaTaskId() == null) ? 0 : getFuotaTaskId().hashCode());
+        hashCode = prime * hashCode + ((getMulticastGroupId() == null) ? 0 : getMulticastGroupId().hashCode());
         return hashCode;
     }
 

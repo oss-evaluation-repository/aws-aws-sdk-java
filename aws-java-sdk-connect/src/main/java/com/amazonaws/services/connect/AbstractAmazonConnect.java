@@ -108,6 +108,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateSecurityProfileResult createSecurityProfile(CreateSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUseCaseResult createUseCase(CreateUseCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +144,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteQuickConnectResult deleteQuickConnect(DeleteQuickConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +209,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DescribeRoutingProfileResult describeRoutingProfile(DescribeRoutingProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSecurityProfileResult describeSecurityProfile(DescribeSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -369,6 +384,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public ListSecurityKeysResult listSecurityKeys(ListSecurityKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSecurityProfilePermissionsResult listSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -544,6 +564,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateRoutingProfileQueuesResult updateRoutingProfileQueues(UpdateRoutingProfileQueuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

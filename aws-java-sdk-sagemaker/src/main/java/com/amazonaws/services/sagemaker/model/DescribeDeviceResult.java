@@ -83,6 +83,12 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     */
+    private String agentVersion;
 
     /**
      * <p>
@@ -515,6 +521,46 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @param agentVersion
+     *        Edge Manager agent version.
+     */
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @return Edge Manager agent version.
+     */
+
+    public String getAgentVersion() {
+        return this.agentVersion;
+    }
+
+    /**
+     * <p>
+     * Edge Manager agent version.
+     * </p>
+     * 
+     * @param agentVersion
+     *        Edge Manager agent version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeviceResult withAgentVersion(String agentVersion) {
+        setAgentVersion(agentVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -545,7 +591,9 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getMaxModels() != null)
             sb.append("MaxModels: ").append(getMaxModels()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getAgentVersion() != null)
+            sb.append("AgentVersion: ").append(getAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -600,6 +648,10 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
+            return false;
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -618,6 +670,7 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getModels() == null) ? 0 : getModels().hashCode());
         hashCode = prime * hashCode + ((getMaxModels() == null) ? 0 : getMaxModels().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         return hashCode;
     }
 

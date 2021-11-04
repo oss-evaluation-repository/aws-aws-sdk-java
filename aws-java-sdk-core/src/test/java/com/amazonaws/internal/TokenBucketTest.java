@@ -16,7 +16,6 @@
 package com.amazonaws.internal;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.assertThat;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
@@ -48,12 +47,10 @@ public class TokenBucketTest {
         tb.setCurrentCapacity(1000.0);
         tb.enable();
 
-        long a = System.nanoTime();
         boolean acquired = tb.acquire(1000.0);
-        long elapsed = System.nanoTime() - a;
 
         assertThat(acquired, equalTo(true));
-        assertThat(TimeUnit.NANOSECONDS.toMillis(elapsed), lessThan(3L));
+        Mockito.verify(tb, Mockito.never()).sleep(Mockito.anyDouble());
     }
 
     @Test

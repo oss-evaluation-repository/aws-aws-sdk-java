@@ -71,6 +71,113 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Associate a multicast group with a FUOTA task.
+     * </p>
+     * 
+     * @param associateMulticastGroupWithFuotaTaskRequest
+     * @return A Java Future containing the result of the AssociateMulticastGroupWithFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.AssociateMulticastGroupWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            AssociateMulticastGroupWithFuotaTaskRequest associateMulticastGroupWithFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Associate a multicast group with a FUOTA task.
+     * </p>
+     * 
+     * @param associateMulticastGroupWithFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateMulticastGroupWithFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.AssociateMulticastGroupWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            AssociateMulticastGroupWithFuotaTaskRequest associateMulticastGroupWithFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateMulticastGroupWithFuotaTaskRequest, AssociateMulticastGroupWithFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate a wireless device with a FUOTA task.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithFuotaTaskRequest
+     * @return A Java Future containing the result of the AssociateWirelessDeviceWithFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.AssociateWirelessDeviceWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            AssociateWirelessDeviceWithFuotaTaskRequest associateWirelessDeviceWithFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Associate a wireless device with a FUOTA task.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateWirelessDeviceWithFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.AssociateWirelessDeviceWithFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            AssociateWirelessDeviceWithFuotaTaskRequest associateWirelessDeviceWithFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithFuotaTaskRequest, AssociateWirelessDeviceWithFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a wireless device with a multicast group.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithMulticastGroupRequest
+     * @return A Java Future containing the result of the AssociateWirelessDeviceWithMulticastGroup operation returned
+     *         by the service.
+     * @sample AWSIoTWirelessAsync.AssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            AssociateWirelessDeviceWithMulticastGroupRequest associateWirelessDeviceWithMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Associates a wireless device with a multicast group.
+     * </p>
+     * 
+     * @param associateWirelessDeviceWithMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateWirelessDeviceWithMulticastGroup operation returned
+     *         by the service.
+     * @sample AWSIoTWirelessAsyncHandler.AssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            AssociateWirelessDeviceWithMulticastGroupRequest associateWirelessDeviceWithMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithMulticastGroupRequest, AssociateWirelessDeviceWithMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a wireless device with a thing.
      * </p>
      * 
@@ -178,6 +285,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Cancels an existing multicast group session.
+     * </p>
+     * 
+     * @param cancelMulticastGroupSessionRequest
+     * @return A Java Future containing the result of the CancelMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsync.CancelMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(
+            CancelMulticastGroupSessionRequest cancelMulticastGroupSessionRequest);
+
+    /**
+     * <p>
+     * Cancels an existing multicast group session.
+     * </p>
+     * 
+     * @param cancelMulticastGroupSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.CancelMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(
+            CancelMulticastGroupSessionRequest cancelMulticastGroupSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMulticastGroupSessionRequest, CancelMulticastGroupSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new destination that maps a device message to an AWS IoT rule.
      * </p>
      * 
@@ -237,6 +377,68 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<CreateDeviceProfileResult> createDeviceProfileAsync(CreateDeviceProfileRequest createDeviceProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDeviceProfileRequest, CreateDeviceProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a FUOTA task.
+     * </p>
+     * 
+     * @param createFuotaTaskRequest
+     * @return A Java Future containing the result of the CreateFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.CreateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(CreateFuotaTaskRequest createFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Creates a FUOTA task.
+     * </p>
+     * 
+     * @param createFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.CreateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(CreateFuotaTaskRequest createFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFuotaTaskRequest, CreateFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a multicast group.
+     * </p>
+     * 
+     * @param createMulticastGroupRequest
+     * @return A Java Future containing the result of the CreateMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsync.CreateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(CreateMulticastGroupRequest createMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Creates a multicast group.
+     * </p>
+     * 
+     * @param createMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.CreateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(CreateMulticastGroupRequest createMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMulticastGroupRequest, CreateMulticastGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -463,6 +665,68 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Deletes a FUOTA task.
+     * </p>
+     * 
+     * @param deleteFuotaTaskRequest
+     * @return A Java Future containing the result of the DeleteFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.DeleteFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(DeleteFuotaTaskRequest deleteFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Deletes a FUOTA task.
+     * </p>
+     * 
+     * @param deleteFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.DeleteFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(DeleteFuotaTaskRequest deleteFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFuotaTaskRequest, DeleteFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a multicast group if it is not in use by a fuota task.
+     * </p>
+     * 
+     * @param deleteMulticastGroupRequest
+     * @return A Java Future containing the result of the DeleteMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsync.DeleteMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest deleteMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a multicast group if it is not in use by a fuota task.
+     * </p>
+     * 
+     * @param deleteMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.DeleteMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest deleteMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMulticastGroupRequest, DeleteMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a service profile.
      * </p>
      * 
@@ -665,6 +929,117 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Disassociates a multicast group from a fuota task.
+     * </p>
+     * 
+     * @param disassociateMulticastGroupFromFuotaTaskRequest
+     * @return A Java Future containing the result of the DisassociateMulticastGroupFromFuotaTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsync.DisassociateMulticastGroupFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            DisassociateMulticastGroupFromFuotaTaskRequest disassociateMulticastGroupFromFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Disassociates a multicast group from a fuota task.
+     * </p>
+     * 
+     * @param disassociateMulticastGroupFromFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateMulticastGroupFromFuotaTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsyncHandler.DisassociateMulticastGroupFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            DisassociateMulticastGroupFromFuotaTaskRequest disassociateMulticastGroupFromFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateMulticastGroupFromFuotaTaskRequest, DisassociateMulticastGroupFromFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a FUOTA task.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromFuotaTaskRequest
+     * @return A Java Future containing the result of the DisassociateWirelessDeviceFromFuotaTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsync.DisassociateWirelessDeviceFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            DisassociateWirelessDeviceFromFuotaTaskRequest disassociateWirelessDeviceFromFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a FUOTA task.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateWirelessDeviceFromFuotaTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsyncHandler.DisassociateWirelessDeviceFromFuotaTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            DisassociateWirelessDeviceFromFuotaTaskRequest disassociateWirelessDeviceFromFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromFuotaTaskRequest, DisassociateWirelessDeviceFromFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a multicast group.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromMulticastGroupRequest
+     * @return A Java Future containing the result of the DisassociateWirelessDeviceFromMulticastGroup operation
+     *         returned by the service.
+     * @sample AWSIoTWirelessAsync.DisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            DisassociateWirelessDeviceFromMulticastGroupRequest disassociateWirelessDeviceFromMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Disassociates a wireless device from a multicast group.
+     * </p>
+     * 
+     * @param disassociateWirelessDeviceFromMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateWirelessDeviceFromMulticastGroup operation
+     *         returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.DisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            DisassociateWirelessDeviceFromMulticastGroupRequest disassociateWirelessDeviceFromMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromMulticastGroupRequest, DisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a wireless device from its currently associated thing.
      * </p>
      * 
@@ -834,6 +1209,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Gets information about a FUOTA task.
+     * </p>
+     * 
+     * @param getFuotaTaskRequest
+     * @return A Java Future containing the result of the GetFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(GetFuotaTaskRequest getFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Gets information about a FUOTA task.
+     * </p>
+     * 
+     * @param getFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(GetFuotaTaskRequest getFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFuotaTaskRequest, GetFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
      * for wireless device log options or wireless gateway log options.
      * </p>
@@ -869,6 +1275,68 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Gets information about a multicast group.
+     * </p>
+     * 
+     * @param getMulticastGroupRequest
+     * @return A Java Future containing the result of the GetMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest getMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Gets information about a multicast group.
+     * </p>
+     * 
+     * @param getMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest getMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMulticastGroupRequest, GetMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a multicast group session.
+     * </p>
+     * 
+     * @param getMulticastGroupSessionRequest
+     * @return A Java Future containing the result of the GetMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(GetMulticastGroupSessionRequest getMulticastGroupSessionRequest);
+
+    /**
+     * <p>
+     * Gets information about a multicast group session.
+     * </p>
+     * 
+     * @param getMulticastGroupSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(GetMulticastGroupSessionRequest getMulticastGroupSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMulticastGroupSessionRequest, GetMulticastGroupSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are
      * <code>null</code>, returns all partner accounts.
      * </p>
@@ -899,6 +1367,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest getPartnerAccountRequest,
             com.amazonaws.handlers.AsyncHandler<GetPartnerAccountRequest, GetPartnerAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param getResourceEventConfigurationRequest
+     * @return A Java Future containing the result of the GetResourceEventConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.GetResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(
+            GetResourceEventConfigurationRequest getResourceEventConfigurationRequest);
+
+    /**
+     * <p>
+     * Get the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param getResourceEventConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceEventConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.GetResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(
+            GetResourceEventConfigurationRequest getResourceEventConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceEventConfigurationRequest, GetResourceEventConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1329,6 +1832,103 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Lists the FUOTA tasks registered to your AWS account.
+     * </p>
+     * 
+     * @param listFuotaTasksRequest
+     * @return A Java Future containing the result of the ListFuotaTasks operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ListFuotaTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest listFuotaTasksRequest);
+
+    /**
+     * <p>
+     * Lists the FUOTA tasks registered to your AWS account.
+     * </p>
+     * 
+     * @param listFuotaTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFuotaTasks operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ListFuotaTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest listFuotaTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFuotaTasksRequest, ListFuotaTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the multicast groups registered to your AWS account.
+     * </p>
+     * 
+     * @param listMulticastGroupsRequest
+     * @return A Java Future containing the result of the ListMulticastGroups operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ListMulticastGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(ListMulticastGroupsRequest listMulticastGroupsRequest);
+
+    /**
+     * <p>
+     * Lists the multicast groups registered to your AWS account.
+     * </p>
+     * 
+     * @param listMulticastGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMulticastGroups operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ListMulticastGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(ListMulticastGroupsRequest listMulticastGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsRequest, ListMulticastGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all multicast groups associated with a fuota task.
+     * </p>
+     * 
+     * @param listMulticastGroupsByFuotaTaskRequest
+     * @return A Java Future containing the result of the ListMulticastGroupsByFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.ListMulticastGroupsByFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(
+            ListMulticastGroupsByFuotaTaskRequest listMulticastGroupsByFuotaTaskRequest);
+
+    /**
+     * <p>
+     * List all multicast groups associated with a fuota task.
+     * </p>
+     * 
+     * @param listMulticastGroupsByFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMulticastGroupsByFuotaTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.ListMulticastGroupsByFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(
+            ListMulticastGroupsByFuotaTaskRequest listMulticastGroupsByFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsByFuotaTaskRequest, ListMulticastGroupsByFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the partner accounts associated with your AWS account.
      * </p>
      * 
@@ -1618,6 +2218,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Sends the specified data to a multicast group.
+     * </p>
+     * 
+     * @param sendDataToMulticastGroupRequest
+     * @return A Java Future containing the result of the SendDataToMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsync.SendDataToMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest sendDataToMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Sends the specified data to a multicast group.
+     * </p>
+     * 
+     * @param sendDataToMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendDataToMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.SendDataToMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest sendDataToMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<SendDataToMulticastGroupRequest, SendDataToMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a decrypted application data frame to a device.
      * </p>
      * 
@@ -1646,6 +2277,144 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest sendDataToWirelessDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<SendDataToWirelessDeviceRequest, SendDataToWirelessDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a bulk association of all qualifying wireless devices with a multicast group.
+     * </p>
+     * 
+     * @param startBulkAssociateWirelessDeviceWithMulticastGroupRequest
+     * @return A Java Future containing the result of the StartBulkAssociateWirelessDeviceWithMulticastGroup operation
+     *         returned by the service.
+     * @sample AWSIoTWirelessAsync.StartBulkAssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest startBulkAssociateWirelessDeviceWithMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Starts a bulk association of all qualifying wireless devices with a multicast group.
+     * </p>
+     * 
+     * @param startBulkAssociateWirelessDeviceWithMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartBulkAssociateWirelessDeviceWithMulticastGroup operation
+     *         returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.StartBulkAssociateWirelessDeviceWithMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest startBulkAssociateWirelessDeviceWithMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest, StartBulkAssociateWirelessDeviceWithMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+     * </p>
+     * 
+     * @param startBulkDisassociateWirelessDeviceFromMulticastGroupRequest
+     * @return A Java Future containing the result of the StartBulkDisassociateWirelessDeviceFromMulticastGroup
+     *         operation returned by the service.
+     * @sample AWSIoTWirelessAsync.StartBulkDisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest startBulkDisassociateWirelessDeviceFromMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+     * </p>
+     * 
+     * @param startBulkDisassociateWirelessDeviceFromMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartBulkDisassociateWirelessDeviceFromMulticastGroup
+     *         operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.StartBulkDisassociateWirelessDeviceFromMulticastGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest startBulkDisassociateWirelessDeviceFromMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest, StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a FUOTA task.
+     * </p>
+     * 
+     * @param startFuotaTaskRequest
+     * @return A Java Future containing the result of the StartFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.StartFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(StartFuotaTaskRequest startFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Starts a FUOTA task.
+     * </p>
+     * 
+     * @param startFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.StartFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(StartFuotaTaskRequest startFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartFuotaTaskRequest, StartFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a multicast group session.
+     * </p>
+     * 
+     * @param startMulticastGroupSessionRequest
+     * @return A Java Future containing the result of the StartMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsync.StartMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(
+            StartMulticastGroupSessionRequest startMulticastGroupSessionRequest);
+
+    /**
+     * <p>
+     * Starts a multicast group session.
+     * </p>
+     * 
+     * @param startMulticastGroupSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMulticastGroupSession operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.StartMulticastGroupSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(
+            StartMulticastGroupSessionRequest startMulticastGroupSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMulticastGroupSessionRequest, StartMulticastGroupSessionResult> asyncHandler);
 
     /**
      * <p>
@@ -1773,6 +2542,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Updates properties of a FUOTA task.
+     * </p>
+     * 
+     * @param updateFuotaTaskRequest
+     * @return A Java Future containing the result of the UpdateFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(UpdateFuotaTaskRequest updateFuotaTaskRequest);
+
+    /**
+     * <p>
+     * Updates properties of a FUOTA task.
+     * </p>
+     * 
+     * @param updateFuotaTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFuotaTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateFuotaTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(UpdateFuotaTaskRequest updateFuotaTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFuotaTaskRequest, UpdateFuotaTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Set default log level, or log levels by resource types. This can be for wireless device log options or wireless
      * gateways log options and is used to control the log messages that'll be displayed in CloudWatch.
      * </p>
@@ -1810,6 +2610,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Updates properties of a multicast group session.
+     * </p>
+     * 
+     * @param updateMulticastGroupRequest
+     * @return A Java Future containing the result of the UpdateMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest updateMulticastGroupRequest);
+
+    /**
+     * <p>
+     * Updates properties of a multicast group session.
+     * </p>
+     * 
+     * @param updateMulticastGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMulticastGroup operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateMulticastGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest updateMulticastGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMulticastGroupRequest, UpdateMulticastGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates properties of a partner account.
      * </p>
      * 
@@ -1838,6 +2669,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest updatePartnerAccountRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePartnerAccountRequest, UpdatePartnerAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param updateResourceEventConfigurationRequest
+     * @return A Java Future containing the result of the UpdateResourceEventConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.UpdateResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            UpdateResourceEventConfigurationRequest updateResourceEventConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the event configuration for a particular resource identifier.
+     * </p>
+     * 
+     * @param updateResourceEventConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourceEventConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateResourceEventConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            UpdateResourceEventConfigurationRequest updateResourceEventConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceEventConfigurationRequest, UpdateResourceEventConfigurationResult> asyncHandler);
 
     /**
      * <p>

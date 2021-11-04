@@ -80,6 +80,18 @@ public class WirelessDeviceStatisticsJsonUnmarshaller implements Unmarshaller<Wi
                     context.nextToken();
                     wirelessDeviceStatistics.setSidewalk(SidewalkListDeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FuotaDeviceStatus", targetDepth)) {
+                    context.nextToken();
+                    wirelessDeviceStatistics.setFuotaDeviceStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MulticastDeviceStatus", targetDepth)) {
+                    context.nextToken();
+                    wirelessDeviceStatistics.setMulticastDeviceStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("McGroupId", targetDepth)) {
+                    context.nextToken();
+                    wirelessDeviceStatistics.setMcGroupId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

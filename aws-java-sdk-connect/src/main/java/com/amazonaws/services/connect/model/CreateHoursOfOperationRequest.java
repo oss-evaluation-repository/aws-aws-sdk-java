@@ -57,7 +57,7 @@ public class CreateHoursOfOperationRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<HoursOfOperationConfig> config;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -294,10 +294,10 @@ public class CreateHoursOfOperationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -306,11 +306,11 @@ public class CreateHoursOfOperationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -319,11 +319,11 @@ public class CreateHoursOfOperationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

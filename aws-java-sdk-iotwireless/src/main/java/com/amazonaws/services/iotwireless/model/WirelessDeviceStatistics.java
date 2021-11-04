@@ -77,6 +77,16 @@ public class WirelessDeviceStatistics implements Serializable, Cloneable, Struct
      */
     private SidewalkListDevice sidewalk;
 
+    private String fuotaDeviceStatus;
+    /**
+     * <p>
+     * The status of the wireless device in the multicast group.
+     * </p>
+     */
+    private String multicastDeviceStatus;
+
+    private Integer mcGroupId;
+
     /**
      * <p>
      * The Amazon Resource Name of the resource.
@@ -417,6 +427,112 @@ public class WirelessDeviceStatistics implements Serializable, Cloneable, Struct
     }
 
     /**
+     * @param fuotaDeviceStatus
+     * @see FuotaDeviceStatus
+     */
+
+    public void setFuotaDeviceStatus(String fuotaDeviceStatus) {
+        this.fuotaDeviceStatus = fuotaDeviceStatus;
+    }
+
+    /**
+     * @return
+     * @see FuotaDeviceStatus
+     */
+
+    public String getFuotaDeviceStatus() {
+        return this.fuotaDeviceStatus;
+    }
+
+    /**
+     * @param fuotaDeviceStatus
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FuotaDeviceStatus
+     */
+
+    public WirelessDeviceStatistics withFuotaDeviceStatus(String fuotaDeviceStatus) {
+        setFuotaDeviceStatus(fuotaDeviceStatus);
+        return this;
+    }
+
+    /**
+     * @param fuotaDeviceStatus
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FuotaDeviceStatus
+     */
+
+    public WirelessDeviceStatistics withFuotaDeviceStatus(FuotaDeviceStatus fuotaDeviceStatus) {
+        this.fuotaDeviceStatus = fuotaDeviceStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the wireless device in the multicast group.
+     * </p>
+     * 
+     * @param multicastDeviceStatus
+     *        The status of the wireless device in the multicast group.
+     */
+
+    public void setMulticastDeviceStatus(String multicastDeviceStatus) {
+        this.multicastDeviceStatus = multicastDeviceStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the wireless device in the multicast group.
+     * </p>
+     * 
+     * @return The status of the wireless device in the multicast group.
+     */
+
+    public String getMulticastDeviceStatus() {
+        return this.multicastDeviceStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the wireless device in the multicast group.
+     * </p>
+     * 
+     * @param multicastDeviceStatus
+     *        The status of the wireless device in the multicast group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WirelessDeviceStatistics withMulticastDeviceStatus(String multicastDeviceStatus) {
+        setMulticastDeviceStatus(multicastDeviceStatus);
+        return this;
+    }
+
+    /**
+     * @param mcGroupId
+     */
+
+    public void setMcGroupId(Integer mcGroupId) {
+        this.mcGroupId = mcGroupId;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getMcGroupId() {
+        return this.mcGroupId;
+    }
+
+    /**
+     * @param mcGroupId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WirelessDeviceStatistics withMcGroupId(Integer mcGroupId) {
+        setMcGroupId(mcGroupId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -443,7 +559,13 @@ public class WirelessDeviceStatistics implements Serializable, Cloneable, Struct
         if (getLoRaWAN() != null)
             sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
         if (getSidewalk() != null)
-            sb.append("Sidewalk: ").append(getSidewalk());
+            sb.append("Sidewalk: ").append(getSidewalk()).append(",");
+        if (getFuotaDeviceStatus() != null)
+            sb.append("FuotaDeviceStatus: ").append(getFuotaDeviceStatus()).append(",");
+        if (getMulticastDeviceStatus() != null)
+            sb.append("MulticastDeviceStatus: ").append(getMulticastDeviceStatus()).append(",");
+        if (getMcGroupId() != null)
+            sb.append("McGroupId: ").append(getMcGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +612,18 @@ public class WirelessDeviceStatistics implements Serializable, Cloneable, Struct
             return false;
         if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
             return false;
+        if (other.getFuotaDeviceStatus() == null ^ this.getFuotaDeviceStatus() == null)
+            return false;
+        if (other.getFuotaDeviceStatus() != null && other.getFuotaDeviceStatus().equals(this.getFuotaDeviceStatus()) == false)
+            return false;
+        if (other.getMulticastDeviceStatus() == null ^ this.getMulticastDeviceStatus() == null)
+            return false;
+        if (other.getMulticastDeviceStatus() != null && other.getMulticastDeviceStatus().equals(this.getMulticastDeviceStatus()) == false)
+            return false;
+        if (other.getMcGroupId() == null ^ this.getMcGroupId() == null)
+            return false;
+        if (other.getMcGroupId() != null && other.getMcGroupId().equals(this.getMcGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +640,9 @@ public class WirelessDeviceStatistics implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getLastUplinkReceivedAt() == null) ? 0 : getLastUplinkReceivedAt().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
         hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
+        hashCode = prime * hashCode + ((getFuotaDeviceStatus() == null) ? 0 : getFuotaDeviceStatus().hashCode());
+        hashCode = prime * hashCode + ((getMulticastDeviceStatus() == null) ? 0 : getMulticastDeviceStatus().hashCode());
+        hashCode = prime * hashCode + ((getMcGroupId() == null) ? 0 : getMcGroupId().hashCode());
         return hashCode;
     }
 

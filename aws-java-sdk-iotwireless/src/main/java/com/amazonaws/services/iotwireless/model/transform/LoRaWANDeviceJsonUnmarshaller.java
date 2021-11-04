@@ -76,6 +76,10 @@ public class LoRaWANDeviceJsonUnmarshaller implements Unmarshaller<LoRaWANDevice
                     context.nextToken();
                     loRaWANDevice.setAbpV1_0_x(AbpV10XJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FPorts", targetDepth)) {
+                    context.nextToken();
+                    loRaWANDevice.setFPorts(FPortsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

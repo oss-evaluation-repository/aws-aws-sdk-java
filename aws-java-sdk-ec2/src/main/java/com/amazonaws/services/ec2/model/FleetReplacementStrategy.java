@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FleetReplacementStrategy {
 
-    Launch("launch");
+    Launch("launch"),
+    LaunchBeforeTerminate("launch-before-terminate");
 
     private String value;
 

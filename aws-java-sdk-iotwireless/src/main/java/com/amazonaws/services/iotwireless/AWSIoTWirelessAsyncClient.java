@@ -111,6 +111,111 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            AssociateMulticastGroupWithFuotaTaskRequest request) {
+
+        return associateMulticastGroupWithFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            final AssociateMulticastGroupWithFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateMulticastGroupWithFuotaTaskRequest, AssociateMulticastGroupWithFuotaTaskResult> asyncHandler) {
+        final AssociateMulticastGroupWithFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateMulticastGroupWithFuotaTaskResult>() {
+            @Override
+            public AssociateMulticastGroupWithFuotaTaskResult call() throws Exception {
+                AssociateMulticastGroupWithFuotaTaskResult result = null;
+
+                try {
+                    result = executeAssociateMulticastGroupWithFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            AssociateWirelessDeviceWithFuotaTaskRequest request) {
+
+        return associateWirelessDeviceWithFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            final AssociateWirelessDeviceWithFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithFuotaTaskRequest, AssociateWirelessDeviceWithFuotaTaskResult> asyncHandler) {
+        final AssociateWirelessDeviceWithFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateWirelessDeviceWithFuotaTaskResult>() {
+            @Override
+            public AssociateWirelessDeviceWithFuotaTaskResult call() throws Exception {
+                AssociateWirelessDeviceWithFuotaTaskResult result = null;
+
+                try {
+                    result = executeAssociateWirelessDeviceWithFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            AssociateWirelessDeviceWithMulticastGroupRequest request) {
+
+        return associateWirelessDeviceWithMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            final AssociateWirelessDeviceWithMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithMulticastGroupRequest, AssociateWirelessDeviceWithMulticastGroupResult> asyncHandler) {
+        final AssociateWirelessDeviceWithMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateWirelessDeviceWithMulticastGroupResult>() {
+            @Override
+            public AssociateWirelessDeviceWithMulticastGroupResult call() throws Exception {
+                AssociateWirelessDeviceWithMulticastGroupResult result = null;
+
+                try {
+                    result = executeAssociateWirelessDeviceWithMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWirelessDeviceWithThingResult> associateWirelessDeviceWithThingAsync(
             AssociateWirelessDeviceWithThingRequest request) {
 
@@ -216,6 +321,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(CancelMulticastGroupSessionRequest request) {
+
+        return cancelMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(final CancelMulticastGroupSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelMulticastGroupSessionRequest, CancelMulticastGroupSessionResult> asyncHandler) {
+        final CancelMulticastGroupSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelMulticastGroupSessionResult>() {
+            @Override
+            public CancelMulticastGroupSessionResult call() throws Exception {
+                CancelMulticastGroupSessionResult result = null;
+
+                try {
+                    result = executeCancelMulticastGroupSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDestinationResult> createDestinationAsync(CreateDestinationRequest request) {
 
         return createDestinationAsync(request, null);
@@ -266,6 +404,72 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeCreateDeviceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(CreateFuotaTaskRequest request) {
+
+        return createFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(final CreateFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFuotaTaskRequest, CreateFuotaTaskResult> asyncHandler) {
+        final CreateFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFuotaTaskResult>() {
+            @Override
+            public CreateFuotaTaskResult call() throws Exception {
+                CreateFuotaTaskResult result = null;
+
+                try {
+                    result = executeCreateFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(CreateMulticastGroupRequest request) {
+
+        return createMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(final CreateMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMulticastGroupRequest, CreateMulticastGroupResult> asyncHandler) {
+        final CreateMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMulticastGroupResult>() {
+            @Override
+            public CreateMulticastGroupResult call() throws Exception {
+                CreateMulticastGroupResult result = null;
+
+                try {
+                    result = executeCreateMulticastGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -515,6 +719,72 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(DeleteFuotaTaskRequest request) {
+
+        return deleteFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(final DeleteFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFuotaTaskRequest, DeleteFuotaTaskResult> asyncHandler) {
+        final DeleteFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFuotaTaskResult>() {
+            @Override
+            public DeleteFuotaTaskResult call() throws Exception {
+                DeleteFuotaTaskResult result = null;
+
+                try {
+                    result = executeDeleteFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest request) {
+
+        return deleteMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(final DeleteMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMulticastGroupRequest, DeleteMulticastGroupResult> asyncHandler) {
+        final DeleteMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMulticastGroupResult>() {
+            @Override
+            public DeleteMulticastGroupResult call() throws Exception {
+                DeleteMulticastGroupResult result = null;
+
+                try {
+                    result = executeDeleteMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteServiceProfileResult> deleteServiceProfileAsync(DeleteServiceProfileRequest request) {
 
         return deleteServiceProfileAsync(request, null);
@@ -717,6 +987,111 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            DisassociateMulticastGroupFromFuotaTaskRequest request) {
+
+        return disassociateMulticastGroupFromFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            final DisassociateMulticastGroupFromFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateMulticastGroupFromFuotaTaskRequest, DisassociateMulticastGroupFromFuotaTaskResult> asyncHandler) {
+        final DisassociateMulticastGroupFromFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateMulticastGroupFromFuotaTaskResult>() {
+            @Override
+            public DisassociateMulticastGroupFromFuotaTaskResult call() throws Exception {
+                DisassociateMulticastGroupFromFuotaTaskResult result = null;
+
+                try {
+                    result = executeDisassociateMulticastGroupFromFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            DisassociateWirelessDeviceFromFuotaTaskRequest request) {
+
+        return disassociateWirelessDeviceFromFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            final DisassociateWirelessDeviceFromFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromFuotaTaskRequest, DisassociateWirelessDeviceFromFuotaTaskResult> asyncHandler) {
+        final DisassociateWirelessDeviceFromFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateWirelessDeviceFromFuotaTaskResult>() {
+            @Override
+            public DisassociateWirelessDeviceFromFuotaTaskResult call() throws Exception {
+                DisassociateWirelessDeviceFromFuotaTaskResult result = null;
+
+                try {
+                    result = executeDisassociateWirelessDeviceFromFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            DisassociateWirelessDeviceFromMulticastGroupRequest request) {
+
+        return disassociateWirelessDeviceFromMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            final DisassociateWirelessDeviceFromMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromMulticastGroupRequest, DisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler) {
+        final DisassociateWirelessDeviceFromMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateWirelessDeviceFromMulticastGroupResult>() {
+            @Override
+            public DisassociateWirelessDeviceFromMulticastGroupResult call() throws Exception {
+                DisassociateWirelessDeviceFromMulticastGroupResult result = null;
+
+                try {
+                    result = executeDisassociateWirelessDeviceFromMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWirelessDeviceFromThingResult> disassociateWirelessDeviceFromThingAsync(
             DisassociateWirelessDeviceFromThingRequest request) {
 
@@ -888,6 +1263,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(GetFuotaTaskRequest request) {
+
+        return getFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(final GetFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFuotaTaskRequest, GetFuotaTaskResult> asyncHandler) {
+        final GetFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFuotaTaskResult>() {
+            @Override
+            public GetFuotaTaskResult call() throws Exception {
+                GetFuotaTaskResult result = null;
+
+                try {
+                    result = executeGetFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request) {
 
         return getLogLevelsByResourceTypesAsync(request, null);
@@ -921,6 +1329,72 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest request) {
+
+        return getMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(final GetMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMulticastGroupRequest, GetMulticastGroupResult> asyncHandler) {
+        final GetMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMulticastGroupResult>() {
+            @Override
+            public GetMulticastGroupResult call() throws Exception {
+                GetMulticastGroupResult result = null;
+
+                try {
+                    result = executeGetMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(GetMulticastGroupSessionRequest request) {
+
+        return getMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(final GetMulticastGroupSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMulticastGroupSessionRequest, GetMulticastGroupSessionResult> asyncHandler) {
+        final GetMulticastGroupSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMulticastGroupSessionResult>() {
+            @Override
+            public GetMulticastGroupSessionResult call() throws Exception {
+                GetMulticastGroupSessionResult result = null;
+
+                try {
+                    result = executeGetMulticastGroupSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request) {
 
         return getPartnerAccountAsync(request, null);
@@ -938,6 +1412,40 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetPartnerAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request) {
+
+        return getResourceEventConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(
+            final GetResourceEventConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceEventConfigurationRequest, GetResourceEventConfigurationResult> asyncHandler) {
+        final GetResourceEventConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceEventConfigurationResult>() {
+            @Override
+            public GetResourceEventConfigurationResult call() throws Exception {
+                GetResourceEventConfigurationResult result = null;
+
+                try {
+                    result = executeGetResourceEventConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1388,6 +1896,106 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest request) {
+
+        return listFuotaTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(final ListFuotaTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFuotaTasksRequest, ListFuotaTasksResult> asyncHandler) {
+        final ListFuotaTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFuotaTasksResult>() {
+            @Override
+            public ListFuotaTasksResult call() throws Exception {
+                ListFuotaTasksResult result = null;
+
+                try {
+                    result = executeListFuotaTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(ListMulticastGroupsRequest request) {
+
+        return listMulticastGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(final ListMulticastGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsRequest, ListMulticastGroupsResult> asyncHandler) {
+        final ListMulticastGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMulticastGroupsResult>() {
+            @Override
+            public ListMulticastGroupsResult call() throws Exception {
+                ListMulticastGroupsResult result = null;
+
+                try {
+                    result = executeListMulticastGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request) {
+
+        return listMulticastGroupsByFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(
+            final ListMulticastGroupsByFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsByFuotaTaskRequest, ListMulticastGroupsByFuotaTaskResult> asyncHandler) {
+        final ListMulticastGroupsByFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMulticastGroupsByFuotaTaskResult>() {
+            @Override
+            public ListMulticastGroupsByFuotaTaskResult call() throws Exception {
+                ListMulticastGroupsByFuotaTaskResult result = null;
+
+                try {
+                    result = executeListMulticastGroupsByFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPartnerAccountsResult> listPartnerAccountsAsync(ListPartnerAccountsRequest request) {
 
         return listPartnerAccountsAsync(request, null);
@@ -1687,6 +2295,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest request) {
+
+        return sendDataToMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(final SendDataToMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendDataToMulticastGroupRequest, SendDataToMulticastGroupResult> asyncHandler) {
+        final SendDataToMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendDataToMulticastGroupResult>() {
+            @Override
+            public SendDataToMulticastGroupResult call() throws Exception {
+                SendDataToMulticastGroupResult result = null;
+
+                try {
+                    result = executeSendDataToMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request) {
 
         return sendDataToWirelessDeviceAsync(request, null);
@@ -1704,6 +2345,142 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeSendDataToWirelessDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request) {
+
+        return startBulkAssociateWirelessDeviceWithMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            final StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest, StartBulkAssociateWirelessDeviceWithMulticastGroupResult> asyncHandler) {
+        final StartBulkAssociateWirelessDeviceWithMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBulkAssociateWirelessDeviceWithMulticastGroupResult>() {
+            @Override
+            public StartBulkAssociateWirelessDeviceWithMulticastGroupResult call() throws Exception {
+                StartBulkAssociateWirelessDeviceWithMulticastGroupResult result = null;
+
+                try {
+                    result = executeStartBulkAssociateWirelessDeviceWithMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request) {
+
+        return startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            final StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest, StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler) {
+        final StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult>() {
+            @Override
+            public StartBulkDisassociateWirelessDeviceFromMulticastGroupResult call() throws Exception {
+                StartBulkDisassociateWirelessDeviceFromMulticastGroupResult result = null;
+
+                try {
+                    result = executeStartBulkDisassociateWirelessDeviceFromMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(StartFuotaTaskRequest request) {
+
+        return startFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(final StartFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartFuotaTaskRequest, StartFuotaTaskResult> asyncHandler) {
+        final StartFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartFuotaTaskResult>() {
+            @Override
+            public StartFuotaTaskResult call() throws Exception {
+                StartFuotaTaskResult result = null;
+
+                try {
+                    result = executeStartFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(StartMulticastGroupSessionRequest request) {
+
+        return startMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(final StartMulticastGroupSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMulticastGroupSessionRequest, StartMulticastGroupSessionResult> asyncHandler) {
+        final StartMulticastGroupSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMulticastGroupSessionResult>() {
+            @Override
+            public StartMulticastGroupSessionResult call() throws Exception {
+                StartMulticastGroupSessionResult result = null;
+
+                try {
+                    result = executeStartMulticastGroupSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1852,6 +2629,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(UpdateFuotaTaskRequest request) {
+
+        return updateFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(final UpdateFuotaTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFuotaTaskRequest, UpdateFuotaTaskResult> asyncHandler) {
+        final UpdateFuotaTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFuotaTaskResult>() {
+            @Override
+            public UpdateFuotaTaskResult call() throws Exception {
+                UpdateFuotaTaskResult result = null;
+
+                try {
+                    result = executeUpdateFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request) {
 
         return updateLogLevelsByResourceTypesAsync(request, null);
@@ -1886,6 +2696,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest request) {
+
+        return updateMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(final UpdateMulticastGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMulticastGroupRequest, UpdateMulticastGroupResult> asyncHandler) {
+        final UpdateMulticastGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMulticastGroupResult>() {
+            @Override
+            public UpdateMulticastGroupResult call() throws Exception {
+                UpdateMulticastGroupResult result = null;
+
+                try {
+                    result = executeUpdateMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest request) {
 
         return updatePartnerAccountAsync(request, null);
@@ -1903,6 +2746,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeUpdatePartnerAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            UpdateResourceEventConfigurationRequest request) {
+
+        return updateResourceEventConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            final UpdateResourceEventConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourceEventConfigurationRequest, UpdateResourceEventConfigurationResult> asyncHandler) {
+        final UpdateResourceEventConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourceEventConfigurationResult>() {
+            @Override
+            public UpdateResourceEventConfigurationResult call() throws Exception {
+                UpdateResourceEventConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateResourceEventConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

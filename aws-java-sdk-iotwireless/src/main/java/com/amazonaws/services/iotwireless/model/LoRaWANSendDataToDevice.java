@@ -28,20 +28,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LoRaWANSendDataToDevice implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * The Fport value.
-     * </p>
-     */
     private Integer fPort;
 
     /**
-     * <p>
-     * The Fport value.
-     * </p>
-     * 
      * @param fPort
-     *        The Fport value.
      */
 
     public void setFPort(Integer fPort) {
@@ -49,11 +39,7 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * The Fport value.
-     * </p>
-     * 
-     * @return The Fport value.
+     * @return
      */
 
     public Integer getFPort() {
@@ -61,12 +47,7 @@ public class LoRaWANSendDataToDevice implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * The Fport value.
-     * </p>
-     * 
      * @param fPort
-     *        The Fport value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

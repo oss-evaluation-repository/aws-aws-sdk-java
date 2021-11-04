@@ -43,6 +43,12 @@ public class WirelessDeviceStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoRaWAN").build();
     private static final MarshallingInfo<StructuredPojo> SIDEWALK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sidewalk").build();
+    private static final MarshallingInfo<String> FUOTADEVICESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FuotaDeviceStatus").build();
+    private static final MarshallingInfo<String> MULTICASTDEVICESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MulticastDeviceStatus").build();
+    private static final MarshallingInfo<Integer> MCGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("McGroupId").build();
 
     private static final WirelessDeviceStatisticsMarshaller instance = new WirelessDeviceStatisticsMarshaller();
 
@@ -68,6 +74,9 @@ public class WirelessDeviceStatisticsMarshaller {
             protocolMarshaller.marshall(wirelessDeviceStatistics.getLastUplinkReceivedAt(), LASTUPLINKRECEIVEDAT_BINDING);
             protocolMarshaller.marshall(wirelessDeviceStatistics.getLoRaWAN(), LORAWAN_BINDING);
             protocolMarshaller.marshall(wirelessDeviceStatistics.getSidewalk(), SIDEWALK_BINDING);
+            protocolMarshaller.marshall(wirelessDeviceStatistics.getFuotaDeviceStatus(), FUOTADEVICESTATUS_BINDING);
+            protocolMarshaller.marshall(wirelessDeviceStatistics.getMulticastDeviceStatus(), MULTICASTDEVICESTATUS_BINDING);
+            protocolMarshaller.marshall(wirelessDeviceStatistics.getMcGroupId(), MCGROUPID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

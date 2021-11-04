@@ -43,6 +43,51 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            AssociateMulticastGroupWithFuotaTaskRequest request) {
+
+        return associateMulticastGroupWithFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMulticastGroupWithFuotaTaskResult> associateMulticastGroupWithFuotaTaskAsync(
+            AssociateMulticastGroupWithFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateMulticastGroupWithFuotaTaskRequest, AssociateMulticastGroupWithFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            AssociateWirelessDeviceWithFuotaTaskRequest request) {
+
+        return associateWirelessDeviceWithFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithFuotaTaskResult> associateWirelessDeviceWithFuotaTaskAsync(
+            AssociateWirelessDeviceWithFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithFuotaTaskRequest, AssociateWirelessDeviceWithFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            AssociateWirelessDeviceWithMulticastGroupRequest request) {
+
+        return associateWirelessDeviceWithMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWirelessDeviceWithMulticastGroupResult> associateWirelessDeviceWithMulticastGroupAsync(
+            AssociateWirelessDeviceWithMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateWirelessDeviceWithMulticastGroupRequest, AssociateWirelessDeviceWithMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWirelessDeviceWithThingResult> associateWirelessDeviceWithThingAsync(
             AssociateWirelessDeviceWithThingRequest request) {
 
@@ -88,6 +133,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(CancelMulticastGroupSessionRequest request) {
+
+        return cancelMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMulticastGroupSessionResult> cancelMulticastGroupSessionAsync(CancelMulticastGroupSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelMulticastGroupSessionRequest, CancelMulticastGroupSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDestinationResult> createDestinationAsync(CreateDestinationRequest request) {
 
         return createDestinationAsync(request, null);
@@ -109,6 +167,32 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<CreateDeviceProfileResult> createDeviceProfileAsync(CreateDeviceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDeviceProfileRequest, CreateDeviceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(CreateFuotaTaskRequest request) {
+
+        return createFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFuotaTaskResult> createFuotaTaskAsync(CreateFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFuotaTaskRequest, CreateFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(CreateMulticastGroupRequest request) {
+
+        return createMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMulticastGroupResult> createMulticastGroupAsync(CreateMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMulticastGroupRequest, CreateMulticastGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -207,6 +291,32 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(DeleteFuotaTaskRequest request) {
+
+        return deleteFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFuotaTaskResult> deleteFuotaTaskAsync(DeleteFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFuotaTaskRequest, DeleteFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest request) {
+
+        return deleteMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMulticastGroupRequest, DeleteMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteServiceProfileResult> deleteServiceProfileAsync(DeleteServiceProfileRequest request) {
 
         return deleteServiceProfileAsync(request, null);
@@ -289,6 +399,51 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            DisassociateMulticastGroupFromFuotaTaskRequest request) {
+
+        return disassociateMulticastGroupFromFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateMulticastGroupFromFuotaTaskResult> disassociateMulticastGroupFromFuotaTaskAsync(
+            DisassociateMulticastGroupFromFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateMulticastGroupFromFuotaTaskRequest, DisassociateMulticastGroupFromFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            DisassociateWirelessDeviceFromFuotaTaskRequest request) {
+
+        return disassociateWirelessDeviceFromFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromFuotaTaskResult> disassociateWirelessDeviceFromFuotaTaskAsync(
+            DisassociateWirelessDeviceFromFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromFuotaTaskRequest, DisassociateWirelessDeviceFromFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            DisassociateWirelessDeviceFromMulticastGroupRequest request) {
+
+        return disassociateWirelessDeviceFromMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWirelessDeviceFromMulticastGroupResult> disassociateWirelessDeviceFromMulticastGroupAsync(
+            DisassociateWirelessDeviceFromMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWirelessDeviceFromMulticastGroupRequest, DisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWirelessDeviceFromThingResult> disassociateWirelessDeviceFromThingAsync(
             DisassociateWirelessDeviceFromThingRequest request) {
 
@@ -360,6 +515,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(GetFuotaTaskRequest request) {
+
+        return getFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFuotaTaskResult> getFuotaTaskAsync(GetFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFuotaTaskRequest, GetFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request) {
 
         return getLogLevelsByResourceTypesAsync(request, null);
@@ -373,6 +541,32 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest request) {
+
+        return getMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMulticastGroupRequest, GetMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(GetMulticastGroupSessionRequest request) {
+
+        return getMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMulticastGroupSessionResult> getMulticastGroupSessionAsync(GetMulticastGroupSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMulticastGroupSessionRequest, GetMulticastGroupSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request) {
 
         return getPartnerAccountAsync(request, null);
@@ -381,6 +575,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPartnerAccountRequest, GetPartnerAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request) {
+
+        return getResourceEventConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEventConfigurationResult> getResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourceEventConfigurationRequest, GetResourceEventConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -559,6 +766,45 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest request) {
+
+        return listFuotaTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFuotaTasksRequest, ListFuotaTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(ListMulticastGroupsRequest request) {
+
+        return listMulticastGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsResult> listMulticastGroupsAsync(ListMulticastGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsRequest, ListMulticastGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request) {
+
+        return listMulticastGroupsByFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsByFuotaTaskRequest, ListMulticastGroupsByFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPartnerAccountsResult> listPartnerAccountsAsync(ListPartnerAccountsRequest request) {
 
         return listPartnerAccountsAsync(request, null);
@@ -678,6 +924,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest request) {
+
+        return sendDataToMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDataToMulticastGroupResult> sendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendDataToMulticastGroupRequest, SendDataToMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request) {
 
         return sendDataToWirelessDeviceAsync(request, null);
@@ -686,6 +945,62 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<SendDataToWirelessDeviceRequest, SendDataToWirelessDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request) {
+
+        return startBulkAssociateWirelessDeviceWithMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkAssociateWirelessDeviceWithMulticastGroupResult> startBulkAssociateWirelessDeviceWithMulticastGroupAsync(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest, StartBulkAssociateWirelessDeviceWithMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request) {
+
+        return startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> startBulkDisassociateWirelessDeviceFromMulticastGroupAsync(
+            StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest, StartBulkDisassociateWirelessDeviceFromMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(StartFuotaTaskRequest request) {
+
+        return startFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFuotaTaskResult> startFuotaTaskAsync(StartFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartFuotaTaskRequest, StartFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(StartMulticastGroupSessionRequest request) {
+
+        return startMulticastGroupSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMulticastGroupSessionResult> startMulticastGroupSessionAsync(StartMulticastGroupSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMulticastGroupSessionRequest, StartMulticastGroupSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -743,6 +1058,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(UpdateFuotaTaskRequest request) {
+
+        return updateFuotaTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFuotaTaskResult> updateFuotaTaskAsync(UpdateFuotaTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFuotaTaskRequest, UpdateFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request) {
 
         return updateLogLevelsByResourceTypesAsync(request, null);
@@ -756,6 +1084,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest request) {
+
+        return updateMulticastGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMulticastGroupRequest, UpdateMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest request) {
 
         return updatePartnerAccountAsync(request, null);
@@ -764,6 +1105,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<UpdatePartnerAccountResult> updatePartnerAccountAsync(UpdatePartnerAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePartnerAccountRequest, UpdatePartnerAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            UpdateResourceEventConfigurationRequest request) {
+
+        return updateResourceEventConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
+            UpdateResourceEventConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceEventConfigurationRequest, UpdateResourceEventConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
