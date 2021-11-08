@@ -33,6 +33,8 @@ public class TrafficRoutingConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WaitIntervalInSeconds").build();
     private static final MarshallingInfo<StructuredPojo> CANARYSIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CanarySize").build();
+    private static final MarshallingInfo<StructuredPojo> LINEARSTEPSIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LinearStepSize").build();
 
     private static final TrafficRoutingConfigMarshaller instance = new TrafficRoutingConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class TrafficRoutingConfigMarshaller {
             protocolMarshaller.marshall(trafficRoutingConfig.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(trafficRoutingConfig.getWaitIntervalInSeconds(), WAITINTERVALINSECONDS_BINDING);
             protocolMarshaller.marshall(trafficRoutingConfig.getCanarySize(), CANARYSIZE_BINDING);
+            protocolMarshaller.marshall(trafficRoutingConfig.getLinearStepSize(), LINEARSTEPSIZE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

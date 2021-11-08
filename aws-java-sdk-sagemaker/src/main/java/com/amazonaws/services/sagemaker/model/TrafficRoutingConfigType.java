@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TrafficRoutingConfigType {
 
     ALL_AT_ONCE("ALL_AT_ONCE"),
-    CANARY("CANARY");
+    CANARY("CANARY"),
+    LINEAR("LINEAR");
 
     private String value;
 

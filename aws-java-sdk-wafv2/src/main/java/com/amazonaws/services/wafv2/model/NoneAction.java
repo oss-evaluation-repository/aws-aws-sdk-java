@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies that WAF should do nothing. This is generally used to try out a rule without performing any actions. You
- * set the <code>OverrideAction</code> on the <a>Rule</a>.
+ * Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting on a <a>Rule</a> when
+ * the rule uses a rule group reference statement.
  * </p>
  * <p>
  * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL

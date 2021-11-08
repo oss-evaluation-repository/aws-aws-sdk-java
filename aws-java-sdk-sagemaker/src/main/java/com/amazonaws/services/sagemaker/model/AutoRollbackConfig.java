@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Currently, the <code>AutoRollbackConfig</code> API is not supported.
+ * Automatic rollback configuration for handling endpoint deployment failures and recovery.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoRollbackConfig" target="_top">AWS API
@@ -28,13 +28,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutoRollbackConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms
+     * are tripped during a deployment, SageMaker rolls back the deployment.
+     * </p>
+     */
     private java.util.List<Alarm> alarms;
 
     /**
-     * <p/>
+     * <p>
+     * List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms
+     * are tripped during a deployment, SageMaker rolls back the deployment.
+     * </p>
      * 
-     * @return
+     * @return List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any
+     *         alarms are tripped during a deployment, SageMaker rolls back the deployment.
      */
 
     public java.util.List<Alarm> getAlarms() {
@@ -42,9 +51,14 @@ public class AutoRollbackConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms
+     * are tripped during a deployment, SageMaker rolls back the deployment.
+     * </p>
      * 
      * @param alarms
+     *        List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any
+     *        alarms are tripped during a deployment, SageMaker rolls back the deployment.
      */
 
     public void setAlarms(java.util.Collection<Alarm> alarms) {
@@ -57,7 +71,10 @@ public class AutoRollbackConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms
+     * are tripped during a deployment, SageMaker rolls back the deployment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAlarms(java.util.Collection)} or {@link #withAlarms(java.util.Collection)} if you want to override the
@@ -65,6 +82,8 @@ public class AutoRollbackConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param alarms
+     *        List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any
+     *        alarms are tripped during a deployment, SageMaker rolls back the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,9 +98,14 @@ public class AutoRollbackConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms
+     * are tripped during a deployment, SageMaker rolls back the deployment.
+     * </p>
      * 
      * @param alarms
+     *        List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any
+     *        alarms are tripped during a deployment, SageMaker rolls back the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

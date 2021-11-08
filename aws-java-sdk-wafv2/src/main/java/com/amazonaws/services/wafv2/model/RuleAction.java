@@ -47,6 +47,12 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CountAction count;
+    /**
+     * <p>
+     * Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     * </p>
+     */
+    private CaptchaAction captcha;
 
     /**
      * <p>
@@ -169,6 +175,46 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     * </p>
+     * 
+     * @param captcha
+     *        Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     */
+
+    public void setCaptcha(CaptchaAction captcha) {
+        this.captcha = captcha;
+    }
+
+    /**
+     * <p>
+     * Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     * </p>
+     * 
+     * @return Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     */
+
+    public CaptchaAction getCaptcha() {
+        return this.captcha;
+    }
+
+    /**
+     * <p>
+     * Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     * </p>
+     * 
+     * @param captcha
+     *        Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleAction withCaptcha(CaptchaAction captcha) {
+        setCaptcha(captcha);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         if (getAllow() != null)
             sb.append("Allow: ").append(getAllow()).append(",");
         if (getCount() != null)
-            sb.append("Count: ").append(getCount());
+            sb.append("Count: ").append(getCount()).append(",");
+        if (getCaptcha() != null)
+            sb.append("Captcha: ").append(getCaptcha());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +260,10 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getCaptcha() == null ^ this.getCaptcha() == null)
+            return false;
+        if (other.getCaptcha() != null && other.getCaptcha().equals(this.getCaptcha()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +275,7 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlock() == null) ? 0 : getBlock().hashCode());
         hashCode = prime * hashCode + ((getAllow() == null) ? 0 : getAllow().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getCaptcha() == null) ? 0 : getCaptcha().hashCode());
         return hashCode;
     }
 

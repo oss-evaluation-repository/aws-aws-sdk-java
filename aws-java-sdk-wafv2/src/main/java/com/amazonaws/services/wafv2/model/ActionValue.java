@@ -22,7 +22,9 @@ public enum ActionValue {
 
     ALLOW("ALLOW"),
     BLOCK("BLOCK"),
-    COUNT("COUNT");
+    COUNT("COUNT"),
+    CAPTCHA("CAPTCHA"),
+    EXCLUDED_AS_COUNT("EXCLUDED_AS_COUNT");
 
     private String value;
 

@@ -104,6 +104,14 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Map<String, CustomResponseBody> customResponseBodies;
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     * <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>CaptchaConfig</code>.
+     * </p>
+     */
+    private CaptchaConfig captchaConfig;
 
     /**
      * <p>
@@ -756,6 +764,58 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     * <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>CaptchaConfig</code>.
+     * </p>
+     * 
+     * @param captchaConfig
+     *        Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     *        <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *        <code>CaptchaConfig</code>.
+     */
+
+    public void setCaptchaConfig(CaptchaConfig captchaConfig) {
+        this.captchaConfig = captchaConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     * <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>CaptchaConfig</code>.
+     * </p>
+     * 
+     * @return Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     *         <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *         <code>CaptchaConfig</code>.
+     */
+
+    public CaptchaConfig getCaptchaConfig() {
+        return this.captchaConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     * <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     * <code>CaptchaConfig</code>.
+     * </p>
+     * 
+     * @param captchaConfig
+     *        Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own
+     *        <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for
+     *        <code>CaptchaConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withCaptchaConfig(CaptchaConfig captchaConfig) {
+        setCaptchaConfig(captchaConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -782,7 +842,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCustomResponseBodies() != null)
-            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies());
+            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies()).append(",");
+        if (getCaptchaConfig() != null)
+            sb.append("CaptchaConfig: ").append(getCaptchaConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -829,6 +891,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
             return false;
+        if (other.getCaptchaConfig() == null ^ this.getCaptchaConfig() == null)
+            return false;
+        if (other.getCaptchaConfig() != null && other.getCaptchaConfig().equals(this.getCaptchaConfig()) == false)
+            return false;
         return true;
     }
 
@@ -845,6 +911,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
+        hashCode = prime * hashCode + ((getCaptchaConfig() == null) ? 0 : getCaptchaConfig().hashCode());
         return hashCode;
     }
 

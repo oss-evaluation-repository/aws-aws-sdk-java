@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -729,7 +729,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "AttendeeId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
         "endpointDiscoveryId" : false,
@@ -869,7 +869,7 @@
       "membersAsMap" : {
         "AttendeeId" : {
           "c2jName" : "AttendeeId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
           "endpointDiscoveryId" : false,
@@ -1449,7 +1449,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>",
         "endpointDiscoveryId" : false,
@@ -1827,7 +1827,7 @@
         },
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>",
           "endpointDiscoveryId" : false,
@@ -3065,7 +3065,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The unique ID of the meeting.</p>",
         "endpointDiscoveryId" : false,
@@ -3275,7 +3275,7 @@
         },
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The unique ID of the meeting.</p>",
           "endpointDiscoveryId" : false,
@@ -3829,14 +3829,14 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "MediaRegion",
-        "c2jShape" : "String",
+        "c2jShape" : "MediaRegion",
         "deprecated" : false,
-        "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
+        "documentation" : "<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMediaRegion",
-        "getterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@return The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
+        "getterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@return The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
         "getterMethodName" : "getMediaRegion",
         "getterModel" : {
           "returnType" : "String",
@@ -3870,7 +3870,7 @@
         "marshallingType" : "STRING",
         "name" : "MediaRegion",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
+        "setterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
         "setterMethodName" : "setMediaRegion",
         "setterModel" : {
           "timestampFormat" : null,
@@ -3885,13 +3885,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "mediaRegion",
           "variableType" : "String",
-          "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
+          "documentation" : "<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4247,14 +4247,14 @@
         },
         "MediaRegion" : {
           "c2jName" : "MediaRegion",
-          "c2jShape" : "String",
+          "c2jShape" : "MediaRegion",
           "deprecated" : false,
-          "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
+          "documentation" : "<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMediaRegion",
-          "getterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@return The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
+          "getterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@return The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
           "getterMethodName" : "getMediaRegion",
           "getterModel" : {
             "returnType" : "String",
@@ -4288,7 +4288,7 @@
           "marshallingType" : "STRING",
           "name" : "MediaRegion",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
+          "setterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .*/",
           "setterMethodName" : "setMediaRegion",
           "setterModel" : {
             "timestampFormat" : null,
@@ -4303,13 +4303,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>\n@param mediaRegion The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "mediaRegion",
             "variableType" : "String",
-            "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
+            "documentation" : "<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4757,14 +4757,14 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "MediaRegion",
-        "c2jShape" : "String",
+        "c2jShape" : "MediaRegion",
         "deprecated" : false,
-        "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>",
+        "documentation" : "<p>The Region in which to create the meeting.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMediaRegion",
-        "getterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@return The Region in which to create the meeting. Default: <code>us-east-1</code>.*/",
+        "getterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@return The Region in which to create the meeting.*/",
         "getterMethodName" : "getMediaRegion",
         "getterModel" : {
           "returnType" : "String",
@@ -4798,7 +4798,7 @@
         "marshallingType" : "STRING",
         "name" : "MediaRegion",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.*/",
+        "setterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.*/",
         "setterMethodName" : "setMediaRegion",
         "setterModel" : {
           "timestampFormat" : null,
@@ -4813,13 +4813,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "mediaRegion",
           "variableType" : "String",
-          "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>",
+          "documentation" : "<p>The Region in which to create the meeting.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5482,14 +5482,14 @@
         },
         "MediaRegion" : {
           "c2jName" : "MediaRegion",
-          "c2jShape" : "String",
+          "c2jShape" : "MediaRegion",
           "deprecated" : false,
-          "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>",
+          "documentation" : "<p>The Region in which to create the meeting.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMediaRegion",
-          "getterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@return The Region in which to create the meeting. Default: <code>us-east-1</code>.*/",
+          "getterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@return The Region in which to create the meeting.*/",
           "getterMethodName" : "getMediaRegion",
           "getterModel" : {
             "returnType" : "String",
@@ -5523,7 +5523,7 @@
           "marshallingType" : "STRING",
           "name" : "MediaRegion",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.*/",
+          "setterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.*/",
           "setterMethodName" : "setMediaRegion",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5538,13 +5538,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>\n@param mediaRegion The Region in which to create the meeting. Default: <code>us-east-1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Region in which to create the meeting.</p>\n@param mediaRegion The Region in which to create the meeting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "mediaRegion",
             "variableType" : "String",
-            "documentation" : "<p>The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>",
+            "documentation" : "<p>The Region in which to create the meeting.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6537,7 +6537,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
         "endpointDiscoveryId" : false,
@@ -6606,7 +6606,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "AttendeeId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
         "endpointDiscoveryId" : false,
@@ -6677,7 +6677,7 @@
       "membersAsMap" : {
         "AttendeeId" : {
           "c2jName" : "AttendeeId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
           "endpointDiscoveryId" : false,
@@ -6747,7 +6747,7 @@
         },
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
           "endpointDiscoveryId" : false,
@@ -6908,7 +6908,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
         "endpointDiscoveryId" : false,
@@ -6979,7 +6979,7 @@
       "membersAsMap" : {
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
           "endpointDiscoveryId" : false,
@@ -8940,7 +8940,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
         "endpointDiscoveryId" : false,
@@ -9009,7 +9009,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "AttendeeId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
         "endpointDiscoveryId" : false,
@@ -9080,7 +9080,7 @@
       "membersAsMap" : {
         "AttendeeId" : {
           "c2jName" : "AttendeeId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK attendee ID.</p>",
           "endpointDiscoveryId" : false,
@@ -9150,7 +9150,7 @@
         },
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
           "endpointDiscoveryId" : false,
@@ -9451,7 +9451,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
         "endpointDiscoveryId" : false,
@@ -9522,7 +9522,7 @@
       "membersAsMap" : {
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
           "endpointDiscoveryId" : false,
@@ -10143,7 +10143,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
         "endpointDiscoveryId" : false,
@@ -10422,7 +10422,7 @@
         },
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Chime SDK meeting ID.</p>",
           "endpointDiscoveryId" : false,
@@ -12457,7 +12457,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "MediaRegion",
-        "c2jShape" : "String",
+        "c2jShape" : "MediaRegion",
         "deprecated" : false,
         "documentation" : "<p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -12737,7 +12737,7 @@
         },
         "MediaRegion" : {
           "c2jName" : "MediaRegion",
-          "c2jShape" : "String",
+          "c2jShape" : "MediaRegion",
           "deprecated" : false,
           "documentation" : "<p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -14238,7 +14238,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The unique ID of the meeting being transcribed.</p>",
         "endpointDiscoveryId" : false,
@@ -14378,7 +14378,7 @@
       "membersAsMap" : {
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The unique ID of the meeting being transcribed.</p>",
           "endpointDiscoveryId" : false,
@@ -14609,7 +14609,7 @@
       },
       "members" : [ {
         "c2jName" : "MeetingId",
-        "c2jShape" : "String",
+        "c2jShape" : "GuidString",
         "deprecated" : false,
         "documentation" : "<p>The unique ID of the meeting for which you stop transcription.</p>",
         "endpointDiscoveryId" : false,
@@ -14680,7 +14680,7 @@
       "membersAsMap" : {
         "MeetingId" : {
           "c2jName" : "MeetingId",
-          "c2jShape" : "String",
+          "c2jShape" : "GuidString",
           "deprecated" : false,
           "documentation" : "<p>The unique ID of the meeting for which you stop transcription.</p>",
           "endpointDiscoveryId" : false,

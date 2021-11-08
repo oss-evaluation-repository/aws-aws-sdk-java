@@ -59,10 +59,18 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<VariantProperty> excludeRetainedVariantProperties;
     /**
      * <p>
-     * The deployment configuration for the endpoint to be updated.
+     * The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     * configurations.
      * </p>
      */
     private DeploymentConfig deploymentConfig;
+    /**
+     * <p>
+     * Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is
+     * not reused).
+     * </p>
+     */
+    private Boolean retainDeploymentConfig;
 
     /**
      * <p>
@@ -333,11 +341,13 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The deployment configuration for the endpoint to be updated.
+     * The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     * configurations.
      * </p>
      * 
      * @param deploymentConfig
-     *        The deployment configuration for the endpoint to be updated.
+     *        The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     *        configurations.
      */
 
     public void setDeploymentConfig(DeploymentConfig deploymentConfig) {
@@ -346,10 +356,12 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The deployment configuration for the endpoint to be updated.
+     * The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     * configurations.
      * </p>
      * 
-     * @return The deployment configuration for the endpoint to be updated.
+     * @return The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     *         configurations.
      */
 
     public DeploymentConfig getDeploymentConfig() {
@@ -358,17 +370,79 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The deployment configuration for the endpoint to be updated.
+     * The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     * configurations.
      * </p>
      * 
      * @param deploymentConfig
-     *        The deployment configuration for the endpoint to be updated.
+     *        The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+     *        configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateEndpointRequest withDeploymentConfig(DeploymentConfig deploymentConfig) {
         setDeploymentConfig(deploymentConfig);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is
+     * not reused).
+     * </p>
+     * 
+     * @param retainDeploymentConfig
+     *        Specifies whether to reuse the last deployment configuration. The default value is false (the
+     *        configuration is not reused).
+     */
+
+    public void setRetainDeploymentConfig(Boolean retainDeploymentConfig) {
+        this.retainDeploymentConfig = retainDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is
+     * not reused).
+     * </p>
+     * 
+     * @return Specifies whether to reuse the last deployment configuration. The default value is false (the
+     *         configuration is not reused).
+     */
+
+    public Boolean getRetainDeploymentConfig() {
+        return this.retainDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is
+     * not reused).
+     * </p>
+     * 
+     * @param retainDeploymentConfig
+     *        Specifies whether to reuse the last deployment configuration. The default value is false (the
+     *        configuration is not reused).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointRequest withRetainDeploymentConfig(Boolean retainDeploymentConfig) {
+        setRetainDeploymentConfig(retainDeploymentConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is
+     * not reused).
+     * </p>
+     * 
+     * @return Specifies whether to reuse the last deployment configuration. The default value is false (the
+     *         configuration is not reused).
+     */
+
+    public Boolean isRetainDeploymentConfig() {
+        return this.retainDeploymentConfig;
     }
 
     /**
@@ -392,7 +466,9 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getExcludeRetainedVariantProperties() != null)
             sb.append("ExcludeRetainedVariantProperties: ").append(getExcludeRetainedVariantProperties()).append(",");
         if (getDeploymentConfig() != null)
-            sb.append("DeploymentConfig: ").append(getDeploymentConfig());
+            sb.append("DeploymentConfig: ").append(getDeploymentConfig()).append(",");
+        if (getRetainDeploymentConfig() != null)
+            sb.append("RetainDeploymentConfig: ").append(getRetainDeploymentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -428,6 +504,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDeploymentConfig() != null && other.getDeploymentConfig().equals(this.getDeploymentConfig()) == false)
             return false;
+        if (other.getRetainDeploymentConfig() == null ^ this.getRetainDeploymentConfig() == null)
+            return false;
+        if (other.getRetainDeploymentConfig() != null && other.getRetainDeploymentConfig().equals(this.getRetainDeploymentConfig()) == false)
+            return false;
         return true;
     }
 
@@ -441,6 +521,7 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getRetainAllVariantProperties() == null) ? 0 : getRetainAllVariantProperties().hashCode());
         hashCode = prime * hashCode + ((getExcludeRetainedVariantProperties() == null) ? 0 : getExcludeRetainedVariantProperties().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfig() == null) ? 0 : getDeploymentConfig().hashCode());
+        hashCode = prime * hashCode + ((getRetainDeploymentConfig() == null) ? 0 : getRetainDeploymentConfig().hashCode());
         return hashCode;
     }
 

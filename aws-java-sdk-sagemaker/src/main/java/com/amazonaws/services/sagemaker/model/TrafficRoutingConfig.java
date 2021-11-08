@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Currently, the <code>TrafficRoutingConfig</code> API is not supported.
+ * Defines the traffic routing strategy during an endpoint deployment to shift traffic from the old fleet to the new
+ * fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrafficRoutingConfig" target="_top">AWS API
@@ -28,17 +29,93 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TrafficRoutingConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Traffic routing strategy type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which
+     * is a small portion of the traffic. The second step is the remainder of the traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String type;
-    /** <p/> */
+    /**
+     * <p>
+     * The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
+     * </p>
+     */
     private Integer waitIntervalInSeconds;
-    /** <p/> */
+    /**
+     * <p>
+     * Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than
+     * or equal to 50% of the variant's total instance count.
+     * </p>
+     */
     private CapacitySize canarySize;
+    /**
+     * <p>
+     * Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the
+     * variant's total instance count.
+     * </p>
+     */
+    private CapacitySize linearStepSize;
 
     /**
-     * <p/>
+     * <p>
+     * Traffic routing strategy type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which
+     * is a small portion of the traffic. The second step is the remainder of the traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
+     *        Traffic routing strategy type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary,
+     *        which is a small portion of the traffic. The second step is the remainder of the traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     *        </p>
+     *        </li>
      * @see TrafficRoutingConfigType
      */
 
@@ -47,9 +124,46 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Traffic routing strategy type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which
+     * is a small portion of the traffic. The second step is the remainder of the traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return
+     * @return Traffic routing strategy type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary,
+     *         which is a small portion of the traffic. The second step is the remainder of the traffic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     *         </p>
+     *         </li>
      * @see TrafficRoutingConfigType
      */
 
@@ -58,9 +172,47 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Traffic routing strategy type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which
+     * is a small portion of the traffic. The second step is the remainder of the traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
+     *        Traffic routing strategy type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary,
+     *        which is a small portion of the traffic. The second step is the remainder of the traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficRoutingConfigType
      */
@@ -71,9 +223,47 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Traffic routing strategy type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which
+     * is a small portion of the traffic. The second step is the remainder of the traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
+     *        Traffic routing strategy type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary,
+     *        which is a small portion of the traffic. The second step is the remainder of the traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficRoutingConfigType
      */
@@ -84,9 +274,12 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
+     * </p>
      * 
      * @param waitIntervalInSeconds
+     *        The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
      */
 
     public void setWaitIntervalInSeconds(Integer waitIntervalInSeconds) {
@@ -94,9 +287,11 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
+     * </p>
      * 
-     * @return
+     * @return The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
      */
 
     public Integer getWaitIntervalInSeconds() {
@@ -104,9 +299,12 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
+     * </p>
      * 
      * @param waitIntervalInSeconds
+     *        The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,9 +314,14 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than
+     * or equal to 50% of the variant's total instance count.
+     * </p>
      * 
      * @param canarySize
+     *        Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be
+     *        less than or equal to 50% of the variant's total instance count.
      */
 
     public void setCanarySize(CapacitySize canarySize) {
@@ -126,9 +329,13 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than
+     * or equal to 50% of the variant's total instance count.
+     * </p>
      * 
-     * @return
+     * @return Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be
+     *         less than or equal to 50% of the variant's total instance count.
      */
 
     public CapacitySize getCanarySize() {
@@ -136,14 +343,65 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than
+     * or equal to 50% of the variant's total instance count.
+     * </p>
      * 
      * @param canarySize
+     *        Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be
+     *        less than or equal to 50% of the variant's total instance count.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TrafficRoutingConfig withCanarySize(CapacitySize canarySize) {
         setCanarySize(canarySize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the
+     * variant's total instance count.
+     * </p>
+     * 
+     * @param linearStepSize
+     *        Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50%
+     *        of the variant's total instance count.
+     */
+
+    public void setLinearStepSize(CapacitySize linearStepSize) {
+        this.linearStepSize = linearStepSize;
+    }
+
+    /**
+     * <p>
+     * Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the
+     * variant's total instance count.
+     * </p>
+     * 
+     * @return Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50%
+     *         of the variant's total instance count.
+     */
+
+    public CapacitySize getLinearStepSize() {
+        return this.linearStepSize;
+    }
+
+    /**
+     * <p>
+     * Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the
+     * variant's total instance count.
+     * </p>
+     * 
+     * @param linearStepSize
+     *        Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50%
+     *        of the variant's total instance count.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrafficRoutingConfig withLinearStepSize(CapacitySize linearStepSize) {
+        setLinearStepSize(linearStepSize);
         return this;
     }
 
@@ -164,7 +422,9 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
         if (getWaitIntervalInSeconds() != null)
             sb.append("WaitIntervalInSeconds: ").append(getWaitIntervalInSeconds()).append(",");
         if (getCanarySize() != null)
-            sb.append("CanarySize: ").append(getCanarySize());
+            sb.append("CanarySize: ").append(getCanarySize()).append(",");
+        if (getLinearStepSize() != null)
+            sb.append("LinearStepSize: ").append(getLinearStepSize());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +451,10 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
             return false;
         if (other.getCanarySize() != null && other.getCanarySize().equals(this.getCanarySize()) == false)
             return false;
+        if (other.getLinearStepSize() == null ^ this.getLinearStepSize() == null)
+            return false;
+        if (other.getLinearStepSize() != null && other.getLinearStepSize().equals(this.getLinearStepSize()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +466,7 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getWaitIntervalInSeconds() == null) ? 0 : getWaitIntervalInSeconds().hashCode());
         hashCode = prime * hashCode + ((getCanarySize() == null) ? 0 : getCanarySize().hashCode());
+        hashCode = prime * hashCode + ((getLinearStepSize() == null) ? 0 : getLinearStepSize().hashCode());
         return hashCode;
     }
 

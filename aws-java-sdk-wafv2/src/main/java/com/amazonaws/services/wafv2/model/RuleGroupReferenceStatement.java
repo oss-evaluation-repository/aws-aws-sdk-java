@@ -41,8 +41,9 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
     private String aRN;
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
-     * this rule statement.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      */
     private java.util.List<ExcludedRule> excludedRules;
@@ -89,12 +90,14 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
-     * this rule statement.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
-     * @return The names of rules that are in the referenced rule group, but that you want WAF to exclude from
-     *         processing for this rule statement.
+     * @return The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *         rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *         useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      */
 
     public java.util.List<ExcludedRule> getExcludedRules() {
@@ -103,13 +106,15 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
-     * this rule statement.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
-     *        for this rule statement.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      */
 
     public void setExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
@@ -123,8 +128,9 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
-     * this rule statement.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,8 +139,9 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
-     *        for this rule statement.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,13 +157,15 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
-     * this rule statement.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
-     *        for this rule statement.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

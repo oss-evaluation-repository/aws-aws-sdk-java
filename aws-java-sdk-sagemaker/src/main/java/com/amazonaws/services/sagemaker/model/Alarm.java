@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This API is not supported.
+ * An Amazon CloudWatch alarm configured to monitor metrics on an endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Alarm" target="_top">AWS API
@@ -28,13 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Alarm implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The name of a CloudWatch alarm in your account.
+     * </p>
+     */
     private String alarmName;
 
     /**
-     * <p/>
+     * <p>
+     * The name of a CloudWatch alarm in your account.
+     * </p>
      * 
      * @param alarmName
+     *        The name of a CloudWatch alarm in your account.
      */
 
     public void setAlarmName(String alarmName) {
@@ -42,9 +49,11 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of a CloudWatch alarm in your account.
+     * </p>
      * 
-     * @return
+     * @return The name of a CloudWatch alarm in your account.
      */
 
     public String getAlarmName() {
@@ -52,9 +61,12 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of a CloudWatch alarm in your account.
+     * </p>
      * 
      * @param alarmName
+     *        The name of a CloudWatch alarm in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class TrafficRoutingConfigJsonUnmarshaller implements Unmarshaller<Traffi
                     context.nextToken();
                     trafficRoutingConfig.setCanarySize(CapacitySizeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LinearStepSize", targetDepth)) {
+                    context.nextToken();
+                    trafficRoutingConfig.setLinearStepSize(CapacitySizeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

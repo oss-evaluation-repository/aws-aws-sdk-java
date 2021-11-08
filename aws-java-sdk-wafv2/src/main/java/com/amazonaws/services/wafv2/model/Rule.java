@@ -80,30 +80,20 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private RuleAction action;
     /**
      * <p>
-     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
-     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * The action to use in the place of the action that results from the rule group evaluation. Set the override action
+     * to none to leave the result of the rule group alone. Set it to count to override the result to count only.
      * </p>
      * <p>
-     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings.
+     * You can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <note>
      * <p>
-     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the rule statement references a rule group, use this override action setting and not the action setting.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
-     * action setting.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      */
     private OverrideAction overrideAction;
     /**
@@ -155,6 +145,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private VisibilityConfig visibilityConfig;
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     * <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     * </p>
+     */
+    private CaptchaConfig captchaConfig;
 
     /**
      * <p>
@@ -469,55 +466,35 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
-     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * The action to use in the place of the action that results from the rule group evaluation. Set the override action
+     * to none to leave the result of the rule group alone. Set it to count to override the result to count only.
      * </p>
      * <p>
-     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings.
+     * You can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <note>
      * <p>
-     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the rule statement references a rule group, use this override action setting and not the action setting.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
-     * action setting.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param overrideAction
-     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
-     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        The action to use in the place of the action that results from the rule group evaluation. Set the override
+     *        action to none to leave the result of the rule group alone. Set it to count to override the result to
+     *        count only. </p>
      *        <p>
-     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
-     *        matches, regardless of the rule action settings.
+     *        You can only use this for rule statements that reference a rule group, like
+     *        <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      *        </p>
+     *        <note>
      *        <p>
-     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     *        <code>Action</code> setting, but not both:
+     *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *        rules in your rule group reference statement settings.
      *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the rule statement references a rule group, use this override action setting and not the action
-     *        setting.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
-     *        override action setting.
-     *        </p>
-     *        </li>
      */
 
     public void setOverrideAction(OverrideAction overrideAction) {
@@ -526,55 +503,34 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
-     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * The action to use in the place of the action that results from the rule group evaluation. Set the override action
+     * to none to leave the result of the rule group alone. Set it to count to override the result to count only.
      * </p>
      * <p>
-     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings.
+     * You can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <note>
      * <p>
-     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the rule statement references a rule group, use this override action setting and not the action setting.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
-     * action setting.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
-     * @return The override action to apply to the rules in a rule group. Used only for rule statements that reference a
-     *         rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
-     *         </p>
+     * @return The action to use in the place of the action that results from the rule group evaluation. Set the
+     *         override action to none to leave the result of the rule group alone. Set it to count to override the
+     *         result to count only. </p>
      *         <p>
-     *         Set the override action to none to leave the rule actions in effect. Set it to count to only count
-     *         matches, regardless of the rule action settings.
+     *         You can only use this for rule statements that reference a rule group, like
+     *         <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      *         </p>
+     *         <note>
      *         <p>
-     *         In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     *         <code>Action</code> setting, but not both:
+     *         This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *         you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *         rules in your rule group reference statement settings.
      *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         If the rule statement references a rule group, use this override action setting and not the action
-     *         setting.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the rule statement does not reference a rule group, use the rule action setting and not this rule
-     *         override action setting.
-     *         </p>
-     *         </li>
      */
 
     public OverrideAction getOverrideAction() {
@@ -583,55 +539,35 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
-     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * The action to use in the place of the action that results from the rule group evaluation. Set the override action
+     * to none to leave the result of the rule group alone. Set it to count to override the result to count only.
      * </p>
      * <p>
-     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings.
+     * You can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <note>
      * <p>
-     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the rule statement references a rule group, use this override action setting and not the action setting.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
-     * action setting.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param overrideAction
-     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
-     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        The action to use in the place of the action that results from the rule group evaluation. Set the override
+     *        action to none to leave the result of the rule group alone. Set it to count to override the result to
+     *        count only. </p>
      *        <p>
-     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
-     *        matches, regardless of the rule action settings.
+     *        You can only use this for rule statements that reference a rule group, like
+     *        <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      *        </p>
+     *        <note>
      *        <p>
-     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
-     *        <code>Action</code> setting, but not both:
+     *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *        rules in your rule group reference statement settings.
      *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the rule statement references a rule group, use this override action setting and not the action
-     *        setting.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
-     *        override action setting.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1043,6 +979,52 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     * <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @param captchaConfig
+     *        Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     *        <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     */
+
+    public void setCaptchaConfig(CaptchaConfig captchaConfig) {
+        this.captchaConfig = captchaConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     * <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @return Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     *         <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     */
+
+    public CaptchaConfig getCaptchaConfig() {
+        return this.captchaConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     * <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     * </p>
+     * 
+     * @param captchaConfig
+     *        Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the
+     *        <code>CAPTCHA</code> configuration that's defined for the web ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withCaptchaConfig(CaptchaConfig captchaConfig) {
+        setCaptchaConfig(captchaConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1067,7 +1049,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         if (getRuleLabels() != null)
             sb.append("RuleLabels: ").append(getRuleLabels()).append(",");
         if (getVisibilityConfig() != null)
-            sb.append("VisibilityConfig: ").append(getVisibilityConfig());
+            sb.append("VisibilityConfig: ").append(getVisibilityConfig()).append(",");
+        if (getCaptchaConfig() != null)
+            sb.append("CaptchaConfig: ").append(getCaptchaConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1110,6 +1094,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVisibilityConfig() != null && other.getVisibilityConfig().equals(this.getVisibilityConfig()) == false)
             return false;
+        if (other.getCaptchaConfig() == null ^ this.getCaptchaConfig() == null)
+            return false;
+        if (other.getCaptchaConfig() != null && other.getCaptchaConfig().equals(this.getCaptchaConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1125,6 +1113,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOverrideAction() == null) ? 0 : getOverrideAction().hashCode());
         hashCode = prime * hashCode + ((getRuleLabels() == null) ? 0 : getRuleLabels().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
+        hashCode = prime * hashCode + ((getCaptchaConfig() == null) ? 0 : getCaptchaConfig().hashCode());
         return hashCode;
     }
 

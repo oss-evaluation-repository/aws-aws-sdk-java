@@ -1,3 +1,20 @@
+# __1.12.106__ __2021-11-08__
+## __AWS WAFV2__
+  - ### Features
+    - You can now configure rules to run a CAPTCHA check against web requests and, as needed, send a CAPTCHA challenge to the client.
+
+## __Amazon Chime SDK Meetings__
+  - ### Features
+    - Updated format validation for ids and regions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds internal validation on the GatewayAssociationState field
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker CreateEndpoint and UpdateEndpoint APIs now support additional deployment configuration to manage traffic shifting options and automatic rollback monitoring. DescribeEndpoint now shows new in-progress deployment details with stage status.
+
 # __1.12.105__ __2021-11-05__
 ## __AWS Resource Groups Tagging API__
   - ### Features

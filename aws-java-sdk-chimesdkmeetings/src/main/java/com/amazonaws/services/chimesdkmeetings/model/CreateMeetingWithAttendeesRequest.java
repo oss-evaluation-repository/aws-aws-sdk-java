@@ -33,7 +33,7 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
     private String clientRequestToken;
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      */
     private String mediaRegion;
@@ -104,11 +104,11 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     *        The Region in which to create the meeting.
      */
 
     public void setMediaRegion(String mediaRegion) {
@@ -117,10 +117,10 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * 
-     * @return The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * @return The Region in which to create the meeting.
      */
 
     public String getMediaRegion() {
@@ -129,11 +129,11 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     *        The Region in which to create the meeting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

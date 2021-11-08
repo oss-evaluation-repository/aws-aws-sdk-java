@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Currently, the <code>DeploymentConfig</code> API is not supported.
+ * The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback
+ * configurations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeploymentConfig" target="_top">AWS API
@@ -28,15 +29,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet
+     * during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the
+     * specified traffic routing configuration. Only one update policy should be used in the deployment configuration.
+     * If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic
+     * shifting by default.
+     * </p>
+     */
     private BlueGreenUpdatePolicy blueGreenUpdatePolicy;
-    /** <p/> */
+    /**
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
+     */
     private AutoRollbackConfig autoRollbackConfiguration;
 
     /**
-     * <p/>
+     * <p>
+     * Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet
+     * during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the
+     * specified traffic routing configuration. Only one update policy should be used in the deployment configuration.
+     * If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic
+     * shifting by default.
+     * </p>
      * 
      * @param blueGreenUpdatePolicy
+     *        Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new
+     *        fleet during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet
+     *        according to the specified traffic routing configuration. Only one update policy should be used in the
+     *        deployment configuration. If no update policy is specified, SageMaker uses a blue/green deployment
+     *        strategy with all at once traffic shifting by default.
      */
 
     public void setBlueGreenUpdatePolicy(BlueGreenUpdatePolicy blueGreenUpdatePolicy) {
@@ -44,9 +68,19 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet
+     * during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the
+     * specified traffic routing configuration. Only one update policy should be used in the deployment configuration.
+     * If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic
+     * shifting by default.
+     * </p>
      * 
-     * @return
+     * @return Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new
+     *         fleet during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet
+     *         according to the specified traffic routing configuration. Only one update policy should be used in the
+     *         deployment configuration. If no update policy is specified, SageMaker uses a blue/green deployment
+     *         strategy with all at once traffic shifting by default.
      */
 
     public BlueGreenUpdatePolicy getBlueGreenUpdatePolicy() {
@@ -54,9 +88,20 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet
+     * during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the
+     * specified traffic routing configuration. Only one update policy should be used in the deployment configuration.
+     * If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic
+     * shifting by default.
+     * </p>
      * 
      * @param blueGreenUpdatePolicy
+     *        Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new
+     *        fleet during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet
+     *        according to the specified traffic routing configuration. Only one update policy should be used in the
+     *        deployment configuration. If no update policy is specified, SageMaker uses a blue/green deployment
+     *        strategy with all at once traffic shifting by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +111,12 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
      * 
      * @param autoRollbackConfiguration
+     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
      */
 
     public void setAutoRollbackConfiguration(AutoRollbackConfig autoRollbackConfiguration) {
@@ -76,9 +124,11 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
      * 
-     * @return
+     * @return Automatic rollback configuration for handling endpoint deployment failures and recovery.
      */
 
     public AutoRollbackConfig getAutoRollbackConfiguration() {
@@ -86,9 +136,12 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
      * 
      * @param autoRollbackConfiguration
+     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

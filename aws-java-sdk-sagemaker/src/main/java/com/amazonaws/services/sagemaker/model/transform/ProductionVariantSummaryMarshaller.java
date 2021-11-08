@@ -40,6 +40,8 @@ public class ProductionVariantSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentInstanceCount").build();
     private static final MarshallingInfo<Integer> DESIREDINSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredInstanceCount").build();
+    private static final MarshallingInfo<List> VARIANTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VariantStatus").build();
 
     private static final ProductionVariantSummaryMarshaller instance = new ProductionVariantSummaryMarshaller();
 
@@ -63,6 +65,7 @@ public class ProductionVariantSummaryMarshaller {
             protocolMarshaller.marshall(productionVariantSummary.getDesiredWeight(), DESIREDWEIGHT_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getCurrentInstanceCount(), CURRENTINSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getDesiredInstanceCount(), DESIREDINSTANCECOUNT_BINDING);
+            protocolMarshaller.marshall(productionVariantSummary.getVariantStatus(), VARIANTSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

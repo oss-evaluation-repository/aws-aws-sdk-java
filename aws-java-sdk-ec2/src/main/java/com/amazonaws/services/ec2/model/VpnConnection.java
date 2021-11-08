@@ -618,6 +618,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param gatewayAssociationState
      *        The current state of the gateway association.
+     * @see GatewayAssociationState
      */
 
     public void setGatewayAssociationState(String gatewayAssociationState) {
@@ -630,6 +631,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * </p>
      * 
      * @return The current state of the gateway association.
+     * @see GatewayAssociationState
      */
 
     public String getGatewayAssociationState() {
@@ -644,10 +646,41 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param gatewayAssociationState
      *        The current state of the gateway association.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayAssociationState
      */
 
     public VpnConnection withGatewayAssociationState(String gatewayAssociationState) {
         setGatewayAssociationState(gatewayAssociationState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the gateway association.
+     * </p>
+     * 
+     * @param gatewayAssociationState
+     *        The current state of the gateway association.
+     * @see GatewayAssociationState
+     */
+
+    public void setGatewayAssociationState(GatewayAssociationState gatewayAssociationState) {
+        withGatewayAssociationState(gatewayAssociationState);
+    }
+
+    /**
+     * <p>
+     * The current state of the gateway association.
+     * </p>
+     * 
+     * @param gatewayAssociationState
+     *        The current state of the gateway association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayAssociationState
+     */
+
+    public VpnConnection withGatewayAssociationState(GatewayAssociationState gatewayAssociationState) {
+        this.gatewayAssociationState = gatewayAssociationState.toString();
         return this;
     }
 

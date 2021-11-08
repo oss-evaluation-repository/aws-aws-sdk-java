@@ -39,6 +39,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String endpointConfigName;
+
+    private DeploymentConfig deploymentConfig;
     /**
      * <p>
      * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
@@ -137,6 +139,32 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateEndpointRequest withEndpointConfigName(String endpointConfigName) {
         setEndpointConfigName(endpointConfigName);
+        return this;
+    }
+
+    /**
+     * @param deploymentConfig
+     */
+
+    public void setDeploymentConfig(DeploymentConfig deploymentConfig) {
+        this.deploymentConfig = deploymentConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DeploymentConfig getDeploymentConfig() {
+        return this.deploymentConfig;
+    }
+
+    /**
+     * @param deploymentConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withDeploymentConfig(DeploymentConfig deploymentConfig) {
+        setDeploymentConfig(deploymentConfig);
         return this;
     }
 
@@ -246,6 +274,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("EndpointName: ").append(getEndpointName()).append(",");
         if (getEndpointConfigName() != null)
             sb.append("EndpointConfigName: ").append(getEndpointConfigName()).append(",");
+        if (getDeploymentConfig() != null)
+            sb.append("DeploymentConfig: ").append(getDeploymentConfig()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -270,6 +300,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEndpointConfigName() != null && other.getEndpointConfigName().equals(this.getEndpointConfigName()) == false)
             return false;
+        if (other.getDeploymentConfig() == null ^ this.getDeploymentConfig() == null)
+            return false;
+        if (other.getDeploymentConfig() != null && other.getDeploymentConfig().equals(this.getDeploymentConfig()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -284,6 +318,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfig() == null) ? 0 : getDeploymentConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

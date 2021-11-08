@@ -33,7 +33,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientRequestToken;
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * <p>
      * Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
@@ -105,7 +105,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * <p>
      * Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
@@ -116,7 +116,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>
+     *        The Region in which to create the meeting.</p>
      *        <p>
      *        Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
      *        <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
@@ -131,7 +131,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * <p>
      * Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
@@ -141,7 +141,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> .
      * </p>
      * 
-     * @return The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>
+     * @return The Region in which to create the meeting.</p>
      *         <p>
      *         Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
      *         <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
@@ -156,7 +156,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * The Region in which to create the meeting.
      * </p>
      * <p>
      * Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
@@ -167,7 +167,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Default: <code>us-east-1</code>.</p>
+     *        The Region in which to create the meeting.</p>
      *        <p>
      *        Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> ,
      *        <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,

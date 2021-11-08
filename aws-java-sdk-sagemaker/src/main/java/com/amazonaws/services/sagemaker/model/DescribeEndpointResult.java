@@ -137,6 +137,13 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private AsyncInferenceConfig asyncInferenceConfig;
+    /**
+     * <p>
+     * Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or
+     * updating with a new endpoint configuration.
+     * </p>
+     */
+    private PendingDeploymentSummary pendingDeploymentSummary;
 
     /**
      * <p>
@@ -1026,6 +1033,52 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or
+     * updating with a new endpoint configuration.
+     * </p>
+     * 
+     * @param pendingDeploymentSummary
+     *        Returns the summary of an in-progress deployment. This field is only returned when the endpoint is
+     *        creating or updating with a new endpoint configuration.
+     */
+
+    public void setPendingDeploymentSummary(PendingDeploymentSummary pendingDeploymentSummary) {
+        this.pendingDeploymentSummary = pendingDeploymentSummary;
+    }
+
+    /**
+     * <p>
+     * Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or
+     * updating with a new endpoint configuration.
+     * </p>
+     * 
+     * @return Returns the summary of an in-progress deployment. This field is only returned when the endpoint is
+     *         creating or updating with a new endpoint configuration.
+     */
+
+    public PendingDeploymentSummary getPendingDeploymentSummary() {
+        return this.pendingDeploymentSummary;
+    }
+
+    /**
+     * <p>
+     * Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or
+     * updating with a new endpoint configuration.
+     * </p>
+     * 
+     * @param pendingDeploymentSummary
+     *        Returns the summary of an in-progress deployment. This field is only returned when the endpoint is
+     *        creating or updating with a new endpoint configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointResult withPendingDeploymentSummary(PendingDeploymentSummary pendingDeploymentSummary) {
+        setPendingDeploymentSummary(pendingDeploymentSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1058,7 +1111,9 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         if (getLastDeploymentConfig() != null)
             sb.append("LastDeploymentConfig: ").append(getLastDeploymentConfig()).append(",");
         if (getAsyncInferenceConfig() != null)
-            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig());
+            sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
+        if (getPendingDeploymentSummary() != null)
+            sb.append("PendingDeploymentSummary: ").append(getPendingDeploymentSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -1117,6 +1172,10 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getAsyncInferenceConfig() != null && other.getAsyncInferenceConfig().equals(this.getAsyncInferenceConfig()) == false)
             return false;
+        if (other.getPendingDeploymentSummary() == null ^ this.getPendingDeploymentSummary() == null)
+            return false;
+        if (other.getPendingDeploymentSummary() != null && other.getPendingDeploymentSummary().equals(this.getPendingDeploymentSummary()) == false)
+            return false;
         return true;
     }
 
@@ -1136,6 +1195,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentConfig() == null) ? 0 : getLastDeploymentConfig().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
+        hashCode = prime * hashCode + ((getPendingDeploymentSummary() == null) ? 0 : getPendingDeploymentSummary().hashCode());
         return hashCode;
     }
 

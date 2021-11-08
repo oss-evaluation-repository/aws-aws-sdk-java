@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Currently, the <code>CapacitySize</code> API is not supported.
+ * Specifies the endpoint capacity to activate for production.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CapacitySize" target="_top">AWS API
@@ -30,20 +30,59 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This API is not supported.
+     * Specifies the endpoint capacity type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
-    /** <p/> */
+    /**
+     * <p>
+     * Defines the capacity size, either as a number of instances or a capacity percentage.
+     * </p>
+     */
     private Integer value;
 
     /**
      * <p>
-     * This API is not supported.
+     * Specifies the endpoint capacity type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        This API is not supported.
+     *        Specifies the endpoint capacity type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     *        </p>
+     *        </li>
      * @see CapacitySizeType
      */
 
@@ -53,10 +92,33 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This API is not supported.
+     * Specifies the endpoint capacity type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This API is not supported.
+     * @return Specifies the endpoint capacity type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     *         </p>
+     *         </li>
      * @see CapacitySizeType
      */
 
@@ -66,11 +128,34 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This API is not supported.
+     * Specifies the endpoint capacity type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        This API is not supported.
+     *        Specifies the endpoint capacity type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacitySizeType
      */
@@ -82,11 +167,34 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This API is not supported.
+     * Specifies the endpoint capacity type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        This API is not supported.
+     *        Specifies the endpoint capacity type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacitySizeType
      */
@@ -97,9 +205,12 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Defines the capacity size, either as a number of instances or a capacity percentage.
+     * </p>
      * 
      * @param value
+     *        Defines the capacity size, either as a number of instances or a capacity percentage.
      */
 
     public void setValue(Integer value) {
@@ -107,9 +218,11 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Defines the capacity size, either as a number of instances or a capacity percentage.
+     * </p>
      * 
-     * @return
+     * @return Defines the capacity size, either as a number of instances or a capacity percentage.
      */
 
     public Integer getValue() {
@@ -117,9 +230,12 @@ public class CapacitySize implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Defines the capacity size, either as a number of instances or a capacity percentage.
+     * </p>
      * 
      * @param value
+     *        Defines the capacity size, either as a number of instances or a capacity percentage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,6 +45,8 @@ public class CreateWebACLRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Map> CUSTOMRESPONSEBODIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
+    private static final MarshallingInfo<StructuredPojo> CAPTCHACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaConfig").build();
 
     private static final CreateWebACLRequestMarshaller instance = new CreateWebACLRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateWebACLRequestMarshaller {
             protocolMarshaller.marshall(createWebACLRequest.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Currently, the <code>BlueGreenUpdatePolicy</code> API is not supported.
+ * Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet during
+ * the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the specified
+ * traffic routing configuration. Only one update policy should be used in the deployment configuration. If no update
+ * policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic shifting by default.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BlueGreenUpdatePolicy" target="_top">AWS
@@ -28,17 +31,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BlueGreenUpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint
+     * deployment.
+     * </p>
+     */
     private TrafficRoutingConfig trafficRoutingConfiguration;
-    /** <p/> */
+    /**
+     * <p>
+     * Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old
+     * endpoint fleet. Default is 0.
+     * </p>
+     */
     private Integer terminationWaitInSeconds;
-    /** <p/> */
+    /**
+     * <p>
+     * Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting
+     * time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
+     * </p>
+     */
     private Integer maximumExecutionTimeoutInSeconds;
 
     /**
-     * <p/>
+     * <p>
+     * Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint
+     * deployment.
+     * </p>
      * 
      * @param trafficRoutingConfiguration
+     *        Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an
+     *        endpoint deployment.
      */
 
     public void setTrafficRoutingConfiguration(TrafficRoutingConfig trafficRoutingConfiguration) {
@@ -46,9 +69,13 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint
+     * deployment.
+     * </p>
      * 
-     * @return
+     * @return Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an
+     *         endpoint deployment.
      */
 
     public TrafficRoutingConfig getTrafficRoutingConfiguration() {
@@ -56,9 +83,14 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint
+     * deployment.
+     * </p>
      * 
      * @param trafficRoutingConfiguration
+     *        Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an
+     *        endpoint deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,9 +100,14 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old
+     * endpoint fleet. Default is 0.
+     * </p>
      * 
      * @param terminationWaitInSeconds
+     *        Additional waiting time in seconds after the completion of an endpoint deployment before terminating the
+     *        old endpoint fleet. Default is 0.
      */
 
     public void setTerminationWaitInSeconds(Integer terminationWaitInSeconds) {
@@ -78,9 +115,13 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old
+     * endpoint fleet. Default is 0.
+     * </p>
      * 
-     * @return
+     * @return Additional waiting time in seconds after the completion of an endpoint deployment before terminating the
+     *         old endpoint fleet. Default is 0.
      */
 
     public Integer getTerminationWaitInSeconds() {
@@ -88,9 +129,14 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old
+     * endpoint fleet. Default is 0.
+     * </p>
      * 
      * @param terminationWaitInSeconds
+     *        Additional waiting time in seconds after the completion of an endpoint deployment before terminating the
+     *        old endpoint fleet. Default is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,9 +146,14 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting
+     * time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
+     * </p>
      * 
      * @param maximumExecutionTimeoutInSeconds
+     *        Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total
+     *        waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
      */
 
     public void setMaximumExecutionTimeoutInSeconds(Integer maximumExecutionTimeoutInSeconds) {
@@ -110,9 +161,13 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting
+     * time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
+     * </p>
      * 
-     * @return
+     * @return Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total
+     *         waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
      */
 
     public Integer getMaximumExecutionTimeoutInSeconds() {
@@ -120,9 +175,14 @@ public class BlueGreenUpdatePolicy implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p/>
+     * <p>
+     * Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting
+     * time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
+     * </p>
      * 
      * @param maximumExecutionTimeoutInSeconds
+     *        Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total
+     *        waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

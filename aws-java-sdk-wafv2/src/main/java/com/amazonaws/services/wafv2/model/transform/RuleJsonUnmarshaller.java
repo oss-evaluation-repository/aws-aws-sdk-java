@@ -78,6 +78,10 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
                     context.nextToken();
                     rule.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CaptchaConfig", targetDepth)) {
+                    context.nextToken();
+                    rule.setCaptchaConfig(CaptchaConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

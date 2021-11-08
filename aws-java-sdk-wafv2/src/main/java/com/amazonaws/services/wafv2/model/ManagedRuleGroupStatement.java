@@ -57,8 +57,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     private String version;
     /**
      * <p>
-     * The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set on the
-     * rule. This effectively excludes the rule from acting on web requests.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      */
     private java.util.List<ExcludedRule> excludedRules;
@@ -212,12 +213,14 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set on the
-     * rule. This effectively excludes the rule from acting on web requests.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
-     * @return The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is
-     *         set on the rule. This effectively excludes the rule from acting on web requests.
+     * @return The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *         rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *         useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      */
 
     public java.util.List<ExcludedRule> getExcludedRules() {
@@ -226,13 +229,15 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set on the
-     * rule. This effectively excludes the rule from acting on web requests.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
      * @param excludedRules
-     *        The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set
-     *        on the rule. This effectively excludes the rule from acting on web requests.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      */
 
     public void setExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
@@ -246,8 +251,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set on the
-     * rule. This effectively excludes the rule from acting on web requests.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,8 +262,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param excludedRules
-     *        The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set
-     *        on the rule. This effectively excludes the rule from acting on web requests.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,13 +280,15 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set on the
-     * rule. This effectively excludes the rule from acting on web requests.
+     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
+     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
+     * testing the rules in a rule group without modifying how they handle your web traffic.
      * </p>
      * 
      * @param excludedRules
-     *        The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the action that is set
-     *        on the rule. This effectively excludes the rule from acting on web requests.
+     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
+     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
+     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

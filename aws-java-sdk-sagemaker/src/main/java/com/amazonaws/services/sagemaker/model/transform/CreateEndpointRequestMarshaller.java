@@ -32,6 +32,8 @@ public class CreateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointName").build();
     private static final MarshallingInfo<String> ENDPOINTCONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfigName").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -53,6 +55,7 @@ public class CreateEndpointRequestMarshaller {
         try {
             protocolMarshaller.marshall(createEndpointRequest.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getEndpointConfigName(), ENDPOINTCONFIGNAME_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDeploymentConfig(), DEPLOYMENTCONFIG_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

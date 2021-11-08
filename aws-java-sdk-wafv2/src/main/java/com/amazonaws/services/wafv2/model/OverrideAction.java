@@ -19,30 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
- * like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+ * The action to use in the place of the action that results from the rule group evaluation. Set the override action to
+ * none to leave the result of the rule group alone. Set it to count to override the result to count only.
  * </p>
  * <p>
- * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
- * regardless of the rule action settings.
+ * You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code>
+ * and <code>ManagedRuleGroupStatement</code>.
  * </p>
+ * <note>
  * <p>
- * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code>
- * setting, but not both:
+ * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the
+ * rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group
+ * reference statement settings.
  * </p>
- * <ul>
- * <li>
- * <p>
- * If the rule statement references a rule group, use this override action setting and not the action setting.
- * </p>
- * </li>
- * <li>
- * <p>
- * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action
- * setting.
- * </p>
- * </li>
- * </ul>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OverrideAction" target="_top">AWS API
  *      Documentation</a>
@@ -52,24 +42,43 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Override the rule action setting to count.
+     * Override the rule group evaluation result to count only.
      * </p>
+     * <note>
+     * <p>
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
+     * </p>
+     * </note>
      */
     private CountAction count;
     /**
      * <p>
-     * Don't override the rule action setting.
+     * Don't override the rule group evaluation result. This is the most common setting.
      * </p>
      */
     private NoneAction none;
 
     /**
      * <p>
-     * Override the rule action setting to count.
+     * Override the rule group evaluation result to count only.
      * </p>
+     * <note>
+     * <p>
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
+     * </p>
+     * </note>
      * 
      * @param count
-     *        Override the rule action setting to count.
+     *        Override the rule group evaluation result to count only. </p> <note>
+     *        <p>
+     *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *        rules in your rule group reference statement settings.
+     *        </p>
      */
 
     public void setCount(CountAction count) {
@@ -78,10 +87,22 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Override the rule action setting to count.
+     * Override the rule group evaluation result to count only.
      * </p>
+     * <note>
+     * <p>
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
+     * </p>
+     * </note>
      * 
-     * @return Override the rule action setting to count.
+     * @return Override the rule group evaluation result to count only. </p> <note>
+     *         <p>
+     *         This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *         you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *         rules in your rule group reference statement settings.
+     *         </p>
      */
 
     public CountAction getCount() {
@@ -90,11 +111,23 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Override the rule action setting to count.
+     * Override the rule group evaluation result to count only.
      * </p>
+     * <note>
+     * <p>
+     * This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want
+     * the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule
+     * group reference statement settings.
+     * </p>
+     * </note>
      * 
      * @param count
-     *        Override the rule action setting to count.
+     *        Override the rule group evaluation result to count only. </p> <note>
+     *        <p>
+     *        This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If
+     *        you want the rules in the rule group to only count matches, do not use this and instead exclude those
+     *        rules in your rule group reference statement settings.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +138,11 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Don't override the rule action setting.
+     * Don't override the rule group evaluation result. This is the most common setting.
      * </p>
      * 
      * @param none
-     *        Don't override the rule action setting.
+     *        Don't override the rule group evaluation result. This is the most common setting.
      */
 
     public void setNone(NoneAction none) {
@@ -118,10 +151,10 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Don't override the rule action setting.
+     * Don't override the rule group evaluation result. This is the most common setting.
      * </p>
      * 
-     * @return Don't override the rule action setting.
+     * @return Don't override the rule group evaluation result. This is the most common setting.
      */
 
     public NoneAction getNone() {
@@ -130,11 +163,11 @@ public class OverrideAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Don't override the rule action setting.
+     * Don't override the rule group evaluation result. This is the most common setting.
      * </p>
      * 
      * @param none
-     *        Don't override the rule action setting.
+     *        Don't override the rule group evaluation result. This is the most common setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

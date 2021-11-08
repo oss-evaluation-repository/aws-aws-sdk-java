@@ -109,6 +109,10 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     webACL.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),
                             CustomResponseBodyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CaptchaConfig", targetDepth)) {
+                    context.nextToken();
+                    webACL.setCaptchaConfig(CaptchaConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

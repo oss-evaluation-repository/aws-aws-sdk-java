@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a single rule to exclude from the rule group. Excluding a rule overrides its action setting for the rule
- * group in the web ACL, setting it to <code>COUNT</code>. This effectively excludes the rule from acting on web
- * requests.
+ * Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a
+ * rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful
+ * option for testing the rules in a rule group without modifying how they handle your web traffic.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ExcludedRule" target="_top">AWS API
@@ -32,18 +32,18 @@ public class ExcludedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule to exclude.
+     * The name of the rule whose action you want to override to <code>Count</code>.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the rule to exclude.
+     * The name of the rule whose action you want to override to <code>Count</code>.
      * </p>
      * 
      * @param name
-     *        The name of the rule to exclude.
+     *        The name of the rule whose action you want to override to <code>Count</code>.
      */
 
     public void setName(String name) {
@@ -52,10 +52,10 @@ public class ExcludedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule to exclude.
+     * The name of the rule whose action you want to override to <code>Count</code>.
      * </p>
      * 
-     * @return The name of the rule to exclude.
+     * @return The name of the rule whose action you want to override to <code>Count</code>.
      */
 
     public String getName() {
@@ -64,11 +64,11 @@ public class ExcludedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule to exclude.
+     * The name of the rule whose action you want to override to <code>Count</code>.
      * </p>
      * 
      * @param name
-     *        The name of the rule to exclude.
+     *        The name of the rule whose action you want to override to <code>Count</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

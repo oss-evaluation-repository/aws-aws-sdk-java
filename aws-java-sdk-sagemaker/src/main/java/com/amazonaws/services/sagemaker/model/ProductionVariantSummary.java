@@ -67,6 +67,12 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private Integer desiredInstanceCount;
+    /**
+     * <p>
+     * The endpoint variant status which describes the current deployment stage status or operational status.
+     * </p>
+     */
+    private java.util.List<ProductionVariantStatus> variantStatus;
 
     /**
      * <p>
@@ -347,6 +353,76 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The endpoint variant status which describes the current deployment stage status or operational status.
+     * </p>
+     * 
+     * @return The endpoint variant status which describes the current deployment stage status or operational status.
+     */
+
+    public java.util.List<ProductionVariantStatus> getVariantStatus() {
+        return variantStatus;
+    }
+
+    /**
+     * <p>
+     * The endpoint variant status which describes the current deployment stage status or operational status.
+     * </p>
+     * 
+     * @param variantStatus
+     *        The endpoint variant status which describes the current deployment stage status or operational status.
+     */
+
+    public void setVariantStatus(java.util.Collection<ProductionVariantStatus> variantStatus) {
+        if (variantStatus == null) {
+            this.variantStatus = null;
+            return;
+        }
+
+        this.variantStatus = new java.util.ArrayList<ProductionVariantStatus>(variantStatus);
+    }
+
+    /**
+     * <p>
+     * The endpoint variant status which describes the current deployment stage status or operational status.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVariantStatus(java.util.Collection)} or {@link #withVariantStatus(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param variantStatus
+     *        The endpoint variant status which describes the current deployment stage status or operational status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withVariantStatus(ProductionVariantStatus... variantStatus) {
+        if (this.variantStatus == null) {
+            setVariantStatus(new java.util.ArrayList<ProductionVariantStatus>(variantStatus.length));
+        }
+        for (ProductionVariantStatus ele : variantStatus) {
+            this.variantStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint variant status which describes the current deployment stage status or operational status.
+     * </p>
+     * 
+     * @param variantStatus
+     *        The endpoint variant status which describes the current deployment stage status or operational status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withVariantStatus(java.util.Collection<ProductionVariantStatus> variantStatus) {
+        setVariantStatus(variantStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -369,7 +445,9 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         if (getCurrentInstanceCount() != null)
             sb.append("CurrentInstanceCount: ").append(getCurrentInstanceCount()).append(",");
         if (getDesiredInstanceCount() != null)
-            sb.append("DesiredInstanceCount: ").append(getDesiredInstanceCount());
+            sb.append("DesiredInstanceCount: ").append(getDesiredInstanceCount()).append(",");
+        if (getVariantStatus() != null)
+            sb.append("VariantStatus: ").append(getVariantStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +486,10 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getDesiredInstanceCount() != null && other.getDesiredInstanceCount().equals(this.getDesiredInstanceCount()) == false)
             return false;
+        if (other.getVariantStatus() == null ^ this.getVariantStatus() == null)
+            return false;
+        if (other.getVariantStatus() != null && other.getVariantStatus().equals(this.getVariantStatus()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +504,7 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getDesiredWeight() == null) ? 0 : getDesiredWeight().hashCode());
         hashCode = prime * hashCode + ((getCurrentInstanceCount() == null) ? 0 : getCurrentInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDesiredInstanceCount() == null) ? 0 : getDesiredInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getVariantStatus() == null) ? 0 : getVariantStatus().hashCode());
         return hashCode;
     }
 

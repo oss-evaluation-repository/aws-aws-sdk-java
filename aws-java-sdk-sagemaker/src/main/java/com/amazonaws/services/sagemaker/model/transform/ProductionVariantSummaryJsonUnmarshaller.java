@@ -74,6 +74,13 @@ public class ProductionVariantSummaryJsonUnmarshaller implements Unmarshaller<Pr
                     context.nextToken();
                     productionVariantSummary.setDesiredInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("VariantStatus", targetDepth)) {
+                    context.nextToken();
+                    productionVariantSummary.setVariantStatus(new ListUnmarshaller<ProductionVariantStatus>(ProductionVariantStatusJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

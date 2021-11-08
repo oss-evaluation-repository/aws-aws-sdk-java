@@ -53,8 +53,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     private java.util.Date timestamp;
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     * <code>COUNT</code>.
+     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     * <code>Count</code>.
      * </p>
      */
     private String action;
@@ -92,6 +92,12 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<Label> labels;
+    /**
+     * <p>
+     * The <code>CAPTCHA</code> response for the request.
+     * </p>
+     */
+    private CaptchaResponse captchaResponse;
 
     /**
      * <p>
@@ -233,13 +239,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     * <code>COUNT</code>.
+     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     * <code>Count</code>.
      * </p>
      * 
      * @param action
-     *        The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     *        <code>COUNT</code>.
+     *        The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     *        <code>Count</code>.
      */
 
     public void setAction(String action) {
@@ -248,12 +254,12 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     * <code>COUNT</code>.
+     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     * <code>Count</code>.
      * </p>
      * 
-     * @return The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     *         <code>COUNT</code>.
+     * @return The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     *         <code>Count</code>.
      */
 
     public String getAction() {
@@ -262,13 +268,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     * <code>COUNT</code>.
+     * The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     * <code>Count</code>.
      * </p>
      * 
      * @param action
-     *        The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or
-     *        <code>COUNT</code>.
+     *        The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or
+     *        <code>Count</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,6 +574,46 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The <code>CAPTCHA</code> response for the request.
+     * </p>
+     * 
+     * @param captchaResponse
+     *        The <code>CAPTCHA</code> response for the request.
+     */
+
+    public void setCaptchaResponse(CaptchaResponse captchaResponse) {
+        this.captchaResponse = captchaResponse;
+    }
+
+    /**
+     * <p>
+     * The <code>CAPTCHA</code> response for the request.
+     * </p>
+     * 
+     * @return The <code>CAPTCHA</code> response for the request.
+     */
+
+    public CaptchaResponse getCaptchaResponse() {
+        return this.captchaResponse;
+    }
+
+    /**
+     * <p>
+     * The <code>CAPTCHA</code> response for the request.
+     * </p>
+     * 
+     * @param captchaResponse
+     *        The <code>CAPTCHA</code> response for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withCaptchaResponse(CaptchaResponse captchaResponse) {
+        setCaptchaResponse(captchaResponse);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -594,7 +640,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         if (getResponseCodeSent() != null)
             sb.append("ResponseCodeSent: ").append(getResponseCodeSent()).append(",");
         if (getLabels() != null)
-            sb.append("Labels: ").append(getLabels());
+            sb.append("Labels: ").append(getLabels()).append(",");
+        if (getCaptchaResponse() != null)
+            sb.append("CaptchaResponse: ").append(getCaptchaResponse());
         sb.append("}");
         return sb.toString();
     }
@@ -641,6 +689,10 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getCaptchaResponse() == null ^ this.getCaptchaResponse() == null)
+            return false;
+        if (other.getCaptchaResponse() != null && other.getCaptchaResponse().equals(this.getCaptchaResponse()) == false)
+            return false;
         return true;
     }
 
@@ -657,6 +709,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRequestHeadersInserted() == null) ? 0 : getRequestHeadersInserted().hashCode());
         hashCode = prime * hashCode + ((getResponseCodeSent() == null) ? 0 : getResponseCodeSent().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getCaptchaResponse() == null) ? 0 : getCaptchaResponse().hashCode());
         return hashCode;
     }
 
