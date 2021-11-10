@@ -27,7 +27,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     * The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      */
@@ -35,7 +35,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -86,7 +86,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
-     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
      */
@@ -104,9 +104,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
-     * the <a>CreateCapacityProvider</a> API operation.
+     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -121,12 +121,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> capacityProviders;
     /**
      * <p>
-     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
-     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
+     * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
+     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
      * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
-     * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
+     * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      */
@@ -134,12 +134,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     * The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
-     *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     *        The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
      *        allowed.
      */
@@ -150,11 +150,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     * The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
-     * @return The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     * @return The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      *         <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
      *         allowed.
      */
@@ -165,12 +165,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     * The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
-     *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
+     *        The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named
      *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
      *        allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -184,7 +184,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -232,7 +232,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @return The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *         a key and an optional value, both of which you define.</p>
+     *         a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -289,7 +289,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -338,7 +338,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -396,7 +396,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -450,7 +450,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -510,7 +510,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -559,7 +559,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -614,13 +614,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
-     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
      * 
      * @return The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container
-     *         Insights for a cluster. If this value is specified, it will override the <code>containerInsights</code>
-     *         value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *         Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value
+     *         set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      */
 
     public java.util.List<ClusterSetting> getSettings() {
@@ -633,14 +633,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
-     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
      * 
      * @param settings
      *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
-     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
-     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
+     *        <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      */
 
     public void setSettings(java.util.Collection<ClusterSetting> settings) {
@@ -655,7 +655,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
-     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
      * <p>
@@ -666,8 +666,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param settings
      *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
-     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
-     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
+     *        <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,14 +684,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
-     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
      * 
      * @param settings
      *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
-     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
-     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
+     *        <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,9 +747,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
-     * the <a>CreateCapacityProvider</a> API operation.
+     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -766,9 +766,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
      *         <a>RunTask</a> actions.</p>
      *         <p>
-     *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *         created and not already associated with another cluster. New Auto Scaling group capacity providers can be
-     *         created with the <a>CreateCapacityProvider</a> API operation.
+     *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
+     *         but not associated with another cluster. New Auto Scaling group capacity providers can be created with
+     *         the <a>CreateCapacityProvider</a> API operation.
      *         </p>
      *         <p>
      *         To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -794,9 +794,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
-     * the <a>CreateCapacityProvider</a> API operation.
+     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -814,9 +814,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
      *        <a>RunTask</a> actions.</p>
      *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
-     *        created with the <a>CreateCapacityProvider</a> API operation.
+     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
+     *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     *        <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -844,9 +844,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
-     * the <a>CreateCapacityProvider</a> API operation.
+     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -869,9 +869,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
      *        <a>RunTask</a> actions.</p>
      *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
-     *        created with the <a>CreateCapacityProvider</a> API operation.
+     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
+     *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     *        <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -901,9 +901,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
-     * the <a>CreateCapacityProvider</a> API operation.
+     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -921,9 +921,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
      *        <a>RunTask</a> actions.</p>
      *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
-     *        created with the <a>CreateCapacityProvider</a> API operation.
+     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
+     *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
+     *        <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -943,22 +943,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
-     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
+     * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
+     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
      * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
-     * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
+     * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      * 
-     * @return The capacity provider strategy to set as the default for the cluster. When a default capacity provider
-     *         strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no
+     * @return The capacity provider strategy to set as the default for the cluster. After a default capacity provider
+     *         strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
      *         capacity provider strategy or launch type specified, the default capacity provider strategy for the
      *         cluster is used.</p>
      *         <p>
-     *         If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
-     *         later with the <a>PutClusterCapacityProviders</a> API operation.
+     *         If a default capacity provider strategy isn't defined for a cluster when it was created, it can be
+     *         defined later with the <a>PutClusterCapacityProviders</a> API operation.
      */
 
     public java.util.List<CapacityProviderStrategyItem> getDefaultCapacityProviderStrategy() {
@@ -970,22 +970,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
-     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
+     * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
+     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
      * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
-     * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
+     * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
-     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no
+     *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
+     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
      *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
      *        cluster is used.</p>
      *        <p>
-     *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
+     *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
      */
 
@@ -1000,12 +1000,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
-     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
+     * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
+     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
      * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
-     * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
+     * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      * <p>
@@ -1015,12 +1015,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
-     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no
+     *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
+     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
      *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
      *        cluster is used.</p>
      *        <p>
-     *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
+     *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1037,22 +1037,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
-     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
+     * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
+     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
      * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
-     * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
+     * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
-     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no
+     *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
+     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
      *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
      *        cluster is used.</p>
      *        <p>
-     *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
+     *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

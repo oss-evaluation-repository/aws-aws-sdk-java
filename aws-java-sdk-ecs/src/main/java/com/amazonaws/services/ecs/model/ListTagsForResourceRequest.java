@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      * </p>
      */
@@ -35,13 +35,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
+     *        resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -50,11 +50,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+     * @return The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
      *         supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      */
 
@@ -64,13 +64,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
+     *        resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

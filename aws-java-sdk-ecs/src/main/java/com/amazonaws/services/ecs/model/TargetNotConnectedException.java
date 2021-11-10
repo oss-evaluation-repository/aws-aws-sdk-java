@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The target container is not properly configured with the execute command agent or the container is no longer active
- * or running.
+ * The target container isn't properly configured with the execute command agent or the container is no longer active or
+ * running.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27,14 +27,14 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists
-     * in.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is
+     * found in.
      * </p>
      */
     private String cluster;
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     * The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      * </p>
      */
     private String service;
@@ -53,13 +53,13 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists
-     * in.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is
+     * found in.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set
-     *        exists in.
+     *        is found in.
      */
 
     public void setCluster(String cluster) {
@@ -68,12 +68,12 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists
-     * in.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is
+     * found in.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set
-     *         exists in.
+     *         is found in.
      */
 
     public String getCluster() {
@@ -82,13 +82,13 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists
-     * in.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is
+     * found in.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set
-     *        exists in.
+     *        is found in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     * The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      * </p>
      * 
      * @param service
-     *        The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     *        The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      */
 
     public void setService(String service) {
@@ -112,10 +112,10 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     * The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     * @return The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      */
 
     public String getService() {
@@ -124,11 +124,11 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     * The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      * </p>
      * 
      * @param service
-     *        The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.
+     *        The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

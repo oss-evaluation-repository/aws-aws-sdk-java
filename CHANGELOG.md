@@ -1,3 +1,16 @@
+# __1.12.108__ __2021-11-10__
+## __AWS Backup__
+  - ### Features
+    - AWS Backup SDK provides new options when scheduling backups: select supported services and resources that are assigned to a particular tag, linked to a combination of tags, or can be identified by a partial tag value, and exclude resources from their assignments.
+
+## __AWS Resilience Hub__
+  - ### Features
+    - Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release adds support for container instance health.
+
 # __1.12.107__ __2021-11-09__
 ## __AWS Batch__
   - ### Features

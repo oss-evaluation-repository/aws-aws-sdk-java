@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and
- * does not have enough information to proceed with an update. This could be because the agent running on the container
- * instance is an older or custom version that does not use our version information.
+ * Amazon ECS can't determine the current version of the Amazon ECS container agent on the container instance and
+ * doesn't have enough information to proceed with an update. This could be because the agent running on the container
+ * instance is a previous or custom version that doesn't use our version information.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

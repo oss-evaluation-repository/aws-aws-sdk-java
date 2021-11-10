@@ -57,7 +57,7 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
     private String status;
     /**
      * <p>
-     * The exit code returned for the state change request.
+     * The exit code that's returned for the state change request.
      * </p>
      */
     private Integer exitCode;
@@ -276,11 +276,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The exit code returned for the state change request.
+     * The exit code that's returned for the state change request.
      * </p>
      * 
      * @param exitCode
-     *        The exit code returned for the state change request.
+     *        The exit code that's returned for the state change request.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -289,10 +289,10 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The exit code returned for the state change request.
+     * The exit code that's returned for the state change request.
      * </p>
      * 
-     * @return The exit code returned for the state change request.
+     * @return The exit code that's returned for the state change request.
      */
 
     public Integer getExitCode() {
@@ -301,11 +301,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The exit code returned for the state change request.
+     * The exit code that's returned for the state change request.
      * </p>
      * 
      * @param exitCode
-     *        The exit code returned for the state change request.
+     *        The exit code that's returned for the state change request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

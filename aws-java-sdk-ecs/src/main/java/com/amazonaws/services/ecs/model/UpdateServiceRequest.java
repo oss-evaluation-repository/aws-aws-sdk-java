@@ -27,8 +27,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -58,10 +58,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to update the service to use.
      * </p>
      * <p>
-     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
-     * one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is
-     * using a capacity provider strategy that is not the default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.
+     * if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one
+     * or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using
+     * a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to
+     * use the cluster's default capacity provider strategy.
      * </p>
      * <p>
      * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
@@ -106,8 +106,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * constraints, specify an empty array.
      * </p>
      * <p>
-     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
-     * those specified at runtime).
+     * You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition
+     * and those specified at runtime.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
@@ -119,15 +119,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * object.
      * </p>
      * <p>
-     * You can specify a maximum of five strategy rules per service.
+     * You can specify a maximum of five strategy rules for each service.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
-     * version is used by default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is
+     * used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -135,22 +135,21 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String platformVersion;
     /**
      * <p>
-     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
-     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
-     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-     * tasks onto a newer platform version.
+     * Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use
+     * this option to start a new deployment with no service definition changes. For example, you can update a service's
+     * tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+     * Fargate tasks onto a newer platform version.
      * </p>
      */
     private Boolean forceNewDeployment;
     /**
      * <p>
-     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
-     * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
-     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
-     * up.
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started. This is only valid if your service is configured to use a
+     * load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks,
+     * you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
@@ -167,13 +166,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not
+     *        specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -182,12 +181,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you
-     *         do not specify a cluster, the default cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not
+     *         specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -196,13 +195,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not
+     *        specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,10 +356,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to update the service to use.
      * </p>
      * <p>
-     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
-     * one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is
-     * using a capacity provider strategy that is not the default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.
+     * if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one
+     * or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using
+     * a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to
+     * use the cluster's default capacity provider strategy.
      * </p>
      * <p>
      * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
@@ -386,10 +385,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The capacity provider strategy to update the service to use.
      *         </p>
      *         <p>
-     *         If the service is using the default capacity provider strategy for the cluster, the service can be
-     *         updated to use one or more capacity providers as opposed to the default capacity provider strategy.
-     *         However, when a service is using a capacity provider strategy that is not the default capacity provider
-     *         strategy, the service cannot be updated to use the cluster's default capacity provider strategy.
+     *         if the service uses the default capacity provider strategy for the cluster, the service can be updated to
+     *         use one or more capacity providers as opposed to the default capacity provider strategy. However, when a
+     *         service is using a capacity provider strategy that's not the default capacity provider strategy, the
+     *         service can't be updated to use the cluster's default capacity provider strategy.
      *         </p>
      *         <p>
      *         A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
@@ -425,10 +424,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to update the service to use.
      * </p>
      * <p>
-     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
-     * one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is
-     * using a capacity provider strategy that is not the default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.
+     * if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one
+     * or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using
+     * a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to
+     * use the cluster's default capacity provider strategy.
      * </p>
      * <p>
      * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
@@ -455,10 +454,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The capacity provider strategy to update the service to use.
      *        </p>
      *        <p>
-     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
-     *        to use one or more capacity providers as opposed to the default capacity provider strategy. However, when
-     *        a service is using a capacity provider strategy that is not the default capacity provider strategy, the
-     *        service cannot be updated to use the cluster's default capacity provider strategy.
+     *        if the service uses the default capacity provider strategy for the cluster, the service can be updated to
+     *        use one or more capacity providers as opposed to the default capacity provider strategy. However, when a
+     *        service is using a capacity provider strategy that's not the default capacity provider strategy, the
+     *        service can't be updated to use the cluster's default capacity provider strategy.
      *        </p>
      *        <p>
      *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
@@ -496,10 +495,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to update the service to use.
      * </p>
      * <p>
-     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
-     * one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is
-     * using a capacity provider strategy that is not the default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.
+     * if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one
+     * or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using
+     * a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to
+     * use the cluster's default capacity provider strategy.
      * </p>
      * <p>
      * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
@@ -530,10 +529,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param capacityProviderStrategy
      *        The capacity provider strategy to update the service to use.</p>
      *        <p>
-     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
-     *        to use one or more capacity providers as opposed to the default capacity provider strategy. However, when
-     *        a service is using a capacity provider strategy that is not the default capacity provider strategy, the
-     *        service cannot be updated to use the cluster's default capacity provider strategy.
+     *        if the service uses the default capacity provider strategy for the cluster, the service can be updated to
+     *        use one or more capacity providers as opposed to the default capacity provider strategy. However, when a
+     *        service is using a capacity provider strategy that's not the default capacity provider strategy, the
+     *        service can't be updated to use the cluster's default capacity provider strategy.
      *        </p>
      *        <p>
      *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
@@ -573,10 +572,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to update the service to use.
      * </p>
      * <p>
-     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
-     * one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is
-     * using a capacity provider strategy that is not the default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.
+     * if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one
+     * or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using
+     * a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to
+     * use the cluster's default capacity provider strategy.
      * </p>
      * <p>
      * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
@@ -603,10 +602,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The capacity provider strategy to update the service to use.
      *        </p>
      *        <p>
-     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
-     *        to use one or more capacity providers as opposed to the default capacity provider strategy. However, when
-     *        a service is using a capacity provider strategy that is not the default capacity provider strategy, the
-     *        service cannot be updated to use the cluster's default capacity provider strategy.
+     *        if the service uses the default capacity provider strategy for the cluster, the service can be updated to
+     *        use one or more capacity providers as opposed to the default capacity provider strategy. However, when a
+     *        service is using a capacity provider strategy that's not the default capacity provider strategy, the
+     *        service can't be updated to use the cluster's default capacity provider strategy.
      *        </p>
      *        <p>
      *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
@@ -730,8 +729,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * constraints, specify an empty array.
      * </p>
      * <p>
-     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
-     * those specified at runtime).
+     * You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition
+     * and those specified at runtime.
      * </p>
      * 
      * @return An array of task placement constraint objects to update the service to use. If no value is specified, the
@@ -739,8 +738,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         override any existing placement constraints defined for the service. To remove all existing placement
      *         constraints, specify an empty array.</p>
      *         <p>
-     *         You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
-     *         definition and those specified at runtime).
+     *         You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task
+     *         definition and those specified at runtime.
      */
 
     public java.util.List<PlacementConstraint> getPlacementConstraints() {
@@ -758,8 +757,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * constraints, specify an empty array.
      * </p>
      * <p>
-     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
-     * those specified at runtime).
+     * You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition
+     * and those specified at runtime.
      * </p>
      * 
      * @param placementConstraints
@@ -768,8 +767,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        override any existing placement constraints defined for the service. To remove all existing placement
      *        constraints, specify an empty array.</p>
      *        <p>
-     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
-     *        definition and those specified at runtime).
+     *        You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task
+     *        definition and those specified at runtime.
      */
 
     public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
@@ -789,8 +788,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * constraints, specify an empty array.
      * </p>
      * <p>
-     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
-     * those specified at runtime).
+     * You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition
+     * and those specified at runtime.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -804,8 +803,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        override any existing placement constraints defined for the service. To remove all existing placement
      *        constraints, specify an empty array.</p>
      *        <p>
-     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
-     *        definition and those specified at runtime).
+     *        You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task
+     *        definition and those specified at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,8 +826,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * constraints, specify an empty array.
      * </p>
      * <p>
-     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
-     * those specified at runtime).
+     * You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition
+     * and those specified at runtime.
      * </p>
      * 
      * @param placementConstraints
@@ -837,8 +836,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        override any existing placement constraints defined for the service. To remove all existing placement
      *        constraints, specify an empty array.</p>
      *        <p>
-     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
-     *        definition and those specified at runtime).
+     *        You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task
+     *        definition and those specified at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -855,7 +854,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * object.
      * </p>
      * <p>
-     * You can specify a maximum of five strategy rules per service.
+     * You can specify a maximum of five strategy rules for each service.
      * </p>
      * 
      * @return The task placement strategy objects to update the service to use. If no value is specified, the existing
@@ -863,7 +862,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         the existing placement strategy defined for the service. To remove an existing placement strategy,
      *         specify an empty object.</p>
      *         <p>
-     *         You can specify a maximum of five strategy rules per service.
+     *         You can specify a maximum of five strategy rules for each service.
      */
 
     public java.util.List<PlacementStrategy> getPlacementStrategy() {
@@ -881,7 +880,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * object.
      * </p>
      * <p>
-     * You can specify a maximum of five strategy rules per service.
+     * You can specify a maximum of five strategy rules for each service.
      * </p>
      * 
      * @param placementStrategy
@@ -890,7 +889,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
      *        empty object.</p>
      *        <p>
-     *        You can specify a maximum of five strategy rules per service.
+     *        You can specify a maximum of five strategy rules for each service.
      */
 
     public void setPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
@@ -910,7 +909,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * object.
      * </p>
      * <p>
-     * You can specify a maximum of five strategy rules per service.
+     * You can specify a maximum of five strategy rules for each service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -924,7 +923,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
      *        empty object.</p>
      *        <p>
-     *        You can specify a maximum of five strategy rules per service.
+     *        You can specify a maximum of five strategy rules for each service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -946,7 +945,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * object.
      * </p>
      * <p>
-     * You can specify a maximum of five strategy rules per service.
+     * You can specify a maximum of five strategy rules for each service.
      * </p>
      * 
      * @param placementStrategy
@@ -955,7 +954,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
      *        empty object.</p>
      *        <p>
-     *        You can specify a maximum of five strategy rules per service.
+     *        You can specify a maximum of five strategy rules for each service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -966,17 +965,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
-     * version is used by default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is
+     * used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
-     *        platform version is used by default. For more information, see <a
+     *        The platform version that your tasks in the service run on. A platform version is only specified for tasks
+     *        using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     *        version is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -987,16 +986,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
-     * version is used by default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is
+     * used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your tasks in the service are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
-     *         platform version is used by default. For more information, see <a
+     * @return The platform version that your tasks in the service run on. A platform version is only specified for
+     *         tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
+     *         platform version is used. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1007,17 +1006,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
-     * version is used by default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is
+     * used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
-     *        platform version is used by default. For more information, see <a
+     *        The platform version that your tasks in the service run on. A platform version is only specified for tasks
+     *        using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     *        version is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1030,16 +1029,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
-     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
-     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-     * tasks onto a newer platform version.
+     * Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use
+     * this option to start a new deployment with no service definition changes. For example, you can update a service's
+     * tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+     * Fargate tasks onto a newer platform version.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
-     *        option to trigger a new deployment with no service definition changes. For example, you can update a
-     *        service's tasks to use a newer Docker image with the same image/tag combination (
+     *        Determines whether to force a new deployment of the service. By default, deployments aren't forced. You
+     *        can use this option to start a new deployment with no service definition changes. For example, you can
+     *        update a service's tasks to use a newer Docker image with the same image/tag combination (
      *        <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
@@ -1049,15 +1048,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
-     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
-     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-     * tasks onto a newer platform version.
+     * Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use
+     * this option to start a new deployment with no service definition changes. For example, you can update a service's
+     * tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+     * Fargate tasks onto a newer platform version.
      * </p>
      * 
-     * @return Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
-     *         option to trigger a new deployment with no service definition changes. For example, you can update a
-     *         service's tasks to use a newer Docker image with the same image/tag combination (
+     * @return Determines whether to force a new deployment of the service. By default, deployments aren't forced. You
+     *         can use this option to start a new deployment with no service definition changes. For example, you can
+     *         update a service's tasks to use a newer Docker image with the same image/tag combination (
      *         <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
@@ -1067,16 +1066,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
-     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
-     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-     * tasks onto a newer platform version.
+     * Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use
+     * this option to start a new deployment with no service definition changes. For example, you can update a service's
+     * tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+     * Fargate tasks onto a newer platform version.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
-     *        option to trigger a new deployment with no service definition changes. For example, you can update a
-     *        service's tasks to use a newer Docker image with the same image/tag combination (
+     *        Determines whether to force a new deployment of the service. By default, deployments aren't forced. You
+     *        can use this option to start a new deployment with no service definition changes. For example, you can
+     *        update a service's tasks to use a newer Docker image with the same image/tag combination (
      *        <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1088,15 +1087,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
-     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
-     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-     * tasks onto a newer platform version.
+     * Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use
+     * this option to start a new deployment with no service definition changes. For example, you can update a service's
+     * tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll
+     * Fargate tasks onto a newer platform version.
      * </p>
      * 
-     * @return Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
-     *         option to trigger a new deployment with no service definition changes. For example, you can update a
-     *         service's tasks to use a newer Docker image with the same image/tag combination (
+     * @return Determines whether to force a new deployment of the service. By default, deployments aren't forced. You
+     *         can use this option to start a new deployment with no service definition changes. For example, you can
+     *         update a service's tasks to use a newer Docker image with the same image/tag combination (
      *         <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
@@ -1106,17 +1105,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
-     * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
-     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
-     * up.
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started. This is only valid if your service is configured to use a
+     * load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks,
+     * you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
-     *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *        Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
@@ -1131,17 +1129,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
-     * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
-     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
-     * up.
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started. This is only valid if your service is configured to use a
+     * load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks,
+     * you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
-     * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
-     *         Load Balancing target health checks after a task has first started. This is only valid if your service is
+     * @return The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *         Balancing target health checks after a task has first started. This is only valid if your service is
      *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *         Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
      *         During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check
@@ -1155,17 +1152,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
-     * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
-     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
-     * up.
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started. This is only valid if your service is configured to use a
+     * load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks,
+     * you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
-     *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *        Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.

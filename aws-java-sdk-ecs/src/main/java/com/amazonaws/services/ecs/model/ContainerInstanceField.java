@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ContainerInstanceField {
 
-    TAGS("TAGS");
+    TAGS("TAGS"),
+    CONTAINER_INSTANCE_HEALTH("CONTAINER_INSTANCE_HEALTH");
 
     private String value;
 

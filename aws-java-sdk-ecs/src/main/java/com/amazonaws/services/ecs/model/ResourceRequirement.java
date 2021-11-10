@@ -38,12 +38,12 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     * container agent will reserve for the container. The number of GPUs reserved for all containers in a task should
-     * not exceed the number of available GPUs on the container instance the task is launched on.
+     * container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't
+     * exceed the number of available GPUs on the container instance that the task is launched on.
      * </p>
      * <p>
-     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
-     * <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
+     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code>
+     * for an <a>InferenceAccelerator</a> specified in a task definition.
      * </p>
      */
     private String value;
@@ -61,23 +61,23 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     * container agent will reserve for the container. The number of GPUs reserved for all containers in a task should
-     * not exceed the number of available GPUs on the container instance the task is launched on.
+     * container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't
+     * exceed the number of available GPUs on the container instance that the task is launched on.
      * </p>
      * <p>
-     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
-     * <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
+     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code>
+     * for an <a>InferenceAccelerator</a> specified in a task definition.
      * </p>
      * 
      * @param value
      *        The value for the specified resource type.</p>
      *        <p>
      *        If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     *        container agent will reserve for the container. The number of GPUs reserved for all containers in a task
-     *        should not exceed the number of available GPUs on the container instance the task is launched on.
+     *        container agent reserves for the container. The number of GPUs that's reserved for all containers in a
+     *        task can't exceed the number of available GPUs on the container instance that the task is launched on.
      *        </p>
      *        <p>
-     *        If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
+     *        If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the
      *        <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
      */
 
@@ -91,22 +91,22 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     * container agent will reserve for the container. The number of GPUs reserved for all containers in a task should
-     * not exceed the number of available GPUs on the container instance the task is launched on.
+     * container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't
+     * exceed the number of available GPUs on the container instance that the task is launched on.
      * </p>
      * <p>
-     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
-     * <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
+     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code>
+     * for an <a>InferenceAccelerator</a> specified in a task definition.
      * </p>
      * 
      * @return The value for the specified resource type.</p>
      *         <p>
      *         If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     *         ECS container agent will reserve for the container. The number of GPUs reserved for all containers in a
-     *         task should not exceed the number of available GPUs on the container instance the task is launched on.
+     *         ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in
+     *         a task can't exceed the number of available GPUs on the container instance that the task is launched on.
      *         </p>
      *         <p>
-     *         If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
+     *         If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the
      *         <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
      */
 
@@ -120,23 +120,23 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     * container agent will reserve for the container. The number of GPUs reserved for all containers in a task should
-     * not exceed the number of available GPUs on the container instance the task is launched on.
+     * container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't
+     * exceed the number of available GPUs on the container instance that the task is launched on.
      * </p>
      * <p>
-     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
-     * <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
+     * If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code>
+     * for an <a>InferenceAccelerator</a> specified in a task definition.
      * </p>
      * 
      * @param value
      *        The value for the specified resource type.</p>
      *        <p>
      *        If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS
-     *        container agent will reserve for the container. The number of GPUs reserved for all containers in a task
-     *        should not exceed the number of available GPUs on the container instance the task is launched on.
+     *        container agent reserves for the container. The number of GPUs that's reserved for all containers in a
+     *        task can't exceed the number of available GPUs on the container instance that the task is launched on.
      *        </p>
      *        <p>
-     *        If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should match the
+     *        If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the
      *        <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

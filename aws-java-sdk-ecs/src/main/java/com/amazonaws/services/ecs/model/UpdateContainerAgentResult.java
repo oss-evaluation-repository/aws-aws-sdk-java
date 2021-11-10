@@ -25,18 +25,18 @@ public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container instance for which the container agent was updated.
+     * The container instance that the container agent was updated for.
      * </p>
      */
     private ContainerInstance containerInstance;
 
     /**
      * <p>
-     * The container instance for which the container agent was updated.
+     * The container instance that the container agent was updated for.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance for which the container agent was updated.
+     *        The container instance that the container agent was updated for.
      */
 
     public void setContainerInstance(ContainerInstance containerInstance) {
@@ -45,10 +45,10 @@ public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container instance for which the container agent was updated.
+     * The container instance that the container agent was updated for.
      * </p>
      * 
-     * @return The container instance for which the container agent was updated.
+     * @return The container instance that the container agent was updated for.
      */
 
     public ContainerInstance getContainerInstance() {
@@ -57,11 +57,11 @@ public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container instance for which the container agent was updated.
+     * The container instance that the container agent was updated for.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance for which the container agent was updated.
+     *        The container instance that the container agent was updated for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

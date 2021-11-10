@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS
- * services are cluster-specific and Region-specific.
+ * The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS
+ * services are cluster specific and Region specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -35,8 +35,7 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> include;
@@ -150,13 +149,12 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      * 
      * @return Specifies whether or not you want to see the resource tags for the capacity provider. If
-     *         <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags are
-     *         not included in the response.
+     *         <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags
+     *         aren't included in the response.
      * @see CapacityProviderField
      */
 
@@ -170,14 +168,13 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      * 
      * @param include
      *        Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code>
-     *        is specified, the tags are included in the response. If this field is omitted, tags are not included in
-     *        the response.
+     *        is specified, the tags are included in the response. If this field is omitted, tags aren't included in the
+     *        response.
      * @see CapacityProviderField
      */
 
@@ -193,8 +190,7 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,8 +200,8 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param include
      *        Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code>
-     *        is specified, the tags are included in the response. If this field is omitted, tags are not included in
-     *        the response.
+     *        is specified, the tags are included in the response. If this field is omitted, tags aren't included in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderField
      */
@@ -223,14 +219,13 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      * 
      * @param include
      *        Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code>
-     *        is specified, the tags are included in the response. If this field is omitted, tags are not included in
-     *        the response.
+     *        is specified, the tags are included in the response. If this field is omitted, tags aren't included in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderField
      */
@@ -243,14 +238,13 @@ public class DescribeCapacityProvidersRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is
-     * specified, the tags are included in the response. If this field is omitted, tags are not included in the
-     * response.
+     * specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.
      * </p>
      * 
      * @param include
      *        Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code>
-     *        is specified, the tags are included in the response. If this field is omitted, tags are not included in
-     *        the response.
+     *        is specified, the tags are included in the response. If this field is omitted, tags aren't included in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderField
      */

@@ -34,8 +34,8 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
     private String cluster;
     /**
      * <p>
-     * The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     * attributes, specify the attribute name and target ID, but do not specify the value. If you specify the target ID
+     * The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom
+     * attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID
      * using the short form, you must also specify the target type.
      * </p>
      */
@@ -89,14 +89,14 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     * attributes, specify the attribute name and target ID, but do not specify the value. If you specify the target ID
+     * The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom
+     * attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID
      * using the short form, you must also specify the target type.
      * </p>
      * 
-     * @return The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     *         attributes, specify the attribute name and target ID, but do not specify the value. If you specify the
-     *         target ID using the short form, you must also specify the target type.
+     * @return The attributes to delete from your resource. You can specify up to 10 attributes for each request. For
+     *         custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify
+     *         the target ID using the short form, you must also specify the target type.
      */
 
     public java.util.List<Attribute> getAttributes() {
@@ -108,15 +108,15 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     * attributes, specify the attribute name and target ID, but do not specify the value. If you specify the target ID
+     * The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom
+     * attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID
      * using the short form, you must also specify the target type.
      * </p>
      * 
      * @param attributes
-     *        The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     *        attributes, specify the attribute name and target ID, but do not specify the value. If you specify the
-     *        target ID using the short form, you must also specify the target type.
+     *        The attributes to delete from your resource. You can specify up to 10 attributes for each request. For
+     *        custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify
+     *        the target ID using the short form, you must also specify the target type.
      */
 
     public void setAttributes(java.util.Collection<Attribute> attributes) {
@@ -130,8 +130,8 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     * attributes, specify the attribute name and target ID, but do not specify the value. If you specify the target ID
+     * The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom
+     * attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID
      * using the short form, you must also specify the target type.
      * </p>
      * <p>
@@ -141,9 +141,9 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param attributes
-     *        The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     *        attributes, specify the attribute name and target ID, but do not specify the value. If you specify the
-     *        target ID using the short form, you must also specify the target type.
+     *        The attributes to delete from your resource. You can specify up to 10 attributes for each request. For
+     *        custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify
+     *        the target ID using the short form, you must also specify the target type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,15 +159,15 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     * attributes, specify the attribute name and target ID, but do not specify the value. If you specify the target ID
+     * The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom
+     * attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID
      * using the short form, you must also specify the target type.
      * </p>
      * 
      * @param attributes
-     *        The attributes to delete from your resource. You can specify up to 10 attributes per request. For custom
-     *        attributes, specify the attribute name and target ID, but do not specify the value. If you specify the
-     *        target ID using the short form, you must also specify the target type.
+     *        The attributes to delete from your resource. You can specify up to 10 attributes for each request. For
+     *        custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify
+     *        the target ID using the short form, you must also specify the target type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

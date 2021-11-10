@@ -43,7 +43,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.
+ * <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined.
  * </p>
  * </li>
  * </ul>
@@ -87,15 +87,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more
+ * Container health checks are supported for Fargate tasks if you're using platform version 1.1.0 or greater. For more
  * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
  * Platform Versions</a>.
  * </p>
  * </li>
  * <li>
  * <p>
- * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic
- * Load Balancer.
+ * Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load
+ * Balancer.
  * </p>
  * </li>
  * </ul>
@@ -113,14 +113,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * command with the container's default shell.
      * </p>
      * <p>
-     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you
-     * should enclose the list of commands in brackets, as shown below.
+     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.
      * </p>
      * <p>
      * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      * </p>
      * <p>
-     * You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.
+     * You don't need to include the brackets when you use the Amazon Web Services Management Console.
      * </p>
      * <p>
      * <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -156,9 +156,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     private Integer retries;
     /**
      * <p>
-     * The optional grace period within which to provide containers time to bootstrap before failed health checks count
-     * towards the maximum number of retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code> is
-     * disabled by default.
+     * The optional grace period to provide containers time to bootstrap before failed health checks count towards the
+     * maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.
      * </p>
      * <note>
      * <p>
@@ -176,14 +176,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * command with the container's default shell.
      * </p>
      * <p>
-     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you
-     * should enclose the list of commands in brackets, as shown below.
+     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.
      * </p>
      * <p>
      * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      * </p>
      * <p>
-     * You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.
+     * You don't need to include the brackets when you use the Amazon Web Services Management Console.
      * </p>
      * <p>
      * <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -200,14 +200,13 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *         <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
      *         <p>
      *         When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
-     *         APIs, you should enclose the list of commands in brackets, as shown below.
+     *         APIs, enclose the list of commands in brackets.
      *         </p>
      *         <p>
      *         <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      *         </p>
      *         <p>
-     *         You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown
-     *         below.
+     *         You don't need to include the brackets when you use the Amazon Web Services Management Console.
      *         </p>
      *         <p>
      *         <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -233,14 +232,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * command with the container's default shell.
      * </p>
      * <p>
-     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you
-     * should enclose the list of commands in brackets, as shown below.
+     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.
      * </p>
      * <p>
      * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      * </p>
      * <p>
-     * You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.
+     * You don't need to include the brackets when you use the Amazon Web Services Management Console.
      * </p>
      * <p>
      * <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -258,14 +257,13 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
-     *        APIs, you should enclose the list of commands in brackets, as shown below.
+     *        APIs, enclose the list of commands in brackets.
      *        </p>
      *        <p>
      *        <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      *        </p>
      *        <p>
-     *        You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown
-     *        below.
+     *        You don't need to include the brackets when you use the Amazon Web Services Management Console.
      *        </p>
      *        <p>
      *        <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -293,14 +291,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * command with the container's default shell.
      * </p>
      * <p>
-     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you
-     * should enclose the list of commands in brackets, as shown below.
+     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.
      * </p>
      * <p>
      * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      * </p>
      * <p>
-     * You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.
+     * You don't need to include the brackets when you use the Amazon Web Services Management Console.
      * </p>
      * <p>
      * <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -323,14 +321,13 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
-     *        APIs, you should enclose the list of commands in brackets, as shown below.
+     *        APIs, enclose the list of commands in brackets.
      *        </p>
      *        <p>
      *        <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      *        </p>
      *        <p>
-     *        You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown
-     *        below.
+     *        You don't need to include the brackets when you use the Amazon Web Services Management Console.
      *        </p>
      *        <p>
      *        <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -360,14 +357,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * command with the container's default shell.
      * </p>
      * <p>
-     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you
-     * should enclose the list of commands in brackets, as shown below.
+     * When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.
      * </p>
      * <p>
      * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      * </p>
      * <p>
-     * You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.
+     * You don't need to include the brackets when you use the Amazon Web Services Management Console.
      * </p>
      * <p>
      * <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -385,14 +382,13 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
-     *        APIs, you should enclose the list of commands in brackets, as shown below.
+     *        APIs, enclose the list of commands in brackets.
      *        </p>
      *        <p>
      *        <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
      *        </p>
      *        <p>
-     *        You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown
-     *        below.
+     *        You don't need to include the brackets when you use the Amazon Web Services Management Console.
      *        </p>
      *        <p>
      *        <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
@@ -550,9 +546,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional grace period within which to provide containers time to bootstrap before failed health checks count
-     * towards the maximum number of retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code> is
-     * disabled by default.
+     * The optional grace period to provide containers time to bootstrap before failed health checks count towards the
+     * maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.
      * </p>
      * <note>
      * <p>
@@ -562,9 +558,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param startPeriod
-     *        The optional grace period within which to provide containers time to bootstrap before failed health checks
-     *        count towards the maximum number of retries. You may specify between 0 and 300 seconds. The
-     *        <code>startPeriod</code> is disabled by default.</p> <note>
+     *        The optional grace period to provide containers time to bootstrap before failed health checks count
+     *        towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the
+     *        <code>startPeriod</code> is disabled.</p> <note>
      *        <p>
      *        If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy
      *        and any subsequent failures count toward the maximum number of retries.
@@ -577,9 +573,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional grace period within which to provide containers time to bootstrap before failed health checks count
-     * towards the maximum number of retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code> is
-     * disabled by default.
+     * The optional grace period to provide containers time to bootstrap before failed health checks count towards the
+     * maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.
      * </p>
      * <note>
      * <p>
@@ -588,9 +584,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The optional grace period within which to provide containers time to bootstrap before failed health
-     *         checks count towards the maximum number of retries. You may specify between 0 and 300 seconds. The
-     *         <code>startPeriod</code> is disabled by default.</p> <note>
+     * @return The optional grace period to provide containers time to bootstrap before failed health checks count
+     *         towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the
+     *         <code>startPeriod</code> is disabled.</p> <note>
      *         <p>
      *         If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy
      *         and any subsequent failures count toward the maximum number of retries.
@@ -603,9 +599,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional grace period within which to provide containers time to bootstrap before failed health checks count
-     * towards the maximum number of retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code> is
-     * disabled by default.
+     * The optional grace period to provide containers time to bootstrap before failed health checks count towards the
+     * maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.
      * </p>
      * <note>
      * <p>
@@ -615,9 +611,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param startPeriod
-     *        The optional grace period within which to provide containers time to bootstrap before failed health checks
-     *        count towards the maximum number of retries. You may specify between 0 and 300 seconds. The
-     *        <code>startPeriod</code> is disabled by default.</p> <note>
+     *        The optional grace period to provide containers time to bootstrap before failed health checks count
+     *        towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the
+     *        <code>startPeriod</code> is disabled.</p> <note>
      *        <p>
      *        If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy
      *        and any subsequent failures count toward the maximum number of retries.

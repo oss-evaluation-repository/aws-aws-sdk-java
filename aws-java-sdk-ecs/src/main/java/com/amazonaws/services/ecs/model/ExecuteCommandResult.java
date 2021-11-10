@@ -43,8 +43,8 @@ public class ExecuteCommandResult extends com.amazonaws.AmazonWebServiceResult<c
     private String containerName;
     /**
      * <p>
-     * Whether or not the execute command session is running in interactive mode. Amazon ECS only supports initiating
-     * interactive sessions, so you must specify <code>true</code> for this value.
+     * Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
+     * initiating interactive sessions, so you must specify <code>true</code> for this value.
      * </p>
      */
     private Boolean interactive;
@@ -183,12 +183,12 @@ public class ExecuteCommandResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Whether or not the execute command session is running in interactive mode. Amazon ECS only supports initiating
-     * interactive sessions, so you must specify <code>true</code> for this value.
+     * Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
+     * initiating interactive sessions, so you must specify <code>true</code> for this value.
      * </p>
      * 
      * @param interactive
-     *        Whether or not the execute command session is running in interactive mode. Amazon ECS only supports
+     *        Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
      *        initiating interactive sessions, so you must specify <code>true</code> for this value.
      */
 
@@ -198,11 +198,11 @@ public class ExecuteCommandResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Whether or not the execute command session is running in interactive mode. Amazon ECS only supports initiating
-     * interactive sessions, so you must specify <code>true</code> for this value.
+     * Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
+     * initiating interactive sessions, so you must specify <code>true</code> for this value.
      * </p>
      * 
-     * @return Whether or not the execute command session is running in interactive mode. Amazon ECS only supports
+     * @return Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
      *         initiating interactive sessions, so you must specify <code>true</code> for this value.
      */
 
@@ -212,12 +212,12 @@ public class ExecuteCommandResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Whether or not the execute command session is running in interactive mode. Amazon ECS only supports initiating
-     * interactive sessions, so you must specify <code>true</code> for this value.
+     * Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
+     * initiating interactive sessions, so you must specify <code>true</code> for this value.
      * </p>
      * 
      * @param interactive
-     *        Whether or not the execute command session is running in interactive mode. Amazon ECS only supports
+     *        Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
      *        initiating interactive sessions, so you must specify <code>true</code> for this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -229,11 +229,11 @@ public class ExecuteCommandResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Whether or not the execute command session is running in interactive mode. Amazon ECS only supports initiating
-     * interactive sessions, so you must specify <code>true</code> for this value.
+     * Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
+     * initiating interactive sessions, so you must specify <code>true</code> for this value.
      * </p>
      * 
-     * @return Whether or not the execute command session is running in interactive mode. Amazon ECS only supports
+     * @return Determines whether the execute command session is running in interactive mode. Amazon ECS only supports
      *         initiating interactive sessions, so you must specify <code>true</code> for this value.
      */
 

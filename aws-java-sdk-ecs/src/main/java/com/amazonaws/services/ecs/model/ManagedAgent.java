@@ -30,7 +30,7 @@ public class ManagedAgent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the managed agent was last started.
+     * The Unix timestamp for the time when the managed agent was last started.
      * </p>
      */
     private java.util.Date lastStartedAt;
@@ -56,11 +56,11 @@ public class ManagedAgent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the managed agent was last started.
+     * The Unix timestamp for the time when the managed agent was last started.
      * </p>
      * 
      * @param lastStartedAt
-     *        The Unix timestamp for when the managed agent was last started.
+     *        The Unix timestamp for the time when the managed agent was last started.
      */
 
     public void setLastStartedAt(java.util.Date lastStartedAt) {
@@ -69,10 +69,10 @@ public class ManagedAgent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the managed agent was last started.
+     * The Unix timestamp for the time when the managed agent was last started.
      * </p>
      * 
-     * @return The Unix timestamp for when the managed agent was last started.
+     * @return The Unix timestamp for the time when the managed agent was last started.
      */
 
     public java.util.Date getLastStartedAt() {
@@ -81,11 +81,11 @@ public class ManagedAgent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the managed agent was last started.
+     * The Unix timestamp for the time when the managed agent was last started.
      * </p>
      * 
      * @param lastStartedAt
-     *        The Unix timestamp for when the managed agent was last started.
+     *        The Unix timestamp for the time when the managed agent was last started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

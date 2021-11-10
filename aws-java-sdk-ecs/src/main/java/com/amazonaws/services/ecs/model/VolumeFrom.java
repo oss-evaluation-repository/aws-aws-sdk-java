@@ -30,7 +30,7 @@ public class VolumeFrom implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of another container within the same task definition from which to mount volumes.
+     * The name of another container within the same task definition to mount volumes from.
      * </p>
      */
     private String sourceContainer;
@@ -44,11 +44,11 @@ public class VolumeFrom implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of another container within the same task definition from which to mount volumes.
+     * The name of another container within the same task definition to mount volumes from.
      * </p>
      * 
      * @param sourceContainer
-     *        The name of another container within the same task definition from which to mount volumes.
+     *        The name of another container within the same task definition to mount volumes from.
      */
 
     public void setSourceContainer(String sourceContainer) {
@@ -57,10 +57,10 @@ public class VolumeFrom implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of another container within the same task definition from which to mount volumes.
+     * The name of another container within the same task definition to mount volumes from.
      * </p>
      * 
-     * @return The name of another container within the same task definition from which to mount volumes.
+     * @return The name of another container within the same task definition to mount volumes from.
      */
 
     public String getSourceContainer() {
@@ -69,11 +69,11 @@ public class VolumeFrom implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of another container within the same task definition from which to mount volumes.
+     * The name of another container within the same task definition to mount volumes from.
      * </p>
      * 
      * @param sourceContainer
-     *        The name of another container within the same task definition from which to mount volumes.
+     *        The name of another container within the same task definition to mount volumes from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

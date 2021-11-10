@@ -27,8 +27,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS
+     * capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      */
     private String resourceArn;
@@ -85,13 +85,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS
+     * capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *        are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     *        The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+     *        Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -100,12 +100,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS
+     * capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *         are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * @return The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+     *         Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      */
 
     public String getResourceArn() {
@@ -114,13 +114,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS
+     * capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *        are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     *        The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
+     *        Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

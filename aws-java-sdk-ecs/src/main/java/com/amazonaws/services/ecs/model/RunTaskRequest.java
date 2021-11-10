@@ -44,15 +44,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a
+     * cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
-     * call.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for
+     * each call.
      * </p>
      */
     private Integer count;
@@ -66,8 +66,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private Boolean enableECSManagedTags;
     /**
      * <p>
-     * Whether or not to enable the execute command functionality for the containers in this task. If <code>true</code>,
-     * this enables execute command functionality on all containers in the task.
+     * Determines whether to enable the execute command functionality for the containers in this task. If
+     * <code>true</code>, this enables execute command functionality on all containers in the task.
      * </p>
      */
     private Boolean enableExecuteCommand;
@@ -80,7 +80,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String group;
     /**
      * <p>
-     * The infrastructure on which to run your standalone task. For more information, see <a
+     * The infrastructure to run your standalone task on. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -99,7 +99,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.
      * </p>
      * <p>
@@ -115,8 +115,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other
+     * network modes. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -125,7 +125,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
+     * definition and the overrides it should receive. You can override the default command for a container (that's
      * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
      * existing environment variables (that are specified in the task definition or Docker image) on a container or add
      * new environment variables to it with an <code>environment</code> override.
@@ -138,21 +138,21 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private TaskOverride overrides;
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task
      * (including constraints in the task definition and those specified at runtime).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
     /**
      * <p>
-     * The platform version the task should use. A platform version is only specified for tasks hosted on Fargate. If
-     * one is not specified, the <code>LATEST</code> platform version is used by default. For more information, see <a
+     * The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one
+     * isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -161,8 +161,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
-     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
-     * task creation, use the <a>TagResource</a> API action.
+     * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.
      * </p>
      * <note>
      * <p>
@@ -182,8 +182,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -245,10 +245,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
+     * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
      * permissions policy. For example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value
      * must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
@@ -423,12 +423,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a
+     * cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not
      *        specify a cluster, the default cluster is assumed.
      */
 
@@ -438,11 +438,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a
+     * cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not
      *         specify a cluster, the default cluster is assumed.
      */
 
@@ -452,12 +452,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a
+     * cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not
      *        specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -469,13 +469,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
-     * call.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for
+     * each call.
      * </p>
      * 
      * @param count
      *        The number of instantiations of the specified task to place on your cluster. You can specify up to 10
-     *        tasks per call.
+     *        tasks for each call.
      */
 
     public void setCount(Integer count) {
@@ -484,12 +484,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
-     * call.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for
+     * each call.
      * </p>
      * 
      * @return The number of instantiations of the specified task to place on your cluster. You can specify up to 10
-     *         tasks per call.
+     *         tasks for each call.
      */
 
     public Integer getCount() {
@@ -498,13 +498,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
-     * call.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for
+     * each call.
      * </p>
      * 
      * @param count
      *        The number of instantiations of the specified task to place on your cluster. You can specify up to 10
-     *        tasks per call.
+     *        tasks for each call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,12 +583,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Whether or not to enable the execute command functionality for the containers in this task. If <code>true</code>,
-     * this enables execute command functionality on all containers in the task.
+     * Determines whether to enable the execute command functionality for the containers in this task. If
+     * <code>true</code>, this enables execute command functionality on all containers in the task.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Whether or not to enable the execute command functionality for the containers in this task. If
+     *        Determines whether to enable the execute command functionality for the containers in this task. If
      *        <code>true</code>, this enables execute command functionality on all containers in the task.
      */
 
@@ -598,11 +598,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Whether or not to enable the execute command functionality for the containers in this task. If <code>true</code>,
-     * this enables execute command functionality on all containers in the task.
+     * Determines whether to enable the execute command functionality for the containers in this task. If
+     * <code>true</code>, this enables execute command functionality on all containers in the task.
      * </p>
      * 
-     * @return Whether or not to enable the execute command functionality for the containers in this task. If
+     * @return Determines whether to enable the execute command functionality for the containers in this task. If
      *         <code>true</code>, this enables execute command functionality on all containers in the task.
      */
 
@@ -612,12 +612,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Whether or not to enable the execute command functionality for the containers in this task. If <code>true</code>,
-     * this enables execute command functionality on all containers in the task.
+     * Determines whether to enable the execute command functionality for the containers in this task. If
+     * <code>true</code>, this enables execute command functionality on all containers in the task.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Whether or not to enable the execute command functionality for the containers in this task. If
+     *        Determines whether to enable the execute command functionality for the containers in this task. If
      *        <code>true</code>, this enables execute command functionality on all containers in the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -629,11 +629,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Whether or not to enable the execute command functionality for the containers in this task. If <code>true</code>,
-     * this enables execute command functionality on all containers in the task.
+     * Determines whether to enable the execute command functionality for the containers in this task. If
+     * <code>true</code>, this enables execute command functionality on all containers in the task.
      * </p>
      * 
-     * @return Whether or not to enable the execute command functionality for the containers in this task. If
+     * @return Determines whether to enable the execute command functionality for the containers in this task. If
      *         <code>true</code>, this enables execute command functionality on all containers in the task.
      */
 
@@ -689,7 +689,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The infrastructure on which to run your standalone task. For more information, see <a
+     * The infrastructure to run your standalone task on. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -708,7 +708,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.
      * </p>
      * <p>
@@ -721,7 +721,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param launchType
-     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        The infrastructure to run your standalone task on. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
      *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -739,7 +739,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM)
      *        capacity registered to your cluster.
      *        </p>
      *        <p>
@@ -758,7 +758,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The infrastructure on which to run your standalone task. For more information, see <a
+     * The infrastructure to run your standalone task on. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -777,7 +777,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.
      * </p>
      * <p>
@@ -789,7 +789,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <code>launchType</code>.
      * </p>
      * 
-     * @return The infrastructure on which to run your standalone task. For more information, see <a
+     * @return The infrastructure to run your standalone task on. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
      *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
@@ -807,7 +807,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *         </p>
      *         <p>
-     *         The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *         The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM)
      *         capacity registered to your cluster.
      *         </p>
      *         <p>
@@ -826,7 +826,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The infrastructure on which to run your standalone task. For more information, see <a
+     * The infrastructure to run your standalone task on. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -845,7 +845,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.
      * </p>
      * <p>
@@ -858,7 +858,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param launchType
-     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        The infrastructure to run your standalone task on. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
      *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -876,7 +876,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM)
      *        capacity registered to your cluster.
      *        </p>
      *        <p>
@@ -897,7 +897,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The infrastructure on which to run your standalone task. For more information, see <a
+     * The infrastructure to run your standalone task on. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -916,7 +916,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.
      * </p>
      * <p>
@@ -929,7 +929,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param launchType
-     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        The infrastructure to run your standalone task on. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
      *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -947,7 +947,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM)
      *        capacity registered to your cluster.
      *        </p>
      *        <p>
@@ -969,15 +969,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other
+     * network modes. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the task. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported
      *        for other network modes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *        networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -990,14 +990,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other
+     * network modes. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The network configuration for the task. This parameter is required for task definitions that use the
-     *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
+     *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported
      *         for other network modes. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1010,15 +1010,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other
+     * network modes. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the task. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported
      *        for other network modes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *        networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1033,7 +1033,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
+     * definition and the overrides it should receive. You can override the default command for a container (that's
      * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
      * existing environment variables (that are specified in the task definition or Docker image) on a container or add
      * new environment variables to it with an <code>environment</code> override.
@@ -1045,10 +1045,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param overrides
      *        A list of container overrides in JSON format that specify the name of a container in the specified task
-     *        definition and the overrides it should receive. You can override the default command for a container (that
-     *        is specified in the task definition or Docker image) with a <code>command</code> override. You can also
-     *        override existing environment variables (that are specified in the task definition or Docker image) on a
-     *        container or add new environment variables to it with an <code>environment</code> override.</p>
+     *        definition and the overrides it should receive. You can override the default command for a container
+     *        (that's specified in the task definition or Docker image) with a <code>command</code> override. You can
+     *        also override existing environment variables (that are specified in the task definition or Docker image)
+     *        on a container or add new environment variables to it with an <code>environment</code> override.</p>
      *        <p>
      *        A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters
      *        of the override structure.
@@ -1061,7 +1061,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
+     * definition and the overrides it should receive. You can override the default command for a container (that's
      * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
      * existing environment variables (that are specified in the task definition or Docker image) on a container or add
      * new environment variables to it with an <code>environment</code> override.
@@ -1073,7 +1073,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @return A list of container overrides in JSON format that specify the name of a container in the specified task
      *         definition and the overrides it should receive. You can override the default command for a container
-     *         (that is specified in the task definition or Docker image) with a <code>command</code> override. You can
+     *         (that's specified in the task definition or Docker image) with a <code>command</code> override. You can
      *         also override existing environment variables (that are specified in the task definition or Docker image)
      *         on a container or add new environment variables to it with an <code>environment</code> override.</p>
      *         <p>
@@ -1088,7 +1088,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
+     * definition and the overrides it should receive. You can override the default command for a container (that's
      * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
      * existing environment variables (that are specified in the task definition or Docker image) on a container or add
      * new environment variables to it with an <code>environment</code> override.
@@ -1100,10 +1100,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param overrides
      *        A list of container overrides in JSON format that specify the name of a container in the specified task
-     *        definition and the overrides it should receive. You can override the default command for a container (that
-     *        is specified in the task definition or Docker image) with a <code>command</code> override. You can also
-     *        override existing environment variables (that are specified in the task definition or Docker image) on a
-     *        container or add new environment variables to it with an <code>environment</code> override.</p>
+     *        definition and the overrides it should receive. You can override the default command for a container
+     *        (that's specified in the task definition or Docker image) with a <code>command</code> override. You can
+     *        also override existing environment variables (that are specified in the task definition or Docker image)
+     *        on a container or add new environment variables to it with an <code>environment</code> override.</p>
      *        <p>
      *        A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters
      *        of the override structure.
@@ -1117,12 +1117,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task
      * (including constraints in the task definition and those specified at runtime).
      * </p>
      * 
-     * @return An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
-     *         task (including constraints in the task definition and those specified at runtime).
+     * @return An array of placement constraint objects to use for the task. You can specify up to 10 constraints for
+     *         each task (including constraints in the task definition and those specified at runtime).
      */
 
     public java.util.List<PlacementConstraint> getPlacementConstraints() {
@@ -1134,13 +1134,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task
      * (including constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
-     *        task (including constraints in the task definition and those specified at runtime).
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints for
+     *        each task (including constraints in the task definition and those specified at runtime).
      */
 
     public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
@@ -1154,7 +1154,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task
      * (including constraints in the task definition and those specified at runtime).
      * </p>
      * <p>
@@ -1164,8 +1164,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
-     *        task (including constraints in the task definition and those specified at runtime).
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints for
+     *        each task (including constraints in the task definition and those specified at runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1181,13 +1181,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task
      * (including constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
-     *        task (including constraints in the task definition and those specified at runtime).
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints for
+     *        each task (including constraints in the task definition and those specified at runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1198,11 +1198,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.
      * </p>
      * 
-     * @return The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
-     *         task.
+     * @return The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for
+     *         each task.
      */
 
     public java.util.List<PlacementStrategy> getPlacementStrategy() {
@@ -1214,11 +1214,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each
      *        task.
      */
 
@@ -1233,7 +1233,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1242,7 +1242,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each
      *        task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1259,11 +1259,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each
      *        task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1275,16 +1275,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The platform version the task should use. A platform version is only specified for tasks hosted on Fargate. If
-     * one is not specified, the <code>LATEST</code> platform version is used by default. For more information, see <a
+     * The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one
+     * isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version the task should use. A platform version is only specified for tasks hosted on
-     *        Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     *        information, see <a
+     *        The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If
+     *        one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1295,15 +1294,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The platform version the task should use. A platform version is only specified for tasks hosted on Fargate. If
-     * one is not specified, the <code>LATEST</code> platform version is used by default. For more information, see <a
+     * The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one
+     * isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version the task should use. A platform version is only specified for tasks hosted on
-     *         Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     *         information, see <a
+     * @return The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If
+     *         one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1314,16 +1312,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The platform version the task should use. A platform version is only specified for tasks hosted on Fargate. If
-     * one is not specified, the <code>LATEST</code> platform version is used by default. For more information, see <a
+     * The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one
+     * isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version the task should use. A platform version is only specified for tasks hosted on
-     *        Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     *        information, see <a
+     *        The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If
+     *        one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1337,8 +1334,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
-     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
-     * task creation, use the <a>TagResource</a> API action.
+     * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.
      * </p>
      * <note>
      * <p>
@@ -1348,8 +1345,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
-     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
-     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
+     *        task after task creation, use the <a>TagResource</a> API action.</p> <note>
      *        <p>
      *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
      *        </p>
@@ -1363,8 +1360,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
-     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
-     * task creation, use the <a>TagResource</a> API action.
+     * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.
      * </p>
      * <note>
      * <p>
@@ -1373,7 +1370,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </note>
      * 
      * @return Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
-     *         the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
+     *         the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to
      *         a task after task creation, use the <a>TagResource</a> API action.</p> <note>
      *         <p>
      *         An error will be received if you specify the <code>SERVICE</code> option when running a task.
@@ -1388,8 +1385,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
-     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
-     * task creation, use the <a>TagResource</a> API action.
+     * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.
      * </p>
      * <note>
      * <p>
@@ -1399,8 +1396,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
-     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
-     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
+     *        task after task creation, use the <a>TagResource</a> API action.</p> <note>
      *        <p>
      *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
      *        </p>
@@ -1416,8 +1413,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
-     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
-     * task creation, use the <a>TagResource</a> API action.
+     * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.
      * </p>
      * <note>
      * <p>
@@ -1427,8 +1424,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
-     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
-     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
+     *        task after task creation, use the <a>TagResource</a> API action.</p> <note>
      *        <p>
      *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
      *        </p>
@@ -1486,8 +1483,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1499,7 +1496,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
      *        deployment ID of the service that starts it.
@@ -1514,8 +1511,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1526,7 +1523,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         a batch process job, you could apply a unique identifier for that job to your task with the
      *         <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *         results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *         lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *         lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *         <p>
      *         If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
      *         deployment ID of the service that starts it.
@@ -1541,8 +1538,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1554,7 +1551,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
      *        deployment ID of the service that starts it.
@@ -1999,10 +1996,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
+     * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
      * permissions policy. For example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value
      * must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
@@ -2010,10 +2007,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
      *        principal's permissions policy. For example, if the <code>Resource</code> is
      *        arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN
      *        value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
@@ -2026,20 +2023,20 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
+     * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
      * permissions policy. For example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value
      * must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
      * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *         definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     *         is used.</p>
+     *         definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
+     *         used.</p>
      *         <p>
-     *         The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM
+     *         The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
      *         principal's permissions policy. For example, if the <code>Resource</code> is
      *         arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN
      *         value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
@@ -2052,10 +2049,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
+     * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
      * permissions policy. For example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value
      * must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
@@ -2063,10 +2060,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        The full ARN value must match the value that you specified ias the <code>Resource</code> of the IAM
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
      *        principal's permissions policy. For example, if the <code>Resource</code> is
      *        arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN
      *        value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.

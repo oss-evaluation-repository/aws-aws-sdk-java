@@ -50,7 +50,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.
      * </p>
      * </note>
      */
@@ -88,7 +88,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      * </p>
      * </note>
      */
@@ -108,7 +108,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't supported.
      * </p>
      * </note>
      */
@@ -125,7 +125,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.
      * </p>
      * </note>
      */
@@ -216,7 +216,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -226,7 +226,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>--device</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *         If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't
      *         supported.
      *         </p>
      */
@@ -247,7 +247,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -258,7 +258,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--device</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't
      *        supported.
      *        </p>
      */
@@ -281,7 +281,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.
      * </p>
      * </note>
      * <p>
@@ -297,7 +297,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--device</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't
      *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -322,7 +322,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -333,7 +333,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--device</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't
      *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -526,7 +526,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -534,8 +534,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>--tmpfs</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
-     *         supported.
+     *         If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      *         </p>
      */
 
@@ -554,7 +553,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -563,8 +562,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
-     *        supported.
+     *        If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      *        </p>
      */
 
@@ -585,7 +583,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      * </p>
      * </note>
      * <p>
@@ -599,8 +597,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
-     *        supported.
+     *        If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -623,7 +620,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -632,8 +629,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--tmpfs</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
-     *        supported.
+     *        If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -658,7 +654,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -675,7 +671,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't
      *        supported.
      *        </p>
      */
@@ -699,7 +695,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -715,7 +711,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *         If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't
      *         supported.
      *         </p>
      */
@@ -739,7 +735,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -756,7 +752,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't
      *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -779,7 +775,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -793,7 +789,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--memory-swappiness</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't
      *        supported.
      *        </p>
      */
@@ -814,7 +810,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -827,7 +823,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <code>--memory-swappiness</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *         If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't
      *         supported.
      *         </p>
      */
@@ -848,7 +844,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.
      * </p>
      * </note>
      * 
@@ -862,7 +858,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <code>--memory-swappiness</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *        If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't
      *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

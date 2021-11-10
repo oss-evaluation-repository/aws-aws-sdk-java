@@ -38,13 +38,13 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
     private String bindIP;
     /**
      * <p>
-     * The port number on the container that is used with the network binding.
+     * The port number on the container that's used with the network binding.
      * </p>
      */
     private Integer containerPort;
     /**
      * <p>
-     * The port number on the host that is used with the network binding.
+     * The port number on the host that's used with the network binding.
      * </p>
      */
     private Integer hostPort;
@@ -97,11 +97,11 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the container that is used with the network binding.
+     * The port number on the container that's used with the network binding.
      * </p>
      * 
      * @param containerPort
-     *        The port number on the container that is used with the network binding.
+     *        The port number on the container that's used with the network binding.
      */
 
     public void setContainerPort(Integer containerPort) {
@@ -110,10 +110,10 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the container that is used with the network binding.
+     * The port number on the container that's used with the network binding.
      * </p>
      * 
-     * @return The port number on the container that is used with the network binding.
+     * @return The port number on the container that's used with the network binding.
      */
 
     public Integer getContainerPort() {
@@ -122,11 +122,11 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the container that is used with the network binding.
+     * The port number on the container that's used with the network binding.
      * </p>
      * 
      * @param containerPort
-     *        The port number on the container that is used with the network binding.
+     *        The port number on the container that's used with the network binding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the host that is used with the network binding.
+     * The port number on the host that's used with the network binding.
      * </p>
      * 
      * @param hostPort
-     *        The port number on the host that is used with the network binding.
+     *        The port number on the host that's used with the network binding.
      */
 
     public void setHostPort(Integer hostPort) {
@@ -150,10 +150,10 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the host that is used with the network binding.
+     * The port number on the host that's used with the network binding.
      * </p>
      * 
-     * @return The port number on the host that is used with the network binding.
+     * @return The port number on the host that's used with the network binding.
      */
 
     public Integer getHostPort() {
@@ -162,11 +162,11 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number on the host that is used with the network binding.
+     * The port number on the host that's used with the network binding.
      * </p>
      * 
      * @param hostPort
-     *        The port number on the host that is used with the network binding.
+     *        The port number on the host that's used with the network binding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

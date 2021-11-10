@@ -74,7 +74,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
-     * The launch type that new tasks in the task set will use. For more information, see <a
+     * The launch type that new tasks in the task set uses. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -115,9 +115,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
     /**
      * <p>
-     * The platform version that the tasks in the task set should use. A platform version is specified only for tasks
-     * using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default.
+     * The platform version that the tasks in the task set uses. A platform version is specified only for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      * </p>
      */
     private String platformVersion;
@@ -129,15 +128,15 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Scale scale;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
-     * characters are allowed.
+     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
+     * It can be up to 32 ASCII characters are allowed.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+     * and an optional value. You define both. When a service is deleted, the tags are deleted.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -572,7 +571,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type that new tasks in the task set will use. For more information, see <a
+     * The launch type that new tasks in the task set uses. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -581,7 +580,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param launchType
-     *        The launch type that new tasks in the task set will use. For more information, see <a
+     *        The launch type that new tasks in the task set uses. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -596,7 +595,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type that new tasks in the task set will use. For more information, see <a
+     * The launch type that new tasks in the task set uses. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -604,7 +603,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
-     * @return The launch type that new tasks in the task set will use. For more information, see <a
+     * @return The launch type that new tasks in the task set uses. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
@@ -619,7 +618,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type that new tasks in the task set will use. For more information, see <a
+     * The launch type that new tasks in the task set uses. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -628,7 +627,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param launchType
-     *        The launch type that new tasks in the task set will use. For more information, see <a
+     *        The launch type that new tasks in the task set uses. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -645,7 +644,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type that new tasks in the task set will use. For more information, see <a
+     * The launch type that new tasks in the task set uses. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -654,7 +653,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param launchType
-     *        The launch type that new tasks in the task set will use. For more information, see <a
+     *        The launch type that new tasks in the task set uses. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
@@ -936,15 +935,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version that the tasks in the task set should use. A platform version is specified only for tasks
-     * using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default.
+     * The platform version that the tasks in the task set uses. A platform version is specified only for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version that the tasks in the task set should use. A platform version is specified only for
-     *        tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is
-     *        used by default.
+     *        The platform version that the tasks in the task set uses. A platform version is specified only for tasks
+     *        using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -953,14 +950,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version that the tasks in the task set should use. A platform version is specified only for tasks
-     * using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default.
+     * The platform version that the tasks in the task set uses. A platform version is specified only for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      * </p>
      * 
-     * @return The platform version that the tasks in the task set should use. A platform version is specified only for
-     *         tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is
-     *         used by default.
+     * @return The platform version that the tasks in the task set uses. A platform version is specified only for tasks
+     *         using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      */
 
     public String getPlatformVersion() {
@@ -969,15 +964,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version that the tasks in the task set should use. A platform version is specified only for tasks
-     * using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
-     * default.
+     * The platform version that the tasks in the task set uses. A platform version is specified only for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version that the tasks in the task set should use. A platform version is specified only for
-     *        tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is
-     *        used by default.
+     *        The platform version that the tasks in the task set uses. A platform version is specified only for tasks
+     *        using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,13 +1021,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
-     * characters are allowed.
+     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
+     * It can be up to 32 ASCII characters are allowed.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
-     *        ASCII characters are allowed.
+     *        The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
+     *        unique. It can be up to 32 ASCII characters are allowed.
      */
 
     public void setClientToken(String clientToken) {
@@ -1043,12 +1036,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
-     * characters are allowed.
+     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
+     * It can be up to 32 ASCII characters are allowed.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
-     *         ASCII characters are allowed.
+     * @return The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
+     *         unique. It can be up to 32 ASCII characters are allowed.
      */
 
     public String getClientToken() {
@@ -1057,13 +1050,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
-     * characters are allowed.
+     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
+     * It can be up to 32 ASCII characters are allowed.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
-     *        ASCII characters are allowed.
+     *        The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
+     *        unique. It can be up to 32 ASCII characters are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1075,7 +1068,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+     * and an optional value. You define both. When a service is deleted, the tags are deleted.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1123,8 +1116,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @return The metadata that you apply to the task set to help you categorize and organize them. Each tag consists
-     *         of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted
-     *         as well.</p>
+     *         of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -1181,7 +1173,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+     * and an optional value. You define both. When a service is deleted, the tags are deleted.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1230,8 +1222,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
-     *        well.</p>
+     *        a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1289,7 +1280,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+     * and an optional value. You define both. When a service is deleted, the tags are deleted.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1343,8 +1334,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
-     *        well.</p>
+     *        a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1404,7 +1394,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+     * and an optional value. You define both. When a service is deleted, the tags are deleted.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1453,8 +1443,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
-     *        well.</p>
+     *        a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

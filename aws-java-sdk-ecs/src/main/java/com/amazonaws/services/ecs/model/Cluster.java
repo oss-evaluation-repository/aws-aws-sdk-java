@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A regional grouping of one or more container instances on which you can run task requests. Each account receives a
+ * A regional grouping of one or more container instances where you can run task requests. Each account receives a
  * default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may
  * contain more than one instance type simultaneously.
  * </p>
@@ -52,7 +52,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private ClusterConfiguration configuration;
     /**
      * <p>
-     * The status of the cluster. The following are the possible states that will be returned.
+     * The status of the cluster. The following are the possible states that are returned.
      * </p>
      * <dl>
      * <dt>ACTIVE</dt>
@@ -64,30 +64,30 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>PROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being created.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being created.
      * </p>
      * </dd>
      * <dt>DEPROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being deleted.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being deleted.
      * </p>
      * </dd>
      * <dt>FAILED</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
-     * failed to create.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * have failed to create.
      * </p>
      * </dd>
      * <dt>INACTIVE</dt>
      * <dd>
      * <p>
      * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
-     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
-     * on <code>INACTIVE</code> clusters persisting.
+     * account for a period of time. However, this behavior is subject to change in the future. We don't recommend that
+     * you rely on <code>INACTIVE</code> clusters persisting.
      * </p>
      * </dd>
      * </dl>
@@ -121,7 +121,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Integer activeServicesCount;
     /**
      * <p>
-     * Additional information about your clusters that are separated by launch type, including:
+     * Additional information about your clusters that are separated by launch type. They include the following:
      * </p>
      * <ul>
      * <li>
@@ -170,7 +170,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -240,15 +240,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> defaultCapacityProviderStrategy;
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
-     * created will be returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
+     * created is returned as a cluster attachment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
     /**
      * <p>
-     * The status of the capacity providers associated with the cluster. The following are the states that will be
-     * returned:
+     * The status of the capacity providers associated with the cluster. The following are the states that are returned.
      * </p>
      * <dl>
      * <dt>UPDATE_IN_PROGRESS</dt>
@@ -414,7 +413,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The following are the possible states that will be returned.
+     * The status of the cluster. The following are the possible states that are returned.
      * </p>
      * <dl>
      * <dt>ACTIVE</dt>
@@ -426,36 +425,36 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>PROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being created.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being created.
      * </p>
      * </dd>
      * <dt>DEPROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being deleted.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being deleted.
      * </p>
      * </dd>
      * <dt>FAILED</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
-     * failed to create.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * have failed to create.
      * </p>
      * </dd>
      * <dt>INACTIVE</dt>
      * <dd>
      * <p>
      * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
-     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
-     * on <code>INACTIVE</code> clusters persisting.
+     * account for a period of time. However, this behavior is subject to change in the future. We don't recommend that
+     * you rely on <code>INACTIVE</code> clusters persisting.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param status
-     *        The status of the cluster. The following are the possible states that will be returned.</p>
+     *        The status of the cluster. The following are the possible states that are returned.</p>
      *        <dl>
      *        <dt>ACTIVE</dt>
      *        <dd>
@@ -467,30 +466,30 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        <dt>PROVISIONING</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        are being created.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider are being created.
      *        </p>
      *        </dd>
      *        <dt>DEPROVISIONING</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        are being deleted.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider are being deleted.
      *        </p>
      *        </dd>
      *        <dt>FAILED</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        have failed to create.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider have failed to create.
      *        </p>
      *        </dd>
      *        <dt>INACTIVE</dt>
      *        <dd>
      *        <p>
      *        The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
-     *        your account for a period of time. However, this behavior is subject to change in the future, so you
-     *        should not rely on <code>INACTIVE</code> clusters persisting.
+     *        your account for a period of time. However, this behavior is subject to change in the future. We don't
+     *        recommend that you rely on <code>INACTIVE</code> clusters persisting.
      *        </p>
      *        </dd>
      */
@@ -501,7 +500,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The following are the possible states that will be returned.
+     * The status of the cluster. The following are the possible states that are returned.
      * </p>
      * <dl>
      * <dt>ACTIVE</dt>
@@ -513,35 +512,35 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>PROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being created.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being created.
      * </p>
      * </dd>
      * <dt>DEPROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being deleted.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being deleted.
      * </p>
      * </dd>
      * <dt>FAILED</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
-     * failed to create.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * have failed to create.
      * </p>
      * </dd>
      * <dt>INACTIVE</dt>
      * <dd>
      * <p>
      * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
-     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
-     * on <code>INACTIVE</code> clusters persisting.
+     * account for a period of time. However, this behavior is subject to change in the future. We don't recommend that
+     * you rely on <code>INACTIVE</code> clusters persisting.
      * </p>
      * </dd>
      * </dl>
      * 
-     * @return The status of the cluster. The following are the possible states that will be returned.</p>
+     * @return The status of the cluster. The following are the possible states that are returned.</p>
      *         <dl>
      *         <dt>ACTIVE</dt>
      *         <dd>
@@ -553,30 +552,30 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *         <dt>PROVISIONING</dt>
      *         <dd>
      *         <p>
-     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *         are being created.
+     *         The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *         provider are being created.
      *         </p>
      *         </dd>
      *         <dt>DEPROVISIONING</dt>
      *         <dd>
      *         <p>
-     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *         are being deleted.
+     *         The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *         provider are being deleted.
      *         </p>
      *         </dd>
      *         <dt>FAILED</dt>
      *         <dd>
      *         <p>
-     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *         have failed to create.
+     *         The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *         provider have failed to create.
      *         </p>
      *         </dd>
      *         <dt>INACTIVE</dt>
      *         <dd>
      *         <p>
      *         The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
-     *         your account for a period of time. However, this behavior is subject to change in the future, so you
-     *         should not rely on <code>INACTIVE</code> clusters persisting.
+     *         your account for a period of time. However, this behavior is subject to change in the future. We don't
+     *         recommend that you rely on <code>INACTIVE</code> clusters persisting.
      *         </p>
      *         </dd>
      */
@@ -587,7 +586,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The following are the possible states that will be returned.
+     * The status of the cluster. The following are the possible states that are returned.
      * </p>
      * <dl>
      * <dt>ACTIVE</dt>
@@ -599,36 +598,36 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <dt>PROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being created.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being created.
      * </p>
      * </dd>
      * <dt>DEPROVISIONING</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
-     * being deleted.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * are being deleted.
      * </p>
      * </dd>
      * <dt>FAILED</dt>
      * <dd>
      * <p>
-     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
-     * failed to create.
+     * The cluster has capacity providers that are associated with it and the resources needed for the capacity provider
+     * have failed to create.
      * </p>
      * </dd>
      * <dt>INACTIVE</dt>
      * <dd>
      * <p>
      * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
-     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
-     * on <code>INACTIVE</code> clusters persisting.
+     * account for a period of time. However, this behavior is subject to change in the future. We don't recommend that
+     * you rely on <code>INACTIVE</code> clusters persisting.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param status
-     *        The status of the cluster. The following are the possible states that will be returned.</p>
+     *        The status of the cluster. The following are the possible states that are returned.</p>
      *        <dl>
      *        <dt>ACTIVE</dt>
      *        <dd>
@@ -640,30 +639,30 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        <dt>PROVISIONING</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        are being created.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider are being created.
      *        </p>
      *        </dd>
      *        <dt>DEPROVISIONING</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        are being deleted.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider are being deleted.
      *        </p>
      *        </dd>
      *        <dt>FAILED</dt>
      *        <dd>
      *        <p>
-     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
-     *        have failed to create.
+     *        The cluster has capacity providers that are associated with it and the resources needed for the capacity
+     *        provider have failed to create.
      *        </p>
      *        </dd>
      *        <dt>INACTIVE</dt>
      *        <dd>
      *        <p>
      *        The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
-     *        your account for a period of time. However, this behavior is subject to change in the future, so you
-     *        should not rely on <code>INACTIVE</code> clusters persisting.
+     *        your account for a period of time. However, this behavior is subject to change in the future. We don't
+     *        recommend that you rely on <code>INACTIVE</code> clusters persisting.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -848,7 +847,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional information about your clusters that are separated by launch type, including:
+     * Additional information about your clusters that are separated by launch type. They include the following:
      * </p>
      * <ul>
      * <li>
@@ -893,7 +892,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Additional information about your clusters that are separated by launch type, including:</p>
+     * @return Additional information about your clusters that are separated by launch type. They include the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -946,7 +946,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional information about your clusters that are separated by launch type, including:
+     * Additional information about your clusters that are separated by launch type. They include the following:
      * </p>
      * <ul>
      * <li>
@@ -992,7 +992,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param statistics
-     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        Additional information about your clusters that are separated by launch type. They include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1047,7 +1048,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional information about your clusters that are separated by launch type, including:
+     * Additional information about your clusters that are separated by launch type. They include the following:
      * </p>
      * <ul>
      * <li>
@@ -1098,7 +1099,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param statistics
-     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        Additional information about your clusters that are separated by launch type. They include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1155,7 +1157,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional information about your clusters that are separated by launch type, including:
+     * Additional information about your clusters that are separated by launch type. They include the following:
      * </p>
      * <ul>
      * <li>
@@ -1201,7 +1203,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param statistics
-     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        Additional information about your clusters that are separated by launch type. They include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1254,7 +1257,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1302,7 +1305,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *         a key and an optional value, both of which you define.</p>
+     *         a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -1359,7 +1362,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1408,7 +1411,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1466,7 +1469,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1520,7 +1523,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1580,7 +1583,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1629,7 +1632,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1919,12 +1922,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
-     * created will be returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
+     * created is returned as a cluster attachment.
      * </p>
      * 
      * @return The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *         that is created will be returned as a cluster attachment.
+     *         that's created is returned as a cluster attachment.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -1936,13 +1939,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
-     * created will be returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
+     * created is returned as a cluster attachment.
      * </p>
      * 
      * @param attachments
      *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that is created will be returned as a cluster attachment.
+     *        that's created is returned as a cluster attachment.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -1956,8 +1959,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
-     * created will be returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
+     * created is returned as a cluster attachment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1967,7 +1970,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param attachments
      *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that is created will be returned as a cluster attachment.
+     *        that's created is returned as a cluster attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1983,13 +1986,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
-     * created will be returned as a cluster attachment.
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that's
+     * created is returned as a cluster attachment.
      * </p>
      * 
      * @param attachments
      *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
-     *        that is created will be returned as a cluster attachment.
+     *        that's created is returned as a cluster attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2000,8 +2003,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the capacity providers associated with the cluster. The following are the states that will be
-     * returned:
+     * The status of the capacity providers associated with the cluster. The following are the states that are returned.
      * </p>
      * <dl>
      * <dt>UPDATE_IN_PROGRESS</dt>
@@ -2026,8 +2028,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param attachmentsStatus
-     *        The status of the capacity providers associated with the cluster. The following are the states that will
-     *        be returned:</p>
+     *        The status of the capacity providers associated with the cluster. The following are the states that are
+     *        returned.</p>
      *        <dl>
      *        <dt>UPDATE_IN_PROGRESS</dt>
      *        <dd>
@@ -2056,8 +2058,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the capacity providers associated with the cluster. The following are the states that will be
-     * returned:
+     * The status of the capacity providers associated with the cluster. The following are the states that are returned.
      * </p>
      * <dl>
      * <dt>UPDATE_IN_PROGRESS</dt>
@@ -2081,8 +2082,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </dd>
      * </dl>
      * 
-     * @return The status of the capacity providers associated with the cluster. The following are the states that will
-     *         be returned:</p>
+     * @return The status of the capacity providers associated with the cluster. The following are the states that are
+     *         returned.</p>
      *         <dl>
      *         <dt>UPDATE_IN_PROGRESS</dt>
      *         <dd>
@@ -2111,8 +2112,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the capacity providers associated with the cluster. The following are the states that will be
-     * returned:
+     * The status of the capacity providers associated with the cluster. The following are the states that are returned.
      * </p>
      * <dl>
      * <dt>UPDATE_IN_PROGRESS</dt>
@@ -2137,8 +2137,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param attachmentsStatus
-     *        The status of the capacity providers associated with the cluster. The following are the states that will
-     *        be returned:</p>
+     *        The status of the capacity providers associated with the cluster. The following are the states that are
+     *        returned.</p>
      *        <dl>
      *        <dt>UPDATE_IN_PROGRESS</dt>
      *        <dd>

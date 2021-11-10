@@ -73,8 +73,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * launch type. This parameter enables you to deploy without using additional cluster capacity. For example, if your
      * service has a desired number of four tasks and a minimum healthy percent of 50%, the scheduler may stop two
      * existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i>
-     * use a load balancer are considered healthy if they are in the <code>RUNNING</code> state; tasks for services that
-     * <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code> state and they are
+     * use a load balancer are considered healthy if they're in the <code>RUNNING</code> state; tasks for services that
+     * <i>do</i> use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and they're
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
@@ -318,8 +318,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * launch type. This parameter enables you to deploy without using additional cluster capacity. For example, if your
      * service has a desired number of four tasks and a minimum healthy percent of 50%, the scheduler may stop two
      * existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i>
-     * use a load balancer are considered healthy if they are in the <code>RUNNING</code> state; tasks for services that
-     * <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code> state and they are
+     * use a load balancer are considered healthy if they're in the <code>RUNNING</code> state; tasks for services that
+     * <i>do</i> use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and they're
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
@@ -340,8 +340,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        additional cluster capacity. For example, if your service has a desired number of four tasks and a minimum
      *        healthy percent of 50%, the scheduler may stop two existing tasks to free up cluster capacity before
      *        starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
-     *        if they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
-     *        considered healthy if they are in the <code>RUNNING</code> state and they are reported as healthy by the
+     *        if they're in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
+     *        considered healthy if they're in the <code>RUNNING</code> state and they're reported as healthy by the
      *        load balancer. The default value for minimum healthy percent is 100%.</p>
      *        <p>
      *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
@@ -365,8 +365,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * launch type. This parameter enables you to deploy without using additional cluster capacity. For example, if your
      * service has a desired number of four tasks and a minimum healthy percent of 50%, the scheduler may stop two
      * existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i>
-     * use a load balancer are considered healthy if they are in the <code>RUNNING</code> state; tasks for services that
-     * <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code> state and they are
+     * use a load balancer are considered healthy if they're in the <code>RUNNING</code> state; tasks for services that
+     * <i>do</i> use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and they're
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
@@ -386,8 +386,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         additional cluster capacity. For example, if your service has a desired number of four tasks and a
      *         minimum healthy percent of 50%, the scheduler may stop two existing tasks to free up cluster capacity
      *         before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered
-     *         healthy if they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
-     *         balancer are considered healthy if they are in the <code>RUNNING</code> state and they are reported as
+     *         healthy if they're in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
+     *         balancer are considered healthy if they're in the <code>RUNNING</code> state and they're reported as
      *         healthy by the load balancer. The default value for minimum healthy percent is 100%.</p>
      *         <p>
      *         If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
@@ -411,8 +411,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * launch type. This parameter enables you to deploy without using additional cluster capacity. For example, if your
      * service has a desired number of four tasks and a minimum healthy percent of 50%, the scheduler may stop two
      * existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i>
-     * use a load balancer are considered healthy if they are in the <code>RUNNING</code> state; tasks for services that
-     * <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code> state and they are
+     * use a load balancer are considered healthy if they're in the <code>RUNNING</code> state; tasks for services that
+     * <i>do</i> use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and they're
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
@@ -433,8 +433,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        additional cluster capacity. For example, if your service has a desired number of four tasks and a minimum
      *        healthy percent of 50%, the scheduler may stop two existing tasks to free up cluster capacity before
      *        starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
-     *        if they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
-     *        considered healthy if they are in the <code>RUNNING</code> state and they are reported as healthy by the
+     *        if they're in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
+     *        considered healthy if they're in the <code>RUNNING</code> state and they're reported as healthy by the
      *        load balancer. The default value for minimum healthy percent is 100%.</p>
      *        <p>
      *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types

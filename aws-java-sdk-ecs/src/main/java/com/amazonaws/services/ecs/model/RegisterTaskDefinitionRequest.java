@@ -27,9 +27,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
-     * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
+     * You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same
+     * task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase
+     * and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      */
     private String family;
@@ -103,29 +103,29 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<ContainerDefinition> containerDefinitions;
     /**
      * <p>
-     * A list of volume definitions in JSON format that containers in your task may use.
+     * A list of volume definitions in JSON format that containers in your task might use.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Volume> volumes;
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at runtime).
+     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for
+     * each task. This limit includes constraints in the task definition and those specified at runtime.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     * <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task
      * definition. String values are converted to an integer indicating the CPU units when the task definition is
      * registered.
      * </p>
@@ -136,12 +136,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * If you're using the Fargate launch type, this field is required and you must use one of the following values,
      * which determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -177,8 +180,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private String cpu;
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     * <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
@@ -191,8 +194,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values. This
+     * determines your range of supported values for the <code>cpu</code> parameter.
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -229,7 +235,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -404,14 +410,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
-     * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
+     * You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same
+     * task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase
+     * and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param family
-     *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
-     *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
+     *        You must specify a <code>family</code> for a task definition. You can use it track multiple versions of
+     *        the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
      *        letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      */
 
@@ -421,14 +427,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
-     * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
+     * You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same
+     * task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase
+     * and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
-     * @return You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
-     *         of the same task definition. The <code>family</code> is used as a name for your task definition. Up to
-     *         255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
+     * @return You must specify a <code>family</code> for a task definition. You can use it track multiple versions of
+     *         the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
+     *         letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      */
 
     public String getFamily() {
@@ -437,14 +443,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
-     * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
+     * You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same
+     * task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase
+     * and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param family
-     *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
-     *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
+     *        You must specify a <code>family</code> for a task definition. You can use it track multiple versions of
+     *        the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
      *        letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1102,10 +1108,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of volume definitions in JSON format that containers in your task may use.
+     * A list of volume definitions in JSON format that containers in your task might use.
      * </p>
      * 
-     * @return A list of volume definitions in JSON format that containers in your task may use.
+     * @return A list of volume definitions in JSON format that containers in your task might use.
      */
 
     public java.util.List<Volume> getVolumes() {
@@ -1117,11 +1123,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of volume definitions in JSON format that containers in your task may use.
+     * A list of volume definitions in JSON format that containers in your task might use.
      * </p>
      * 
      * @param volumes
-     *        A list of volume definitions in JSON format that containers in your task may use.
+     *        A list of volume definitions in JSON format that containers in your task might use.
      */
 
     public void setVolumes(java.util.Collection<Volume> volumes) {
@@ -1135,7 +1141,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of volume definitions in JSON format that containers in your task may use.
+     * A list of volume definitions in JSON format that containers in your task might use.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1144,7 +1150,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param volumes
-     *        A list of volume definitions in JSON format that containers in your task may use.
+     *        A list of volume definitions in JSON format that containers in your task might use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1160,11 +1166,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of volume definitions in JSON format that containers in your task may use.
+     * A list of volume definitions in JSON format that containers in your task might use.
      * </p>
      * 
      * @param volumes
-     *        A list of volume definitions in JSON format that containers in your task may use.
+     *        A list of volume definitions in JSON format that containers in your task might use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1175,12 +1181,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at runtime).
+     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for
+     * each task. This limit includes constraints in the task definition and those specified at runtime.
      * </p>
      * 
      * @return An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *         per task (this limit includes constraints in the task definition and those specified at runtime).
+     *         for each task. This limit includes constraints in the task definition and those specified at runtime.
      */
 
     public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
@@ -1192,13 +1198,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at runtime).
+     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for
+     * each task. This limit includes constraints in the task definition and those specified at runtime.
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at runtime).
+     *        for each task. This limit includes constraints in the task definition and those specified at runtime.
      */
 
     public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
@@ -1212,8 +1218,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at runtime).
+     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for
+     * each task. This limit includes constraints in the task definition and those specified at runtime.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1223,7 +1229,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at runtime).
+     *        for each task. This limit includes constraints in the task definition and those specified at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1239,13 +1245,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at runtime).
+     * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for
+     * each task. This limit includes constraints in the task definition and those specified at runtime.
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at runtime).
+     *        for each task. This limit includes constraints in the task definition and those specified at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1256,12 +1262,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      * 
-     * @return The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     * @return The task launch type that Amazon ECS validates the task definition against. A client exception is
      *         returned if the task definition doesn't validate against the compatibilities specified. If no value is
      *         specified, the parameter is omitted from the response.
      * @see Compatibility
@@ -1276,15 +1282,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
-     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
-     *        specified, the parameter is omitted from the response.
+     *        The task launch type that Amazon ECS validates the task definition against. A client exception is returned
+     *        if the task definition doesn't validate against the compatibilities specified. If no value is specified,
+     *        the parameter is omitted from the response.
      * @see Compatibility
      */
 
@@ -1299,9 +1305,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1310,9 +1316,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
-     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
-     *        specified, the parameter is omitted from the response.
+     *        The task launch type that Amazon ECS validates the task definition against. A client exception is returned
+     *        if the task definition doesn't validate against the compatibilities specified. If no value is specified,
+     *        the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1329,15 +1335,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
-     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
-     *        specified, the parameter is omitted from the response.
+     *        The task launch type that Amazon ECS validates the task definition against. A client exception is returned
+     *        if the task definition doesn't validate against the compatibilities specified. If no value is specified,
+     *        the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1349,15 +1355,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
-     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
-     * parameter is omitted from the response.
+     * The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the
+     * task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
-     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
-     *        specified, the parameter is omitted from the response.
+     *        The task launch type that Amazon ECS validates the task definition against. A client exception is returned
+     *        if the task definition doesn't validate against the compatibilities specified. If no value is specified,
+     *        the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1378,8 +1384,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     * <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task
      * definition. String values are converted to an integer indicating the CPU units when the task definition is
      * registered.
      * </p>
@@ -1390,12 +1396,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * If you're using the Fargate launch type, this field is required and you must use one of the following values,
      * which determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1429,8 +1438,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     *        <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in
      *        a task definition. String values are converted to an integer indicating the CPU units when the task
      *        definition is registered.</p> <note>
      *        <p>
@@ -1439,13 +1448,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the EC2 launch type, this field is optional. Supported values are between
-     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     *        vCPUs).
+     *        If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code>
+     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      *        </p>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        If you're using the Fargate launch type, this field is required and you must use one of the following
      *        values, which determines your range of supported values for the <code>memory</code> parameter:
+     *        </p>
+     *        <p>
+     *        The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *        </p>
      *        <ul>
      *        <li>
@@ -1484,8 +1495,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     * <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task
      * definition. String values are converted to an integer indicating the CPU units when the task definition is
      * registered.
      * </p>
@@ -1496,12 +1507,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * If you're using the Fargate launch type, this field is required and you must use one of the following values,
      * which determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1534,9 +1548,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *         a task definition. String values are converted to an integer indicating the CPU units when the task
+     * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     *         <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>)
+     *         in a task definition. String values are converted to an integer indicating the CPU units when the task
      *         definition is registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
@@ -1544,13 +1558,16 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </note>
      *         <p>
-     *         If you are using the EC2 launch type, this field is optional. Supported values are between
+     *         If you're using the EC2 launch type, this field is optional. Supported values are between
      *         <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
      *         vCPUs).
      *         </p>
      *         <p>
-     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         If you're using the Fargate launch type, this field is required and you must use one of the following
      *         values, which determines your range of supported values for the <code>memory</code> parameter:
+     *         </p>
+     *         <p>
+     *         The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *         </p>
      *         <ul>
      *         <li>
@@ -1589,8 +1606,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     * <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task
      * definition. String values are converted to an integer indicating the CPU units when the task definition is
      * registered.
      * </p>
@@ -1601,12 +1618,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * If you're using the Fargate launch type, this field is required and you must use one of the following values,
      * which determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1640,8 +1660,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example,
+     *        <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in
      *        a task definition. String values are converted to an integer indicating the CPU units when the task
      *        definition is registered.</p> <note>
      *        <p>
@@ -1650,13 +1670,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the EC2 launch type, this field is optional. Supported values are between
-     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     *        vCPUs).
+     *        If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code>
+     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      *        </p>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        If you're using the Fargate launch type, this field is required and you must use one of the following
      *        values, which determines your range of supported values for the <code>memory</code> parameter:
+     *        </p>
+     *        <p>
+     *        The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *        </p>
      *        <ul>
      *        <li>
@@ -1697,8 +1719,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     * <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
@@ -1711,8 +1733,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values. This
+     * determines your range of supported values for the <code>cpu</code> parameter.
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1746,8 +1771,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param memory
-     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     *        <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      *        definition. String values are converted to an integer indicating the MiB when the task definition is
      *        registered.</p> <note>
      *        <p>
@@ -1759,8 +1784,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If using the Fargate launch type, this field is required and you must use one of the following values.
+     *        This determines your range of supported values for the <code>cpu</code> parameter.
+     *        </p>
+     *        <p>
+     *        The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *        </p>
      *        <ul>
      *        <li>
@@ -1799,8 +1827,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     * <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
@@ -1813,8 +1841,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values. This
+     * determines your range of supported values for the <code>cpu</code> parameter.
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1847,9 +1878,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *         definition. String values are converted to an integer indicating the MiB when the task definition is
+     * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example
+     *         ,<code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a
+     *         task definition. String values are converted to an integer indicating the MiB when the task definition is
      *         registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
@@ -1860,8 +1891,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         If using the EC2 launch type, this field is optional.
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of supported values for the <code>cpu</code> parameter:
+     *         If using the Fargate launch type, this field is required and you must use one of the following values.
+     *         This determines your range of supported values for the <code>cpu</code> parameter.
+     *         </p>
+     *         <p>
+     *         The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *         </p>
      *         <ul>
      *         <li>
@@ -1900,8 +1934,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     * <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
@@ -1914,8 +1948,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values. This
+     * determines your range of supported values for the <code>cpu</code> parameter.
+     * </p>
+     * <p>
+     * The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      * </p>
      * <ul>
      * <li>
@@ -1949,8 +1986,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param memory
-     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,
+     *        <code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task
      *        definition. String values are converted to an integer indicating the MiB when the task definition is
      *        registered.</p> <note>
      *        <p>
@@ -1962,8 +1999,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If using the Fargate launch type, this field is required and you must use one of the following values.
+     *        This determines your range of supported values for the <code>cpu</code> parameter.
+     *        </p>
+     *        <p>
+     *        The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
      *        </p>
      *        <ul>
      *        <li>
@@ -2005,7 +2045,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2053,7 +2093,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The metadata that you apply to the task definition to help you categorize and organize them. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     *         consists of a key and an optional value. You define both of them.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -2110,7 +2150,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2159,7 +2199,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param tags
      *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2217,7 +2257,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2271,7 +2311,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param tags
      *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2331,7 +2371,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2380,7 +2420,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param tags
      *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

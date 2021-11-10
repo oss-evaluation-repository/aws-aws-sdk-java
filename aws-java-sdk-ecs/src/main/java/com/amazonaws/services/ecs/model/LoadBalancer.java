@@ -38,8 +38,8 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * service or task set.
      * </p>
      * <p>
-     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer the target group ARN should be omitted.
+     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're
+     * using a Classic Load Balancer, omit the target group ARN.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -49,17 +49,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * Guide</i>.
      * </p>
      * <p>
-     * For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target
+     * For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target
      * groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
-     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when creating your
-     * target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.
+     * If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     * This network mode is required for the Fargate launch type.
      * </p>
      * </important>
      */
@@ -84,7 +84,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The port on the container to associate with the load balancer. This port must correspond to a
      * <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2
-     * launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code>
+     * launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.
      * </p>
      */
@@ -96,8 +96,8 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * service or task set.
      * </p>
      * <p>
-     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer the target group ARN should be omitted.
+     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're
+     * using a Classic Load Balancer, omit the target group ARN.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -107,17 +107,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * Guide</i>.
      * </p>
      * <p>
-     * For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target
+     * For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target
      * groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
-     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when creating your
-     * target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.
+     * If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     * This network mode is required for the Fargate launch type.
      * </p>
      * </important>
      * 
@@ -126,7 +126,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        service or task set.</p>
      *        <p>
      *        A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *        you are using a Classic Load Balancer the target group ARN should be omitted.
+     *        you're using a Classic Load Balancer, omit the target group ARN.
      *        </p>
      *        <p>
      *        For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -136,17 +136,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        Developer Guide</i>.
      *        </p>
      *        <p>
-     *        For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     *        For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      *        target groups for the load balancer. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html"
      *        >Blue/Green Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
-     *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
-     *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when
-     *        creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated
-     *        with an elastic network interface, not an Amazon EC2 instance.
+     *        If your service's task definition uses the <code>awsvpc</code> network mode, you must choose
+     *        <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups
+     *        because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *        interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.
      *        </p>
      */
 
@@ -160,8 +160,8 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * service or task set.
      * </p>
      * <p>
-     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer the target group ARN should be omitted.
+     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're
+     * using a Classic Load Balancer, omit the target group ARN.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -171,17 +171,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * Guide</i>.
      * </p>
      * <p>
-     * For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target
+     * For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target
      * groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
-     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when creating your
-     * target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.
+     * If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     * This network mode is required for the Fargate launch type.
      * </p>
      * </important>
      * 
@@ -189,7 +189,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *         a service or task set.</p>
      *         <p>
      *         A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *         you are using a Classic Load Balancer the target group ARN should be omitted.
+     *         you're using a Classic Load Balancer, omit the target group ARN.
      *         </p>
      *         <p>
      *         For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -199,7 +199,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *         Developer Guide</i>.
      *         </p>
      *         <p>
-     *         For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     *         For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      *         target groups for the load balancer. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html"
      *         >Blue/Green Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
@@ -207,10 +207,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <important>
      *         <p>
-     *         If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
-     *         Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when
-     *         creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated
-     *         with an elastic network interface, not an Amazon EC2 instance.
+     *         If your service's task definition uses the <code>awsvpc</code> network mode, you must choose
+     *         <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups
+     *         because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *         interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.
      *         </p>
      */
 
@@ -224,8 +224,8 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * service or task set.
      * </p>
      * <p>
-     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer the target group ARN should be omitted.
+     * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're
+     * using a Classic Load Balancer, omit the target group ARN.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -235,17 +235,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * Guide</i>.
      * </p>
      * <p>
-     * For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target
+     * For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target
      * groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
-     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
-     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when creating your
-     * target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.
+     * If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     * This network mode is required for the Fargate launch type.
      * </p>
      * </important>
      * 
@@ -254,7 +254,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        service or task set.</p>
      *        <p>
      *        A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *        you are using a Classic Load Balancer the target group ARN should be omitted.
+     *        you're using a Classic Load Balancer, omit the target group ARN.
      *        </p>
      *        <p>
      *        For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -264,17 +264,17 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        Developer Guide</i>.
      *        </p>
      *        <p>
-     *        For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     *        For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      *        target groups for the load balancer. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html"
      *        >Blue/Green Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
-     *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
-     *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, when
-     *        creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated
-     *        with an elastic network interface, not an Amazon EC2 instance.
+     *        If your service's task definition uses the <code>awsvpc</code> network mode, you must choose
+     *        <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups
+     *        because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *        interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -389,14 +389,14 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The port on the container to associate with the load balancer. This port must correspond to a
      * <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2
-     * launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code>
+     * launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.
      * </p>
      * 
      * @param containerPort
      *        The port on the container to associate with the load balancer. This port must correspond to a
      *        <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use
-     *        the EC2 launch type, the container instance they are launched on must allow ingress traffic on the
+     *        the EC2 launch type, the container instance they're launched on must allow ingress traffic on the
      *        <code>hostPort</code> of the port mapping.
      */
 
@@ -408,13 +408,13 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The port on the container to associate with the load balancer. This port must correspond to a
      * <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2
-     * launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code>
+     * launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.
      * </p>
      * 
      * @return The port on the container to associate with the load balancer. This port must correspond to a
      *         <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use
-     *         the EC2 launch type, the container instance they are launched on must allow ingress traffic on the
+     *         the EC2 launch type, the container instance they're launched on must allow ingress traffic on the
      *         <code>hostPort</code> of the port mapping.
      */
 
@@ -426,14 +426,14 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The port on the container to associate with the load balancer. This port must correspond to a
      * <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2
-     * launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code>
+     * launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.
      * </p>
      * 
      * @param containerPort
      *        The port on the container to associate with the load balancer. This port must correspond to a
      *        <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use
-     *        the EC2 launch type, the container instance they are launched on must allow ingress traffic on the
+     *        the EC2 launch type, the container instance they're launched on must allow ingress traffic on the
      *        <code>hostPort</code> of the port mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

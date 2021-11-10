@@ -37,7 +37,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The status of the deployment. The following describes each state:
+     * The status of the deployment. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -102,13 +102,13 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private Integer failedTasks;
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was created.
+     * The Unix timestamp for the time when the service deployment was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was last updated.
+     * The Unix timestamp for the time when the service deployment was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -128,9 +128,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private String launchType;
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -158,15 +158,15 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      * </p>
      * </note>
      * <p>
      * The rollout state of the deployment. When a service deployment is started, it begins in an
-     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
      * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
-     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+     * any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * </p>
      */
     private String rolloutState;
@@ -219,7 +219,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. The following describes each state:
+     * The status of the deployment. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -244,7 +244,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param status
-     *        The status of the deployment. The following describes each state:</p>
+     *        The status of the deployment. The following describes each state.</p>
      *        <dl>
      *        <dt>PRIMARY</dt>
      *        <dd>
@@ -273,7 +273,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. The following describes each state:
+     * The status of the deployment. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -297,7 +297,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </dd>
      * </dl>
      * 
-     * @return The status of the deployment. The following describes each state:</p>
+     * @return The status of the deployment. The following describes each state.</p>
      *         <dl>
      *         <dt>PRIMARY</dt>
      *         <dd>
@@ -326,7 +326,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. The following describes each state:
+     * The status of the deployment. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -351,7 +351,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param status
-     *        The status of the deployment. The following describes each state:</p>
+     *        The status of the deployment. The following describes each state.</p>
      *        <dl>
      *        <dt>PRIMARY</dt>
      *        <dd>
@@ -624,11 +624,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was created.
+     * The Unix timestamp for the time when the service deployment was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service deployment was created.
+     *        The Unix timestamp for the time when the service deployment was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -637,10 +637,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was created.
+     * The Unix timestamp for the time when the service deployment was created.
      * </p>
      * 
-     * @return The Unix timestamp for when the service deployment was created.
+     * @return The Unix timestamp for the time when the service deployment was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -649,11 +649,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was created.
+     * The Unix timestamp for the time when the service deployment was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service deployment was created.
+     *        The Unix timestamp for the time when the service deployment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -664,11 +664,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was last updated.
+     * The Unix timestamp for the time when the service deployment was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the service deployment was last updated.
+     *        The Unix timestamp for the time when the service deployment was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -677,10 +677,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was last updated.
+     * The Unix timestamp for the time when the service deployment was last updated.
      * </p>
      * 
-     * @return The Unix timestamp for when the service deployment was last updated.
+     * @return The Unix timestamp for the time when the service deployment was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -689,11 +689,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service deployment was last updated.
+     * The Unix timestamp for the time when the service deployment was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the service deployment was last updated.
+     *        The Unix timestamp for the time when the service deployment was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -852,17 +852,17 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The platform version that your tasks in the service run on. A platform version is only specified for tasks
+     *        using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -873,16 +873,16 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your tasks in the service are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
-     *         version is used by default. For more information, see <a
+     * @return The platform version that your tasks in the service run on. A platform version is only specified for
+     *         tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is
+     *         used. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -893,17 +893,17 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version that your tasks in the service run on. A platform version is only specified for tasks using
+     * the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The platform version that your tasks in the service run on. A platform version is only specified for tasks
+     *        using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1031,30 +1031,29 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      * </p>
      * </note>
      * <p>
      * The rollout state of the deployment. When a service deployment is started, it begins in an
-     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
      * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
-     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+     * any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * </p>
      * 
      * @param rolloutState
      *        <p>
      *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      *        </p>
      *        </note>
      *        <p>
      *        The rollout state of the deployment. When a service deployment is started, it begins in an
-     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
-     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
-     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
-     *        <code>FAILED</code> state will launch no new tasks. For more information, see
-     *        <a>DeploymentCircuitBreaker</a>.
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
+     *        <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled,
+     *        the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state
+     *        doesn't launch any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * @see DeploymentRolloutState
      */
 
@@ -1066,29 +1065,28 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      * </p>
      * </note>
      * <p>
      * The rollout state of the deployment. When a service deployment is started, it begins in an
-     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
      * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
-     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+     * any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * </p>
      * 
      * @return <p>
      *         The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     *         <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *         <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      *         </p>
      *         </note>
      *         <p>
      *         The rollout state of the deployment. When a service deployment is started, it begins in an
-     *         <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition
-     *         to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
-     *         enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
-     *         <code>FAILED</code> state will launch no new tasks. For more information, see
-     *         <a>DeploymentCircuitBreaker</a>.
+     *         <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
+     *         <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
+     *         enabled, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     *         state doesn't launch any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * @see DeploymentRolloutState
      */
 
@@ -1100,30 +1098,29 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      * </p>
      * </note>
      * <p>
      * The rollout state of the deployment. When a service deployment is started, it begins in an
-     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
      * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
-     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+     * any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * </p>
      * 
      * @param rolloutState
      *        <p>
      *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      *        </p>
      *        </note>
      *        <p>
      *        The rollout state of the deployment. When a service deployment is started, it begins in an
-     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
-     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
-     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
-     *        <code>FAILED</code> state will launch no new tasks. For more information, see
-     *        <a>DeploymentCircuitBreaker</a>.
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
+     *        <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled,
+     *        the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state
+     *        doesn't launch any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentRolloutState
      */
@@ -1137,30 +1134,29 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      * </p>
      * </note>
      * <p>
      * The rollout state of the deployment. When a service deployment is started, it begins in an
-     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
      * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
-     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+     * any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * </p>
      * 
      * @param rolloutState
      *        <p>
      *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
-     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        <code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
      *        </p>
      *        </note>
      *        <p>
      *        The rollout state of the deployment. When a service deployment is started, it begins in an
-     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
-     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
-     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
-     *        <code>FAILED</code> state will launch no new tasks. For more information, see
-     *        <a>DeploymentCircuitBreaker</a>.
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a
+     *        <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled,
+     *        the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state
+     *        doesn't launch any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentRolloutState
      */

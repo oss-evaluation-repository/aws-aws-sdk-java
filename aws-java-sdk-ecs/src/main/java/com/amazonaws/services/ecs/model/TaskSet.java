@@ -55,9 +55,9 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private String clusterArn;
     /**
      * <p>
-     * The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
-     * the startedBy field isn't used.
+     * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
+     * startedBy field isn't used.
      * </p>
      */
     private String startedBy;
@@ -66,8 +66,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * The external ID associated with the task set.
      * </p>
      * <p>
-     * If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.
+     * If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy
+     * deployment ID.
      * </p>
      * <p>
      * If a task set is created for an external deployment and is associated with a service discovery registry, the
@@ -77,7 +77,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private String externalId;
     /**
      * <p>
-     * The status of the task set. The following describes each state:
+     * The status of the task set. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -89,13 +89,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <dt>ACTIVE</dt>
      * <dd>
      * <p>
-     * The task set is not serving production traffic.
+     * The task set isn't serving production traffic.
      * </p>
      * </dd>
      * <dt>DRAINING</dt>
      * <dd>
      * <p>
-     * The tasks in the task set are being stopped and their corresponding targets are being deregistered from their
+     * The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their
      * target group.
      * </p>
      * </dd>
@@ -104,7 +104,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The task definition the task set is using.
+     * The task definition that the task set is using.
      * </p>
      */
     private String taskDefinition;
@@ -120,7 +120,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      */
@@ -134,13 +134,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private Integer runningCount;
     /**
      * <p>
-     * The Unix timestamp for when the task set was created.
+     * The Unix timestamp for the time when the task set was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp for when the task set was last updated.
+     * The Unix timestamp for the time when the task set was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -154,13 +154,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private String launchType;
     /**
      * <p>
-     * The capacity provider strategy associated with the task set.
+     * The capacity provider strategy that are associated with the task set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
     /**
      * <p>
-     * The Fargate platform version on which the tasks in the task set are running. A platform version is only specified
+     * The Fargate platform version where the tasks in the task set are running. A platform version is only specified
      * for tasks run on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -170,7 +170,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operating system that your tasks in the set are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * that use the Fargate launch type.
      * </p>
      * <p>
      * All tasks in the set must have the same value.
@@ -185,27 +185,27 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * Details on a load balancer that is used with a task set.
+     * Details on a load balancer that are used with a task set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * The details for the service discovery registries to assign to this task set. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      * </p>
      */
     private Scale scale;
     /**
      * <p>
-     * The stability status, which indicates whether the task set has reached a steady state. If the following
-     * conditions are met, the task set will be in <code>STEADY_STATE</code>:
+     * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
+     * are met, the task set sre in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -220,7 +220,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * There are no tasks running on container instances in the <code>DRAINING</code> status.
+     * There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      * </p>
      * </li>
      * <li>
@@ -230,20 +230,20 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     * If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * </p>
      */
     private String stabilityStatus;
     /**
      * <p>
-     * The Unix timestamp for when the task set stability status was retrieved.
+     * The Unix timestamp for the time when the task set stability status was retrieved.
      * </p>
      */
     private java.util.Date stabilityStatusAt;
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -454,15 +454,15 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
-     * the startedBy field isn't used.
+     * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
+     * startedBy field isn't used.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
-     *        deployment, the startedBy field isn't used.
+     *        The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
+     *        set, the startedBy field isn't used.
      */
 
     public void setStartedBy(String startedBy) {
@@ -471,14 +471,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
-     * the startedBy field isn't used.
+     * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
+     * startedBy field isn't used.
      * </p>
      * 
-     * @return The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     *         <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
-     *         deployment, the startedBy field isn't used.
+     * @return The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     *         <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
+     *         set, the startedBy field isn't used.
      */
 
     public String getStartedBy() {
@@ -487,15 +487,15 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
-     * the startedBy field isn't used.
+     * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
+     * startedBy field isn't used.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task set is started. If the task set is created by an CodeDeploy deployment, the
-     *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
-     *        deployment, the startedBy field isn't used.
+     *        The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
+     *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
+     *        set, the startedBy field isn't used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,8 +509,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * The external ID associated with the task set.
      * </p>
      * <p>
-     * If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.
+     * If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy
+     * deployment ID.
      * </p>
      * <p>
      * If a task set is created for an external deployment and is associated with a service discovery registry, the
@@ -520,7 +520,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * @param externalId
      *        The external ID associated with the task set.</p>
      *        <p>
-     *        If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     *        If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the
      *        CodeDeploy deployment ID.
      *        </p>
      *        <p>
@@ -538,8 +538,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * The external ID associated with the task set.
      * </p>
      * <p>
-     * If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.
+     * If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy
+     * deployment ID.
      * </p>
      * <p>
      * If a task set is created for an external deployment and is associated with a service discovery registry, the
@@ -548,7 +548,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The external ID associated with the task set.</p>
      *         <p>
-     *         If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     *         If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the
      *         CodeDeploy deployment ID.
      *         </p>
      *         <p>
@@ -566,8 +566,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * The external ID associated with the task set.
      * </p>
      * <p>
-     * If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.
+     * If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy
+     * deployment ID.
      * </p>
      * <p>
      * If a task set is created for an external deployment and is associated with a service discovery registry, the
@@ -577,7 +577,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * @param externalId
      *        The external ID associated with the task set.</p>
      *        <p>
-     *        If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     *        If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the
      *        CodeDeploy deployment ID.
      *        </p>
      *        <p>
@@ -594,7 +594,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the task set. The following describes each state:
+     * The status of the task set. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -606,20 +606,20 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <dt>ACTIVE</dt>
      * <dd>
      * <p>
-     * The task set is not serving production traffic.
+     * The task set isn't serving production traffic.
      * </p>
      * </dd>
      * <dt>DRAINING</dt>
      * <dd>
      * <p>
-     * The tasks in the task set are being stopped and their corresponding targets are being deregistered from their
+     * The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their
      * target group.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param status
-     *        The status of the task set. The following describes each state:</p>
+     *        The status of the task set. The following describes each state.</p>
      *        <dl>
      *        <dt>PRIMARY</dt>
      *        <dd>
@@ -630,13 +630,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        <dt>ACTIVE</dt>
      *        <dd>
      *        <p>
-     *        The task set is not serving production traffic.
+     *        The task set isn't serving production traffic.
      *        </p>
      *        </dd>
      *        <dt>DRAINING</dt>
      *        <dd>
      *        <p>
-     *        The tasks in the task set are being stopped and their corresponding targets are being deregistered from
+     *        The tasks in the task set are being stopped, and their corresponding targets are being deregistered from
      *        their target group.
      *        </p>
      *        </dd>
@@ -648,7 +648,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the task set. The following describes each state:
+     * The status of the task set. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -660,19 +660,19 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <dt>ACTIVE</dt>
      * <dd>
      * <p>
-     * The task set is not serving production traffic.
+     * The task set isn't serving production traffic.
      * </p>
      * </dd>
      * <dt>DRAINING</dt>
      * <dd>
      * <p>
-     * The tasks in the task set are being stopped and their corresponding targets are being deregistered from their
+     * The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their
      * target group.
      * </p>
      * </dd>
      * </dl>
      * 
-     * @return The status of the task set. The following describes each state:</p>
+     * @return The status of the task set. The following describes each state.</p>
      *         <dl>
      *         <dt>PRIMARY</dt>
      *         <dd>
@@ -683,13 +683,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         <dt>ACTIVE</dt>
      *         <dd>
      *         <p>
-     *         The task set is not serving production traffic.
+     *         The task set isn't serving production traffic.
      *         </p>
      *         </dd>
      *         <dt>DRAINING</dt>
      *         <dd>
      *         <p>
-     *         The tasks in the task set are being stopped and their corresponding targets are being deregistered from
+     *         The tasks in the task set are being stopped, and their corresponding targets are being deregistered from
      *         their target group.
      *         </p>
      *         </dd>
@@ -701,7 +701,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the task set. The following describes each state:
+     * The status of the task set. The following describes each state.
      * </p>
      * <dl>
      * <dt>PRIMARY</dt>
@@ -713,20 +713,20 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <dt>ACTIVE</dt>
      * <dd>
      * <p>
-     * The task set is not serving production traffic.
+     * The task set isn't serving production traffic.
      * </p>
      * </dd>
      * <dt>DRAINING</dt>
      * <dd>
      * <p>
-     * The tasks in the task set are being stopped and their corresponding targets are being deregistered from their
+     * The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their
      * target group.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param status
-     *        The status of the task set. The following describes each state:</p>
+     *        The status of the task set. The following describes each state.</p>
      *        <dl>
      *        <dt>PRIMARY</dt>
      *        <dd>
@@ -737,13 +737,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        <dt>ACTIVE</dt>
      *        <dd>
      *        <p>
-     *        The task set is not serving production traffic.
+     *        The task set isn't serving production traffic.
      *        </p>
      *        </dd>
      *        <dt>DRAINING</dt>
      *        <dd>
      *        <p>
-     *        The tasks in the task set are being stopped and their corresponding targets are being deregistered from
+     *        The tasks in the task set are being stopped, and their corresponding targets are being deregistered from
      *        their target group.
      *        </p>
      *        </dd>
@@ -757,11 +757,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task definition the task set is using.
+     * The task definition that the task set is using.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition the task set is using.
+     *        The task definition that the task set is using.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -770,10 +770,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task definition the task set is using.
+     * The task definition that the task set is using.
      * </p>
      * 
-     * @return The task definition the task set is using.
+     * @return The task definition that the task set is using.
      */
 
     public String getTaskDefinition() {
@@ -782,11 +782,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task definition the task set is using.
+     * The task definition that the task set is using.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition the task set is using.
+     *        The task definition that the task set is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,14 +851,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @param pendingCount
      *        The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *        task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *        enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
+     *        enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after
      *        being in the <code>STOPPED</code> state.
      */
 
@@ -870,13 +870,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @return The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *         task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *         enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
+     *         enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after
      *         being in the <code>STOPPED</code> state.
      */
 
@@ -888,14 +888,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @param pendingCount
      *        The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *        task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *        enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
+     *        enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after
      *        being in the <code>STOPPED</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -953,11 +953,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was created.
+     * The Unix timestamp for the time when the task set was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the task set was created.
+     *        The Unix timestamp for the time when the task set was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -966,10 +966,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was created.
+     * The Unix timestamp for the time when the task set was created.
      * </p>
      * 
-     * @return The Unix timestamp for when the task set was created.
+     * @return The Unix timestamp for the time when the task set was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -978,11 +978,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was created.
+     * The Unix timestamp for the time when the task set was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the task set was created.
+     *        The Unix timestamp for the time when the task set was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -993,11 +993,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was last updated.
+     * The Unix timestamp for the time when the task set was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the task set was last updated.
+     *        The Unix timestamp for the time when the task set was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -1006,10 +1006,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was last updated.
+     * The Unix timestamp for the time when the task set was last updated.
      * </p>
      * 
-     * @return The Unix timestamp for when the task set was last updated.
+     * @return The Unix timestamp for the time when the task set was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -1018,11 +1018,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set was last updated.
+     * The Unix timestamp for the time when the task set was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the task set was last updated.
+     *        The Unix timestamp for the time when the task set was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1108,10 +1108,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy associated with the task set.
+     * The capacity provider strategy that are associated with the task set.
      * </p>
      * 
-     * @return The capacity provider strategy associated with the task set.
+     * @return The capacity provider strategy that are associated with the task set.
      */
 
     public java.util.List<CapacityProviderStrategyItem> getCapacityProviderStrategy() {
@@ -1123,11 +1123,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy associated with the task set.
+     * The capacity provider strategy that are associated with the task set.
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy associated with the task set.
+     *        The capacity provider strategy that are associated with the task set.
      */
 
     public void setCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
@@ -1141,7 +1141,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy associated with the task set.
+     * The capacity provider strategy that are associated with the task set.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1150,7 +1150,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy associated with the task set.
+     *        The capacity provider strategy that are associated with the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1166,11 +1166,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy associated with the task set.
+     * The capacity provider strategy that are associated with the task set.
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy associated with the task set.
+     *        The capacity provider strategy that are associated with the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1181,14 +1181,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Fargate platform version on which the tasks in the task set are running. A platform version is only specified
+     * The Fargate platform version where the tasks in the task set are running. A platform version is only specified
      * for tasks run on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The Fargate platform version on which the tasks in the task set are running. A platform version is only
+     *        The Fargate platform version where the tasks in the task set are running. A platform version is only
      *        specified for tasks run on Fargate. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1200,13 +1200,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Fargate platform version on which the tasks in the task set are running. A platform version is only specified
+     * The Fargate platform version where the tasks in the task set are running. A platform version is only specified
      * for tasks run on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Fargate platform version on which the tasks in the task set are running. A platform version is only
+     * @return The Fargate platform version where the tasks in the task set are running. A platform version is only
      *         specified for tasks run on Fargate. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1218,14 +1218,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Fargate platform version on which the tasks in the task set are running. A platform version is only specified
+     * The Fargate platform version where the tasks in the task set are running. A platform version is only specified
      * for tasks run on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The Fargate platform version on which the tasks in the task set are running. A platform version is only
+     *        The Fargate platform version where the tasks in the task set are running. A platform version is only
      *        specified for tasks run on Fargate. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
      *        versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1240,7 +1240,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operating system that your tasks in the set are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * that use the Fargate launch type.
      * </p>
      * <p>
      * All tasks in the set must have the same value.
@@ -1248,7 +1248,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param platformFamily
      *        The operating system that your tasks in the set are running on. A platform family is specified only for
-     *        tasks using the Fargate launch type. </p>
+     *        tasks that use the Fargate launch type. </p>
      *        <p>
      *        All tasks in the set must have the same value.
      */
@@ -1260,14 +1260,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operating system that your tasks in the set are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * that use the Fargate launch type.
      * </p>
      * <p>
      * All tasks in the set must have the same value.
      * </p>
      * 
      * @return The operating system that your tasks in the set are running on. A platform family is specified only for
-     *         tasks using the Fargate launch type. </p>
+     *         tasks that use the Fargate launch type. </p>
      *         <p>
      *         All tasks in the set must have the same value.
      */
@@ -1279,7 +1279,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The operating system that your tasks in the set are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * that use the Fargate launch type.
      * </p>
      * <p>
      * All tasks in the set must have the same value.
@@ -1287,7 +1287,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param platformFamily
      *        The operating system that your tasks in the set are running on. A platform family is specified only for
-     *        tasks using the Fargate launch type. </p>
+     *        tasks that use the Fargate launch type. </p>
      *        <p>
      *        All tasks in the set must have the same value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1340,10 +1340,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on a load balancer that is used with a task set.
+     * Details on a load balancer that are used with a task set.
      * </p>
      * 
-     * @return Details on a load balancer that is used with a task set.
+     * @return Details on a load balancer that are used with a task set.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -1355,11 +1355,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on a load balancer that is used with a task set.
+     * Details on a load balancer that are used with a task set.
      * </p>
      * 
      * @param loadBalancers
-     *        Details on a load balancer that is used with a task set.
+     *        Details on a load balancer that are used with a task set.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -1373,7 +1373,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on a load balancer that is used with a task set.
+     * Details on a load balancer that are used with a task set.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1382,7 +1382,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param loadBalancers
-     *        Details on a load balancer that is used with a task set.
+     *        Details on a load balancer that are used with a task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1398,11 +1398,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on a load balancer that is used with a task set.
+     * Details on a load balancer that are used with a task set.
      * </p>
      * 
      * @param loadBalancers
-     *        Details on a load balancer that is used with a task set.
+     *        Details on a load balancer that are used with a task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1413,11 +1413,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * The details for the service discovery registries to assign to this task set. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
-     * @return The details of the service discovery registries to assign to this task set. For more information, see <a
+     * @return The details for the service discovery registries to assign to this task set. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         discovery</a>.
      */
@@ -1431,12 +1431,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * The details for the service discovery registries to assign to this task set. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        The details for the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.
      */
@@ -1452,7 +1452,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * The details for the service discovery registries to assign to this task set. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <p>
@@ -1462,7 +1462,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        The details for the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1480,12 +1480,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * The details for the service discovery registries to assign to this task set. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        The details for the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1498,11 +1498,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      * </p>
      * 
      * @param scale
-     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     *        A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      */
 
     public void setScale(Scale scale) {
@@ -1511,10 +1511,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      * </p>
      * 
-     * @return A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * @return A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      */
 
     public Scale getScale() {
@@ -1523,11 +1523,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      * </p>
      * 
      * @param scale
-     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     *        A floating-point percentage of your desired number of tasks to place and keep running in the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1538,8 +1538,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stability status, which indicates whether the task set has reached a steady state. If the following
-     * conditions are met, the task set will be in <code>STEADY_STATE</code>:
+     * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
+     * are met, the task set sre in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1554,7 +1554,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * There are no tasks running on container instances in the <code>DRAINING</code> status.
+     * There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      * </p>
      * </li>
      * <li>
@@ -1564,12 +1564,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     * If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * </p>
      * 
      * @param stabilityStatus
-     *        The stability status, which indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set will be in <code>STEADY_STATE</code>:</p>
+     *        The stability status. This indicates whether the task set has reached a steady state. If the following
+     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1583,7 +1583,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        There are no tasks running on container instances in the <code>DRAINING</code> status.
+     *        There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -1594,7 +1594,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     *        If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * @see StabilityStatus
      */
 
@@ -1604,8 +1604,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stability status, which indicates whether the task set has reached a steady state. If the following
-     * conditions are met, the task set will be in <code>STEADY_STATE</code>:
+     * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
+     * are met, the task set sre in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1620,7 +1620,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * There are no tasks running on container instances in the <code>DRAINING</code> status.
+     * There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      * </p>
      * </li>
      * <li>
@@ -1630,11 +1630,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     * If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * </p>
      * 
-     * @return The stability status, which indicates whether the task set has reached a steady state. If the following
-     *         conditions are met, the task set will be in <code>STEADY_STATE</code>:</p>
+     * @return The stability status. This indicates whether the task set has reached a steady state. If the following
+     *         conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1648,7 +1648,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         There are no tasks running on container instances in the <code>DRAINING</code> status.
+     *         There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      *         </p>
      *         </li>
      *         <li>
@@ -1659,7 +1659,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     *         If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * @see StabilityStatus
      */
 
@@ -1669,8 +1669,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stability status, which indicates whether the task set has reached a steady state. If the following
-     * conditions are met, the task set will be in <code>STEADY_STATE</code>:
+     * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
+     * are met, the task set sre in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1685,7 +1685,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * There are no tasks running on container instances in the <code>DRAINING</code> status.
+     * There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      * </p>
      * </li>
      * <li>
@@ -1695,12 +1695,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     * If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * </p>
      * 
      * @param stabilityStatus
-     *        The stability status, which indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set will be in <code>STEADY_STATE</code>:</p>
+     *        The stability status. This indicates whether the task set has reached a steady state. If the following
+     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1714,7 +1714,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        There are no tasks running on container instances in the <code>DRAINING</code> status.
+     *        There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -1725,7 +1725,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     *        If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StabilityStatus
      */
@@ -1737,8 +1737,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stability status, which indicates whether the task set has reached a steady state. If the following
-     * conditions are met, the task set will be in <code>STEADY_STATE</code>:
+     * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
+     * are met, the task set sre in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1753,7 +1753,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * There are no tasks running on container instances in the <code>DRAINING</code> status.
+     * There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      * </p>
      * </li>
      * <li>
@@ -1763,12 +1763,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     * If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * </p>
      * 
      * @param stabilityStatus
-     *        The stability status, which indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set will be in <code>STEADY_STATE</code>:</p>
+     *        The stability status. This indicates whether the task set has reached a steady state. If the following
+     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1782,7 +1782,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        There are no tasks running on container instances in the <code>DRAINING</code> status.
+     *        There are no tasks that are running on container instances in the <code>DRAINING</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -1793,7 +1793,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+     *        If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StabilityStatus
      */
@@ -1805,11 +1805,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set stability status was retrieved.
+     * The Unix timestamp for the time when the task set stability status was retrieved.
      * </p>
      * 
      * @param stabilityStatusAt
-     *        The Unix timestamp for when the task set stability status was retrieved.
+     *        The Unix timestamp for the time when the task set stability status was retrieved.
      */
 
     public void setStabilityStatusAt(java.util.Date stabilityStatusAt) {
@@ -1818,10 +1818,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set stability status was retrieved.
+     * The Unix timestamp for the time when the task set stability status was retrieved.
      * </p>
      * 
-     * @return The Unix timestamp for when the task set stability status was retrieved.
+     * @return The Unix timestamp for the time when the task set stability status was retrieved.
      */
 
     public java.util.Date getStabilityStatusAt() {
@@ -1830,11 +1830,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the task set stability status was retrieved.
+     * The Unix timestamp for the time when the task set stability status was retrieved.
      * </p>
      * 
      * @param stabilityStatusAt
-     *        The Unix timestamp for when the task set stability status was retrieved.
+     *        The Unix timestamp for the time when the task set stability status was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1846,7 +1846,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1894,7 +1894,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The metadata that you apply to the task set to help you categorize and organize them. Each tag consists
-     *         of a key and an optional value, both of which you define.</p>
+     *         of a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -1951,7 +1951,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2000,7 +2000,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2058,7 +2058,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2112,7 +2112,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2172,7 +2172,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2221,7 +2221,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

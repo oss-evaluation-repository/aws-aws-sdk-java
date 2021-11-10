@@ -34,8 +34,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> clusters;
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -139,8 +139,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -159,8 +159,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * </p>
      * 
-     * @return Whether to include additional information about the clusters in the response. If this field is omitted,
-     *         this information isn't included.</p>
+     * @return Determines whether to include additional information about the clusters in the response. If this field is
+     *         omitted, this information isn't included.</p>
      *         <p>
      *         If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
      *         cluster are included.
@@ -189,8 +189,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -210,8 +210,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param include
-     *        Whether to include additional information about the clusters in the response. If this field is omitted,
-     *        this information isn't included.</p>
+     *        Determines whether to include additional information about the clusters in the response. If this field is
+     *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
      *        cluster are included.
@@ -241,8 +241,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -267,8 +267,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param include
-     *        Whether to include additional information about the clusters in the response. If this field is omitted,
-     *        this information isn't included.</p>
+     *        Determines whether to include additional information about the clusters in the response. If this field is
+     *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
      *        cluster are included.
@@ -300,8 +300,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -321,8 +321,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param include
-     *        Whether to include additional information about the clusters in the response. If this field is omitted,
-     *        this information isn't included.</p>
+     *        Determines whether to include additional information about the clusters in the response. If this field is
+     *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
      *        cluster are included.
@@ -349,8 +349,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Whether to include additional information about the clusters in the response. If this field is omitted, this
-     * information isn't included.
+     * Determines whether to include additional information about the clusters in the response. If this field is
+     * omitted, this information isn't included.
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
@@ -370,8 +370,8 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param include
-     *        Whether to include additional information about the clusters in the response. If this field is omitted,
-     *        this information isn't included.</p>
+     *        Determines whether to include additional information about the clusters in the response. If this field is
+     *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
      *        cluster are included.

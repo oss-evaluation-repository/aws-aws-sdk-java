@@ -44,9 +44,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     private String containerInstance;
     /**
      * <p>
-     * Forces the deregistration of the container instance. If you have tasks running on the container instance when you
+     * Forces the container instance to be deregistered. If you have tasks running on the container instance when you
      * deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or
-     * the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon
+     * the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon
      * ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p>
@@ -170,9 +170,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Forces the deregistration of the container instance. If you have tasks running on the container instance when you
+     * Forces the container instance to be deregistered. If you have tasks running on the container instance when you
      * deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or
-     * the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon
+     * the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon
      * ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p>
@@ -183,9 +183,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param force
-     *        Forces the deregistration of the container instance. If you have tasks running on the container instance
-     *        when you deregister it with the <code>force</code> option, these tasks remain running until you terminate
-     *        the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or
+     *        Forces the container instance to be deregistered. If you have tasks running on the container instance when
+     *        you deregister it with the <code>force</code> option, these tasks remain running until you terminate the
+     *        instance or the tasks stop through some other means, but they're orphaned (no longer monitored or
      *        accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
@@ -201,9 +201,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Forces the deregistration of the container instance. If you have tasks running on the container instance when you
+     * Forces the container instance to be deregistered. If you have tasks running on the container instance when you
      * deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or
-     * the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon
+     * the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon
      * ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p>
@@ -213,9 +213,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * balancer or target group.
      * </p>
      * 
-     * @return Forces the deregistration of the container instance. If you have tasks running on the container instance
+     * @return Forces the container instance to be deregistered. If you have tasks running on the container instance
      *         when you deregister it with the <code>force</code> option, these tasks remain running until you terminate
-     *         the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or
+     *         the instance or the tasks stop through some other means, but they're orphaned (no longer monitored or
      *         accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>
@@ -231,9 +231,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Forces the deregistration of the container instance. If you have tasks running on the container instance when you
+     * Forces the container instance to be deregistered. If you have tasks running on the container instance when you
      * deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or
-     * the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon
+     * the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon
      * ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p>
@@ -244,9 +244,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param force
-     *        Forces the deregistration of the container instance. If you have tasks running on the container instance
-     *        when you deregister it with the <code>force</code> option, these tasks remain running until you terminate
-     *        the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or
+     *        Forces the container instance to be deregistered. If you have tasks running on the container instance when
+     *        you deregister it with the <code>force</code> option, these tasks remain running until you terminate the
+     *        instance or the tasks stop through some other means, but they're orphaned (no longer monitored or
      *        accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
@@ -264,9 +264,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Forces the deregistration of the container instance. If you have tasks running on the container instance when you
+     * Forces the container instance to be deregistered. If you have tasks running on the container instance when you
      * deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or
-     * the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon
+     * the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon
      * ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p>
@@ -276,9 +276,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * balancer or target group.
      * </p>
      * 
-     * @return Forces the deregistration of the container instance. If you have tasks running on the container instance
+     * @return Forces the container instance to be deregistered. If you have tasks running on the container instance
      *         when you deregister it with the <code>force</code> option, these tasks remain running until you terminate
-     *         the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or
+     *         the instance or the tasks stop through some other means, but they're orphaned (no longer monitored or
      *         accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>

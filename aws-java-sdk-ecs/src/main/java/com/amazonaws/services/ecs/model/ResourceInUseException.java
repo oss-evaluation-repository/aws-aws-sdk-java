@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resource is in-use and cannot be removed.
+ * The specified resource is in-use and can't be removed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

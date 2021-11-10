@@ -28,8 +28,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -41,11 +41,11 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this
      * parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and
+     * be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and
      * a <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -54,8 +54,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -66,8 +66,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
-     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *        results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *        provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -81,8 +81,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -92,8 +92,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @return The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
-     *         results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *         was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *         results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *         provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -107,8 +107,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -119,8 +119,8 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
-     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *        results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *        provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -135,21 +135,21 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this
      * parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and
+     * be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and
      * a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
-     *        parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page
-     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     *        seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns
-     *        up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When
+     *        this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single
+     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     *        can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -158,19 +158,19 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this
      * parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and
+     * be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and
      * a <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When
+     * @return The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When
      *         this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a
      *         single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *         request can be seen by sending another <code>ListClusters</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      *         <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -180,21 +180,21 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this
      * parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and
+     * be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and
      * a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this
-     *        parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page
-     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     *        seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns
-     *        up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When
+     *        this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single
+     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     *        can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

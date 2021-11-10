@@ -39,8 +39,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * allowed. Service names must be unique within a cluster. However, you can have similarly named services in
+     * multiple clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -52,14 +52,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String clusterArn;
     /**
      * <p>
-     * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
-     * it appears in a container definition), and the container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name,
+     * and the container port to access from the load balancer. The container name is as it appears in a container
+     * definition.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details for the service discovery registries to assign to this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      */
@@ -100,16 +101,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String launchType;
     /**
      * <p>
-     * The capacity provider strategy the service is using. When using the DescribeServices API, this field is omitted
-     * if the service was created using a launch type.
+     * The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if
+     * the service was created using a launch type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
     /**
      * <p>
-     * The platform version on which to run your service. A platform version is only specified for tasks hosted on
-     * Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     * information, see <a
+     * The platform version to run your service on. A platform version is only specified for tasks that are hosted on
+     * Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -117,12 +117,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String platformVersion;
     /**
      * <p>
-     * The operating system that your tasks in the service are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * The operating system that your tasks in the service run on. A platform family is specified only for tasks using
+     * the Fargate launch type.
      * </p>
      * <p>
-     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service,
-     * for example, <code>LINUX</code>.
+     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service
+     * (for example, <code>LINUX</code>).
      * </p>
      */
     private String platformFamily;
@@ -156,7 +156,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<Deployment> deployments;
     /**
      * <p>
-     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register
      * container instances with an Elastic Load Balancing load balancer.
      * </p>
      */
@@ -169,7 +169,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ServiceEvent> events;
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix timestamp for the time when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -205,7 +205,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
-     * There are two service scheduler strategies available:
+     * There are two service scheduler strategies available.
      * </p>
      * <ul>
      * <li>
@@ -217,14 +217,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
-     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance.
+     * This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement
      * constraints.
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -233,14 +233,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service is using the <code>ECS</code> deployment controller type.
+     * if the service uses the <code>ECS</code> deployment controller type.
      * </p>
      */
     private DeploymentController deploymentController;
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define bot the key and value.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -296,7 +296,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String createdBy;
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -304,15 +304,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableECSManagedTags;
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Determines whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags aren't propagated.
      * </p>
      */
     private String propagateTags;
     /**
      * <p>
-     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
-     * command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
+     * execute command functionality is enabled for all containers in tasks as part of the service.
      * </p>
      */
     private Boolean enableExecuteCommand;
@@ -378,14 +378,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * allowed. Service names must be unique within a cluster. However, you can have similarly named services in
+     * multiple clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        are allowed. Service names must be unique within a cluster. However, you can have similarly named services
+     *        in multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -395,13 +395,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * allowed. Service names must be unique within a cluster. However, you can have similarly named services in
+     * multiple clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
-     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *         multiple clusters within a Region or across multiple Regions.
+     *         are allowed. Service names must be unique within a cluster. However, you can have similarly named
+     *         services in multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -411,14 +411,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * allowed. Service names must be unique within a cluster. However, you can have similarly named services in
+     * multiple clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        are allowed. Service names must be unique within a cluster. However, you can have similarly named services
+     *        in multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,12 +469,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
-     * it appears in a container definition), and the container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name,
+     * and the container port to access from the load balancer. The container name is as it appears in a container
+     * definition.
      * </p>
      * 
-     * @return A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *         name (as it appears in a container definition), and the container port to access from the load balancer.
+     * @return A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container
+     *         name, and the container port to access from the load balancer. The container name is as it appears in a
+     *         container definition.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -486,13 +488,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
-     * it appears in a container definition), and the container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name,
+     * and the container port to access from the load balancer. The container name is as it appears in a container
+     * definition.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load balancer.
+     *        A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container
+     *        name, and the container port to access from the load balancer. The container name is as it appears in a
+     *        container definition.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -506,8 +510,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
-     * it appears in a container definition), and the container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name,
+     * and the container port to access from the load balancer. The container name is as it appears in a container
+     * definition.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -516,8 +521,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param loadBalancers
-     *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load balancer.
+     *        A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container
+     *        name, and the container port to access from the load balancer. The container name is as it appears in a
+     *        container definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,13 +539,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
-     * it appears in a container definition), and the container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name,
+     * and the container port to access from the load balancer. The container name is as it appears in a container
+     * definition.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load balancer.
+     *        A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container
+     *        name, and the container port to access from the load balancer. The container name is as it appears in a
+     *        container definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,11 +558,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details for the service discovery registries to assign to this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
-     * @return The details of the service discovery registries to assign to this service. For more information, see <a
+     * @return The details for the service discovery registries to assign to this service. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.
      */
@@ -568,12 +576,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details for the service discovery registries to assign to this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details for the service discovery registries to assign to this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      */
@@ -589,7 +597,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details for the service discovery registries to assign to this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <p>
@@ -599,7 +607,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details for the service discovery registries to assign to this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -617,12 +625,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details for the service discovery registries to assign to this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details for the service discovery registries to assign to this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -880,11 +888,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy the service is using. When using the DescribeServices API, this field is omitted
-     * if the service was created using a launch type.
+     * The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if
+     * the service was created using a launch type.
      * </p>
      * 
-     * @return The capacity provider strategy the service is using. When using the DescribeServices API, this field is
+     * @return The capacity provider strategy the service uses. When using the DescribeServices API, this field is
      *         omitted if the service was created using a launch type.
      */
 
@@ -897,12 +905,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy the service is using. When using the DescribeServices API, this field is omitted
-     * if the service was created using a launch type.
+     * The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if
+     * the service was created using a launch type.
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy the service is using. When using the DescribeServices API, this field is
+     *        The capacity provider strategy the service uses. When using the DescribeServices API, this field is
      *        omitted if the service was created using a launch type.
      */
 
@@ -917,8 +925,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy the service is using. When using the DescribeServices API, this field is omitted
-     * if the service was created using a launch type.
+     * The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if
+     * the service was created using a launch type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -927,7 +935,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy the service is using. When using the DescribeServices API, this field is
+     *        The capacity provider strategy the service uses. When using the DescribeServices API, this field is
      *        omitted if the service was created using a launch type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -944,12 +952,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The capacity provider strategy the service is using. When using the DescribeServices API, this field is omitted
-     * if the service was created using a launch type.
+     * The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if
+     * the service was created using a launch type.
      * </p>
      * 
      * @param capacityProviderStrategy
-     *        The capacity provider strategy the service is using. When using the DescribeServices API, this field is
+     *        The capacity provider strategy the service uses. When using the DescribeServices API, this field is
      *        omitted if the service was created using a launch type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -961,16 +969,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which to run your service. A platform version is only specified for tasks hosted on
-     * Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     * information, see <a
+     * The platform version to run your service on. A platform version is only specified for tasks that are hosted on
+     * Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which to run your service. A platform version is only specified for tasks hosted
-     *        on Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
+     *        The platform version to run your service on. A platform version is only specified for tasks that are
+     *        hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -982,16 +989,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which to run your service. A platform version is only specified for tasks hosted on
-     * Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     * information, see <a
+     * The platform version to run your service on. A platform version is only specified for tasks that are hosted on
+     * Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which to run your service. A platform version is only specified for tasks hosted
-     *         on Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For
-     *         more information, see <a
+     * @return The platform version to run your service on. A platform version is only specified for tasks that are
+     *         hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1002,16 +1008,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which to run your service. A platform version is only specified for tasks hosted on
-     * Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
-     * information, see <a
+     * The platform version to run your service on. A platform version is only specified for tasks that are hosted on
+     * Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which to run your service. A platform version is only specified for tasks hosted
-     *        on Fargate. If one is not specified, the <code>LATEST</code> platform version is used by default. For more
+     *        The platform version to run your service on. A platform version is only specified for tasks that are
+     *        hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
      *        Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1025,20 +1030,20 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system that your tasks in the service are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * The operating system that your tasks in the service run on. A platform family is specified only for tasks using
+     * the Fargate launch type.
      * </p>
      * <p>
-     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service,
-     * for example, <code>LINUX</code>.
+     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service
+     * (for example, <code>LINUX</code>).
      * </p>
      * 
      * @param platformFamily
-     *        The operating system that your tasks in the service are running on. A platform family is specified only
-     *        for tasks using the Fargate launch type. </p>
+     *        The operating system that your tasks in the service run on. A platform family is specified only for tasks
+     *        using the Fargate launch type. </p>
      *        <p>
      *        All tasks that run as part of this service must use the same <code>platformFamily</code> value as the
-     *        service, for example, <code>LINUX</code>.
+     *        service (for example, <code>LINUX</code>).
      */
 
     public void setPlatformFamily(String platformFamily) {
@@ -1047,19 +1052,19 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system that your tasks in the service are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * The operating system that your tasks in the service run on. A platform family is specified only for tasks using
+     * the Fargate launch type.
      * </p>
      * <p>
-     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service,
-     * for example, <code>LINUX</code>.
+     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service
+     * (for example, <code>LINUX</code>).
      * </p>
      * 
-     * @return The operating system that your tasks in the service are running on. A platform family is specified only
-     *         for tasks using the Fargate launch type. </p>
+     * @return The operating system that your tasks in the service run on. A platform family is specified only for tasks
+     *         using the Fargate launch type. </p>
      *         <p>
      *         All tasks that run as part of this service must use the same <code>platformFamily</code> value as the
-     *         service, for example, <code>LINUX</code>.
+     *         service (for example, <code>LINUX</code>).
      */
 
     public String getPlatformFamily() {
@@ -1068,20 +1073,20 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system that your tasks in the service are running on. A platform family is specified only for tasks
-     * using the Fargate launch type.
+     * The operating system that your tasks in the service run on. A platform family is specified only for tasks using
+     * the Fargate launch type.
      * </p>
      * <p>
-     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service,
-     * for example, <code>LINUX</code>.
+     * All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service
+     * (for example, <code>LINUX</code>).
      * </p>
      * 
      * @param platformFamily
-     *        The operating system that your tasks in the service are running on. A platform family is specified only
-     *        for tasks using the Fargate launch type. </p>
+     *        The operating system that your tasks in the service run on. A platform family is specified only for tasks
+     *        using the Fargate launch type. </p>
      *        <p>
      *        All tasks that run as part of this service must use the same <code>platformFamily</code> value as the
-     *        service, for example, <code>LINUX</code>.
+     *        service (for example, <code>LINUX</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1346,13 +1351,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register
      * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
-     *        container instances with an Elastic Load Balancing load balancer.
+     *        The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to
+     *        register container instances with an Elastic Load Balancing load balancer.
      */
 
     public void setRoleArn(String roleArn) {
@@ -1361,11 +1366,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register
      * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
-     * @return The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to
+     * @return The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to
      *         register container instances with an Elastic Load Balancing load balancer.
      */
 
@@ -1375,13 +1380,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register
      * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
-     *        container instances with an Elastic Load Balancing load balancer.
+     *        The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to
+     *        register container instances with an Elastic Load Balancing load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1465,11 +1470,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix timestamp for the time when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix timestamp for the time when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -1478,10 +1483,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix timestamp for the time when the service was created.
      * </p>
      * 
-     * @return The Unix timestamp for when the service was created.
+     * @return The Unix timestamp for the time when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -1490,11 +1495,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix timestamp for the time when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix timestamp for the time when the service was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1747,7 +1752,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
-     * There are two service scheduler strategies available:
+     * There are two service scheduler strategies available.
      * </p>
      * <ul>
      * <li>
@@ -1759,14 +1764,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
-     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance.
+     * This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement
      * constraints.
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1775,7 +1780,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        The scheduling strategy to use for the service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
-     *        There are two service scheduler strategies available:
+     *        There are two service scheduler strategies available.
      *        </p>
      *        <ul>
      *        <li>
@@ -1788,13 +1793,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
-     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
-     *        meet the placement constraints.
+     *        instance. This taskmeets all of the task placement constraints that you specify in your cluster. The
+     *        service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that
+     *        don't meet the placement constraints.
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @see SchedulingStrategy
@@ -1810,7 +1815,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
-     * There are two service scheduler strategies available:
+     * There are two service scheduler strategies available.
      * </p>
      * <ul>
      * <li>
@@ -1822,14 +1827,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
-     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance.
+     * This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement
      * constraints.
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1837,7 +1842,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * @return The scheduling strategy to use for the service. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *         <p>
-     *         There are two service scheduler strategies available:
+     *         There are two service scheduler strategies available.
      *         </p>
      *         <ul>
      *         <li>
@@ -1850,13 +1855,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *         instance that meets all of the task placement constraints that you specify in your cluster. The service
-     *         scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
-     *         meet the placement constraints.
+     *         instance. This taskmeets all of the task placement constraints that you specify in your cluster. The
+     *         service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that
+     *         don't meet the placement constraints.
      *         </p>
      *         <note>
      *         <p>
-     *         Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *         Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      *         </p>
      *         </note></li>
      * @see SchedulingStrategy
@@ -1872,7 +1877,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
-     * There are two service scheduler strategies available:
+     * There are two service scheduler strategies available.
      * </p>
      * <ul>
      * <li>
@@ -1884,14 +1889,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
-     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance.
+     * This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement
      * constraints.
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1900,7 +1905,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        The scheduling strategy to use for the service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
-     *        There are two service scheduler strategies available:
+     *        There are two service scheduler strategies available.
      *        </p>
      *        <ul>
      *        <li>
@@ -1913,13 +1918,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
-     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
-     *        meet the placement constraints.
+     *        instance. This taskmeets all of the task placement constraints that you specify in your cluster. The
+     *        service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that
+     *        don't meet the placement constraints.
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1937,7 +1942,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
-     * There are two service scheduler strategies available:
+     * There are two service scheduler strategies available.
      * </p>
      * <ul>
      * <li>
@@ -1949,14 +1954,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
-     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance.
+     * This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement
      * constraints.
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1965,7 +1970,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        The scheduling strategy to use for the service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
-     *        There are two service scheduler strategies available:
+     *        There are two service scheduler strategies available.
      *        </p>
      *        <ul>
      *        <li>
@@ -1978,13 +1983,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
-     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
-     *        meet the placement constraints.
+     *        instance. This taskmeets all of the task placement constraints that you specify in your cluster. The
+     *        service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that
+     *        don't meet the placement constraints.
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1999,12 +2004,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service is using the <code>ECS</code> deployment controller type.
+     * if the service uses the <code>ECS</code> deployment controller type.
      * </p>
      * 
      * @param deploymentController
      *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service is using the <code>ECS</code> deployment controller type.
+     *        omitted if the service uses the <code>ECS</code> deployment controller type.
      */
 
     public void setDeploymentController(DeploymentController deploymentController) {
@@ -2014,11 +2019,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service is using the <code>ECS</code> deployment controller type.
+     * if the service uses the <code>ECS</code> deployment controller type.
      * </p>
      * 
      * @return The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *         omitted if the service is using the <code>ECS</code> deployment controller type.
+     *         omitted if the service uses the <code>ECS</code> deployment controller type.
      */
 
     public DeploymentController getDeploymentController() {
@@ -2028,12 +2033,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service is using the <code>ECS</code> deployment controller type.
+     * if the service uses the <code>ECS</code> deployment controller type.
      * </p>
      * 
      * @param deploymentController
      *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service is using the <code>ECS</code> deployment controller type.
+     *        omitted if the service uses the <code>ECS</code> deployment controller type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2045,7 +2050,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define bot the key and value.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2093,7 +2098,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
-     *         a key and an optional value, both of which you define.</p>
+     *         a key and an optional value. You define bot the key and value.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -2150,7 +2155,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define bot the key and value.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2199,7 +2204,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define bot the key and value.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2257,7 +2262,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define bot the key and value.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2311,7 +2316,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define bot the key and value.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2371,7 +2376,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define bot the key and value.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -2420,7 +2425,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
-     *        a key and an optional value, both of which you define.</p>
+     *        a key and an optional value. You define bot the key and value.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -2514,13 +2519,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
-     *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *        Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
      *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -2531,12 +2536,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     * @return Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
      *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      *         Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -2547,13 +2552,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
-     *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *        Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
      *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2566,12 +2571,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     * @return Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
      *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      *         Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -2582,13 +2587,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Determines whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Determines whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags aren't propagated.
      * @see PropagateTags
      */
 
@@ -2598,12 +2603,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Determines whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags aren't propagated.
      * </p>
      * 
-     * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *         is specified, the tags are not propagated.
+     * @return Determines whether to propagate the tags from the task definition or the service to the task. If no value
+     *         is specified, the tags aren't propagated.
      * @see PropagateTags
      */
 
@@ -2613,13 +2618,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Determines whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Determines whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags aren't propagated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -2631,13 +2636,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Determines whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Determines whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags aren't propagated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -2649,12 +2654,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
-     * command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
+     * execute command functionality is enabled for all containers in tasks as part of the service.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
      *        execute command functionality is enabled for all containers in tasks as part of the service.
      */
 
@@ -2664,12 +2669,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
-     * command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
+     * execute command functionality is enabled for all containers in tasks as part of the service.
      * </p>
      * 
-     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
-     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     *         the execute command functionality is enabled for all containers in tasks as part of the service.
      */
 
     public Boolean getEnableExecuteCommand() {
@@ -2678,12 +2683,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
-     * command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
+     * execute command functionality is enabled for all containers in tasks as part of the service.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
      *        execute command functionality is enabled for all containers in tasks as part of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2695,12 +2700,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
-     * command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
+     * execute command functionality is enabled for all containers in tasks as part of the service.
      * </p>
      * 
-     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
-     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     *         the execute command functionality is enabled for all containers in tasks as part of the service.
      */
 
     public Boolean isEnableExecuteCommand() {

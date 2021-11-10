@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <note>
  * <p>
  * The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment
- * type that are not behind a Classic Load Balancer.
+ * type that aren't behind a Classic Load Balancer.
  * </p>
  * </note>
  * <p>
@@ -41,25 +41,26 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable the deployment circuit breaker logic for the service.
+     * Determines whether to enable the deployment circuit breaker logic for the service.
      * </p>
      */
     private Boolean enable;
     /**
      * <p>
-     * Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when
-     * a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+     * Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
+     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * successfully.
      * </p>
      */
     private Boolean rollback;
 
     /**
      * <p>
-     * Whether to enable the deployment circuit breaker logic for the service.
+     * Determines whether to enable the deployment circuit breaker logic for the service.
      * </p>
      * 
      * @param enable
-     *        Whether to enable the deployment circuit breaker logic for the service.
+     *        Determines whether to enable the deployment circuit breaker logic for the service.
      */
 
     public void setEnable(Boolean enable) {
@@ -68,10 +69,10 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable the deployment circuit breaker logic for the service.
+     * Determines whether to enable the deployment circuit breaker logic for the service.
      * </p>
      * 
-     * @return Whether to enable the deployment circuit breaker logic for the service.
+     * @return Determines whether to enable the deployment circuit breaker logic for the service.
      */
 
     public Boolean getEnable() {
@@ -80,11 +81,11 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable the deployment circuit breaker logic for the service.
+     * Determines whether to enable the deployment circuit breaker logic for the service.
      * </p>
      * 
      * @param enable
-     *        Whether to enable the deployment circuit breaker logic for the service.
+     *        Determines whether to enable the deployment circuit breaker logic for the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,10 +96,10 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable the deployment circuit breaker logic for the service.
+     * Determines whether to enable the deployment circuit breaker logic for the service.
      * </p>
      * 
-     * @return Whether to enable the deployment circuit breaker logic for the service.
+     * @return Determines whether to enable the deployment circuit breaker logic for the service.
      */
 
     public Boolean isEnable() {
@@ -107,14 +108,15 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when
-     * a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+     * Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
+     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * successfully.
      * </p>
      * 
      * @param rollback
-     *        Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     *        enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
-     *        successfully.
+     *        Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+     *        rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
+     *        that completed successfully.
      */
 
     public void setRollback(Boolean rollback) {
@@ -123,13 +125,14 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when
-     * a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+     * Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
+     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * successfully.
      * </p>
      * 
-     * @return Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     *         enabled, when a service deployment fails, the service is rolled back to the last deployment that
-     *         completed successfully.
+     * @return Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+     *         rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
+     *         that completed successfully.
      */
 
     public Boolean getRollback() {
@@ -138,14 +141,15 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when
-     * a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+     * Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
+     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * successfully.
      * </p>
      * 
      * @param rollback
-     *        Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     *        enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
-     *        successfully.
+     *        Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+     *        rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
+     *        that completed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,13 +160,14 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when
-     * a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+     * Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
+     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * successfully.
      * </p>
      * 
-     * @return Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     *         enabled, when a service deployment fails, the service is rolled back to the last deployment that
-     *         completed successfully.
+     * @return Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+     *         rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
+     *         that completed successfully.
      */
 
     public Boolean isRollback() {

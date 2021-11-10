@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group.
- * Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified
+ * Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified
  * <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href=
  * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling"
  * >Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -40,29 +40,29 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not to enable managed scaling for the capacity provider.
+     * Determines whether to enable managed scaling for the capacity provider.
      * </p>
      */
     private String status;
     /**
      * <p>
      * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> will result in the Amazon EC2 instances in
-     * your Auto Scaling group being completely utilized.
+     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
+     * Auto Scaling group being completely used.
      * </p>
      */
     private Integer targetCapacity;
     /**
      * <p>
-     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>1</code> is used.
+     * The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>1</code> is used.
      * </p>
      */
     private Integer minimumScalingStepSize;
     /**
      * <p>
-     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>10000</code> is used.
      * </p>
      */
     private Integer maximumScalingStepSize;
@@ -76,11 +76,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not to enable managed scaling for the capacity provider.
+     * Determines whether to enable managed scaling for the capacity provider.
      * </p>
      * 
      * @param status
-     *        Whether or not to enable managed scaling for the capacity provider.
+     *        Determines whether to enable managed scaling for the capacity provider.
      * @see ManagedScalingStatus
      */
 
@@ -90,10 +90,10 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not to enable managed scaling for the capacity provider.
+     * Determines whether to enable managed scaling for the capacity provider.
      * </p>
      * 
-     * @return Whether or not to enable managed scaling for the capacity provider.
+     * @return Determines whether to enable managed scaling for the capacity provider.
      * @see ManagedScalingStatus
      */
 
@@ -103,11 +103,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not to enable managed scaling for the capacity provider.
+     * Determines whether to enable managed scaling for the capacity provider.
      * </p>
      * 
      * @param status
-     *        Whether or not to enable managed scaling for the capacity provider.
+     *        Determines whether to enable managed scaling for the capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedScalingStatus
      */
@@ -119,11 +119,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not to enable managed scaling for the capacity provider.
+     * Determines whether to enable managed scaling for the capacity provider.
      * </p>
      * 
      * @param status
-     *        Whether or not to enable managed scaling for the capacity provider.
+     *        Determines whether to enable managed scaling for the capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedScalingStatus
      */
@@ -136,14 +136,14 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> will result in the Amazon EC2 instances in
-     * your Auto Scaling group being completely utilized.
+     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
+     * Auto Scaling group being completely used.
      * </p>
      * 
      * @param targetCapacity
      *        The target capacity value for the capacity provider. The specified value must be greater than
-     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> will result in the
-     *        Amazon EC2 instances in your Auto Scaling group being completely utilized.
+     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
+     *        Amazon EC2 instances in your Auto Scaling group being completely used.
      */
 
     public void setTargetCapacity(Integer targetCapacity) {
@@ -153,13 +153,13 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> will result in the Amazon EC2 instances in
-     * your Auto Scaling group being completely utilized.
+     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
+     * Auto Scaling group being completely used.
      * </p>
      * 
      * @return The target capacity value for the capacity provider. The specified value must be greater than
-     *         <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> will result in the
-     *         Amazon EC2 instances in your Auto Scaling group being completely utilized.
+     *         <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
+     *         Amazon EC2 instances in your Auto Scaling group being completely used.
      */
 
     public Integer getTargetCapacity() {
@@ -169,14 +169,14 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> will result in the Amazon EC2 instances in
-     * your Auto Scaling group being completely utilized.
+     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
+     * Auto Scaling group being completely used.
      * </p>
      * 
      * @param targetCapacity
      *        The target capacity value for the capacity provider. The specified value must be greater than
-     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> will result in the
-     *        Amazon EC2 instances in your Auto Scaling group being completely utilized.
+     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
+     *        Amazon EC2 instances in your Auto Scaling group being completely used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,12 +187,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>1</code> is used.
+     * The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
      * @param minimumScalingStepSize
-     *        The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *        parameter is omitted, the default value of <code>1</code> is used.
      */
 
@@ -202,11 +202,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>1</code> is used.
+     * The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
-     * @return The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * @return The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *         parameter is omitted, the default value of <code>1</code> is used.
      */
 
@@ -216,12 +216,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>1</code> is used.
+     * The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
      * @param minimumScalingStepSize
-     *        The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        The minimum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *        parameter is omitted, the default value of <code>1</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -233,12 +233,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
      * @param maximumScalingStepSize
-     *        The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *        parameter is omitted, the default value of <code>10000</code> is used.
      */
 
@@ -248,11 +248,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
-     * @return The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * @return The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *         parameter is omitted, the default value of <code>10000</code> is used.
      */
 
@@ -262,12 +262,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this parameter
+     * is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
      * @param maximumScalingStepSize
-     *        The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        The maximum number of container instances that Amazon ECS scales in or scales out at one time. If this
      *        parameter is omitted, the default value of <code>10000</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

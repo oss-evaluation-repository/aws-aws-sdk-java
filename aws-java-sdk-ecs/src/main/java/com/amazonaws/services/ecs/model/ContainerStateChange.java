@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a change in state for a container.
+ * An object that represents a change in state for a container.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerStateChange" target="_top">AWS API
@@ -54,7 +54,7 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
     private Integer exitCode;
     /**
      * <p>
-     * Any network bindings associated with the container.
+     * Any network bindings that are associated with the container.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkBinding> networkBindings;
@@ -233,10 +233,10 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Any network bindings associated with the container.
+     * Any network bindings that are associated with the container.
      * </p>
      * 
-     * @return Any network bindings associated with the container.
+     * @return Any network bindings that are associated with the container.
      */
 
     public java.util.List<NetworkBinding> getNetworkBindings() {
@@ -248,11 +248,11 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Any network bindings associated with the container.
+     * Any network bindings that are associated with the container.
      * </p>
      * 
      * @param networkBindings
-     *        Any network bindings associated with the container.
+     *        Any network bindings that are associated with the container.
      */
 
     public void setNetworkBindings(java.util.Collection<NetworkBinding> networkBindings) {
@@ -266,7 +266,7 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Any network bindings associated with the container.
+     * Any network bindings that are associated with the container.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -275,7 +275,7 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param networkBindings
-     *        Any network bindings associated with the container.
+     *        Any network bindings that are associated with the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,11 +291,11 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Any network bindings associated with the container.
+     * Any network bindings that are associated with the container.
      * </p>
      * 
      * @param networkBindings
-     *        Any network bindings associated with the container.
+     *        Any network bindings that are associated with the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

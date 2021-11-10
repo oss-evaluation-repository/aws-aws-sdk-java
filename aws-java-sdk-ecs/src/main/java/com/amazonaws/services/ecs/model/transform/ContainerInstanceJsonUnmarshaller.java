@@ -126,6 +126,10 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("healthStatus", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setHealthStatus(ContainerInstanceHealthStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

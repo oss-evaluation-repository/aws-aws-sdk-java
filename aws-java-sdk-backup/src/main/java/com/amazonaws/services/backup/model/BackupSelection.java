@@ -56,6 +56,10 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      */
     private java.util.List<Condition> listOfTags;
 
+    private java.util.List<String> notResources;
+
+    private Conditions conditions;
+
     /**
      * <p>
      * The display name of a resource selection document.
@@ -299,6 +303,84 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<String> getNotResources() {
+        return notResources;
+    }
+
+    /**
+     * @param notResources
+     */
+
+    public void setNotResources(java.util.Collection<String> notResources) {
+        if (notResources == null) {
+            this.notResources = null;
+            return;
+        }
+
+        this.notResources = new java.util.ArrayList<String>(notResources);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotResources(java.util.Collection)} or {@link #withNotResources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param notResources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupSelection withNotResources(String... notResources) {
+        if (this.notResources == null) {
+            setNotResources(new java.util.ArrayList<String>(notResources.length));
+        }
+        for (String ele : notResources) {
+            this.notResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param notResources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupSelection withNotResources(java.util.Collection<String> notResources) {
+        setNotResources(notResources);
+        return this;
+    }
+
+    /**
+     * @param conditions
+     */
+
+    public void setConditions(Conditions conditions) {
+        this.conditions = conditions;
+    }
+
+    /**
+     * @return
+     */
+
+    public Conditions getConditions() {
+        return this.conditions;
+    }
+
+    /**
+     * @param conditions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupSelection withConditions(Conditions conditions) {
+        setConditions(conditions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -317,7 +399,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
         if (getListOfTags() != null)
-            sb.append("ListOfTags: ").append(getListOfTags());
+            sb.append("ListOfTags: ").append(getListOfTags()).append(",");
+        if (getNotResources() != null)
+            sb.append("NotResources: ").append(getNotResources()).append(",");
+        if (getConditions() != null)
+            sb.append("Conditions: ").append(getConditions());
         sb.append("}");
         return sb.toString();
     }
@@ -348,6 +434,14 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getListOfTags() != null && other.getListOfTags().equals(this.getListOfTags()) == false)
             return false;
+        if (other.getNotResources() == null ^ this.getNotResources() == null)
+            return false;
+        if (other.getNotResources() != null && other.getNotResources().equals(this.getNotResources()) == false)
+            return false;
+        if (other.getConditions() == null ^ this.getConditions() == null)
+            return false;
+        if (other.getConditions() != null && other.getConditions().equals(this.getConditions()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +454,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getListOfTags() == null) ? 0 : getListOfTags().hashCode());
+        hashCode = prime * hashCode + ((getNotResources() == null) ? 0 : getNotResources().hashCode());
+        hashCode = prime * hashCode + ((getConditions() == null) ? 0 : getConditions().hashCode());
         return hashCode;
     }
 

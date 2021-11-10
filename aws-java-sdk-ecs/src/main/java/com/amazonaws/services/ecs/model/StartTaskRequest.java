@@ -27,14 +27,14 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * The container instance IDs or full ARN entries for the container instances where you would like to place your
      * task. You can specify up to 10 container instances.
      * </p>
      */
@@ -71,10 +71,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
-     * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
-     * existing environment variables (that are specified in the task definition or Docker image) on a container or add
-     * new environment variables to it with an <code>environment</code> override.
+     * definition and the overrides it receives. You can override the default command for a container (that's specified
+     * in the task definition or Docker image) with a <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or Docker image) on a container or add new
+     * environment variables to it with an <code>environment</code> override.
      * </p>
      * <note>
      * <p>
@@ -87,7 +87,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * specified, the tags aren't propagated.
      * </p>
      */
     private String propagateTags;
@@ -102,12 +102,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
-     * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
-     * ID of the service that starts it.
+     * If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of
+     * the service that starts it.
      * </p>
      */
     private String startedBy;
@@ -165,21 +165,20 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      */
     private String taskDefinition;
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *        not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not
+     *        specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -188,12 +187,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *         not specify a cluster, the default cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not
+     *         specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -202,13 +201,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *        not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not
+     *        specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,12 +218,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * The container instance IDs or full ARN entries for the container instances where you would like to place your
      * task. You can specify up to 10 container instances.
      * </p>
      * 
-     * @return The container instance IDs or full ARN entries for the container instances on which you would like to
-     *         place your task. You can specify up to 10 container instances.
+     * @return The container instance IDs or full ARN entries for the container instances where you would like to place
+     *         your task. You can specify up to 10 container instances.
      */
 
     public java.util.List<String> getContainerInstances() {
@@ -236,13 +235,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * The container instance IDs or full ARN entries for the container instances where you would like to place your
      * task. You can specify up to 10 container instances.
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances where you would like to place
+     *        your task. You can specify up to 10 container instances.
      */
 
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -256,7 +255,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * The container instance IDs or full ARN entries for the container instances where you would like to place your
      * task. You can specify up to 10 container instances.
      * </p>
      * <p>
@@ -266,8 +265,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances where you would like to place
+     *        your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,13 +282,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * The container instance IDs or full ARN entries for the container instances where you would like to place your
      * task. You can specify up to 10 container instances.
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances where you would like to place
+     *        your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,10 +520,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
-     * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
-     * existing environment variables (that are specified in the task definition or Docker image) on a container or add
-     * new environment variables to it with an <code>environment</code> override.
+     * definition and the overrides it receives. You can override the default command for a container (that's specified
+     * in the task definition or Docker image) with a <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or Docker image) on a container or add new
+     * environment variables to it with an <code>environment</code> override.
      * </p>
      * <note>
      * <p>
@@ -535,8 +534,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param overrides
      *        A list of container overrides in JSON format that specify the name of a container in the specified task
-     *        definition and the overrides it should receive. You can override the default command for a container (that
-     *        is specified in the task definition or Docker image) with a <code>command</code> override. You can also
+     *        definition and the overrides it receives. You can override the default command for a container (that's
+     *        specified in the task definition or Docker image) with a <code>command</code> override. You can also
      *        override existing environment variables (that are specified in the task definition or Docker image) on a
      *        container or add new environment variables to it with an <code>environment</code> override.</p> <note>
      *        <p>
@@ -552,10 +551,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
-     * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
-     * existing environment variables (that are specified in the task definition or Docker image) on a container or add
-     * new environment variables to it with an <code>environment</code> override.
+     * definition and the overrides it receives. You can override the default command for a container (that's specified
+     * in the task definition or Docker image) with a <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or Docker image) on a container or add new
+     * environment variables to it with an <code>environment</code> override.
      * </p>
      * <note>
      * <p>
@@ -565,11 +564,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      * 
      * @return A list of container overrides in JSON format that specify the name of a container in the specified task
-     *         definition and the overrides it should receive. You can override the default command for a container
-     *         (that is specified in the task definition or Docker image) with a <code>command</code> override. You can
-     *         also override existing environment variables (that are specified in the task definition or Docker image)
-     *         on a container or add new environment variables to it with an <code>environment</code> override.</p>
-     *         <note>
+     *         definition and the overrides it receives. You can override the default command for a container (that's
+     *         specified in the task definition or Docker image) with a <code>command</code> override. You can also
+     *         override existing environment variables (that are specified in the task definition or Docker image) on a
+     *         container or add new environment variables to it with an <code>environment</code> override.</p> <note>
      *         <p>
      *         A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters
      *         of the override structure.
@@ -583,10 +581,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
-     * definition and the overrides it should receive. You can override the default command for a container (that is
-     * specified in the task definition or Docker image) with a <code>command</code> override. You can also override
-     * existing environment variables (that are specified in the task definition or Docker image) on a container or add
-     * new environment variables to it with an <code>environment</code> override.
+     * definition and the overrides it receives. You can override the default command for a container (that's specified
+     * in the task definition or Docker image) with a <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or Docker image) on a container or add new
+     * environment variables to it with an <code>environment</code> override.
      * </p>
      * <note>
      * <p>
@@ -597,8 +595,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param overrides
      *        A list of container overrides in JSON format that specify the name of a container in the specified task
-     *        definition and the overrides it should receive. You can override the default command for a container (that
-     *        is specified in the task definition or Docker image) with a <code>command</code> override. You can also
+     *        definition and the overrides it receives. You can override the default command for a container (that's
+     *        specified in the task definition or Docker image) with a <code>command</code> override. You can also
      *        override existing environment variables (that are specified in the task definition or Docker image) on a
      *        container or add new environment variables to it with an <code>environment</code> override.</p> <note>
      *        <p>
@@ -616,12 +614,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        is specified, the tags aren't propagated.
      * @see PropagateTags
      */
 
@@ -632,11 +630,11 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *         is specified, the tags are not propagated.
+     *         is specified, the tags aren't propagated.
      * @see PropagateTags
      */
 
@@ -647,12 +645,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        is specified, the tags aren't propagated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -665,12 +663,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * specified, the tags aren't propagated.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        is specified, the tags aren't propagated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -725,12 +723,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
-     * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
-     * ID of the service that starts it.
+     * If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of
+     * the service that starts it.
      * </p>
      * 
      * @param startedBy
@@ -738,9 +736,9 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
-     *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
+     *        If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the
      *        deployment ID of the service that starts it.
      */
 
@@ -753,21 +751,21 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
-     * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
-     * ID of the service that starts it.
+     * If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of
+     * the service that starts it.
      * </p>
      * 
      * @return An optional tag specified when a task is started. For example, if you automatically trigger a task to run
      *         a batch process job, you could apply a unique identifier for that job to your task with the
      *         <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *         results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *         lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *         lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *         <p>
-     *         If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
+     *         If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the
      *         deployment ID of the service that starts it.
      */
 
@@ -780,12 +778,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
-     * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
-     * ID of the service that starts it.
+     * If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of
+     * the service that starts it.
      * </p>
      * 
      * @param startedBy
@@ -793,9 +791,9 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
      *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed.</p>
+     *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
-     *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
+     *        If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the
      *        deployment ID of the service that starts it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1238,13 +1236,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      *        is used.
      */
 
@@ -1255,12 +1252,11 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *         definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *         definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      *         is used.
      */
 
@@ -1271,13 +1267,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

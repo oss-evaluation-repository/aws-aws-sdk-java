@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You cannot delete a cluster that has active tasks.
+ * You can't delete a cluster that has active tasks.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

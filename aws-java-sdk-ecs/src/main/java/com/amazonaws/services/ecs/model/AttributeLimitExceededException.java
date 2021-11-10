@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You can apply up to 10 custom attributes per resource. You can view the attributes of a resource with
+ * You can apply up to 10 custom attributes for each resource. You can view the attributes of a resource with
  * <a>ListAttributes</a>. You can remove existing attributes on a resource with <a>DeleteAttributes</a>.
  * </p>
  */

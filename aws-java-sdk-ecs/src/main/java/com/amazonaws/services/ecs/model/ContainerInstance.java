@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.
+ * An EC2 instance that's running the Amazon ECS agent and has been registered with a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance" target="_top">AWS API
@@ -46,14 +46,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private String ec2InstanceId;
     /**
      * <p>
-     * The capacity provider associated with the container instance.
+     * The capacity provider that's associated with the container instance.
      * </p>
      */
     private String capacityProviderName;
     /**
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
-     * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
+     * triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container
      * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
      * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
@@ -68,11 +68,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private VersionInfo versionInfo;
     /**
      * <p>
-     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not already
-     * been allocated to tasks and is therefore available for new tasks. For port resource types, this parameter
-     * describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any
-     * task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-     * network mode). Any port that is not specified here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already
+     * allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes
+     * the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task
+     * containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+     * network mode). Any port that's not specified here is available for new tasks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Resource> remainingResources;
@@ -103,7 +103,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <p>
      * The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any service tasks running on the container
+     * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -138,8 +138,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private Integer pendingTasksCount;
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      */
     private String agentUpdateStatus;
@@ -152,7 +151,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix timestamp for the time when the container instance was registered.
      * </p>
      */
     private java.util.Date registeredAt;
@@ -165,7 +164,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -213,6 +212,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * An object representing the health status of the container instance.
+     * </p>
+     */
+    private ContainerInstanceHealthStatus healthStatus;
 
     /**
      * <p>
@@ -320,11 +325,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The capacity provider associated with the container instance.
+     * The capacity provider that's associated with the container instance.
      * </p>
      * 
      * @param capacityProviderName
-     *        The capacity provider associated with the container instance.
+     *        The capacity provider that's associated with the container instance.
      */
 
     public void setCapacityProviderName(String capacityProviderName) {
@@ -333,10 +338,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The capacity provider associated with the container instance.
+     * The capacity provider that's associated with the container instance.
      * </p>
      * 
-     * @return The capacity provider associated with the container instance.
+     * @return The capacity provider that's associated with the container instance.
      */
 
     public String getCapacityProviderName() {
@@ -345,11 +350,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The capacity provider associated with the container instance.
+     * The capacity provider that's associated with the container instance.
      * </p>
      * 
      * @param capacityProviderName
-     *        The capacity provider associated with the container instance.
+     *        The capacity provider that's associated with the container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,7 +366,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
-     * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
+     * triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container
      * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
      * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
@@ -369,7 +374,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * 
      * @param version
      *        The version counter for the container instance. Every time a container instance experiences a change that
-     *        triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
+     *        triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS
      *        container instance state with CloudWatch Events, you can compare the version of a container instance
      *        reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *        (inside the <code>detail</code> object) to verify that the version in your event stream is current.
@@ -382,14 +387,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
-     * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
+     * triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container
      * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
      * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
      * </p>
      * 
      * @return The version counter for the container instance. Every time a container instance experiences a change that
-     *         triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
+     *         triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS
      *         container instance state with CloudWatch Events, you can compare the version of a container instance
      *         reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *         (inside the <code>detail</code> object) to verify that the version in your event stream is current.
@@ -402,7 +407,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
-     * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
+     * triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container
      * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
      * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
@@ -410,7 +415,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * 
      * @param version
      *        The version counter for the container instance. Every time a container instance experiences a change that
-     *        triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
+     *        triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS
      *        container instance state with CloudWatch Events, you can compare the version of a container instance
      *        reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *        (inside the <code>detail</code> object) to verify that the version in your event stream is current.
@@ -467,18 +472,18 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not already
-     * been allocated to tasks and is therefore available for new tasks. For port resource types, this parameter
-     * describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any
-     * task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-     * network mode). Any port that is not specified here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already
+     * allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes
+     * the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task
+     * containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+     * network mode). Any port that's not specified here is available for new tasks.
      * </p>
      * 
-     * @return For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not
-     *         already been allocated to tasks and is therefore available for new tasks. For port resource types, this
+     * @return For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't
+     *         already allocated to tasks and is therefore available for new tasks. For port resource types, this
      *         parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
      *         registration time) and any task containers that have reserved port mappings on the host (with the
-     *         <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *         <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available
      *         for new tasks.
      */
 
@@ -491,19 +496,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not already
-     * been allocated to tasks and is therefore available for new tasks. For port resource types, this parameter
-     * describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any
-     * task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-     * network mode). Any port that is not specified here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already
+     * allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes
+     * the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task
+     * containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+     * network mode). Any port that's not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not
-     *        already been allocated to tasks and is therefore available for new tasks. For port resource types, this
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't
+     *        already allocated to tasks and is therefore available for new tasks. For port resource types, this
      *        parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
      *        registration time) and any task containers that have reserved port mappings on the host (with the
-     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available
      *        for new tasks.
      */
 
@@ -518,11 +523,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not already
-     * been allocated to tasks and is therefore available for new tasks. For port resource types, this parameter
-     * describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any
-     * task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-     * network mode). Any port that is not specified here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already
+     * allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes
+     * the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task
+     * containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+     * network mode). Any port that's not specified here is available for new tasks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -531,11 +536,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param remainingResources
-     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not
-     *        already been allocated to tasks and is therefore available for new tasks. For port resource types, this
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't
+     *        already allocated to tasks and is therefore available for new tasks. For port resource types, this
      *        parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
      *        registration time) and any task containers that have reserved port mappings on the host (with the
-     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available
      *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -552,19 +557,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not already
-     * been allocated to tasks and is therefore available for new tasks. For port resource types, this parameter
-     * describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any
-     * task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-     * network mode). Any port that is not specified here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already
+     * allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes
+     * the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task
+     * containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+     * network mode). Any port that's not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that has not
-     *        already been allocated to tasks and is therefore available for new tasks. For port resource types, this
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't
+     *        already allocated to tasks and is therefore available for new tasks. For port resource types, this
      *        parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
      *        registration time) and any task containers that have reserved port mappings on the host (with the
-     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available
      *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -696,7 +701,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <p>
      * The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any service tasks running on the container
+     * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -717,7 +722,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <p>
      *        The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The
-     *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *        <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -744,7 +749,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <p>
      * The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any service tasks running on the container
+     * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -764,7 +769,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *         </p>
      *         <p>
      *         The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The
-     *         <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *         <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *         tasks running on the container instance are removed if possible. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *         >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -791,7 +796,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <p>
      * The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any service tasks running on the container
+     * indicates that new tasks aren't placed on the container instance and any service tasks running on the container
      * instance are removed if possible. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -812,7 +817,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <p>
      *        The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The
-     *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *        <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1014,12 +1019,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      * 
      * @param agentUpdateStatus
-     *        The status of the most recent agent update. If an update has never been requested, this value is
+     *        The status of the most recent agent update. If an update wasn't ever requested, this value is
      *        <code>NULL</code>.
      * @see AgentUpdateStatus
      */
@@ -1030,11 +1034,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      * 
-     * @return The status of the most recent agent update. If an update has never been requested, this value is
+     * @return The status of the most recent agent update. If an update wasn't ever requested, this value is
      *         <code>NULL</code>.
      * @see AgentUpdateStatus
      */
@@ -1045,12 +1048,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      * 
      * @param agentUpdateStatus
-     *        The status of the most recent agent update. If an update has never been requested, this value is
+     *        The status of the most recent agent update. If an update wasn't ever requested, this value is
      *        <code>NULL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentUpdateStatus
@@ -1063,12 +1065,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      * 
      * @param agentUpdateStatus
-     *        The status of the most recent agent update. If an update has never been requested, this value is
+     *        The status of the most recent agent update. If an update wasn't ever requested, this value is
      *        <code>NULL</code>.
      * @see AgentUpdateStatus
      */
@@ -1079,12 +1080,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the most recent agent update. If an update has never been requested, this value is
-     * <code>NULL</code>.
+     * The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.
      * </p>
      * 
      * @param agentUpdateStatus
-     *        The status of the most recent agent update. If an update has never been requested, this value is
+     *        The status of the most recent agent update. If an update wasn't ever requested, this value is
      *        <code>NULL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentUpdateStatus
@@ -1178,11 +1178,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix timestamp for the time when the container instance was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The Unix timestamp for when the container instance was registered.
+     *        The Unix timestamp for the time when the container instance was registered.
      */
 
     public void setRegisteredAt(java.util.Date registeredAt) {
@@ -1191,10 +1191,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix timestamp for the time when the container instance was registered.
      * </p>
      * 
-     * @return The Unix timestamp for when the container instance was registered.
+     * @return The Unix timestamp for the time when the container instance was registered.
      */
 
     public java.util.Date getRegisteredAt() {
@@ -1203,11 +1203,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix timestamp for the time when the container instance was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The Unix timestamp for when the container instance was registered.
+     *        The Unix timestamp for the time when the container instance was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1292,7 +1292,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1340,7 +1340,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @return The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     *         consists of a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -1397,7 +1397,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1446,7 +1446,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1504,7 +1504,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1558,7 +1558,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1618,7 +1618,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -1667,7 +1667,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -1720,6 +1720,46 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * An object representing the health status of the container instance.
+     * </p>
+     * 
+     * @param healthStatus
+     *        An object representing the health status of the container instance.
+     */
+
+    public void setHealthStatus(ContainerInstanceHealthStatus healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
+    /**
+     * <p>
+     * An object representing the health status of the container instance.
+     * </p>
+     * 
+     * @return An object representing the health status of the container instance.
+     */
+
+    public ContainerInstanceHealthStatus getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    /**
+     * <p>
+     * An object representing the health status of the container instance.
+     * </p>
+     * 
+     * @param healthStatus
+     *        An object representing the health status of the container instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerInstance withHealthStatus(ContainerInstanceHealthStatus healthStatus) {
+        setHealthStatus(healthStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1764,7 +1804,9 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         if (getAttachments() != null)
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getHealthStatus() != null)
+            sb.append("HealthStatus: ").append(getHealthStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1847,6 +1889,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
+            return false;
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1872,6 +1918,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         return hashCode;
     }
 

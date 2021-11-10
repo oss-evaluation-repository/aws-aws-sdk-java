@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an
- * <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system,
- * specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
+ * A data volume that's used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS),
+ * specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file
+ * system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
  * <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and
  * optional <code>sourcePath</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in
@@ -43,22 +43,22 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
-     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
-     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
-     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter
+     * determine whether your bind mount host volume persists on the host container instance and where it's stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
+     * However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
-     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
-     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * containers can't mount directories on a different drive, and mount point can't be across drives. For example, you
+     * can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code>
+     * or <code>D:\:C:\my\path</code>.
      * </p>
      */
     private HostVolumeProperties host;
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes.
+     * This parameter is specified when you use Docker volumes.
      * </p>
      * <p>
      * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
@@ -66,20 +66,20 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Docker volumes are not supported by tasks run on Fargate.
+     * Docker volumes aren't supported by tasks run on Fargate.
      * </p>
      * </note>
      */
     private DockerVolumeConfiguration dockerVolumeConfiguration;
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     * This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      * </p>
      */
     private EFSVolumeConfiguration efsVolumeConfiguration;
     /**
      * <p>
-     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      * </p>
      */
     private FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration;
@@ -138,27 +138,27 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
-     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
-     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
-     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter
+     * determine whether your bind mount host volume persists on the host container instance and where it's stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
+     * However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
-     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
-     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * containers can't mount directories on a different drive, and mount point can't be across drives. For example, you
+     * can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code>
+     * or <code>D:\:C:\my\path</code>.
      * </p>
      * 
      * @param host
-     *        This parameter is specified when you are using bind mount host volumes. The contents of the
-     *        <code>host</code> parameter determine whether your bind mount host volume persists on the host container
-     *        instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     *        assigns a host path for your data volume. However, the data is not guaranteed to persist after the
-     *        containers associated with it stop running.</p>
+     *        This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code>
+     *        parameter determine whether your bind mount host volume persists on the host container instance and where
+     *        it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
+     *        your data volume. However, the data isn't guaranteed to persist after the containers that are associated
+     *        with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        containers can't mount directories on a different drive, and mount point can't be across drives. For
      *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
@@ -169,27 +169,27 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
-     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
-     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
-     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter
+     * determine whether your bind mount host volume persists on the host container instance and where it's stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
+     * However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
-     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
-     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * containers can't mount directories on a different drive, and mount point can't be across drives. For example, you
+     * can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code>
+     * or <code>D:\:C:\my\path</code>.
      * </p>
      * 
-     * @return This parameter is specified when you are using bind mount host volumes. The contents of the
-     *         <code>host</code> parameter determine whether your bind mount host volume persists on the host container
-     *         instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     *         assigns a host path for your data volume. However, the data is not guaranteed to persist after the
-     *         containers associated with it stop running.</p>
+     * @return This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code>
+     *         parameter determine whether your bind mount host volume persists on the host container instance and where
+     *         it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
+     *         your data volume. However, the data isn't guaranteed to persist after the containers that are associated
+     *         with it stop running.</p>
      *         <p>
      *         Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     *         Windows containers cannot mount directories on a different drive, and mount point cannot be across
-     *         drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *         Windows containers can't mount directories on a different drive, and mount point can't be across drives.
+     *         For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      *         <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
 
@@ -199,27 +199,27 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
-     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
-     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
-     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter
+     * determine whether your bind mount host volume persists on the host container instance and where it's stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
+     * However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
-     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
-     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * containers can't mount directories on a different drive, and mount point can't be across drives. For example, you
+     * can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code>
+     * or <code>D:\:C:\my\path</code>.
      * </p>
      * 
      * @param host
-     *        This parameter is specified when you are using bind mount host volumes. The contents of the
-     *        <code>host</code> parameter determine whether your bind mount host volume persists on the host container
-     *        instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     *        assigns a host path for your data volume. However, the data is not guaranteed to persist after the
-     *        containers associated with it stop running.</p>
+     *        This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code>
+     *        parameter determine whether your bind mount host volume persists on the host container instance and where
+     *        it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
+     *        your data volume. However, the data isn't guaranteed to persist after the containers that are associated
+     *        with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
-     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        containers can't mount directories on a different drive, and mount point can't be across drives. For
      *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,7 +232,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes.
+     * This parameter is specified when you use Docker volumes.
      * </p>
      * <p>
      * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
@@ -240,19 +240,19 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Docker volumes are not supported by tasks run on Fargate.
+     * Docker volumes aren't supported by tasks run on Fargate.
      * </p>
      * </note>
      * 
      * @param dockerVolumeConfiguration
-     *        This parameter is specified when you are using Docker volumes.</p>
+     *        This parameter is specified when you use Docker volumes.</p>
      *        <p>
      *        Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
      *        <code>host</code> parameter instead.
      *        </p>
      *        <note>
      *        <p>
-     *        Docker volumes are not supported by tasks run on Fargate.
+     *        Docker volumes aren't supported by tasks run on Fargate.
      *        </p>
      */
 
@@ -262,7 +262,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes.
+     * This parameter is specified when you use Docker volumes.
      * </p>
      * <p>
      * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
@@ -270,18 +270,18 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Docker volumes are not supported by tasks run on Fargate.
+     * Docker volumes aren't supported by tasks run on Fargate.
      * </p>
      * </note>
      * 
-     * @return This parameter is specified when you are using Docker volumes.</p>
+     * @return This parameter is specified when you use Docker volumes.</p>
      *         <p>
      *         Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
      *         <code>host</code> parameter instead.
      *         </p>
      *         <note>
      *         <p>
-     *         Docker volumes are not supported by tasks run on Fargate.
+     *         Docker volumes aren't supported by tasks run on Fargate.
      *         </p>
      */
 
@@ -291,7 +291,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes.
+     * This parameter is specified when you use Docker volumes.
      * </p>
      * <p>
      * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
@@ -299,19 +299,19 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Docker volumes are not supported by tasks run on Fargate.
+     * Docker volumes aren't supported by tasks run on Fargate.
      * </p>
      * </note>
      * 
      * @param dockerVolumeConfiguration
-     *        This parameter is specified when you are using Docker volumes.</p>
+     *        This parameter is specified when you use Docker volumes.</p>
      *        <p>
      *        Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
      *        <code>host</code> parameter instead.
      *        </p>
      *        <note>
      *        <p>
-     *        Docker volumes are not supported by tasks run on Fargate.
+     *        Docker volumes aren't supported by tasks run on Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -323,11 +323,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     * This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      * </p>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     *        This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      */
 
     public void setEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
@@ -336,11 +336,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     * This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      * </p>
      * 
-     * @return This parameter is specified when you are using an Amazon Elastic File System file system for task
-     *         storage.
+     * @return This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      */
 
     public EFSVolumeConfiguration getEfsVolumeConfiguration() {
@@ -349,11 +348,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     * This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      * </p>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
+     *        This parameter is specified when you use an Amazon Elastic File System file system for task storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,12 +363,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      * </p>
      * 
      * @param fsxWindowsFileServerVolumeConfiguration
-     *        This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
-     *        storage.
+     *        This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      */
 
     public void setFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration) {
@@ -378,11 +376,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      * </p>
      * 
-     * @return This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
-     *         storage.
+     * @return This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      */
 
     public FSxWindowsFileServerVolumeConfiguration getFsxWindowsFileServerVolumeConfiguration() {
@@ -391,12 +388,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      * </p>
      * 
      * @param fsxWindowsFileServerVolumeConfiguration
-     *        This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
-     *        storage.
+     *        This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

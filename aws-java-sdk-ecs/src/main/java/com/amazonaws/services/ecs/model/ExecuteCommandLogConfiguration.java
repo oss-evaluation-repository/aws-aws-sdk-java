@@ -42,7 +42,7 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
     private String cloudWatchLogGroupName;
     /**
      * <p>
-     * Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     * Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
      * </p>
      */
     private Boolean cloudWatchEncryptionEnabled;
@@ -59,7 +59,7 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
     private String s3BucketName;
     /**
      * <p>
-     * Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * </p>
      */
     private Boolean s3EncryptionEnabled;
@@ -136,11 +136,12 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     * Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
      * </p>
      * 
      * @param cloudWatchEncryptionEnabled
-     *        Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     *        Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be
+     *        disabled.
      */
 
     public void setCloudWatchEncryptionEnabled(Boolean cloudWatchEncryptionEnabled) {
@@ -149,10 +150,10 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     * Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
      * </p>
      * 
-     * @return Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be
+     * @return Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be
      *         disabled.
      */
 
@@ -162,11 +163,12 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     * Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
      * </p>
      * 
      * @param cloudWatchEncryptionEnabled
-     *        Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     *        Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be
+     *        disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,10 +179,10 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
+     * Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.
      * </p>
      * 
-     * @return Whether or not to enable encryption on the CloudWatch logs. If not specified, encryption will be
+     * @return Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be
      *         disabled.
      */
 
@@ -254,11 +256,11 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * </p>
      * 
      * @param s3EncryptionEnabled
-     *        Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     *        Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      */
 
     public void setS3EncryptionEnabled(Boolean s3EncryptionEnabled) {
@@ -267,10 +269,10 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * </p>
      * 
-     * @return Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * @return Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      */
 
     public Boolean getS3EncryptionEnabled() {
@@ -279,11 +281,11 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * </p>
      * 
      * @param s3EncryptionEnabled
-     *        Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     *        Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,10 +296,10 @@ public class ExecuteCommandLogConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      * </p>
      * 
-     * @return Whether or not to use encryption on the S3 logs. If not specified, encryption is not used.
+     * @return Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
      */
 
     public Boolean isS3EncryptionEnabled() {

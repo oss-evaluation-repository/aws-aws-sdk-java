@@ -25,23 +25,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
  * </p>
  * <p>
- * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers
- * in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following
- * reasons:
+ * We don't recommend that you specify network-related <code>systemControls</code> parameters for multiple containers in
+ * a single task. This task also uses either the <code>awsvpc</code> or <code>host</code> network mode. It does it for
+ * the following reasons.
  * </p>
  * <ul>
  * <li>
  * <p>
  * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it
  * applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a
- * single task, the container that is started last determines which <code>systemControls</code> take effect.
+ * single task, the container that's started last determines which <code>systemControls</code> take effect.
  * </p>
  * </li>
  * <li>
  * <p>
  * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the
- * container instance's kernel parameter as well as that of all containers of any tasks running on that container
- * instance.
+ * container instance's kernel parameter and that of all containers of any tasks running on that container instance.
  * </p>
  * </li>
  * </ul>
@@ -54,24 +53,24 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter for which to set a <code>value</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The namespaced kernel parameter for which to set a <code>value</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
      * </p>
      * 
      * @param namespace
-     *        The namespaced kernel parameter for which to set a <code>value</code>.
+     *        The namespaced kernel parameter to set a <code>value</code> for.
      */
 
     public void setNamespace(String namespace) {
@@ -80,10 +79,10 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter for which to set a <code>value</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
      * </p>
      * 
-     * @return The namespaced kernel parameter for which to set a <code>value</code>.
+     * @return The namespaced kernel parameter to set a <code>value</code> for.
      */
 
     public String getNamespace() {
@@ -92,11 +91,11 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter for which to set a <code>value</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
      * </p>
      * 
      * @param namespace
-     *        The namespaced kernel parameter for which to set a <code>value</code>.
+     *        The namespaced kernel parameter to set a <code>value</code> for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +106,11 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      * </p>
      * 
      * @param value
-     *        The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     *        The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      */
 
     public void setValue(String value) {
@@ -120,10 +119,10 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      * </p>
      * 
-     * @return The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     * @return The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      */
 
     public String getValue() {
@@ -132,11 +131,11 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      * </p>
      * 
      * @param value
-     *        The value for the namespaced kernel parameter specified in <code>namespace</code>.
+     *        The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

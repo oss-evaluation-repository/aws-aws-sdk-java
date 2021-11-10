@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The overrides associated with a task.
+ * The overrides that are associated with a task.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskOverride" target="_top">AWS API
@@ -30,7 +30,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more container overrides sent to a task.
+     * One or more container overrides that are sent to a task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerOverride> containerOverrides;
@@ -75,7 +75,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     * This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      * </p>
      * <ul>
      * <li>
@@ -95,10 +95,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more container overrides sent to a task.
+     * One or more container overrides that are sent to a task.
      * </p>
      * 
-     * @return One or more container overrides sent to a task.
+     * @return One or more container overrides that are sent to a task.
      */
 
     public java.util.List<ContainerOverride> getContainerOverrides() {
@@ -110,11 +110,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more container overrides sent to a task.
+     * One or more container overrides that are sent to a task.
      * </p>
      * 
      * @param containerOverrides
-     *        One or more container overrides sent to a task.
+     *        One or more container overrides that are sent to a task.
      */
 
     public void setContainerOverrides(java.util.Collection<ContainerOverride> containerOverrides) {
@@ -128,7 +128,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more container overrides sent to a task.
+     * One or more container overrides that are sent to a task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param containerOverrides
-     *        One or more container overrides sent to a task.
+     *        One or more container overrides that are sent to a task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more container overrides sent to a task.
+     * One or more container overrides that are sent to a task.
      * </p>
      * 
      * @param containerOverrides
-     *        One or more container overrides sent to a task.
+     *        One or more container overrides that are sent to a task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,7 +438,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     * This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      * </p>
      * <ul>
      * <li>
@@ -457,7 +457,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * @param ephemeralStorage
      *        The ephemeral storage setting override for the task.</p> <note>
      *        <p>
-     *        This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     *        This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      *        </p>
      *        <ul>
      *        <li>
@@ -483,7 +483,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     * This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      * </p>
      * <ul>
      * <li>
@@ -501,7 +501,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The ephemeral storage setting override for the task.</p> <note>
      *         <p>
-     *         This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     *         This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      *         </p>
      *         <ul>
      *         <li>
@@ -527,7 +527,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     * This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      * </p>
      * <ul>
      * <li>
@@ -546,7 +546,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * @param ephemeralStorage
      *        The ephemeral storage setting override for the task.</p> <note>
      *        <p>
-     *        This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+     *        This parameter is only supported for tasks hosted on Fargate that use the following platform versions:
      *        </p>
      *        <ul>
      *        <li>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of a capacity provider.
+ * The details for a capacity provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProvider" target="_top">AWS API
@@ -43,7 +43,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
+     * in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.
      * </p>
      */
     private String status;
@@ -55,7 +55,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     private AutoScalingGroupProvider autoScalingGroupProvider;
     /**
      * <p>
-     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * The update status of the capacity provider. The following are the possible states that is returned.
      * </p>
      * <dl>
      * <dt>DELETE_IN_PROGRESS</dt>
@@ -67,14 +67,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * <dt>DELETE_COMPLETE</dt>
      * <dd>
      * <p>
-     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      * </p>
      * </dd>
      * <dt>DELETE_FAILED</dt>
      * <dd>
      * <p>
-     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
-     * the delete failed.
+     * The capacity provider can't be deleted. The update status reason provides further details about why the delete
+     * failed.
      * </p>
      * </dd>
      * </dl>
@@ -89,7 +89,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -221,13 +221,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
+     * in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
-     *        <code>INACTIVE</code> status.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code>
+     *        status.
      * @see CapacityProviderStatus
      */
 
@@ -238,12 +238,12 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
+     * in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.
      * </p>
      * 
      * @return The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *         be used in a cluster. When a capacity provider is successfully deleted, it will have an
-     *         <code>INACTIVE</code> status.
+     *         be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code>
+     *         status.
      * @see CapacityProviderStatus
      */
 
@@ -254,13 +254,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
+     * in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
-     *        <code>INACTIVE</code> status.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code>
+     *        status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderStatus
      */
@@ -273,13 +273,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
+     * in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
-     *        <code>INACTIVE</code> status.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code>
+     *        status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderStatus
      */
@@ -331,7 +331,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * The update status of the capacity provider. The following are the possible states that is returned.
      * </p>
      * <dl>
      * <dt>DELETE_IN_PROGRESS</dt>
@@ -343,21 +343,20 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * <dt>DELETE_COMPLETE</dt>
      * <dd>
      * <p>
-     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      * </p>
      * </dd>
      * <dt>DELETE_FAILED</dt>
      * <dd>
      * <p>
-     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
-     * the delete failed.
+     * The capacity provider can't be deleted. The update status reason provides further details about why the delete
+     * failed.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param updateStatus
-     *        The update status of the capacity provider. The following are the possible states that will be
-     *        returned.</p>
+     *        The update status of the capacity provider. The following are the possible states that is returned.</p>
      *        <dl>
      *        <dt>DELETE_IN_PROGRESS</dt>
      *        <dd>
@@ -368,14 +367,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      *        <dt>DELETE_COMPLETE</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      *        </p>
      *        </dd>
      *        <dt>DELETE_FAILED</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider was unable to be deleted. The update status reason will provide further details
-     *        about why the delete failed.
+     *        The capacity provider can't be deleted. The update status reason provides further details about why the
+     *        delete failed.
      *        </p>
      *        </dd>
      * @see CapacityProviderUpdateStatus
@@ -387,7 +386,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * The update status of the capacity provider. The following are the possible states that is returned.
      * </p>
      * <dl>
      * <dt>DELETE_IN_PROGRESS</dt>
@@ -399,20 +398,19 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * <dt>DELETE_COMPLETE</dt>
      * <dd>
      * <p>
-     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      * </p>
      * </dd>
      * <dt>DELETE_FAILED</dt>
      * <dd>
      * <p>
-     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
-     * the delete failed.
+     * The capacity provider can't be deleted. The update status reason provides further details about why the delete
+     * failed.
      * </p>
      * </dd>
      * </dl>
      * 
-     * @return The update status of the capacity provider. The following are the possible states that will be
-     *         returned.</p>
+     * @return The update status of the capacity provider. The following are the possible states that is returned.</p>
      *         <dl>
      *         <dt>DELETE_IN_PROGRESS</dt>
      *         <dd>
@@ -423,14 +421,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      *         <dt>DELETE_COMPLETE</dt>
      *         <dd>
      *         <p>
-     *         The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *         The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      *         </p>
      *         </dd>
      *         <dt>DELETE_FAILED</dt>
      *         <dd>
      *         <p>
-     *         The capacity provider was unable to be deleted. The update status reason will provide further details
-     *         about why the delete failed.
+     *         The capacity provider can't be deleted. The update status reason provides further details about why the
+     *         delete failed.
      *         </p>
      *         </dd>
      * @see CapacityProviderUpdateStatus
@@ -442,7 +440,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * The update status of the capacity provider. The following are the possible states that is returned.
      * </p>
      * <dl>
      * <dt>DELETE_IN_PROGRESS</dt>
@@ -454,21 +452,20 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * <dt>DELETE_COMPLETE</dt>
      * <dd>
      * <p>
-     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      * </p>
      * </dd>
      * <dt>DELETE_FAILED</dt>
      * <dd>
      * <p>
-     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
-     * the delete failed.
+     * The capacity provider can't be deleted. The update status reason provides further details about why the delete
+     * failed.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param updateStatus
-     *        The update status of the capacity provider. The following are the possible states that will be
-     *        returned.</p>
+     *        The update status of the capacity provider. The following are the possible states that is returned.</p>
      *        <dl>
      *        <dt>DELETE_IN_PROGRESS</dt>
      *        <dd>
@@ -479,14 +476,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      *        <dt>DELETE_COMPLETE</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      *        </p>
      *        </dd>
      *        <dt>DELETE_FAILED</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider was unable to be deleted. The update status reason will provide further details
-     *        about why the delete failed.
+     *        The capacity provider can't be deleted. The update status reason provides further details about why the
+     *        delete failed.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -500,7 +497,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * The update status of the capacity provider. The following are the possible states that is returned.
      * </p>
      * <dl>
      * <dt>DELETE_IN_PROGRESS</dt>
@@ -512,21 +509,20 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * <dt>DELETE_COMPLETE</dt>
      * <dd>
      * <p>
-     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      * </p>
      * </dd>
      * <dt>DELETE_FAILED</dt>
      * <dd>
      * <p>
-     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
-     * the delete failed.
+     * The capacity provider can't be deleted. The update status reason provides further details about why the delete
+     * failed.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param updateStatus
-     *        The update status of the capacity provider. The following are the possible states that will be
-     *        returned.</p>
+     *        The update status of the capacity provider. The following are the possible states that is returned.</p>
      *        <dl>
      *        <dt>DELETE_IN_PROGRESS</dt>
      *        <dd>
@@ -537,14 +533,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      *        <dt>DELETE_COMPLETE</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
      *        </p>
      *        </dd>
      *        <dt>DELETE_FAILED</dt>
      *        <dd>
      *        <p>
-     *        The capacity provider was unable to be deleted. The update status reason will provide further details
-     *        about why the delete failed.
+     *        The capacity provider can't be deleted. The update status reason provides further details about why the
+     *        delete failed.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -600,7 +596,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -648,7 +644,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @return The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     *         consists of a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -705,7 +701,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -754,7 +750,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * 
      * @param tags
      *        The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -812,7 +808,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -866,7 +862,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * 
      * @param tags
      *        The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -926,7 +922,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
-     * a key and an optional value, both of which you define.
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -975,7 +971,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * 
      * @param tags
      *        The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

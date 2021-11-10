@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Task placement constraints are not supported for tasks run on Fargate.
+ * Task placement constraints aren't supported for tasks run on Fargate.
  * </p>
  * </note>
  * 

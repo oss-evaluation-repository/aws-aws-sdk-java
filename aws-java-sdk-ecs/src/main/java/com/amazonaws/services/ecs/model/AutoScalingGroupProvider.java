@@ -48,7 +48,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * <important>
      * <p>
      * When using managed termination protection, managed scaling must also be used otherwise managed termination
-     * protection will not work.
+     * protection doesn't work.
      * </p>
      * </important>
      * <p>
@@ -60,8 +60,8 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances are not protected from termination
-     * when the Auto Scaling group scales in.
+     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
+     * the Auto Scaling group scales in.
      * </p>
      */
     private String managedTerminationProtection;
@@ -154,7 +154,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * <important>
      * <p>
      * When using managed termination protection, managed scaling must also be used otherwise managed termination
-     * protection will not work.
+     * protection doesn't work.
      * </p>
      * </important>
      * <p>
@@ -166,8 +166,8 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances are not protected from termination
-     * when the Auto Scaling group scales in.
+     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
+     * the Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
@@ -175,7 +175,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        determines whether the Auto Scaling group has managed termination protection.</p> <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
-     *        protection will not work.
+     *        protection doesn't work.
      *        </p>
      *        </important>
      *        <p>
@@ -187,7 +187,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances are not protected from
+     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
      *        termination when the Auto Scaling group scales in.
      * @see ManagedTerminationProtection
      */
@@ -204,7 +204,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * <important>
      * <p>
      * When using managed termination protection, managed scaling must also be used otherwise managed termination
-     * protection will not work.
+     * protection doesn't work.
      * </p>
      * </important>
      * <p>
@@ -216,15 +216,15 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances are not protected from termination
-     * when the Auto Scaling group scales in.
+     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
+     * the Auto Scaling group scales in.
      * </p>
      * 
      * @return The managed termination protection setting to use for the Auto Scaling group capacity provider. This
      *         determines whether the Auto Scaling group has managed termination protection.</p> <important>
      *         <p>
      *         When using managed termination protection, managed scaling must also be used otherwise managed
-     *         termination protection will not work.
+     *         termination protection doesn't work.
      *         </p>
      *         </important>
      *         <p>
@@ -236,7 +236,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *         >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *         </p>
      *         <p>
-     *         When managed termination protection is disabled, your Amazon EC2 instances are not protected from
+     *         When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
      *         termination when the Auto Scaling group scales in.
      * @see ManagedTerminationProtection
      */
@@ -253,7 +253,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * <important>
      * <p>
      * When using managed termination protection, managed scaling must also be used otherwise managed termination
-     * protection will not work.
+     * protection doesn't work.
      * </p>
      * </important>
      * <p>
@@ -265,8 +265,8 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances are not protected from termination
-     * when the Auto Scaling group scales in.
+     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
+     * the Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
@@ -274,7 +274,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        determines whether the Auto Scaling group has managed termination protection.</p> <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
-     *        protection will not work.
+     *        protection doesn't work.
      *        </p>
      *        </important>
      *        <p>
@@ -286,7 +286,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances are not protected from
+     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
      *        termination when the Auto Scaling group scales in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedTerminationProtection
@@ -305,7 +305,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * <important>
      * <p>
      * When using managed termination protection, managed scaling must also be used otherwise managed termination
-     * protection will not work.
+     * protection doesn't work.
      * </p>
      * </important>
      * <p>
@@ -317,8 +317,8 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances are not protected from termination
-     * when the Auto Scaling group scales in.
+     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
+     * the Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
@@ -326,7 +326,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        determines whether the Auto Scaling group has managed termination protection.</p> <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
-     *        protection will not work.
+     *        protection doesn't work.
      *        </p>
      *        </important>
      *        <p>
@@ -338,7 +338,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances are not protected from
+     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
      *        termination when the Auto Scaling group scales in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedTerminationProtection

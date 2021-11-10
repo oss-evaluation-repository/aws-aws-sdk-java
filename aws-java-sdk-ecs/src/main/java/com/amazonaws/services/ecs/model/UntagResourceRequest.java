@@ -27,8 +27,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon
+     * ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      */
     private String resourceArn;
@@ -41,14 +41,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon
+     * ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-     *        instances.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are
+     *        Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,13 +56,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon
+     * ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *         resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-     *         instances.
+     * @return The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
+     *         are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      */
 
     public String getResourceArn() {
@@ -72,14 +70,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon
+     * ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-     *        instances.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are
+     *        Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

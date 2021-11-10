@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of the execute command session.
+ * The details for the execute command session.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Session" target="_top">AWS API Documentation</a>
@@ -42,8 +42,8 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private String streamUrl;
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * container.
+     * An encrypted token value containing session and caller information. It's used to authenticate the connection to
+     * the container.
      * </p>
      */
     private String tokenValue;
@@ -136,13 +136,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * container.
+     * An encrypted token value containing session and caller information. It's used to authenticate the connection to
+     * the container.
      * </p>
      * 
      * @param tokenValue
-     *        An encrypted token value containing session and caller information. Used to authenticate the connection to
-     *        the container.
+     *        An encrypted token value containing session and caller information. It's used to authenticate the
+     *        connection to the container.
      */
 
     public void setTokenValue(String tokenValue) {
@@ -151,12 +151,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * container.
+     * An encrypted token value containing session and caller information. It's used to authenticate the connection to
+     * the container.
      * </p>
      * 
-     * @return An encrypted token value containing session and caller information. Used to authenticate the connection
-     *         to the container.
+     * @return An encrypted token value containing session and caller information. It's used to authenticate the
+     *         connection to the container.
      */
 
     public String getTokenValue() {
@@ -165,13 +165,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An encrypted token value containing session and caller information. Used to authenticate the connection to the
-     * container.
+     * An encrypted token value containing session and caller information. It's used to authenticate the connection to
+     * the container.
      * </p>
      * 
      * @param tokenValue
-     *        An encrypted token value containing session and caller information. Used to authenticate the connection to
-     *        the container.
+     *        An encrypted token value containing session and caller information. It's used to authenticate the
+     *        connection to the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

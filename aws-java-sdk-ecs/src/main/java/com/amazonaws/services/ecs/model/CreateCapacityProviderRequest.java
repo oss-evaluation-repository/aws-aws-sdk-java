@@ -27,9 +27,9 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and lowercase),
-     * numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or "
-     * <code>fargate</code>".
+     * The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     * lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>
+     * ", "<code>ecs</code>", or "<code>fargate</code>".
      * </p>
      */
     private String name;
@@ -41,8 +41,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
     private AutoScalingGroupProvider autoScalingGroupProvider;
     /**
      * <p>
-     * The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag
+     * consists of a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -93,15 +93,15 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and lowercase),
-     * numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or "
-     * <code>fargate</code>".
+     * The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     * lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>
+     * ", "<code>ecs</code>", or "<code>fargate</code>".
      * </p>
      * 
      * @param name
-     *        The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and
-     *        lowercase), numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "
-     *        <code>ecs</code>", or "<code>fargate</code>".
+     *        The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     *        lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "
+     *        <code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
      */
 
     public void setName(String name) {
@@ -110,14 +110,14 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and lowercase),
-     * numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or "
-     * <code>fargate</code>".
+     * The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     * lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>
+     * ", "<code>ecs</code>", or "<code>fargate</code>".
      * </p>
      * 
-     * @return The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and
-     *         lowercase), numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "
-     *         <code>ecs</code>", or "<code>fargate</code>".
+     * @return The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     *         lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "
+     *         <code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
      */
 
     public String getName() {
@@ -126,15 +126,15 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and lowercase),
-     * numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or "
-     * <code>fargate</code>".
+     * The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     * lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>
+     * ", "<code>ecs</code>", or "<code>fargate</code>".
      * </p>
      * 
      * @param name
-     *        The name of the capacity provider. Up to 255 characters are allowed, including letters (upper and
-     *        lowercase), numbers, underscores, and hyphens. The name cannot be prefixed with "<code>aws</code>", "
-     *        <code>ecs</code>", or "<code>fargate</code>".
+     *        The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and
+     *        lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "
+     *        <code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,8 +185,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag
+     * consists of a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -233,8 +233,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     * @return The metadata that you apply to the capacity provider to categorize and organize them more conveniently.
+     *         Each tag consists of a key and an optional value. You define both of them.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -290,8 +290,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag
+     * consists of a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -339,8 +339,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param tags
-     *        The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that you apply to the capacity provider to categorize and organize them more conveniently.
+     *        Each tag consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -397,8 +397,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag
+     * consists of a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -451,8 +451,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that you apply to the capacity provider to categorize and organize them more conveniently.
+     *        Each tag consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -511,8 +511,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag
+     * consists of a key and an optional value. You define both of them.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -560,8 +560,8 @@ public class CreateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param tags
-     *        The metadata that you apply to the capacity provider to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that you apply to the capacity provider to categorize and organize them more conveniently.
+     *        Each tag consists of a key and an optional value. You define both of them.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

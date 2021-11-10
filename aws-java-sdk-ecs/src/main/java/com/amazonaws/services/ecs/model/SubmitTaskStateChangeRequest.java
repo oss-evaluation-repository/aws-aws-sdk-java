@@ -51,7 +51,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     private String reason;
     /**
      * <p>
-     * Any containers associated with the state change request.
+     * Any containers that's associated with the state change request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerStateChange> containers;
@@ -63,25 +63,25 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<AttachmentStateChange> attachments;
     /**
      * <p>
-     * The details for the managed agent associated with the task.
+     * The details for the managed agent that's associated with the task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ManagedAgentStateChange> managedAgents;
     /**
      * <p>
-     * The Unix timestamp for when the container image pull began.
+     * The Unix timestamp for the time when the container image pull started.
      * </p>
      */
     private java.util.Date pullStartedAt;
     /**
      * <p>
-     * The Unix timestamp for when the container image pull completed.
+     * The Unix timestamp for the time when the container image pull completed.
      * </p>
      */
     private java.util.Date pullStoppedAt;
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix timestamp for the time when the task execution stopped.
      * </p>
      */
     private java.util.Date executionStoppedAt;
@@ -248,10 +248,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any containers associated with the state change request.
+     * Any containers that's associated with the state change request.
      * </p>
      * 
-     * @return Any containers associated with the state change request.
+     * @return Any containers that's associated with the state change request.
      */
 
     public java.util.List<ContainerStateChange> getContainers() {
@@ -263,11 +263,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any containers associated with the state change request.
+     * Any containers that's associated with the state change request.
      * </p>
      * 
      * @param containers
-     *        Any containers associated with the state change request.
+     *        Any containers that's associated with the state change request.
      */
 
     public void setContainers(java.util.Collection<ContainerStateChange> containers) {
@@ -281,7 +281,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any containers associated with the state change request.
+     * Any containers that's associated with the state change request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,7 +290,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param containers
-     *        Any containers associated with the state change request.
+     *        Any containers that's associated with the state change request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +306,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Any containers associated with the state change request.
+     * Any containers that's associated with the state change request.
      * </p>
      * 
      * @param containers
-     *        Any containers associated with the state change request.
+     *        Any containers that's associated with the state change request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,10 +394,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The details for the managed agent associated with the task.
+     * The details for the managed agent that's associated with the task.
      * </p>
      * 
-     * @return The details for the managed agent associated with the task.
+     * @return The details for the managed agent that's associated with the task.
      */
 
     public java.util.List<ManagedAgentStateChange> getManagedAgents() {
@@ -409,11 +409,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The details for the managed agent associated with the task.
+     * The details for the managed agent that's associated with the task.
      * </p>
      * 
      * @param managedAgents
-     *        The details for the managed agent associated with the task.
+     *        The details for the managed agent that's associated with the task.
      */
 
     public void setManagedAgents(java.util.Collection<ManagedAgentStateChange> managedAgents) {
@@ -427,7 +427,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The details for the managed agent associated with the task.
+     * The details for the managed agent that's associated with the task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -436,7 +436,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param managedAgents
-     *        The details for the managed agent associated with the task.
+     *        The details for the managed agent that's associated with the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,11 +452,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The details for the managed agent associated with the task.
+     * The details for the managed agent that's associated with the task.
      * </p>
      * 
      * @param managedAgents
-     *        The details for the managed agent associated with the task.
+     *        The details for the managed agent that's associated with the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +467,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull began.
+     * The Unix timestamp for the time when the container image pull started.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix timestamp for when the container image pull began.
+     *        The Unix timestamp for the time when the container image pull started.
      */
 
     public void setPullStartedAt(java.util.Date pullStartedAt) {
@@ -480,10 +480,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull began.
+     * The Unix timestamp for the time when the container image pull started.
      * </p>
      * 
-     * @return The Unix timestamp for when the container image pull began.
+     * @return The Unix timestamp for the time when the container image pull started.
      */
 
     public java.util.Date getPullStartedAt() {
@@ -492,11 +492,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull began.
+     * The Unix timestamp for the time when the container image pull started.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix timestamp for when the container image pull began.
+     *        The Unix timestamp for the time when the container image pull started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +507,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull completed.
+     * The Unix timestamp for the time when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix timestamp for when the container image pull completed.
+     *        The Unix timestamp for the time when the container image pull completed.
      */
 
     public void setPullStoppedAt(java.util.Date pullStoppedAt) {
@@ -520,10 +520,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull completed.
+     * The Unix timestamp for the time when the container image pull completed.
      * </p>
      * 
-     * @return The Unix timestamp for when the container image pull completed.
+     * @return The Unix timestamp for the time when the container image pull completed.
      */
 
     public java.util.Date getPullStoppedAt() {
@@ -532,11 +532,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the container image pull completed.
+     * The Unix timestamp for the time when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix timestamp for when the container image pull completed.
+     *        The Unix timestamp for the time when the container image pull completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,11 +547,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix timestamp for the time when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix timestamp for when the task execution stopped.
+     *        The Unix timestamp for the time when the task execution stopped.
      */
 
     public void setExecutionStoppedAt(java.util.Date executionStoppedAt) {
@@ -560,10 +560,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix timestamp for the time when the task execution stopped.
      * </p>
      * 
-     * @return The Unix timestamp for when the task execution stopped.
+     * @return The Unix timestamp for the time when the task execution stopped.
      */
 
     public java.util.Date getExecutionStoppedAt() {
@@ -572,11 +572,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix timestamp for the time when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix timestamp for when the task execution stopped.
+     *        The Unix timestamp for the time when the task execution stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

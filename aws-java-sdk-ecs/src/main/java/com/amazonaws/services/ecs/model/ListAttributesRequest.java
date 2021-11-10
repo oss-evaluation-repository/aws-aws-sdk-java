@@ -34,28 +34,27 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String cluster;
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      */
     private String targetType;
     /**
      * <p>
-     * The name of the attribute with which to filter the results.
+     * The name of the attribute to filter the results with.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * The value of the attribute with which to filter results. You must also specify an attribute name to use this
-     * parameter.
+     * The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.
      * </p>
      */
     private String attributeValue;
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -67,11 +66,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this
      * parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListAttributes</code> returns up to 100
+     * can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -125,11 +124,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      * 
      * @param targetType
-     *        The type of the target with which to list attributes.
+     *        The type of the target to list attributes with.
      * @see TargetType
      */
 
@@ -139,10 +138,10 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      * 
-     * @return The type of the target with which to list attributes.
+     * @return The type of the target to list attributes with.
      * @see TargetType
      */
 
@@ -152,11 +151,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      * 
      * @param targetType
-     *        The type of the target with which to list attributes.
+     *        The type of the target to list attributes with.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */
@@ -168,11 +167,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      * 
      * @param targetType
-     *        The type of the target with which to list attributes.
+     *        The type of the target to list attributes with.
      * @see TargetType
      */
 
@@ -182,11 +181,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of the target with which to list attributes.
+     * The type of the target to list attributes with.
      * </p>
      * 
      * @param targetType
-     *        The type of the target with which to list attributes.
+     *        The type of the target to list attributes with.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */
@@ -198,11 +197,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the attribute with which to filter the results.
+     * The name of the attribute to filter the results with.
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute with which to filter the results.
+     *        The name of the attribute to filter the results with.
      */
 
     public void setAttributeName(String attributeName) {
@@ -211,10 +210,10 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the attribute with which to filter the results.
+     * The name of the attribute to filter the results with.
      * </p>
      * 
-     * @return The name of the attribute with which to filter the results.
+     * @return The name of the attribute to filter the results with.
      */
 
     public String getAttributeName() {
@@ -223,11 +222,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the attribute with which to filter the results.
+     * The name of the attribute to filter the results with.
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute with which to filter the results.
+     *        The name of the attribute to filter the results with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,13 +237,12 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of the attribute with which to filter results. You must also specify an attribute name to use this
-     * parameter.
+     * The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.
      * </p>
      * 
      * @param attributeValue
-     *        The value of the attribute with which to filter results. You must also specify an attribute name to use
-     *        this parameter.
+     *        The value of the attribute to filter results with. You must also specify an attribute name to use this
+     *        parameter.
      */
 
     public void setAttributeValue(String attributeValue) {
@@ -253,12 +251,11 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of the attribute with which to filter results. You must also specify an attribute name to use this
-     * parameter.
+     * The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.
      * </p>
      * 
-     * @return The value of the attribute with which to filter results. You must also specify an attribute name to use
-     *         this parameter.
+     * @return The value of the attribute to filter results with. You must also specify an attribute name to use this
+     *         parameter.
      */
 
     public String getAttributeValue() {
@@ -267,13 +264,12 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of the attribute with which to filter results. You must also specify an attribute name to use this
-     * parameter.
+     * The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.
      * </p>
      * 
      * @param attributeValue
-     *        The value of the attribute with which to filter results. You must also specify an attribute name to use
-     *        this parameter.
+     *        The value of the attribute to filter results with. You must also specify an attribute name to use this
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,8 +281,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -297,8 +293,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more
-     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *        results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *        provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -312,8 +308,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -323,8 +319,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      * 
      * @return The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more
-     *         results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *         was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *         results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *         provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -338,8 +334,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results
-     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
-     * it is possible the number of results to be fewer than <code>maxResults</code>.
+     * are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's
+     * possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -350,8 +346,8 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more
-     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
-     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+     *        results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     *        provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -366,20 +362,20 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this
      * parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListAttributes</code> returns up to 100
+     * can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When
+     *        The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When
      *        this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a
      *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *        request can be seen by sending another <code>ListAttributes</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      *        <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -389,19 +385,19 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this
      * parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListAttributes</code> returns up to 100
+     * can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When
+     * @return The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When
      *         this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a
      *         single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *         request can be seen by sending another <code>ListAttributes</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      *         <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -411,20 +407,20 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When this
+     * The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this
      * parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListAttributes</code> returns up to 100
+     * can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of cluster results returned by <code>ListAttributes</code> in paginated output. When
+     *        The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When
      *        this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a
      *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *        request can be seen by sending another <code>ListAttributes</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      *        <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

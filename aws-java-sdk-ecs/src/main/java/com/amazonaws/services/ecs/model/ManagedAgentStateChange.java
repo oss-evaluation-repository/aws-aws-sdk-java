@@ -30,7 +30,7 @@ public class ManagedAgentStateChange implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the container associated with the managed agent.
+     * The name of the container that's associated with the managed agent.
      * </p>
      */
     private String containerName;
@@ -55,11 +55,11 @@ public class ManagedAgentStateChange implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the container associated with the managed agent.
+     * The name of the container that's associated with the managed agent.
      * </p>
      * 
      * @param containerName
-     *        The name of the container associated with the managed agent.
+     *        The name of the container that's associated with the managed agent.
      */
 
     public void setContainerName(String containerName) {
@@ -68,10 +68,10 @@ public class ManagedAgentStateChange implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the container associated with the managed agent.
+     * The name of the container that's associated with the managed agent.
      * </p>
      * 
-     * @return The name of the container associated with the managed agent.
+     * @return The name of the container that's associated with the managed agent.
      */
 
     public String getContainerName() {
@@ -80,11 +80,11 @@ public class ManagedAgentStateChange implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the container associated with the managed agent.
+     * The name of the container that's associated with the managed agent.
      * </p>
      * 
      * @param containerName
-     *        The name of the container associated with the managed agent.
+     *        The name of the container that's associated with the managed agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

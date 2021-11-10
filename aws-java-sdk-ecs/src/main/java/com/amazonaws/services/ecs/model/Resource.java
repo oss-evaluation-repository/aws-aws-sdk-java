@@ -36,7 +36,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     * The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      * <code>STRINGSET</code>.
      * </p>
      */
@@ -116,12 +116,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     * The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      * <code>STRINGSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     *        The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      *        <code>STRINGSET</code>.
      */
 
@@ -131,11 +131,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     * The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      * <code>STRINGSET</code>.
      * </p>
      * 
-     * @return The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     * @return The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      *         <code>STRINGSET</code>.
      */
 
@@ -145,12 +145,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     * The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      * <code>STRINGSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
+     *        The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or
      *        <code>STRINGSET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

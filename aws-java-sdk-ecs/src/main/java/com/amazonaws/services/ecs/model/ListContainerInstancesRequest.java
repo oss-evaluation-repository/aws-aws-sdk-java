@@ -44,8 +44,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more
-     * results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was
-     * provided, it is possible the number of results to be fewer than <code>maxResults</code>.
+     * results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     * provided, it's possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -57,11 +57,11 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
-     * The maximum number of container instance results returned by <code>ListContainerInstances</code> in paginated
+     * The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated
      * output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -70,7 +70,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      */
@@ -183,8 +183,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more
-     * results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was
-     * provided, it is possible the number of results to be fewer than <code>maxResults</code>.
+     * results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     * provided, it's possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -195,8 +195,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating
-     *        that more results are available to fulfill the request and further calls will be needed. If
-     *        <code>maxResults</code> was provided, it is possible the number of results to be fewer than
+     *        that more results are available to fulfill the request and further calls are needed. If
+     *        <code>maxResults</code> was provided, it's possible the number of results to be fewer than
      *        <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
@@ -211,8 +211,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more
-     * results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was
-     * provided, it is possible the number of results to be fewer than <code>maxResults</code>.
+     * results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     * provided, it's possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -222,8 +222,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @return The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating
-     *         that more results are available to fulfill the request and further calls will be needed. If
-     *         <code>maxResults</code> was provided, it is possible the number of results to be fewer than
+     *         that more results are available to fulfill the request and further calls are needed. If
+     *         <code>maxResults</code> was provided, it's possible the number of results to be fewer than
      *         <code>maxResults</code>.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
@@ -238,8 +238,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more
-     * results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was
-     * provided, it is possible the number of results to be fewer than <code>maxResults</code>.
+     * results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was
+     * provided, it's possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -250,8 +250,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating
-     *        that more results are available to fulfill the request and further calls will be needed. If
-     *        <code>maxResults</code> was provided, it is possible the number of results to be fewer than
+     *        that more results are available to fulfill the request and further calls are needed. If
+     *        <code>maxResults</code> was provided, it's possible the number of results to be fewer than
      *        <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
@@ -267,22 +267,22 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of container instance results returned by <code>ListContainerInstances</code> in paginated
+     * The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated
      * output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of container instance results returned by <code>ListContainerInstances</code> in
+     *        The maximum number of container instance results that <code>ListContainerInstances</code> returned in
      *        paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value can
-     *        be between 1 and 100. If this parameter is not used, then <code>ListContainerInstances</code> returns up
-     *        to 100 results and a <code>nextToken</code> value if applicable.
+     *        be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns up to
+     *        100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -291,20 +291,20 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of container instance results returned by <code>ListContainerInstances</code> in paginated
+     * The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated
      * output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of container instance results returned by <code>ListContainerInstances</code> in
+     * @return The maximum number of container instance results that <code>ListContainerInstances</code> returned in
      *         paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns
      *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
      *         The remaining results of the initial request can be seen by sending another
      *         <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value
-     *         can be between 1 and 100. If this parameter is not used, then <code>ListContainerInstances</code> returns
+     *         can be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns
      *         up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -314,22 +314,22 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of container instance results returned by <code>ListContainerInstances</code> in paginated
+     * The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated
      * output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of container instance results returned by <code>ListContainerInstances</code> in
+     *        The maximum number of container instance results that <code>ListContainerInstances</code> returned in
      *        paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value can
-     *        be between 1 and 100. If this parameter is not used, then <code>ListContainerInstances</code> returns up
-     *        to 100 results and a <code>nextToken</code> value if applicable.
+     *        be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns up to
+     *        100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,14 +342,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
      *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
      *        the results include only container instances that have been set to <code>DRAINING</code> using
-     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include
      *        container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
@@ -362,13 +362,13 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @return Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
      *         the results include only container instances that have been set to <code>DRAINING</code> using
-     *         <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *         <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include
      *         container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
@@ -381,14 +381,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
      *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
      *        the results include only container instances that have been set to <code>DRAINING</code> using
-     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include
      *        container instances set to all states other than <code>INACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
@@ -403,14 +403,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
      *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
      *        the results include only container instances that have been set to <code>DRAINING</code> using
-     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include
      *        container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
@@ -423,14 +423,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
      * results include only container instances that have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container
      * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
      *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
      *        the results include only container instances that have been set to <code>DRAINING</code> using
-     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include
      *        container instances set to all states other than <code>INACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus

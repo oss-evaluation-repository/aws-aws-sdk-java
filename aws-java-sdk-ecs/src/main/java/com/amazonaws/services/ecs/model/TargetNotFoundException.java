@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified target could not be found. You can view your available container instances with
+ * The specified target wasn't found. You can view your available container instances with
  * <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.
  * </p>
  */

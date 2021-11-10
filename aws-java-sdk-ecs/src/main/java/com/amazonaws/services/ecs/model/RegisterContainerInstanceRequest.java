@@ -27,8 +27,8 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you
+     * do not specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -56,7 +56,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     private com.amazonaws.internal.SdkInternalList<Resource> totalResources;
     /**
      * <p>
-     * The version information for the Amazon ECS container agent and Docker daemon running on the container instance.
+     * The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.
      * </p>
      */
     private VersionInfo versionInfo;
@@ -81,7 +81,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -132,13 +132,13 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you
+     * do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *        instance. If you do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with.
+     *        If you do not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -147,12 +147,12 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you
+     * do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *         instance. If you do not specify a cluster, the default cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
+     *         with. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -161,13 +161,13 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you
+     * do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *        instance. If you do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with.
+     *        If you do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +355,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version information for the Amazon ECS container agent and Docker daemon running on the container instance.
+     * The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.
      * </p>
      * 
      * @param versionInfo
-     *        The version information for the Amazon ECS container agent and Docker daemon running on the container
+     *        The version information for the Amazon ECS container agent and Docker daemon that runs on the container
      *        instance.
      */
 
@@ -369,10 +369,10 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version information for the Amazon ECS container agent and Docker daemon running on the container instance.
+     * The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.
      * </p>
      * 
-     * @return The version information for the Amazon ECS container agent and Docker daemon running on the container
+     * @return The version information for the Amazon ECS container agent and Docker daemon that runs on the container
      *         instance.
      */
 
@@ -382,11 +382,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version information for the Amazon ECS container agent and Docker daemon running on the container instance.
+     * The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.
      * </p>
      * 
      * @param versionInfo
-     *        The version information for the Amazon ECS container agent and Docker daemon running on the container
+     *        The version information for the Amazon ECS container agent and Docker daemon that runs on the container
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -585,7 +585,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -633,7 +633,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @return The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     *         consists of a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -690,7 +690,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -739,7 +739,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -797,7 +797,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -851,7 +851,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -911,7 +911,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * of a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -960,7 +960,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param tags
      *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

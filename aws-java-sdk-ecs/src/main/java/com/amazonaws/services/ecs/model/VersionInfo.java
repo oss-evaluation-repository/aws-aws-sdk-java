@@ -43,7 +43,7 @@ public class VersionInfo implements Serializable, Cloneable, StructuredPojo {
     private String agentHash;
     /**
      * <p>
-     * The Docker version running on the container instance.
+     * The Docker version that's running on the container instance.
      * </p>
      */
     private String dockerVersion;
@@ -136,11 +136,11 @@ public class VersionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Docker version running on the container instance.
+     * The Docker version that's running on the container instance.
      * </p>
      * 
      * @param dockerVersion
-     *        The Docker version running on the container instance.
+     *        The Docker version that's running on the container instance.
      */
 
     public void setDockerVersion(String dockerVersion) {
@@ -149,10 +149,10 @@ public class VersionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Docker version running on the container instance.
+     * The Docker version that's running on the container instance.
      * </p>
      * 
-     * @return The Docker version running on the container instance.
+     * @return The Docker version that's running on the container instance.
      */
 
     public String getDockerVersion() {
@@ -161,11 +161,11 @@ public class VersionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Docker version running on the container instance.
+     * The Docker version that's running on the container instance.
      * </p>
      * 
      * @param dockerVersion
-     *        The Docker version running on the container instance.
+     *        The Docker version that's running on the container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
     private String containerInstance;
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      * </p>
      */
     private String cluster;
@@ -104,11 +104,11 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      */
 
     public void setCluster(String cluster) {
@@ -117,10 +117,10 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      */
 
     public String getCluster() {
@@ -129,11 +129,11 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance belongs.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

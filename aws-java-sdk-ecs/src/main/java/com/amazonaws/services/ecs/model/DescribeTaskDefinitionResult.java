@@ -31,8 +31,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
     private TaskDefinition taskDefinition;
     /**
      * <p>
-     * The metadata that is applied to the task definition to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -123,8 +123,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata that is applied to the task definition to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -171,8 +171,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return The metadata that is applied to the task definition to help you categorize and organize them. Each tag
-     *         consists of a key and an optional value, both of which you define.</p>
+     * @return The metadata that's applied to the task definition to help you categorize and organize them. Each tag
+     *         consists of a key and an optional value. You define both.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -228,8 +228,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata that is applied to the task definition to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -277,8 +277,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param tags
-     *        The metadata that is applied to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that's applied to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -335,8 +335,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata that is applied to the task definition to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -389,8 +389,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param tags
-     *        The metadata that is applied to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that's applied to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -449,8 +449,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metadata that is applied to the task definition to help you categorize and organize them. Each tag consists
-     * of a key and an optional value, both of which you define.
+     * The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value. You define both.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -498,8 +498,8 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param tags
-     *        The metadata that is applied to the task definition to help you categorize and organize them. Each tag
-     *        consists of a key and an optional value, both of which you define.</p>
+     *        The metadata that's applied to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value. You define both.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

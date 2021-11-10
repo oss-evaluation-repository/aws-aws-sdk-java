@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Docker container that is part of a task.
+ * A Docker container that's part of a task.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container" target="_top">AWS API
@@ -103,8 +103,8 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<NetworkInterface> networkInterfaces;
     /**
      * <p>
-     * The health status of the container. If health checks are not configured for this container in its task
-     * definition, then it reports the health status as <code>UNKNOWN</code>.
+     * The health status of the container. If health checks aren't configured for this container in its task definition,
+     * then it reports the health status as <code>UNKNOWN</code>.
      * </p>
      */
     private String healthStatus;
@@ -116,7 +116,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ManagedAgent> managedAgents;
     /**
      * <p>
-     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
      */
@@ -684,12 +684,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health status of the container. If health checks are not configured for this container in its task
-     * definition, then it reports the health status as <code>UNKNOWN</code>.
+     * The health status of the container. If health checks aren't configured for this container in its task definition,
+     * then it reports the health status as <code>UNKNOWN</code>.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of the container. If health checks are not configured for this container in its task
+     *        The health status of the container. If health checks aren't configured for this container in its task
      *        definition, then it reports the health status as <code>UNKNOWN</code>.
      * @see HealthStatus
      */
@@ -700,11 +700,11 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health status of the container. If health checks are not configured for this container in its task
-     * definition, then it reports the health status as <code>UNKNOWN</code>.
+     * The health status of the container. If health checks aren't configured for this container in its task definition,
+     * then it reports the health status as <code>UNKNOWN</code>.
      * </p>
      * 
-     * @return The health status of the container. If health checks are not configured for this container in its task
+     * @return The health status of the container. If health checks aren't configured for this container in its task
      *         definition, then it reports the health status as <code>UNKNOWN</code>.
      * @see HealthStatus
      */
@@ -715,12 +715,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health status of the container. If health checks are not configured for this container in its task
-     * definition, then it reports the health status as <code>UNKNOWN</code>.
+     * The health status of the container. If health checks aren't configured for this container in its task definition,
+     * then it reports the health status as <code>UNKNOWN</code>.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of the container. If health checks are not configured for this container in its task
+     *        The health status of the container. If health checks aren't configured for this container in its task
      *        definition, then it reports the health status as <code>UNKNOWN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthStatus
@@ -733,12 +733,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health status of the container. If health checks are not configured for this container in its task
-     * definition, then it reports the health status as <code>UNKNOWN</code>.
+     * The health status of the container. If health checks aren't configured for this container in its task definition,
+     * then it reports the health status as <code>UNKNOWN</code>.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of the container. If health checks are not configured for this container in its task
+     *        The health status of the container. If health checks aren't configured for this container in its task
      *        definition, then it reports the health status as <code>UNKNOWN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthStatus
@@ -824,13 +824,13 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
      * 
      * @param cpu
-     *        The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
-     *        in the container definition when the task definition was registered.
+     *        The number of CPU units set for the container. The value is <code>0</code> if no value was specified in
+     *        the container definition when the task definition was registered.
      */
 
     public void setCpu(String cpu) {
@@ -839,12 +839,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
      * 
-     * @return The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
-     *         in the container definition when the task definition was registered.
+     * @return The number of CPU units set for the container. The value is <code>0</code> if no value was specified in
+     *         the container definition when the task definition was registered.
      */
 
     public String getCpu() {
@@ -853,13 +853,13 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
      * 
      * @param cpu
-     *        The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
-     *        in the container definition when the task definition was registered.
+     *        The number of CPU units set for the container. The value is <code>0</code> if no value was specified in
+     *        the container definition when the task definition was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

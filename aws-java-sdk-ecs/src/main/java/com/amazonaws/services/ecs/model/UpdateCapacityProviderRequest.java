@@ -33,7 +33,7 @@ public class UpdateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
-     * An object representing the parameters to update for the Auto Scaling group capacity provider.
+     * An object that represent the parameters to update for the Auto Scaling group capacity provider.
      * </p>
      */
     private AutoScalingGroupProviderUpdate autoScalingGroupProvider;
@@ -80,11 +80,11 @@ public class UpdateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object representing the parameters to update for the Auto Scaling group capacity provider.
+     * An object that represent the parameters to update for the Auto Scaling group capacity provider.
      * </p>
      * 
      * @param autoScalingGroupProvider
-     *        An object representing the parameters to update for the Auto Scaling group capacity provider.
+     *        An object that represent the parameters to update for the Auto Scaling group capacity provider.
      */
 
     public void setAutoScalingGroupProvider(AutoScalingGroupProviderUpdate autoScalingGroupProvider) {
@@ -93,10 +93,10 @@ public class UpdateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object representing the parameters to update for the Auto Scaling group capacity provider.
+     * An object that represent the parameters to update for the Auto Scaling group capacity provider.
      * </p>
      * 
-     * @return An object representing the parameters to update for the Auto Scaling group capacity provider.
+     * @return An object that represent the parameters to update for the Auto Scaling group capacity provider.
      */
 
     public AutoScalingGroupProviderUpdate getAutoScalingGroupProvider() {
@@ -105,11 +105,11 @@ public class UpdateCapacityProviderRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object representing the parameters to update for the Auto Scaling group capacity provider.
+     * An object that represent the parameters to update for the Auto Scaling group capacity provider.
      * </p>
      * 
      * @param autoScalingGroupProvider
-     *        An object representing the parameters to update for the Auto Scaling group capacity provider.
+     *        An object that represent the parameters to update for the Auto Scaling group capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
