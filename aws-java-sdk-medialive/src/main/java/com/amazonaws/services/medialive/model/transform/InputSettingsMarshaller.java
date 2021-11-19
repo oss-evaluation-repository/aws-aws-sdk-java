@@ -42,6 +42,8 @@ public class InputSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputFilter").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKINPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInputSettings").build();
+    private static final MarshallingInfo<Integer> SCTE35PID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Pid").build();
     private static final MarshallingInfo<String> SMPTE2038DATAPREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("smpte2038DataPreference").build();
     private static final MarshallingInfo<String> SOURCEENDBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class InputSettingsMarshaller {
             protocolMarshaller.marshall(inputSettings.getFilterStrength(), FILTERSTRENGTH_BINDING);
             protocolMarshaller.marshall(inputSettings.getInputFilter(), INPUTFILTER_BINDING);
             protocolMarshaller.marshall(inputSettings.getNetworkInputSettings(), NETWORKINPUTSETTINGS_BINDING);
+            protocolMarshaller.marshall(inputSettings.getScte35Pid(), SCTE35PID_BINDING);
             protocolMarshaller.marshall(inputSettings.getSmpte2038DataPreference(), SMPTE2038DATAPREFERENCE_BINDING);
             protocolMarshaller.marshall(inputSettings.getSourceEndBehavior(), SOURCEENDBEHAVIOR_BINDING);
             protocolMarshaller.marshall(inputSettings.getVideoSelector(), VIDEOSELECTOR_BINDING);

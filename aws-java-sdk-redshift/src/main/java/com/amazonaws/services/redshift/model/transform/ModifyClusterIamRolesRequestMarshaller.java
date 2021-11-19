@@ -72,6 +72,10 @@ public class ModifyClusterIamRolesRequestMarshaller implements Marshaller<Reques
             }
         }
 
+        if (modifyClusterIamRolesRequest.getDefaultIamRoleArn() != null) {
+            request.addParameter("DefaultIamRoleArn", StringUtils.fromString(modifyClusterIamRolesRequest.getDefaultIamRoleArn()));
+        }
+
         return request;
     }
 

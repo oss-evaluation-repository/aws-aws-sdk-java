@@ -98,10 +98,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The JSON that you want to provide to your Lambda function as input.
      * </p>
-     * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
-     * </p>
      */
     private java.nio.ByteBuffer payload;
     /**
@@ -696,10 +692,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
-     * </p>
-     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -711,10 +703,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        The JSON that you want to provide to your Lambda function as input.</p>
-     *        <p>
-     *        You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also
-     *        specify a file path. For example, <code>--payload file://payload.json</code>.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
 
     public void setPayload(java.nio.ByteBuffer payload) {
@@ -726,10 +715,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
-     * </p>
-     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -737,10 +722,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * {@code position}.
      * </p>
      * 
-     * @return The JSON that you want to provide to your Lambda function as input.</p>
-     *         <p>
-     *         You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also
-     *         specify a file path. For example, <code>--payload file://payload.json</code>.
+     * @return The JSON that you want to provide to your Lambda function as input.
      */
 
     public java.nio.ByteBuffer getPayload() {
@@ -750,10 +732,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * The JSON that you want to provide to your Lambda function as input.
-     * </p>
-     * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -767,10 +745,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        The JSON that you want to provide to your Lambda function as input.</p>
-     *        <p>
-     *        You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also
-     *        specify a file path. For example, <code>--payload file://payload.json</code>.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -784,10 +759,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
-     * </p>
-     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -799,10 +770,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        The JSON that you want to provide to your Lambda function as input.</p>
-     *        <p>
-     *        You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also
-     *        specify a file path. For example, <code>--payload file://payload.json</code>.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
     public void setPayload(String payload) {
         setPayload(new com.amazonaws.adapters.types.StringToByteBufferAdapter().adapt(payload));
@@ -813,10 +781,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
-     * You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a
-     * file path. For example, <code>--payload file://payload.json</code>.
-     * </p>
-     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -828,10 +792,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        The JSON that you want to provide to your Lambda function as input.</p>
-     *        <p>
-     *        You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also
-     *        specify a file path. For example, <code>--payload file://payload.json</code>.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     public InvokeRequest withPayload(String payload) {

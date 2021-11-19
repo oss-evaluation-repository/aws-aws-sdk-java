@@ -73,8 +73,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private String shareIdentifier;
     /**
      * <p>
-     * The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs
+     * with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      */
     private Integer schedulingPriority;
@@ -531,14 +531,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs
+     * with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share
-     *        policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
-     *        priority.
+     *        The scheduling policy of the job definition. This only affects jobs in job queues with a fair share
+     *        policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      */
 
     public void setSchedulingPriority(Integer schedulingPriority) {
@@ -547,12 +546,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs
+     * with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
-     * @return The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share
-     *         policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * @return The scheduling policy of the job definition. This only affects jobs in job queues with a fair share
+     *         policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling
      *         priority.
      */
 
@@ -562,14 +561,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs
+     * with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling policy of the job definition. This will only affect jobs in job queues with a fair share
-     *        policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
-     *        priority.
+     *        The scheduling policy of the job definition. This only affects jobs in job queues with a fair share
+     *        policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

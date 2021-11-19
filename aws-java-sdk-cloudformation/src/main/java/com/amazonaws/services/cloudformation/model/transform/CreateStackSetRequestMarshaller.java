@@ -171,6 +171,16 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
 
         request.addParameter("ClientRequestToken", IdempotentUtils.resolveString(createStackSetRequest.getClientRequestToken()));
 
+        {
+            ManagedExecution managedExecution = createStackSetRequest.getManagedExecution();
+            if (managedExecution != null) {
+
+                if (managedExecution.getActive() != null) {
+                    request.addParameter("ManagedExecution.Active", StringUtils.fromBoolean(managedExecution.getActive()));
+                }
+            }
+        }
+
         return request;
     }
 

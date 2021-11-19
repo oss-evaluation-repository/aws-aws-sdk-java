@@ -45,6 +45,11 @@ public class InputSettings implements Serializable, Cloneable, StructuredPojo {
     /** Input settings. */
     private NetworkInputSettings networkInputSettings;
     /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the
+     * input.
+     */
+    private Integer scte35Pid;
+    /**
      * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data
      * types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this
      * input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from
@@ -418,6 +423,46 @@ public class InputSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the
+     * input.
+     * 
+     * @param scte35Pid
+     *        PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in
+     *        the input.
+     */
+
+    public void setScte35Pid(Integer scte35Pid) {
+        this.scte35Pid = scte35Pid;
+    }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the
+     * input.
+     * 
+     * @return PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found
+     *         in the input.
+     */
+
+    public Integer getScte35Pid() {
+        return this.scte35Pid;
+    }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the
+     * input.
+     * 
+     * @param scte35Pid
+     *        PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in
+     *        the input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputSettings withScte35Pid(Integer scte35Pid) {
+        setScte35Pid(scte35Pid);
+        return this;
+    }
+
+    /**
      * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data
      * types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this
      * input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from
@@ -603,6 +648,8 @@ public class InputSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("InputFilter: ").append(getInputFilter()).append(",");
         if (getNetworkInputSettings() != null)
             sb.append("NetworkInputSettings: ").append(getNetworkInputSettings()).append(",");
+        if (getScte35Pid() != null)
+            sb.append("Scte35Pid: ").append(getScte35Pid()).append(",");
         if (getSmpte2038DataPreference() != null)
             sb.append("Smpte2038DataPreference: ").append(getSmpte2038DataPreference()).append(",");
         if (getSourceEndBehavior() != null)
@@ -651,6 +698,10 @@ public class InputSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkInputSettings() != null && other.getNetworkInputSettings().equals(this.getNetworkInputSettings()) == false)
             return false;
+        if (other.getScte35Pid() == null ^ this.getScte35Pid() == null)
+            return false;
+        if (other.getScte35Pid() != null && other.getScte35Pid().equals(this.getScte35Pid()) == false)
+            return false;
         if (other.getSmpte2038DataPreference() == null ^ this.getSmpte2038DataPreference() == null)
             return false;
         if (other.getSmpte2038DataPreference() != null && other.getSmpte2038DataPreference().equals(this.getSmpte2038DataPreference()) == false)
@@ -678,6 +729,7 @@ public class InputSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFilterStrength() == null) ? 0 : getFilterStrength().hashCode());
         hashCode = prime * hashCode + ((getInputFilter() == null) ? 0 : getInputFilter().hashCode());
         hashCode = prime * hashCode + ((getNetworkInputSettings() == null) ? 0 : getNetworkInputSettings().hashCode());
+        hashCode = prime * hashCode + ((getScte35Pid() == null) ? 0 : getScte35Pid().hashCode());
         hashCode = prime * hashCode + ((getSmpte2038DataPreference() == null) ? 0 : getSmpte2038DataPreference().hashCode());
         hashCode = prime * hashCode + ((getSourceEndBehavior() == null) ? 0 : getSourceEndBehavior().hashCode());
         hashCode = prime * hashCode + ((getVideoSelector() == null) ? 0 : getVideoSelector().hashCode());

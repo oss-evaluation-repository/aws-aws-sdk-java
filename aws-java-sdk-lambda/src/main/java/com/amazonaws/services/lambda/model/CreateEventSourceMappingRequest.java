@@ -130,11 +130,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
-     * </p>
-     * </li>
      * </ul>
      */
     private Integer batchSize;
@@ -719,11 +714,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param batchSize
@@ -755,11 +745,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      */
@@ -801,11 +786,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your
@@ -836,11 +816,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      */
@@ -882,11 +857,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param batchSize
@@ -918,11 +888,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

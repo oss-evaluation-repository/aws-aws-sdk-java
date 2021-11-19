@@ -287,6 +287,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(AssociateApplicationFleetRequest request) {
+
+        return associateApplicationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(final AssociateApplicationFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateApplicationFleetRequest, AssociateApplicationFleetResult> asyncHandler) {
+        final AssociateApplicationFleetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateApplicationFleetResult>() {
+            @Override
+            public AssociateApplicationFleetResult call() throws Exception {
+                AssociateApplicationFleetResult result = null;
+
+                try {
+                    result = executeAssociateApplicationFleet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateFleetResult> associateFleetAsync(AssociateFleetRequest request) {
 
         return associateFleetAsync(request, null);
@@ -403,6 +436,72 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeCopyImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest request) {
+
+        return createAppBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(final CreateAppBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppBlockRequest, CreateAppBlockResult> asyncHandler) {
+        final CreateAppBlockRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppBlockResult>() {
+            @Override
+            public CreateAppBlockResult call() throws Exception {
+                CreateAppBlockResult result = null;
+
+                try {
+                    result = executeCreateAppBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
+
+        return createApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
+        final CreateApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateApplicationResult>() {
+            @Override
+            public CreateApplicationResult call() throws Exception {
+                CreateApplicationResult result = null;
+
+                try {
+                    result = executeCreateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -718,6 +817,72 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(DeleteAppBlockRequest request) {
+
+        return deleteAppBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(final DeleteAppBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppBlockRequest, DeleteAppBlockResult> asyncHandler) {
+        final DeleteAppBlockRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppBlockResult>() {
+            @Override
+            public DeleteAppBlockResult call() throws Exception {
+                DeleteAppBlockResult result = null;
+
+                try {
+                    result = executeDeleteAppBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
+
+        return deleteApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(final DeleteApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+        final DeleteApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationResult>() {
+            @Override
+            public DeleteApplicationResult call() throws Exception {
+                DeleteApplicationResult result = null;
+
+                try {
+                    result = executeDeleteApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request) {
 
         return deleteDirectoryConfigAsync(request, null);
@@ -967,6 +1132,107 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(DescribeAppBlocksRequest request) {
+
+        return describeAppBlocksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(final DescribeAppBlocksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppBlocksRequest, DescribeAppBlocksResult> asyncHandler) {
+        final DescribeAppBlocksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppBlocksResult>() {
+            @Override
+            public DescribeAppBlocksResult call() throws Exception {
+                DescribeAppBlocksResult result = null;
+
+                try {
+                    result = executeDescribeAppBlocks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            DescribeApplicationFleetAssociationsRequest request) {
+
+        return describeApplicationFleetAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            final DescribeApplicationFleetAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeApplicationFleetAssociationsRequest, DescribeApplicationFleetAssociationsResult> asyncHandler) {
+        final DescribeApplicationFleetAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeApplicationFleetAssociationsResult>() {
+            @Override
+            public DescribeApplicationFleetAssociationsResult call() throws Exception {
+                DescribeApplicationFleetAssociationsResult result = null;
+
+                try {
+                    result = executeDescribeApplicationFleetAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest request) {
+
+        return describeApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(final DescribeApplicationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler) {
+        final DescribeApplicationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeApplicationsResult>() {
+            @Override
+            public DescribeApplicationsResult call() throws Exception {
+                DescribeApplicationsResult result = null;
+
+                try {
+                    result = executeDescribeApplications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1333,6 +1599,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeDisableUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(DisassociateApplicationFleetRequest request) {
+
+        return disassociateApplicationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(final DisassociateApplicationFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateApplicationFleetRequest, DisassociateApplicationFleetResult> asyncHandler) {
+        final DisassociateApplicationFleetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateApplicationFleetResult>() {
+            @Override
+            public DisassociateApplicationFleetResult call() throws Exception {
+                DisassociateApplicationFleetResult result = null;
+
+                try {
+                    result = executeDisassociateApplicationFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1729,6 +2028,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
+
+        return updateApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(final UpdateApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+        final UpdateApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApplicationResult>() {
+            @Override
+            public UpdateApplicationResult call() throws Exception {
+                UpdateApplicationResult result = null;
+
+                try {
+                    result = executeUpdateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -48,9 +48,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String jobName;
     /**
      * <p>
-     * The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
+     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
      * </p>
      */
     private Long createdAt;
@@ -232,16 +232,16 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
+     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *        the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *        child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *        state.
+     *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     *        called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        <code>PENDING</code> state.
      */
 
     public void setCreatedAt(Long createdAt) {
@@ -250,15 +250,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
+     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
      * </p>
      * 
-     * @return The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *         the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *         child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *         state.
+     * @return The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
+     *         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     *         called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     *         <code>PENDING</code> state.
      */
 
     public Long getCreatedAt() {
@@ -267,16 +267,16 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
+     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *        the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *        child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *        state.
+     *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     *        called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        <code>PENDING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

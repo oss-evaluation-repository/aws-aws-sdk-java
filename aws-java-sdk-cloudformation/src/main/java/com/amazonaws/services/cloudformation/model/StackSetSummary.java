@@ -121,6 +121,12 @@ public class StackSetSummary implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date lastDriftCheckTimestamp;
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     */
+    private ManagedExecution managedExecution;
 
     /**
      * <p>
@@ -994,6 +1000,49 @@ public class StackSetSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     */
+
+    public void setManagedExecution(ManagedExecution managedExecution) {
+        this.managedExecution = managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @return Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *         operations.
+     */
+
+    public ManagedExecution getManagedExecution() {
+        return this.managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetSummary withManagedExecution(ManagedExecution managedExecution) {
+        setManagedExecution(managedExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1020,7 +1069,9 @@ public class StackSetSummary implements Serializable, Cloneable {
         if (getDriftStatus() != null)
             sb.append("DriftStatus: ").append(getDriftStatus()).append(",");
         if (getLastDriftCheckTimestamp() != null)
-            sb.append("LastDriftCheckTimestamp: ").append(getLastDriftCheckTimestamp());
+            sb.append("LastDriftCheckTimestamp: ").append(getLastDriftCheckTimestamp()).append(",");
+        if (getManagedExecution() != null)
+            sb.append("ManagedExecution: ").append(getManagedExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -1067,6 +1118,10 @@ public class StackSetSummary implements Serializable, Cloneable {
             return false;
         if (other.getLastDriftCheckTimestamp() != null && other.getLastDriftCheckTimestamp().equals(this.getLastDriftCheckTimestamp()) == false)
             return false;
+        if (other.getManagedExecution() == null ^ this.getManagedExecution() == null)
+            return false;
+        if (other.getManagedExecution() != null && other.getManagedExecution().equals(this.getManagedExecution()) == false)
+            return false;
         return true;
     }
 
@@ -1083,6 +1138,7 @@ public class StackSetSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
         hashCode = prime * hashCode + ((getLastDriftCheckTimestamp() == null) ? 0 : getLastDriftCheckTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getManagedExecution() == null) ? 0 : getManagedExecution().hashCode());
         return hashCode;
     }
 

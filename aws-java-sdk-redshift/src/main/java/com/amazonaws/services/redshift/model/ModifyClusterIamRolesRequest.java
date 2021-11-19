@@ -46,6 +46,13 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeIamRoles;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified.
+     * </p>
+     */
+    private String defaultIamRoleArn;
 
     /**
      * <p>
@@ -250,6 +257,52 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was last modified.
+     */
+
+    public void setDefaultIamRoleArn(String defaultIamRoleArn) {
+        this.defaultIamRoleArn = defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *         was last modified.
+     */
+
+    public String getDefaultIamRoleArn() {
+        return this.defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterIamRolesRequest withDefaultIamRoleArn(String defaultIamRoleArn) {
+        setDefaultIamRoleArn(defaultIamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +319,9 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
         if (getAddIamRoles() != null)
             sb.append("AddIamRoles: ").append(getAddIamRoles()).append(",");
         if (getRemoveIamRoles() != null)
-            sb.append("RemoveIamRoles: ").append(getRemoveIamRoles());
+            sb.append("RemoveIamRoles: ").append(getRemoveIamRoles()).append(",");
+        if (getDefaultIamRoleArn() != null)
+            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +348,10 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRemoveIamRoles() != null && other.getRemoveIamRoles().equals(this.getRemoveIamRoles()) == false)
             return false;
+        if (other.getDefaultIamRoleArn() == null ^ this.getDefaultIamRoleArn() == null)
+            return false;
+        if (other.getDefaultIamRoleArn() != null && other.getDefaultIamRoleArn().equals(this.getDefaultIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +363,7 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAddIamRoles() == null) ? 0 : getAddIamRoles().hashCode());
         hashCode = prime * hashCode + ((getRemoveIamRoles() == null) ? 0 : getRemoveIamRoles().hashCode());
+        hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         return hashCode;
     }
 

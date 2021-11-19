@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum FleetType {
 
     ALWAYS_ON("ALWAYS_ON"),
-    ON_DEMAND("ON_DEMAND");
+    ON_DEMAND("ON_DEMAND"),
+    ELASTIC("ELASTIC");
 
     private String value;
 

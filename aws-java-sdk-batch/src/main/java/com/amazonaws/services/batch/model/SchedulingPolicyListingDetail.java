@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object containing the details of a scheduling policy returned in a <code>ListSchedulingPolicy</code> action.
+ * An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code>
+ * action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyListingDetail"

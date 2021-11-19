@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a scheduling policy.
+ * An object that represents a scheduling policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyDetail" target="_top">AWS API
@@ -36,8 +36,8 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. An example would be
-     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     * The Amazon Resource Name (ARN) of the scheduling policy. An example is
+     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.
      * </p>
      */
     private String arn;
@@ -49,8 +49,8 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
     private FairsharePolicy fairsharePolicy;
     /**
      * <p>
-     * The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-     * consists of a key and an optional value. For more information, see <a
+     * The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag consists of
+     * a key and an optional value. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
      * in <i>Amazon Web Services General Reference</i>.
      * </p>
@@ -99,13 +99,14 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. An example would be
-     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     * The Amazon Resource Name (ARN) of the scheduling policy. An example is
+     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.
      * </p>
      * 
      * @param arn
-     *        Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     *        The Amazon Resource Name (ARN) of the scheduling policy. An example is
      *        <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     *        .
      */
 
     public void setArn(String arn) {
@@ -114,12 +115,13 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. An example would be
-     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     * The Amazon Resource Name (ARN) of the scheduling policy. An example is
+     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * @return The Amazon Resource Name (ARN) of the scheduling policy. An example is
      *         <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     *         .
      */
 
     public String getArn() {
@@ -128,13 +130,14 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. An example would be
-     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     * The Amazon Resource Name (ARN) of the scheduling policy. An example is
+     * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.
      * </p>
      * 
      * @param arn
-     *        Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     *        The Amazon Resource Name (ARN) of the scheduling policy. An example is
      *        <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,14 +188,14 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-     * consists of a key and an optional value. For more information, see <a
+     * The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag consists of
+     * a key and an optional value. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
      * in <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each
-     *         tag consists of a key and an optional value. For more information, see <a
+     * @return The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag
+     *         consists of a key and an optional value. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         Resources</a> in <i>Amazon Web Services General Reference</i>.
      */
@@ -203,15 +206,15 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-     * consists of a key and an optional value. For more information, see <a
+     * The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag consists of
+     * a key and an optional value. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
      * in <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
-     *        The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each
-     *        tag consists of a key and an optional value. For more information, see <a
+     *        The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag
+     *        consists of a key and an optional value. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> in <i>Amazon Web Services General Reference</i>.
      */
@@ -222,15 +225,15 @@ public class SchedulingPolicyDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-     * consists of a key and an optional value. For more information, see <a
+     * The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag consists of
+     * a key and an optional value. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
      * in <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
-     *        The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each
-     *        tag consists of a key and an optional value. For more information, see <a
+     *        The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag
+     *        consists of a key and an optional value. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> in <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

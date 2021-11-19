@@ -140,6 +140,10 @@ public class StackSetStaxUnmarshaller implements Unmarshaller<StackSet, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("ManagedExecution", targetDepth)) {
+                    stackSet.setManagedExecution(ManagedExecutionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSet;

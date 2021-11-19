@@ -69,6 +69,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public CreateFunctionUrlConfigResult createFunctionUrlConfig(CreateFunctionUrlConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +105,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public DeleteFunctionEventInvokeConfigResult deleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFunctionUrlConfigResult deleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,6 +165,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public GetFunctionEventInvokeConfigResult getFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionUrlConfigResult getFunctionUrlConfig(GetFunctionUrlConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -216,6 +231,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public ListFunctionEventInvokeConfigsResult listFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFunctionUrlConfigsResult listFunctionUrlConfigs(ListFunctionUrlConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -336,6 +356,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public UpdateFunctionEventInvokeConfigResult updateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFunctionUrlConfigResult updateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

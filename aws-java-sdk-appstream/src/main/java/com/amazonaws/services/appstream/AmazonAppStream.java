@@ -125,6 +125,29 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Associates the specified application with the specified fleet. This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param associateApplicationFleetRequest
+     * @return Result of the AssociateApplicationFleet operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.AssociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateApplicationFleetResult associateApplicationFleet(AssociateApplicationFleetRequest associateApplicationFleetRequest);
+
+    /**
+     * <p>
      * Associates the specified fleet with the specified stack.
      * </p>
      * 
@@ -213,6 +236,68 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Creates an app block.
+     * </p>
+     * <p>
+     * App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3
+     * bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard
+     * disk includes the application binaries and other files necessary to launch your applications. Multiple
+     * applications can be assigned to a single app block.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createAppBlockRequest
+     * @return Result of the CreateAppBlock operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @sample AmazonAppStream.CreateAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAppBlockResult createAppBlock(CreateAppBlockRequest createAppBlockRequest);
+
+    /**
+     * <p>
+     * Creates an application.
+     * </p>
+     * <p>
+     * Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on
+     * Elastic fleet streaming instances. An application consists of the launch details, icon, and display name.
+     * Applications are associated with an app block that contains the application binaries and other files. The
+     * applications assigned to an Elastic fleet are the applications users can launch.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
      * Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required
      * to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
@@ -240,7 +325,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a fleet. A fleet consists of streaming instances that run a specified image.
+     * Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or
+     * On-Demand.
      * </p>
      * 
      * @param createFleetRequest
@@ -463,6 +549,46 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Deletes an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockRequest
+     * @return Result of the DeleteAppBlock operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAppBlockResult deleteAppBlock(DeleteAppBlockRequest deleteAppBlockRequest);
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return Result of the DeleteApplication operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
      * Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required
      * to join streaming instances to an Active Directory domain.
      * </p>
@@ -610,6 +736,59 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app blocks.
+     * </p>
+     * 
+     * @param describeAppBlocksRequest
+     * @return Result of the DescribeAppBlocks operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeAppBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAppBlocksResult describeAppBlocks(DescribeAppBlocksRequest describeAppBlocksRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName
+     * must be specified.
+     * </p>
+     * 
+     * @param describeApplicationFleetAssociationsRequest
+     * @return Result of the DescribeApplicationFleetAssociations operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.DescribeApplicationFleetAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationFleetAssociationsResult describeApplicationFleetAssociations(
+            DescribeApplicationFleetAssociationsRequest describeApplicationFleetAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more applications.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     * @return Result of the DescribeApplications operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest);
 
     /**
      * <p>
@@ -813,6 +992,25 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     DisableUserResult disableUser(DisableUserRequest disableUserRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified application from the fleet.
+     * </p>
+     * 
+     * @param disassociateApplicationFleetRequest
+     * @return Result of the DisassociateApplicationFleet operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.DisassociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateApplicationFleetResult disassociateApplicationFleet(DisassociateApplicationFleetRequest disassociateApplicationFleetRequest);
 
     /**
      * <p>
@@ -1064,6 +1262,25 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Updates the specified application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
      * Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration
      * information required to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
@@ -1091,11 +1308,35 @@ public interface AmazonAppStream {
      * Updates the specified fleet.
      * </p>
      * <p>
-     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
-     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>,
-     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>,
-     * <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet
-     * is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.
+     * </p>
+     * <p>
+     * If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Always-On and On-Demand fleet types
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+     * <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
+     * attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elastic fleet type
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+     * <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and
+     * <code>UsbDeviceFilterStrings</code> attributes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest

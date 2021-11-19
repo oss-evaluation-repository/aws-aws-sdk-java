@@ -63,6 +63,39 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Associates the specified application with the specified fleet. This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param associateApplicationFleetRequest
+     * @return A Java Future containing the result of the AssociateApplicationFleet operation returned by the service.
+     * @sample AmazonAppStreamAsync.AssociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(
+            AssociateApplicationFleetRequest associateApplicationFleetRequest);
+
+    /**
+     * <p>
+     * Associates the specified application with the specified fleet. This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param associateApplicationFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateApplicationFleet operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.AssociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(
+            AssociateApplicationFleetRequest associateApplicationFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateApplicationFleetRequest, AssociateApplicationFleetResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates the specified fleet with the specified stack.
      * </p>
      * 
@@ -193,6 +226,104 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Creates an app block.
+     * </p>
+     * <p>
+     * App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3
+     * bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard
+     * disk includes the application binaries and other files necessary to launch your applications. Multiple
+     * applications can be assigned to a single app block.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createAppBlockRequest
+     * @return A Java Future containing the result of the CreateAppBlock operation returned by the service.
+     * @sample AmazonAppStreamAsync.CreateAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest createAppBlockRequest);
+
+    /**
+     * <p>
+     * Creates an app block.
+     * </p>
+     * <p>
+     * App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3
+     * bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard
+     * disk includes the application binaries and other files necessary to launch your applications. Multiple
+     * applications can be assigned to a single app block.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createAppBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppBlock operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CreateAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest createAppBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppBlockRequest, CreateAppBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an application.
+     * </p>
+     * <p>
+     * Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on
+     * Elastic fleet streaming instances. An application consists of the launch details, icon, and display name.
+     * Applications are associated with an app block that contains the application binaries and other files. The
+     * applications assigned to an Elastic fleet are the applications users can launch.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AmazonAppStreamAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Creates an application.
+     * </p>
+     * <p>
+     * Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on
+     * Elastic fleet streaming instances. An application consists of the launch details, icon, and display name.
+     * Applications are associated with an app block that contains the application binaries and other files. The
+     * applications assigned to an Elastic fleet are the applications users can launch.
+     * </p>
+     * <p>
+     * This is only supported for Elastic fleets.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required
      * to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
@@ -226,7 +357,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
-     * Creates a fleet. A fleet consists of streaming instances that run a specified image.
+     * Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or
+     * On-Demand.
      * </p>
      * 
      * @param createFleetRequest
@@ -239,7 +371,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
-     * Creates a fleet. A fleet consists of streaming instances that run a specified image.
+     * Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or
+     * On-Demand.
      * </p>
      * 
      * @param createFleetRequest
@@ -504,6 +637,68 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Deletes an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockRequest
+     * @return A Java Future containing the result of the DeleteAppBlock operation returned by the service.
+     * @sample AmazonAppStreamAsync.DeleteAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(DeleteAppBlockRequest deleteAppBlockRequest);
+
+    /**
+     * <p>
+     * Deletes an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppBlock operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DeleteAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(DeleteAppBlockRequest deleteAppBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppBlockRequest, DeleteAppBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AmazonAppStreamAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required
      * to join streaming instances to an Active Directory domain.
      * </p>
@@ -763,6 +958,105 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app blocks.
+     * </p>
+     * 
+     * @param describeAppBlocksRequest
+     * @return A Java Future containing the result of the DescribeAppBlocks operation returned by the service.
+     * @sample AmazonAppStreamAsync.DescribeAppBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(DescribeAppBlocksRequest describeAppBlocksRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app blocks.
+     * </p>
+     * 
+     * @param describeAppBlocksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppBlocks operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeAppBlocks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(DescribeAppBlocksRequest describeAppBlocksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppBlocksRequest, DescribeAppBlocksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName
+     * must be specified.
+     * </p>
+     * 
+     * @param describeApplicationFleetAssociationsRequest
+     * @return A Java Future containing the result of the DescribeApplicationFleetAssociations operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.DescribeApplicationFleetAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            DescribeApplicationFleetAssociationsRequest describeApplicationFleetAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName
+     * must be specified.
+     * </p>
+     * 
+     * @param describeApplicationFleetAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplicationFleetAssociations operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeApplicationFleetAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            DescribeApplicationFleetAssociationsRequest describeApplicationFleetAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationFleetAssociationsRequest, DescribeApplicationFleetAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more applications.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     * @return A Java Future containing the result of the DescribeApplications operation returned by the service.
+     * @sample AmazonAppStreamAsync.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more applications.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplications operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1166,6 +1460,41 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest disableUserRequest,
             com.amazonaws.handlers.AsyncHandler<DisableUserRequest, DisableUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified application from the fleet.
+     * </p>
+     * 
+     * @param disassociateApplicationFleetRequest
+     * @return A Java Future containing the result of the DisassociateApplicationFleet operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.DisassociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(
+            DisassociateApplicationFleetRequest disassociateApplicationFleetRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified application from the fleet.
+     * </p>
+     * 
+     * @param disassociateApplicationFleetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateApplicationFleet operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.DisassociateApplicationFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(
+            DisassociateApplicationFleetRequest disassociateApplicationFleetRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApplicationFleetRequest, DisassociateApplicationFleetResult> asyncHandler);
 
     /**
      * <p>
@@ -1599,6 +1928,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Updates the specified application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonAppStreamAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the specified application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration
      * information required to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
@@ -1635,11 +1995,35 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * Updates the specified fleet.
      * </p>
      * <p>
-     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
-     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>,
-     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>,
-     * <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet
-     * is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.
+     * </p>
+     * <p>
+     * If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Always-On and On-Demand fleet types
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+     * <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
+     * attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elastic fleet type
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+     * <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and
+     * <code>UsbDeviceFilterStrings</code> attributes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest
@@ -1655,11 +2039,35 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * Updates the specified fleet.
      * </p>
      * <p>
-     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
-     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>,
-     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>,
-     * <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet
-     * is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.
+     * </p>
+     * <p>
+     * If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Always-On and On-Demand fleet types
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+     * <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
+     * attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elastic fleet type
+     * </p>
+     * <p>
+     * You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+     * <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and
+     * <code>UsbDeviceFilterStrings</code> attributes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest

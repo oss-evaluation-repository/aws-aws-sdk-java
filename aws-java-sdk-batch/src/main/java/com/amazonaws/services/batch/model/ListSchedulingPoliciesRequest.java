@@ -27,20 +27,20 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-     * parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-     * value can be between 1 and 100. If this parameter isn't used, then <code>ListSchedulingPolicies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+     * this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a
+     * single page and a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
      * <note>
@@ -54,20 +54,20 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-     * parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-     * value can be between 1 and 100. If this parameter isn't used, then <code>ListSchedulingPolicies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+     * this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a
+     * single page and a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When
-     *        this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results
-     *        in a single page and a <code>nextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>ListSchedulingPolicies</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     *        The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output.
+     *        When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code>
+     *        results in a single page and a <code>nextToken</code> response element. You can see the remaining results
+     *        of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
      *        <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
@@ -78,19 +78,19 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-     * parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-     * value can be between 1 and 100. If this parameter isn't used, then <code>ListSchedulingPolicies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+     * this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a
+     * single page and a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When
-     *         this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results
-     *         in a single page and a <code>nextToken</code> response element. The remaining results of the initial
-     *         request can be seen by sending another <code>ListSchedulingPolicies</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     * @return The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output.
+     *         When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code>
+     *         results in a single page and a <code>nextToken</code> response element. You can see the remaining results
+     *         of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
      *         <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if
      *         applicable.
      */
@@ -101,20 +101,20 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-     * parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-     * value can be between 1 and 100. If this parameter isn't used, then <code>ListSchedulingPolicies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+     * this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a
+     * single page and a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When
-     *        this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results
-     *        in a single page and a <code>nextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>ListSchedulingPolicies</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     *        The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output.
+     *        When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code>
+     *        results in a single page and a <code>nextToken</code> response element. You can see the remaining results
+     *        of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
      *        <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -127,9 +127,9 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
      * <note>
@@ -140,10 +140,11 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code>
-     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        The <code>nextToken</code> value that's returned from a previous paginated
+     *        <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results
+     *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
+     *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
+     *        to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
      *        and not for other programmatic purposes.
@@ -156,9 +157,9 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
      * <note>
@@ -168,10 +169,11 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code>
-     *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *         This value is <code>null</code> when there are no more results to return.</p> <note>
+     * @return The <code>nextToken</code> value that's returned from a previous paginated
+     *         <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results
+     *         exceeded the value of that parameter. Pagination continues from the end of the previous results that
+     *         returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
+     *         to return.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that's only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -184,9 +186,9 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
      * <note>
@@ -197,10 +199,11 @@ public class ListSchedulingPoliciesRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code>
-     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        The <code>nextToken</code> value that's returned from a previous paginated
+     *        <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results
+     *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
+     *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
+     *        to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
      *        and not for other programmatic purposes.

@@ -309,7 +309,7 @@ public interface AWSBatch {
      * Deletes the specified scheduling policy.
      * </p>
      * <p>
-     * You can't delete a scheduling policy that is used in any job queues.
+     * You can't delete a scheduling policy that's used in any job queues.
      * </p>
      * 
      * @param deleteSchedulingPolicyRequest

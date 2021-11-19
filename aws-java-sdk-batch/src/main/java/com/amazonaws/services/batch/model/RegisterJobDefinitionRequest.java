@@ -30,8 +30,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
     private String jobDefinitionName;
@@ -145,13 +145,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
-     *        and underscores are allowed.
+     *        The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public void setJobDefinitionName(String jobDefinitionName) {
@@ -160,12 +160,12 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers,
-     *         hyphens, and underscores are allowed.
+     * @return The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase
+     *         and lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public String getJobDefinitionName() {
@@ -174,13 +174,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     * lowercase letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
-     *        and underscores are allowed.
+     *        The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

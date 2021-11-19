@@ -105,6 +105,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFunctionUrlConfigResult> createFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request) {
+
+        return createFunctionUrlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFunctionUrlConfigResult> createFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFunctionUrlConfigRequest, CreateFunctionUrlConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
@@ -195,6 +208,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     public java.util.concurrent.Future<DeleteFunctionEventInvokeConfigResult> deleteFunctionEventInvokeConfigAsync(
             DeleteFunctionEventInvokeConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionEventInvokeConfigRequest, DeleteFunctionEventInvokeConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFunctionUrlConfigResult> deleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request) {
+
+        return deleteFunctionUrlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFunctionUrlConfigResult> deleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionUrlConfigRequest, DeleteFunctionUrlConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -340,6 +366,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<GetFunctionEventInvokeConfigResult> getFunctionEventInvokeConfigAsync(GetFunctionEventInvokeConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFunctionEventInvokeConfigRequest, GetFunctionEventInvokeConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionUrlConfigResult> getFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request) {
+
+        return getFunctionUrlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionUrlConfigResult> getFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionUrlConfigRequest, GetFunctionUrlConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -510,6 +549,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<ListFunctionEventInvokeConfigsResult> listFunctionEventInvokeConfigsAsync(ListFunctionEventInvokeConfigsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFunctionEventInvokeConfigsRequest, ListFunctionEventInvokeConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionUrlConfigsResult> listFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request) {
+
+        return listFunctionUrlConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionUrlConfigsResult> listFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionUrlConfigsRequest, ListFunctionUrlConfigsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -840,6 +892,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     public java.util.concurrent.Future<UpdateFunctionEventInvokeConfigResult> updateFunctionEventInvokeConfigAsync(
             UpdateFunctionEventInvokeConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFunctionEventInvokeConfigRequest, UpdateFunctionEventInvokeConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFunctionUrlConfigResult> updateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request) {
+
+        return updateFunctionUrlConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFunctionUrlConfigResult> updateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFunctionUrlConfigRequest, UpdateFunctionUrlConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -512,6 +512,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private AquaConfiguration aquaConfiguration;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     * </p>
+     */
+    private String defaultIamRoleArn;
 
     /**
      * <p>
@@ -3995,6 +4001,46 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     */
+
+    public void setDefaultIamRoleArn(String defaultIamRoleArn) {
+        this.defaultIamRoleArn = defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     */
+
+    public String getDefaultIamRoleArn() {
+        return this.defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDefaultIamRoleArn(String defaultIamRoleArn) {
+        setDefaultIamRoleArn(defaultIamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4105,7 +4151,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getTotalStorageCapacityInMegaBytes() != null)
             sb.append("TotalStorageCapacityInMegaBytes: ").append(getTotalStorageCapacityInMegaBytes()).append(",");
         if (getAquaConfiguration() != null)
-            sb.append("AquaConfiguration: ").append(getAquaConfiguration());
+            sb.append("AquaConfiguration: ").append(getAquaConfiguration()).append(",");
+        if (getDefaultIamRoleArn() != null)
+            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -4328,6 +4376,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getAquaConfiguration() != null && other.getAquaConfiguration().equals(this.getAquaConfiguration()) == false)
             return false;
+        if (other.getDefaultIamRoleArn() == null ^ this.getDefaultIamRoleArn() == null)
+            return false;
+        if (other.getDefaultIamRoleArn() != null && other.getDefaultIamRoleArn().equals(this.getDefaultIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -4386,6 +4438,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
         hashCode = prime * hashCode + ((getTotalStorageCapacityInMegaBytes() == null) ? 0 : getTotalStorageCapacityInMegaBytes().hashCode());
         hashCode = prime * hashCode + ((getAquaConfiguration() == null) ? 0 : getAquaConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         return hashCode;
     }
 

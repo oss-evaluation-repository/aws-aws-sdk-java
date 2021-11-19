@@ -187,6 +187,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("AquaConfigurationStatus", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAquaConfigurationStatus()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getDefaultIamRoleArn() != null) {
+            request.addParameter("DefaultIamRoleArn", StringUtils.fromString(restoreFromClusterSnapshotRequest.getDefaultIamRoleArn()));
+        }
+
         return request;
     }
 

@@ -27,8 +27,8 @@ public class CreateSchedulingPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     * are allowed.
+     * The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
     private String name;
@@ -56,13 +56,13 @@ public class CreateSchedulingPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     * are allowed.
+     * The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param name
-     *        The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *        underscores are allowed.
+     *        The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public void setName(String name) {
@@ -71,12 +71,12 @@ public class CreateSchedulingPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     * are allowed.
+     * The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *         underscores are allowed.
+     * @return The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and
+     *         lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public String getName() {
@@ -85,13 +85,13 @@ public class CreateSchedulingPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     * are allowed.
+     * The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param name
-     *        The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *        underscores are allowed.
+     *        The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

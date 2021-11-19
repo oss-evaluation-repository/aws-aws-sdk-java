@@ -82,6 +82,11 @@ public class StackSetSummaryStaxUnmarshaller implements Unmarshaller<StackSetSum
                     stackSetSummary.setLastDriftCheckTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ManagedExecution", targetDepth)) {
+                    stackSetSummary.setManagedExecution(ManagedExecutionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSetSummary;

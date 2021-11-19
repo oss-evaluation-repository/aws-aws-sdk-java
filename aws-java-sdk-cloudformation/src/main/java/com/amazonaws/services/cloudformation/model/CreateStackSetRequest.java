@@ -311,6 +311,12 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     */
+    private ManagedExecution managedExecution;
 
     /**
      * <p>
@@ -2800,6 +2806,49 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     */
+
+    public void setManagedExecution(ManagedExecution managedExecution) {
+        this.managedExecution = managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @return Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *         operations.
+     */
+
+    public ManagedExecution getManagedExecution() {
+        return this.managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackSetRequest withManagedExecution(ManagedExecution managedExecution) {
+        setManagedExecution(managedExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2838,7 +2887,9 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCallAs() != null)
             sb.append("CallAs: ").append(getCallAs()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getManagedExecution() != null)
+            sb.append("ManagedExecution: ").append(getManagedExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -2909,6 +2960,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getManagedExecution() == null ^ this.getManagedExecution() == null)
+            return false;
+        if (other.getManagedExecution() != null && other.getManagedExecution().equals(this.getManagedExecution()) == false)
+            return false;
         return true;
     }
 
@@ -2931,6 +2986,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
         hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getManagedExecution() == null) ? 0 : getManagedExecution().hashCode());
         return hashCode;
     }
 

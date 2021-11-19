@@ -70,8 +70,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * release.
      * </p>
      * <p>
-     * The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>, regardless of
-     * the value you specify.
+     * You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the
+     * first version number to be <code>1.0.0</code>.
      * </p>
      */
     private String publicVersionNumber;
@@ -283,8 +283,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * release.
      * </p>
      * <p>
-     * The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>, regardless of
-     * the value you specify.
+     * You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the
+     * first version number to be <code>1.0.0</code>.
      * </p>
      * 
      * @param publicVersionNumber
@@ -304,8 +304,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        release.
      *        </p>
      *        <p>
-     *        The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-     *        regardless of the value you specify.
+     *        You cannot specify a version number the first time you publish a type. CloudFormation automatically sets
+     *        the first version number to be <code>1.0.0</code>.
      */
 
     public void setPublicVersionNumber(String publicVersionNumber) {
@@ -330,8 +330,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * release.
      * </p>
      * <p>
-     * The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>, regardless of
-     * the value you specify.
+     * You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the
+     * first version number to be <code>1.0.0</code>.
      * </p>
      * 
      * @return The version number to assign to this version of the extension.</p>
@@ -350,8 +350,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         release.
      *         </p>
      *         <p>
-     *         The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-     *         regardless of the value you specify.
+     *         You cannot specify a version number the first time you publish a type. CloudFormation automatically sets
+     *         the first version number to be <code>1.0.0</code>.
      */
 
     public String getPublicVersionNumber() {
@@ -376,8 +376,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * release.
      * </p>
      * <p>
-     * The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>, regardless of
-     * the value you specify.
+     * You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the
+     * first version number to be <code>1.0.0</code>.
      * </p>
      * 
      * @param publicVersionNumber
@@ -397,8 +397,8 @@ public class PublishTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        release.
      *        </p>
      *        <p>
-     *        The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-     *        regardless of the value you specify.
+     *        You cannot specify a version number the first time you publish a type. CloudFormation automatically sets
+     *        the first version number to be <code>1.0.0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

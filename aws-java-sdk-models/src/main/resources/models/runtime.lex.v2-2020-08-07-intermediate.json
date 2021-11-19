@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -3433,8 +3433,147 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "slotElicitationStyle",
+        "c2jShape" : "StyleType",
+        "deprecated" : false,
+        "documentation" : "<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "StyleType",
+        "fluentSetterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StyleType*/",
+        "fluentSetterMethodName" : "withSlotElicitationStyle",
+        "getterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@return Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@see StyleType*/",
+        "getterMethodName" : "getSlotElicitationStyle",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "slotElicitationStyle",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "slotElicitationStyle",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SlotElicitationStyle",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@see StyleType*/",
+        "setterMethodName" : "setSlotElicitationStyle",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "slotElicitationStyle",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StyleType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "slotElicitationStyle",
+          "variableType" : "String",
+          "documentation" : "<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "SlotElicitationStyle" : {
+          "c2jName" : "slotElicitationStyle",
+          "c2jShape" : "StyleType",
+          "deprecated" : false,
+          "documentation" : "<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "StyleType",
+          "fluentSetterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StyleType*/",
+          "fluentSetterMethodName" : "withSlotElicitationStyle",
+          "getterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@return Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@see StyleType*/",
+          "getterMethodName" : "getSlotElicitationStyle",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "slotElicitationStyle",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "slotElicitationStyle",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SlotElicitationStyle",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@see StyleType*/",
+          "setterMethodName" : "setSlotElicitationStyle",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "slotElicitationStyle",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>\n@param slotElicitationStyle Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StyleType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "slotElicitationStyle",
+            "variableType" : "String",
+            "documentation" : "<p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> <ul> <li> <p>Spell by letter - \"b\" \"o\" \"b\"</p> </li> <li> <p>Spell by word - \"b as in boy\" \"o as in oscar\" \"b as in boy\"</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html\"> Using spelling to enter slot values </a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "SlotToElicit" : {
           "c2jName" : "slotToElicit",
           "c2jShape" : "NonEmptyString",
@@ -18003,6 +18142,59 @@
         "documentation" : null,
         "simpleType" : "Slot",
         "variableSetterType" : "Slot"
+      },
+      "wrapper" : false
+    },
+    "StyleType" : {
+      "c2jName" : "StyleType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "Default",
+        "value" : "Default"
+      }, {
+        "name" : "SpellByLetter",
+        "value" : "SpellByLetter"
+      }, {
+        "name" : "SpellByWord",
+        "value" : "SpellByWord"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lexruntimev2.enum.StyleType",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lexruntimev2.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "StyleType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StyleType",
+        "variableName" : "styleType",
+        "variableType" : "StyleType",
+        "documentation" : null,
+        "simpleType" : "StyleType",
+        "variableSetterType" : "StyleType"
       },
       "wrapper" : false
     },

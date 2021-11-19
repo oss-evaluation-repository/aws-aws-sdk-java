@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that are not
+ * Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't
  * included have a default weight of <code>1.0</code>.
  * </p>
  * 
@@ -31,9 +31,9 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry specifies
-     * the weight factor to use for fair share identifiers that begin with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example you cannot have one that specifies a
+     * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
+     * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
+     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -41,27 +41,27 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      * </p>
      */
     private String shareIdentifier;
     /**
      * <p>
      * The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority
-     * for compute resources. For example, jobs using a share identifier with a weight factor of 0.125 (1/8) will get 8
-     * times the compute resources of jobs using a share identifier with a weight factor of 1.
+     * for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8
+     * times the compute resources of jobs that use a share identifier with a weight factor of 1.
      * </p>
      * <p>
-     * The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     * The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      * </p>
      */
     private Float weightFactor;
 
     /**
      * <p>
-     * A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry specifies
-     * the weight factor to use for fair share identifiers that begin with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example you cannot have one that specifies a
+     * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
+     * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
+     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -69,20 +69,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
-     *        A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry
-     *        specifies the weight factor to use for fair share identifiers that begin with that prefix. The list of
-     *        fair share identifiers in a fair share policy cannot overlap. For example you cannot have one that
+     *        A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
+     *        entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
+     *        of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
      *        specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *        <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *        <p>
      *        There can be no more than 500 fair share identifiers active in a job queue.
      *        </p>
      *        <p>
-     *        The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     *        The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      */
 
     public void setShareIdentifier(String shareIdentifier) {
@@ -91,9 +91,9 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry specifies
-     * the weight factor to use for fair share identifiers that begin with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example you cannot have one that specifies a
+     * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
+     * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
+     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -101,19 +101,19 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      * </p>
      * 
-     * @return A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry
-     *         specifies the weight factor to use for fair share identifiers that begin with that prefix. The list of
-     *         fair share identifiers in a fair share policy cannot overlap. For example you cannot have one that
+     * @return A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
+     *         entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
+     *         of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
      *         specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *         <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *         <p>
      *         There can be no more than 500 fair share identifiers active in a job queue.
      *         </p>
      *         <p>
-     *         The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     *         The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      */
 
     public String getShareIdentifier() {
@@ -122,9 +122,9 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry specifies
-     * the weight factor to use for fair share identifiers that begin with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example you cannot have one that specifies a
+     * A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry
+     * specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share
+     * identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a
      * <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.
      * </p>
@@ -132,20 +132,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
      * There can be no more than 500 fair share identifiers active in a job queue.
      * </p>
      * <p>
-     * The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     * The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
-     *        A fair share identifier or fair share identifier prefix. If the string ends with '*' then this entry
-     *        specifies the weight factor to use for fair share identifiers that begin with that prefix. The list of
-     *        fair share identifiers in a fair share policy cannot overlap. For example you cannot have one that
+     *        A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this
+     *        entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list
+     *        of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that
      *        specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a
      *        <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
      *        <p>
      *        There can be no more than 500 fair share identifiers active in a job queue.
      *        </p>
      *        <p>
-     *        The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+     *        The string is limited to 255 alphanumeric characters, optionally followed by an asterisk (*).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,20 +157,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority
-     * for compute resources. For example, jobs using a share identifier with a weight factor of 0.125 (1/8) will get 8
-     * times the compute resources of jobs using a share identifier with a weight factor of 1.
+     * for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8
+     * times the compute resources of jobs that use a share identifier with a weight factor of 1.
      * </p>
      * <p>
-     * The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     * The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      * </p>
      * 
      * @param weightFactor
      *        The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher
-     *        priority for compute resources. For example, jobs using a share identifier with a weight factor of 0.125
-     *        (1/8) will get 8 times the compute resources of jobs using a share identifier with a weight factor of
+     *        priority for compute resources. For example, jobs that use a share identifier with a weight factor of
+     *        0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of
      *        1.</p>
      *        <p>
-     *        The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     *        The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      */
 
     public void setWeightFactor(Float weightFactor) {
@@ -180,19 +180,19 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority
-     * for compute resources. For example, jobs using a share identifier with a weight factor of 0.125 (1/8) will get 8
-     * times the compute resources of jobs using a share identifier with a weight factor of 1.
+     * for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8
+     * times the compute resources of jobs that use a share identifier with a weight factor of 1.
      * </p>
      * <p>
-     * The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     * The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      * </p>
      * 
      * @return The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher
-     *         priority for compute resources. For example, jobs using a share identifier with a weight factor of 0.125
-     *         (1/8) will get 8 times the compute resources of jobs using a share identifier with a weight factor of
+     *         priority for compute resources. For example, jobs that use a share identifier with a weight factor of
+     *         0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of
      *         1.</p>
      *         <p>
-     *         The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     *         The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      */
 
     public Float getWeightFactor() {
@@ -202,20 +202,20 @@ public class ShareAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority
-     * for compute resources. For example, jobs using a share identifier with a weight factor of 0.125 (1/8) will get 8
-     * times the compute resources of jobs using a share identifier with a weight factor of 1.
+     * for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8
+     * times the compute resources of jobs that use a share identifier with a weight factor of 1.
      * </p>
      * <p>
-     * The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     * The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      * </p>
      * 
      * @param weightFactor
      *        The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher
-     *        priority for compute resources. For example, jobs using a share identifier with a weight factor of 0.125
-     *        (1/8) will get 8 times the compute resources of jobs using a share identifier with a weight factor of
+     *        priority for compute resources. For example, jobs that use a share identifier with a weight factor of
+     *        0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of
      *        1.</p>
      *        <p>
-     *        The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+     *        The smallest supported value is 0.0001, and the largest supported value is 999.9999.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

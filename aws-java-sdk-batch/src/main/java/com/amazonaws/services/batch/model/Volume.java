@@ -43,9 +43,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private Host host;
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
+     * container definition <code>mountPoints</code>.
      * </p>
      */
     private String name;
@@ -141,15 +141,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
+     * container definition <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     *        numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
+     *        parameter of container definition <code>mountPoints</code>.
      */
 
     public void setName(String name) {
@@ -158,14 +158,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
+     * container definition <code>mountPoints</code>.
      * </p>
      * 
-     * @return The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *         are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *         <code>mountPoints</code>.
+     * @return The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     *         numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
+     *         parameter of container definition <code>mountPoints</code>.
      */
 
     public String getName() {
@@ -174,15 +174,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     * numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code> parameter of
+     * container definition <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        The name of the volume. It can be up to 255 letters long. It can contain uppercase and lowercase letters,
+     *        numbers, hyphens (-), and underscores (_). This name is referenced in the <code>sourceVolume</code>
+     *        parameter of container definition <code>mountPoints</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

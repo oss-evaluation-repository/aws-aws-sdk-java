@@ -64,6 +64,29 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String slotToElicit;
+    /**
+     * <p>
+     * Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can
+     * spell out their input to make it clear to your bot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Spell by letter - "b" "o" "b"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.
+     * </p>
+     */
+    private String slotElicitationStyle;
 
     /**
      * <p>
@@ -353,6 +376,197 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can
+     * spell out their input to make it clear to your bot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Spell by letter - "b" "o" "b"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.
+     * </p>
+     * 
+     * @param slotElicitationStyle
+     *        Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users
+     *        can spell out their input to make it clear to your bot.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Spell by letter - "b" "o" "b"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     *        spelling to enter slot values </a>.
+     * @see StyleType
+     */
+
+    public void setSlotElicitationStyle(String slotElicitationStyle) {
+        this.slotElicitationStyle = slotElicitationStyle;
+    }
+
+    /**
+     * <p>
+     * Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can
+     * spell out their input to make it clear to your bot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Spell by letter - "b" "o" "b"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.
+     * </p>
+     * 
+     * @return Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users
+     *         can spell out their input to make it clear to your bot.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Spell by letter - "b" "o" "b"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+     *         Using spelling to enter slot values </a>.
+     * @see StyleType
+     */
+
+    public String getSlotElicitationStyle() {
+        return this.slotElicitationStyle;
+    }
+
+    /**
+     * <p>
+     * Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can
+     * spell out their input to make it clear to your bot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Spell by letter - "b" "o" "b"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.
+     * </p>
+     * 
+     * @param slotElicitationStyle
+     *        Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users
+     *        can spell out their input to make it clear to your bot.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Spell by letter - "b" "o" "b"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     *        spelling to enter slot values </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StyleType
+     */
+
+    public DialogAction withSlotElicitationStyle(String slotElicitationStyle) {
+        setSlotElicitationStyle(slotElicitationStyle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can
+     * spell out their input to make it clear to your bot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Spell by letter - "b" "o" "b"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.
+     * </p>
+     * 
+     * @param slotElicitationStyle
+     *        Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users
+     *        can spell out their input to make it clear to your bot.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Spell by letter - "b" "o" "b"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     *        spelling to enter slot values </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StyleType
+     */
+
+    public DialogAction withSlotElicitationStyle(StyleType slotElicitationStyle) {
+        this.slotElicitationStyle = slotElicitationStyle.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -367,7 +581,9 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getSlotToElicit() != null)
-            sb.append("SlotToElicit: ").append(getSlotToElicit());
+            sb.append("SlotToElicit: ").append(getSlotToElicit()).append(",");
+        if (getSlotElicitationStyle() != null)
+            sb.append("SlotElicitationStyle: ").append(getSlotElicitationStyle());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +606,10 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSlotToElicit() != null && other.getSlotToElicit().equals(this.getSlotToElicit()) == false)
             return false;
+        if (other.getSlotElicitationStyle() == null ^ this.getSlotElicitationStyle() == null)
+            return false;
+        if (other.getSlotElicitationStyle() != null && other.getSlotElicitationStyle().equals(this.getSlotElicitationStyle()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +620,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
+        hashCode = prime * hashCode + ((getSlotElicitationStyle() == null) ? 0 : getSlotElicitationStyle().hashCode());
         return hashCode;
     }
 

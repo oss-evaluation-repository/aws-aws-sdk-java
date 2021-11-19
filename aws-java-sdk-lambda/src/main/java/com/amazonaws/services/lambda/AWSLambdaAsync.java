@@ -50,76 +50,7 @@ import com.amazonaws.services.lambda.model.*;
  * <p>
  * For a list of Region-specific endpoints that Lambda supports, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html/">Lambda endpoints and quotas </a> in the
- * <i>Amazon Web Services General Reference.</i>.
- * </p>
- * <p>
- * When making the API calls, you will need to authenticate your request by providing a signature. Lambda supports
- * signature version 4. For more information, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 signing process</a>
- * in the <i>Amazon Web Services General Reference.</i>.
- * </p>
- * <p>
- * <b>CA certificates</b>
- * </p>
- * <p>
- * Because Amazon Web Services SDKs use the CA certificates from your computer, changes to the certificates on the
- * Amazon Web Services servers can cause connection failures when you attempt to use an SDK. You can prevent these
- * failures by keeping your computer's CA certificates and operating system up-to-date. If you encounter this issue in a
- * corporate environment and do not manage your own computer, you might need to ask an administrator to assist with the
- * update process. The following list shows minimum operating system and Java versions:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Microsoft Windows versions that have updates from January 2005 or later installed contain at least one of the
- * required CAs in their trust list.
- * </p>
- * </li>
- * <li>
- * <p>
- * Mac OS X 10.4 with Java for Mac OS X 10.4 Release 5 (February 2007), Mac OS X 10.5 (October 2007), and later versions
- * contain at least one of the required CAs in their trust list.
- * </p>
- * </li>
- * <li>
- * <p>
- * Red Hat Enterprise Linux 5 (March 2007), 6, and 7 and CentOS 5, 6, and 7 all contain at least one of the required CAs
- * in their default trusted CA list.
- * </p>
- * </li>
- * <li>
- * <p>
- * Java 1.4.2_12 (May 2006), 5 Update 2 (March 2005), and all later versions, including Java 6 (December 2006), 7, and
- * 8, contain at least one of the required CAs in their default trusted CA list.
- * </p>
- * </li>
- * </ul>
- * <p>
- * When accessing the Lambda management console or Lambda API endpoints, whether through browsers or programmatically,
- * you will need to ensure your client machines support any of the following CAs:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Amazon Root CA 1
- * </p>
- * </li>
- * <li>
- * <p>
- * Starfield Services Root Certificate Authority - G2
- * </p>
- * </li>
- * <li>
- * <p>
- * Starfield Class 2 Certification Authority
- * </p>
- * </li>
- * </ul>
- * <p>
- * Root certificates from the first two authorities are available from <a
- * href="https://www.amazontrust.com/repository/">Amazon trust services</a>, but keeping your computer up-to-date is the
- * more straightforward solution. To learn more about ACM-provided certificates, see <a
- * href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon Web Services Certificate Manager FAQs.</a>
+ * Amazon Web Services General Reference.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -714,6 +645,29 @@ public interface AWSLambdaAsync extends AWSLambda {
             com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler);
 
     /**
+     * @param createFunctionUrlConfigRequest
+     * @return A Java Future containing the result of the CreateFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsync.CreateFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionUrlConfigResult> createFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest createFunctionUrlConfigRequest);
+
+    /**
+     * @param createFunctionUrlConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.CreateFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionUrlConfigResult> createFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest createFunctionUrlConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFunctionUrlConfigRequest, CreateFunctionUrlConfigResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a Lambda function <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
@@ -971,6 +925,29 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<DeleteFunctionEventInvokeConfigResult> deleteFunctionEventInvokeConfigAsync(
             DeleteFunctionEventInvokeConfigRequest deleteFunctionEventInvokeConfigRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionEventInvokeConfigRequest, DeleteFunctionEventInvokeConfigResult> asyncHandler);
+
+    /**
+     * @param deleteFunctionUrlConfigRequest
+     * @return A Java Future containing the result of the DeleteFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionUrlConfigResult> deleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest deleteFunctionUrlConfigRequest);
+
+    /**
+     * @param deleteFunctionUrlConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionUrlConfigResult> deleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest deleteFunctionUrlConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionUrlConfigRequest, DeleteFunctionUrlConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1356,6 +1333,29 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<GetFunctionEventInvokeConfigResult> getFunctionEventInvokeConfigAsync(
             GetFunctionEventInvokeConfigRequest getFunctionEventInvokeConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionEventInvokeConfigRequest, GetFunctionEventInvokeConfigResult> asyncHandler);
+
+    /**
+     * @param getFunctionUrlConfigRequest
+     * @return A Java Future containing the result of the GetFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsync.GetFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionUrlConfigResult> getFunctionUrlConfigAsync(GetFunctionUrlConfigRequest getFunctionUrlConfigRequest);
+
+    /**
+     * @param getFunctionUrlConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionUrlConfigResult> getFunctionUrlConfigAsync(GetFunctionUrlConfigRequest getFunctionUrlConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionUrlConfigRequest, GetFunctionUrlConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1840,6 +1840,29 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<ListFunctionEventInvokeConfigsResult> listFunctionEventInvokeConfigsAsync(
             ListFunctionEventInvokeConfigsRequest listFunctionEventInvokeConfigsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFunctionEventInvokeConfigsRequest, ListFunctionEventInvokeConfigsResult> asyncHandler);
+
+    /**
+     * @param listFunctionUrlConfigsRequest
+     * @return A Java Future containing the result of the ListFunctionUrlConfigs operation returned by the service.
+     * @sample AWSLambdaAsync.ListFunctionUrlConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionUrlConfigsResult> listFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest listFunctionUrlConfigsRequest);
+
+    /**
+     * @param listFunctionUrlConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFunctionUrlConfigs operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListFunctionUrlConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionUrlConfigsResult> listFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest listFunctionUrlConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionUrlConfigsRequest, ListFunctionUrlConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -3026,5 +3049,28 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<UpdateFunctionEventInvokeConfigResult> updateFunctionEventInvokeConfigAsync(
             UpdateFunctionEventInvokeConfigRequest updateFunctionEventInvokeConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFunctionEventInvokeConfigRequest, UpdateFunctionEventInvokeConfigResult> asyncHandler);
+
+    /**
+     * @param updateFunctionUrlConfigRequest
+     * @return A Java Future containing the result of the UpdateFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsync.UpdateFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionUrlConfigResult> updateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest updateFunctionUrlConfigRequest);
+
+    /**
+     * @param updateFunctionUrlConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFunctionUrlConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.UpdateFunctionUrlConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionUrlConfigResult> updateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest updateFunctionUrlConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFunctionUrlConfigRequest, UpdateFunctionUrlConfigResult> asyncHandler);
 
 }

@@ -73,20 +73,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this
-     * RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
-     * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
-     * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
-     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
+     * RabbitMQ host as the event source.
      * </p>
      * </li>
      * </ul>
@@ -144,20 +131,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this
-     * RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
-     * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
-     * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
-     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
+     * RabbitMQ host as the event source.
      * </p>
      * </li>
      * </ul>
@@ -204,22 +178,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     *        this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping
-     *        API call.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
-     *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
-     *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your
-     *        secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka
-     *        brokers.
+     *        this RabbitMQ host as the event source.
      *        </p>
      *        </li>
      * @see SourceAccessType
@@ -273,20 +232,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this
-     * RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
-     * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
-     * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
-     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
+     * RabbitMQ host as the event source.
      * </p>
      * </li>
      * </ul>
@@ -332,22 +278,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     *         this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping
-     *         API call.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager
-     *         ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and
-     *         private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your
-     *         secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka
-     *         brokers.
+     *         this RabbitMQ host as the event source.
      *         </p>
      *         </li>
      * @see SourceAccessType
@@ -401,20 +332,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this
-     * RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
-     * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
-     * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
-     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
+     * RabbitMQ host as the event source.
      * </p>
      * </li>
      * </ul>
@@ -461,22 +379,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     *        this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping
-     *        API call.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
-     *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
-     *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your
-     *        secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka
-     *        brokers.
+     *        this RabbitMQ host as the event source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -532,20 +435,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this
-     * RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of
-     * your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password
-     * (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
-     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
+     * RabbitMQ host as the event source.
      * </p>
      * </li>
      * </ul>
@@ -592,22 +482,7 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     *        this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping
-     *        API call.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN
-     *        of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
-     *        password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your
-     *        secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka
-     *        brokers.
+     *        this RabbitMQ host as the event source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -367,6 +367,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      */
     private String aquaConfigurationStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified while it was restored from a snapshot.
+     * </p>
+     */
+    private String defaultIamRoleArn;
 
     /**
      * <p>
@@ -2750,6 +2757,52 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified while it was restored from a snapshot.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was last modified while it was restored from a snapshot.
+     */
+
+    public void setDefaultIamRoleArn(String defaultIamRoleArn) {
+        this.defaultIamRoleArn = defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified while it was restored from a snapshot.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *         was last modified while it was restored from a snapshot.
+     */
+
+    public String getDefaultIamRoleArn() {
+        return this.defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last
+     * modified while it was restored from a snapshot.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was last modified while it was restored from a snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withDefaultIamRoleArn(String defaultIamRoleArn) {
+        setDefaultIamRoleArn(defaultIamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2816,7 +2869,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getAvailabilityZoneRelocation() != null)
             sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
         if (getAquaConfigurationStatus() != null)
-            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus());
+            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus()).append(",");
+        if (getDefaultIamRoleArn() != null)
+            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2946,6 +3001,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getAquaConfigurationStatus() != null && other.getAquaConfigurationStatus().equals(this.getAquaConfigurationStatus()) == false)
             return false;
+        if (other.getDefaultIamRoleArn() == null ^ this.getDefaultIamRoleArn() == null)
+            return false;
+        if (other.getDefaultIamRoleArn() != null && other.getDefaultIamRoleArn().equals(this.getDefaultIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -2982,6 +3041,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
+        hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         return hashCode;
     }
 

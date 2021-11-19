@@ -68,6 +68,12 @@ public class FleetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
     private static final MarshallingInfo<String> STREAMVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamView").build();
+    private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Platform").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentSessions").build();
+    private static final MarshallingInfo<List> USBDEVICEFILTERSTRINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsbDeviceFilterStrings").build();
 
     private static final FleetMarshaller instance = new FleetMarshaller();
 
@@ -105,6 +111,9 @@ public class FleetMarshaller {
             protocolMarshaller.marshall(fleet.getIdleDisconnectTimeoutInSeconds(), IDLEDISCONNECTTIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(fleet.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(fleet.getStreamView(), STREAMVIEW_BINDING);
+            protocolMarshaller.marshall(fleet.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(fleet.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
+            protocolMarshaller.marshall(fleet.getUsbDeviceFilterStrings(), USBDEVICEFILTERSTRINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

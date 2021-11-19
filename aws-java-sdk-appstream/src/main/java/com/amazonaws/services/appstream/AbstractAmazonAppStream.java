@@ -39,6 +39,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public AssociateApplicationFleetResult associateApplicationFleet(AssociateApplicationFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateFleetResult associateFleet(AssociateFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -55,6 +60,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public CopyImageResult copyImage(CopyImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppBlockResult createAppBlock(CreateAppBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +119,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public DeleteAppBlockResult deleteAppBlock(DeleteAppBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDirectoryConfigResult deleteDirectoryConfig(DeleteDirectoryConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +165,21 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppBlocksResult describeAppBlocks(DescribeAppBlocksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeApplicationFleetAssociationsResult describeApplicationFleetAssociations(DescribeApplicationFleetAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,6 +235,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DisableUserResult disableUser(DisableUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateApplicationFleetResult disassociateApplicationFleet(DisassociateApplicationFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -255,6 +300,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

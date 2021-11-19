@@ -28,6 +28,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(AssociateApplicationFleetRequest request) {
+
+        return associateApplicationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateApplicationFleetResult> associateApplicationFleetAsync(AssociateApplicationFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateApplicationFleetRequest, AssociateApplicationFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateFleetResult> associateFleetAsync(AssociateFleetRequest request) {
 
         return associateFleetAsync(request, null);
@@ -75,6 +88,32 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request,
             com.amazonaws.handlers.AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest request) {
+
+        return createAppBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAppBlockRequest, CreateAppBlockResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
+
+        return createApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +236,32 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(DeleteAppBlockRequest request) {
+
+        return deleteAppBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppBlockResult> deleteAppBlockAsync(DeleteAppBlockRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppBlockRequest, DeleteAppBlockResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
+
+        return deleteApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request) {
 
         return deleteDirectoryConfigAsync(request, null);
@@ -296,6 +361,47 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(DescribeAppBlocksRequest request) {
+
+        return describeAppBlocksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppBlocksResult> describeAppBlocksAsync(DescribeAppBlocksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppBlocksRequest, DescribeAppBlocksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            DescribeApplicationFleetAssociationsRequest request) {
+
+        return describeApplicationFleetAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationFleetAssociationsResult> describeApplicationFleetAssociationsAsync(
+            DescribeApplicationFleetAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationFleetAssociationsRequest, DescribeApplicationFleetAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest request) {
+
+        return describeApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -441,6 +547,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableUserRequest, DisableUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(DisassociateApplicationFleetRequest request) {
+
+        return disassociateApplicationFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateApplicationFleetResult> disassociateApplicationFleetAsync(DisassociateApplicationFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApplicationFleetRequest, DisassociateApplicationFleetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -597,6 +716,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
+
+        return updateApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

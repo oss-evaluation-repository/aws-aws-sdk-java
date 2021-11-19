@@ -50,7 +50,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
@@ -270,13 +270,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
-     *        Amazon Resource Name (ARN) of the scheduling policy. The format is
+     *        The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
      *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      */
@@ -287,12 +287,12 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * @return The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *         <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
      *         example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      */
@@ -303,13 +303,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      * </p>
      * 
      * @param schedulingPolicyArn
-     *        Amazon Resource Name (ARN) of the scheduling policy. The format is
+     *        The Amazon Resource Name (ARN) of the scheduling policy. The format is
      *        <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For
      *        example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

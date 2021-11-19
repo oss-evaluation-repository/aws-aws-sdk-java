@@ -63,8 +63,8 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy.
+     * Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      */
     private Integer schedulingPriority;
@@ -355,14 +355,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy.
+     * Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share
-     *        policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
-     *        priority.
+     *        The scheduling priority of the job definition. This only affects jobs in job queues with a fair share
+     *        policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      */
 
     public void setSchedulingPriority(Integer schedulingPriority) {
@@ -371,12 +370,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy.
+     * Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
-     * @return The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share
-     *         policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * @return The scheduling priority of the job definition. This only affects jobs in job queues with a fair share
+     *         policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling
      *         priority.
      */
 
@@ -386,14 +385,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share policy.
-     * Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.
+     * The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy.
+     * Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * </p>
      * 
      * @param schedulingPriority
-     *        The scheduling priority of the job definition. This will only affect jobs in job queues with a fair share
-     *        policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling
-     *        priority.
+     *        The scheduling priority of the job definition. This only affects jobs in job queues with a fair share
+     *        policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -128,8 +128,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Filter criteria to use in determining which extensions to return.
      * </p>
      * <p>
-     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
-     * list of types.
+     * Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     * <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an
+     * empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.
      * </p>
      */
     private TypeFilters filters;
@@ -980,15 +981,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Filter criteria to use in determining which extensions to return.
      * </p>
      * <p>
-     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
-     * list of types.
+     * Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     * <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an
+     * empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.
      * </p>
      * 
      * @param filters
      *        Filter criteria to use in determining which extensions to return.</p>
      *        <p>
-     *        If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning
-     *        the list of types.
+     *        Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     *        <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     *        returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the
+     *        desired list.
      */
 
     public void setFilters(TypeFilters filters) {
@@ -1000,14 +1004,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Filter criteria to use in determining which extensions to return.
      * </p>
      * <p>
-     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
-     * list of types.
+     * Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     * <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an
+     * empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.
      * </p>
      * 
      * @return Filter criteria to use in determining which extensions to return.</p>
      *         <p>
-     *         If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when
-     *         returning the list of types.
+     *         Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     *         <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     *         returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns
+     *         the desired list.
      */
 
     public TypeFilters getFilters() {
@@ -1019,15 +1026,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Filter criteria to use in determining which extensions to return.
      * </p>
      * <p>
-     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
-     * list of types.
+     * Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     * <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an
+     * empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.
      * </p>
      * 
      * @param filters
      *        Filter criteria to use in determining which extensions to return.</p>
      *        <p>
-     *        If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning
-     *        the list of types.
+     *        Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying
+     *        <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     *        returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the
+     *        desired list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

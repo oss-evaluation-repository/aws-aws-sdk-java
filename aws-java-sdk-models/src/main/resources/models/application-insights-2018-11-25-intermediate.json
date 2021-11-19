@@ -32108,9 +32108,6 @@
         "name" : "ORACLE",
         "value" : "ORACLE"
       }, {
-        "name" : "SAP_HANA",
-        "value" : "SAP_HANA"
-      }, {
         "name" : "SAP_HANA_MULTI_NODE",
         "value" : "SAP_HANA_MULTI_NODE"
       }, {

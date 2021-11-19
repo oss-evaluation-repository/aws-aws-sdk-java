@@ -375,6 +375,24 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String streamView;
+    /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     */
+    private String platform;
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the fleet.
+     * </p>
+     */
+    private Integer maxConcurrentSessions;
+    /**
+     * <p>
+     * The USB device filter strings associated with the fleet.
+     * </p>
+     */
+    private java.util.List<String> usbDeviceFilterStrings;
 
     /**
      * <p>
@@ -2761,6 +2779,189 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet.
+     * @see PlatformType
+     */
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     * 
+     * @return The platform of the fleet.
+     * @see PlatformType
+     */
+
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformType
+     */
+
+    public Fleet withPlatform(String platform) {
+        setPlatform(platform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet.
+     * @see PlatformType
+     */
+
+    public void setPlatform(PlatformType platform) {
+        withPlatform(platform);
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformType
+     */
+
+    public Fleet withPlatform(PlatformType platform) {
+        this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the fleet.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the fleet.
+     */
+
+    public void setMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        this.maxConcurrentSessions = maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the fleet.
+     * </p>
+     * 
+     * @return The maximum number of concurrent sessions for the fleet.
+     */
+
+    public Integer getMaxConcurrentSessions() {
+        return this.maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the fleet.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        setMaxConcurrentSessions(maxConcurrentSessions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings associated with the fleet.
+     * </p>
+     * 
+     * @return The USB device filter strings associated with the fleet.
+     */
+
+    public java.util.List<String> getUsbDeviceFilterStrings() {
+        return usbDeviceFilterStrings;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings associated with the fleet.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings associated with the fleet.
+     */
+
+    public void setUsbDeviceFilterStrings(java.util.Collection<String> usbDeviceFilterStrings) {
+        if (usbDeviceFilterStrings == null) {
+            this.usbDeviceFilterStrings = null;
+            return;
+        }
+
+        this.usbDeviceFilterStrings = new java.util.ArrayList<String>(usbDeviceFilterStrings);
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings associated with the fleet.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsbDeviceFilterStrings(java.util.Collection)} or
+     * {@link #withUsbDeviceFilterStrings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings associated with the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withUsbDeviceFilterStrings(String... usbDeviceFilterStrings) {
+        if (this.usbDeviceFilterStrings == null) {
+            setUsbDeviceFilterStrings(new java.util.ArrayList<String>(usbDeviceFilterStrings.length));
+        }
+        for (String ele : usbDeviceFilterStrings) {
+            this.usbDeviceFilterStrings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings associated with the fleet.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings associated with the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withUsbDeviceFilterStrings(java.util.Collection<String> usbDeviceFilterStrings) {
+        setUsbDeviceFilterStrings(usbDeviceFilterStrings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2811,7 +3012,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (getIamRoleArn() != null)
             sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getStreamView() != null)
-            sb.append("StreamView: ").append(getStreamView());
+            sb.append("StreamView: ").append(getStreamView()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getMaxConcurrentSessions() != null)
+            sb.append("MaxConcurrentSessions: ").append(getMaxConcurrentSessions()).append(",");
+        if (getUsbDeviceFilterStrings() != null)
+            sb.append("UsbDeviceFilterStrings: ").append(getUsbDeviceFilterStrings());
         sb.append("}");
         return sb.toString();
     }
@@ -2907,6 +3114,18 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStreamView() != null && other.getStreamView().equals(this.getStreamView()) == false)
             return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        if (other.getMaxConcurrentSessions() == null ^ this.getMaxConcurrentSessions() == null)
+            return false;
+        if (other.getMaxConcurrentSessions() != null && other.getMaxConcurrentSessions().equals(this.getMaxConcurrentSessions()) == false)
+            return false;
+        if (other.getUsbDeviceFilterStrings() == null ^ this.getUsbDeviceFilterStrings() == null)
+            return false;
+        if (other.getUsbDeviceFilterStrings() != null && other.getUsbDeviceFilterStrings().equals(this.getUsbDeviceFilterStrings()) == false)
+            return false;
         return true;
     }
 
@@ -2935,6 +3154,9 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStreamView() == null) ? 0 : getStreamView().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentSessions() == null) ? 0 : getMaxConcurrentSessions().hashCode());
+        hashCode = prime * hashCode + ((getUsbDeviceFilterStrings() == null) ? 0 : getUsbDeviceFilterStrings().hashCode());
         return hashCode;
     }
 

@@ -80,6 +80,10 @@ public class InputSettingsJsonUnmarshaller implements Unmarshaller<InputSettings
                     context.nextToken();
                     inputSettings.setNetworkInputSettings(NetworkInputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("scte35Pid", targetDepth)) {
+                    context.nextToken();
+                    inputSettings.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("smpte2038DataPreference", targetDepth)) {
                     context.nextToken();
                     inputSettings.setSmpte2038DataPreference(context.getUnmarshaller(String.class).unmarshall(context));

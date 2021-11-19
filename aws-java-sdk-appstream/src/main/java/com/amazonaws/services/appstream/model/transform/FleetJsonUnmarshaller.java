@@ -130,6 +130,20 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setStreamView(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Platform", targetDepth)) {
+                    context.nextToken();
+                    fleet.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxConcurrentSessions", targetDepth)) {
+                    context.nextToken();
+                    fleet.setMaxConcurrentSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("UsbDeviceFilterStrings", targetDepth)) {
+                    context.nextToken();
+                    fleet.setUsbDeviceFilterStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

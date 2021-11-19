@@ -299,6 +299,16 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             request.addParameter("CallAs", StringUtils.fromString(updateStackSetRequest.getCallAs()));
         }
 
+        {
+            ManagedExecution managedExecution = updateStackSetRequest.getManagedExecution();
+            if (managedExecution != null) {
+
+                if (managedExecution.getActive() != null) {
+                    request.addParameter("ManagedExecution.Active", StringUtils.fromBoolean(managedExecution.getActive()));
+                }
+            }
+        }
+
         return request;
     }
 

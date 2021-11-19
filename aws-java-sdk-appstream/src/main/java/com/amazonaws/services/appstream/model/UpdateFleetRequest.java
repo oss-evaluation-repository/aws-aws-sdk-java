@@ -214,17 +214,33 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following instance types are available for Elastic fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * </ul>
      */
     private String instanceType;
     /**
      * <p>
-     * The desired capacity for the fleet.
+     * The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * </p>
      */
     private ComputeCapacity computeCapacity;
     /**
      * <p>
-     * The VPC configuration for the fleet.
+     * The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types.
+     * Elastic fleets require that you specify at least two subnets in different availability zones.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -339,6 +355,25 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String streamView;
+    /**
+     * <p>
+     * The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * </p>
+     */
+    private String platform;
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for a fleet.
+     * </p>
+     */
+    private Integer maxConcurrentSessions;
+    /**
+     * <p>
+     * The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session,
+     * when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * </p>
+     */
+    private java.util.List<String> usbDeviceFilterStrings;
 
     /**
      * <p>
@@ -631,6 +666,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following instance types are available for Elastic fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
@@ -798,6 +848,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following instance types are available for Elastic fleets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
      *        </p>
      *        </li>
      */
@@ -977,6 +1042,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following instance types are available for Elastic fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
@@ -1143,6 +1223,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         stream.graphics-pro.16xlarge
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following instance types are available for Elastic fleets:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.medium
      *         </p>
      *         </li>
      */
@@ -1322,6 +1417,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following instance types are available for Elastic fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
@@ -1491,6 +1601,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        stream.graphics-pro.16xlarge
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following instance types are available for Elastic fleets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1501,11 +1626,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The desired capacity for the fleet.
+     * The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * </p>
      * 
      * @param computeCapacity
-     *        The desired capacity for the fleet.
+     *        The desired capacity for the fleet. This is not allowed for Elastic fleets.
      */
 
     public void setComputeCapacity(ComputeCapacity computeCapacity) {
@@ -1514,10 +1639,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The desired capacity for the fleet.
+     * The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * </p>
      * 
-     * @return The desired capacity for the fleet.
+     * @return The desired capacity for the fleet. This is not allowed for Elastic fleets.
      */
 
     public ComputeCapacity getComputeCapacity() {
@@ -1526,11 +1651,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The desired capacity for the fleet.
+     * The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * </p>
      * 
      * @param computeCapacity
-     *        The desired capacity for the fleet.
+     *        The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1541,11 +1666,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The VPC configuration for the fleet.
+     * The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types.
+     * Elastic fleets require that you specify at least two subnets in different availability zones.
      * </p>
      * 
      * @param vpcConfig
-     *        The VPC configuration for the fleet.
+     *        The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet
+     *        types. Elastic fleets require that you specify at least two subnets in different availability zones.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -1554,10 +1681,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The VPC configuration for the fleet.
+     * The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types.
+     * Elastic fleets require that you specify at least two subnets in different availability zones.
      * </p>
      * 
-     * @return The VPC configuration for the fleet.
+     * @return The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other
+     *         fleet types. Elastic fleets require that you specify at least two subnets in different availability
+     *         zones.
      */
 
     public VpcConfig getVpcConfig() {
@@ -1566,11 +1696,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The VPC configuration for the fleet.
+     * The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types.
+     * Elastic fleets require that you specify at least two subnets in different availability zones.
      * </p>
      * 
      * @param vpcConfig
-     *        The VPC configuration for the fleet.
+     *        The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet
+     *        types. Elastic fleets require that you specify at least two subnets in different availability zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2398,6 +2530,183 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * @see PlatformType
+     */
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * </p>
+     * 
+     * @return The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * @see PlatformType
+     */
+
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformType
+     */
+
+    public UpdateFleetRequest withPlatform(String platform) {
+        setPlatform(platform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * </p>
+     * 
+     * @param platform
+     *        The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformType
+     */
+
+    public UpdateFleetRequest withPlatform(PlatformType platform) {
+        this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for a fleet.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for a fleet.
+     */
+
+    public void setMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        this.maxConcurrentSessions = maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for a fleet.
+     * </p>
+     * 
+     * @return The maximum number of concurrent sessions for a fleet.
+     */
+
+    public Integer getMaxConcurrentSessions() {
+        return this.maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for a fleet.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for a fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        setMaxConcurrentSessions(maxConcurrentSessions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session,
+     * when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * </p>
+     * 
+     * @return The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming
+     *         session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+     */
+
+    public java.util.List<String> getUsbDeviceFilterStrings() {
+        return usbDeviceFilterStrings;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session,
+     * when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming
+     *        session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+     */
+
+    public void setUsbDeviceFilterStrings(java.util.Collection<String> usbDeviceFilterStrings) {
+        if (usbDeviceFilterStrings == null) {
+            this.usbDeviceFilterStrings = null;
+            return;
+        }
+
+        this.usbDeviceFilterStrings = new java.util.ArrayList<String>(usbDeviceFilterStrings);
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session,
+     * when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsbDeviceFilterStrings(java.util.Collection)} or
+     * {@link #withUsbDeviceFilterStrings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming
+     *        session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withUsbDeviceFilterStrings(String... usbDeviceFilterStrings) {
+        if (this.usbDeviceFilterStrings == null) {
+            setUsbDeviceFilterStrings(new java.util.ArrayList<String>(usbDeviceFilterStrings.length));
+        }
+        for (String ele : usbDeviceFilterStrings) {
+            this.usbDeviceFilterStrings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session,
+     * when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * </p>
+     * 
+     * @param usbDeviceFilterStrings
+     *        The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming
+     *        session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withUsbDeviceFilterStrings(java.util.Collection<String> usbDeviceFilterStrings) {
+        setUsbDeviceFilterStrings(usbDeviceFilterStrings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2442,7 +2751,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getIamRoleArn() != null)
             sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getStreamView() != null)
-            sb.append("StreamView: ").append(getStreamView());
+            sb.append("StreamView: ").append(getStreamView()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getMaxConcurrentSessions() != null)
+            sb.append("MaxConcurrentSessions: ").append(getMaxConcurrentSessions()).append(",");
+        if (getUsbDeviceFilterStrings() != null)
+            sb.append("UsbDeviceFilterStrings: ").append(getUsbDeviceFilterStrings());
         sb.append("}");
         return sb.toString();
     }
@@ -2526,6 +2841,18 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getStreamView() != null && other.getStreamView().equals(this.getStreamView()) == false)
             return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        if (other.getMaxConcurrentSessions() == null ^ this.getMaxConcurrentSessions() == null)
+            return false;
+        if (other.getMaxConcurrentSessions() != null && other.getMaxConcurrentSessions().equals(this.getMaxConcurrentSessions()) == false)
+            return false;
+        if (other.getUsbDeviceFilterStrings() == null ^ this.getUsbDeviceFilterStrings() == null)
+            return false;
+        if (other.getUsbDeviceFilterStrings() != null && other.getUsbDeviceFilterStrings().equals(this.getUsbDeviceFilterStrings()) == false)
+            return false;
         return true;
     }
 
@@ -2551,6 +2878,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStreamView() == null) ? 0 : getStreamView().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentSessions() == null) ? 0 : getMaxConcurrentSessions().hashCode());
+        hashCode = prime * hashCode + ((getUsbDeviceFilterStrings() == null) ? 0 : getUsbDeviceFilterStrings().hashCode());
         return hashCode;
     }
 

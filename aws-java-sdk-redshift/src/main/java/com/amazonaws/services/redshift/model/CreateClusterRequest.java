@@ -526,6 +526,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      */
     private String aquaConfigurationStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was
+     * created.
+     * </p>
+     */
+    private String defaultIamRoleArn;
 
     /**
      * <p>
@@ -3909,6 +3916,52 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was
+     * created.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was created.
+     */
+
+    public void setDefaultIamRoleArn(String defaultIamRoleArn) {
+        this.defaultIamRoleArn = defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was
+     * created.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *         was created.
+     */
+
+    public String getDefaultIamRoleArn() {
+        return this.defaultIamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was
+     * created.
+     * </p>
+     * 
+     * @param defaultIamRoleArn
+     *        The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster
+     *        was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withDefaultIamRoleArn(String defaultIamRoleArn) {
+        setDefaultIamRoleArn(defaultIamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3983,7 +4036,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAvailabilityZoneRelocation() != null)
             sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
         if (getAquaConfigurationStatus() != null)
-            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus());
+            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus()).append(",");
+        if (getDefaultIamRoleArn() != null)
+            sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -4129,6 +4184,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAquaConfigurationStatus() != null && other.getAquaConfigurationStatus().equals(this.getAquaConfigurationStatus()) == false)
             return false;
+        if (other.getDefaultIamRoleArn() == null ^ this.getDefaultIamRoleArn() == null)
+            return false;
+        if (other.getDefaultIamRoleArn() != null && other.getDefaultIamRoleArn().equals(this.getDefaultIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -4169,6 +4228,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
+        hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         return hashCode;
     }
 

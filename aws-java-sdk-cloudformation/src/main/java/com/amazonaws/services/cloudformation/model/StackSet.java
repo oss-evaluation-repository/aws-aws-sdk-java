@@ -156,6 +156,12 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     */
+    private ManagedExecution managedExecution;
 
     /**
      * <p>
@@ -1299,6 +1305,49 @@ public class StackSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     */
+
+    public void setManagedExecution(ManagedExecution managedExecution) {
+        this.managedExecution = managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @return Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *         operations.
+     */
+
+    public ManagedExecution getManagedExecution() {
+        return this.managedExecution;
+    }
+
+    /**
+     * <p>
+     * Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+     * </p>
+     * 
+     * @param managedExecution
+     *        Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting
+     *        operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withManagedExecution(ManagedExecution managedExecution) {
+        setManagedExecution(managedExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1339,7 +1388,9 @@ public class StackSet implements Serializable, Cloneable {
         if (getPermissionModel() != null)
             sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
         if (getOrganizationalUnitIds() != null)
-            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds());
+            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds()).append(",");
+        if (getManagedExecution() != null)
+            sb.append("ManagedExecution: ").append(getManagedExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -1415,6 +1466,10 @@ public class StackSet implements Serializable, Cloneable {
             return false;
         if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
             return false;
+        if (other.getManagedExecution() == null ^ this.getManagedExecution() == null)
+            return false;
+        if (other.getManagedExecution() != null && other.getManagedExecution().equals(this.getManagedExecution()) == false)
+            return false;
         return true;
     }
 
@@ -1438,6 +1493,7 @@ public class StackSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
         hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
+        hashCode = prime * hashCode + ((getManagedExecution() == null) ? 0 : getManagedExecution().hashCode());
         return hashCode;
     }
 

@@ -109,8 +109,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private String revisionId;
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> architectures;
@@ -697,12 +697,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      * 
      * @return The instruction set architecture that the function supports. Enter a string array with one of the valid
-     *         values (arm64 or x86_64). The default value is <code>x86_64</code>.
+     *         values. The default value is <code>x86_64</code>.
      * @see Architecture
      */
 
@@ -715,13 +715,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      * 
      * @param architectures
      *        The instruction set architecture that the function supports. Enter a string array with one of the valid
-     *        values (arm64 or x86_64). The default value is <code>x86_64</code>.
+     *        values. The default value is <code>x86_64</code>.
      * @see Architecture
      */
 
@@ -736,8 +736,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -747,7 +747,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param architectures
      *        The instruction set architecture that the function supports. Enter a string array with one of the valid
-     *        values (arm64 or x86_64). The default value is <code>x86_64</code>.
+     *        values. The default value is <code>x86_64</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
@@ -764,13 +764,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      * 
      * @param architectures
      *        The instruction set architecture that the function supports. Enter a string array with one of the valid
-     *        values (arm64 or x86_64). The default value is <code>x86_64</code>.
+     *        values. The default value is <code>x86_64</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
@@ -782,13 +782,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The instruction set architecture that the function supports. Enter a string array with one of the valid values
-     * (arm64 or x86_64). The default value is <code>x86_64</code>.
+     * The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+     * The default value is <code>x86_64</code>.
      * </p>
      * 
      * @param architectures
      *        The instruction set architecture that the function supports. Enter a string array with one of the valid
-     *        values (arm64 or x86_64). The default value is <code>x86_64</code>.
+     *        values. The default value is <code>x86_64</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */

@@ -118,16 +118,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value for the filter is the time that's before the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * <dt>AFTER_CREATED_AT</dt>
      * <dd>
      * <p>
      * The value for the filter is the time that's after the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * </dl>
@@ -553,16 +553,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value for the filter is the time that's before the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * <dt>AFTER_CREATED_AT</dt>
      * <dd>
      * <p>
      * The value for the filter is the time that's after the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * </dl>
@@ -602,7 +602,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <dd>
      *         <p>
      *         The value for the filter is the time that's before the job was created. This corresponds to the
-     *         <code>createdAt</code> value. The value is a string representation of the number of seconds since
+     *         <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
      *         00:00:00 UTC (midnight) on January 1, 1970.
      *         </p>
      *         </dd>
@@ -610,7 +610,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <dd>
      *         <p>
      *         The value for the filter is the time that's after the job was created. This corresponds to the
-     *         <code>createdAt</code> value. The value is a string representation of the number of seconds since
+     *         <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
      *         00:00:00 UTC (midnight) on January 1, 1970.
      *         </p>
      *         </dd>
@@ -656,16 +656,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value for the filter is the time that's before the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * <dt>AFTER_CREATED_AT</dt>
      * <dd>
      * <p>
      * The value for the filter is the time that's after the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * </dl>
@@ -706,16 +706,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's before the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      *        <dt>AFTER_CREATED_AT</dt>
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's after the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      */
@@ -765,16 +765,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value for the filter is the time that's before the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * <dt>AFTER_CREATED_AT</dt>
      * <dd>
      * <p>
      * The value for the filter is the time that's after the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * </dl>
@@ -820,16 +820,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's before the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      *        <dt>AFTER_CREATED_AT</dt>
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's after the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -881,16 +881,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <dd>
      * <p>
      * The value for the filter is the time that's before the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * <dt>AFTER_CREATED_AT</dt>
      * <dd>
      * <p>
      * The value for the filter is the time that's after the job was created. This corresponds to the
-     * <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-     * (midnight) on January 1, 1970.
+     * <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+     * UTC (midnight) on January 1, 1970.
      * </p>
      * </dd>
      * </dl>
@@ -931,16 +931,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's before the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      *        <dt>AFTER_CREATED_AT</dt>
      *        <dd>
      *        <p>
      *        The value for the filter is the time that's after the job was created. This corresponds to the
-     *        <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00
-     *        UTC (midnight) on January 1, 1970.
+     *        <code>createdAt</code> value. The value is a string representation of the number of milliseconds since
+     *        00:00:00 UTC (midnight) on January 1, 1970.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

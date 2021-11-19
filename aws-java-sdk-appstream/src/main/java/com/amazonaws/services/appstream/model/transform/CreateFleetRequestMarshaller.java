@@ -13,7 +13,7 @@
 package com.amazonaws.services.appstream.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -63,6 +63,12 @@ public class CreateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
     private static final MarshallingInfo<String> STREAMVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamView").build();
+    private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Platform").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentSessions").build();
+    private static final MarshallingInfo<List> USBDEVICEFILTERSTRINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsbDeviceFilterStrings").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -97,6 +103,9 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getIdleDisconnectTimeoutInSeconds(), IDLEDISCONNECTTIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getStreamView(), STREAMVIEW_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getUsbDeviceFilterStrings(), USBDEVICEFILTERSTRINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

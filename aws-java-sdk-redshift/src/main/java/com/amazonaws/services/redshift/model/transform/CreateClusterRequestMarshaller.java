@@ -214,6 +214,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("AquaConfigurationStatus", StringUtils.fromString(createClusterRequest.getAquaConfigurationStatus()));
         }
 
+        if (createClusterRequest.getDefaultIamRoleArn() != null) {
+            request.addParameter("DefaultIamRoleArn", StringUtils.fromString(createClusterRequest.getDefaultIamRoleArn()));
+        }
+
         return request;
     }
 

@@ -30,7 +30,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      * version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * </p>
@@ -77,12 +77,12 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      * version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * </p>
      * 
-     * @return A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * @return A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *         <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a
      *         short version using the form <code>${JobDefinitionName}:${Revision}</code>.
      */
@@ -93,13 +93,13 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      * version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * </p>
      * 
      * @param jobDefinitions
-     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
      */
@@ -115,7 +115,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      * version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * </p>
@@ -126,7 +126,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param jobDefinitions
-     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -144,13 +144,13 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      * version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * </p>
      * 
      * @param jobDefinitions
-     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN of the form
+     *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
      *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

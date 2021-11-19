@@ -25,8 +25,8 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      */
     private String computeEnvironmentName;
@@ -39,13 +39,13 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *        underscores are allowed.
+     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public void setComputeEnvironmentName(String computeEnvironmentName) {
@@ -54,12 +54,12 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *         underscores are allowed.
+     * @return The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *         lowercase letters, numbers, hyphens (-), and underscores (_).
      */
 
     public String getComputeEnvironmentName() {
@@ -68,13 +68,13 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     * underscores are allowed.
+     * The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase
+     * letters, numbers, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-     *        underscores are allowed.
+     *        The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+     *        lowercase letters, numbers, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
