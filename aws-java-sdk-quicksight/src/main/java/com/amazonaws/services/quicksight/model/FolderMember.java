@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An asset in a folder, such as a dashboard, analysis, or dataset.
+ * An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderMember" target="_top">AWS API
@@ -30,24 +30,24 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of an asset in the folder.
      * </p>
      */
     private String memberId;
     /**
      * <p>
-     * The type of the asset.
+     * The type of asset that it is.
      * </p>
      */
     private String memberType;
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of an asset in the folder.
      * </p>
      * 
      * @param memberId
-     *        The ID of the asset.
+     *        The ID of an asset in the folder.
      */
 
     public void setMemberId(String memberId) {
@@ -56,10 +56,10 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of an asset in the folder.
      * </p>
      * 
-     * @return The ID of the asset.
+     * @return The ID of an asset in the folder.
      */
 
     public String getMemberId() {
@@ -68,11 +68,11 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of an asset in the folder.
      * </p>
      * 
      * @param memberId
-     *        The ID of the asset.
+     *        The ID of an asset in the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the asset.
+     * The type of asset that it is.
      * </p>
      * 
      * @param memberType
-     *        The type of the asset.
+     *        The type of asset that it is.
      * @see MemberType
      */
 
@@ -97,10 +97,10 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the asset.
+     * The type of asset that it is.
      * </p>
      * 
-     * @return The type of the asset.
+     * @return The type of asset that it is.
      * @see MemberType
      */
 
@@ -110,11 +110,11 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the asset.
+     * The type of asset that it is.
      * </p>
      * 
      * @param memberType
-     *        The type of the asset.
+     *        The type of asset that it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */
@@ -126,11 +126,11 @@ public class FolderMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the asset.
+     * The type of asset that it is.
      * </p>
      * 
      * @param memberType
-     *        The type of the asset.
+     *        The type of asset that it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */

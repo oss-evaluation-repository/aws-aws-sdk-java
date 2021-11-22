@@ -38,6 +38,12 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      */
     private String key;
     /**
@@ -207,7 +213,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ExecutionStage</b>: Specify one of the following values:
+     * <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      * </p>
      * <ul>
      * <li>
@@ -230,9 +236,19 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The name of the filter.
+     *        The name of the filter.</p> <note>
+     *        <p>
+     *        The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+     *        operation, only with <code>ListCommands</code>.
+     *        </p>
      * @see CommandFilterKey
      */
 
@@ -244,8 +260,18 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      * 
-     * @return The name of the filter.
+     * @return The name of the filter.</p> <note>
+     *         <p>
+     *         The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+     *         operation, only with <code>ListCommands</code>.
+     *         </p>
      * @see CommandFilterKey
      */
 
@@ -257,9 +283,19 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The name of the filter.
+     *        The name of the filter.</p> <note>
+     *        <p>
+     *        The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+     *        operation, only with <code>ListCommands</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandFilterKey
      */
@@ -273,9 +309,19 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The name of the filter.
+     *        The name of the filter.</p> <note>
+     *        <p>
+     *        The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+     *        operation, only with <code>ListCommands</code>.
+     *        </p>
      * @see CommandFilterKey
      */
 
@@ -287,9 +333,19 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only
+     * with <code>ListCommands</code>.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The name of the filter.
+     *        The name of the filter.</p> <note>
+     *        <p>
+     *        The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+     *        operation, only with <code>ListCommands</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandFilterKey
      */
@@ -466,7 +522,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ExecutionStage</b>: Specify one of the following values:
+     * <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      * </p>
      * <ul>
      * <li>
@@ -648,7 +704,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExecutionStage</b>: Specify one of the following values:
+     *        <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      *        </p>
      *        <ul>
      *        <li>
@@ -836,7 +892,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ExecutionStage</b>: Specify one of the following values:
+     * <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      * </p>
      * <ul>
      * <li>
@@ -1018,7 +1074,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ExecutionStage</b>: Specify one of the following values:
+     *         <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      *         </p>
      *         <ul>
      *         <li>
@@ -1206,7 +1262,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ExecutionStage</b>: Specify one of the following values:
+     * <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      * </p>
      * <ul>
      * <li>
@@ -1388,7 +1444,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExecutionStage</b>: Specify one of the following values:
+     *        <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code> operations only):
      *        </p>
      *        <ul>
      *        <li>

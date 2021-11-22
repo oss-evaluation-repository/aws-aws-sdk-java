@@ -78,6 +78,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateContactFlowModuleResult createContactFlowModule(CreateContactFlowModuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateHoursOfOperationResult createHoursOfOperation(CreateHoursOfOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public CreateUserHierarchyGroupResult createUserHierarchyGroup(CreateUserHierarchyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContactFlowResult deleteContactFlow(DeleteContactFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContactFlowModuleResult deleteContactFlowModule(DeleteContactFlowModuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +194,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DescribeContactFlowResult describeContactFlow(DescribeContactFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeContactFlowModuleResult describeContactFlowModule(DescribeContactFlowModuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,6 +329,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public ListBotsResult listBots(ListBotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListContactFlowModulesResult listContactFlowModules(ListContactFlowModulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -504,6 +529,21 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateContactFlowContentResult updateContactFlowContent(UpdateContactFlowContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactFlowMetadataResult updateContactFlowMetadata(UpdateContactFlowMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactFlowModuleContentResult updateContactFlowModuleContent(UpdateContactFlowModuleContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactFlowModuleMetadataResult updateContactFlowModuleMetadata(UpdateContactFlowModuleMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

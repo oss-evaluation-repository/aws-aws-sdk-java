@@ -19,6 +19,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.finspacedata.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -29,20 +31,17 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateChangesetRequestMarshaller {
 
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> DATASETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("datasetId").build();
     private static final MarshallingInfo<String> CHANGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("changeType").build();
-    private static final MarshallingInfo<String> SOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceType").build();
     private static final MarshallingInfo<Map> SOURCEPARAMS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sourceParams").build();
-    private static final MarshallingInfo<String> FORMATTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formatType").build();
     private static final MarshallingInfo<Map> FORMATPARAMS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("formatParams").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
 
     private static final CreateChangesetRequestMarshaller instance = new CreateChangesetRequestMarshaller();
 
@@ -60,13 +59,11 @@ public class CreateChangesetRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createChangesetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createChangesetRequest.getDatasetId(), DATASETID_BINDING);
             protocolMarshaller.marshall(createChangesetRequest.getChangeType(), CHANGETYPE_BINDING);
-            protocolMarshaller.marshall(createChangesetRequest.getSourceType(), SOURCETYPE_BINDING);
             protocolMarshaller.marshall(createChangesetRequest.getSourceParams(), SOURCEPARAMS_BINDING);
-            protocolMarshaller.marshall(createChangesetRequest.getFormatType(), FORMATTYPE_BINDING);
             protocolMarshaller.marshall(createChangesetRequest.getFormatParams(), FORMATPARAMS_BINDING);
-            protocolMarshaller.marshall(createChangesetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

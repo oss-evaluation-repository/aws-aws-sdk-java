@@ -528,6 +528,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String customIamInstanceProfile;
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored for the restored DB instance.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String backupTarget;
 
     /**
      * Default constructor for RestoreDBInstanceFromDBSnapshotRequest object. Callers should use the setter or fluent
@@ -4027,6 +4042,97 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored for the restored DB instance.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+     *        <p>
+     *        Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *        Web Services Region). The default is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public void setBackupTarget(String backupTarget) {
+        this.backupTarget = backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored for the restored DB instance.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+     *         <p>
+     *         Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *         Web Services Region). The default is <code>region</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public String getBackupTarget() {
+        return this.backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored for the restored DB instance.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+     *        <p>
+     *        Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *        Web Services Region). The default is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withBackupTarget(String backupTarget) {
+        setBackupTarget(backupTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4097,7 +4203,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         if (getEnableCustomerOwnedIp() != null)
             sb.append("EnableCustomerOwnedIp: ").append(getEnableCustomerOwnedIp()).append(",");
         if (getCustomIamInstanceProfile() != null)
-            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile());
+            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile()).append(",");
+        if (getBackupTarget() != null)
+            sb.append("BackupTarget: ").append(getBackupTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -4233,6 +4341,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
             return false;
         if (other.getCustomIamInstanceProfile() != null && other.getCustomIamInstanceProfile().equals(this.getCustomIamInstanceProfile()) == false)
             return false;
+        if (other.getBackupTarget() == null ^ this.getBackupTarget() == null)
+            return false;
+        if (other.getBackupTarget() != null && other.getBackupTarget().equals(this.getBackupTarget()) == false)
+            return false;
         return true;
     }
 
@@ -4271,6 +4383,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getEnableCustomerOwnedIp() == null) ? 0 : getEnableCustomerOwnedIp().hashCode());
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         return hashCode;
     }
 

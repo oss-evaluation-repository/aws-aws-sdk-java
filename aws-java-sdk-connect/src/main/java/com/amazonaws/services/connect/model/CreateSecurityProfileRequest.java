@@ -51,7 +51,7 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     private String instanceId;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -248,10 +248,10 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -260,11 +260,11 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -273,11 +273,11 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

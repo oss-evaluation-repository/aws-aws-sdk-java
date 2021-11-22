@@ -1529,7 +1529,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAssociationId() != null)
             sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getScheduleExpression() != null)

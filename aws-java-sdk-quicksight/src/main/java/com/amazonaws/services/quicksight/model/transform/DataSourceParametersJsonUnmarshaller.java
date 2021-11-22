@@ -132,6 +132,10 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
                     context.nextToken();
                     dataSourceParameters.setAmazonOpenSearchParameters(AmazonOpenSearchParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExasolParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setExasolParameters(ExasolParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

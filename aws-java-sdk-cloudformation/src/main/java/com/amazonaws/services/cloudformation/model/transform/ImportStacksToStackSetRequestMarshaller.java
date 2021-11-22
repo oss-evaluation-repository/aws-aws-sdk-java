@@ -64,6 +64,29 @@ public class ImportStacksToStackSetRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (importStacksToStackSetRequest.getStackIdsUrl() != null) {
+            request.addParameter("StackIdsUrl", StringUtils.fromString(importStacksToStackSetRequest.getStackIdsUrl()));
+        }
+
+        if (importStacksToStackSetRequest.getOrganizationalUnitIds().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) importStacksToStackSetRequest.getOrganizationalUnitIds()).isAutoConstruct()) {
+            request.addParameter("OrganizationalUnitIds", "");
+        }
+        if (!importStacksToStackSetRequest.getOrganizationalUnitIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) importStacksToStackSetRequest.getOrganizationalUnitIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> organizationalUnitIdsList = (com.amazonaws.internal.SdkInternalList<String>) importStacksToStackSetRequest
+                    .getOrganizationalUnitIds();
+            int organizationalUnitIdsListIndex = 1;
+
+            for (String organizationalUnitIdsListValue : organizationalUnitIdsList) {
+                if (organizationalUnitIdsListValue != null) {
+                    request.addParameter("OrganizationalUnitIds.member." + organizationalUnitIdsListIndex,
+                            StringUtils.fromString(organizationalUnitIdsListValue));
+                }
+                organizationalUnitIdsListIndex++;
+            }
+        }
+
         {
             StackSetOperationPreferences operationPreferences = importStacksToStackSetRequest.getOperationPreferences();
             if (operationPreferences != null) {

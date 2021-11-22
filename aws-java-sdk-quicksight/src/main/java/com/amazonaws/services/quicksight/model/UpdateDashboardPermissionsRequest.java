@@ -49,6 +49,18 @@ public class UpdateDashboardPermissionsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.List<ResourcePermission> revokePermissions;
+    /**
+     * <p>
+     * Grants link permissions to all users in a defined namespace.
+     * </p>
+     */
+    private java.util.List<ResourcePermission> grantLinkPermissions;
+    /**
+     * <p>
+     * Revokes link permissions from all users in a defined namespace.
+     * </p>
+     */
+    private java.util.List<ResourcePermission> revokeLinkPermissions;
 
     /**
      * <p>
@@ -271,6 +283,146 @@ public class UpdateDashboardPermissionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Grants link permissions to all users in a defined namespace.
+     * </p>
+     * 
+     * @return Grants link permissions to all users in a defined namespace.
+     */
+
+    public java.util.List<ResourcePermission> getGrantLinkPermissions() {
+        return grantLinkPermissions;
+    }
+
+    /**
+     * <p>
+     * Grants link permissions to all users in a defined namespace.
+     * </p>
+     * 
+     * @param grantLinkPermissions
+     *        Grants link permissions to all users in a defined namespace.
+     */
+
+    public void setGrantLinkPermissions(java.util.Collection<ResourcePermission> grantLinkPermissions) {
+        if (grantLinkPermissions == null) {
+            this.grantLinkPermissions = null;
+            return;
+        }
+
+        this.grantLinkPermissions = new java.util.ArrayList<ResourcePermission>(grantLinkPermissions);
+    }
+
+    /**
+     * <p>
+     * Grants link permissions to all users in a defined namespace.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGrantLinkPermissions(java.util.Collection)} or {@link #withGrantLinkPermissions(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param grantLinkPermissions
+     *        Grants link permissions to all users in a defined namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardPermissionsRequest withGrantLinkPermissions(ResourcePermission... grantLinkPermissions) {
+        if (this.grantLinkPermissions == null) {
+            setGrantLinkPermissions(new java.util.ArrayList<ResourcePermission>(grantLinkPermissions.length));
+        }
+        for (ResourcePermission ele : grantLinkPermissions) {
+            this.grantLinkPermissions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Grants link permissions to all users in a defined namespace.
+     * </p>
+     * 
+     * @param grantLinkPermissions
+     *        Grants link permissions to all users in a defined namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardPermissionsRequest withGrantLinkPermissions(java.util.Collection<ResourcePermission> grantLinkPermissions) {
+        setGrantLinkPermissions(grantLinkPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Revokes link permissions from all users in a defined namespace.
+     * </p>
+     * 
+     * @return Revokes link permissions from all users in a defined namespace.
+     */
+
+    public java.util.List<ResourcePermission> getRevokeLinkPermissions() {
+        return revokeLinkPermissions;
+    }
+
+    /**
+     * <p>
+     * Revokes link permissions from all users in a defined namespace.
+     * </p>
+     * 
+     * @param revokeLinkPermissions
+     *        Revokes link permissions from all users in a defined namespace.
+     */
+
+    public void setRevokeLinkPermissions(java.util.Collection<ResourcePermission> revokeLinkPermissions) {
+        if (revokeLinkPermissions == null) {
+            this.revokeLinkPermissions = null;
+            return;
+        }
+
+        this.revokeLinkPermissions = new java.util.ArrayList<ResourcePermission>(revokeLinkPermissions);
+    }
+
+    /**
+     * <p>
+     * Revokes link permissions from all users in a defined namespace.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRevokeLinkPermissions(java.util.Collection)} or
+     * {@link #withRevokeLinkPermissions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param revokeLinkPermissions
+     *        Revokes link permissions from all users in a defined namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardPermissionsRequest withRevokeLinkPermissions(ResourcePermission... revokeLinkPermissions) {
+        if (this.revokeLinkPermissions == null) {
+            setRevokeLinkPermissions(new java.util.ArrayList<ResourcePermission>(revokeLinkPermissions.length));
+        }
+        for (ResourcePermission ele : revokeLinkPermissions) {
+            this.revokeLinkPermissions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Revokes link permissions from all users in a defined namespace.
+     * </p>
+     * 
+     * @param revokeLinkPermissions
+     *        Revokes link permissions from all users in a defined namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardPermissionsRequest withRevokeLinkPermissions(java.util.Collection<ResourcePermission> revokeLinkPermissions) {
+        setRevokeLinkPermissions(revokeLinkPermissions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,7 +441,11 @@ public class UpdateDashboardPermissionsRequest extends com.amazonaws.AmazonWebSe
         if (getGrantPermissions() != null)
             sb.append("GrantPermissions: ").append(getGrantPermissions()).append(",");
         if (getRevokePermissions() != null)
-            sb.append("RevokePermissions: ").append(getRevokePermissions());
+            sb.append("RevokePermissions: ").append(getRevokePermissions()).append(",");
+        if (getGrantLinkPermissions() != null)
+            sb.append("GrantLinkPermissions: ").append(getGrantLinkPermissions()).append(",");
+        if (getRevokeLinkPermissions() != null)
+            sb.append("RevokeLinkPermissions: ").append(getRevokeLinkPermissions());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +476,14 @@ public class UpdateDashboardPermissionsRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getRevokePermissions() != null && other.getRevokePermissions().equals(this.getRevokePermissions()) == false)
             return false;
+        if (other.getGrantLinkPermissions() == null ^ this.getGrantLinkPermissions() == null)
+            return false;
+        if (other.getGrantLinkPermissions() != null && other.getGrantLinkPermissions().equals(this.getGrantLinkPermissions()) == false)
+            return false;
+        if (other.getRevokeLinkPermissions() == null ^ this.getRevokeLinkPermissions() == null)
+            return false;
+        if (other.getRevokeLinkPermissions() != null && other.getRevokeLinkPermissions().equals(this.getRevokeLinkPermissions()) == false)
+            return false;
         return true;
     }
 
@@ -332,6 +496,8 @@ public class UpdateDashboardPermissionsRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDashboardId() == null) ? 0 : getDashboardId().hashCode());
         hashCode = prime * hashCode + ((getGrantPermissions() == null) ? 0 : getGrantPermissions().hashCode());
         hashCode = prime * hashCode + ((getRevokePermissions() == null) ? 0 : getRevokePermissions().hashCode());
+        hashCode = prime * hashCode + ((getGrantLinkPermissions() == null) ? 0 : getGrantLinkPermissions().hashCode());
+        hashCode = prime * hashCode + ((getRevokeLinkPermissions() == null) ? 0 : getRevokeLinkPermissions().hashCode());
         return hashCode;
     }
 

@@ -242,6 +242,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("CustomIamInstanceProfile", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getCustomIamInstanceProfile()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getBackupTarget() != null) {
+            request.addParameter("BackupTarget", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getBackupTarget()));
+        }
+
         return request;
     }
 

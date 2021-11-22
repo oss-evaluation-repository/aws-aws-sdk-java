@@ -25,7 +25,7 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -37,18 +37,18 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
     private FolderMember folderMember;
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -57,10 +57,10 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -69,11 +69,11 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -137,10 +137,10 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The request ID.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -149,11 +149,11 @@ public class CreateFolderMembershipResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

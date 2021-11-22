@@ -1641,7 +1641,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         if (getAutomationTargetParameterName() != null)
             sb.append("AutomationTargetParameterName: ").append(getAutomationTargetParameterName()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssociationId() != null)
             sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getTargets() != null)

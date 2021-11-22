@@ -37,6 +37,8 @@ public class ContactFlowMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("State").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class ContactFlowMarshaller {
             protocolMarshaller.marshall(contactFlow.getId(), ID_BINDING);
             protocolMarshaller.marshall(contactFlow.getName(), NAME_BINDING);
             protocolMarshaller.marshall(contactFlow.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(contactFlow.getState(), STATE_BINDING);
             protocolMarshaller.marshall(contactFlow.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(contactFlow.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(contactFlow.getTags(), TAGS_BINDING);

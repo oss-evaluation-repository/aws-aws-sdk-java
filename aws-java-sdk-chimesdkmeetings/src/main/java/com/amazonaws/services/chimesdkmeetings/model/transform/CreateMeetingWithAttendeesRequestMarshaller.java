@@ -39,6 +39,8 @@ public class CreateMeetingWithAttendeesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingHostId").build();
     private static final MarshallingInfo<String> EXTERNALMEETINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalMeetingId").build();
+    private static final MarshallingInfo<StructuredPojo> MEETINGFEATURES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingFeatures").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationsConfiguration").build();
     private static final MarshallingInfo<List> ATTENDEES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class CreateMeetingWithAttendeesRequestMarshaller {
             protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getMediaRegion(), MEDIAREGION_BINDING);
             protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getMeetingHostId(), MEETINGHOSTID_BINDING);
             protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getExternalMeetingId(), EXTERNALMEETINGID_BINDING);
+            protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getMeetingFeatures(), MEETINGFEATURES_BINDING);
             protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getNotificationsConfiguration(), NOTIFICATIONSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createMeetingWithAttendeesRequest.getAttendees(), ATTENDEES_BINDING);
         } catch (Exception e) {

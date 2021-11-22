@@ -27,7 +27,7 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      */
     private String awsAccountId;
@@ -52,11 +52,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The ID for the Amazon Web Services account that contains the folder.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -65,10 +65,10 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
-     * @return The AWS Account ID.
+     * @return The ID for the Amazon Web Services account that contains the folder.
      */
 
     public String getAwsAccountId() {
@@ -77,11 +77,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The ID for the Amazon Web Services account that contains the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -362,6 +362,42 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Creates a contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createContactFlowModuleRequest
+     * @return Result of the CreateContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidContactFlowModuleException
+     *         The problems with the module. Please fix before trying again.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateContactFlowModuleResult createContactFlowModule(CreateContactFlowModuleRequest createContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Creates hours of operation.
      * </p>
      * 
@@ -642,6 +678,59 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Deletes a contact flow for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteContactFlowRequest
+     * @return Result of the DeleteContactFlow operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteContactFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteContactFlowResult deleteContactFlow(DeleteContactFlowRequest deleteContactFlowRequest);
+
+    /**
+     * <p>
+     * Deletes the specified contact flow module.
+     * </p>
+     * 
+     * @param deleteContactFlowModuleRequest
+     * @return Result of the DeleteContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteContactFlowModuleResult deleteContactFlowModule(DeleteContactFlowModuleRequest deleteContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes an hours of operation.
      * </p>
      * 
@@ -757,7 +846,7 @@ public interface AmazonConnect {
      * @throws InternalServiceException
      *         Request processing failed because of an error or failure with the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You do not have sufficient permissions to perform this action.
      * @throws ResourceInUseException
      *         That resource is already in use. Please try another.
      * @sample AmazonConnect.DeleteSecurityProfile
@@ -876,7 +965,7 @@ public interface AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+     * Contact information remains available in Amazon Connect for 24 months, and then it is deleted.
      * </p>
      * </important>
      * 
@@ -928,6 +1017,34 @@ public interface AmazonConnect {
     DescribeContactFlowResult describeContactFlow(DescribeContactFlowRequest describeContactFlowRequest);
 
     /**
+     * <p>
+     * Describes the specified contact flow module.
+     * </p>
+     * 
+     * @param describeContactFlowModuleRequest
+     * @return Result of the DescribeContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DescribeContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeContactFlowModuleResult describeContactFlowModule(DescribeContactFlowModuleRequest describeContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Describes the hours of operation.
      * </p>
@@ -1585,6 +1702,31 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     ListBotsResult listBots(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * Provides information about the contact flow modules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listContactFlowModulesRequest
+     * @return Result of the ListContactFlowModules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListContactFlowModulesResult listContactFlowModules(ListContactFlowModulesRequest listContactFlowModulesRequest);
 
     /**
      * <p>
@@ -2376,7 +2518,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Initiates a contact flow to start a new task immediately or at a future date and time.
+     * Initiates a contact flow to start a new task.
      * </p>
      * 
      * @param startTaskContactRequest
@@ -2587,7 +2729,7 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Adds or updates user defined contact information associated with the specified contact. At least one field to be
+     * Adds or updates user-defined contact information associated with the specified contact. At least one field to be
      * updated must be present in the request.
      * </p>
      * <important>
@@ -2686,6 +2828,83 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Updates metadata about specified contact flow.
+     * </p>
+     * 
+     * @param updateContactFlowMetadataRequest
+     * @return Result of the UpdateContactFlowMetadata operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateContactFlowMetadataResult updateContactFlowMetadata(UpdateContactFlowMetadataRequest updateContactFlowMetadataRequest);
+
+    /**
+     * <p>
+     * Updates specified contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param updateContactFlowModuleContentRequest
+     * @return Result of the UpdateContactFlowModuleContent operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidContactFlowModuleException
+     *         The problems with the module. Please fix before trying again.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowModuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateContactFlowModuleContentResult updateContactFlowModuleContent(UpdateContactFlowModuleContentRequest updateContactFlowModuleContentRequest);
+
+    /**
+     * <p>
+     * Updates metadata about specified contact flow module.
+     * </p>
+     * 
+     * @param updateContactFlowModuleMetadataRequest
+     * @return Result of the UpdateContactFlowModuleMetadata operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowModuleMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateContactFlowModuleMetadataResult updateContactFlowModuleMetadata(UpdateContactFlowModuleMetadataRequest updateContactFlowModuleMetadataRequest);
+
+    /**
+     * <p>
      * The name of the contact flow.
      * </p>
      * <p>
@@ -2739,6 +2958,9 @@ public interface AmazonConnect {
     UpdateContactScheduleResult updateContactSchedule(UpdateContactScheduleRequest updateContactScheduleRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates the hours of operation.
      * </p>

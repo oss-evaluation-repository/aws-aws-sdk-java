@@ -427,6 +427,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(CreateContactFlowModuleRequest request) {
+
+        return createContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(final CreateContactFlowModuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactFlowModuleRequest, CreateContactFlowModuleResult> asyncHandler) {
+        final CreateContactFlowModuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactFlowModuleResult>() {
+            @Override
+            public CreateContactFlowModuleResult call() throws Exception {
+                CreateContactFlowModuleResult result = null;
+
+                try {
+                    result = executeCreateContactFlowModule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(CreateHoursOfOperationRequest request) {
 
         return createHoursOfOperationAsync(request, null);
@@ -741,6 +774,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeCreateUserHierarchyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(DeleteContactFlowRequest request) {
+
+        return deleteContactFlowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(final DeleteContactFlowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactFlowRequest, DeleteContactFlowResult> asyncHandler) {
+        final DeleteContactFlowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactFlowResult>() {
+            @Override
+            public DeleteContactFlowResult call() throws Exception {
+                DeleteContactFlowResult result = null;
+
+                try {
+                    result = executeDeleteContactFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(DeleteContactFlowModuleRequest request) {
+
+        return deleteContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(final DeleteContactFlowModuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactFlowModuleRequest, DeleteContactFlowModuleResult> asyncHandler) {
+        final DeleteContactFlowModuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactFlowModuleResult>() {
+            @Override
+            public DeleteContactFlowModuleResult call() throws Exception {
+                DeleteContactFlowModuleResult result = null;
+
+                try {
+                    result = executeDeleteContactFlowModule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1104,6 +1203,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDescribeContactFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(DescribeContactFlowModuleRequest request) {
+
+        return describeContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(final DescribeContactFlowModuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContactFlowModuleRequest, DescribeContactFlowModuleResult> asyncHandler) {
+        final DescribeContactFlowModuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContactFlowModuleResult>() {
+            @Override
+            public DescribeContactFlowModuleResult call() throws Exception {
+                DescribeContactFlowModuleResult result = null;
+
+                try {
+                    result = executeDescribeContactFlowModule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1969,6 +2101,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeListBots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(ListContactFlowModulesRequest request) {
+
+        return listContactFlowModulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(final ListContactFlowModulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContactFlowModulesRequest, ListContactFlowModulesResult> asyncHandler) {
+        final ListContactFlowModulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContactFlowModulesResult>() {
+            @Override
+            public ListContactFlowModulesResult call() throws Exception {
+                ListContactFlowModulesResult result = null;
+
+                try {
+                    result = executeListContactFlowModules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3257,6 +3422,108 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeUpdateContactFlowContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(UpdateContactFlowMetadataRequest request) {
+
+        return updateContactFlowMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(final UpdateContactFlowMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactFlowMetadataRequest, UpdateContactFlowMetadataResult> asyncHandler) {
+        final UpdateContactFlowMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactFlowMetadataResult>() {
+            @Override
+            public UpdateContactFlowMetadataResult call() throws Exception {
+                UpdateContactFlowMetadataResult result = null;
+
+                try {
+                    result = executeUpdateContactFlowMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(UpdateContactFlowModuleContentRequest request) {
+
+        return updateContactFlowModuleContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(
+            final UpdateContactFlowModuleContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleContentRequest, UpdateContactFlowModuleContentResult> asyncHandler) {
+        final UpdateContactFlowModuleContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactFlowModuleContentResult>() {
+            @Override
+            public UpdateContactFlowModuleContentResult call() throws Exception {
+                UpdateContactFlowModuleContentResult result = null;
+
+                try {
+                    result = executeUpdateContactFlowModuleContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            UpdateContactFlowModuleMetadataRequest request) {
+
+        return updateContactFlowModuleMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            final UpdateContactFlowModuleMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleMetadataRequest, UpdateContactFlowModuleMetadataResult> asyncHandler) {
+        final UpdateContactFlowModuleMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactFlowModuleMetadataResult>() {
+            @Override
+            public UpdateContactFlowModuleMetadataResult call() throws Exception {
+                UpdateContactFlowModuleMetadataResult result = null;
+
+                try {
+                    result = executeUpdateContactFlowModuleMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

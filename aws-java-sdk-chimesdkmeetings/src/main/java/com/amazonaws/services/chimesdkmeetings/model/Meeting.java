@@ -63,6 +63,12 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MediaPlacement mediaPlacement;
+    /**
+     * <p>
+     * The features available to a meeting, such as Amazon Voice Focus.
+     * </p>
+     */
+    private MeetingFeaturesConfiguration meetingFeatures;
 
     /**
      * <p>
@@ -295,6 +301,46 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The features available to a meeting, such as Amazon Voice Focus.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        The features available to a meeting, such as Amazon Voice Focus.
+     */
+
+    public void setMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        this.meetingFeatures = meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * The features available to a meeting, such as Amazon Voice Focus.
+     * </p>
+     * 
+     * @return The features available to a meeting, such as Amazon Voice Focus.
+     */
+
+    public MeetingFeaturesConfiguration getMeetingFeatures() {
+        return this.meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * The features available to a meeting, such as Amazon Voice Focus.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        The features available to a meeting, such as Amazon Voice Focus.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Meeting withMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        setMeetingFeatures(meetingFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -315,7 +361,9 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
         if (getMediaRegion() != null)
             sb.append("MediaRegion: ").append(getMediaRegion()).append(",");
         if (getMediaPlacement() != null)
-            sb.append("MediaPlacement: ").append(getMediaPlacement());
+            sb.append("MediaPlacement: ").append(getMediaPlacement()).append(",");
+        if (getMeetingFeatures() != null)
+            sb.append("MeetingFeatures: ").append(getMeetingFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +398,10 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMediaPlacement() != null && other.getMediaPlacement().equals(this.getMediaPlacement()) == false)
             return false;
+        if (other.getMeetingFeatures() == null ^ this.getMeetingFeatures() == null)
+            return false;
+        if (other.getMeetingFeatures() != null && other.getMeetingFeatures().equals(this.getMeetingFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +415,7 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExternalMeetingId() == null) ? 0 : getExternalMeetingId().hashCode());
         hashCode = prime * hashCode + ((getMediaRegion() == null) ? 0 : getMediaRegion().hashCode());
         hashCode = prime * hashCode + ((getMediaPlacement() == null) ? 0 : getMediaPlacement().hashCode());
+        hashCode = prime * hashCode + ((getMeetingFeatures() == null) ? 0 : getMeetingFeatures().hashCode());
         return hashCode;
     }
 

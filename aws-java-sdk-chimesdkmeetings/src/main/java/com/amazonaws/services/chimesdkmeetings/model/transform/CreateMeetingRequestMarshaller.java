@@ -40,6 +40,8 @@ public class CreateMeetingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalMeetingId").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationsConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MEETINGFEATURES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingFeatures").build();
 
     private static final CreateMeetingRequestMarshaller instance = new CreateMeetingRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class CreateMeetingRequestMarshaller {
             protocolMarshaller.marshall(createMeetingRequest.getMeetingHostId(), MEETINGHOSTID_BINDING);
             protocolMarshaller.marshall(createMeetingRequest.getExternalMeetingId(), EXTERNALMEETINGID_BINDING);
             protocolMarshaller.marshall(createMeetingRequest.getNotificationsConfiguration(), NOTIFICATIONSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createMeetingRequest.getMeetingFeatures(), MEETINGFEATURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

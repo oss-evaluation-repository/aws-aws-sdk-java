@@ -181,8 +181,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
+     * the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -1367,13 +1367,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
+     * the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @return The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *         of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *         resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *         of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *         associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1383,14 +1383,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
+     * the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
      *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *        associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1400,14 +1400,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
+     * the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
      *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *        associated with the node group, such as the Amazon EC2 instances or subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

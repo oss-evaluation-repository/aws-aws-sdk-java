@@ -32,7 +32,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      * </p>
      * </li>
      * <li>
@@ -84,18 +84,18 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String userRole;
     /**
      * <p>
-     * The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     * The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      * </p>
      */
     private String iamArn;
     /**
      * <p>
-     * You need to use this parameter only when you register one or more users using an assumed IAMrole. You don't need
-     * to provide the session name for other scenarios, for example when you are registering an IAMuser or an Amazon
-     * QuickSight user. You can register multiple users using the same IAMrole if each user has a different session
-     * name. For more information on assuming IAMroles, see <a
+     * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need
+     * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
+     * name. For more information on assuming IAM roles, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
-     * the <i>AWS CLI Reference.</i>
+     * the <i>CLI Reference.</i>
      * </p>
      */
     private String sessionName;
@@ -146,15 +146,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * To add custom permissions to an existing user, use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * instead.
      * </p>
      * <p>
      * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
      * profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     * <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      * </p>
      * <p>
-     * Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the permissions
+     * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
      * QuickSight (admin, author, reader).
      * </p>
@@ -208,7 +210,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      * </p>
      * </li>
      * <li>
@@ -224,7 +226,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      *        </p>
      *        </li>
      *        <li>
@@ -246,7 +248,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      * </p>
      * </li>
      * <li>
@@ -261,7 +263,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     *         <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      *         </p>
      *         </li>
      *         <li>
@@ -283,7 +285,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      * </p>
      * </li>
      * <li>
@@ -299,7 +301,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      *        </p>
      *        </li>
      *        <li>
@@ -323,7 +325,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      * </p>
      * </li>
      * <li>
@@ -339,7 +341,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
      *        </p>
      *        </li>
      *        <li>
@@ -669,11 +671,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     * The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      * </p>
      * 
      * @param iamArn
-     *        The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     *        The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      */
 
     public void setIamArn(String iamArn) {
@@ -682,10 +684,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     * The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      * </p>
      * 
-     * @return The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     * @return The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      */
 
     public String getIamArn() {
@@ -694,11 +696,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     * The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      * </p>
      * 
      * @param iamArn
-     *        The ARN of the IAMuser or role that you are registering with Amazon QuickSight.
+     *        The ARN of the IAM user or role that you are registering with Amazon QuickSight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -709,21 +711,21 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * You need to use this parameter only when you register one or more users using an assumed IAMrole. You don't need
-     * to provide the session name for other scenarios, for example when you are registering an IAMuser or an Amazon
-     * QuickSight user. You can register multiple users using the same IAMrole if each user has a different session
-     * name. For more information on assuming IAMroles, see <a
+     * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need
+     * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
+     * name. For more information on assuming IAM roles, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
-     * the <i>AWS CLI Reference.</i>
+     * the <i>CLI Reference.</i>
      * </p>
      * 
      * @param sessionName
-     *        You need to use this parameter only when you register one or more users using an assumed IAMrole. You
-     *        don't need to provide the session name for other scenarios, for example when you are registering an
-     *        IAMuser or an Amazon QuickSight user. You can register multiple users using the same IAMrole if each user
-     *        has a different session name. For more information on assuming IAMroles, see <a
+     *        You need to use this parameter only when you register one or more users using an assumed IAM role. You
+     *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
+     *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
+     *        has a different session name. For more information on assuming IAM roles, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
-     *        </a> in the <i>AWS CLI Reference.</i>
+     *        </a> in the <i>CLI Reference.</i>
      */
 
     public void setSessionName(String sessionName) {
@@ -732,20 +734,20 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * You need to use this parameter only when you register one or more users using an assumed IAMrole. You don't need
-     * to provide the session name for other scenarios, for example when you are registering an IAMuser or an Amazon
-     * QuickSight user. You can register multiple users using the same IAMrole if each user has a different session
-     * name. For more information on assuming IAMroles, see <a
+     * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need
+     * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
+     * name. For more information on assuming IAM roles, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
-     * the <i>AWS CLI Reference.</i>
+     * the <i>CLI Reference.</i>
      * </p>
      * 
-     * @return You need to use this parameter only when you register one or more users using an assumed IAMrole. You
-     *         don't need to provide the session name for other scenarios, for example when you are registering an
-     *         IAMuser or an Amazon QuickSight user. You can register multiple users using the same IAMrole if each user
-     *         has a different session name. For more information on assuming IAMroles, see <a
+     * @return You need to use this parameter only when you register one or more users using an assumed IAM role. You
+     *         don't need to provide the session name for other scenarios, for example when you are registering an IAM
+     *         user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
+     *         has a different session name. For more information on assuming IAM roles, see <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
-     *         </a> in the <i>AWS CLI Reference.</i>
+     *         </a> in the <i>CLI Reference.</i>
      */
 
     public String getSessionName() {
@@ -754,21 +756,21 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * You need to use this parameter only when you register one or more users using an assumed IAMrole. You don't need
-     * to provide the session name for other scenarios, for example when you are registering an IAMuser or an Amazon
-     * QuickSight user. You can register multiple users using the same IAMrole if each user has a different session
-     * name. For more information on assuming IAMroles, see <a
+     * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need
+     * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
+     * name. For more information on assuming IAM roles, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
-     * the <i>AWS CLI Reference.</i>
+     * the <i>CLI Reference.</i>
      * </p>
      * 
      * @param sessionName
-     *        You need to use this parameter only when you register one or more users using an assumed IAMrole. You
-     *        don't need to provide the session name for other scenarios, for example when you are registering an
-     *        IAMuser or an Amazon QuickSight user. You can register multiple users using the same IAMrole if each user
-     *        has a different session name. For more information on assuming IAMroles, see <a
+     *        You need to use this parameter only when you register one or more users using an assumed IAM role. You
+     *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
+     *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
+     *        has a different session name. For more information on assuming IAM roles, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
-     *        </a> in the <i>AWS CLI Reference.</i>
+     *        </a> in the <i>CLI Reference.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -931,15 +933,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * To add custom permissions to an existing user, use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * instead.
      * </p>
      * <p>
      * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
      * profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     * <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      * </p>
      * <p>
-     * Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the permissions
+     * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
      * QuickSight (admin, author, reader).
      * </p>
@@ -974,16 +978,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *        To add custom permissions to an existing user, use
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *        instead.
      *        </p>
      *        <p>
      *        A set of custom permissions includes any combination of these restrictions. Currently, you need to create
      *        the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight
-     *        user.
+     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      *        </p>
      *        <p>
-     *        Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the
+     *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
      *        in Amazon QuickSight (admin, author, reader).
      *        </p>
@@ -1023,15 +1028,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * To add custom permissions to an existing user, use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * instead.
      * </p>
      * <p>
      * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
      * profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     * <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      * </p>
      * <p>
-     * Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the permissions
+     * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
      * QuickSight (admin, author, reader).
      * </p>
@@ -1065,16 +1072,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *         To add custom permissions to an existing user, use
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *         instead.
      *         </p>
      *         <p>
      *         A set of custom permissions includes any combination of these restrictions. Currently, you need to create
      *         the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     *         <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight
-     *         user.
+     *         <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      *         </p>
      *         <p>
-     *         Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the
+     *         Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *         permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
      *         in Amazon QuickSight (admin, author, reader).
      *         </p>
@@ -1114,15 +1122,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * To add custom permissions to an existing user, use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * instead.
      * </p>
      * <p>
      * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
      * profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     * <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      * </p>
      * <p>
-     * Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the permissions
+     * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
      * QuickSight (admin, author, reader).
      * </p>
@@ -1157,16 +1167,17 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *        To add custom permissions to an existing user, use
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *        instead.
      *        </p>
      *        <p>
      *        A set of custom permissions includes any combination of these restrictions. Currently, you need to create
      *        the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the
-     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight
-     *        user.
+     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
      *        </p>
      *        <p>
-     *        Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they override the
+     *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
      *        in Amazon QuickSight (admin, author, reader).
      *        </p>

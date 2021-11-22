@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to
- * be valid, only one of the attributes can be non-null.
+ * A tag for a column in a
+ * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a> </code>
+ * structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be
+ * non-null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnTag" target="_top">AWS API

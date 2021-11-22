@@ -33,12 +33,67 @@ public class AbstractAWSFinSpaceData implements AWSFinSpaceData {
     }
 
     @Override
+    public CreateDataViewResult createDataView(CreateDataViewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDatasetResult createDataset(CreateDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDatasetResult deleteDataset(DeleteDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetChangesetResult getChangeset(GetChangesetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataViewResult getDataView(GetDataViewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDatasetResult getDataset(GetDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProgrammaticAccessCredentialsResult getProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetWorkingLocationResult getWorkingLocation(GetWorkingLocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChangesetsResult listChangesets(ListChangesetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataViewsResult listDataViews(ListDataViewsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDatasetsResult listDatasets(ListDatasetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateChangesetResult updateChangeset(UpdateChangesetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDatasetResult updateDataset(UpdateDatasetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -15,19 +15,19 @@ package com.amazonaws.services.finspacedata.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Changeset Error Category
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ErrorCategory {
 
-    The_inputs_to_this_request_are_invalid("The_inputs_to_this_request_are_invalid"),
-    Service_limits_have_been_exceeded("Service_limits_have_been_exceeded"),
-    Missing_required_permission_to_perform_this_request("Missing_required_permission_to_perform_this_request"),
-    One_or_more_inputs_to_this_request_were_not_found("One_or_more_inputs_to_this_request_were_not_found"),
-    The_system_temporarily_lacks_sufficient_resources_to_process_the_request("The_system_temporarily_lacks_sufficient_resources_to_process_the_request"),
-    An_internal_error_has_occurred("An_internal_error_has_occurred"),
-    Cancelled("Cancelled"),
-    A_user_recoverable_error_has_occurred("A_user_recoverable_error_has_occurred");
+    VALIDATION("VALIDATION"),
+    SERVICE_QUOTA_EXCEEDED("SERVICE_QUOTA_EXCEEDED"),
+    ACCESS_DENIED("ACCESS_DENIED"),
+    RESOURCE_NOT_FOUND("RESOURCE_NOT_FOUND"),
+    THROTTLING("THROTTLING"),
+    INTERNAL_SERVICE_EXCEPTION("INTERNAL_SERVICE_EXCEPTION"),
+    CANCELLED("CANCELLED"),
+    USER_RECOVERABLE("USER_RECOVERABLE");
 
     private String value;
 

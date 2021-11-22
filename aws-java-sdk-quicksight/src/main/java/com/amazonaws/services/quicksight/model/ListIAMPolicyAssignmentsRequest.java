@@ -27,7 +27,7 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     * The ID of the Amazon Web Services account that contains these IAM policy assignments.
      * </p>
      */
     private String awsAccountId;
@@ -58,11 +58,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     * The ID of the Amazon Web Services account that contains these IAM policy assignments.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     *        The ID of the Amazon Web Services account that contains these IAM policy assignments.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -71,10 +71,10 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     * The ID of the Amazon Web Services account that contains these IAM policy assignments.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     * @return The ID of the Amazon Web Services account that contains these IAM policy assignments.
      */
 
     public String getAwsAccountId() {
@@ -83,11 +83,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     * The ID of the Amazon Web Services account that contains these IAM policy assignments.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the Amazon Web Services account that contains these IAMpolicy assignments.
+     *        The ID of the Amazon Web Services account that contains these IAM policy assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

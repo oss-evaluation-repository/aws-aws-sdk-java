@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the folder.
+ * A summary of information about an existing Amazon QuickSight folder.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderSummary" target="_top">AWS API
@@ -30,13 +30,13 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
@@ -67,11 +67,11 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      */
 
     public void setArn(String arn) {
@@ -80,10 +80,10 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the folder.
      */
 
     public String getArn() {
@@ -92,11 +92,11 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -120,10 +120,10 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -132,11 +132,11 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

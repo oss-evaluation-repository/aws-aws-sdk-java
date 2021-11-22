@@ -35,8 +35,26 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.
      * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> stackIds;
+    /**
+     * <p>
+     * The Amazon S3 URL which contains list of stack ids to be inputted.
+     * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
+     */
+    private String stackIdsUrl;
+    /**
+     * <p>
+     * The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
 
     private StackSetOperationPreferences operationPreferences;
     /**
@@ -108,9 +126,14 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.
      * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
      * 
      * @return The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a
-     *         time.
+     *         time.</p>
+     *         <p>
+     *         Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
      */
 
     public java.util.List<String> getStackIds() {
@@ -124,10 +147,15 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.
      * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
      * 
      * @param stackIds
      *        The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a
-     *        time.
+     *        time.</p>
+     *        <p>
+     *        Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
      */
 
     public void setStackIds(java.util.Collection<String> stackIds) {
@@ -144,6 +172,9 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.
      * </p>
      * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStackIds(java.util.Collection)} or {@link #withStackIds(java.util.Collection)} if you want to override
      * the existing values.
@@ -151,7 +182,9 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param stackIds
      *        The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a
-     *        time.
+     *        time.</p>
+     *        <p>
+     *        Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,15 +202,148 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.
      * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
      * 
      * @param stackIds
      *        The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a
-     *        time.
+     *        time.</p>
+     *        <p>
+     *        Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportStacksToStackSetRequest withStackIds(java.util.Collection<String> stackIds) {
         setStackIds(stackIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 URL which contains list of stack ids to be inputted.
+     * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
+     * 
+     * @param stackIdsUrl
+     *        The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     *        <p>
+     *        Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     */
+
+    public void setStackIdsUrl(String stackIdsUrl) {
+        this.stackIdsUrl = stackIdsUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 URL which contains list of stack ids to be inputted.
+     * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
+     * 
+     * @return The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     *         <p>
+     *         Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     */
+
+    public String getStackIdsUrl() {
+        return this.stackIdsUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 URL which contains list of stack ids to be inputted.
+     * </p>
+     * <p>
+     * Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * </p>
+     * 
+     * @param stackIdsUrl
+     *        The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     *        <p>
+     *        Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportStacksToStackSetRequest withStackIdsUrl(String stackIdsUrl) {
+        setStackIdsUrl(stackIdsUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * </p>
+     * 
+     * @return The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     */
+
+    public java.util.List<String> getOrganizationalUnitIds() {
+        if (organizationalUnitIds == null) {
+            organizationalUnitIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return organizationalUnitIds;
+    }
+
+    /**
+     * <p>
+     * The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     */
+
+    public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
+        if (organizationalUnitIds == null) {
+            this.organizationalUnitIds = null;
+            return;
+        }
+
+        this.organizationalUnitIds = new com.amazonaws.internal.SdkInternalList<String>(organizationalUnitIds);
+    }
+
+    /**
+     * <p>
+     * The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrganizationalUnitIds(java.util.Collection)} or
+     * {@link #withOrganizationalUnitIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportStacksToStackSetRequest withOrganizationalUnitIds(String... organizationalUnitIds) {
+        if (this.organizationalUnitIds == null) {
+            setOrganizationalUnitIds(new com.amazonaws.internal.SdkInternalList<String>(organizationalUnitIds.length));
+        }
+        for (String ele : organizationalUnitIds) {
+            this.organizationalUnitIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        The list of OU ID’s to which the stacks being imported has to be mapped as deployment target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportStacksToStackSetRequest withOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
+        setOrganizationalUnitIds(organizationalUnitIds);
         return this;
     }
 
@@ -418,6 +584,10 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
         if (getStackIds() != null)
             sb.append("StackIds: ").append(getStackIds()).append(",");
+        if (getStackIdsUrl() != null)
+            sb.append("StackIdsUrl: ").append(getStackIdsUrl()).append(",");
+        if (getOrganizationalUnitIds() != null)
+            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds()).append(",");
         if (getOperationPreferences() != null)
             sb.append("OperationPreferences: ").append(getOperationPreferences()).append(",");
         if (getOperationId() != null)
@@ -446,6 +616,14 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getStackIds() != null && other.getStackIds().equals(this.getStackIds()) == false)
             return false;
+        if (other.getStackIdsUrl() == null ^ this.getStackIdsUrl() == null)
+            return false;
+        if (other.getStackIdsUrl() != null && other.getStackIdsUrl().equals(this.getStackIdsUrl()) == false)
+            return false;
+        if (other.getOrganizationalUnitIds() == null ^ this.getOrganizationalUnitIds() == null)
+            return false;
+        if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
+            return false;
         if (other.getOperationPreferences() == null ^ this.getOperationPreferences() == null)
             return false;
         if (other.getOperationPreferences() != null && other.getOperationPreferences().equals(this.getOperationPreferences()) == false)
@@ -468,6 +646,8 @@ public class ImportStacksToStackSetRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getStackIds() == null) ? 0 : getStackIds().hashCode());
+        hashCode = prime * hashCode + ((getStackIdsUrl() == null) ? 0 : getStackIdsUrl().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The parameters for OpenSearch.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonOpenSearchParameters"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonOpenSearchParameters implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The OpenSearch domain.
+     * </p>
+     */
     private String domain;
 
     /**
+     * <p>
+     * The OpenSearch domain.
+     * </p>
+     * 
      * @param domain
+     *        The OpenSearch domain.
      */
 
     public void setDomain(String domain) {
@@ -36,7 +49,11 @@ public class AmazonOpenSearchParameters implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The OpenSearch domain.
+     * </p>
+     * 
+     * @return The OpenSearch domain.
      */
 
     public String getDomain() {
@@ -44,7 +61,12 @@ public class AmazonOpenSearchParameters implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The OpenSearch domain.
+     * </p>
+     * 
      * @param domain
+     *        The OpenSearch domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

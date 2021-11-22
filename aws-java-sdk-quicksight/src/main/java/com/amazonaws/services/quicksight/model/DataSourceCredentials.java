@@ -31,7 +31,9 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair. For more information, see <a>CredentialPair</a>.
+     * Credential pair. For more information, see
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     * .
      * </p>
      */
     private CredentialPair credentialPair;
@@ -46,11 +48,15 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair. For more information, see <a>CredentialPair</a>.
+     * Credential pair. For more information, see
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     * .
      * </p>
      * 
      * @param credentialPair
-     *        Credential pair. For more information, see <a>CredentialPair</a>.
+     *        Credential pair. For more information, see
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     *        .
      */
 
     public void setCredentialPair(CredentialPair credentialPair) {
@@ -59,10 +65,14 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair. For more information, see <a>CredentialPair</a>.
+     * Credential pair. For more information, see
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     * .
      * </p>
      * 
-     * @return Credential pair. For more information, see <a>CredentialPair</a>.
+     * @return Credential pair. For more information, see
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     *         .
      */
 
     public CredentialPair getCredentialPair() {
@@ -71,11 +81,15 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair. For more information, see <a>CredentialPair</a>.
+     * Credential pair. For more information, see
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     * .
      * </p>
      * 
      * @param credentialPair
-     *        Credential pair. For more information, see <a>CredentialPair</a>.
+     *        Credential pair. For more information, see
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

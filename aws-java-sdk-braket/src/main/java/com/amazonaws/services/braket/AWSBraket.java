@@ -43,6 +43,31 @@ public interface AWSBraket {
 
     /**
      * <p>
+     * Cancels an Amazon Braket job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @return Result of the CancelJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         An error occurred due to a conflict.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelJobResult cancelJob(CancelJobRequest cancelJobRequest);
+
+    /**
+     * <p>
      * Cancels the specified task.
      * </p>
      * 
@@ -68,6 +93,33 @@ public interface AWSBraket {
 
     /**
      * <p>
+     * Creates an Amazon Braket job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return Result of the CreateJob operation returned by the service.
+     * @throws ConflictException
+     *         An error occurred due to a conflict.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws DeviceRetiredException
+     *         The specified device has been retired.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because a service quota is exceeded.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateJobResult createJob(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
      * Creates a quantum task.
      * </p>
      * 
@@ -79,6 +131,8 @@ public interface AWSBraket {
      *         The throttling rate limit is met.
      * @throws DeviceOfflineException
      *         The specified device is currently offline.
+     * @throws DeviceRetiredException
+     *         The specified device has been retired.
      * @throws InternalServiceException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -104,10 +158,6 @@ public interface AWSBraket {
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         The throttling rate limit is met.
-     * @throws DeviceOfflineException
-     *         The specified device is currently offline.
-     * @throws DeviceRetiredException
-     *         The specified device has been retired.
      * @throws InternalServiceException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
@@ -117,6 +167,29 @@ public interface AWSBraket {
      *      Documentation</a>
      */
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified Amazon Braket job.
+     * </p>
+     * 
+     * @param getJobRequest
+     * @return Result of the GetJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.GetJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetJobResult getJob(GetJobRequest getJobRequest);
 
     /**
      * <p>
@@ -180,6 +253,27 @@ public interface AWSBraket {
      *      Documentation</a>
      */
     SearchDevicesResult searchDevices(SearchDevicesRequest searchDevicesRequest);
+
+    /**
+     * <p>
+     * Searches for Amazon Braket jobs that match the specified filter values.
+     * </p>
+     * 
+     * @param searchJobsRequest
+     * @return Result of the SearchJobs operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.SearchJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchJobsResult searchJobs(SearchJobsRequest searchJobsRequest);
 
     /**
      * <p>

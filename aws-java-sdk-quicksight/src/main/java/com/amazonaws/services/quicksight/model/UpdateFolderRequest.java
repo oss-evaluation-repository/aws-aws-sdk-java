@@ -27,13 +27,13 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder to update.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
@@ -46,11 +46,11 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder to update.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The ID for the Amazon Web Services account that contains the folder to update.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder to update.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The ID for the Amazon Web Services account that contains the folder to update.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder to update.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The ID for the Amazon Web Services account that contains the folder to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -99,10 +99,10 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -111,11 +111,11 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

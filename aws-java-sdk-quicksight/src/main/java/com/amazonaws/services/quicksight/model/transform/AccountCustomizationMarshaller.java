@@ -29,6 +29,8 @@ public class AccountCustomizationMarshaller {
 
     private static final MarshallingInfo<String> DEFAULTTHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultTheme").build();
+    private static final MarshallingInfo<String> DEFAULTEMAILCUSTOMIZATIONTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultEmailCustomizationTemplate").build();
 
     private static final AccountCustomizationMarshaller instance = new AccountCustomizationMarshaller();
 
@@ -47,6 +49,7 @@ public class AccountCustomizationMarshaller {
 
         try {
             protocolMarshaller.marshall(accountCustomization.getDefaultTheme(), DEFAULTTHEME_BINDING);
+            protocolMarshaller.marshall(accountCustomization.getDefaultEmailCustomizationTemplate(), DEFAULTEMAILCUSTOMIZATIONTEMPLATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

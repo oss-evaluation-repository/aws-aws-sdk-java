@@ -62,6 +62,12 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private NotificationsConfiguration notificationsConfiguration;
+    /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     */
+    private MeetingFeaturesConfiguration meetingFeatures;
 
     /**
      * <p>
@@ -303,6 +309,46 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        Lists the audio and video features enabled for a meeting, such as echo reduction.
+     */
+
+    public void setMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        this.meetingFeatures = meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @return Lists the audio and video features enabled for a meeting, such as echo reduction.
+     */
+
+    public MeetingFeaturesConfiguration getMeetingFeatures() {
+        return this.meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingRequest withMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        setMeetingFeatures(meetingFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -323,7 +369,9 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getExternalMeetingId() != null)
             sb.append("ExternalMeetingId: ").append("***Sensitive Data Redacted***").append(",");
         if (getNotificationsConfiguration() != null)
-            sb.append("NotificationsConfiguration: ").append(getNotificationsConfiguration());
+            sb.append("NotificationsConfiguration: ").append(getNotificationsConfiguration()).append(",");
+        if (getMeetingFeatures() != null)
+            sb.append("MeetingFeatures: ").append(getMeetingFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +406,10 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNotificationsConfiguration() != null && other.getNotificationsConfiguration().equals(this.getNotificationsConfiguration()) == false)
             return false;
+        if (other.getMeetingFeatures() == null ^ this.getMeetingFeatures() == null)
+            return false;
+        if (other.getMeetingFeatures() != null && other.getMeetingFeatures().equals(this.getMeetingFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +423,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMeetingHostId() == null) ? 0 : getMeetingHostId().hashCode());
         hashCode = prime * hashCode + ((getExternalMeetingId() == null) ? 0 : getExternalMeetingId().hashCode());
         hashCode = prime * hashCode + ((getNotificationsConfiguration() == null) ? 0 : getNotificationsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMeetingFeatures() == null) ? 0 : getMeetingFeatures().hashCode());
         return hashCode;
     }
 

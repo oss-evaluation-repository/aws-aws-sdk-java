@@ -64,6 +64,10 @@ public class ContactFlowSummaryJsonUnmarshaller implements Unmarshaller<ContactF
                     context.nextToken();
                     contactFlowSummary.setContactFlowType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ContactFlowState", targetDepth)) {
+                    context.nextToken();
+                    contactFlowSummary.setContactFlowState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

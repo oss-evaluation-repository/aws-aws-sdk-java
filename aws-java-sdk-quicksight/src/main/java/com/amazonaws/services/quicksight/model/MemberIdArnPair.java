@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that consists of the member Amazon Resource Name (ARN) and member ID.
+ * An object that consists of a member Amazon Resource Name (ARN) and a member ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MemberIdArnPair" target="_top">AWS API

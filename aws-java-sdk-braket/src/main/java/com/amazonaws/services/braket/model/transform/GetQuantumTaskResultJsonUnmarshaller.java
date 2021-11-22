@@ -69,6 +69,10 @@ public class GetQuantumTaskResultJsonUnmarshaller implements Unmarshaller<GetQua
                     context.nextToken();
                     getQuantumTaskResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jobArn", targetDepth)) {
+                    context.nextToken();
+                    getQuantumTaskResult.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("outputS3Bucket", targetDepth)) {
                     context.nextToken();
                     getQuantumTaskResult.setOutputS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of experience you want to embed. For anonymous users, you can embed an Amazon QuickSight dashboard.
+ * The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.
  * </p>
  * 
  * @see <a
@@ -31,18 +31,18 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
 
     /**
      * <p>
-     * The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     * The type of embedding experience. In this case, Amazon QuickSight dashboards.
      * </p>
      */
     private AnonymousUserDashboardEmbeddingConfiguration dashboard;
 
     /**
      * <p>
-     * The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     * The type of embedding experience. In this case, Amazon QuickSight dashboards.
      * </p>
      * 
      * @param dashboard
-     *        The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     *        The type of embedding experience. In this case, Amazon QuickSight dashboards.
      */
 
     public void setDashboard(AnonymousUserDashboardEmbeddingConfiguration dashboard) {
@@ -51,10 +51,10 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
 
     /**
      * <p>
-     * The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     * The type of embedding experience. In this case, Amazon QuickSight dashboards.
      * </p>
      * 
-     * @return The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     * @return The type of embedding experience. In this case, Amazon QuickSight dashboards.
      */
 
     public AnonymousUserDashboardEmbeddingConfiguration getDashboard() {
@@ -63,11 +63,11 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
 
     /**
      * <p>
-     * The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     * The type of embedding experience. In this case, Amazon QuickSight dashboards.
      * </p>
      * 
      * @param dashboard
-     *        The type of embedding experience. In this case, an Amazon QuickSight dashboard.
+     *        The type of embedding experience. In this case, Amazon QuickSight dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

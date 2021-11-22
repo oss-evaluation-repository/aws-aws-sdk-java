@@ -118,6 +118,15 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
      * </p>
      */
     private AutoTuneOptions autoTuneOptions;
+    /**
+     * <p>
+     * This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return
+     * the results of validation checks without actually applying the change. This flag, when set to True, specifies the
+     * deployment mechanism through which the update shall be applied on the domain. This will not actually perform the
+     * Update.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -790,6 +799,82 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return
+     * the results of validation checks without actually applying the change. This flag, when set to True, specifies the
+     * deployment mechanism through which the update shall be applied on the domain. This will not actually perform the
+     * Update.
+     * </p>
+     * 
+     * @param dryRun
+     *        This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should
+     *        return the results of validation checks without actually applying the change. This flag, when set to True,
+     *        specifies the deployment mechanism through which the update shall be applied on the domain. This will not
+     *        actually perform the Update.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return
+     * the results of validation checks without actually applying the change. This flag, when set to True, specifies the
+     * deployment mechanism through which the update shall be applied on the domain. This will not actually perform the
+     * Update.
+     * </p>
+     * 
+     * @return This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should
+     *         return the results of validation checks without actually applying the change. This flag, when set to
+     *         True, specifies the deployment mechanism through which the update shall be applied on the domain. This
+     *         will not actually perform the Update.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return
+     * the results of validation checks without actually applying the change. This flag, when set to True, specifies the
+     * deployment mechanism through which the update shall be applied on the domain. This will not actually perform the
+     * Update.
+     * </p>
+     * 
+     * @param dryRun
+     *        This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should
+     *        return the results of validation checks without actually applying the change. This flag, when set to True,
+     *        specifies the deployment mechanism through which the update shall be applied on the domain. This will not
+     *        actually perform the Update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return
+     * the results of validation checks without actually applying the change. This flag, when set to True, specifies the
+     * deployment mechanism through which the update shall be applied on the domain. This will not actually perform the
+     * Update.
+     * </p>
+     * 
+     * @return This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should
+     *         return the results of validation checks without actually applying the change. This flag, when set to
+     *         True, specifies the deployment mechanism through which the update shall be applied on the domain. This
+     *         will not actually perform the Update.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -828,7 +913,9 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
         if (getAutoTuneOptions() != null)
-            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -899,6 +986,10 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
             return false;
         if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -921,6 +1012,7 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

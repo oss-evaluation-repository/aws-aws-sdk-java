@@ -43,7 +43,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      * </p>
      * <ul>
      * <li>
@@ -60,7 +60,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      * </p>
      * </li>
      * </ul>
@@ -71,8 +71,8 @@ public class TypeFilters implements Serializable, Cloneable {
      * The id of the publisher of the extension.
      * </p>
      * <p>
-     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
-     * specify a list of types published by Amazon.
+     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify
+     * a list of types published by Amazon.
      * </p>
      */
     private String publisherId;
@@ -100,7 +100,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      * </p>
      * <ul>
      * <li>
@@ -117,7 +117,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      * </p>
      * </li>
      * </ul>
@@ -137,7 +137,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     *        <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      *        </p>
      *        <ul>
      *        <li>
@@ -154,7 +154,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     *        <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      *        </p>
      *        </li>
      * @see Category
@@ -181,7 +181,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      * </p>
      * <ul>
      * <li>
@@ -198,7 +198,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      * </p>
      * </li>
      * </ul>
@@ -217,7 +217,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     *         <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      *         </p>
      *         <ul>
      *         <li>
@@ -234,7 +234,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     *         <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      *         </p>
      *         </li>
      * @see Category
@@ -261,7 +261,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      * </p>
      * <ul>
      * <li>
@@ -278,7 +278,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      * </p>
      * </li>
      * </ul>
@@ -298,7 +298,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     *        <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      *        </p>
      *        <ul>
      *        <li>
@@ -315,7 +315,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     *        <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -344,7 +344,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      * </p>
      * <ul>
      * <li>
@@ -361,7 +361,7 @@ public class TypeFilters implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      * </p>
      * </li>
      * </ul>
@@ -381,7 +381,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
+     *        <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:
      *        </p>
      *        <ul>
      *        <li>
@@ -398,7 +398,7 @@ public class TypeFilters implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS-TYPES</code>: Extensions available for use from Amazon.
+     *        <code>AWS_TYPES</code>: Extensions available for use from Amazon.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -415,14 +415,14 @@ public class TypeFilters implements Serializable, Cloneable {
      * The id of the publisher of the extension.
      * </p>
      * <p>
-     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
-     * specify a list of types published by Amazon.
+     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify
+     * a list of types published by Amazon.
      * </p>
      * 
      * @param publisherId
      *        The id of the publisher of the extension. </p>
      *        <p>
-     *        Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
+     *        Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to
      *        specify a list of types published by Amazon.
      */
 
@@ -435,14 +435,14 @@ public class TypeFilters implements Serializable, Cloneable {
      * The id of the publisher of the extension.
      * </p>
      * <p>
-     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
-     * specify a list of types published by Amazon.
+     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify
+     * a list of types published by Amazon.
      * </p>
      * 
      * @return The id of the publisher of the extension. </p>
      *         <p>
-     *         Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
-     *         to specify a list of types published by Amazon.
+     *         Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to
+     *         specify a list of types published by Amazon.
      */
 
     public String getPublisherId() {
@@ -454,14 +454,14 @@ public class TypeFilters implements Serializable, Cloneable {
      * The id of the publisher of the extension.
      * </p>
      * <p>
-     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
-     * specify a list of types published by Amazon.
+     * Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify
+     * a list of types published by Amazon.
      * </p>
      * 
      * @param publisherId
      *        The id of the publisher of the extension. </p>
      *        <p>
-     *        Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to
+     *        Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to
      *        specify a list of types published by Amazon.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

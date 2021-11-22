@@ -25,30 +25,30 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The ID of the update request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
     /**
      * <p>
-     * The status of the updated IP rules. A successful request returns a 200 code.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -57,10 +57,10 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
-     * @return Your AWS account ID.
+     * @return The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public String getAwsAccountId() {
@@ -69,11 +69,11 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the update request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The ID of the update request.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -97,10 +97,10 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the update request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The ID of the update request.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -109,11 +109,11 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the update request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The ID of the update request.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the updated IP rules. A successful request returns a 200 code.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the updated IP rules. A successful request returns a 200 code.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -137,10 +137,10 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the updated IP rules. A successful request returns a 200 code.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status of the updated IP rules. A successful request returns a 200 code.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -149,11 +149,11 @@ public class UpdateIpRestrictionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the updated IP rules. A successful request returns a 200 code.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the updated IP rules. A successful request returns a 200 code.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

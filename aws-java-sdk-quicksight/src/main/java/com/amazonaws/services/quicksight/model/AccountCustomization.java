@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon QuickSight customizations associated with your Amazon Web Services account or a Amazon QuickSight
- * namespace in a specific Amazon Web Services Region.
+ * The Amazon QuickSight customizations associated with your Amazon Web Services account or a QuickSight namespace in a
+ * specific Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountCustomization" target="_top">AWS
@@ -35,6 +35,12 @@ public class AccountCustomization implements Serializable, Cloneable, Structured
      * </p>
      */
     private String defaultTheme;
+    /**
+     * <p>
+     * The default email customization template.
+     * </p>
+     */
+    private String defaultEmailCustomizationTemplate;
 
     /**
      * <p>
@@ -77,6 +83,46 @@ public class AccountCustomization implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The default email customization template.
+     * </p>
+     * 
+     * @param defaultEmailCustomizationTemplate
+     *        The default email customization template.
+     */
+
+    public void setDefaultEmailCustomizationTemplate(String defaultEmailCustomizationTemplate) {
+        this.defaultEmailCustomizationTemplate = defaultEmailCustomizationTemplate;
+    }
+
+    /**
+     * <p>
+     * The default email customization template.
+     * </p>
+     * 
+     * @return The default email customization template.
+     */
+
+    public String getDefaultEmailCustomizationTemplate() {
+        return this.defaultEmailCustomizationTemplate;
+    }
+
+    /**
+     * <p>
+     * The default email customization template.
+     * </p>
+     * 
+     * @param defaultEmailCustomizationTemplate
+     *        The default email customization template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountCustomization withDefaultEmailCustomizationTemplate(String defaultEmailCustomizationTemplate) {
+        setDefaultEmailCustomizationTemplate(defaultEmailCustomizationTemplate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +135,9 @@ public class AccountCustomization implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultTheme() != null)
-            sb.append("DefaultTheme: ").append(getDefaultTheme());
+            sb.append("DefaultTheme: ").append(getDefaultTheme()).append(",");
+        if (getDefaultEmailCustomizationTemplate() != null)
+            sb.append("DefaultEmailCustomizationTemplate: ").append(getDefaultEmailCustomizationTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,11 @@ public class AccountCustomization implements Serializable, Cloneable, Structured
             return false;
         if (other.getDefaultTheme() != null && other.getDefaultTheme().equals(this.getDefaultTheme()) == false)
             return false;
+        if (other.getDefaultEmailCustomizationTemplate() == null ^ this.getDefaultEmailCustomizationTemplate() == null)
+            return false;
+        if (other.getDefaultEmailCustomizationTemplate() != null
+                && other.getDefaultEmailCustomizationTemplate().equals(this.getDefaultEmailCustomizationTemplate()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +170,7 @@ public class AccountCustomization implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDefaultTheme() == null) ? 0 : getDefaultTheme().hashCode());
+        hashCode = prime * hashCode + ((getDefaultEmailCustomizationTemplate() == null) ? 0 : getDefaultEmailCustomizationTemplate().hashCode());
         return hashCode;
     }
 

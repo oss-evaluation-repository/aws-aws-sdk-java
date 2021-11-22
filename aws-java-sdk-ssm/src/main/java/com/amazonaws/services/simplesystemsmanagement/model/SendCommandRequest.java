@@ -1474,7 +1474,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getOutputS3Region() != null)
             sb.append("OutputS3Region: ").append(getOutputS3Region()).append(",");
         if (getOutputS3BucketName() != null)

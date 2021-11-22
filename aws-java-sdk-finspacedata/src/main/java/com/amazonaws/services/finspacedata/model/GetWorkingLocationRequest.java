@@ -39,7 +39,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use
-     * the location with the changeset creation operation.
+     * the location with the Changeset creation operation.
      * </p>
      * </li>
      * </ul>
@@ -60,7 +60,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use
-     * the location with the changeset creation operation.
+     * the location with the Changeset creation operation.
      * </p>
      * </li>
      * </ul>
@@ -77,7 +77,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and
-     *        then use the location with the changeset creation operation.
+     *        then use the location with the Changeset creation operation.
      *        </p>
      *        </li>
      * @see LocationType
@@ -101,7 +101,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use
-     * the location with the changeset creation operation.
+     * the location with the Changeset creation operation.
      * </p>
      * </li>
      * </ul>
@@ -117,7 +117,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and
-     *         then use the location with the changeset creation operation.
+     *         then use the location with the Changeset creation operation.
      *         </p>
      *         </li>
      * @see LocationType
@@ -141,7 +141,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use
-     * the location with the changeset creation operation.
+     * the location with the Changeset creation operation.
      * </p>
      * </li>
      * </ul>
@@ -158,7 +158,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and
-     *        then use the location with the changeset creation operation.
+     *        then use the location with the Changeset creation operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -184,7 +184,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use
-     * the location with the changeset creation operation.
+     * the location with the Changeset creation operation.
      * </p>
      * </li>
      * </ul>
@@ -201,7 +201,7 @@ public class GetWorkingLocationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and
-     *        then use the location with the changeset creation operation.
+     *        then use the location with the Changeset creation operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

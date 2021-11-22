@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Searches a folder by a filter.
+ * A filter to use to search a Amazon QuickSight folder.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderSearchFilter" target="_top">AWS API
@@ -30,13 +30,13 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
+     * The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * </p>
      */
     private String name;
@@ -50,11 +50,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use in the filter. For example,
      *        <code>"Operator": "StringEquals"</code>.
      * @see FilterOperator
      */
@@ -65,10 +65,10 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
-     * @return The comparison operator that you want to use as a filter. For example,
+     * @return The comparison operator that you want to use in the filter. For example,
      *         <code>"Operator": "StringEquals"</code>.
      * @see FilterOperator
      */
@@ -79,11 +79,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use in the filter. For example,
      *        <code>"Operator": "StringEquals"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
@@ -96,11 +96,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use in the filter. For example,
      *        <code>"Operator": "StringEquals"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
@@ -113,11 +113,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
+     * The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of a value that you want to use in the filter. For example,
      *        <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * @see FolderFilterAttribute
      */
@@ -128,10 +128,10 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
+     * The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * </p>
      * 
-     * @return The name of the value that you want to use as a filter. For example,
+     * @return The name of a value that you want to use in the filter. For example,
      *         <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * @see FolderFilterAttribute
      */
@@ -142,11 +142,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
+     * The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of a value that you want to use in the filter. For example,
      *        <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FolderFilterAttribute
@@ -159,11 +159,11 @@ public class FolderSearchFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
+     * The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of a value that you want to use in the filter. For example,
      *        <code>"Name": "PARENT_FOLDER_ARN"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FolderFilterAttribute

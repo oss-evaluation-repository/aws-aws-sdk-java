@@ -27,18 +27,18 @@ public class DescribeIpRestrictionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      */
     private String awsAccountId;
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -47,10 +47,10 @@ public class DescribeIpRestrictionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
-     * @return Your AWS account ID.
+     * @return The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public String getAwsAccountId() {
@@ -59,11 +59,11 @@ public class DescribeIpRestrictionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

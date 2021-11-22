@@ -36,7 +36,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The user's user name.
+     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      */
     private String userName;
@@ -107,7 +108,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of supported external login provider that provides identity to let the user federate into Amazon
-     * QuickSight with an associated IAMrole. The type can be one of the following.
+     * QuickSight with an associated IAM role. The type can be one of the following.
      * </p>
      * <ul>
      * <li>
@@ -178,11 +179,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name.
+     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
      * @param userName
-     *        The user's user name.
+     *        The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
+     *        value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      */
 
     public void setUserName(String userName) {
@@ -191,10 +194,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name.
+     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
-     * @return The user's user name.
+     * @return The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
+     *         value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      */
 
     public String getUserName() {
@@ -203,11 +208,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user's user name.
+     * The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for
+     * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * </p>
      * 
      * @param userName
-     *        The user's user name.
+     *        The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the
+     *        value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,7 +736,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of supported external login provider that provides identity to let the user federate into Amazon
-     * QuickSight with an associated IAMrole. The type can be one of the following.
+     * QuickSight with an associated IAM role. The type can be one of the following.
      * </p>
      * <ul>
      * <li>
@@ -746,7 +753,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param externalLoginFederationProviderType
      *        The type of supported external login provider that provides identity to let the user federate into Amazon
-     *        QuickSight with an associated IAMrole. The type can be one of the following.</p>
+     *        QuickSight with an associated IAM role. The type can be one of the following.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -767,7 +774,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of supported external login provider that provides identity to let the user federate into Amazon
-     * QuickSight with an associated IAMrole. The type can be one of the following.
+     * QuickSight with an associated IAM role. The type can be one of the following.
      * </p>
      * <ul>
      * <li>
@@ -783,7 +790,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The type of supported external login provider that provides identity to let the user federate into Amazon
-     *         QuickSight with an associated IAMrole. The type can be one of the following.</p>
+     *         QuickSight with an associated IAM role. The type can be one of the following.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -804,7 +811,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of supported external login provider that provides identity to let the user federate into Amazon
-     * QuickSight with an associated IAMrole. The type can be one of the following.
+     * QuickSight with an associated IAM role. The type can be one of the following.
      * </p>
      * <ul>
      * <li>
@@ -821,7 +828,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param externalLoginFederationProviderType
      *        The type of supported external login provider that provides identity to let the user federate into Amazon
-     *        QuickSight with an associated IAMrole. The type can be one of the following.</p>
+     *        QuickSight with an associated IAM role. The type can be one of the following.</p>
      *        <ul>
      *        <li>
      *        <p>

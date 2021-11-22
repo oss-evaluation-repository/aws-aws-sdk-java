@@ -64,6 +64,10 @@ public class ContactFlowJsonUnmarshaller implements Unmarshaller<ContactFlow, Js
                     context.nextToken();
                     contactFlow.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    contactFlow.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     contactFlow.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

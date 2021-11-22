@@ -31,7 +31,11 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String instanceId;
-    /** <p/> */
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     */
     private String integrationType;
     /**
      * <p>
@@ -88,9 +92,12 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p/>
+     * <p>
+     * The integration type.
+     * </p>
      * 
      * @param integrationType
+     *        The integration type.
      * @see IntegrationType
      */
 
@@ -99,9 +106,11 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p/>
+     * <p>
+     * The integration type.
+     * </p>
      * 
-     * @return
+     * @return The integration type.
      * @see IntegrationType
      */
 
@@ -110,9 +119,12 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p/>
+     * <p>
+     * The integration type.
+     * </p>
      * 
      * @param integrationType
+     *        The integration type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntegrationType
      */
@@ -123,9 +135,12 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p/>
+     * <p>
+     * The integration type.
+     * </p>
      * 
      * @param integrationType
+     *        The integration type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntegrationType
      */

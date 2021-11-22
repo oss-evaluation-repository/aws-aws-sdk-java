@@ -56,6 +56,12 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String contactFlowType;
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     */
+    private String contactFlowState;
 
     /**
      * <p>
@@ -237,6 +243,65 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param contactFlowState
+     *        The type of contact flow.
+     * @see ContactFlowState
+     */
+
+    public void setContactFlowState(String contactFlowState) {
+        this.contactFlowState = contactFlowState;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @return The type of contact flow.
+     * @see ContactFlowState
+     */
+
+    public String getContactFlowState() {
+        return this.contactFlowState;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param contactFlowState
+     *        The type of contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowState
+     */
+
+    public ContactFlowSummary withContactFlowState(String contactFlowState) {
+        setContactFlowState(contactFlowState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param contactFlowState
+     *        The type of contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowState
+     */
+
+    public ContactFlowSummary withContactFlowState(ContactFlowState contactFlowState) {
+        this.contactFlowState = contactFlowState.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +320,9 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getContactFlowType() != null)
-            sb.append("ContactFlowType: ").append(getContactFlowType());
+            sb.append("ContactFlowType: ").append(getContactFlowType()).append(",");
+        if (getContactFlowState() != null)
+            sb.append("ContactFlowState: ").append(getContactFlowState());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +353,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getContactFlowType() != null && other.getContactFlowType().equals(this.getContactFlowType()) == false)
             return false;
+        if (other.getContactFlowState() == null ^ this.getContactFlowState() == null)
+            return false;
+        if (other.getContactFlowState() != null && other.getContactFlowState().equals(this.getContactFlowState()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +369,7 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getContactFlowType() == null) ? 0 : getContactFlowType().hashCode());
+        hashCode = prime * hashCode + ((getContactFlowState() == null) ? 0 : getContactFlowState().hashCode());
         return hashCode;
     }
 

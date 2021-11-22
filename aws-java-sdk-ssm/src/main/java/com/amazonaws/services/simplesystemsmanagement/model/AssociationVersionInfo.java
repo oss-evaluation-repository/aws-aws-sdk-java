@@ -1307,7 +1307,7 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getScheduleExpression() != null)

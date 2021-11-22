@@ -25,7 +25,7 @@ public class CreateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -50,11 +50,11 @@ public class CreateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -63,10 +63,10 @@ public class CreateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -75,11 +75,11 @@ public class CreateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

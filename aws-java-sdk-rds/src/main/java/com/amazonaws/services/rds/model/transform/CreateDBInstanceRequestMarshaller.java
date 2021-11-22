@@ -303,6 +303,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("CustomIamInstanceProfile", StringUtils.fromString(createDBInstanceRequest.getCustomIamInstanceProfile()));
         }
 
+        if (createDBInstanceRequest.getBackupTarget() != null) {
+            request.addParameter("BackupTarget", StringUtils.fromString(createDBInstanceRequest.getBackupTarget()));
+        }
+
         return request;
     }
 

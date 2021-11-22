@@ -57,6 +57,8 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
     private static final MarshallingInfo<StructuredPojo> AUTOTUNEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final UpdateElasticsearchDomainConfigRequestMarshaller instance = new UpdateElasticsearchDomainConfigRequestMarshaller();
 
@@ -88,6 +90,7 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller {
             protocolMarshaller.marshall(updateElasticsearchDomainConfigRequest.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
             protocolMarshaller.marshall(updateElasticsearchDomainConfigRequest.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
             protocolMarshaller.marshall(updateElasticsearchDomainConfigRequest.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
+            protocolMarshaller.marshall(updateElasticsearchDomainConfigRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,7 +25,7 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -43,18 +43,18 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
     private String nextToken;
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -63,10 +63,10 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status. If succeeded, the status is <code>SC_OK</code>
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -75,11 +75,11 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -213,10 +213,10 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The request ID.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -225,11 +225,11 @@ public class ListFolderMembersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

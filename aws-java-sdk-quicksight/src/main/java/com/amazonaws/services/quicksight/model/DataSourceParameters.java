@@ -149,8 +149,18 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
      * </p>
      */
     private TwitterParameters twitterParameters;
-
+    /**
+     * <p>
+     * The parameters for OpenSearch.
+     * </p>
+     */
     private AmazonOpenSearchParameters amazonOpenSearchParameters;
+    /**
+     * <p>
+     * The parameters for Exasol.
+     * </p>
+     */
+    private ExasolParameters exasolParameters;
 
     /**
      * <p>
@@ -953,7 +963,12 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The parameters for OpenSearch.
+     * </p>
+     * 
      * @param amazonOpenSearchParameters
+     *        The parameters for OpenSearch.
      */
 
     public void setAmazonOpenSearchParameters(AmazonOpenSearchParameters amazonOpenSearchParameters) {
@@ -961,7 +976,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The parameters for OpenSearch.
+     * </p>
+     * 
+     * @return The parameters for OpenSearch.
      */
 
     public AmazonOpenSearchParameters getAmazonOpenSearchParameters() {
@@ -969,12 +988,57 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The parameters for OpenSearch.
+     * </p>
+     * 
      * @param amazonOpenSearchParameters
+     *        The parameters for OpenSearch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSourceParameters withAmazonOpenSearchParameters(AmazonOpenSearchParameters amazonOpenSearchParameters) {
         setAmazonOpenSearchParameters(amazonOpenSearchParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters for Exasol.
+     * </p>
+     * 
+     * @param exasolParameters
+     *        The parameters for Exasol.
+     */
+
+    public void setExasolParameters(ExasolParameters exasolParameters) {
+        this.exasolParameters = exasolParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters for Exasol.
+     * </p>
+     * 
+     * @return The parameters for Exasol.
+     */
+
+    public ExasolParameters getExasolParameters() {
+        return this.exasolParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters for Exasol.
+     * </p>
+     * 
+     * @param exasolParameters
+     *        The parameters for Exasol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withExasolParameters(ExasolParameters exasolParameters) {
+        setExasolParameters(exasolParameters);
         return this;
     }
 
@@ -1031,7 +1095,9 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         if (getTwitterParameters() != null)
             sb.append("TwitterParameters: ").append(getTwitterParameters()).append(",");
         if (getAmazonOpenSearchParameters() != null)
-            sb.append("AmazonOpenSearchParameters: ").append(getAmazonOpenSearchParameters());
+            sb.append("AmazonOpenSearchParameters: ").append(getAmazonOpenSearchParameters()).append(",");
+        if (getExasolParameters() != null)
+            sb.append("ExasolParameters: ").append(getExasolParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1131,6 +1197,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getAmazonOpenSearchParameters() != null && other.getAmazonOpenSearchParameters().equals(this.getAmazonOpenSearchParameters()) == false)
             return false;
+        if (other.getExasolParameters() == null ^ this.getExasolParameters() == null)
+            return false;
+        if (other.getExasolParameters() != null && other.getExasolParameters().equals(this.getExasolParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1160,6 +1230,7 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTeradataParameters() == null) ? 0 : getTeradataParameters().hashCode());
         hashCode = prime * hashCode + ((getTwitterParameters() == null) ? 0 : getTwitterParameters().hashCode());
         hashCode = prime * hashCode + ((getAmazonOpenSearchParameters() == null) ? 0 : getAmazonOpenSearchParameters().hashCode());
+        hashCode = prime * hashCode + ((getExasolParameters() == null) ? 0 : getExasolParameters().hashCode());
         return hashCode;
     }
 

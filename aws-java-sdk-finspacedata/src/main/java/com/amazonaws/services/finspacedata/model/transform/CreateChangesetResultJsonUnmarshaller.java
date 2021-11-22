@@ -48,9 +48,13 @@ public class CreateChangesetResultJsonUnmarshaller implements Unmarshaller<Creat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("changeset", targetDepth)) {
+                if (context.testExpression("datasetId", targetDepth)) {
                     context.nextToken();
-                    createChangesetResult.setChangeset(ChangesetInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                    createChangesetResult.setDatasetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("changesetId", targetDepth)) {
+                    context.nextToken();
+                    createChangesetResult.setChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

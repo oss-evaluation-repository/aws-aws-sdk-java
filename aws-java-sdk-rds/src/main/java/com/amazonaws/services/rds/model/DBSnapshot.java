@@ -217,6 +217,12 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date originalSnapshotCreateTime;
+    /**
+     * <p>
+     * Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     */
+    private String snapshotTarget;
 
     /**
      * <p>
@@ -1574,6 +1580,49 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @param snapshotTarget
+     *        Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *        Region.
+     */
+
+    public void setSnapshotTarget(String snapshotTarget) {
+        this.snapshotTarget = snapshotTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @return Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *         Region.
+     */
+
+    public String getSnapshotTarget() {
+        return this.snapshotTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @param snapshotTarget
+     *        Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *        Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withSnapshotTarget(String snapshotTarget) {
+        setSnapshotTarget(snapshotTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1644,7 +1693,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getTagList() != null)
             sb.append("TagList: ").append(getTagList()).append(",");
         if (getOriginalSnapshotCreateTime() != null)
-            sb.append("OriginalSnapshotCreateTime: ").append(getOriginalSnapshotCreateTime());
+            sb.append("OriginalSnapshotCreateTime: ").append(getOriginalSnapshotCreateTime()).append(",");
+        if (getSnapshotTarget() != null)
+            sb.append("SnapshotTarget: ").append(getSnapshotTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -1780,6 +1831,10 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getOriginalSnapshotCreateTime() != null && other.getOriginalSnapshotCreateTime().equals(this.getOriginalSnapshotCreateTime()) == false)
             return false;
+        if (other.getSnapshotTarget() == null ^ this.getSnapshotTarget() == null)
+            return false;
+        if (other.getSnapshotTarget() != null && other.getSnapshotTarget().equals(this.getSnapshotTarget()) == false)
+            return false;
         return true;
     }
 
@@ -1818,6 +1873,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getOriginalSnapshotCreateTime() == null) ? 0 : getOriginalSnapshotCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotTarget() == null) ? 0 : getSnapshotTarget().hashCode());
         return hashCode;
     }
 

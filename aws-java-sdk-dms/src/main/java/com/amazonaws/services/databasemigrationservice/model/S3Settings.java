@@ -627,6 +627,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean rfc4180;
+    /**
+     * <p>
+     * When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into
+     * a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is
+     * generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is
+     * set to <code>true</code>, as shown in the following example.
+     * </p>
+     * <p>
+     * <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     * </p>
+     */
+    private String datePartitionTimezone;
 
     /**
      * <p>
@@ -5448,6 +5460,79 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into
+     * a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is
+     * generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is
+     * set to <code>true</code>, as shown in the following example.
+     * </p>
+     * <p>
+     * <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     * </p>
+     * 
+     * @param datePartitionTimezone
+     *        When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC
+     *        time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC
+     *        filename is generated. The time zone format is Area/Location. Use this parameter when
+     *        <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
+     *        <p>
+     *        <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     */
+
+    public void setDatePartitionTimezone(String datePartitionTimezone) {
+        this.datePartitionTimezone = datePartitionTimezone;
+    }
+
+    /**
+     * <p>
+     * When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into
+     * a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is
+     * generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is
+     * set to <code>true</code>, as shown in the following example.
+     * </p>
+     * <p>
+     * <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     * </p>
+     * 
+     * @return When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC
+     *         time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC
+     *         filename is generated. The time zone format is Area/Location. Use this parameter when
+     *         <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
+     *         <p>
+     *         <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     */
+
+    public String getDatePartitionTimezone() {
+        return this.datePartitionTimezone;
+    }
+
+    /**
+     * <p>
+     * When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into
+     * a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is
+     * generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is
+     * set to <code>true</code>, as shown in the following example.
+     * </p>
+     * <p>
+     * <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     * </p>
+     * 
+     * @param datePartitionTimezone
+     *        When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC
+     *        time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC
+     *        filename is generated. The time zone format is Area/Location. Use this parameter when
+     *        <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
+     *        <p>
+     *        <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withDatePartitionTimezone(String datePartitionTimezone) {
+        setDatePartitionTimezone(datePartitionTimezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5532,7 +5617,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getMaxFileSize() != null)
             sb.append("MaxFileSize: ").append(getMaxFileSize()).append(",");
         if (getRfc4180() != null)
-            sb.append("Rfc4180: ").append(getRfc4180());
+            sb.append("Rfc4180: ").append(getRfc4180()).append(",");
+        if (getDatePartitionTimezone() != null)
+            sb.append("DatePartitionTimezone: ").append(getDatePartitionTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -5697,6 +5784,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRfc4180() != null && other.getRfc4180().equals(this.getRfc4180()) == false)
             return false;
+        if (other.getDatePartitionTimezone() == null ^ this.getDatePartitionTimezone() == null)
+            return false;
+        if (other.getDatePartitionTimezone() != null && other.getDatePartitionTimezone().equals(this.getDatePartitionTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -5742,6 +5833,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIgnoreHeaderRows() == null) ? 0 : getIgnoreHeaderRows().hashCode());
         hashCode = prime * hashCode + ((getMaxFileSize() == null) ? 0 : getMaxFileSize().hashCode());
         hashCode = prime * hashCode + ((getRfc4180() == null) ? 0 : getRfc4180().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionTimezone() == null) ? 0 : getDatePartitionTimezone().hashCode());
         return hashCode;
     }
 

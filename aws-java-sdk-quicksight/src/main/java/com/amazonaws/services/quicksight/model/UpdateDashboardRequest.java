@@ -48,9 +48,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
-     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
-     * Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.
+     * analysis to a template by using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     * API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template.
+     * The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     * QuickSight-supported Amazon Web Services Region.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -234,9 +236,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
-     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
-     * Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.
+     * analysis to a template by using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     * API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template.
+     * The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     * QuickSight-supported Amazon Web Services Region.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -247,9 +251,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      *        specify the type of object you're using as source. You can only update a dashboard from a template, so you
      *        use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first
-     *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
-     *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     *        convert the analysis to a template by using the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     *        API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
+     *        template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
      *        QuickSight-supported Amazon Web Services Region. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
@@ -266,9 +271,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
-     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
-     * Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.
+     * analysis to a template by using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     * API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template.
+     * The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     * QuickSight-supported Amazon Web Services Region.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -278,9 +285,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>,
      *         you specify the type of object you're using as source. You can only update a dashboard from a template,
      *         so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis,
-     *         first convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
-     *         <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *         <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     *         first convert the analysis to a template by using the
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     *         API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
+     *         template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
      *         QuickSight-supported Amazon Web Services Region. </p>
      *         <p>
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
@@ -297,9 +305,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      * specify the type of object you're using as source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the
-     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon
-     * Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.
+     * analysis to a template by using the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     * API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template.
+     * The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     * QuickSight-supported Amazon Web Services Region.
      * </p>
      * <p>
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
@@ -310,9 +320,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you
      *        specify the type of object you're using as source. You can only update a dashboard from a template, so you
      *        use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first
-     *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
-     *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
-     *        <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
+     *        convert the analysis to a template by using the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
+     *        API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
+     *        template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon
      *        QuickSight-supported Amazon Web Services Region. </p>
      *        <p>
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement

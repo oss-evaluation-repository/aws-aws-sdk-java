@@ -55,6 +55,12 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
     private String failureReason;
     /**
      * <p>
+     * The ARN of the Amazon Braket job associated with the quantum task.
+     * </p>
+     */
+    private String jobArn;
+    /**
+     * <p>
      * The S3 bucket where task results are stored.
      * </p>
      */
@@ -307,6 +313,46 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public GetQuantumTaskResult withFailureReason(String failureReason) {
         setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon Braket job associated with the quantum task.
+     * </p>
+     * 
+     * @param jobArn
+     *        The ARN of the Amazon Braket job associated with the quantum task.
+     */
+
+    public void setJobArn(String jobArn) {
+        this.jobArn = jobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon Braket job associated with the quantum task.
+     * </p>
+     * 
+     * @return The ARN of the Amazon Braket job associated with the quantum task.
+     */
+
+    public String getJobArn() {
+        return this.jobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon Braket job associated with the quantum task.
+     * </p>
+     * 
+     * @param jobArn
+     *        The ARN of the Amazon Braket job associated with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuantumTaskResult withJobArn(String jobArn) {
+        setJobArn(jobArn);
         return this;
     }
 
@@ -619,6 +665,8 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("EndedAt: ").append(getEndedAt()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getJobArn() != null)
+            sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getOutputS3Bucket() != null)
             sb.append("OutputS3Bucket: ").append(getOutputS3Bucket()).append(",");
         if (getOutputS3Directory() != null)
@@ -665,6 +713,10 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getJobArn() == null ^ this.getJobArn() == null)
+            return false;
+        if (other.getJobArn() != null && other.getJobArn().equals(this.getJobArn()) == false)
+            return false;
         if (other.getOutputS3Bucket() == null ^ this.getOutputS3Bucket() == null)
             return false;
         if (other.getOutputS3Bucket() != null && other.getOutputS3Bucket().equals(this.getOutputS3Bucket()) == false)
@@ -702,6 +754,7 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getDeviceParameters() == null) ? 0 : getDeviceParameters().hashCode());
         hashCode = prime * hashCode + ((getEndedAt() == null) ? 0 : getEndedAt().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Bucket() == null) ? 0 : getOutputS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Directory() == null) ? 0 : getOutputS3Directory().hashCode());
         hashCode = prime * hashCode + ((getQuantumTaskArn() == null) ? 0 : getQuantumTaskArn().hashCode());

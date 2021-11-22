@@ -107,6 +107,12 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Reserved for internal use.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<RegistrationMetadataItem> registrationMetadata;
 
     /**
      * <p>
@@ -709,6 +715,79 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Reserved for internal use.
+     * </p>
+     * 
+     * @return Reserved for internal use.
+     */
+
+    public java.util.List<RegistrationMetadataItem> getRegistrationMetadata() {
+        if (registrationMetadata == null) {
+            registrationMetadata = new com.amazonaws.internal.SdkInternalList<RegistrationMetadataItem>();
+        }
+        return registrationMetadata;
+    }
+
+    /**
+     * <p>
+     * Reserved for internal use.
+     * </p>
+     * 
+     * @param registrationMetadata
+     *        Reserved for internal use.
+     */
+
+    public void setRegistrationMetadata(java.util.Collection<RegistrationMetadataItem> registrationMetadata) {
+        if (registrationMetadata == null) {
+            this.registrationMetadata = null;
+            return;
+        }
+
+        this.registrationMetadata = new com.amazonaws.internal.SdkInternalList<RegistrationMetadataItem>(registrationMetadata);
+    }
+
+    /**
+     * <p>
+     * Reserved for internal use.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegistrationMetadata(java.util.Collection)} or {@link #withRegistrationMetadata(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param registrationMetadata
+     *        Reserved for internal use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivationRequest withRegistrationMetadata(RegistrationMetadataItem... registrationMetadata) {
+        if (this.registrationMetadata == null) {
+            setRegistrationMetadata(new com.amazonaws.internal.SdkInternalList<RegistrationMetadataItem>(registrationMetadata.length));
+        }
+        for (RegistrationMetadataItem ele : registrationMetadata) {
+            this.registrationMetadata.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for internal use.
+     * </p>
+     * 
+     * @param registrationMetadata
+     *        Reserved for internal use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivationRequest withRegistrationMetadata(java.util.Collection<RegistrationMetadataItem> registrationMetadata) {
+        setRegistrationMetadata(registrationMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -731,7 +810,9 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
         if (getExpirationDate() != null)
             sb.append("ExpirationDate: ").append(getExpirationDate()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRegistrationMetadata() != null)
+            sb.append("RegistrationMetadata: ").append(getRegistrationMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -770,6 +851,10 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRegistrationMetadata() == null ^ this.getRegistrationMetadata() == null)
+            return false;
+        if (other.getRegistrationMetadata() != null && other.getRegistrationMetadata().equals(this.getRegistrationMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -784,6 +869,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getRegistrationLimit() == null) ? 0 : getRegistrationLimit().hashCode());
         hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationMetadata() == null) ? 0 : getRegistrationMetadata().hashCode());
         return hashCode;
     }
 

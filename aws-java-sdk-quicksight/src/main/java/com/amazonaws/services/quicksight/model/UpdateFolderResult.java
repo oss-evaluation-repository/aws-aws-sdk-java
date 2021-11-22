@@ -25,36 +25,36 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -63,10 +63,10 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status. If succeeded, the status is <code>SC_OK</code>.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -75,11 +75,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      */
 
     public void setArn(String arn) {
@@ -103,10 +103,10 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the folder.
      */
 
     public String getArn() {
@@ -115,11 +115,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -143,10 +143,10 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -155,11 +155,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -183,10 +183,10 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The request ID.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -195,11 +195,11 @@ public class UpdateFolderResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

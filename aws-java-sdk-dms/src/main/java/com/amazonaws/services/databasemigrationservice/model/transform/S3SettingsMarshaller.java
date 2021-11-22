@@ -101,6 +101,8 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFileSize").build();
     private static final MarshallingInfo<Boolean> RFC4180_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rfc4180").build();
+    private static final MarshallingInfo<String> DATEPARTITIONTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionTimezone").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -155,6 +157,7 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getIgnoreHeaderRows(), IGNOREHEADERROWS_BINDING);
             protocolMarshaller.marshall(s3Settings.getMaxFileSize(), MAXFILESIZE_BINDING);
             protocolMarshaller.marshall(s3Settings.getRfc4180(), RFC4180_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionTimezone(), DATEPARTITIONTIMEZONE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

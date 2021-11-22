@@ -74,6 +74,39 @@ public class AWSBraketAsyncClient extends AWSBraketClient implements AWSBraketAs
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request) {
+
+        return cancelJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(final CancelJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
+        final CancelJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelJobResult>() {
+            @Override
+            public CancelJobResult call() throws Exception {
+                CancelJobResult result = null;
+
+                try {
+                    result = executeCancelJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelQuantumTaskResult> cancelQuantumTaskAsync(CancelQuantumTaskRequest request) {
 
         return cancelQuantumTaskAsync(request, null);
@@ -91,6 +124,39 @@ public class AWSBraketAsyncClient extends AWSBraketClient implements AWSBraketAs
 
                 try {
                     result = executeCancelQuantumTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request) {
+
+        return createJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(final CreateJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
+        final CreateJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateJobResult>() {
+            @Override
+            public CreateJobResult call() throws Exception {
+                CreateJobResult result = null;
+
+                try {
+                    result = executeCreateJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -157,6 +223,39 @@ public class AWSBraketAsyncClient extends AWSBraketClient implements AWSBraketAs
 
                 try {
                     result = executeGetDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest request) {
+
+        return getJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobResult> getJobAsync(final GetJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler) {
+        final GetJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJobResult>() {
+            @Override
+            public GetJobResult call() throws Exception {
+                GetJobResult result = null;
+
+                try {
+                    result = executeGetJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -256,6 +355,39 @@ public class AWSBraketAsyncClient extends AWSBraketClient implements AWSBraketAs
 
                 try {
                     result = executeSearchDevices(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(SearchJobsRequest request) {
+
+        return searchJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(final SearchJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchJobsRequest, SearchJobsResult> asyncHandler) {
+        final SearchJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchJobsResult>() {
+            @Override
+            public SearchJobsResult call() throws Exception {
+                SearchJobsResult result = null;
+
+                try {
+                    result = executeSearchJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

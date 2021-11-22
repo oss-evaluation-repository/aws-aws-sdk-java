@@ -25,42 +25,42 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * Describes the IP rules with CIDR range and description.
+     * A map that describes the IP rules with CIDR range and description.
      * </p>
      */
     private java.util.Map<String, String> ipRestrictionRuleMap;
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The ID of the describe request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
     /**
      * <p>
-     * The status of a set of IP restrictions. A successful request returns a 200 status code.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -69,10 +69,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
-     * @return Your AWS account ID.
+     * @return The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public String getAwsAccountId() {
@@ -81,11 +81,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,10 +96,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the IP rules with CIDR range and description.
+     * A map that describes the IP rules with CIDR range and description.
      * </p>
      * 
-     * @return Describes the IP rules with CIDR range and description.
+     * @return A map that describes the IP rules with CIDR range and description.
      */
 
     public java.util.Map<String, String> getIpRestrictionRuleMap() {
@@ -108,11 +108,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the IP rules with CIDR range and description.
+     * A map that describes the IP rules with CIDR range and description.
      * </p>
      * 
      * @param ipRestrictionRuleMap
-     *        Describes the IP rules with CIDR range and description.
+     *        A map that describes the IP rules with CIDR range and description.
      */
 
     public void setIpRestrictionRuleMap(java.util.Map<String, String> ipRestrictionRuleMap) {
@@ -121,11 +121,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Describes the IP rules with CIDR range and description.
+     * A map that describes the IP rules with CIDR range and description.
      * </p>
      * 
      * @param ipRestrictionRuleMap
-     *        Describes the IP rules with CIDR range and description.
+     *        A map that describes the IP rules with CIDR range and description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +164,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
      * @param enabled
-     *        Whether or not IP rules are enabled.
+     *        A value that specifies whether IP rules are turned on.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -177,10 +177,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
-     * @return Whether or not IP rules are enabled.
+     * @return A value that specifies whether IP rules are turned on.
      */
 
     public Boolean getEnabled() {
@@ -189,11 +189,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
      * @param enabled
-     *        Whether or not IP rules are enabled.
+     *        A value that specifies whether IP rules are turned on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,10 +204,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
-     * @return Whether or not IP rules are enabled.
+     * @return A value that specifies whether IP rules are turned on.
      */
 
     public Boolean isEnabled() {
@@ -216,11 +216,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the describe request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The ID of the describe request.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -229,10 +229,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the describe request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The ID of the describe request.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -241,11 +241,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the describe request.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The ID of the describe request.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +256,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of a set of IP restrictions. A successful request returns a 200 status code.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of a set of IP restrictions. A successful request returns a 200 status code.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -269,10 +269,10 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of a set of IP restrictions. A successful request returns a 200 status code.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status of a set of IP restrictions. A successful request returns a 200 status code.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -281,11 +281,11 @@ public class DescribeIpRestrictionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of a set of IP restrictions. A successful request returns a 200 status code.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status of a set of IP restrictions. A successful request returns a 200 status code.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

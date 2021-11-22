@@ -910,17 +910,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific
      * AMI. The only supported engine is Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
-     * Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software. The
      * Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create your
-     * database. With Amazon RDS Custom, you upload your database installation files in Amazon S3. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
-     * Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.
+     * database. With Amazon RDS Custom, you upload your database installation files in Amazon S3.
      * </p>
      * <p>
      * When you create a custom engine version, you specify the files in a JSON document called a CEV manifest. This
@@ -964,17 +958,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific
      * AMI. The only supported engine is Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
-     * Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software. The
      * Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create your
-     * database. With Amazon RDS Custom, you upload your database installation files in Amazon S3. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
-     * Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.
+     * database. With Amazon RDS Custom, you upload your database installation files in Amazon S3.
      * </p>
      * <p>
      * When you create a custom engine version, you specify the files in a JSON document called a CEV manifest. This
@@ -5046,8 +5034,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"
-     * >Modifying CEV status</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.modify">Modifying CEV
+     * status</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param modifyCustomDBEngineVersionRequest
@@ -5075,8 +5063,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"
-     * >Modifying CEV status</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.modify">Modifying CEV
+     * status</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param modifyCustomDBEngineVersionRequest

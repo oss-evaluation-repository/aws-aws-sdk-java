@@ -19,13 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of experience you want to embed. For registered users, you can embed an Amazon QuickSight dashboard or the
+ * The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the
  * Amazon QuickSight console.
  * </p>
  * <note>
  * <p>
  * Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or
- * <code>QuickSightConsole</code>. You cannot choose more than one experience configuraton.
+ * <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.
  * </p>
  * </note>
  * 
@@ -44,18 +44,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
     private RegisteredUserDashboardEmbeddingConfiguration dashboard;
     /**
      * <p>
-     * The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along
-     * with custom permissions to restrict access to certain features. For more information, see <a href=
+     * The configuration details for providing each Amazon QuickSight console embedding experience. This can be used
+     * along with custom permissions to restrict access to certain features. For more information, see <a href=
      * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      * >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * <p>
-     * Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that allows
-     * users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon
-     * QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to
-     * some of these features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code>
-     * API operation. Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission
-     * profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * Use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     * where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and
+     * dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin
+     * security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile
+     * to the user with the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * API operation. Use the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     * API operation to add a new user with a custom permission profile attached. For more information, see the
+     * following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -134,18 +139,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
 
     /**
      * <p>
-     * The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along
-     * with custom permissions to restrict access to certain features. For more information, see <a href=
+     * The configuration details for providing each Amazon QuickSight console embedding experience. This can be used
+     * along with custom permissions to restrict access to certain features. For more information, see <a href=
      * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      * >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * <p>
-     * Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that allows
-     * users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon
-     * QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to
-     * some of these features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code>
-     * API operation. Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission
-     * profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * Use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     * where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and
+     * dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin
+     * security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile
+     * to the user with the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * API operation. Use the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     * API operation to add a new user with a custom permission profile attached. For more information, see the
+     * following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -171,19 +181,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * 
      * @param quickSightConsole
-     *        The configuration details for providing an Amazon QuickSight console embedding experience. This can be
+     *        The configuration details for providing each Amazon QuickSight console embedding experience. This can be
      *        used along with custom permissions to restrict access to certain features. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      *        >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      *        <p>
-     *        Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that
-     *        allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an
-     *        embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to
-     *        restrict permissions to some of these features, add a custom permissions profile to the user with the
-     *        <code> <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code> API operation to
-     *        add a new user with a custom permission profile attached. For more information, see the following sections
-     *        in the <i>Amazon QuickSight User Guide</i>:
+     *        Use
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     *        where you want to provide an authoring portal that allows users to create data sources, datasets,
+     *        analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to
+     *        the author or admin security cohort. If you want to restrict permissions to some of these features, add a
+     *        custom permissions profile to the user with the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *        API operation. Use the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     *        API operation to add a new user with a custom permission profile attached. For more information, see the
+     *        following sections in the <i>Amazon QuickSight User Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -214,18 +228,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
 
     /**
      * <p>
-     * The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along
-     * with custom permissions to restrict access to certain features. For more information, see <a href=
+     * The configuration details for providing each Amazon QuickSight console embedding experience. This can be used
+     * along with custom permissions to restrict access to certain features. For more information, see <a href=
      * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      * >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * <p>
-     * Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that allows
-     * users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon
-     * QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to
-     * some of these features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code>
-     * API operation. Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission
-     * profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * Use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     * where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and
+     * dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin
+     * security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile
+     * to the user with the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * API operation. Use the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     * API operation to add a new user with a custom permission profile attached. For more information, see the
+     * following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -250,19 +269,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * Portal</a>.
      * </p>
      * 
-     * @return The configuration details for providing an Amazon QuickSight console embedding experience. This can be
+     * @return The configuration details for providing each Amazon QuickSight console embedding experience. This can be
      *         used along with custom permissions to restrict access to certain features. For more information, see <a
      *         href=
      *         "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      *         >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      *         <p>
-     *         Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that
-     *         allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an
-     *         embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to
-     *         restrict permissions to some of these features, add a custom permissions profile to the user with the
-     *         <code> <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code> API operation to
-     *         add a new user with a custom permission profile attached. For more information, see the following
-     *         sections in the <i>Amazon QuickSight User Guide</i>:
+     *         Use
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     *         where you want to provide an authoring portal that allows users to create data sources, datasets,
+     *         analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to
+     *         the author or admin security cohort. If you want to restrict permissions to some of these features, add a
+     *         custom permissions profile to the user with the
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *         API operation. Use the
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     *         API operation to add a new user with a custom permission profile attached. For more information, see the
+     *         following sections in the <i>Amazon QuickSight User Guide</i>:
      *         </p>
      *         <ul>
      *         <li>
@@ -293,18 +316,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
 
     /**
      * <p>
-     * The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along
-     * with custom permissions to restrict access to certain features. For more information, see <a href=
+     * The configuration details for providing each Amazon QuickSight console embedding experience. This can be used
+     * along with custom permissions to restrict access to certain features. For more information, see <a href=
      * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      * >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * <p>
-     * Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that allows
-     * users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon
-     * QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to
-     * some of these features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code>
-     * API operation. Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission
-     * profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * Use
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     * where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and
+     * dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin
+     * security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile
+     * to the user with the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     * API operation. Use the
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     * API operation to add a new user with a custom permission profile attached. For more information, see the
+     * following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -330,19 +358,23 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * 
      * @param quickSightConsole
-     *        The configuration details for providing an Amazon QuickSight console embedding experience. This can be
+     *        The configuration details for providing each Amazon QuickSight console embedding experience. This can be
      *        used along with custom permissions to restrict access to certain features. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
      *        >Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      *        <p>
-     *        Use <code>GenerateEmbedUrlForRegisteredUser</code> where you want to provide an authoring portal that
-     *        allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an
-     *        embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to
-     *        restrict permissions to some of these features, add a custom permissions profile to the user with the
-     *        <code> <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code> API operation to
-     *        add a new user with a custom permission profile attached. For more information, see the following sections
-     *        in the <i>Amazon QuickSight User Guide</i>:
+     *        Use
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code>
+     *        where you want to provide an authoring portal that allows users to create data sources, datasets,
+     *        analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to
+     *        the author or admin security cohort. If you want to restrict permissions to some of these features, add a
+     *        custom permissions profile to the user with the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code>
+     *        API operation. Use the
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code>
+     *        API operation to add a new user with a custom permission profile attached. For more information, see the
+     *        following sections in the <i>Amazon QuickSight User Guide</i>:
      *        </p>
      *        <ul>
      *        <li>

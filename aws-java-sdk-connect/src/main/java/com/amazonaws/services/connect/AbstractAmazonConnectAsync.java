@@ -158,6 +158,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(CreateContactFlowModuleRequest request) {
+
+        return createContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(CreateContactFlowModuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateContactFlowModuleRequest, CreateContactFlowModuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(CreateHoursOfOperationRequest request) {
 
         return createHoursOfOperationAsync(request, null);
@@ -283,6 +296,32 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUserHierarchyGroupRequest, CreateUserHierarchyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(DeleteContactFlowRequest request) {
+
+        return deleteContactFlowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(DeleteContactFlowRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactFlowRequest, DeleteContactFlowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(DeleteContactFlowModuleRequest request) {
+
+        return deleteContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(DeleteContactFlowModuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactFlowModuleRequest, DeleteContactFlowModuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -426,6 +465,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DescribeContactFlowResult> describeContactFlowAsync(DescribeContactFlowRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeContactFlowRequest, DescribeContactFlowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(DescribeContactFlowModuleRequest request) {
+
+        return describeContactFlowModuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(DescribeContactFlowModuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeContactFlowModuleRequest, DescribeContactFlowModuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -768,6 +820,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(ListContactFlowModulesRequest request) {
+
+        return listContactFlowModulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(ListContactFlowModulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContactFlowModulesRequest, ListContactFlowModulesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1275,6 +1340,47 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<UpdateContactFlowContentResult> updateContactFlowContentAsync(UpdateContactFlowContentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContactFlowContentRequest, UpdateContactFlowContentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(UpdateContactFlowMetadataRequest request) {
+
+        return updateContactFlowMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(UpdateContactFlowMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowMetadataRequest, UpdateContactFlowMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(UpdateContactFlowModuleContentRequest request) {
+
+        return updateContactFlowModuleContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(UpdateContactFlowModuleContentRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleContentRequest, UpdateContactFlowModuleContentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            UpdateContactFlowModuleMetadataRequest request) {
+
+        return updateContactFlowModuleMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            UpdateContactFlowModuleMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleMetadataRequest, UpdateContactFlowModuleMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

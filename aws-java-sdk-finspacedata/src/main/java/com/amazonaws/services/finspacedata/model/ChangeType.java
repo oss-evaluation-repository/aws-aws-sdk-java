@@ -15,7 +15,7 @@ package com.amazonaws.services.finspacedata.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Indicates how the given change will be applied to the dataset.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ChangeType {

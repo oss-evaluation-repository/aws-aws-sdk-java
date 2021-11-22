@@ -102,9 +102,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("OutboundContactNotPermittedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.OutboundContactNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContactFlowNotPublishedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ContactFlowNotPublishedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -120,23 +117,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("UserNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.UserNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DestinationNotAllowedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.DestinationNotAllowedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidContactFlowException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.InvalidContactFlowExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
@@ -144,11 +129,32 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidContactFlowModuleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.InvalidContactFlowModuleExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidContactFlowException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.InvalidContactFlowExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContactNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ContactNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.IdempotencyExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.connect.model.AmazonConnectException.class));
 
     public static AmazonConnectClientBuilder builder() {
@@ -927,6 +933,86 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Creates a contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createContactFlowModuleRequest
+     * @return Result of the CreateContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidContactFlowModuleException
+     *         The problems with the module. Please fix before trying again.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateContactFlowModuleResult createContactFlowModule(CreateContactFlowModuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContactFlowModule(request);
+    }
+
+    @SdkInternalApi
+    final CreateContactFlowModuleResult executeCreateContactFlowModule(CreateContactFlowModuleRequest createContactFlowModuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContactFlowModuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContactFlowModuleRequest> request = null;
+        Response<CreateContactFlowModuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContactFlowModuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createContactFlowModuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContactFlowModule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContactFlowModuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateContactFlowModuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Creates hours of operation.
      * </p>
      * 
@@ -1633,6 +1719,145 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes a contact flow for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteContactFlowRequest
+     * @return Result of the DeleteContactFlow operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteContactFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteContactFlowResult deleteContactFlow(DeleteContactFlowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContactFlow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContactFlowResult executeDeleteContactFlow(DeleteContactFlowRequest deleteContactFlowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContactFlowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContactFlowRequest> request = null;
+        Response<DeleteContactFlowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContactFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactFlowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContactFlow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContactFlowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactFlowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified contact flow module.
+     * </p>
+     * 
+     * @param deleteContactFlowModuleRequest
+     * @return Result of the DeleteContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteContactFlowModuleResult deleteContactFlowModule(DeleteContactFlowModuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContactFlowModule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContactFlowModuleResult executeDeleteContactFlowModule(DeleteContactFlowModuleRequest deleteContactFlowModuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContactFlowModuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContactFlowModuleRequest> request = null;
+        Response<DeleteContactFlowModuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContactFlowModuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteContactFlowModuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContactFlowModule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContactFlowModuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteContactFlowModuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes an hours of operation.
      * </p>
      * 
@@ -1919,7 +2144,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws InternalServiceException
      *         Request processing failed because of an error or failure with the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You do not have sufficient permissions to perform this action.
      * @throws ResourceInUseException
      *         That resource is already in use. Please try another.
      * @sample AmazonConnect.DeleteSecurityProfile
@@ -2251,7 +2476,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <important>
      * <p>
-     * Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+     * Contact information remains available in Amazon Connect for 24 months, and then it is deleted.
      * </p>
      * </important>
      * 
@@ -2387,6 +2612,78 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * Describes the specified contact flow module.
+     * </p>
+     * 
+     * @param describeContactFlowModuleRequest
+     * @return Result of the DescribeContactFlowModule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DescribeContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeContactFlowModuleResult describeContactFlowModule(DescribeContactFlowModuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeContactFlowModule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeContactFlowModuleResult executeDescribeContactFlowModule(DescribeContactFlowModuleRequest describeContactFlowModuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeContactFlowModuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeContactFlowModuleRequest> request = null;
+        Response<DescribeContactFlowModuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeContactFlowModuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeContactFlowModuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContactFlowModule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeContactFlowModuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeContactFlowModuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Describes the hours of operation.
      * </p>
@@ -4154,6 +4451,74 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ListBotsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBotsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides information about the contact flow modules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listContactFlowModulesRequest
+     * @return Result of the ListContactFlowModules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListContactFlowModulesResult listContactFlowModules(ListContactFlowModulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContactFlowModules(request);
+    }
+
+    @SdkInternalApi
+    final ListContactFlowModulesResult executeListContactFlowModules(ListContactFlowModulesRequest listContactFlowModulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listContactFlowModulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListContactFlowModulesRequest> request = null;
+        Response<ListContactFlowModulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListContactFlowModulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContactFlowModulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContactFlowModules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListContactFlowModulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListContactFlowModulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6149,7 +6514,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Initiates a contact flow to start a new task immediately or at a future date and time.
+     * Initiates a contact flow to start a new task.
      * </p>
      * 
      * @param startTaskContactRequest
@@ -6698,7 +7063,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Adds or updates user defined contact information associated with the specified contact. At least one field to be
+     * Adds or updates user-defined contact information associated with the specified contact. At least one field to be
      * updated must be present in the request.
      * </p>
      * <important>
@@ -6927,6 +7292,216 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Updates metadata about specified contact flow.
+     * </p>
+     * 
+     * @param updateContactFlowMetadataRequest
+     * @return Result of the UpdateContactFlowMetadata operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContactFlowMetadataResult updateContactFlowMetadata(UpdateContactFlowMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContactFlowMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactFlowMetadataResult executeUpdateContactFlowMetadata(UpdateContactFlowMetadataRequest updateContactFlowMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactFlowMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactFlowMetadataRequest> request = null;
+        Response<UpdateContactFlowMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactFlowMetadataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateContactFlowMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactFlowMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactFlowMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContactFlowMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates specified contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param updateContactFlowModuleContentRequest
+     * @return Result of the UpdateContactFlowModuleContent operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidContactFlowModuleException
+     *         The problems with the module. Please fix before trying again.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowModuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContactFlowModuleContentResult updateContactFlowModuleContent(UpdateContactFlowModuleContentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContactFlowModuleContent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactFlowModuleContentResult executeUpdateContactFlowModuleContent(UpdateContactFlowModuleContentRequest updateContactFlowModuleContentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactFlowModuleContentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactFlowModuleContentRequest> request = null;
+        Response<UpdateContactFlowModuleContentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactFlowModuleContentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateContactFlowModuleContentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactFlowModuleContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactFlowModuleContentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContactFlowModuleContentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates metadata about specified contact flow module.
+     * </p>
+     * 
+     * @param updateContactFlowModuleMetadataRequest
+     * @return Result of the UpdateContactFlowModuleMetadata operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactFlowModuleMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContactFlowModuleMetadataResult updateContactFlowModuleMetadata(UpdateContactFlowModuleMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContactFlowModuleMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactFlowModuleMetadataResult executeUpdateContactFlowModuleMetadata(
+            UpdateContactFlowModuleMetadataRequest updateContactFlowModuleMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactFlowModuleMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactFlowModuleMetadataRequest> request = null;
+        Response<UpdateContactFlowModuleMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactFlowModuleMetadataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateContactFlowModuleMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactFlowModuleMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactFlowModuleMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContactFlowModuleMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The name of the contact flow.
      * </p>
      * <p>
@@ -7066,6 +7641,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates the hours of operation.
      * </p>

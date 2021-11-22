@@ -52,7 +52,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected
+     * clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.
      * </p>
      */
     private java.util.List<String> include;
@@ -211,10 +213,14 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected
+     * clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.
      * </p>
      * 
-     * @return Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * @return Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return
+     *         connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase
+     *         otherwise an error occurs.
      */
 
     public java.util.List<String> getInclude() {
@@ -223,11 +229,15 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected
+     * clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.
      * </p>
      * 
      * @param include
-     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     *        Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return
+     *        connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase
+     *        otherwise an error occurs.
      */
 
     public void setInclude(java.util.Collection<String> include) {
@@ -241,7 +251,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected
+     * clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -250,7 +262,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param include
-     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     *        Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return
+     *        connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase
+     *        otherwise an error occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +280,15 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     * Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected
+     * clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.
      * </p>
      * 
      * @param include
-     *        Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.
+     *        Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return
+     *        connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase
+     *        otherwise an error occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class DescribeContactRequest extends com.amazonaws.AmazonWebServiceReques
     private String instanceId;
     /**
      * <p>
-     * The identifier of the initial contact.
+     * The identifier of the contact.
      * </p>
      */
     private String contactId;
@@ -80,11 +80,11 @@ public class DescribeContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the initial contact.
+     * The identifier of the contact.
      * </p>
      * 
      * @param contactId
-     *        The identifier of the initial contact.
+     *        The identifier of the contact.
      */
 
     public void setContactId(String contactId) {
@@ -93,10 +93,10 @@ public class DescribeContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the initial contact.
+     * The identifier of the contact.
      * </p>
      * 
-     * @return The identifier of the initial contact.
+     * @return The identifier of the contact.
      */
 
     public String getContactId() {
@@ -105,11 +105,11 @@ public class DescribeContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the initial contact.
+     * The identifier of the contact.
      * </p>
      * 
      * @param contactId
-     *        The identifier of the initial contact.
+     *        The identifier of the contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

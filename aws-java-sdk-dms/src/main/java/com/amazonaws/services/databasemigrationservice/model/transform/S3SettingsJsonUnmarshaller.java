@@ -196,6 +196,10 @@ public class S3SettingsJsonUnmarshaller implements Unmarshaller<S3Settings, Json
                     context.nextToken();
                     s3Settings.setRfc4180(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DatePartitionTimezone", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDatePartitionTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

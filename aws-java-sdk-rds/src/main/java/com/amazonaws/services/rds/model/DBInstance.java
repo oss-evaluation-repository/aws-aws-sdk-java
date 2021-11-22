@@ -619,6 +619,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String customIamInstanceProfile;
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
+     * Services Region.
+     * </p>
+     */
+    private String backupTarget;
 
     /**
      * <p>
@@ -5224,6 +5231,52 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
+     * Services Region.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     *        Amazon Web Services Region.
+     */
+
+    public void setBackupTarget(String backupTarget) {
+        this.backupTarget = backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
+     * Services Region.
+     * </p>
+     * 
+     * @return Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     *         Amazon Web Services Region.
+     */
+
+    public String getBackupTarget() {
+        return this.backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
+     * Services Region.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     *        Amazon Web Services Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withBackupTarget(String backupTarget) {
+        setBackupTarget(backupTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5380,7 +5433,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getResumeFullAutomationModeTime() != null)
             sb.append("ResumeFullAutomationModeTime: ").append(getResumeFullAutomationModeTime()).append(",");
         if (getCustomIamInstanceProfile() != null)
-            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile());
+            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile()).append(",");
+        if (getBackupTarget() != null)
+            sb.append("BackupTarget: ").append(getBackupTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -5696,6 +5751,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getCustomIamInstanceProfile() != null && other.getCustomIamInstanceProfile().equals(this.getCustomIamInstanceProfile()) == false)
             return false;
+        if (other.getBackupTarget() == null ^ this.getBackupTarget() == null)
+            return false;
+        if (other.getBackupTarget() != null && other.getBackupTarget().equals(this.getBackupTarget()) == false)
+            return false;
         return true;
     }
 
@@ -5778,6 +5837,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutomationMode() == null) ? 0 : getAutomationMode().hashCode());
         hashCode = prime * hashCode + ((getResumeFullAutomationModeTime() == null) ? 0 : getResumeFullAutomationModeTime().hashCode());
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         return hashCode;
     }
 

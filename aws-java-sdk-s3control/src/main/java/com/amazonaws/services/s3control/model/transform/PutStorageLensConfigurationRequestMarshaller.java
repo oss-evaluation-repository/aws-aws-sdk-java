@@ -283,6 +283,18 @@ public class PutStorageLensConfigurationRequestMarshaller implements
                                         xmlWriter.endElement();
                                     }
                                 }
+
+                                {
+                                    CloudWatchMetrics cloudWatchMetrics = dataExport.getCloudWatchMetrics();
+                                    if (cloudWatchMetrics != null) {
+                                        xmlWriter.startElement("CloudWatchMetrics");
+
+                                        if (cloudWatchMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(cloudWatchMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
                                 xmlWriter.endElement();
                             }
                         }

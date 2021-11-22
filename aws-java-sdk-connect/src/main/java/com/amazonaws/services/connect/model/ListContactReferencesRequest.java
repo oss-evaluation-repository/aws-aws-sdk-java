@@ -50,7 +50,7 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <important>
      * <p>
-     * This is not expected to be set since the value returned in the previous response is always null.
+     * This is not expected to be set, because the value returned in the previous response is always null.
      * </p>
      * </important>
      */
@@ -241,7 +241,7 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <important>
      * <p>
-     * This is not expected to be set since the value returned in the previous response is always null.
+     * This is not expected to be set, because the value returned in the previous response is always null.
      * </p>
      * </important>
      * 
@@ -249,7 +249,7 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      *        The token for the next set of results. Use the value returned in the previous response in the next request
      *        to retrieve the next set of results.</p> <important>
      *        <p>
-     *        This is not expected to be set since the value returned in the previous response is always null.
+     *        This is not expected to be set, because the value returned in the previous response is always null.
      *        </p>
      */
 
@@ -264,14 +264,14 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <important>
      * <p>
-     * This is not expected to be set since the value returned in the previous response is always null.
+     * This is not expected to be set, because the value returned in the previous response is always null.
      * </p>
      * </important>
      * 
      * @return The token for the next set of results. Use the value returned in the previous response in the next
      *         request to retrieve the next set of results.</p> <important>
      *         <p>
-     *         This is not expected to be set since the value returned in the previous response is always null.
+     *         This is not expected to be set, because the value returned in the previous response is always null.
      *         </p>
      */
 
@@ -286,7 +286,7 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <important>
      * <p>
-     * This is not expected to be set since the value returned in the previous response is always null.
+     * This is not expected to be set, because the value returned in the previous response is always null.
      * </p>
      * </important>
      * 
@@ -294,7 +294,7 @@ public class ListContactReferencesRequest extends com.amazonaws.AmazonWebService
      *        The token for the next set of results. Use the value returned in the previous response in the next request
      *        to retrieve the next set of results.</p> <important>
      *        <p>
-     *        This is not expected to be set since the value returned in the previous response is always null.
+     *        This is not expected to be set, because the value returned in the previous response is always null.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -47,6 +47,11 @@ public class StorageLensDataExportStaxUnmarshaller implements Unmarshaller<Stora
                     storageLensDataExport.setS3BucketDestination(S3BucketDestinationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CloudWatchMetrics", targetDepth)) {
+                    storageLensDataExport.setCloudWatchMetrics(CloudWatchMetricsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return storageLensDataExport;

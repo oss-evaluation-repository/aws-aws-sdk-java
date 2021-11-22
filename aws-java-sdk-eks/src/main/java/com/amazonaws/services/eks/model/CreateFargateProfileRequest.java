@@ -71,8 +71,8 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other
-     * resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
+     * associated with the Fargate profile, such as the pods that are scheduled with it.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -432,13 +432,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other
-     * resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
+     * associated with the Fargate profile, such as the pods that are scheduled with it.
      * </p>
      * 
      * @return The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate
-     *         to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     *         consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
+     *         other resources associated with the Fargate profile, such as the pods that are scheduled with it.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -448,14 +448,14 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other
-     * resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
+     * associated with the Fargate profile, such as the pods that are scheduled with it.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate
-     *        to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     *        consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
+     *        other resources associated with the Fargate profile, such as the pods that are scheduled with it.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -465,14 +465,14 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other
-     * resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
+     * associated with the Fargate profile, such as the pods that are scheduled with it.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate
-     *        to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     *        consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
+     *        other resources associated with the Fargate profile, such as the pods that are scheduled with it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

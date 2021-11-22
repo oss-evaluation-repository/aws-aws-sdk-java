@@ -40,6 +40,8 @@ public class CreateActivationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> REGISTRATIONMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationMetadata").build();
 
     private static final CreateActivationRequestMarshaller instance = new CreateActivationRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateActivationRequestMarshaller {
             protocolMarshaller.marshall(createActivationRequest.getRegistrationLimit(), REGISTRATIONLIMIT_BINDING);
             protocolMarshaller.marshall(createActivationRequest.getExpirationDate(), EXPIRATIONDATE_BINDING);
             protocolMarshaller.marshall(createActivationRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getRegistrationMetadata(), REGISTRATIONMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

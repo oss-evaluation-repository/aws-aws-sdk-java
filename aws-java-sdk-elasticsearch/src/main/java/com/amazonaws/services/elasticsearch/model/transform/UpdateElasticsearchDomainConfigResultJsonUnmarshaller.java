@@ -52,6 +52,10 @@ public class UpdateElasticsearchDomainConfigResultJsonUnmarshaller implements Un
                     context.nextToken();
                     updateElasticsearchDomainConfigResult.setDomainConfig(ElasticsearchDomainConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DryRunResults", targetDepth)) {
+                    context.nextToken();
+                    updateElasticsearchDomainConfigResult.setDryRunResults(DryRunResultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

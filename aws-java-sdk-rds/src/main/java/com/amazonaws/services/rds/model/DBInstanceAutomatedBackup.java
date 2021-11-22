@@ -217,6 +217,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
+    /**
+     * <p>
+     * Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     */
+    private String backupTarget;
 
     /**
      * <p>
@@ -1523,6 +1529,49 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *        Region.
+     */
+
+    public void setBackupTarget(String backupTarget) {
+        this.backupTarget = backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @return Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *         Region.
+     */
+
+    public String getBackupTarget() {
+        return this.backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services
+     *        Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstanceAutomatedBackup withBackupTarget(String backupTarget) {
+        setBackupTarget(backupTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1585,7 +1634,9 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         if (getDBInstanceAutomatedBackupsArn() != null)
             sb.append("DBInstanceAutomatedBackupsArn: ").append(getDBInstanceAutomatedBackupsArn()).append(",");
         if (getDBInstanceAutomatedBackupsReplications() != null)
-            sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications());
+            sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications()).append(",");
+        if (getBackupTarget() != null)
+            sb.append("BackupTarget: ").append(getBackupTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -1707,6 +1758,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         if (other.getDBInstanceAutomatedBackupsReplications() != null
                 && other.getDBInstanceAutomatedBackupsReplications().equals(this.getDBInstanceAutomatedBackupsReplications()) == false)
             return false;
+        if (other.getBackupTarget() == null ^ this.getBackupTarget() == null)
+            return false;
+        if (other.getBackupTarget() != null && other.getBackupTarget().equals(this.getBackupTarget()) == false)
+            return false;
         return true;
     }
 
@@ -1741,6 +1796,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsArn() == null) ? 0 : getDBInstanceAutomatedBackupsArn().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
+        hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         return hashCode;
     }
 

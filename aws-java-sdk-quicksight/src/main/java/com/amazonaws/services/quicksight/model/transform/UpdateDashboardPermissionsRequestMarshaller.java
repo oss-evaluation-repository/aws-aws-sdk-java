@@ -36,6 +36,10 @@ public class UpdateDashboardPermissionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantPermissions").build();
     private static final MarshallingInfo<List> REVOKEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevokePermissions").build();
+    private static final MarshallingInfo<List> GRANTLINKPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantLinkPermissions").build();
+    private static final MarshallingInfo<List> REVOKELINKPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevokeLinkPermissions").build();
 
     private static final UpdateDashboardPermissionsRequestMarshaller instance = new UpdateDashboardPermissionsRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class UpdateDashboardPermissionsRequestMarshaller {
             protocolMarshaller.marshall(updateDashboardPermissionsRequest.getDashboardId(), DASHBOARDID_BINDING);
             protocolMarshaller.marshall(updateDashboardPermissionsRequest.getGrantPermissions(), GRANTPERMISSIONS_BINDING);
             protocolMarshaller.marshall(updateDashboardPermissionsRequest.getRevokePermissions(), REVOKEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(updateDashboardPermissionsRequest.getGrantLinkPermissions(), GRANTLINKPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(updateDashboardPermissionsRequest.getRevokeLinkPermissions(), REVOKELINKPERMISSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

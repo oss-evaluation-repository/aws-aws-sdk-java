@@ -18,6 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Request for GetProgrammaticAccessCredentials operation
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials"
  *      target="_top">AWS API Documentation</a>
@@ -33,7 +34,7 @@ public class GetProgrammaticAccessCredentialsRequest extends com.amazonaws.Amazo
     private Long durationInMinutes;
     /**
      * <p>
-     * The habanero environment identifier.
+     * The FinSpace environment identifier.
      * </p>
      */
     private String environmentId;
@@ -80,11 +81,11 @@ public class GetProgrammaticAccessCredentialsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The habanero environment identifier.
+     * The FinSpace environment identifier.
      * </p>
      * 
      * @param environmentId
-     *        The habanero environment identifier.
+     *        The FinSpace environment identifier.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -93,10 +94,10 @@ public class GetProgrammaticAccessCredentialsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The habanero environment identifier.
+     * The FinSpace environment identifier.
      * </p>
      * 
-     * @return The habanero environment identifier.
+     * @return The FinSpace environment identifier.
      */
 
     public String getEnvironmentId() {
@@ -105,11 +106,11 @@ public class GetProgrammaticAccessCredentialsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The habanero environment identifier.
+     * The FinSpace environment identifier.
      * </p>
      * 
      * @param environmentId
-     *        The habanero environment identifier.
+     *        The FinSpace environment identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

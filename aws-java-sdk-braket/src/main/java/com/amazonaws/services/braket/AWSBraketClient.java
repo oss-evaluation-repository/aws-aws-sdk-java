@@ -81,29 +81,29 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.braket.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.braket.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeviceRetiredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.DeviceRetiredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.braket.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.braket.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.braket.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeviceOfflineException").withExceptionUnmarshaller(
                                     com.amazonaws.services.braket.model.transform.DeviceOfflineExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.braket.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.braket.model.AWSBraketException.class));
 
     public static AWSBraketClientBuilder builder() {
@@ -150,6 +150,73 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/braket/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/braket/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Cancels an Amazon Braket job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @return Result of the CancelJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         An error occurred due to a conflict.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelJobRequest> request = null;
+        Response<CancelJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -221,6 +288,75 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
 
     /**
      * <p>
+     * Creates an Amazon Braket job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return Result of the CreateJob operation returned by the service.
+     * @throws ConflictException
+     *         An error occurred due to a conflict.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws DeviceRetiredException
+     *         The specified device has been retired.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because a service quota is exceeded.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobRequest> request = null;
+        Response<CreateJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a quantum task.
      * </p>
      * 
@@ -232,6 +368,8 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      *         The throttling rate limit is met.
      * @throws DeviceOfflineException
      *         The specified device is currently offline.
+     * @throws DeviceRetiredException
+     *         The specified device has been retired.
      * @throws InternalServiceException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -299,10 +437,6 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         The throttling rate limit is met.
-     * @throws DeviceOfflineException
-     *         The specified device is currently offline.
-     * @throws DeviceRetiredException
-     *         The specified device has been retired.
      * @throws InternalServiceException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
@@ -345,6 +479,71 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified Amazon Braket job.
+     * </p>
+     * 
+     * @param getJobRequest
+     * @return Result of the GetJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.GetJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetJobResult getJob(GetJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJob(request);
+    }
+
+    @SdkInternalApi
+    final GetJobResult executeGetJob(GetJobRequest getJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetJobRequest> request = null;
+        Response<GetJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -534,6 +733,69 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches for Amazon Braket jobs that match the specified filter values.
+     * </p>
+     * 
+     * @param searchJobsRequest
+     * @return Result of the SearchJobs operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The throttling rate limit is met.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.SearchJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SearchJobsResult searchJobs(SearchJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchJobs(request);
+    }
+
+    @SdkInternalApi
+    final SearchJobsResult executeSearchJobs(SearchJobsRequest searchJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchJobsRequest> request = null;
+        Response<SearchJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchJobsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

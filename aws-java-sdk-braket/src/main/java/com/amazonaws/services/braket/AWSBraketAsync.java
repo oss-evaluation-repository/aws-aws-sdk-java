@@ -34,6 +34,37 @@ public interface AWSBraketAsync extends AWSBraket {
 
     /**
      * <p>
+     * Cancels an Amazon Braket job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @return A Java Future containing the result of the CancelJob operation returned by the service.
+     * @sample AWSBraketAsync.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest);
+
+    /**
+     * <p>
+     * Cancels an Amazon Braket job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelJob operation returned by the service.
+     * @sample AWSBraketAsyncHandler.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels the specified task.
      * </p>
      * 
@@ -62,6 +93,37 @@ public interface AWSBraketAsync extends AWSBraket {
      */
     java.util.concurrent.Future<CancelQuantumTaskResult> cancelQuantumTaskAsync(CancelQuantumTaskRequest cancelQuantumTaskRequest,
             com.amazonaws.handlers.AsyncHandler<CancelQuantumTaskRequest, CancelQuantumTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Braket job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return A Java Future containing the result of the CreateJob operation returned by the service.
+     * @sample AWSBraketAsync.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Braket job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateJob operation returned by the service.
+     * @sample AWSBraketAsyncHandler.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler);
 
     /**
      * <p>
@@ -124,6 +186,37 @@ public interface AWSBraketAsync extends AWSBraket {
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified Amazon Braket job.
+     * </p>
+     * 
+     * @param getJobRequest
+     * @return A Java Future containing the result of the GetJob operation returned by the service.
+     * @sample AWSBraketAsync.GetJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified Amazon Braket job.
+     * </p>
+     * 
+     * @param getJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJob operation returned by the service.
+     * @sample AWSBraketAsyncHandler.GetJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler);
 
     /**
      * <p>
@@ -217,6 +310,37 @@ public interface AWSBraketAsync extends AWSBraket {
      */
     java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest searchDevicesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchDevicesRequest, SearchDevicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for Amazon Braket jobs that match the specified filter values.
+     * </p>
+     * 
+     * @param searchJobsRequest
+     * @return A Java Future containing the result of the SearchJobs operation returned by the service.
+     * @sample AWSBraketAsync.SearchJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(SearchJobsRequest searchJobsRequest);
+
+    /**
+     * <p>
+     * Searches for Amazon Braket jobs that match the specified filter values.
+     * </p>
+     * 
+     * @param searchJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchJobs operation returned by the service.
+     * @sample AWSBraketAsyncHandler.SearchJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(SearchJobsRequest searchJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchJobsRequest, SearchJobsResult> asyncHandler);
 
     /**
      * <p>

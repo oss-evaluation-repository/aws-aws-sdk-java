@@ -40,7 +40,7 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define.
+     * key and an optional value. You define both.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -134,11 +134,11 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define.
+     * key and an optional value. You define both.
      * </p>
      * 
      * @return The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value, both of which you define.
+     *         consists of a key and an optional value. You define both.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -148,12 +148,12 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define.
+     * key and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define.
+     *        consists of a key and an optional value. You define both.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -163,12 +163,12 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define.
+     * key and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define.
+     *        consists of a key and an optional value. You define both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

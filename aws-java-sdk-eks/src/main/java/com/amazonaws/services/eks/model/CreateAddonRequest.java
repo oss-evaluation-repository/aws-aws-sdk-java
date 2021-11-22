@@ -80,7 +80,7 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -437,11 +437,11 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @return The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *         a key and an optional value, both of which you define.
+     *         a key and an optional value. You define both.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -451,12 +451,12 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value, both of which you define.
+     *        a key and an optional value. You define both.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -466,12 +466,12 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value, both of which you define.
+     *        a key and an optional value. You define both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

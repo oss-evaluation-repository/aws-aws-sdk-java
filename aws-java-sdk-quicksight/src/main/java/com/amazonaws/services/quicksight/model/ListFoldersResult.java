@@ -25,14 +25,14 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
     /**
      * <p>
-     * A structure that contains all of the folders in your AWS account. This structure provides basic information about
-     * the folders.
+     * A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic
+     * information about the folders.
      * </p>
      */
     private java.util.List<FolderSummary> folderSummaryList;
@@ -44,18 +44,18 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String nextToken;
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -64,10 +64,10 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status. If succeeded, the status is <code>SC_OK</code>
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -76,11 +76,11 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +91,12 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A structure that contains all of the folders in your AWS account. This structure provides basic information about
-     * the folders.
+     * A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic
+     * information about the folders.
      * </p>
      * 
-     * @return A structure that contains all of the folders in your AWS account. This structure provides basic
-     *         information about the folders.
+     * @return A structure that contains all of the folders in the Amazon Web Services account. This structure provides
+     *         basic information about the folders.
      */
 
     public java.util.List<FolderSummary> getFolderSummaryList() {
@@ -105,13 +105,13 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A structure that contains all of the folders in your AWS account. This structure provides basic information about
-     * the folders.
+     * A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic
+     * information about the folders.
      * </p>
      * 
      * @param folderSummaryList
-     *        A structure that contains all of the folders in your AWS account. This structure provides basic
-     *        information about the folders.
+     *        A structure that contains all of the folders in the Amazon Web Services account. This structure provides
+     *        basic information about the folders.
      */
 
     public void setFolderSummaryList(java.util.Collection<FolderSummary> folderSummaryList) {
@@ -125,8 +125,8 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A structure that contains all of the folders in your AWS account. This structure provides basic information about
-     * the folders.
+     * A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic
+     * information about the folders.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,8 +135,8 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param folderSummaryList
-     *        A structure that contains all of the folders in your AWS account. This structure provides basic
-     *        information about the folders.
+     *        A structure that contains all of the folders in the Amazon Web Services account. This structure provides
+     *        basic information about the folders.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +152,13 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A structure that contains all of the folders in your AWS account. This structure provides basic information about
-     * the folders.
+     * A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic
+     * information about the folders.
      * </p>
      * 
      * @param folderSummaryList
-     *        A structure that contains all of the folders in your AWS account. This structure provides basic
-     *        information about the folders.
+     *        A structure that contains all of the folders in the Amazon Web Services account. This structure provides
+     *        basic information about the folders.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -222,10 +222,10 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The request ID.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -234,11 +234,11 @@ public class ListFoldersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

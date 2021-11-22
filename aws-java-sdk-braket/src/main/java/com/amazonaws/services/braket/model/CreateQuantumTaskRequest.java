@@ -51,6 +51,12 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
     private String deviceParameters;
     /**
      * <p>
+     * The token for an Amazon Braket job that associates it with the quantum task.
+     * </p>
+     */
+    private String jobToken;
+    /**
+     * <p>
      * The S3 bucket to store task result files in.
      * </p>
      */
@@ -276,6 +282,46 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The token for an Amazon Braket job that associates it with the quantum task.
+     * </p>
+     * 
+     * @param jobToken
+     *        The token for an Amazon Braket job that associates it with the quantum task.
+     */
+
+    public void setJobToken(String jobToken) {
+        this.jobToken = jobToken;
+    }
+
+    /**
+     * <p>
+     * The token for an Amazon Braket job that associates it with the quantum task.
+     * </p>
+     * 
+     * @return The token for an Amazon Braket job that associates it with the quantum task.
+     */
+
+    public String getJobToken() {
+        return this.jobToken;
+    }
+
+    /**
+     * <p>
+     * The token for an Amazon Braket job that associates it with the quantum task.
+     * </p>
+     * 
+     * @param jobToken
+     *        The token for an Amazon Braket job that associates it with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQuantumTaskRequest withJobToken(String jobToken) {
+        setJobToken(jobToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * The S3 bucket to store task result files in.
      * </p>
      * 
@@ -482,6 +528,8 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
         if (getDeviceParameters() != null)
             sb.append("DeviceParameters: ").append(getDeviceParameters()).append(",");
+        if (getJobToken() != null)
+            sb.append("JobToken: ").append(getJobToken()).append(",");
         if (getOutputS3Bucket() != null)
             sb.append("OutputS3Bucket: ").append(getOutputS3Bucket()).append(",");
         if (getOutputS3KeyPrefix() != null)
@@ -520,6 +568,10 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getDeviceParameters() != null && other.getDeviceParameters().equals(this.getDeviceParameters()) == false)
             return false;
+        if (other.getJobToken() == null ^ this.getJobToken() == null)
+            return false;
+        if (other.getJobToken() != null && other.getJobToken().equals(this.getJobToken()) == false)
+            return false;
         if (other.getOutputS3Bucket() == null ^ this.getOutputS3Bucket() == null)
             return false;
         if (other.getOutputS3Bucket() != null && other.getOutputS3Bucket().equals(this.getOutputS3Bucket()) == false)
@@ -548,6 +600,7 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceParameters() == null) ? 0 : getDeviceParameters().hashCode());
+        hashCode = prime * hashCode + ((getJobToken() == null) ? 0 : getJobToken().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Bucket() == null) ? 0 : getOutputS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getOutputS3KeyPrefix() == null) ? 0 : getOutputS3KeyPrefix().hashCode());
         hashCode = prime * hashCode + ((getShots() == null) ? 0 : getShots().hashCode());

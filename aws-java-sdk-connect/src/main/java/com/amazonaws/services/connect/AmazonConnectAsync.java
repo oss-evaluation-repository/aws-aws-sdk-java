@@ -443,6 +443,40 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Creates a contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createContactFlowModuleRequest
+     * @return A Java Future containing the result of the CreateContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsync.CreateContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(CreateContactFlowModuleRequest createContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * Creates a contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createContactFlowModuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactFlowModuleResult> createContactFlowModuleAsync(CreateContactFlowModuleRequest createContactFlowModuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContactFlowModuleRequest, CreateContactFlowModuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Creates hours of operation.
      * </p>
      * 
@@ -455,6 +489,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(CreateHoursOfOperationRequest createHoursOfOperationRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Creates hours of operation.
      * </p>
@@ -801,6 +838,71 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Deletes a contact flow for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteContactFlowRequest
+     * @return A Java Future containing the result of the DeleteContactFlow operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteContactFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(DeleteContactFlowRequest deleteContactFlowRequest);
+
+    /**
+     * <p>
+     * Deletes a contact flow for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteContactFlowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContactFlow operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteContactFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactFlowResult> deleteContactFlowAsync(DeleteContactFlowRequest deleteContactFlowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactFlowRequest, DeleteContactFlowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified contact flow module.
+     * </p>
+     * 
+     * @param deleteContactFlowModuleRequest
+     * @return A Java Future containing the result of the DeleteContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(DeleteContactFlowModuleRequest deleteContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified contact flow module.
+     * </p>
+     * 
+     * @param deleteContactFlowModuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactFlowModuleResult> deleteContactFlowModuleAsync(DeleteContactFlowModuleRequest deleteContactFlowModuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactFlowModuleRequest, DeleteContactFlowModuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes an hours of operation.
      * </p>
      * 
@@ -813,6 +915,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DeleteHoursOfOperationResult> deleteHoursOfOperationAsync(DeleteHoursOfOperationRequest deleteHoursOfOperationRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Deletes an hours of operation.
      * </p>
@@ -1135,7 +1240,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+     * Contact information remains available in Amazon Connect for 24 months, and then it is deleted.
      * </p>
      * </important>
      * 
@@ -1156,7 +1261,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <important>
      * <p>
-     * Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+     * Contact information remains available in Amazon Connect for 24 months, and then it is deleted.
      * </p>
      * </important>
      * 
@@ -1214,6 +1319,42 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Describes the specified contact flow module.
+     * </p>
+     * 
+     * @param describeContactFlowModuleRequest
+     * @return A Java Future containing the result of the DescribeContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(
+            DescribeContactFlowModuleRequest describeContactFlowModuleRequest);
+
+    /**
+     * <p>
+     * Describes the specified contact flow module.
+     * </p>
+     * 
+     * @param describeContactFlowModuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeContactFlowModule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeContactFlowModule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContactFlowModuleResult> describeContactFlowModuleAsync(
+            DescribeContactFlowModuleRequest describeContactFlowModuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeContactFlowModuleRequest, DescribeContactFlowModuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Describes the hours of operation.
      * </p>
      * 
@@ -1226,6 +1367,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeHoursOfOperationResult> describeHoursOfOperationAsync(DescribeHoursOfOperationRequest describeHoursOfOperationRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Describes the hours of operation.
      * </p>
@@ -2187,6 +2331,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about the contact flow modules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listContactFlowModulesRequest
+     * @return A Java Future containing the result of the ListContactFlowModules operation returned by the service.
+     * @sample AmazonConnectAsync.ListContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(ListContactFlowModulesRequest listContactFlowModulesRequest);
+
+    /**
+     * <p>
+     * Provides information about the contact flow modules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listContactFlowModulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContactFlowModules operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactFlowModulesResult> listContactFlowModulesAsync(ListContactFlowModulesRequest listContactFlowModulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContactFlowModulesRequest, ListContactFlowModulesResult> asyncHandler);
 
     /**
      * <p>
@@ -3380,7 +3555,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Initiates a contact flow to start a new task immediately or at a future date and time.
+     * Initiates a contact flow to start a new task.
      * </p>
      * 
      * @param startTaskContactRequest
@@ -3393,7 +3568,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Initiates a contact flow to start a new task immediately or at a future date and time.
+     * Initiates a contact flow to start a new task.
      * </p>
      * 
      * @param startTaskContactRequest
@@ -3687,7 +3862,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Adds or updates user defined contact information associated with the specified contact. At least one field to be
+     * Adds or updates user-defined contact information associated with the specified contact. At least one field to be
      * updated must be present in the request.
      * </p>
      * <important>
@@ -3709,7 +3884,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
-     * Adds or updates user defined contact information associated with the specified contact. At least one field to be
+     * Adds or updates user-defined contact information associated with the specified contact. At least one field to be
      * updated must be present in the request.
      * </p>
      * <important>
@@ -3843,6 +4018,109 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Updates metadata about specified contact flow.
+     * </p>
+     * 
+     * @param updateContactFlowMetadataRequest
+     * @return A Java Future containing the result of the UpdateContactFlowMetadata operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateContactFlowMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(
+            UpdateContactFlowMetadataRequest updateContactFlowMetadataRequest);
+
+    /**
+     * <p>
+     * Updates metadata about specified contact flow.
+     * </p>
+     * 
+     * @param updateContactFlowMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContactFlowMetadata operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateContactFlowMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowMetadataResult> updateContactFlowMetadataAsync(
+            UpdateContactFlowMetadataRequest updateContactFlowMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowMetadataRequest, UpdateContactFlowMetadataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates specified contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param updateContactFlowModuleContentRequest
+     * @return A Java Future containing the result of the UpdateContactFlowModuleContent operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.UpdateContactFlowModuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(
+            UpdateContactFlowModuleContentRequest updateContactFlowModuleContentRequest);
+
+    /**
+     * <p>
+     * Updates specified contact flow module for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param updateContactFlowModuleContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContactFlowModuleContent operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.UpdateContactFlowModuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowModuleContentResult> updateContactFlowModuleContentAsync(
+            UpdateContactFlowModuleContentRequest updateContactFlowModuleContentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleContentRequest, UpdateContactFlowModuleContentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates metadata about specified contact flow module.
+     * </p>
+     * 
+     * @param updateContactFlowModuleMetadataRequest
+     * @return A Java Future containing the result of the UpdateContactFlowModuleMetadata operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.UpdateContactFlowModuleMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            UpdateContactFlowModuleMetadataRequest updateContactFlowModuleMetadataRequest);
+
+    /**
+     * <p>
+     * Updates metadata about specified contact flow module.
+     * </p>
+     * 
+     * @param updateContactFlowModuleMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContactFlowModuleMetadata operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.UpdateContactFlowModuleMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactFlowModuleMetadataResult> updateContactFlowModuleMetadataAsync(
+            UpdateContactFlowModuleMetadataRequest updateContactFlowModuleMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactFlowModuleMetadataRequest, UpdateContactFlowModuleMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * The name of the contact flow.
      * </p>
      * <p>
@@ -3913,6 +4191,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates the hours of operation.
      * </p>
      * 
@@ -3925,6 +4206,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateHoursOfOperationResult> updateHoursOfOperationAsync(UpdateHoursOfOperationRequest updateHoursOfOperationRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates the hours of operation.
      * </p>

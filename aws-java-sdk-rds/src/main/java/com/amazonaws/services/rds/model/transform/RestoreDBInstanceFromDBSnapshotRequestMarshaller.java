@@ -224,6 +224,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("CustomIamInstanceProfile", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getCustomIamInstanceProfile()));
         }
 
+        if (restoreDBInstanceFromDBSnapshotRequest.getBackupTarget() != null) {
+            request.addParameter("BackupTarget", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getBackupTarget()));
+        }
+
         return request;
     }
 

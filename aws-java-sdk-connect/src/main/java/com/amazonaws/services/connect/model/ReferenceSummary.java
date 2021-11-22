@@ -31,7 +31,7 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      */
     private UrlReference url;
@@ -45,11 +45,12 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
      * @param url
-     *        Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     *        Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
+     *        null.
      */
 
     public void setUrl(UrlReference url) {
@@ -58,10 +59,11 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
-     * @return Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * @return Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
+     *         null.
      */
 
     public UrlReference getUrl() {
@@ -70,11 +72,12 @@ public class ReferenceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     * Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
      * </p>
      * 
      * @param url
-     *        Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.
+     *        Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise,
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

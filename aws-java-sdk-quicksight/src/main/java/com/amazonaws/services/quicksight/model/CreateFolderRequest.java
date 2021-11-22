@@ -27,13 +27,13 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account where you want to create the folder.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
@@ -76,11 +76,11 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account where you want to create the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The ID for the Amazon Web Services account where you want to create the folder.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -89,10 +89,10 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account where you want to create the folder.
      * </p>
      * 
-     * @return The AWS Account ID.
+     * @return The ID for the Amazon Web Services account where you want to create the folder.
      */
 
     public String getAwsAccountId() {
@@ -101,11 +101,11 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The ID for the Amazon Web Services account where you want to create the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The ID for the Amazon Web Services account where you want to create the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -129,10 +129,10 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -141,11 +141,11 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

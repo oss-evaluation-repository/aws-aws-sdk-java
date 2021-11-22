@@ -16,6 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * The response from a CreateChangeset operation.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset" target="_top">AWS API
  *      Documentation</a>
@@ -25,48 +26,94 @@ public class CreateChangesetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returns the changeset details.
+     * The unique identifier for the FinSpace Dataset where the Changeset is created.
      * </p>
      */
-    private ChangesetInfo changeset;
+    private String datasetId;
+    /**
+     * <p>
+     * The unique identifier of the Changeset that is created.
+     * </p>
+     */
+    private String changesetId;
 
     /**
      * <p>
-     * Returns the changeset details.
+     * The unique identifier for the FinSpace Dataset where the Changeset is created.
      * </p>
      * 
-     * @param changeset
-     *        Returns the changeset details.
+     * @param datasetId
+     *        The unique identifier for the FinSpace Dataset where the Changeset is created.
      */
 
-    public void setChangeset(ChangesetInfo changeset) {
-        this.changeset = changeset;
+    public void setDatasetId(String datasetId) {
+        this.datasetId = datasetId;
     }
 
     /**
      * <p>
-     * Returns the changeset details.
+     * The unique identifier for the FinSpace Dataset where the Changeset is created.
      * </p>
      * 
-     * @return Returns the changeset details.
+     * @return The unique identifier for the FinSpace Dataset where the Changeset is created.
      */
 
-    public ChangesetInfo getChangeset() {
-        return this.changeset;
+    public String getDatasetId() {
+        return this.datasetId;
     }
 
     /**
      * <p>
-     * Returns the changeset details.
+     * The unique identifier for the FinSpace Dataset where the Changeset is created.
      * </p>
      * 
-     * @param changeset
-     *        Returns the changeset details.
+     * @param datasetId
+     *        The unique identifier for the FinSpace Dataset where the Changeset is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateChangesetResult withChangeset(ChangesetInfo changeset) {
-        setChangeset(changeset);
+    public CreateChangesetResult withDatasetId(String datasetId) {
+        setDatasetId(datasetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the Changeset that is created.
+     * </p>
+     * 
+     * @param changesetId
+     *        The unique identifier of the Changeset that is created.
+     */
+
+    public void setChangesetId(String changesetId) {
+        this.changesetId = changesetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the Changeset that is created.
+     * </p>
+     * 
+     * @return The unique identifier of the Changeset that is created.
+     */
+
+    public String getChangesetId() {
+        return this.changesetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the Changeset that is created.
+     * </p>
+     * 
+     * @param changesetId
+     *        The unique identifier of the Changeset that is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangesetResult withChangesetId(String changesetId) {
+        setChangesetId(changesetId);
         return this;
     }
 
@@ -82,8 +129,10 @@ public class CreateChangesetResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getChangeset() != null)
-            sb.append("Changeset: ").append(getChangeset());
+        if (getDatasetId() != null)
+            sb.append("DatasetId: ").append(getDatasetId()).append(",");
+        if (getChangesetId() != null)
+            sb.append("ChangesetId: ").append(getChangesetId());
         sb.append("}");
         return sb.toString();
     }
@@ -98,9 +147,13 @@ public class CreateChangesetResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof CreateChangesetResult == false)
             return false;
         CreateChangesetResult other = (CreateChangesetResult) obj;
-        if (other.getChangeset() == null ^ this.getChangeset() == null)
+        if (other.getDatasetId() == null ^ this.getDatasetId() == null)
             return false;
-        if (other.getChangeset() != null && other.getChangeset().equals(this.getChangeset()) == false)
+        if (other.getDatasetId() != null && other.getDatasetId().equals(this.getDatasetId()) == false)
+            return false;
+        if (other.getChangesetId() == null ^ this.getChangesetId() == null)
+            return false;
+        if (other.getChangesetId() != null && other.getChangesetId().equals(this.getChangesetId()) == false)
             return false;
         return true;
     }
@@ -110,7 +163,8 @@ public class CreateChangesetResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getChangeset() == null) ? 0 : getChangeset().hashCode());
+        hashCode = prime * hashCode + ((getDatasetId() == null) ? 0 : getDatasetId().hashCode());
+        hashCode = prime * hashCode + ((getChangesetId() == null) ? 0 : getChangesetId().hashCode());
         return hashCode;
     }
 

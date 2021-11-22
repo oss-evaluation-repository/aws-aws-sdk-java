@@ -18,6 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * The request for a CreateChangeset operation.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset" target="_top">AWS API
  *      Documentation</a>
@@ -27,23 +28,34 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier for the FinSpace dataset in which the changeset will be created.
+     * A token used to ensure idempotency.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * The unique identifier for the FinSpace Dataset where the Changeset will be created.
      * </p>
      */
     private String datasetId;
     /**
      * <p>
-     * Option to indicate how a changeset will be applied to a dataset.
+     * Option to indicate how a Changeset will be applied to a Dataset.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded changesets.
+     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      * </p>
      * </li>
      * </ul>
@@ -51,49 +63,94 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
     private String changeType;
     /**
      * <p>
-     * Type of the data source from which the files to create the changeset will be sourced.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>S3</code> - Amazon S3.
-     * </p>
-     * </li>
-     * </ul>
-     */
-    private String sourceType;
-    /**
-     * <p>
-     * Source path from which the files to create the changeset will be sourced.
+     * Options that define the location of the data being ingested.
      * </p>
      */
     private java.util.Map<String, String> sourceParams;
     /**
      * <p>
-     * Format type of the input files being loaded into the changeset.
+     * Options that define the structure of the source file(s) including the format type (<code>formatType</code>),
+     * header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of
+     * compression (<code>compression</code>).
      * </p>
-     */
-    private String formatType;
-    /**
      * <p>
-     * Options that define the structure of the source file(s).
+     * <code>formatType</code> is a required attribute and can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARQUET</code> - Parquet source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CSV</code> - CSV source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code> - JSON source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XML</code> - XML source file format.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you could specify the following for <code>formatParams</code>:
      * </p>
      */
     private java.util.Map<String, String> formatParams;
-    /**
-     * <p>
-     * Metadata tags to apply to this changeset.
-     * </p>
-     */
-    private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The unique identifier for the FinSpace dataset in which the changeset will be created.
+     * A token used to ensure idempotency.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token used to ensure idempotency.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token used to ensure idempotency.
+     * </p>
+     * 
+     * @return A token used to ensure idempotency.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token used to ensure idempotency.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token used to ensure idempotency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangesetRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the FinSpace Dataset where the Changeset will be created.
      * </p>
      * 
      * @param datasetId
-     *        The unique identifier for the FinSpace dataset in which the changeset will be created.
+     *        The unique identifier for the FinSpace Dataset where the Changeset will be created.
      */
 
     public void setDatasetId(String datasetId) {
@@ -102,10 +159,10 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier for the FinSpace dataset in which the changeset will be created.
+     * The unique identifier for the FinSpace Dataset where the Changeset will be created.
      * </p>
      * 
-     * @return The unique identifier for the FinSpace dataset in which the changeset will be created.
+     * @return The unique identifier for the FinSpace Dataset where the Changeset will be created.
      */
 
     public String getDatasetId() {
@@ -114,11 +171,11 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The unique identifier for the FinSpace dataset in which the changeset will be created.
+     * The unique identifier for the FinSpace Dataset where the Changeset will be created.
      * </p>
      * 
      * @param datasetId
-     *        The unique identifier for the FinSpace dataset in which the changeset will be created.
+     *        The unique identifier for the FinSpace Dataset where the Changeset will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,33 +186,43 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Option to indicate how a changeset will be applied to a dataset.
+     * Option to indicate how a Changeset will be applied to a Dataset.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded changesets.
+     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      * </p>
      * </li>
      * </ul>
      * 
      * @param changeType
-     *        Option to indicate how a changeset will be applied to a dataset.</p>
+     *        Option to indicate how a Changeset will be applied to a Dataset.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded
-     *        changesets.
+     *        Changesets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      *        </p>
      *        </li>
      * @see ChangeType
@@ -167,32 +234,42 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Option to indicate how a changeset will be applied to a dataset.
+     * Option to indicate how a Changeset will be applied to a Dataset.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded changesets.
+     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Option to indicate how a changeset will be applied to a dataset.</p>
+     * @return Option to indicate how a Changeset will be applied to a Dataset.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     *         <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded
-     *         changesets.
+     *         Changesets.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      *         </p>
      *         </li>
      * @see ChangeType
@@ -204,33 +281,43 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Option to indicate how a changeset will be applied to a dataset.
+     * Option to indicate how a Changeset will be applied to a Dataset.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded changesets.
+     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      * </p>
      * </li>
      * </ul>
      * 
      * @param changeType
-     *        Option to indicate how a changeset will be applied to a dataset.</p>
+     *        Option to indicate how a Changeset will be applied to a Dataset.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded
-     *        changesets.
+     *        Changesets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -244,33 +331,43 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Option to indicate how a changeset will be applied to a dataset.
+     * Option to indicate how a Changeset will be applied to a Dataset.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     * <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded changesets.
+     * <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      * </p>
      * </li>
      * </ul>
      * 
      * @param changeType
-     *        Option to indicate how a changeset will be applied to a dataset.</p>
+     *        Option to indicate how a Changeset will be applied to a Dataset.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded changesets.
+     *        <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded
-     *        changesets.
+     *        Changesets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -284,121 +381,10 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Type of the data source from which the files to create the changeset will be sourced.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>S3</code> - Amazon S3.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param sourceType
-     *        Type of the data source from which the files to create the changeset will be sourced.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>S3</code> - Amazon S3.
-     *        </p>
-     *        </li>
-     * @see SourceType
-     */
-
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    /**
-     * <p>
-     * Type of the data source from which the files to create the changeset will be sourced.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>S3</code> - Amazon S3.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return Type of the data source from which the files to create the changeset will be sourced.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>S3</code> - Amazon S3.
-     *         </p>
-     *         </li>
-     * @see SourceType
-     */
-
-    public String getSourceType() {
-        return this.sourceType;
-    }
-
-    /**
-     * <p>
-     * Type of the data source from which the files to create the changeset will be sourced.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>S3</code> - Amazon S3.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param sourceType
-     *        Type of the data source from which the files to create the changeset will be sourced.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>S3</code> - Amazon S3.
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SourceType
-     */
-
-    public CreateChangesetRequest withSourceType(String sourceType) {
-        setSourceType(sourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Type of the data source from which the files to create the changeset will be sourced.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>S3</code> - Amazon S3.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param sourceType
-     *        Type of the data source from which the files to create the changeset will be sourced.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>S3</code> - Amazon S3.
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SourceType
-     */
-
-    public CreateChangesetRequest withSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * Source path from which the files to create the changeset will be sourced.
+     * Options that define the location of the data being ingested.
      * </p>
      * 
-     * @return Source path from which the files to create the changeset will be sourced.
+     * @return Options that define the location of the data being ingested.
      */
 
     public java.util.Map<String, String> getSourceParams() {
@@ -407,11 +393,11 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source path from which the files to create the changeset will be sourced.
+     * Options that define the location of the data being ingested.
      * </p>
      * 
      * @param sourceParams
-     *        Source path from which the files to create the changeset will be sourced.
+     *        Options that define the location of the data being ingested.
      */
 
     public void setSourceParams(java.util.Map<String, String> sourceParams) {
@@ -420,11 +406,11 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source path from which the files to create the changeset will be sourced.
+     * Options that define the location of the data being ingested.
      * </p>
      * 
      * @param sourceParams
-     *        Source path from which the files to create the changeset will be sourced.
+     *        Options that define the location of the data being ingested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,69 +449,69 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Format type of the input files being loaded into the changeset.
+     * Options that define the structure of the source file(s) including the format type (<code>formatType</code>),
+     * header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of
+     * compression (<code>compression</code>).
      * </p>
-     * 
-     * @param formatType
-     *        Format type of the input files being loaded into the changeset.
-     * @see FormatType
-     */
-
-    public void setFormatType(String formatType) {
-        this.formatType = formatType;
-    }
-
-    /**
      * <p>
-     * Format type of the input files being loaded into the changeset.
+     * <code>formatType</code> is a required attribute and can have the following values:
      * </p>
-     * 
-     * @return Format type of the input files being loaded into the changeset.
-     * @see FormatType
-     */
-
-    public String getFormatType() {
-        return this.formatType;
-    }
-
-    /**
+     * <ul>
+     * <li>
      * <p>
-     * Format type of the input files being loaded into the changeset.
+     * <code>PARQUET</code> - Parquet source file format.
      * </p>
-     * 
-     * @param formatType
-     *        Format type of the input files being loaded into the changeset.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FormatType
-     */
-
-    public CreateChangesetRequest withFormatType(String formatType) {
-        setFormatType(formatType);
-        return this;
-    }
-
-    /**
+     * </li>
+     * <li>
      * <p>
-     * Format type of the input files being loaded into the changeset.
+     * <code>CSV</code> - CSV source file format.
      * </p>
-     * 
-     * @param formatType
-     *        Format type of the input files being loaded into the changeset.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FormatType
-     */
-
-    public CreateChangesetRequest withFormatType(FormatType formatType) {
-        this.formatType = formatType.toString();
-        return this;
-    }
-
-    /**
+     * </li>
+     * <li>
      * <p>
-     * Options that define the structure of the source file(s).
+     * <code>JSON</code> - JSON source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XML</code> - XML source file format.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you could specify the following for <code>formatParams</code>:
      * </p>
      * 
-     * @return Options that define the structure of the source file(s).
+     * @return Options that define the structure of the source file(s) including the format type (
+     *         <code>formatType</code>), header row (<code>withHeader</code>), data separation character (
+     *         <code>separator</code>) and the type of compression (<code>compression</code>). </p>
+     *         <p>
+     *         <code>formatType</code> is a required attribute and can have the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PARQUET</code> - Parquet source file format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CSV</code> - CSV source file format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JSON</code> - JSON source file format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>XML</code> - XML source file format.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, you could specify the following for <code>formatParams</code>:
      */
 
     public java.util.Map<String, String> getFormatParams() {
@@ -534,11 +520,70 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Options that define the structure of the source file(s).
+     * Options that define the structure of the source file(s) including the format type (<code>formatType</code>),
+     * header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of
+     * compression (<code>compression</code>).
+     * </p>
+     * <p>
+     * <code>formatType</code> is a required attribute and can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARQUET</code> - Parquet source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CSV</code> - CSV source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code> - JSON source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XML</code> - XML source file format.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you could specify the following for <code>formatParams</code>:
      * </p>
      * 
      * @param formatParams
-     *        Options that define the structure of the source file(s).
+     *        Options that define the structure of the source file(s) including the format type (<code>formatType</code>
+     *        ), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type
+     *        of compression (<code>compression</code>). </p>
+     *        <p>
+     *        <code>formatType</code> is a required attribute and can have the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PARQUET</code> - Parquet source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CSV</code> - CSV source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code> - JSON source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XML</code> - XML source file format.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, you could specify the following for <code>formatParams</code>:
      */
 
     public void setFormatParams(java.util.Map<String, String> formatParams) {
@@ -547,11 +592,70 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Options that define the structure of the source file(s).
+     * Options that define the structure of the source file(s) including the format type (<code>formatType</code>),
+     * header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of
+     * compression (<code>compression</code>).
+     * </p>
+     * <p>
+     * <code>formatType</code> is a required attribute and can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARQUET</code> - Parquet source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CSV</code> - CSV source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code> - JSON source file format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XML</code> - XML source file format.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you could specify the following for <code>formatParams</code>:
      * </p>
      * 
      * @param formatParams
-     *        Options that define the structure of the source file(s).
+     *        Options that define the structure of the source file(s) including the format type (<code>formatType</code>
+     *        ), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type
+     *        of compression (<code>compression</code>). </p>
+     *        <p>
+     *        <code>formatType</code> is a required attribute and can have the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PARQUET</code> - Parquet source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CSV</code> - CSV source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code> - JSON source file format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XML</code> - XML source file format.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, you could specify the following for <code>formatParams</code>:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -589,74 +693,6 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * Metadata tags to apply to this changeset.
-     * </p>
-     * 
-     * @return Metadata tags to apply to this changeset.
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * Metadata tags to apply to this changeset.
-     * </p>
-     * 
-     * @param tags
-     *        Metadata tags to apply to this changeset.
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * Metadata tags to apply to this changeset.
-     * </p>
-     * 
-     * @param tags
-     *        Metadata tags to apply to this changeset.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateChangesetRequest withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    /**
-     * Add a single Tags entry
-     *
-     * @see CreateChangesetRequest#withTags
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateChangesetRequest addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateChangesetRequest clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -668,20 +704,16 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDatasetId() != null)
             sb.append("DatasetId: ").append(getDatasetId()).append(",");
         if (getChangeType() != null)
             sb.append("ChangeType: ").append(getChangeType()).append(",");
-        if (getSourceType() != null)
-            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getSourceParams() != null)
             sb.append("SourceParams: ").append(getSourceParams()).append(",");
-        if (getFormatType() != null)
-            sb.append("FormatType: ").append(getFormatType()).append(",");
         if (getFormatParams() != null)
-            sb.append("FormatParams: ").append(getFormatParams()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("FormatParams: ").append(getFormatParams());
         sb.append("}");
         return sb.toString();
     }
@@ -696,6 +728,10 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof CreateChangesetRequest == false)
             return false;
         CreateChangesetRequest other = (CreateChangesetRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getDatasetId() == null ^ this.getDatasetId() == null)
             return false;
         if (other.getDatasetId() != null && other.getDatasetId().equals(this.getDatasetId()) == false)
@@ -704,25 +740,13 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getChangeType() != null && other.getChangeType().equals(this.getChangeType()) == false)
             return false;
-        if (other.getSourceType() == null ^ this.getSourceType() == null)
-            return false;
-        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
-            return false;
         if (other.getSourceParams() == null ^ this.getSourceParams() == null)
             return false;
         if (other.getSourceParams() != null && other.getSourceParams().equals(this.getSourceParams()) == false)
             return false;
-        if (other.getFormatType() == null ^ this.getFormatType() == null)
-            return false;
-        if (other.getFormatType() != null && other.getFormatType().equals(this.getFormatType()) == false)
-            return false;
         if (other.getFormatParams() == null ^ this.getFormatParams() == null)
             return false;
         if (other.getFormatParams() != null && other.getFormatParams().equals(this.getFormatParams()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -732,13 +756,11 @@ public class CreateChangesetRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDatasetId() == null) ? 0 : getDatasetId().hashCode());
         hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
-        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         hashCode = prime * hashCode + ((getSourceParams() == null) ? 0 : getSourceParams().hashCode());
-        hashCode = prime * hashCode + ((getFormatType() == null) ? 0 : getFormatType().hashCode());
         hashCode = prime * hashCode + ((getFormatParams() == null) ? 0 : getFormatParams().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

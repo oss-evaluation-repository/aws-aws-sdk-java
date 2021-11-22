@@ -16,6 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * Response for GetProgrammaticAccessCredentials operation
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials"
  *      target="_top">AWS API Documentation</a>

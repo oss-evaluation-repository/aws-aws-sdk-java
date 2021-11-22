@@ -27,7 +27,7 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     * The ID of the Amazon Web Services account that contains the IAM policy assignment.
      * </p>
      */
     private String awsAccountId;
@@ -68,7 +68,7 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
     private String assignmentStatus;
     /**
      * <p>
-     * The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     * The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.
      * </p>
      */
     private String policyArn;
@@ -81,11 +81,11 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     * The ID of the Amazon Web Services account that contains the IAM policy assignment.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     *        The ID of the Amazon Web Services account that contains the IAM policy assignment.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -94,10 +94,10 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     * The ID of the Amazon Web Services account that contains the IAM policy assignment.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     * @return The ID of the Amazon Web Services account that contains the IAM policy assignment.
      */
 
     public String getAwsAccountId() {
@@ -106,11 +106,11 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     * The ID of the Amazon Web Services account that contains the IAM policy assignment.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+     *        The ID of the Amazon Web Services account that contains the IAM policy assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +395,12 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     * The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.
      * </p>
      * 
      * @param policyArn
-     *        The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     *        The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this
+     *        assignment.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -408,10 +409,10 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     * The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.
      * </p>
      * 
-     * @return The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this
+     * @return The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this
      *         assignment.
      */
 
@@ -421,11 +422,12 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     * The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.
      * </p>
      * 
      * @param policyArn
-     *        The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified in this assignment.
+     *        The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this
+     *        assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

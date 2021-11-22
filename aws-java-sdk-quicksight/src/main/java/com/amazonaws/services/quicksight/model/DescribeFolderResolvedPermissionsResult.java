@@ -26,42 +26,42 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Information about the permissions on the dashboard.
+     * Information about the permissions for the folder.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      */
     private String requestId;
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -70,10 +70,10 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The status. If succeeded, the status is <code>SC_OK</code>
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -82,11 +82,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The status. If succeeded, the status is <code>SC_OK</code>
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The status. If succeeded, the status is <code>SC_OK</code>
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -110,10 +110,10 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -122,11 +122,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      */
 
     public void setArn(String arn) {
@@ -150,10 +150,10 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the folder.
      */
 
     public String getArn() {
@@ -162,11 +162,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the folder.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,10 +177,10 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about the permissions on the dashboard.
+     * Information about the permissions for the folder.
      * </p>
      * 
-     * @return Information about the permissions on the dashboard.
+     * @return Information about the permissions for the folder.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -189,11 +189,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about the permissions on the dashboard.
+     * Information about the permissions for the folder.
      * </p>
      * 
      * @param permissions
-     *        Information about the permissions on the dashboard.
+     *        Information about the permissions for the folder.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -207,7 +207,7 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about the permissions on the dashboard.
+     * Information about the permissions for the folder.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -216,7 +216,7 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param permissions
-     *        Information about the permissions on the dashboard.
+     *        Information about the permissions for the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +232,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about the permissions on the dashboard.
+     * Information about the permissions for the folder.
      * </p>
      * 
      * @param permissions
-     *        Information about the permissions on the dashboard.
+     *        Information about the permissions for the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +247,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      */
 
     public void setRequestId(String requestId) {
@@ -260,10 +260,10 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
-     * @return The request ID.
+     * @return The Amazon Web Services request ID for this operation.
      */
 
     public String getRequestId() {
@@ -272,11 +272,11 @@ public class DescribeFolderResolvedPermissionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The request ID.
+     * The Amazon Web Services request ID for this operation.
      * </p>
      * 
      * @param requestId
-     *        The request ID.
+     *        The Amazon Web Services request ID for this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

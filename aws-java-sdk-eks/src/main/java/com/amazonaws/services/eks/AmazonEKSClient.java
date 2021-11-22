@@ -117,6 +117,9 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourcePropagationDelayException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ResourcePropagationDelayExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -421,8 +424,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <p>
      * The Amazon EKS control plane consists of control plane instances that run the Kubernetes software, such as
      * <code>etcd</code> and the API server. The control plane runs in an account managed by Amazon Web Services, and
-     * the Kubernetes API is exposed via the Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is
-     * single-tenant and unique and runs on its own set of Amazon EC2 instances.
+     * the Kubernetes API is exposed by the Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is
+     * single tenant and unique. It runs on its own set of Amazon EC2 instances.
      * </p>
      * <p>
      * The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load
@@ -431,13 +434,13 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code> data flows).
      * </p>
      * <p>
-     * Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane via the
+     * Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane over the
      * Kubernetes API server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
-     * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
-     * Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more information,
-     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
+     * In most cases, it takes several minutes to create a cluster. After you create an Amazon EKS cluster, you must
+     * configure your Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
      * Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
      * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
@@ -2155,6 +2158,10 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
      *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourcePropagationDelayException
+     *         Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.
      * @sample AmazonEKS.RegisterCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster" target="_top">AWS API
      *      Documentation</a>

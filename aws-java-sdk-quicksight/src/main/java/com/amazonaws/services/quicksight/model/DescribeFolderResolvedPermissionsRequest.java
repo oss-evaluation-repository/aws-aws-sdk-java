@@ -27,24 +27,24 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The ID for the Amazon Web Services account that contains the folder.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +53,10 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The ID for the Amazon Web Services account that contains the folder.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +65,11 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account ID.
+     * The ID for the Amazon Web Services account that contains the folder.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The ID for the Amazon Web Services account that contains the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -93,10 +93,10 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -105,11 +105,11 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,19 @@ public class AbstractAWSBraketAsync extends AbstractAWSBraket implements AWSBrak
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request) {
+
+        return cancelJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelQuantumTaskResult> cancelQuantumTaskAsync(CancelQuantumTaskRequest request) {
 
         return cancelQuantumTaskAsync(request, null);
@@ -35,6 +48,19 @@ public class AbstractAWSBraketAsync extends AbstractAWSBraket implements AWSBrak
     @Override
     public java.util.concurrent.Future<CancelQuantumTaskResult> cancelQuantumTaskAsync(CancelQuantumTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelQuantumTaskRequest, CancelQuantumTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request) {
+
+        return createJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -61,6 +87,19 @@ public class AbstractAWSBraketAsync extends AbstractAWSBraket implements AWSBrak
     @Override
     public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest request) {
+
+        return getJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +139,19 @@ public class AbstractAWSBraketAsync extends AbstractAWSBraket implements AWSBrak
     @Override
     public java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchDevicesRequest, SearchDevicesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(SearchJobsRequest request) {
+
+        return searchJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchJobsResult> searchJobsAsync(SearchJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchJobsRequest, SearchJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

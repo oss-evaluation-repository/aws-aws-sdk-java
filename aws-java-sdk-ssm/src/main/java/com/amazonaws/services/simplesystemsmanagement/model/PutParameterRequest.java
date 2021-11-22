@@ -306,12 +306,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Store deletes the parameter.
      * </p>
      * <p>
-     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the
      * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
      * units of days or hours.
      * </p>
      * <p>
-     * NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified for a
+     * NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a
      * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
      * period of time, but it hasn't been changed.
      * </p>
@@ -2561,12 +2561,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Store deletes the parameter.
      * </p>
      * <p>
-     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the
      * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
      * units of days or hours.
      * </p>
      * <p>
-     * NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified for a
+     * NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a
      * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
      * period of time, but it hasn't been changed.
      * </p>
@@ -2587,12 +2587,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Parameter Store deletes the parameter.
      *        </p>
      *        <p>
-     *        ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
+     *        ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about
      *        the expiration. By using this policy, you can receive notification before or after the expiration time is
      *        reached, in units of days or hours.
      *        </p>
      *        <p>
-     *        NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified
+     *        NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified
      *        for a specified period of time. This policy type is useful when, for example, a secret needs to be changed
      *        within a period of time, but it hasn't been changed.
      *        </p>
@@ -2619,12 +2619,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Store deletes the parameter.
      * </p>
      * <p>
-     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the
      * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
      * units of days or hours.
      * </p>
      * <p>
-     * NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified for a
+     * NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a
      * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
      * period of time, but it hasn't been changed.
      * </p>
@@ -2644,12 +2644,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Parameter Store deletes the parameter.
      *         </p>
      *         <p>
-     *         ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
-     *         the expiration. By using this policy, you can receive notification before or after the expiration time is
-     *         reached, in units of days or hours.
+     *         ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you
+     *         about the expiration. By using this policy, you can receive notification before or after the expiration
+     *         time is reached, in units of days or hours.
      *         </p>
      *         <p>
-     *         NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified
+     *         NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified
      *         for a specified period of time. This policy type is useful when, for example, a secret needs to be
      *         changed within a period of time, but it hasn't been changed.
      *         </p>
@@ -2676,12 +2676,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Store deletes the parameter.
      * </p>
      * <p>
-     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the
      * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
      * units of days or hours.
      * </p>
      * <p>
-     * NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified for a
+     * NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a
      * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
      * period of time, but it hasn't been changed.
      * </p>
@@ -2702,12 +2702,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Parameter Store deletes the parameter.
      *        </p>
      *        <p>
-     *        ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
+     *        ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about
      *        the expiration. By using this policy, you can receive notification before or after the expiration time is
      *        reached, in units of days or hours.
      *        </p>
      *        <p>
-     *        NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't been modified
+     *        NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified
      *        for a specified period of time. This policy type is useful when, for example, a secret needs to be changed
      *        within a period of time, but it hasn't been changed.
      *        </p>

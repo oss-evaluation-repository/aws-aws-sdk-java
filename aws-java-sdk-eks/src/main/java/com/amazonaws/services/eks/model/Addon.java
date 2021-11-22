@@ -87,8 +87,8 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
-     * associated with the cluster.
+     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
+     * the cluster.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -481,13 +481,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
-     * associated with the cluster.
+     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
+     * the cluster.
      * </p>
      * 
      * @return The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
-     *         other resources associated with the cluster.
+     *         consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
+     *         resources associated with the cluster.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -497,14 +497,14 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
-     * associated with the cluster.
+     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
+     * the cluster.
      * </p>
      * 
      * @param tags
      *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
-     *        other resources associated with the cluster.
+     *        consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
+     *        resources associated with the cluster.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -514,14 +514,14 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
-     * associated with the cluster.
+     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
+     * the cluster.
      * </p>
      * 
      * @param tags
      *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
-     *        other resources associated with the cluster.
+     *        consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
+     *        resources associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

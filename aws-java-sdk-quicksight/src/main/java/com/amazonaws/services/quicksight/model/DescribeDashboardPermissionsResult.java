@@ -53,6 +53,15 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String requestId;
+    /**
+     * <p>
+     * A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users
+     * can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more
+     * information about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     * </p>
+     */
+    private LinkSharingConfiguration linkSharingConfiguration;
 
     /**
      * <p>
@@ -285,6 +294,65 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users
+     * can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more
+     * information about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the configuration of a shareable link that grants access to the dashboard. Your
+     *        users can use the link to view and interact with the dashboard, if the dashboard has been shared with
+     *        them. For more information about sharing dashboards, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     */
+
+    public void setLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        this.linkSharingConfiguration = linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users
+     * can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more
+     * information about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     * </p>
+     * 
+     * @return A structure that contains the configuration of a shareable link that grants access to the dashboard. Your
+     *         users can use the link to view and interact with the dashboard, if the dashboard has been shared with
+     *         them. For more information about sharing dashboards, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     *         Dashboards</a>.
+     */
+
+    public LinkSharingConfiguration getLinkSharingConfiguration() {
+        return this.linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users
+     * can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more
+     * information about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the configuration of a shareable link that grants access to the dashboard. Your
+     *        users can use the link to view and interact with the dashboard, if the dashboard has been shared with
+     *        them. For more information about sharing dashboards, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDashboardPermissionsResult withLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        setLinkSharingConfiguration(linkSharingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -305,7 +373,9 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId());
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getLinkSharingConfiguration() != null)
+            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -340,6 +410,10 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
+        if (other.getLinkSharingConfiguration() == null ^ this.getLinkSharingConfiguration() == null)
+            return false;
+        if (other.getLinkSharingConfiguration() != null && other.getLinkSharingConfiguration().equals(this.getLinkSharingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +427,7 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getLinkSharingConfiguration() == null) ? 0 : getLinkSharingConfiguration().hashCode());
         return hashCode;
     }
 

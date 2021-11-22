@@ -707,7 +707,7 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
         if (getOutputS3KeyPrefix() != null)
             sb.append("OutputS3KeyPrefix: ").append(getOutputS3KeyPrefix()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getTimeoutSeconds() != null)

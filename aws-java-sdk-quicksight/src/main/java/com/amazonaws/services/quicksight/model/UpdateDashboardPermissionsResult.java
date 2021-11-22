@@ -53,6 +53,12 @@ public class UpdateDashboardPermissionsResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private Integer status;
+    /**
+     * <p>
+     * Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     * </p>
+     */
+    private LinkSharingConfiguration linkSharingConfiguration;
 
     /**
      * <p>
@@ -285,6 +291,46 @@ public class UpdateDashboardPermissionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     */
+
+    public void setLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        this.linkSharingConfiguration = linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @return Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     */
+
+    public LinkSharingConfiguration getLinkSharingConfiguration() {
+        return this.linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardPermissionsResult withLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        setLinkSharingConfiguration(linkSharingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -305,7 +351,9 @@ public class UpdateDashboardPermissionsResult extends com.amazonaws.AmazonWebSer
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getLinkSharingConfiguration() != null)
+            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -340,6 +388,10 @@ public class UpdateDashboardPermissionsResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getLinkSharingConfiguration() == null ^ this.getLinkSharingConfiguration() == null)
+            return false;
+        if (other.getLinkSharingConfiguration() != null && other.getLinkSharingConfiguration().equals(this.getLinkSharingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +405,7 @@ public class UpdateDashboardPermissionsResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLinkSharingConfiguration() == null) ? 0 : getLinkSharingConfiguration().hashCode());
         return hashCode;
     }
 

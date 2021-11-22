@@ -1097,6 +1097,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * 
      * @param createActivationRequest
      * @return Result of the CreateActivation operation returned by the service.
+     * @throws InvalidParametersException
+     *         You must specify values for all required parameters in the Amazon Web Services Systems Manager document
+     *         (SSM document). You can only supply values to parameters defined in the SSM document.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateActivation

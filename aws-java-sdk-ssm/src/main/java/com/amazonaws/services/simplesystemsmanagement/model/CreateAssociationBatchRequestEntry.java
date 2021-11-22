@@ -1465,7 +1465,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getAutomationTargetParameterName() != null)
             sb.append("AutomationTargetParameterName: ").append(getAutomationTargetParameterName()).append(",");
         if (getDocumentVersion() != null)

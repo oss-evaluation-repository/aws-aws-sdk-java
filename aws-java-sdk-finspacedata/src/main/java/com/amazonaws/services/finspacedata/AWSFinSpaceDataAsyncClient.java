@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * The FinSpace APIs let you take actions inside the FinSpace environment.
+ * The FinSpace APIs let you take actions inside the FinSpace.
  * </p>
  */
 @ThreadSafe
@@ -107,6 +107,204 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDataViewResult> createDataViewAsync(CreateDataViewRequest request) {
+
+        return createDataViewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataViewResult> createDataViewAsync(final CreateDataViewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDataViewRequest, CreateDataViewResult> asyncHandler) {
+        final CreateDataViewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDataViewResult>() {
+            @Override
+            public CreateDataViewResult call() throws Exception {
+                CreateDataViewResult result = null;
+
+                try {
+                    result = executeCreateDataView(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(CreateDatasetRequest request) {
+
+        return createDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(final CreateDatasetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDatasetRequest, CreateDatasetResult> asyncHandler) {
+        final CreateDatasetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDatasetResult>() {
+            @Override
+            public CreateDatasetResult call() throws Exception {
+                CreateDatasetResult result = null;
+
+                try {
+                    result = executeCreateDataset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest request) {
+
+        return deleteDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(final DeleteDatasetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult> asyncHandler) {
+        final DeleteDatasetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDatasetResult>() {
+            @Override
+            public DeleteDatasetResult call() throws Exception {
+                DeleteDatasetResult result = null;
+
+                try {
+                    result = executeDeleteDataset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChangesetResult> getChangesetAsync(GetChangesetRequest request) {
+
+        return getChangesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChangesetResult> getChangesetAsync(final GetChangesetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetChangesetRequest, GetChangesetResult> asyncHandler) {
+        final GetChangesetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetChangesetResult>() {
+            @Override
+            public GetChangesetResult call() throws Exception {
+                GetChangesetResult result = null;
+
+                try {
+                    result = executeGetChangeset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataViewResult> getDataViewAsync(GetDataViewRequest request) {
+
+        return getDataViewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataViewResult> getDataViewAsync(final GetDataViewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataViewRequest, GetDataViewResult> asyncHandler) {
+        final GetDataViewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataViewResult>() {
+            @Override
+            public GetDataViewResult call() throws Exception {
+                GetDataViewResult result = null;
+
+                try {
+                    result = executeGetDataView(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(GetDatasetRequest request) {
+
+        return getDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(final GetDatasetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDatasetRequest, GetDatasetResult> asyncHandler) {
+        final GetDatasetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDatasetResult>() {
+            @Override
+            public GetDatasetResult call() throws Exception {
+                GetDatasetResult result = null;
+
+                try {
+                    result = executeGetDataset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProgrammaticAccessCredentialsResult> getProgrammaticAccessCredentialsAsync(
             GetProgrammaticAccessCredentialsRequest request) {
 
@@ -159,6 +357,171 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
 
                 try {
                     result = executeGetWorkingLocation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChangesetsResult> listChangesetsAsync(ListChangesetsRequest request) {
+
+        return listChangesetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChangesetsResult> listChangesetsAsync(final ListChangesetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChangesetsRequest, ListChangesetsResult> asyncHandler) {
+        final ListChangesetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChangesetsResult>() {
+            @Override
+            public ListChangesetsResult call() throws Exception {
+                ListChangesetsResult result = null;
+
+                try {
+                    result = executeListChangesets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataViewsResult> listDataViewsAsync(ListDataViewsRequest request) {
+
+        return listDataViewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataViewsResult> listDataViewsAsync(final ListDataViewsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataViewsRequest, ListDataViewsResult> asyncHandler) {
+        final ListDataViewsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDataViewsResult>() {
+            @Override
+            public ListDataViewsResult call() throws Exception {
+                ListDataViewsResult result = null;
+
+                try {
+                    result = executeListDataViews(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request) {
+
+        return listDatasetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(final ListDatasetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult> asyncHandler) {
+        final ListDatasetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDatasetsResult>() {
+            @Override
+            public ListDatasetsResult call() throws Exception {
+                ListDatasetsResult result = null;
+
+                try {
+                    result = executeListDatasets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChangesetResult> updateChangesetAsync(UpdateChangesetRequest request) {
+
+        return updateChangesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChangesetResult> updateChangesetAsync(final UpdateChangesetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateChangesetRequest, UpdateChangesetResult> asyncHandler) {
+        final UpdateChangesetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateChangesetResult>() {
+            @Override
+            public UpdateChangesetResult call() throws Exception {
+                UpdateChangesetResult result = null;
+
+                try {
+                    result = executeUpdateChangeset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasetResult> updateDatasetAsync(UpdateDatasetRequest request) {
+
+        return updateDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatasetResult> updateDatasetAsync(final UpdateDatasetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDatasetRequest, UpdateDatasetResult> asyncHandler) {
+        final UpdateDatasetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDatasetResult>() {
+            @Override
+            public UpdateDatasetResult call() throws Exception {
+                UpdateDatasetResult result = null;
+
+                try {
+                    result = executeUpdateDataset(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

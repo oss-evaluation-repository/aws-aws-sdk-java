@@ -27,30 +27,30 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * Describes updated IP rules.
+     * A map that describes the updated IP rules with CIDR ranges and descriptions.
      * </p>
      */
     private java.util.Map<String, String> ipRestrictionRuleMap;
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
-     * @return Your AWS account ID.
+     * @return The ID of the Amazon Web Services account that contains the IP rules.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Your AWS account ID.
+     * The ID of the Amazon Web Services account that contains the IP rules.
      * </p>
      * 
      * @param awsAccountId
-     *        Your AWS account ID.
+     *        The ID of the Amazon Web Services account that contains the IP rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,10 +86,10 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Describes updated IP rules.
+     * A map that describes the updated IP rules with CIDR ranges and descriptions.
      * </p>
      * 
-     * @return Describes updated IP rules.
+     * @return A map that describes the updated IP rules with CIDR ranges and descriptions.
      */
 
     public java.util.Map<String, String> getIpRestrictionRuleMap() {
@@ -98,11 +98,11 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Describes updated IP rules.
+     * A map that describes the updated IP rules with CIDR ranges and descriptions.
      * </p>
      * 
      * @param ipRestrictionRuleMap
-     *        Describes updated IP rules.
+     *        A map that describes the updated IP rules with CIDR ranges and descriptions.
      */
 
     public void setIpRestrictionRuleMap(java.util.Map<String, String> ipRestrictionRuleMap) {
@@ -111,11 +111,11 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Describes updated IP rules.
+     * A map that describes the updated IP rules with CIDR ranges and descriptions.
      * </p>
      * 
      * @param ipRestrictionRuleMap
-     *        Describes updated IP rules.
+     *        A map that describes the updated IP rules with CIDR ranges and descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
      * @param enabled
-     *        Whether or not IP rules are enabled.
+     *        A value that specifies whether IP rules are turned on.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -167,10 +167,10 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
-     * @return Whether or not IP rules are enabled.
+     * @return A value that specifies whether IP rules are turned on.
      */
 
     public Boolean getEnabled() {
@@ -179,11 +179,11 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
      * @param enabled
-     *        Whether or not IP rules are enabled.
+     *        A value that specifies whether IP rules are turned on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,10 +194,10 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether or not IP rules are enabled.
+     * A value that specifies whether IP rules are turned on.
      * </p>
      * 
-     * @return Whether or not IP rules are enabled.
+     * @return A value that specifies whether IP rules are turned on.
      */
 
     public Boolean isEnabled() {

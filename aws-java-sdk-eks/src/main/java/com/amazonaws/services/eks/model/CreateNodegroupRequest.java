@@ -135,8 +135,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * key and an optional value. You define both. Node group tags do not propagate to any other resources associated
+     * with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -1077,13 +1077,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * key and an optional value. You define both. Node group tags do not propagate to any other resources associated
+     * with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @return The metadata to apply to the node group to assist with categorization and organization. Each tag consists
-     *         of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *         resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *         of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *         associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1093,14 +1093,14 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * key and an optional value. You define both. Node group tags do not propagate to any other resources associated
+     * with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *        associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1110,14 +1110,14 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Node group tags do not propagate to any other resources
-     * associated with the node group, such as the Amazon EC2 instances or subnets.
+     * key and an optional value. You define both. Node group tags do not propagate to any other resources associated
+     * with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
-     *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
+     *        associated with the node group, such as the Amazon EC2 instances or subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

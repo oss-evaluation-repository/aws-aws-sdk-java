@@ -33,7 +33,7 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAMpolicy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      */
     private String dashboardId;
@@ -83,11 +83,11 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAMpolicy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the IAMpolicy.
+     *        The ID for the dashboard, also added to the IAM policy.
      */
 
     public void setDashboardId(String dashboardId) {
@@ -96,10 +96,10 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAMpolicy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
-     * @return The ID for the dashboard, also added to the IAMpolicy.
+     * @return The ID for the dashboard, also added to the IAM policy.
      */
 
     public String getDashboardId() {
@@ -108,11 +108,11 @@ public class DescribeDashboardPermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAMpolicy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the IAMpolicy.
+     *        The ID for the dashboard, also added to the IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

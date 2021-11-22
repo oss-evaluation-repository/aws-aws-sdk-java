@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A folder.
+ * A folder in Amazon QuickSight.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Folder" target="_top">AWS API
@@ -30,13 +30,13 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      */
     private String folderId;
     /**
      * <p>
-     * The folder Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) for the folder.
      * </p>
      */
     private String arn;
@@ -48,13 +48,13 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The type of the folder.
+     * The type of folder it is.
      * </p>
      */
     private String folderType;
     /**
      * <p>
-     * An array of ancestor folder ARN strings.
+     * An array of ancestor ARN strings for the folder.
      * </p>
      */
     private java.util.List<String> folderPath;
@@ -73,11 +73,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      */
 
     public void setFolderId(String folderId) {
@@ -86,10 +86,10 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
-     * @return The folder ID.
+     * @return The ID of the folder.
      */
 
     public String getFolderId() {
@@ -98,11 +98,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder ID.
+     * The ID of the folder.
      * </p>
      * 
      * @param folderId
-     *        The folder ID.
+     *        The ID of the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) for the folder.
      * </p>
      * 
      * @param arn
-     *        The folder Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) for the folder.
      */
 
     public void setArn(String arn) {
@@ -126,10 +126,10 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) for the folder.
      * </p>
      * 
-     * @return The folder Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) for the folder.
      */
 
     public String getArn() {
@@ -138,11 +138,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The folder Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) for the folder.
      * </p>
      * 
      * @param arn
-     *        The folder Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) for the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the folder.
+     * The type of folder it is.
      * </p>
      * 
      * @param folderType
-     *        The type of the folder.
+     *        The type of folder it is.
      * @see FolderType
      */
 
@@ -207,10 +207,10 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the folder.
+     * The type of folder it is.
      * </p>
      * 
-     * @return The type of the folder.
+     * @return The type of folder it is.
      * @see FolderType
      */
 
@@ -220,11 +220,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the folder.
+     * The type of folder it is.
      * </p>
      * 
      * @param folderType
-     *        The type of the folder.
+     *        The type of folder it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FolderType
      */
@@ -236,11 +236,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the folder.
+     * The type of folder it is.
      * </p>
      * 
      * @param folderType
-     *        The type of the folder.
+     *        The type of folder it is.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FolderType
      */
@@ -252,10 +252,10 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of ancestor folder ARN strings.
+     * An array of ancestor ARN strings for the folder.
      * </p>
      * 
-     * @return An array of ancestor folder ARN strings.
+     * @return An array of ancestor ARN strings for the folder.
      */
 
     public java.util.List<String> getFolderPath() {
@@ -264,11 +264,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of ancestor folder ARN strings.
+     * An array of ancestor ARN strings for the folder.
      * </p>
      * 
      * @param folderPath
-     *        An array of ancestor folder ARN strings.
+     *        An array of ancestor ARN strings for the folder.
      */
 
     public void setFolderPath(java.util.Collection<String> folderPath) {
@@ -282,7 +282,7 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of ancestor folder ARN strings.
+     * An array of ancestor ARN strings for the folder.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -291,7 +291,7 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param folderPath
-     *        An array of ancestor folder ARN strings.
+     *        An array of ancestor ARN strings for the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,11 +307,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of ancestor folder ARN strings.
+     * An array of ancestor ARN strings for the folder.
      * </p>
      * 
      * @param folderPath
-     *        An array of ancestor folder ARN strings.
+     *        An array of ancestor ARN strings for the folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

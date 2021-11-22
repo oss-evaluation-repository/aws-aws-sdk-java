@@ -88,6 +88,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>in_progress</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>starting</code>
      * </p>
      * </li>
@@ -250,6 +255,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>in_progress</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>starting</code>
      * </p>
      * </li>
@@ -301,6 +311,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <code>failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>in_progress</code>
      *         </p>
      *         </li>
      *         <li>
@@ -370,6 +385,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>in_progress</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>starting</code>
      * </p>
      * </li>
@@ -422,6 +442,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>in_progress</code>
      *        </p>
      *        </li>
      *        <li>
@@ -493,6 +518,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>in_progress</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>starting</code>
      * </p>
      * </li>
@@ -550,6 +580,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>in_progress</code>
      *        </p>
      *        </li>
      *        <li>
@@ -623,6 +658,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>in_progress</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>starting</code>
      * </p>
      * </li>
@@ -675,6 +715,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>in_progress</code>
      *        </p>
      *        </li>
      *        <li>

@@ -2820,15 +2820,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Import existing stacks into a new stack sets. Use the stack import operation to import up to 10 stacks into a new
-     * stack set in the same account as the source stack or in a different administrator account and Region, by
-     * specifying the stack ID of the stack you intend to import.
+     * Use the stack import operations for self-managed or service-managed StackSets. For self-managed StackSets, the
+     * import operation can import stacks in the administrator account or in different target accounts and Amazon Web
+     * Services Regions. For service-managed StackSets, the import operation can import any stack in the same AWS
+     * Organizations as the management account. The import operation can import up to 10 stacks using inline stack IDs
+     * or up to 10,000 stacks using an Amazon S3 object.
      * </p>
-     * <note>
-     * <p>
-     * <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-     * </p>
-     * </note>
      * 
      * @param importStacksToStackSetRequest
      * @return Result of the ImportStacksToStackSet operation returned by the service.

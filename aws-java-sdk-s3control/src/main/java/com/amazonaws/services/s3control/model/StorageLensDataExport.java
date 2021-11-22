@@ -38,6 +38,12 @@ public class StorageLensDataExport implements Serializable, Cloneable {
      * </note>
      */
     private S3BucketDestination s3BucketDestination;
+    /**
+     * <p>
+     * A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     * </p>
+     */
+    private CloudWatchMetrics cloudWatchMetrics;
 
     /**
      * <p>
@@ -104,6 +110,46 @@ public class StorageLensDataExport implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     * </p>
+     * 
+     * @param cloudWatchMetrics
+     *        A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     */
+
+    public void setCloudWatchMetrics(CloudWatchMetrics cloudWatchMetrics) {
+        this.cloudWatchMetrics = cloudWatchMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     * </p>
+     * 
+     * @return A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     */
+
+    public CloudWatchMetrics getCloudWatchMetrics() {
+        return this.cloudWatchMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     * </p>
+     * 
+     * @param cloudWatchMetrics
+     *        A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorageLensDataExport withCloudWatchMetrics(CloudWatchMetrics cloudWatchMetrics) {
+        setCloudWatchMetrics(cloudWatchMetrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -116,7 +162,9 @@ public class StorageLensDataExport implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3BucketDestination() != null)
-            sb.append("S3BucketDestination: ").append(getS3BucketDestination());
+            sb.append("S3BucketDestination: ").append(getS3BucketDestination()).append(",");
+        if (getCloudWatchMetrics() != null)
+            sb.append("CloudWatchMetrics: ").append(getCloudWatchMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +183,10 @@ public class StorageLensDataExport implements Serializable, Cloneable {
             return false;
         if (other.getS3BucketDestination() != null && other.getS3BucketDestination().equals(this.getS3BucketDestination()) == false)
             return false;
+        if (other.getCloudWatchMetrics() == null ^ this.getCloudWatchMetrics() == null)
+            return false;
+        if (other.getCloudWatchMetrics() != null && other.getCloudWatchMetrics().equals(this.getCloudWatchMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +196,7 @@ public class StorageLensDataExport implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3BucketDestination() == null) ? 0 : getS3BucketDestination().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchMetrics() == null) ? 0 : getCloudWatchMetrics().hashCode());
         return hashCode;
     }
 

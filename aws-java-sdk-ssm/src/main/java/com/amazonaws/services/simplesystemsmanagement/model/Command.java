@@ -1803,7 +1803,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         if (getExpiresAfter() != null)
             sb.append("ExpiresAfter: ").append(getExpiresAfter()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getInstanceIds() != null)
             sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getTargets() != null)

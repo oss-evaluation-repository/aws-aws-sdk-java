@@ -28,7 +28,17 @@ public class AbstractAWSBraket implements AWSBraket {
     }
 
     @Override
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelQuantumTaskResult cancelQuantumTask(CancelQuantumTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateJobResult createJob(CreateJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,6 +49,11 @@ public class AbstractAWSBraket implements AWSBraket {
 
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetJobResult getJob(GetJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +69,11 @@ public class AbstractAWSBraket implements AWSBraket {
 
     @Override
     public SearchDevicesResult searchDevices(SearchDevicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchJobsResult searchJobs(SearchJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

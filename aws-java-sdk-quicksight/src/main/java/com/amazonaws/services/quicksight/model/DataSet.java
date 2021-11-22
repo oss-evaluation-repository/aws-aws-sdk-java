@@ -115,7 +115,9 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private RowLevelPermissionTagConfiguration rowLevelPermissionTagConfiguration;
     /**
      * <p>
-     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * A set of one or more definitions of a
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     * .
      * </p>
      */
     private java.util.List<ColumnLevelPermissionRule> columnLevelPermissionRules;
@@ -863,10 +865,14 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * A set of one or more definitions of a
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     * .
      * </p>
      * 
-     * @return A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * @return A set of one or more definitions of a
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     *         .
      */
 
     public java.util.List<ColumnLevelPermissionRule> getColumnLevelPermissionRules() {
@@ -875,11 +881,15 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * A set of one or more definitions of a
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     * .
      * </p>
      * 
      * @param columnLevelPermissionRules
-     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     *        A set of one or more definitions of a
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     *        .
      */
 
     public void setColumnLevelPermissionRules(java.util.Collection<ColumnLevelPermissionRule> columnLevelPermissionRules) {
@@ -893,7 +903,9 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * A set of one or more definitions of a
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     * .
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -902,7 +914,9 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param columnLevelPermissionRules
-     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     *        A set of one or more definitions of a
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,11 +932,15 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * A set of one or more definitions of a
+     * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     * .
      * </p>
      * 
      * @param columnLevelPermissionRules
-     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     *        A set of one or more definitions of a
+     *        <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

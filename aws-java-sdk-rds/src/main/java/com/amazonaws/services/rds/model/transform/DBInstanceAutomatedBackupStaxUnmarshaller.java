@@ -181,6 +181,10 @@ public class DBInstanceAutomatedBackupStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
+                if (context.testExpression("BackupTarget", targetDepth)) {
+                    dBInstanceAutomatedBackup.setBackupTarget(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstanceAutomatedBackup;

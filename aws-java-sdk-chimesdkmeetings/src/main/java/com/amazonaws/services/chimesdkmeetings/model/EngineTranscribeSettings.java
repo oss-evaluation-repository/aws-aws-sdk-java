@@ -75,7 +75,7 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
     private String partialResultsStability;
     /**
      * <p>
-     * Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.
      * </p>
      */
     private String contentIdentificationType;
@@ -85,8 +85,8 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * Content redaction is performed only upon complete transcription of the audio segments.
      * </p>
      * <p>
-     * You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
-     * request. If you set both, your request returns a <code>BadRequestException</code>.
+     * You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request.
+     * If you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      */
     private String contentRedactionType;
@@ -96,7 +96,7 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.
      * </p>
      * <p>
-     * <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     * PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
      * <code>SSN</code>, and <code>ALL</code>.
@@ -507,11 +507,12 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     *        Set this field to <code>PII</code> to identify personally identifiable information in the transcription
+     *        output.
      * @see TranscribeContentIdentificationType
      */
 
@@ -521,10 +522,11 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.
      * </p>
      * 
-     * @return Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * @return Set this field to <code>PII</code> to identify personally identifiable information in the transcription
+     *         output.
      * @see TranscribeContentIdentificationType
      */
 
@@ -534,11 +536,12 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     *        Set this field to <code>PII</code> to identify personally identifiable information in the transcription
+     *        output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeContentIdentificationType
      */
@@ -550,11 +553,12 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     * Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Set this field to <code>PII</code> to identify personal health information in the transcription output.
+     *        Set this field to <code>PII</code> to identify personally identifiable information in the transcription
+     *        output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeContentIdentificationType
      */
@@ -570,16 +574,16 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * Content redaction is performed only upon complete transcription of the audio segments.
      * </p>
      * <p>
-     * You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
-     * request. If you set both, your request returns a <code>BadRequestException</code>.
+     * You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request.
+     * If you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @param contentRedactionType
      *        Set this field to <code>PII</code> to redact personally identifiable information in the transcription
      *        output. Content redaction is performed only upon complete transcription of the audio segments.</p>
      *        <p>
-     *        You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the
-     *        same request. If you set both, your request returns a <code>BadRequestException</code>.
+     *        You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
      * @see TranscribeContentRedactionType
      */
 
@@ -593,15 +597,15 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * Content redaction is performed only upon complete transcription of the audio segments.
      * </p>
      * <p>
-     * You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
-     * request. If you set both, your request returns a <code>BadRequestException</code>.
+     * You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request.
+     * If you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @return Set this field to <code>PII</code> to redact personally identifiable information in the transcription
      *         output. Content redaction is performed only upon complete transcription of the audio segments.</p>
      *         <p>
-     *         You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the
-     *         same request. If you set both, your request returns a <code>BadRequestException</code>.
+     *         You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
+     *         request. If you set both, your request returns a <code>BadRequestException</code>.
      * @see TranscribeContentRedactionType
      */
 
@@ -615,16 +619,16 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * Content redaction is performed only upon complete transcription of the audio segments.
      * </p>
      * <p>
-     * You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
-     * request. If you set both, your request returns a <code>BadRequestException</code>.
+     * You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request.
+     * If you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @param contentRedactionType
      *        Set this field to <code>PII</code> to redact personally identifiable information in the transcription
      *        output. Content redaction is performed only upon complete transcription of the audio segments.</p>
      *        <p>
-     *        You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the
-     *        same request. If you set both, your request returns a <code>BadRequestException</code>.
+     *        You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeContentRedactionType
      */
@@ -640,16 +644,16 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * Content redaction is performed only upon complete transcription of the audio segments.
      * </p>
      * <p>
-     * You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
-     * request. If you set both, your request returns a <code>BadRequestException</code>.
+     * You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request.
+     * If you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @param contentRedactionType
      *        Set this field to <code>PII</code> to redact personally identifiable information in the transcription
      *        output. Content redaction is performed only upon complete transcription of the audio segments.</p>
      *        <p>
-     *        You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the
-     *        same request. If you set both, your request returns a <code>BadRequestException</code>.
+     *        You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeContentRedactionType
      */
@@ -665,7 +669,7 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.
      * </p>
      * <p>
-     * <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     * PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
      * <code>SSN</code>, and <code>ALL</code>.
@@ -678,10 +682,10 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      *        Lists the PII entity types you want to identify or redact. To specify entity types, you must enable
      *        <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
      *        <p>
-     *        <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-     *        <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>,
-     *        <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     *        <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
+     *        PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     *        <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     *        <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>,
+     *        <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
      *        </p>
      *        <p>
      *        <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.
@@ -697,7 +701,7 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.
      * </p>
      * <p>
-     * <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     * PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
      * <code>SSN</code>, and <code>ALL</code>.
@@ -709,10 +713,10 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * @return Lists the PII entity types you want to identify or redact. To specify entity types, you must enable
      *         <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
      *         <p>
-     *         <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-     *         <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>,
-     *         <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     *         <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
+     *         PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     *         <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     *         <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>,
+     *         <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
      *         </p>
      *         <p>
      *         <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.
@@ -728,7 +732,7 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.
      * </p>
      * <p>
-     * <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     * PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
      * <code>SSN</code>, and <code>ALL</code>.
@@ -741,10 +745,10 @@ public class EngineTranscribeSettings implements Serializable, Cloneable, Struct
      *        Lists the PII entity types you want to identify or redact. To specify entity types, you must enable
      *        <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
      *        <p>
-     *        <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-     *        <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>,
-     *        <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     *        <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
+     *        PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+     *        <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     *        <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>,
+     *        <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.
      *        </p>
      *        <p>
      *        <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.

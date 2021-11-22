@@ -40,6 +40,8 @@ public class CreateQuantumTaskRequestMarshaller {
             .marshallLocationName("deviceArn").build();
     private static final MarshallingInfo<String> DEVICEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceParameters").build();
+    private static final MarshallingInfo<String> JOBTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobToken").build();
     private static final MarshallingInfo<String> OUTPUTS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputS3Bucket").build();
     private static final MarshallingInfo<String> OUTPUTS3KEYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class CreateQuantumTaskRequestMarshaller {
             protocolMarshaller.marshall(createQuantumTaskRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createQuantumTaskRequest.getDeviceArn(), DEVICEARN_BINDING);
             protocolMarshaller.marshall(createQuantumTaskRequest.getDeviceParameters(), DEVICEPARAMETERS_BINDING);
+            protocolMarshaller.marshall(createQuantumTaskRequest.getJobToken(), JOBTOKEN_BINDING);
             protocolMarshaller.marshall(createQuantumTaskRequest.getOutputS3Bucket(), OUTPUTS3BUCKET_BINDING);
             protocolMarshaller.marshall(createQuantumTaskRequest.getOutputS3KeyPrefix(), OUTPUTS3KEYPREFIX_BINDING);
             protocolMarshaller.marshall(createQuantumTaskRequest.getShots(), SHOTS_BINDING);

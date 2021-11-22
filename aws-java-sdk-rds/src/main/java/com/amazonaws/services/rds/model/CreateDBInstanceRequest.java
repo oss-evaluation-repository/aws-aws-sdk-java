@@ -545,7 +545,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The name for the master user is managed by the DB cluster.
      * </p>
      * <p>
-     * <b>MariaDB</b>
+     * <b>Amazon RDS</b>
      * </p>
      * <p>
      * Constraints:
@@ -553,119 +553,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Required for MariaDB.
+     * Required.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Microsoft SQL Server</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for SQL Server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 128 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for MySQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for Oracle.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 30 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for PostgreSQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 63 letters or numbers.
+     * Must be 1 to 16 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -1589,6 +1482,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String customIamInstanceProfile;
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String backupTarget;
 
     /**
      * Default constructor for CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -1905,7 +1813,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Not applicable. The name for the master user is managed by the DB cluster.
      *        </p>
      *        <p>
-     *        <b>MariaDB</b>
+     *        <b>Amazon RDS</b>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1913,119 +1821,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Required for MariaDB.
+     *        Required.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Microsoft SQL Server</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for SQL Server.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 128 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The first character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for MySQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for Oracle.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 30 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for PostgreSQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 63 letters or numbers.
+     *        Must be 1 to 16 letters, numbers, or underscores.
      *        </p>
      *        </li>
      *        <li>
@@ -5157,7 +4958,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The name for the master user is managed by the DB cluster.
      * </p>
      * <p>
-     * <b>MariaDB</b>
+     * <b>Amazon RDS</b>
      * </p>
      * <p>
      * Constraints:
@@ -5165,119 +4966,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Required for MariaDB.
+     * Required.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Microsoft SQL Server</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for SQL Server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 128 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for MySQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for Oracle.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 30 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for PostgreSQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 63 letters or numbers.
+     * Must be 1 to 16 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -5301,7 +4995,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Not applicable. The name for the master user is managed by the DB cluster.
      *        </p>
      *        <p>
-     *        <b>MariaDB</b>
+     *        <b>Amazon RDS</b>
      *        </p>
      *        <p>
      *        Constraints:
@@ -5309,119 +5003,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Required for MariaDB.
+     *        Required.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Microsoft SQL Server</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for SQL Server.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 128 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The first character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for MySQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for Oracle.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 30 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for PostgreSQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 63 letters or numbers.
+     *        Must be 1 to 16 letters, numbers, or underscores.
      *        </p>
      *        </li>
      *        <li>
@@ -5451,7 +5038,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The name for the master user is managed by the DB cluster.
      * </p>
      * <p>
-     * <b>MariaDB</b>
+     * <b>Amazon RDS</b>
      * </p>
      * <p>
      * Constraints:
@@ -5459,119 +5046,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Required for MariaDB.
+     * Required.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Microsoft SQL Server</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for SQL Server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 128 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for MySQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for Oracle.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 30 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for PostgreSQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 63 letters or numbers.
+     * Must be 1 to 16 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -5594,7 +5074,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Not applicable. The name for the master user is managed by the DB cluster.
      *         </p>
      *         <p>
-     *         <b>MariaDB</b>
+     *         <b>Amazon RDS</b>
      *         </p>
      *         <p>
      *         Constraints:
@@ -5602,119 +5082,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Required for MariaDB.
+     *         Required.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Must be 1 to 16 letters or numbers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Can't be a reserved word for the chosen database engine.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>Microsoft SQL Server</b>
-     *         </p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Required for SQL Server.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 128 letters or numbers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The first character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Can't be a reserved word for the chosen database engine.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>MySQL</b>
-     *         </p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Required for MySQL.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 16 letters or numbers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Can't be a reserved word for the chosen database engine.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>Oracle</b>
-     *         </p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Required for Oracle.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 30 letters or numbers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Can't be a reserved word for the chosen database engine.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>PostgreSQL</b>
-     *         </p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Required for PostgreSQL.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 63 letters or numbers.
+     *         Must be 1 to 16 letters, numbers, or underscores.
      *         </p>
      *         </li>
      *         <li>
@@ -5744,7 +5117,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The name for the master user is managed by the DB cluster.
      * </p>
      * <p>
-     * <b>MariaDB</b>
+     * <b>Amazon RDS</b>
      * </p>
      * <p>
      * Constraints:
@@ -5752,119 +5125,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Required for MariaDB.
+     * Required.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Microsoft SQL Server</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for SQL Server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 128 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for MySQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for Oracle.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 30 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Can't be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required for PostgreSQL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 63 letters or numbers.
+     * Must be 1 to 16 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -5888,7 +5154,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Not applicable. The name for the master user is managed by the DB cluster.
      *        </p>
      *        <p>
-     *        <b>MariaDB</b>
+     *        <b>Amazon RDS</b>
      *        </p>
      *        <p>
      *        Constraints:
@@ -5896,119 +5162,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Required for MariaDB.
+     *        Required.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Microsoft SQL Server</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for SQL Server.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 128 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The first character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for MySQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for Oracle.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 30 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Can't be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Required for PostgreSQL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 63 letters or numbers.
+     *        Must be 1 to 16 letters, numbers, or underscores.
      *        </p>
      *        </li>
      *        <li>
@@ -12196,6 +11355,97 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored.</p>
+     *        <p>
+     *        Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *        Web Services Region). The default is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public void setBackupTarget(String backupTarget) {
+        this.backupTarget = backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies where automated backups and manual snapshots are stored.</p>
+     *         <p>
+     *         Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *         Web Services Region). The default is <code>region</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public String getBackupTarget() {
+        return this.backupTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies where automated backups and manual snapshots are stored.
+     * </p>
+     * <p>
+     * Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web
+     * Services Region). The default is <code>region</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param backupTarget
+     *        Specifies where automated backups and manual snapshots are stored.</p>
+     *        <p>
+     *        Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon
+     *        Web Services Region). The default is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withBackupTarget(String backupTarget) {
+        setBackupTarget(backupTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -12304,7 +11554,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getEnableCustomerOwnedIp() != null)
             sb.append("EnableCustomerOwnedIp: ").append(getEnableCustomerOwnedIp()).append(",");
         if (getCustomIamInstanceProfile() != null)
-            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile());
+            sb.append("CustomIamInstanceProfile: ").append(getCustomIamInstanceProfile()).append(",");
+        if (getBackupTarget() != null)
+            sb.append("BackupTarget: ").append(getBackupTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -12517,6 +11769,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCustomIamInstanceProfile() != null && other.getCustomIamInstanceProfile().equals(this.getCustomIamInstanceProfile()) == false)
             return false;
+        if (other.getBackupTarget() == null ^ this.getBackupTarget() == null)
+            return false;
+        if (other.getBackupTarget() != null && other.getBackupTarget().equals(this.getBackupTarget()) == false)
+            return false;
         return true;
     }
 
@@ -12574,6 +11830,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getEnableCustomerOwnedIp() == null) ? 0 : getEnableCustomerOwnedIp().hashCode());
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         return hashCode;
     }
 

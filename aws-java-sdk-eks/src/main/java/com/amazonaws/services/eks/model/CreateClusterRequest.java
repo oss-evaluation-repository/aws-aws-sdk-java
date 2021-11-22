@@ -49,12 +49,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleArn;
     /**
      * <p>
-     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
-     * work properly with Kubernetes. For more information, see <a
+     * The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
+     * requirements to work properly with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up
-     * to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+     * to five security groups. However, we recommend that you use a dedicated security group for your cluster control
+     * plane.
      * </p>
      */
     private VpcConfigRequest resourcesVpcConfig;
@@ -88,7 +89,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -245,21 +246,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
-     * work properly with Kubernetes. For more information, see <a
+     * The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
+     * requirements to work properly with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up
-     * to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+     * to five security groups. However, we recommend that you use a dedicated security group for your cluster control
+     * plane.
      * </p>
      * 
      * @param resourcesVpcConfig
-     *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     *        The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
      *        requirements to work properly with Kubernetes. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *        Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can
-     *        specify up to five security groups, but we recommend that you use a dedicated security group for your
+     *        specify up to five security groups. However, we recommend that you use a dedicated security group for your
      *        cluster control plane.
      */
 
@@ -269,21 +271,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
-     * work properly with Kubernetes. For more information, see <a
+     * The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
+     * requirements to work properly with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up
-     * to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+     * to five security groups. However, we recommend that you use a dedicated security group for your cluster control
+     * plane.
      * </p>
      * 
-     * @return The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     * @return The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
      *         requirements to work properly with Kubernetes. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *         and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *         Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can
-     *         specify up to five security groups, but we recommend that you use a dedicated security group for your
-     *         cluster control plane.
+     *         specify up to five security groups. However, we recommend that you use a dedicated security group for
+     *         your cluster control plane.
      */
 
     public VpcConfigRequest getResourcesVpcConfig() {
@@ -292,21 +295,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
-     * work properly with Kubernetes. For more information, see <a
+     * The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
+     * requirements to work properly with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up
-     * to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+     * to five security groups. However, we recommend that you use a dedicated security group for your cluster control
+     * plane.
      * </p>
      * 
      * @param resourcesVpcConfig
-     *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     *        The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific
      *        requirements to work properly with Kubernetes. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *        Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can
-     *        specify up to five security groups, but we recommend that you use a dedicated security group for your
+     *        specify up to five security groups. However, we recommend that you use a dedicated security group for your
      *        cluster control plane.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -487,11 +491,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @return The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *         a key and an optional value, both of which you define.
+     *         a key and an optional value. You define both.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -501,12 +505,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value, both of which you define.
+     *        a key and an optional value. You define both.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -516,12 +520,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value, both of which you define.
+     * and an optional value. You define both.
      * </p>
      * 
      * @param tags
      *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value, both of which you define.
+     *        a key and an optional value. You define both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

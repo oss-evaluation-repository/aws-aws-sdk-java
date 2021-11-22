@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set short term API credentials.
+ * Short term API credentials.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/Credentials" target="_top">AWS API

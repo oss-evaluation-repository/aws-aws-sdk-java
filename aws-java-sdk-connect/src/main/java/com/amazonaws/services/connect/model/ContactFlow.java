@@ -56,6 +56,12 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
+     * The type of contact flow.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
      * The description of the contact flow.
      * </p>
      */
@@ -270,6 +276,65 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param state
+     *        The type of contact flow.
+     * @see ContactFlowState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @return The type of contact flow.
+     * @see ContactFlowState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param state
+     *        The type of contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowState
+     */
+
+    public ContactFlow withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of contact flow.
+     * </p>
+     * 
+     * @param state
+     *        The type of contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowState
+     */
+
+    public ContactFlow withState(ContactFlowState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The description of the contact flow.
      * </p>
      * 
@@ -436,6 +501,8 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getContent() != null)
@@ -472,6 +539,10 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -496,6 +567,7 @@ public class ContactFlow implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

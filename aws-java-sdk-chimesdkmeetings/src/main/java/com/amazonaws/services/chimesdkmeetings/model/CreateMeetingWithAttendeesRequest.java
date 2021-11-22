@@ -51,6 +51,12 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
     private String externalMeetingId;
     /**
      * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     */
+    private MeetingFeaturesConfiguration meetingFeatures;
+    /**
+     * <p>
      * The configuration for resource targets to receive notifications when meeting and attendee events occur.
      * </p>
      */
@@ -224,6 +230,46 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        Lists the audio and video features enabled for a meeting, such as echo reduction.
+     */
+
+    public void setMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        this.meetingFeatures = meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @return Lists the audio and video features enabled for a meeting, such as echo reduction.
+     */
+
+    public MeetingFeaturesConfiguration getMeetingFeatures() {
+        return this.meetingFeatures;
+    }
+
+    /**
+     * <p>
+     * Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * </p>
+     * 
+     * @param meetingFeatures
+     *        Lists the audio and video features enabled for a meeting, such as echo reduction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingWithAttendeesRequest withMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
+        setMeetingFeatures(meetingFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for resource targets to receive notifications when meeting and attendee events occur.
      * </p>
      * 
@@ -352,6 +398,8 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
             sb.append("MeetingHostId: ").append("***Sensitive Data Redacted***").append(",");
         if (getExternalMeetingId() != null)
             sb.append("ExternalMeetingId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getMeetingFeatures() != null)
+            sb.append("MeetingFeatures: ").append(getMeetingFeatures()).append(",");
         if (getNotificationsConfiguration() != null)
             sb.append("NotificationsConfiguration: ").append(getNotificationsConfiguration()).append(",");
         if (getAttendees() != null)
@@ -386,6 +434,10 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getExternalMeetingId() != null && other.getExternalMeetingId().equals(this.getExternalMeetingId()) == false)
             return false;
+        if (other.getMeetingFeatures() == null ^ this.getMeetingFeatures() == null)
+            return false;
+        if (other.getMeetingFeatures() != null && other.getMeetingFeatures().equals(this.getMeetingFeatures()) == false)
+            return false;
         if (other.getNotificationsConfiguration() == null ^ this.getNotificationsConfiguration() == null)
             return false;
         if (other.getNotificationsConfiguration() != null && other.getNotificationsConfiguration().equals(this.getNotificationsConfiguration()) == false)
@@ -406,6 +458,7 @@ public class CreateMeetingWithAttendeesRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getMediaRegion() == null) ? 0 : getMediaRegion().hashCode());
         hashCode = prime * hashCode + ((getMeetingHostId() == null) ? 0 : getMeetingHostId().hashCode());
         hashCode = prime * hashCode + ((getExternalMeetingId() == null) ? 0 : getExternalMeetingId().hashCode());
+        hashCode = prime * hashCode + ((getMeetingFeatures() == null) ? 0 : getMeetingFeatures().hashCode());
         hashCode = prime * hashCode + ((getNotificationsConfiguration() == null) ? 0 : getNotificationsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAttendees() == null) ? 0 : getAttendees().hashCode());
         return hashCode;

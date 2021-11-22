@@ -43,7 +43,8 @@ public enum DataSourceType {
     TERADATA("TERADATA"),
     TWITTER("TWITTER"),
     TIMESTREAM("TIMESTREAM"),
-    AMAZON_OPENSEARCH("AMAZON_OPENSEARCH");
+    AMAZON_OPENSEARCH("AMAZON_OPENSEARCH"),
+    EXASOL("EXASOL");
 
     private String value;
 
