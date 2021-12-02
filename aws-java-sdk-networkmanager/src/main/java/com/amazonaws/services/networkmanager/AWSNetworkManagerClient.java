@@ -79,14 +79,20 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.networkmanager.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.networkmanager.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.networkmanager.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.networkmanager.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.networkmanager.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.networkmanager.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.networkmanager.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
@@ -94,11 +100,8 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.networkmanager.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.networkmanager.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.networkmanager.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("CoreNetworkPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.networkmanager.model.transform.CoreNetworkPolicyExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.networkmanager.model.AWSNetworkManagerException.class));
 
     public static AWSNetworkManagerClientBuilder builder() {
@@ -145,6 +148,152 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/networkmanager/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/networkmanager/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Accepts a core network attachment request.
+     * </p>
+     * <p>
+     * Once the attachment request is accepted by a core network owner, the attachment is created and connected to a
+     * core network.
+     * </p>
+     * 
+     * @param acceptAttachmentRequest
+     * @return Result of the AcceptAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.AcceptAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptAttachmentResult acceptAttachment(AcceptAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptAttachment(request);
+    }
+
+    @SdkInternalApi
+    final AcceptAttachmentResult executeAcceptAttachment(AcceptAttachmentRequest acceptAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptAttachmentRequest> request = null;
+        Response<AcceptAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a core network Connect peer with a device and optionally, with a link.
+     * </p>
+     * <p>
+     * If you specify a link, it must be associated with the specified device. You can only associate core network
+     * Connect peers that have been created on a core network Connect attachment on a core network.
+     * </p>
+     * 
+     * @param associateConnectPeerRequest
+     * @return Result of the AssociateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.AssociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateConnectPeerResult associateConnectPeer(AssociateConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final AssociateConnectPeerResult executeAssociateConnectPeer(AssociateConnectPeerRequest associateConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateConnectPeerRequest> request = null;
+        Response<AssociateConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateConnectPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateConnectPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateConnectPeerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -386,6 +535,150 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a core network Connect attachment from a specified core network attachment.
+     * </p>
+     * <p>
+     * A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection
+     * between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the
+     * underlying transport mechanism.
+     * </p>
+     * 
+     * @param createConnectAttachmentRequest
+     * @return Result of the CreateConnectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateConnectAttachmentResult createConnectAttachment(CreateConnectAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConnectAttachment(request);
+    }
+
+    @SdkInternalApi
+    final CreateConnectAttachmentResult executeCreateConnectAttachment(CreateConnectAttachmentRequest createConnectAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConnectAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConnectAttachmentRequest> request = null;
+        Response<CreateConnectAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConnectAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createConnectAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConnectAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateConnectAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * 
+     * @param createConnectPeerRequest
+     * @return Result of the CreateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateConnectPeerResult createConnectPeer(CreateConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final CreateConnectPeerResult executeCreateConnectPeer(CreateConnectPeerRequest createConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConnectPeerRequest> request = null;
+        Response<CreateConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConnectPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConnectPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConnectPeerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
      * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
      * on-premises network.
@@ -444,6 +737,76 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a core network as part of your global network, and optionally, with a core network policy.
+     * </p>
+     * 
+     * @param createCoreNetworkRequest
+     * @return Result of the CreateCoreNetwork operation returned by the service.
+     * @throws CoreNetworkPolicyException
+     *         Describes a core network policy exception.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCoreNetworkResult createCoreNetwork(CreateCoreNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCoreNetwork(request);
+    }
+
+    @SdkInternalApi
+    final CreateCoreNetworkResult executeCreateCoreNetwork(CreateCoreNetworkRequest createCoreNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCoreNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCoreNetworkRequest> request = null;
+        Response<CreateCoreNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCoreNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCoreNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCoreNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCoreNetworkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -735,6 +1098,280 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createSiteToSiteVpnAttachmentRequest
+     * @return Result of the CreateSiteToSiteVpnAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSiteToSiteVpnAttachmentResult createSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSiteToSiteVpnAttachment(request);
+    }
+
+    @SdkInternalApi
+    final CreateSiteToSiteVpnAttachmentResult executeCreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest createSiteToSiteVpnAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSiteToSiteVpnAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSiteToSiteVpnAttachmentRequest> request = null;
+        Response<CreateSiteToSiteVpnAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSiteToSiteVpnAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSiteToSiteVpnAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSiteToSiteVpnAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSiteToSiteVpnAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSiteToSiteVpnAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a VPC attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createVpcAttachmentRequest
+     * @return Result of the CreateVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVpcAttachmentResult createVpcAttachment(CreateVpcAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcAttachment(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcAttachmentResult executeCreateVpcAttachment(CreateVpcAttachmentRequest createVpcAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcAttachmentRequest> request = null;
+        Response<CreateVpcAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVpcAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVpcAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVpcAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an attachment. Supports all attachment types.
+     * </p>
+     * 
+     * @param deleteAttachmentRequest
+     * @return Result of the DeleteAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAttachmentResult deleteAttachment(DeleteAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttachment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttachmentResult executeDeleteAttachment(DeleteAttachmentRequest deleteAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAttachmentRequest> request = null;
+        Response<DeleteAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Connect peer.
+     * </p>
+     * 
+     * @param deleteConnectPeerRequest
+     * @return Result of the DeleteConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteConnectPeerResult deleteConnectPeer(DeleteConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConnectPeerResult executeDeleteConnectPeer(DeleteConnectPeerRequest deleteConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConnectPeerRequest> request = null;
+        Response<DeleteConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConnectPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectPeerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified connection in your global network.
      * </p>
      * 
@@ -791,6 +1428,145 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a core network along with all core network policies. This can only be done if there are no attachments on
+     * a core network.
+     * </p>
+     * 
+     * @param deleteCoreNetworkRequest
+     * @return Result of the DeleteCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCoreNetworkResult deleteCoreNetwork(DeleteCoreNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCoreNetwork(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCoreNetworkResult executeDeleteCoreNetwork(DeleteCoreNetworkRequest deleteCoreNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCoreNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCoreNetworkRequest> request = null;
+        Response<DeleteCoreNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCoreNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCoreNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCoreNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCoreNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCoreNetworkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a policy version from a core network. You can't delete the current LIVE policy.
+     * </p>
+     * 
+     * @param deleteCoreNetworkPolicyVersionRequest
+     * @return Result of the DeleteCoreNetworkPolicyVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.DeleteCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCoreNetworkPolicyVersionResult deleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCoreNetworkPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCoreNetworkPolicyVersionResult executeDeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest deleteCoreNetworkPolicyVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCoreNetworkPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCoreNetworkPolicyVersionRequest> request = null;
+        Response<DeleteCoreNetworkPolicyVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCoreNetworkPolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCoreNetworkPolicyVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCoreNetworkPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCoreNetworkPolicyVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCoreNetworkPolicyVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1008,6 +1784,73 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the
+     * resource policy.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an existing site. The site cannot be associated with any device or link.
      * </p>
      * 
@@ -1203,6 +2046,76 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalNetworksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeGlobalNetworksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a core network Connect peer from a device and a link.
+     * </p>
+     * 
+     * @param disassociateConnectPeerRequest
+     * @return Result of the DisassociateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DisassociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateConnectPeerResult disassociateConnectPeer(DisassociateConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConnectPeerResult executeDisassociateConnectPeer(DisassociateConnectPeerRequest disassociateConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateConnectPeerRequest> request = null;
+        Response<DisassociateConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateConnectPeerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateConnectPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateConnectPeerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1426,6 +2339,276 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Executes a change set on your core network. Deploys changes globally based on the policy submitted..
+     * </p>
+     * 
+     * @param executeCoreNetworkChangeSetRequest
+     * @return Result of the ExecuteCoreNetworkChangeSet operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.ExecuteCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExecuteCoreNetworkChangeSetResult executeCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteCoreNetworkChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteCoreNetworkChangeSetResult executeExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest executeCoreNetworkChangeSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeCoreNetworkChangeSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteCoreNetworkChangeSetRequest> request = null;
+        Response<ExecuteCoreNetworkChangeSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteCoreNetworkChangeSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(executeCoreNetworkChangeSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteCoreNetworkChangeSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteCoreNetworkChangeSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExecuteCoreNetworkChangeSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a core network Connect attachment.
+     * </p>
+     * 
+     * @param getConnectAttachmentRequest
+     * @return Result of the GetConnectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConnectAttachmentResult getConnectAttachment(GetConnectAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectAttachment(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectAttachmentResult executeGetConnectAttachment(GetConnectAttachmentRequest getConnectAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConnectAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConnectAttachmentRequest> request = null;
+        Response<GetConnectAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConnectAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConnectAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer.
+     * </p>
+     * 
+     * @param getConnectPeerRequest
+     * @return Result of the GetConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetConnectPeerResult getConnectPeer(GetConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectPeerResult executeGetConnectPeer(GetConnectPeerRequest getConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConnectPeerRequest> request = null;
+        Response<GetConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConnectPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConnectPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectPeerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer associations.
+     * </p>
+     * 
+     * @param getConnectPeerAssociationsRequest
+     * @return Result of the GetConnectPeerAssociations operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectPeerAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConnectPeerAssociationsResult getConnectPeerAssociations(GetConnectPeerAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectPeerAssociations(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectPeerAssociationsResult executeGetConnectPeerAssociations(GetConnectPeerAssociationsRequest getConnectPeerAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConnectPeerAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConnectPeerAssociationsRequest> request = null;
+        Response<GetConnectPeerAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConnectPeerAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getConnectPeerAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectPeerAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConnectPeerAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetConnectPeerAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about one or more of your connections in a global network.
      * </p>
      * 
@@ -1479,6 +2662,204 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<GetConnectionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a core network. By default it returns the LIVE policy.
+     * </p>
+     * 
+     * @param getCoreNetworkRequest
+     * @return Result of the GetCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCoreNetworkResult getCoreNetwork(GetCoreNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCoreNetwork(request);
+    }
+
+    @SdkInternalApi
+    final GetCoreNetworkResult executeGetCoreNetwork(GetCoreNetworkRequest getCoreNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCoreNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCoreNetworkRequest> request = null;
+        Response<GetCoreNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCoreNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCoreNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCoreNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCoreNetworkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a change set between the LIVE core network policy and a submitted policy.
+     * </p>
+     * 
+     * @param getCoreNetworkChangeSetRequest
+     * @return Result of the GetCoreNetworkChangeSet operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCoreNetworkChangeSetResult getCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCoreNetworkChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final GetCoreNetworkChangeSetResult executeGetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest getCoreNetworkChangeSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCoreNetworkChangeSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCoreNetworkChangeSetRequest> request = null;
+        Response<GetCoreNetworkChangeSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCoreNetworkChangeSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCoreNetworkChangeSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreNetworkChangeSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCoreNetworkChangeSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCoreNetworkChangeSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets details about a core network policy. You can get details about your current live policy or any previous
+     * policy version.
+     * </p>
+     * 
+     * @param getCoreNetworkPolicyRequest
+     * @return Result of the GetCoreNetworkPolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCoreNetworkPolicyResult getCoreNetworkPolicy(GetCoreNetworkPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCoreNetworkPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetCoreNetworkPolicyResult executeGetCoreNetworkPolicy(GetCoreNetworkPolicyRequest getCoreNetworkPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCoreNetworkPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCoreNetworkPolicyRequest> request = null;
+        Response<GetCoreNetworkPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCoreNetworkPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCoreNetworkPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreNetworkPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCoreNetworkPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCoreNetworkPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2093,6 +3474,69 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns information about a resource policy.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePolicyRequest> request = null;
+        Response<GetResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified route analysis.
      * </p>
      * 
@@ -2146,6 +3590,73 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRouteAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRouteAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a site-to-site VPN attachment.
+     * </p>
+     * 
+     * @param getSiteToSiteVpnAttachmentRequest
+     * @return Result of the GetSiteToSiteVpnAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSiteToSiteVpnAttachmentResult getSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSiteToSiteVpnAttachment(request);
+    }
+
+    @SdkInternalApi
+    final GetSiteToSiteVpnAttachmentResult executeGetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest getSiteToSiteVpnAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSiteToSiteVpnAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSiteToSiteVpnAttachmentRequest> request = null;
+        Response<GetSiteToSiteVpnAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSiteToSiteVpnAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSiteToSiteVpnAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSiteToSiteVpnAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSiteToSiteVpnAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSiteToSiteVpnAttachmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2362,6 +3873,327 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns information about a VPC attachment.
+     * </p>
+     * 
+     * @param getVpcAttachmentRequest
+     * @return Result of the GetVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVpcAttachmentResult getVpcAttachment(GetVpcAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVpcAttachment(request);
+    }
+
+    @SdkInternalApi
+    final GetVpcAttachmentResult executeGetVpcAttachment(GetVpcAttachmentRequest getVpcAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVpcAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVpcAttachmentRequest> request = null;
+        Response<GetVpcAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVpcAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVpcAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVpcAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVpcAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVpcAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of core network attachments.
+     * </p>
+     * 
+     * @param listAttachmentsRequest
+     * @return Result of the ListAttachments operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListAttachmentsResult listAttachments(ListAttachmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachments(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachmentsResult executeListAttachments(ListAttachmentsRequest listAttachmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAttachmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttachmentsRequest> request = null;
+        Response<ListAttachmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttachmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttachmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAttachmentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttachmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of core network Connect peers.
+     * </p>
+     * 
+     * @param listConnectPeersRequest
+     * @return Result of the ListConnectPeers operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListConnectPeersResult listConnectPeers(ListConnectPeersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConnectPeers(request);
+    }
+
+    @SdkInternalApi
+    final ListConnectPeersResult executeListConnectPeers(ListConnectPeersRequest listConnectPeersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConnectPeersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConnectPeersRequest> request = null;
+        Response<ListConnectPeersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConnectPeersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConnectPeersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectPeers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConnectPeersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListConnectPeersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of core network policy versions.
+     * </p>
+     * 
+     * @param listCoreNetworkPolicyVersionsRequest
+     * @return Result of the ListCoreNetworkPolicyVersions operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListCoreNetworkPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCoreNetworkPolicyVersionsResult listCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCoreNetworkPolicyVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListCoreNetworkPolicyVersionsResult executeListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest listCoreNetworkPolicyVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCoreNetworkPolicyVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCoreNetworkPolicyVersionsRequest> request = null;
+        Response<ListCoreNetworkPolicyVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCoreNetworkPolicyVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCoreNetworkPolicyVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreNetworkPolicyVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCoreNetworkPolicyVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCoreNetworkPolicyVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of owned and shared core networks.
+     * </p>
+     * 
+     * @param listCoreNetworksRequest
+     * @return Result of the ListCoreNetworks operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListCoreNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCoreNetworksResult listCoreNetworks(ListCoreNetworksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCoreNetworks(request);
+    }
+
+    @SdkInternalApi
+    final ListCoreNetworksResult executeListCoreNetworks(ListCoreNetworksRequest listCoreNetworksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCoreNetworksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCoreNetworksRequest> request = null;
+        Response<ListCoreNetworksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCoreNetworksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCoreNetworksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreNetworks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCoreNetworksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCoreNetworksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags for a specified resource.
      * </p>
      * 
@@ -2415,6 +4247,145 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new, immutable version of a core network policy. A subsequent change set is created showing the
+     * differences between the LIVE policy and the submitted policy.
+     * </p>
+     * 
+     * @param putCoreNetworkPolicyRequest
+     * @return Result of the PutCoreNetworkPolicy operation returned by the service.
+     * @throws CoreNetworkPolicyException
+     *         Describes a core network policy exception.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.PutCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutCoreNetworkPolicyResult putCoreNetworkPolicy(PutCoreNetworkPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCoreNetworkPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutCoreNetworkPolicyResult executePutCoreNetworkPolicy(PutCoreNetworkPolicyRequest putCoreNetworkPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCoreNetworkPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCoreNetworkPolicyRequest> request = null;
+        Response<PutCoreNetworkPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCoreNetworkPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putCoreNetworkPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCoreNetworkPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutCoreNetworkPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutCoreNetworkPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2486,6 +4457,146 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<RegisterTransitGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RegisterTransitGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects a core network attachment request.
+     * </p>
+     * 
+     * @param rejectAttachmentRequest
+     * @return Result of the RejectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.RejectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectAttachmentResult rejectAttachment(RejectAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectAttachment(request);
+    }
+
+    @SdkInternalApi
+    final RejectAttachmentResult executeRejectAttachment(RejectAttachmentRequest rejectAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectAttachmentRequest> request = null;
+        Response<RejectAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set
+     * is created showing the differences between the LIVE policy and restored policy.
+     * </p>
+     * 
+     * @param restoreCoreNetworkPolicyVersionRequest
+     * @return Result of the RestoreCoreNetworkPolicyVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.RestoreCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestoreCoreNetworkPolicyVersionResult restoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreCoreNetworkPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final RestoreCoreNetworkPolicyVersionResult executeRestoreCoreNetworkPolicyVersion(
+            RestoreCoreNetworkPolicyVersionRequest restoreCoreNetworkPolicyVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreCoreNetworkPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreCoreNetworkPolicyVersionRequest> request = null;
+        Response<RestoreCoreNetworkPolicyVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreCoreNetworkPolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(restoreCoreNetworkPolicyVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreCoreNetworkPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreCoreNetworkPolicyVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RestoreCoreNetworkPolicyVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2762,6 +4873,74 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the description of a core network.
+     * </p>
+     * 
+     * @param updateCoreNetworkRequest
+     * @return Result of the UpdateCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.UpdateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCoreNetworkResult updateCoreNetwork(UpdateCoreNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCoreNetwork(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCoreNetworkResult executeUpdateCoreNetwork(UpdateCoreNetworkRequest updateCoreNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCoreNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCoreNetworkRequest> request = null;
+        Response<UpdateCoreNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCoreNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCoreNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCoreNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCoreNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCoreNetworkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3109,6 +5288,74 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSiteResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSiteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a VPC attachment.
+     * </p>
+     * 
+     * @param updateVpcAttachmentRequest
+     * @return Result of the UpdateVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.UpdateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateVpcAttachmentResult updateVpcAttachment(UpdateVpcAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVpcAttachment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVpcAttachmentResult executeUpdateVpcAttachment(UpdateVpcAttachmentRequest updateVpcAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVpcAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVpcAttachmentRequest> request = null;
+        Response<UpdateVpcAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVpcAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVpcAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVpcAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVpcAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVpcAttachmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

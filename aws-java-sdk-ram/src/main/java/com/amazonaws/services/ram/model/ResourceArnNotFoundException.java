@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Amazon Resource Name (ARN) was not found.
+ * The specified Amazon Resource Name (ARN) was not found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

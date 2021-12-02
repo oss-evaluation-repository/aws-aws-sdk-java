@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an invitation to join a resource share.
+ * Describes an invitation for an Amazon Web Services account to join a resource share.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareInvitation" target="_top">AWS API
@@ -30,7 +30,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation.
      * </p>
      */
     private String resourceShareInvitationArn;
@@ -42,7 +43,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     private String resourceShareName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      */
     private String resourceShareArn;
@@ -66,33 +68,35 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     private java.util.Date invitationTimestamp;
     /**
      * <p>
-     * The status of the invitation.
+     * The current status of the invitation.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     * ListPendingInvitationResources</a>.
+     * To view the resources associated with a pending resource share invitation, use
+     * <a>ListPendingInvitationResources</a>.
      * </p>
      */
     @Deprecated
     private java.util.List<ResourceShareAssociation> resourceShareAssociations;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the IAM user or role that received the invitation.
      * </p>
      */
     private String receiverArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The Amazon Resource Name (ARN) of the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the invitation.
      */
 
     public void setResourceShareInvitationArn(String resourceShareInvitationArn) {
@@ -101,10 +105,12 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the invitation.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the invitation.
      */
 
     public String getResourceShareInvitationArn() {
@@ -113,11 +119,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The Amazon Resource Name (ARN) of the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +176,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -181,10 +191,12 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the resource share
      */
 
     public String getResourceShareArn() {
@@ -193,11 +205,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,11 +342,11 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the invitation.
+     * The current status of the invitation.
      * </p>
      * 
      * @param status
-     *        The status of the invitation.
+     *        The current status of the invitation.
      * @see ResourceShareInvitationStatus
      */
 
@@ -342,10 +356,10 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the invitation.
+     * The current status of the invitation.
      * </p>
      * 
-     * @return The status of the invitation.
+     * @return The current status of the invitation.
      * @see ResourceShareInvitationStatus
      */
 
@@ -355,11 +369,11 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the invitation.
+     * The current status of the invitation.
      * </p>
      * 
      * @param status
-     *        The status of the invitation.
+     *        The current status of the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareInvitationStatus
      */
@@ -371,11 +385,11 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the invitation.
+     * The current status of the invitation.
      * </p>
      * 
      * @param status
-     *        The status of the invitation.
+     *        The current status of the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareInvitationStatus
      */
@@ -387,14 +401,12 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     * ListPendingInvitationResources</a>.
+     * To view the resources associated with a pending resource share invitation, use
+     * <a>ListPendingInvitationResources</a>.
      * </p>
      * 
-     * @return To view the resources associated with a pending resource share invitation, use <a
-     *         href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     *         ListPendingInvitationResources</a>.
+     * @return To view the resources associated with a pending resource share invitation, use
+     *         <a>ListPendingInvitationResources</a>.
      */
     @Deprecated
     public java.util.List<ResourceShareAssociation> getResourceShareAssociations() {
@@ -403,15 +415,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     * ListPendingInvitationResources</a>.
+     * To view the resources associated with a pending resource share invitation, use
+     * <a>ListPendingInvitationResources</a>.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     *        ListPendingInvitationResources</a>.
+     *        To view the resources associated with a pending resource share invitation, use
+     *        <a>ListPendingInvitationResources</a>.
      */
     @Deprecated
     public void setResourceShareAssociations(java.util.Collection<ResourceShareAssociation> resourceShareAssociations) {
@@ -425,9 +435,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     * ListPendingInvitationResources</a>.
+     * To view the resources associated with a pending resource share invitation, use
+     * <a>ListPendingInvitationResources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -436,9 +445,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param resourceShareAssociations
-     *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     *        ListPendingInvitationResources</a>.
+     *        To view the resources associated with a pending resource share invitation, use
+     *        <a>ListPendingInvitationResources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -454,15 +462,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     * ListPendingInvitationResources</a>.
+     * To view the resources associated with a pending resource share invitation, use
+     * <a>ListPendingInvitationResources</a>.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-     *        ListPendingInvitationResources</a>.
+     *        To view the resources associated with a pending resource share invitation, use
+     *        <a>ListPendingInvitationResources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -473,11 +479,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the IAM user or role that received the invitation.
      * </p>
      * 
      * @param receiverArn
-     *        The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the IAM user or role that received the invitation.
      */
 
     public void setReceiverArn(String receiverArn) {
@@ -486,10 +494,12 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the IAM user or role that received the invitation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the IAM user or role that received the invitation.
      */
 
     public String getReceiverArn() {
@@ -498,11 +508,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the IAM user or role that received the invitation.
      * </p>
      * 
      * @param receiverArn
-     *        The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the IAM user or role that received the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

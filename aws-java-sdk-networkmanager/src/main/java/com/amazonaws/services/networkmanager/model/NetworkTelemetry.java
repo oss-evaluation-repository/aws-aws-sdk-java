@@ -36,6 +36,12 @@ public class NetworkTelemetry implements Serializable, Cloneable, StructuredPojo
     private String registeredGatewayArn;
     /**
      * <p>
+     * The ID of a core network.
+     * </p>
+     */
+    private String coreNetworkId;
+    /**
+     * <p>
      * The Amazon Web Services Region.
      * </p>
      */
@@ -114,6 +120,46 @@ public class NetworkTelemetry implements Serializable, Cloneable, StructuredPojo
 
     public NetworkTelemetry withRegisteredGatewayArn(String registeredGatewayArn) {
         setRegisteredGatewayArn(registeredGatewayArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        The ID of a core network.
+     */
+
+    public void setCoreNetworkId(String coreNetworkId) {
+        this.coreNetworkId = coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @return The ID of a core network.
+     */
+
+    public String getCoreNetworkId() {
+        return this.coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        The ID of a core network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkTelemetry withCoreNetworkId(String coreNetworkId) {
+        setCoreNetworkId(coreNetworkId);
         return this;
     }
 
@@ -411,6 +457,8 @@ public class NetworkTelemetry implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getRegisteredGatewayArn() != null)
             sb.append("RegisteredGatewayArn: ").append(getRegisteredGatewayArn()).append(",");
+        if (getCoreNetworkId() != null)
+            sb.append("CoreNetworkId: ").append(getCoreNetworkId()).append(",");
         if (getAwsRegion() != null)
             sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getAccountId() != null)
@@ -442,6 +490,10 @@ public class NetworkTelemetry implements Serializable, Cloneable, StructuredPojo
         if (other.getRegisteredGatewayArn() == null ^ this.getRegisteredGatewayArn() == null)
             return false;
         if (other.getRegisteredGatewayArn() != null && other.getRegisteredGatewayArn().equals(this.getRegisteredGatewayArn()) == false)
+            return false;
+        if (other.getCoreNetworkId() == null ^ this.getCoreNetworkId() == null)
+            return false;
+        if (other.getCoreNetworkId() != null && other.getCoreNetworkId().equals(this.getCoreNetworkId()) == false)
             return false;
         if (other.getAwsRegion() == null ^ this.getAwsRegion() == null)
             return false;
@@ -480,6 +532,7 @@ public class NetworkTelemetry implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRegisteredGatewayArn() == null) ? 0 : getRegisteredGatewayArn().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkId() == null) ? 0 : getCoreNetworkId().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());

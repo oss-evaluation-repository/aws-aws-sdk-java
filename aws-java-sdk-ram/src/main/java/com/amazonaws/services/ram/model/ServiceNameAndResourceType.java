@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the shareable resource types and the Amazon Web Services services to which they belong.
+ * Information about a shareable resource type and the Amazon Web Services service to which resources of that type
+ * belong.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ServiceNameAndResourceType" target="_top">AWS API
@@ -30,24 +31,43 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The shareable resource types.
+     * The type of the resource.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The name of the Amazon Web Services services to which the resources belong.
+     * The name of the Amazon Web Services service to which resources of this type belong.
      * </p>
      */
     private String serviceName;
+    /**
+     * <p>
+     * Specifies the scope of visibility of resources of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region
+     * in which the resource exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String resourceRegionScope;
 
     /**
      * <p>
-     * The shareable resource types.
+     * The type of the resource.
      * </p>
      * 
      * @param resourceType
-     *        The shareable resource types.
+     *        The type of the resource.
      */
 
     public void setResourceType(String resourceType) {
@@ -56,10 +76,10 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The shareable resource types.
+     * The type of the resource.
      * </p>
      * 
-     * @return The shareable resource types.
+     * @return The type of the resource.
      */
 
     public String getResourceType() {
@@ -68,11 +88,11 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The shareable resource types.
+     * The type of the resource.
      * </p>
      * 
      * @param resourceType
-     *        The shareable resource types.
+     *        The type of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +103,11 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon Web Services services to which the resources belong.
+     * The name of the Amazon Web Services service to which resources of this type belong.
      * </p>
      * 
      * @param serviceName
-     *        The name of the Amazon Web Services services to which the resources belong.
+     *        The name of the Amazon Web Services service to which resources of this type belong.
      */
 
     public void setServiceName(String serviceName) {
@@ -96,10 +116,10 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon Web Services services to which the resources belong.
+     * The name of the Amazon Web Services service to which resources of this type belong.
      * </p>
      * 
-     * @return The name of the Amazon Web Services services to which the resources belong.
+     * @return The name of the Amazon Web Services service to which resources of this type belong.
      */
 
     public String getServiceName() {
@@ -108,16 +128,175 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon Web Services services to which the resources belong.
+     * The name of the Amazon Web Services service to which resources of this type belong.
      * </p>
      * 
      * @param serviceName
-     *        The name of the Amazon Web Services services to which the resources belong.
+     *        The name of the Amazon Web Services service to which resources of this type belong.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ServiceNameAndResourceType withServiceName(String serviceName) {
         setServiceName(serviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the scope of visibility of resources of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region
+     * in which the resource exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceRegionScope
+     *        Specifies the scope of visibility of resources of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services
+     *        Region in which the resource exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     *        </p>
+     *        </li>
+     * @see ResourceRegionScope
+     */
+
+    public void setResourceRegionScope(String resourceRegionScope) {
+        this.resourceRegionScope = resourceRegionScope;
+    }
+
+    /**
+     * <p>
+     * Specifies the scope of visibility of resources of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region
+     * in which the resource exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the scope of visibility of resources of this type:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services
+     *         Region in which the resource exists.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     *         </p>
+     *         </li>
+     * @see ResourceRegionScope
+     */
+
+    public String getResourceRegionScope() {
+        return this.resourceRegionScope;
+    }
+
+    /**
+     * <p>
+     * Specifies the scope of visibility of resources of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region
+     * in which the resource exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceRegionScope
+     *        Specifies the scope of visibility of resources of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services
+     *        Region in which the resource exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceRegionScope
+     */
+
+    public ServiceNameAndResourceType withResourceRegionScope(String resourceRegionScope) {
+        setResourceRegionScope(resourceRegionScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the scope of visibility of resources of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region
+     * in which the resource exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceRegionScope
+     *        Specifies the scope of visibility of resources of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services
+     *        Region in which the resource exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceRegionScope
+     */
+
+    public ServiceNameAndResourceType withResourceRegionScope(ResourceRegionScope resourceRegionScope) {
+        this.resourceRegionScope = resourceRegionScope.toString();
         return this;
     }
 
@@ -136,7 +315,9 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: ").append(getServiceName());
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
+        if (getResourceRegionScope() != null)
+            sb.append("ResourceRegionScope: ").append(getResourceRegionScope());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +340,10 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
             return false;
         if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
             return false;
+        if (other.getResourceRegionScope() == null ^ this.getResourceRegionScope() == null)
+            return false;
+        if (other.getResourceRegionScope() != null && other.getResourceRegionScope().equals(this.getResourceRegionScope()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +354,7 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getResourceRegionScope() == null) ? 0 : getResourceRegionScope().hashCode());
         return hashCode;
     }
 

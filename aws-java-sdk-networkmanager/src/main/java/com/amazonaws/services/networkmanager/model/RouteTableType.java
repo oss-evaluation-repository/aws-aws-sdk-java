@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RouteTableType {
 
-    TRANSIT_GATEWAY_ROUTE_TABLE("TRANSIT_GATEWAY_ROUTE_TABLE");
+    TRANSIT_GATEWAY_ROUTE_TABLE("TRANSIT_GATEWAY_ROUTE_TABLE"),
+    CORE_NETWORK_SEGMENT("CORE_NETWORK_SEGMENT");
 
     private String value;
 

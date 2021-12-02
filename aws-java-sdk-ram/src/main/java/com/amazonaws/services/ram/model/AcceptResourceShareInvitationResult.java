@@ -26,24 +26,26 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the invitation.
+     * An object that contains information about the specified invitation.
      * </p>
      */
     private ResourceShareInvitation resourceShareInvitation;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * Information about the invitation.
+     * An object that contains information about the specified invitation.
      * </p>
      * 
      * @param resourceShareInvitation
-     *        Information about the invitation.
+     *        An object that contains information about the specified invitation.
      */
 
     public void setResourceShareInvitation(ResourceShareInvitation resourceShareInvitation) {
@@ -52,10 +54,10 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the invitation.
+     * An object that contains information about the specified invitation.
      * </p>
      * 
-     * @return Information about the invitation.
+     * @return An object that contains information about the specified invitation.
      */
 
     public ResourceShareInvitation getResourceShareInvitation() {
@@ -64,11 +66,11 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the invitation.
+     * An object that contains information about the specified invitation.
      * </p>
      * 
      * @param resourceShareInvitation
-     *        Information about the invitation.
+     *        An object that contains information about the specified invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,11 +81,15 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public void setClientToken(String clientToken) {
@@ -92,10 +98,14 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *         idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *         that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public String getClientToken() {
@@ -104,11 +114,15 @@ public class AcceptResourceShareInvitationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

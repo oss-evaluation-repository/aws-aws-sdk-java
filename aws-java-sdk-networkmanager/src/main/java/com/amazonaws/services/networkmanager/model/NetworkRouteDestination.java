@@ -30,10 +30,28 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The ID of a core network attachment.
+     * </p>
+     */
+    private String coreNetworkAttachmentId;
+    /**
+     * <p>
      * The ID of the transit gateway attachment.
      * </p>
      */
     private String transitGatewayAttachmentId;
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     */
+    private String segmentName;
+    /**
+     * <p>
+     * The edge location for the network destination.
+     * </p>
+     */
+    private String edgeLocation;
     /**
      * <p>
      * The resource type.
@@ -46,6 +64,46 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
      * </p>
      */
     private String resourceId;
+
+    /**
+     * <p>
+     * The ID of a core network attachment.
+     * </p>
+     * 
+     * @param coreNetworkAttachmentId
+     *        The ID of a core network attachment.
+     */
+
+    public void setCoreNetworkAttachmentId(String coreNetworkAttachmentId) {
+        this.coreNetworkAttachmentId = coreNetworkAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network attachment.
+     * </p>
+     * 
+     * @return The ID of a core network attachment.
+     */
+
+    public String getCoreNetworkAttachmentId() {
+        return this.coreNetworkAttachmentId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network attachment.
+     * </p>
+     * 
+     * @param coreNetworkAttachmentId
+     *        The ID of a core network attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkRouteDestination withCoreNetworkAttachmentId(String coreNetworkAttachmentId) {
+        setCoreNetworkAttachmentId(coreNetworkAttachmentId);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +142,86 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
 
     public NetworkRouteDestination withTransitGatewayAttachmentId(String transitGatewayAttachmentId) {
         setTransitGatewayAttachmentId(transitGatewayAttachmentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     * 
+     * @param segmentName
+     *        The name of the segment.
+     */
+
+    public void setSegmentName(String segmentName) {
+        this.segmentName = segmentName;
+    }
+
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     * 
+     * @return The name of the segment.
+     */
+
+    public String getSegmentName() {
+        return this.segmentName;
+    }
+
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     * 
+     * @param segmentName
+     *        The name of the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkRouteDestination withSegmentName(String segmentName) {
+        setSegmentName(segmentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The edge location for the network destination.
+     * </p>
+     * 
+     * @param edgeLocation
+     *        The edge location for the network destination.
+     */
+
+    public void setEdgeLocation(String edgeLocation) {
+        this.edgeLocation = edgeLocation;
+    }
+
+    /**
+     * <p>
+     * The edge location for the network destination.
+     * </p>
+     * 
+     * @return The edge location for the network destination.
+     */
+
+    public String getEdgeLocation() {
+        return this.edgeLocation;
+    }
+
+    /**
+     * <p>
+     * The edge location for the network destination.
+     * </p>
+     * 
+     * @param edgeLocation
+     *        The edge location for the network destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkRouteDestination withEdgeLocation(String edgeLocation) {
+        setEdgeLocation(edgeLocation);
         return this;
     }
 
@@ -179,8 +317,14 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCoreNetworkAttachmentId() != null)
+            sb.append("CoreNetworkAttachmentId: ").append(getCoreNetworkAttachmentId()).append(",");
         if (getTransitGatewayAttachmentId() != null)
             sb.append("TransitGatewayAttachmentId: ").append(getTransitGatewayAttachmentId()).append(",");
+        if (getSegmentName() != null)
+            sb.append("SegmentName: ").append(getSegmentName()).append(",");
+        if (getEdgeLocation() != null)
+            sb.append("EdgeLocation: ").append(getEdgeLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
@@ -199,9 +343,21 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
         if (obj instanceof NetworkRouteDestination == false)
             return false;
         NetworkRouteDestination other = (NetworkRouteDestination) obj;
+        if (other.getCoreNetworkAttachmentId() == null ^ this.getCoreNetworkAttachmentId() == null)
+            return false;
+        if (other.getCoreNetworkAttachmentId() != null && other.getCoreNetworkAttachmentId().equals(this.getCoreNetworkAttachmentId()) == false)
+            return false;
         if (other.getTransitGatewayAttachmentId() == null ^ this.getTransitGatewayAttachmentId() == null)
             return false;
         if (other.getTransitGatewayAttachmentId() != null && other.getTransitGatewayAttachmentId().equals(this.getTransitGatewayAttachmentId()) == false)
+            return false;
+        if (other.getSegmentName() == null ^ this.getSegmentName() == null)
+            return false;
+        if (other.getSegmentName() != null && other.getSegmentName().equals(this.getSegmentName()) == false)
+            return false;
+        if (other.getEdgeLocation() == null ^ this.getEdgeLocation() == null)
+            return false;
+        if (other.getEdgeLocation() != null && other.getEdgeLocation().equals(this.getEdgeLocation()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
@@ -219,7 +375,10 @@ public class NetworkRouteDestination implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCoreNetworkAttachmentId() == null) ? 0 : getCoreNetworkAttachmentId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayAttachmentId() == null) ? 0 : getTransitGatewayAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getSegmentName() == null) ? 0 : getSegmentName().hashCode());
+        hashCode = prime * hashCode + ((getEdgeLocation() == null) ? 0 : getEdgeLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         return hashCode;

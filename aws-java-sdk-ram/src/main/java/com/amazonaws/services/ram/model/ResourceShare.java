@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a resource share.
+ * Describes a resource share in RAM.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShare" target="_top">AWS API
@@ -30,7 +30,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      */
     private String resourceShareArn;
@@ -54,7 +55,7 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
     private Boolean allowExternalPrincipals;
     /**
      * <p>
-     * The status of the resource share.
+     * The current status of the resource share.
      * </p>
      */
     private String status;
@@ -66,19 +67,19 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * The tags for the resource share.
+     * The tag key and value pairs attached to the resource share.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The time when the resource share was created.
+     * The date and time when the resource share was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time when the resource share was last updated.
+     * The date and time when the resource share was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -89,9 +90,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web Services
-     * Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These resource shares are
-     * visible only to the Amazon Web Services account that created it. They cannot be modified in RAM.
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access
+     * Management (IAM) resource-based permission policy attached to the resource. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -103,7 +105,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These
-     * resource shares are visible to all principals. They can be modified in RAM.
+     * resource shares are visible to all principals you share the resource share with. You can modify these resource
+     * shares in RAM using the console or APIs.
      * </p>
      * </li>
      * </ul>
@@ -112,11 +115,13 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -125,10 +130,12 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the resource share
      */
 
     public String getResourceShareArn() {
@@ -137,11 +144,13 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +297,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the resource share.
+     * The current status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of the resource share.
+     *        The current status of the resource share.
      * @see ResourceShareStatus
      */
 
@@ -302,10 +311,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the resource share.
+     * The current status of the resource share.
      * </p>
      * 
-     * @return The status of the resource share.
+     * @return The current status of the resource share.
      * @see ResourceShareStatus
      */
 
@@ -315,11 +324,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the resource share.
+     * The current status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of the resource share.
+     *        The current status of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareStatus
      */
@@ -331,11 +340,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the resource share.
+     * The current status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of the resource share.
+     *        The current status of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareStatus
      */
@@ -387,10 +396,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for the resource share.
+     * The tag key and value pairs attached to the resource share.
      * </p>
      * 
-     * @return The tags for the resource share.
+     * @return The tag key and value pairs attached to the resource share.
      */
 
     public java.util.List<Tag> getTags() {
@@ -399,11 +408,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for the resource share.
+     * The tag key and value pairs attached to the resource share.
      * </p>
      * 
      * @param tags
-     *        The tags for the resource share.
+     *        The tag key and value pairs attached to the resource share.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -417,7 +426,7 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for the resource share.
+     * The tag key and value pairs attached to the resource share.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -426,7 +435,7 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The tags for the resource share.
+     *        The tag key and value pairs attached to the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -442,11 +451,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for the resource share.
+     * The tag key and value pairs attached to the resource share.
      * </p>
      * 
      * @param tags
-     *        The tags for the resource share.
+     *        The tag key and value pairs attached to the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,11 +466,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was created.
+     * The date and time when the resource share was created.
      * </p>
      * 
      * @param creationTime
-     *        The time when the resource share was created.
+     *        The date and time when the resource share was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -470,10 +479,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was created.
+     * The date and time when the resource share was created.
      * </p>
      * 
-     * @return The time when the resource share was created.
+     * @return The date and time when the resource share was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -482,11 +491,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was created.
+     * The date and time when the resource share was created.
      * </p>
      * 
      * @param creationTime
-     *        The time when the resource share was created.
+     *        The date and time when the resource share was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,11 +506,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was last updated.
+     * The date and time when the resource share was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the resource share was last updated.
+     *        The date and time when the resource share was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -510,10 +519,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was last updated.
+     * The date and time when the resource share was last updated.
      * </p>
      * 
-     * @return The time when the resource share was last updated.
+     * @return The date and time when the resource share was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -522,11 +531,11 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the resource share was last updated.
+     * The date and time when the resource share was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the resource share was last updated.
+     *        The date and time when the resource share was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,9 +551,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web Services
-     * Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These resource shares are
-     * visible only to the Amazon Web Services account that created it. They cannot be modified in RAM.
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access
+     * Management (IAM) resource-based permission policy attached to the resource. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -556,7 +566,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These
-     * resource shares are visible to all principals. They can be modified in RAM.
+     * resource shares are visible to all principals you share the resource share with. You can modify these resource
+     * shares in RAM using the console or APIs.
      * </p>
      * </li>
      * </ul>
@@ -566,10 +577,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web
-     *        Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These
-     *        resource shares are visible only to the Amazon Web Services account that created it. They cannot be
-     *        modified in RAM.
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and
+     *        Access Management (IAM) resource-based permission policy attached to the resource. This type of resource
+     *        share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM
+     *        unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -581,7 +592,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs.
-     *        These resource shares are visible to all principals. They can be modified in RAM.
+     *        These resource shares are visible to all principals you share the resource share with. You can modify
+     *        these resource shares in RAM using the console or APIs.
      *        </p>
      *        </li>
      * @see ResourceShareFeatureSet
@@ -598,9 +610,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web Services
-     * Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These resource shares are
-     * visible only to the Amazon Web Services account that created it. They cannot be modified in RAM.
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access
+     * Management (IAM) resource-based permission policy attached to the resource. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -612,7 +625,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These
-     * resource shares are visible to all principals. They can be modified in RAM.
+     * resource shares are visible to all principals you share the resource share with. You can modify these resource
+     * shares in RAM using the console or APIs.
      * </p>
      * </li>
      * </ul>
@@ -621,10 +635,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web
-     *         Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These
-     *         resource shares are visible only to the Amazon Web Services account that created it. They cannot be
-     *         modified in RAM.
+     *         <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and
+     *         Access Management (IAM) resource-based permission policy attached to the resource. This type of resource
+     *         share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM
+     *         unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -636,7 +650,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs.
-     *         These resource shares are visible to all principals. They can be modified in RAM.
+     *         These resource shares are visible to all principals you share the resource share with. You can modify
+     *         these resource shares in RAM using the console or APIs.
      *         </p>
      *         </li>
      * @see ResourceShareFeatureSet
@@ -653,9 +668,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web Services
-     * Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These resource shares are
-     * visible only to the Amazon Web Services account that created it. They cannot be modified in RAM.
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access
+     * Management (IAM) resource-based permission policy attached to the resource. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -667,7 +683,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These
-     * resource shares are visible to all principals. They can be modified in RAM.
+     * resource shares are visible to all principals you share the resource share with. You can modify these resource
+     * shares in RAM using the console or APIs.
      * </p>
      * </li>
      * </ul>
@@ -677,10 +694,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web
-     *        Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These
-     *        resource shares are visible only to the Amazon Web Services account that created it. They cannot be
-     *        modified in RAM.
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and
+     *        Access Management (IAM) resource-based permission policy attached to the resource. This type of resource
+     *        share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM
+     *        unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -692,7 +709,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs.
-     *        These resource shares are visible to all principals. They can be modified in RAM.
+     *        These resource shares are visible to all principals you share the resource share with. You can modify
+     *        these resource shares in RAM using the console or APIs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -711,9 +729,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web Services
-     * Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These resource shares are
-     * visible only to the Amazon Web Services account that created it. They cannot be modified in RAM.
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access
+     * Management (IAM) resource-based permission policy attached to the resource. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -725,7 +744,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These
-     * resource shares are visible to all principals. They can be modified in RAM.
+     * resource shares are visible to all principals you share the resource share with. You can modify these resource
+     * shares in RAM using the console or APIs.
      * </p>
      * </li>
      * </ul>
@@ -735,10 +755,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Amazon Web
-     *        Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource. These
-     *        resource shares are visible only to the Amazon Web Services account that created it. They cannot be
-     *        modified in RAM.
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and
+     *        Access Management (IAM) resource-based permission policy attached to the resource. This type of resource
+     *        share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM
+     *        unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -750,7 +770,8 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs.
-     *        These resource shares are visible to all principals. They can be modified in RAM.
+     *        These resource shares are visible to all principals you share the resource share with. You can modify
+     *        these resource shares in RAM using the console or APIs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

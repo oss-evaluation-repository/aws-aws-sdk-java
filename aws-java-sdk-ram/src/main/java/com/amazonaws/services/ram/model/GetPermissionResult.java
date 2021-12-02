@@ -25,18 +25,18 @@ public class GetPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about the permission.
+     * An object that contains information about the permission.
      * </p>
      */
     private ResourceSharePermissionDetail permission;
 
     /**
      * <p>
-     * Information about the permission.
+     * An object that contains information about the permission.
      * </p>
      * 
      * @param permission
-     *        Information about the permission.
+     *        An object that contains information about the permission.
      */
 
     public void setPermission(ResourceSharePermissionDetail permission) {
@@ -45,10 +45,10 @@ public class GetPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about the permission.
+     * An object that contains information about the permission.
      * </p>
      * 
-     * @return Information about the permission.
+     * @return An object that contains information about the permission.
      */
 
     public ResourceSharePermissionDetail getPermission() {
@@ -57,11 +57,11 @@ public class GetPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about the permission.
+     * An object that contains information about the permission.
      * </p>
      * 
      * @param permission
-     *        Information about the permission.
+     *        An object that contains information about the permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,69 +27,144 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of owner.
+     * Specifies that you want to list information for only resource shares that match the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>SELF</code> </b> – resources that you are sharing
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceOwner;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * Specifies that you want to list principal information for the resource share with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The principals.
+     * Specifies that you want to list information for only the listed principals.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> principals;
     /**
      * <p>
-     * The resource type.
+     * Specifies that you want to list information for only principals associated with resource shares that include the
+     * specified resource type.
      * </p>
      * <p>
-     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
-     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
-     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
-     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> |
-     * <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     * For a list of valid values, query the <a>ListResourceTypes</a> operation.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies that you want to list information for only principals associated with the resource shares specified by
+     * a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Names (ARNs)</a>.
      * </p>
      */
     private java.util.List<String> resourceShareArns;
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The type of owner.
+     * Specifies that you want to list information for only resource shares that match the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>SELF</code> </b> – resources that you are sharing
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceOwner
-     *        The type of owner.
+     *        Specifies that you want to list information for only resource shares that match the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>SELF</code> </b> – resources that you are sharing
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     *        </p>
+     *        </li>
      * @see ResourceOwner
      */
 
@@ -99,10 +174,33 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of owner.
+     * Specifies that you want to list information for only resource shares that match the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>SELF</code> </b> – resources that you are sharing
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of owner.
+     * @return Specifies that you want to list information for only resource shares that match the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>SELF</code> </b> – resources that you are sharing
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     *         </p>
+     *         </li>
      * @see ResourceOwner
      */
 
@@ -112,11 +210,34 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of owner.
+     * Specifies that you want to list information for only resource shares that match the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>SELF</code> </b> – resources that you are sharing
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceOwner
-     *        The type of owner.
+     *        Specifies that you want to list information for only resource shares that match the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>SELF</code> </b> – resources that you are sharing
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceOwner
      */
@@ -128,11 +249,34 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of owner.
+     * Specifies that you want to list information for only resource shares that match the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>SELF</code> </b> – resources that you are sharing
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceOwner
-     *        The type of owner.
+     *        Specifies that you want to list information for only resource shares that match the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>SELF</code> </b> – resources that you are sharing
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceOwner
      */
@@ -144,11 +288,14 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * Specifies that you want to list principal information for the resource share with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        Specifies that you want to list principal information for the resource share with the specified <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -157,10 +304,13 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * Specifies that you want to list principal information for the resource share with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource.
+     * @return Specifies that you want to list principal information for the resource share with the specified <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *         (ARN)</a>.
      */
 
     public String getResourceArn() {
@@ -169,11 +319,14 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * Specifies that you want to list principal information for the resource share with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        Specifies that you want to list principal information for the resource share with the specified <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,10 +337,89 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principals.
+     * Specifies that you want to list information for only the listed principals.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The principals.
+     * @return Specifies that you want to list information for only the listed principals.</p>
+     *         <p>
+     *         You can include the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of an organization in Organizations, for example:
+     *         <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an organizational unit (OU) in Organizations, for example:
+     *         <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *         >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *         </p>
      */
 
     public java.util.List<String> getPrincipals() {
@@ -196,11 +428,90 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principals.
+     * Specifies that you want to list information for only the listed principals.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies that you want to list information for only the listed principals.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -214,8 +525,48 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principals.
+     * Specifies that you want to list information for only the listed principals.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to
@@ -223,7 +574,46 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies that you want to list information for only the listed principals.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +629,90 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principals.
+     * Specifies that you want to list information for only the listed principals.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies that you want to list information for only the listed principals.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,39 +723,18 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource type.
+     * Specifies that you want to list information for only principals associated with resource shares that include the
+     * specified resource type.
      * </p>
      * <p>
-     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
-     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
-     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
-     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> |
-     * <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     * For a list of valid values, query the <a>ListResourceTypes</a> operation.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.</p>
+     *        Specifies that you want to list information for only principals associated with resource shares that
+     *        include the specified resource type.</p>
      *        <p>
-     *        Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     *        <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code>
-     *        | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     *        <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     *        <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *        <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
-     *        <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
-     *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
-     *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
-     *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *        <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
-     *        <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     *        For a list of valid values, query the <a>ListResourceTypes</a> operation.
      */
 
     public void setResourceType(String resourceType) {
@@ -295,39 +743,17 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource type.
+     * Specifies that you want to list information for only principals associated with resource shares that include the
+     * specified resource type.
      * </p>
      * <p>
-     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
-     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
-     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
-     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> |
-     * <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     * For a list of valid values, query the <a>ListResourceTypes</a> operation.
      * </p>
      * 
-     * @return The resource type.</p>
+     * @return Specifies that you want to list information for only principals associated with resource shares that
+     *         include the specified resource type.</p>
      *         <p>
-     *         Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     *         <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     *         <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
-     *         <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> |
-     *         <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     *         <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *         <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
-     *         <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
-     *         <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
-     *         <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
-     *         <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *         <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *         <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
-     *         <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     *         For a list of valid values, query the <a>ListResourceTypes</a> operation.
      */
 
     public String getResourceType() {
@@ -336,39 +762,18 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource type.
+     * Specifies that you want to list information for only principals associated with resource shares that include the
+     * specified resource type.
      * </p>
      * <p>
-     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
-     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
-     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
-     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> |
-     * <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     * For a list of valid values, query the <a>ListResourceTypes</a> operation.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.</p>
+     *        Specifies that you want to list information for only principals associated with resource shares that
+     *        include the specified resource type.</p>
      *        <p>
-     *        Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
-     *        <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code>
-     *        | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
-     *        <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     *        <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *        <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
-     *        <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
-     *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
-     *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
-     *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *        <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
-     *        <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+     *        For a list of valid values, query the <a>ListResourceTypes</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,10 +784,15 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies that you want to list information for only principals associated with the resource shares specified by
+     * a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Names (ARNs)</a>.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the resource shares.
+     * @return Specifies that you want to list information for only principals associated with the resource shares
+     *         specified by a list the <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs)</a>.
      */
 
     public java.util.List<String> getResourceShareArns() {
@@ -391,11 +801,16 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies that you want to list information for only principals associated with the resource shares specified by
+     * a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Names (ARNs)</a>.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies that you want to list information for only principals associated with the resource shares
+     *        specified by a list the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a>.
      */
 
     public void setResourceShareArns(java.util.Collection<String> resourceShareArns) {
@@ -409,7 +824,9 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies that you want to list information for only principals associated with the resource shares specified by
+     * a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Names (ARNs)</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -418,7 +835,10 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies that you want to list information for only principals associated with the resource shares
+     *        specified by a list the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,11 +854,16 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies that you want to list information for only principals associated with the resource shares specified by
+     * a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Names (ARNs)</a>.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies that you want to list information for only principals associated with the resource shares
+     *        specified by a list the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,11 +874,16 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -462,10 +892,15 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return Specifies that you want to receive the next page of results. Valid only if you received a
+     *         <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *         available. Set this parameter to the value provided by the previous call's <code>NextToken</code>
+     *         response to request the next page of results.
      */
 
     public String getNextToken() {
@@ -474,11 +909,16 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,13 +929,23 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -504,12 +954,22 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.
+     * @return Specifies the total number of results that you want included on each page of the response. If you do not
+     *         include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *         exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *         (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *         to the operation to get the next part of the results. Note that the service might return fewer results
+     *         than the maximum even when there are more results available. You should check <code>NextToken</code>
+     *         after every operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -518,13 +978,23 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

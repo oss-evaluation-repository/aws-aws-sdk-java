@@ -28,6 +28,32 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(AcceptAttachmentRequest request) {
+
+        return acceptAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(AcceptAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptAttachmentRequest, AcceptAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(AssociateConnectPeerRequest request) {
+
+        return associateConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(AssociateConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateConnectPeerRequest, AssociateConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateCustomerGatewayResult> associateCustomerGatewayAsync(AssociateCustomerGatewayRequest request) {
 
         return associateCustomerGatewayAsync(request, null);
@@ -69,6 +95,32 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(CreateConnectAttachmentRequest request) {
+
+        return createConnectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(CreateConnectAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectAttachmentRequest, CreateConnectAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(CreateConnectPeerRequest request) {
+
+        return createConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(CreateConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectPeerRequest, CreateConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
 
         return createConnectionAsync(request, null);
@@ -77,6 +129,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(CreateCoreNetworkRequest request) {
+
+        return createCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(CreateCoreNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCoreNetworkRequest, CreateCoreNetworkResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +199,58 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request) {
+
+        return createSiteToSiteVpnAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSiteToSiteVpnAttachmentRequest, CreateSiteToSiteVpnAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest request) {
+
+        return createVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcAttachmentRequest, CreateVpcAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(DeleteAttachmentRequest request) {
+
+        return deleteAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(DeleteAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttachmentRequest, DeleteAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(DeleteConnectPeerRequest request) {
+
+        return deleteConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(DeleteConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectPeerRequest, DeleteConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -142,6 +259,32 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(DeleteCoreNetworkRequest request) {
+
+        return deleteCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(DeleteCoreNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkRequest, DeleteCoreNetworkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request) {
+
+        return deleteCoreNetworkPolicyVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkPolicyVersionRequest, DeleteCoreNetworkPolicyVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -186,6 +329,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request) {
 
         return deleteSiteAsync(request, null);
@@ -220,6 +376,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<DescribeGlobalNetworksResult> describeGlobalNetworksAsync(DescribeGlobalNetworksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGlobalNetworksRequest, DescribeGlobalNetworksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(DisassociateConnectPeerRequest request) {
+
+        return disassociateConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(DisassociateConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConnectPeerRequest, DisassociateConnectPeerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -266,6 +435,58 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request) {
+
+        return executeCoreNetworkChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteCoreNetworkChangeSetRequest, ExecuteCoreNetworkChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(GetConnectAttachmentRequest request) {
+
+        return getConnectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(GetConnectAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConnectAttachmentRequest, GetConnectAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(GetConnectPeerRequest request) {
+
+        return getConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(GetConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConnectPeerRequest, GetConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request) {
+
+        return getConnectPeerAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConnectPeerAssociationsRequest, GetConnectPeerAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request) {
 
         return getConnectionsAsync(request, null);
@@ -274,6 +495,45 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConnectionsRequest, GetConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(GetCoreNetworkRequest request) {
+
+        return getCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(GetCoreNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkRequest, GetCoreNetworkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request) {
+
+        return getCoreNetworkChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkChangeSetRequest, GetCoreNetworkChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request) {
+
+        return getCoreNetworkPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkPolicyRequest, GetCoreNetworkPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -398,6 +658,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteAnalysisResult> getRouteAnalysisAsync(GetRouteAnalysisRequest request) {
 
         return getRouteAnalysisAsync(request, null);
@@ -406,6 +679,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<GetRouteAnalysisResult> getRouteAnalysisAsync(GetRouteAnalysisRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRouteAnalysisRequest, GetRouteAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request) {
+
+        return getSiteToSiteVpnAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSiteToSiteVpnAttachmentRequest, GetSiteToSiteVpnAttachmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -452,6 +738,71 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(GetVpcAttachmentRequest request) {
+
+        return getVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(GetVpcAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetVpcAttachmentRequest, GetVpcAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(ListAttachmentsRequest request) {
+
+        return listAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(ListAttachmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAttachmentsRequest, ListAttachmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(ListConnectPeersRequest request) {
+
+        return listConnectPeersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(ListConnectPeersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConnectPeersRequest, ListConnectPeersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request) {
+
+        return listCoreNetworkPolicyVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCoreNetworkPolicyVersionsRequest, ListCoreNetworkPolicyVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(ListCoreNetworksRequest request) {
+
+        return listCoreNetworksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(ListCoreNetworksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCoreNetworksRequest, ListCoreNetworksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -465,6 +816,32 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request) {
+
+        return putCoreNetworkPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutCoreNetworkPolicyRequest, PutCoreNetworkPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterTransitGatewayResult> registerTransitGatewayAsync(RegisterTransitGatewayRequest request) {
 
         return registerTransitGatewayAsync(request, null);
@@ -473,6 +850,34 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<RegisterTransitGatewayResult> registerTransitGatewayAsync(RegisterTransitGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterTransitGatewayRequest, RegisterTransitGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(RejectAttachmentRequest request) {
+
+        return rejectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(RejectAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectAttachmentRequest, RejectAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            RestoreCoreNetworkPolicyVersionRequest request) {
+
+        return restoreCoreNetworkPolicyVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            RestoreCoreNetworkPolicyVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreCoreNetworkPolicyVersionRequest, RestoreCoreNetworkPolicyVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -525,6 +930,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(UpdateCoreNetworkRequest request) {
+
+        return updateCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(UpdateCoreNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCoreNetworkRequest, UpdateCoreNetworkResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -590,6 +1008,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<UpdateSiteResult> updateSiteAsync(UpdateSiteRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSiteRequest, UpdateSiteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest request) {
+
+        return updateVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

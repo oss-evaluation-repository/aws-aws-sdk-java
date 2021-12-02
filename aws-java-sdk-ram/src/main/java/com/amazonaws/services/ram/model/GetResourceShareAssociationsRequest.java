@@ -27,62 +27,109 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     * specified resource share.
+     * Specifies whether you want to retrieve the associations that involve a specified resource or principal.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String associationType;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.
      * </p>
      */
     private java.util.List<String> resourceShareArns;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
-     * <code>PRINCIPAL</code>.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
+     * account ID, an organization ID, an organizational unit ID, or the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of an individual IAM user or role.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      */
     private String principal;
     /**
      * <p>
-     * The association status.
+     * Specifies that you want to retrieve only associations with this status.
      * </p>
      */
     private String associationStatus;
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     * specified resource share.
+     * Specifies whether you want to retrieve the associations that involve a specified resource or principal.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param associationType
-     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     *        specified resource share.
+     *        Specifies whether you want to retrieve the associations that involve a specified resource or
+     *        principal.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        </p>
+     *        </li>
      * @see ResourceShareAssociationType
      */
 
@@ -92,14 +139,34 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     * specified resource share.
+     * Specifies whether you want to retrieve the associations that involve a specified resource or principal.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     *         specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with
-     *         the specified resource share.
+     * @return Specifies whether you want to retrieve the associations that involve a specified resource or
+     *         principal.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *         </p>
+     *         </li>
      * @see ResourceShareAssociationType
      */
 
@@ -109,15 +176,35 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     * specified resource share.
+     * Specifies whether you want to retrieve the associations that involve a specified resource or principal.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param associationType
-     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     *        specified resource share.
+     *        Specifies whether you want to retrieve the associations that involve a specified resource or
+     *        principal.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */
@@ -129,15 +216,35 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     * specified resource share.
+     * Specifies whether you want to retrieve the associations that involve a specified resource or principal.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param associationType
-     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
-     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
-     *        specified resource share.
+     *        Specifies whether you want to retrieve the associations that involve a specified resource or
+     *        principal.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */
@@ -149,10 +256,13 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the resource shares.
+     * @return Specifies a list of <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs)</a> of the resource share whose associations you want to retrieve.
      */
 
     public java.util.List<String> getResourceShareArns() {
@@ -161,11 +271,14 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resource share whose associations you want to retrieve.
      */
 
     public void setResourceShareArns(java.util.Collection<String> resourceShareArns) {
@@ -179,7 +292,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,7 +302,9 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resource share whose associations you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +320,14 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resource share whose associations you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,13 +338,18 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
-     * <code>PRINCIPAL</code>.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
-     *        is <code>PRINCIPAL</code>.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *        <p>
+     *        You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -234,12 +358,17 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
-     * <code>PRINCIPAL</code>.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
-     *         is <code>PRINCIPAL</code>.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *         <p>
+     *         You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      */
 
     public String getResourceArn() {
@@ -248,13 +377,18 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
-     * <code>PRINCIPAL</code>.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
-     *        is <code>PRINCIPAL</code>.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *        <p>
+     *        You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +399,22 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
+     * account ID, an organization ID, an organizational unit ID, or the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of an individual IAM user or role.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
      * @param principal
-     *        The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
+     *        Services account ID, an organization ID, an organizational unit ID, or the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        <p>
+     *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
 
     public void setPrincipal(String principal) {
@@ -278,10 +423,21 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
+     * account ID, an organization ID, an organizational unit ID, or the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of an individual IAM user or role.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
-     * @return The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     * @return Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
+     *         Services account ID, an organization ID, an organizational unit ID, or the <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *         (ARN)</a> of an individual IAM user or role.</p>
+     *         <p>
+     *         You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
 
     public String getPrincipal() {
@@ -290,11 +446,22 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
+     * account ID, an organization ID, an organizational unit ID, or the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of an individual IAM user or role.
+     * </p>
+     * <p>
+     * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
      * @param principal
-     *        The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+     *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
+     *        Services account ID, an organization ID, an organizational unit ID, or the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        <p>
+     *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +472,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association status.
+     * Specifies that you want to retrieve only associations with this status.
      * </p>
      * 
      * @param associationStatus
-     *        The association status.
+     *        Specifies that you want to retrieve only associations with this status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -319,10 +486,10 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association status.
+     * Specifies that you want to retrieve only associations with this status.
      * </p>
      * 
-     * @return The association status.
+     * @return Specifies that you want to retrieve only associations with this status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -332,11 +499,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association status.
+     * Specifies that you want to retrieve only associations with this status.
      * </p>
      * 
      * @param associationStatus
-     *        The association status.
+     *        Specifies that you want to retrieve only associations with this status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -348,11 +515,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association status.
+     * Specifies that you want to retrieve only associations with this status.
      * </p>
      * 
      * @param associationStatus
-     *        The association status.
+     *        Specifies that you want to retrieve only associations with this status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -364,11 +531,16 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -377,10 +549,15 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return Specifies that you want to receive the next page of results. Valid only if you received a
+     *         <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *         available. Set this parameter to the value provided by the previous call's <code>NextToken</code>
+     *         response to request the next page of results.
      */
 
     public String getNextToken() {
@@ -389,11 +566,16 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,13 +586,23 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -419,12 +611,22 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.
+     * @return Specifies the total number of results that you want included on each page of the response. If you do not
+     *         include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *         exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *         (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *         to the operation to get the next part of the results. Note that the service might return fewer results
+     *         than the maximum even when there are more results available. You should check <code>NextToken</code>
+     *         after every operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -433,13 +635,23 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

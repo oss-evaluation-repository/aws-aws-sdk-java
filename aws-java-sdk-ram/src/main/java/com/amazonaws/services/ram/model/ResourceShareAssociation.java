@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an association with a resource share.
+ * Describes an association with a resource share and either a principal or a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareAssociation" target="_top">AWS API
@@ -30,7 +30,8 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share.
      * </p>
      */
     private String resourceShareArn;
@@ -42,47 +43,61 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
     private String resourceShareName;
     /**
      * <p>
-     * The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource. For
-     * principal associations, this is one of the following:
+     * The associated entity. This can be either of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * For a resource association, this is the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organization in Organizations
+     * For principal associations, this is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ID of an Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * The ARN of an organizational unit (OU) in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * The ARN of an IAM role
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an IAM user
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      */
     private String associatedEntity;
     /**
      * <p>
-     * The association type.
+     * The type of entity included in this association.
      * </p>
      */
     private String associationType;
     /**
      * <p>
-     * The status of the association.
+     * The current status of the association.
      * </p>
      */
     private String status;
@@ -94,13 +109,13 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
     private String statusMessage;
     /**
      * <p>
-     * The time when the association was created.
+     * The date and time when the association was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -114,11 +129,13 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -127,10 +144,12 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the resource share.
      */
 
     public String getResourceShareArn() {
@@ -139,11 +158,13 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,65 +215,93 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource. For
-     * principal associations, this is one of the following:
+     * The associated entity. This can be either of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * For a resource association, this is the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organization in Organizations
+     * For principal associations, this is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ID of an Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * The ARN of an organizational unit (OU) in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * The ARN of an IAM role
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an IAM user
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
      * @param associatedEntity
-     *        The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource.
-     *        For principal associations, this is one of the following:</p>
+     *        The associated entity. This can be either of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        An Amazon Web Services account ID
+     *        For a resource association, this is the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a> of the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organization in Organizations
+     *        For principal associations, this is one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The ID of an Amazon Web Services account
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organizational unit (OU) in Organizations
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM role
+     *        The ARN of an organizational unit (OU) in Organizations
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM user
+     *        The ARN of an IAM role
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an IAM user
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -262,64 +311,92 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource. For
-     * principal associations, this is one of the following:
+     * The associated entity. This can be either of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * For a resource association, this is the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organization in Organizations
+     * For principal associations, this is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ID of an Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * The ARN of an organizational unit (OU) in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * The ARN of an IAM role
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an IAM user
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource.
-     *         For principal associations, this is one of the following:</p>
+     * @return The associated entity. This can be either of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         An Amazon Web Services account ID
+     *         For a resource association, this is the <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *         (ARN)</a> of the resource.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an organization in Organizations
+     *         For principal associations, this is one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The ID of an Amazon Web Services account
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an organizational unit (OU) in Organizations
+     *         The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of an organization in Organizations
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an IAM role
+     *         The ARN of an organizational unit (OU) in Organizations
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an IAM user
+     *         The ARN of an IAM role
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN of an IAM user
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -329,65 +406,93 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource. For
-     * principal associations, this is one of the following:
+     * The associated entity. This can be either of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * For a resource association, this is the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * of the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organization in Organizations
+     * For principal associations, this is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ID of an Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * The ARN of an organizational unit (OU) in Organizations
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * The ARN of an IAM role
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an IAM user
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
      * @param associatedEntity
-     *        The associated entity. For resource associations, this is the Amazon Resource Name (ARN) of the resource.
-     *        For principal associations, this is one of the following:</p>
+     *        The associated entity. This can be either of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        An Amazon Web Services account ID
+     *        For a resource association, this is the <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        (ARN)</a> of the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organization in Organizations
+     *        For principal associations, this is one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The ID of an Amazon Web Services account
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organizational unit (OU) in Organizations
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM role
+     *        The ARN of an organizational unit (OU) in Organizations
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM user
+     *        The ARN of an IAM role
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an IAM user
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -399,11 +504,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The association type.
+     * The type of entity included in this association.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The type of entity included in this association.
      * @see ResourceShareAssociationType
      */
 
@@ -413,10 +518,10 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The association type.
+     * The type of entity included in this association.
      * </p>
      * 
-     * @return The association type.
+     * @return The type of entity included in this association.
      * @see ResourceShareAssociationType
      */
 
@@ -426,11 +531,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The association type.
+     * The type of entity included in this association.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The type of entity included in this association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */
@@ -442,11 +547,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The association type.
+     * The type of entity included in this association.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The type of entity included in this association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */
@@ -458,11 +563,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the association.
+     * The current status of the association.
      * </p>
      * 
      * @param status
-     *        The status of the association.
+     *        The current status of the association.
      * @see ResourceShareAssociationStatus
      */
 
@@ -472,10 +577,10 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the association.
+     * The current status of the association.
      * </p>
      * 
-     * @return The status of the association.
+     * @return The current status of the association.
      * @see ResourceShareAssociationStatus
      */
 
@@ -485,11 +590,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the association.
+     * The current status of the association.
      * </p>
      * 
      * @param status
-     *        The status of the association.
+     *        The current status of the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -501,11 +606,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the association.
+     * The current status of the association.
      * </p>
      * 
      * @param status
-     *        The status of the association.
+     *        The current status of the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -557,11 +662,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was created.
+     * The date and time when the association was created.
      * </p>
      * 
      * @param creationTime
-     *        The time when the association was created.
+     *        The date and time when the association was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -570,10 +675,10 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was created.
+     * The date and time when the association was created.
      * </p>
      * 
-     * @return The time when the association was created.
+     * @return The date and time when the association was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -582,11 +687,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was created.
+     * The date and time when the association was created.
      * </p>
      * 
      * @param creationTime
-     *        The time when the association was created.
+     *        The date and time when the association was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,11 +702,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the association was last updated.
+     *        The date and time when the association was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -610,10 +715,10 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
-     * @return The time when the association was last updated.
+     * @return The date and time when the association was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -622,11 +727,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the association was last updated.
+     *        The date and time when the association was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

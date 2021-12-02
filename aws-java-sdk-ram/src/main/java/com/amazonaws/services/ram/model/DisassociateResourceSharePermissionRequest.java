@@ -27,30 +27,42 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share from which you want to disassociate a permission.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect
+     * immediately.
      * </p>
      */
     private String permissionArn;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share from which you want to disassociate a permission.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share from which you want to disassociate a permission.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -59,10 +71,12 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share from which you want to disassociate a permission.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the resource share from which you want to disassociate a permission.
      */
 
     public String getResourceShareArn() {
@@ -71,11 +85,13 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the resource share from which you want to disassociate a permission.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the resource share from which you want to disassociate a permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +102,15 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect
+     * immediately.
      * </p>
      * 
      * @param permissionArn
-     *        The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take
+     *        effect immediately.
      */
 
     public void setPermissionArn(String permissionArn) {
@@ -99,10 +119,14 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect
+     * immediately.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take
+     *         effect immediately.
      */
 
     public String getPermissionArn() {
@@ -111,11 +135,15 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect
+     * immediately.
      * </p>
      * 
      * @param permissionArn
-     *        The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take
+     *        effect immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +154,24 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public void setClientToken(String clientToken) {
@@ -139,10 +180,23 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *         This lets you safely retry the request without accidentally performing the same operation a second time.
+     *         Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *         other parameters. We recommend that you use a <a
+     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *         <p>
+     *         If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public String getClientToken() {
@@ -151,11 +205,24 @@ public class DisassociateResourceSharePermissionRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

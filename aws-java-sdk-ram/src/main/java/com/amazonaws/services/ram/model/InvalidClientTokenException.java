@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A client token is not valid.
+ * The client token is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

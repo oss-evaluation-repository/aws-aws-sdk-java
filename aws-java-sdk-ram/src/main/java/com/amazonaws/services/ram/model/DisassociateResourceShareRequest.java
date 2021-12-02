@@ -27,36 +27,90 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove resources from.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
+     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     * that created the resources.
      * </p>
      */
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The principals.
+     * Specifies a list of one or more principals that no longer are to have access to the resources in this resource
+     * share.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> principals;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove resources from.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -65,10 +119,12 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove resources from.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
      */
 
     public String getResourceShareArn() {
@@ -77,11 +133,13 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove resources from.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,10 +150,17 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
+     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     * that created the resources.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the resources.
+     * @return Specifies a list of <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
+     *         runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     *         that created the resources.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -104,11 +169,18 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
+     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     * that created the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
+     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
+     *        created the resources.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -122,7 +194,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
+     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     * that created the resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +206,11 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
+     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
+     *        created the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +226,18 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
+     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
+     * that created the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
+     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
+     *        created the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,10 +248,91 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The principals.
+     * Specifies a list of one or more principals that no longer are to have access to the resources in this resource
+     * share.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The principals.
+     * @return Specifies a list of one or more principals that no longer are to have access to the resources in this
+     *         resource share.</p>
+     *         <p>
+     *         You can include the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of an organization in Organizations, for example:
+     *         <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an organizational unit (OU) in Organizations, for example:
+     *         <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *         >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *         </p>
      */
 
     public java.util.List<String> getPrincipals() {
@@ -174,11 +341,92 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The principals.
+     * Specifies a list of one or more principals that no longer are to have access to the resources in this resource
+     * share.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies a list of one or more principals that no longer are to have access to the resources in this
+     *        resource share.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -192,8 +440,49 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The principals.
+     * Specifies a list of one or more principals that no longer are to have access to the resources in this resource
+     * share.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to
@@ -201,7 +490,47 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies a list of one or more principals that no longer are to have access to the resources in this
+     *        resource share.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +546,92 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The principals.
+     * Specifies a list of one or more principals that no longer are to have access to the resources in this resource
+     * share.
      * </p>
+     * <p>
+     * You can include the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param principals
-     *        The principals.
+     *        Specifies a list of one or more principals that no longer are to have access to the resources in this
+     *        resource share.</p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +642,24 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public void setClientToken(String clientToken) {
@@ -245,10 +668,23 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *         This lets you safely retry the request without accidentally performing the same operation a second time.
+     *         Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *         other parameters. We recommend that you use a <a
+     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *         <p>
+     *         If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public String getClientToken() {
@@ -257,11 +693,24 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

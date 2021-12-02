@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested tags exceed the limit for your account.
+ * This request would exceed the limit for tags for your account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -30,39 +30,41 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of this RAM permission.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      */
     private Boolean defaultVersion;
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The resource type to which the permission applies.
+     * The resource type to which this permission applies.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions are
-     * allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or denied
-     * access.
+     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified
+     * actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or
+     * denied access.
      * </p>
      */
     private String permission;
@@ -80,18 +82,21 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      */
     private Boolean isResourceTypeDefault;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of this RAM permission.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of this RAM permission.
      */
 
     public void setArn(String arn) {
@@ -100,10 +105,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of this RAM permission.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the permission.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of this RAM permission.
      */
 
     public String getArn() {
@@ -112,11 +119,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of this RAM permission.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of this RAM permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +136,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
      * @param version
-     *        The identifier for the version of the permission.
+     *        The version of the permission represented in this structure.
      */
 
     public void setVersion(String version) {
@@ -140,10 +149,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
-     * @return The identifier for the version of the permission.
+     * @return The version of the permission represented in this structure.
      */
 
     public String getVersion() {
@@ -152,11 +161,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
      * @param version
-     *        The identifier for the version of the permission.
+     *        The version of the permission represented in this structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +176,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission is set to the default version for this permission.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        this permission.
      */
 
     public void setDefaultVersion(Boolean defaultVersion) {
@@ -180,10 +191,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this permission.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         this permission.
      */
 
     public Boolean getDefaultVersion() {
@@ -192,11 +205,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission is set to the default version for this permission.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,10 +222,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this permission.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         this permission.
      */
 
     public Boolean isDefaultVersion() {
@@ -219,11 +236,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
      * @param name
-     *        The name of the permission.
+     *        The name of this permission.
      */
 
     public void setName(String name) {
@@ -232,10 +249,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
-     * @return The name of the permission.
+     * @return The name of this permission.
      */
 
     public String getName() {
@@ -244,11 +261,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
      * @param name
-     *        The name of the permission.
+     *        The name of this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +276,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The resource type to which the permission applies.
+     * The resource type to which this permission applies.
      * </p>
      * 
      * @param resourceType
-     *        The resource type to which the permission applies.
+     *        The resource type to which this permission applies.
      */
 
     public void setResourceType(String resourceType) {
@@ -272,10 +289,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The resource type to which the permission applies.
+     * The resource type to which this permission applies.
      * </p>
      * 
-     * @return The resource type to which the permission applies.
+     * @return The resource type to which this permission applies.
      */
 
     public String getResourceType() {
@@ -284,11 +301,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The resource type to which the permission applies.
+     * The resource type to which this permission applies.
      * </p>
      * 
      * @param resourceType
-     *        The resource type to which the permission applies.
+     *        The resource type to which this permission applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,15 +316,15 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions are
-     * allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or denied
-     * access.
+     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified
+     * actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or
+     * denied access.
      * </p>
      * 
      * @param permission
-     *        The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions
-     *        are allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or
-     *        denied access.
+     *        The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the
+     *        specified actions are allowed or denied. The <code>actions</code> list the operations to which the
+     *        principal is granted or denied access.
      */
 
     public void setPermission(String permission) {
@@ -316,14 +333,14 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions are
-     * allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or denied
-     * access.
+     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified
+     * actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or
+     * denied access.
      * </p>
      * 
-     * @return The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions
-     *         are allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or
-     *         denied access.
+     * @return The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the
+     *         specified actions are allowed or denied. The <code>actions</code> list the operations to which the
+     *         principal is granted or denied access.
      */
 
     public String getPermission() {
@@ -332,15 +349,15 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions are
-     * allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or denied
-     * access.
+     * The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified
+     * actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or
+     * denied access.
      * </p>
      * 
      * @param permission
-     *        The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the actions
-     *        are allowed or denied. The <code>actions</code> list the API actions to which the principal is granted or
-     *        denied access.
+     *        The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the
+     *        specified actions are allowed or denied. The <code>actions</code> list the operations to which the
+     *        principal is granted or denied access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,11 +448,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        all resources of this resource type.
      */
 
     public void setIsResourceTypeDefault(Boolean isResourceTypeDefault) {
@@ -444,10 +463,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         all resources of this resource type.
      */
 
     public Boolean getIsResourceTypeDefault() {
@@ -456,11 +477,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        all resources of this resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,10 +494,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         all resources of this resource type.
      */
 
     public Boolean isResourceTypeDefault() {

@@ -27,24 +27,30 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
+     * share, not the resources in the resource share.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The tag keys of the tags to remove.
+     * Specifies a list of one or more tag keys that you want to remove.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
+     * share, not the resources in the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
+     *        the resource share, not the resources in the resource share.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -53,10 +59,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
+     * share, not the resources in the resource share.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
+     *         the resource share, not the resources in the resource share.
      */
 
     public String getResourceShareArn() {
@@ -65,11 +75,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
+     * share, not the resources in the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
+     *        the resource share, not the resources in the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +94,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove.
+     * Specifies a list of one or more tag keys that you want to remove.
      * </p>
      * 
-     * @return The tag keys of the tags to remove.
+     * @return Specifies a list of one or more tag keys that you want to remove.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +106,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove.
+     * Specifies a list of one or more tag keys that you want to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove.
+     *        Specifies a list of one or more tag keys that you want to remove.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +124,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove.
+     * Specifies a list of one or more tag keys that you want to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +133,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove.
+     *        Specifies a list of one or more tag keys that you want to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +149,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove.
+     * Specifies a list of one or more tag keys that you want to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove.
+     *        Specifies a list of one or more tag keys that you want to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

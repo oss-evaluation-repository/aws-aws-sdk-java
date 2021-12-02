@@ -52,6 +52,10 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
                     context.nextToken();
                     networkResource.setRegisteredGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    context.nextToken();
+                    networkResource.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AwsRegion", targetDepth)) {
                     context.nextToken();
                     networkResource.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));

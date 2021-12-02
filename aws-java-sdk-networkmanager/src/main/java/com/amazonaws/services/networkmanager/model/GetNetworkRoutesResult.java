@@ -31,6 +31,12 @@ public class GetNetworkRoutesResult extends com.amazonaws.AmazonWebServiceResult
     private String routeTableArn;
     /**
      * <p>
+     * Describes a core network segment edge.
+     * </p>
+     */
+    private CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge;
+    /**
+     * <p>
      * The route table type.
      * </p>
      */
@@ -85,6 +91,46 @@ public class GetNetworkRoutesResult extends com.amazonaws.AmazonWebServiceResult
 
     public GetNetworkRoutesResult withRouteTableArn(String routeTableArn) {
         setRouteTableArn(routeTableArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a core network segment edge.
+     * </p>
+     * 
+     * @param coreNetworkSegmentEdge
+     *        Describes a core network segment edge.
+     */
+
+    public void setCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge) {
+        this.coreNetworkSegmentEdge = coreNetworkSegmentEdge;
+    }
+
+    /**
+     * <p>
+     * Describes a core network segment edge.
+     * </p>
+     * 
+     * @return Describes a core network segment edge.
+     */
+
+    public CoreNetworkSegmentEdgeIdentifier getCoreNetworkSegmentEdge() {
+        return this.coreNetworkSegmentEdge;
+    }
+
+    /**
+     * <p>
+     * Describes a core network segment edge.
+     * </p>
+     * 
+     * @param coreNetworkSegmentEdge
+     *        Describes a core network segment edge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkRoutesResult withCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge) {
+        setCoreNetworkSegmentEdge(coreNetworkSegmentEdge);
         return this;
     }
 
@@ -271,6 +317,8 @@ public class GetNetworkRoutesResult extends com.amazonaws.AmazonWebServiceResult
         sb.append("{");
         if (getRouteTableArn() != null)
             sb.append("RouteTableArn: ").append(getRouteTableArn()).append(",");
+        if (getCoreNetworkSegmentEdge() != null)
+            sb.append("CoreNetworkSegmentEdge: ").append(getCoreNetworkSegmentEdge()).append(",");
         if (getRouteTableType() != null)
             sb.append("RouteTableType: ").append(getRouteTableType()).append(",");
         if (getRouteTableTimestamp() != null)
@@ -295,6 +343,10 @@ public class GetNetworkRoutesResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getRouteTableArn() != null && other.getRouteTableArn().equals(this.getRouteTableArn()) == false)
             return false;
+        if (other.getCoreNetworkSegmentEdge() == null ^ this.getCoreNetworkSegmentEdge() == null)
+            return false;
+        if (other.getCoreNetworkSegmentEdge() != null && other.getCoreNetworkSegmentEdge().equals(this.getCoreNetworkSegmentEdge()) == false)
+            return false;
         if (other.getRouteTableType() == null ^ this.getRouteTableType() == null)
             return false;
         if (other.getRouteTableType() != null && other.getRouteTableType().equals(this.getRouteTableType()) == false)
@@ -316,6 +368,7 @@ public class GetNetworkRoutesResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRouteTableArn() == null) ? 0 : getRouteTableArn().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkSegmentEdge() == null) ? 0 : getCoreNetworkSegmentEdge().hashCode());
         hashCode = prime * hashCode + ((getRouteTableType() == null) ? 0 : getRouteTableType().hashCode());
         hashCode = prime * hashCode + ((getRouteTableTimestamp() == null) ? 0 : getRouteTableTimestamp().hashCode());
         hashCode = prime * hashCode + ((getNetworkRoutes() == null) ? 0 : getNetworkRoutes().hashCode());

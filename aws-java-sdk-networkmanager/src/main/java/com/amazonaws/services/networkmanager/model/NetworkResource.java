@@ -36,6 +36,12 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
     private String registeredGatewayArn;
     /**
      * <p>
+     * a core network ID.
+     * </p>
+     */
+    private String coreNetworkId;
+    /**
+     * <p>
      * The Amazon Web Services Region.
      * </p>
      */
@@ -207,6 +213,46 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     public NetworkResource withRegisteredGatewayArn(String registeredGatewayArn) {
         setRegisteredGatewayArn(registeredGatewayArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * a core network ID.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        a core network ID.
+     */
+
+    public void setCoreNetworkId(String coreNetworkId) {
+        this.coreNetworkId = coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * a core network ID.
+     * </p>
+     * 
+     * @return a core network ID.
+     */
+
+    public String getCoreNetworkId() {
+        return this.coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * a core network ID.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        a core network ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkResource withCoreNetworkId(String coreNetworkId) {
+        setCoreNetworkId(coreNetworkId);
         return this;
     }
 
@@ -1125,6 +1171,8 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getRegisteredGatewayArn() != null)
             sb.append("RegisteredGatewayArn: ").append(getRegisteredGatewayArn()).append(",");
+        if (getCoreNetworkId() != null)
+            sb.append("CoreNetworkId: ").append(getCoreNetworkId()).append(",");
         if (getAwsRegion() != null)
             sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getAccountId() != null)
@@ -1160,6 +1208,10 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getRegisteredGatewayArn() == null ^ this.getRegisteredGatewayArn() == null)
             return false;
         if (other.getRegisteredGatewayArn() != null && other.getRegisteredGatewayArn().equals(this.getRegisteredGatewayArn()) == false)
+            return false;
+        if (other.getCoreNetworkId() == null ^ this.getCoreNetworkId() == null)
+            return false;
+        if (other.getCoreNetworkId() != null && other.getCoreNetworkId().equals(this.getCoreNetworkId()) == false)
             return false;
         if (other.getAwsRegion() == null ^ this.getAwsRegion() == null)
             return false;
@@ -1206,6 +1258,7 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRegisteredGatewayArn() == null) ? 0 : getRegisteredGatewayArn().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkId() == null) ? 0 : getCoreNetworkId().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());

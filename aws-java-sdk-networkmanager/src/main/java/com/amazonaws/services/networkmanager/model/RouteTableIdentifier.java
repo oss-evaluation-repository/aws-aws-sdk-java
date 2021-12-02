@@ -34,6 +34,12 @@ public class RouteTableIdentifier implements Serializable, Cloneable, Structured
      * </p>
      */
     private String transitGatewayRouteTableArn;
+    /**
+     * <p>
+     * The segment edge in a core network.
+     * </p>
+     */
+    private CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class RouteTableIdentifier implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The segment edge in a core network.
+     * </p>
+     * 
+     * @param coreNetworkSegmentEdge
+     *        The segment edge in a core network.
+     */
+
+    public void setCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge) {
+        this.coreNetworkSegmentEdge = coreNetworkSegmentEdge;
+    }
+
+    /**
+     * <p>
+     * The segment edge in a core network.
+     * </p>
+     * 
+     * @return The segment edge in a core network.
+     */
+
+    public CoreNetworkSegmentEdgeIdentifier getCoreNetworkSegmentEdge() {
+        return this.coreNetworkSegmentEdge;
+    }
+
+    /**
+     * <p>
+     * The segment edge in a core network.
+     * </p>
+     * 
+     * @param coreNetworkSegmentEdge
+     *        The segment edge in a core network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteTableIdentifier withCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier coreNetworkSegmentEdge) {
+        setCoreNetworkSegmentEdge(coreNetworkSegmentEdge);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class RouteTableIdentifier implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTransitGatewayRouteTableArn() != null)
-            sb.append("TransitGatewayRouteTableArn: ").append(getTransitGatewayRouteTableArn());
+            sb.append("TransitGatewayRouteTableArn: ").append(getTransitGatewayRouteTableArn()).append(",");
+        if (getCoreNetworkSegmentEdge() != null)
+            sb.append("CoreNetworkSegmentEdge: ").append(getCoreNetworkSegmentEdge());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class RouteTableIdentifier implements Serializable, Cloneable, Structured
             return false;
         if (other.getTransitGatewayRouteTableArn() != null && other.getTransitGatewayRouteTableArn().equals(this.getTransitGatewayRouteTableArn()) == false)
             return false;
+        if (other.getCoreNetworkSegmentEdge() == null ^ this.getCoreNetworkSegmentEdge() == null)
+            return false;
+        if (other.getCoreNetworkSegmentEdge() != null && other.getCoreNetworkSegmentEdge().equals(this.getCoreNetworkSegmentEdge()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class RouteTableIdentifier implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableArn() == null) ? 0 : getTransitGatewayRouteTableArn().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkSegmentEdge() == null) ? 0 : getCoreNetworkSegmentEdge().hashCode());
         return hashCode;
     }
 

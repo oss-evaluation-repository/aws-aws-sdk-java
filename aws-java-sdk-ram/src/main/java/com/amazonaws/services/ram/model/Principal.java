@@ -36,19 +36,20 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The time when the principal was associated with the resource share.
+     * The date and time when the principal was associated with the resource share.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -102,11 +103,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of a resource share the principal is associated with.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -115,10 +118,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of a resource share the principal is associated with.
      */
 
     public String getResourceShareArn() {
@@ -127,11 +132,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of a resource share the principal is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +149,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the principal was associated with the resource share.
+     * The date and time when the principal was associated with the resource share.
      * </p>
      * 
      * @param creationTime
-     *        The time when the principal was associated with the resource share.
+     *        The date and time when the principal was associated with the resource share.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -155,10 +162,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the principal was associated with the resource share.
+     * The date and time when the principal was associated with the resource share.
      * </p>
      * 
-     * @return The time when the principal was associated with the resource share.
+     * @return The date and time when the principal was associated with the resource share.
      */
 
     public java.util.Date getCreationTime() {
@@ -167,11 +174,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the principal was associated with the resource share.
+     * The date and time when the principal was associated with the resource share.
      * </p>
      * 
      * @param creationTime
-     *        The time when the principal was associated with the resource share.
+     *        The date and time when the principal was associated with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +189,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the association was last updated.
+     *        The date and time when the association was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -195,10 +202,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
-     * @return The time when the association was last updated.
+     * @return The date and time when the association was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -207,11 +214,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the association was last updated.
+     * The date and time when the association was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The time when the association was last updated.
+     *        The date and time when the association was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified value for NextToken is not valid.
+ * The specified value for <code>NextToken</code> is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

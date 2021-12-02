@@ -33,6 +33,12 @@ public class GetNetworkResourcesRequest extends com.amazonaws.AmazonWebServiceRe
     private String globalNetworkId;
     /**
      * <p>
+     * The ID of a core network.
+     * </p>
+     */
+    private String coreNetworkId;
+    /**
+     * <p>
      * The ARN of the gateway.
      * </p>
      */
@@ -209,6 +215,46 @@ public class GetNetworkResourcesRequest extends com.amazonaws.AmazonWebServiceRe
 
     public GetNetworkResourcesRequest withGlobalNetworkId(String globalNetworkId) {
         setGlobalNetworkId(globalNetworkId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        The ID of a core network.
+     */
+
+    public void setCoreNetworkId(String coreNetworkId) {
+        this.coreNetworkId = coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @return The ID of a core network.
+     */
+
+    public String getCoreNetworkId() {
+        return this.coreNetworkId;
+    }
+
+    /**
+     * <p>
+     * The ID of a core network.
+     * </p>
+     * 
+     * @param coreNetworkId
+     *        The ID of a core network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkResourcesRequest withCoreNetworkId(String coreNetworkId) {
+        setCoreNetworkId(coreNetworkId);
         return this;
     }
 
@@ -1094,6 +1140,8 @@ public class GetNetworkResourcesRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getGlobalNetworkId() != null)
             sb.append("GlobalNetworkId: ").append(getGlobalNetworkId()).append(",");
+        if (getCoreNetworkId() != null)
+            sb.append("CoreNetworkId: ").append(getCoreNetworkId()).append(",");
         if (getRegisteredGatewayArn() != null)
             sb.append("RegisteredGatewayArn: ").append(getRegisteredGatewayArn()).append(",");
         if (getAwsRegion() != null)
@@ -1125,6 +1173,10 @@ public class GetNetworkResourcesRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getGlobalNetworkId() == null ^ this.getGlobalNetworkId() == null)
             return false;
         if (other.getGlobalNetworkId() != null && other.getGlobalNetworkId().equals(this.getGlobalNetworkId()) == false)
+            return false;
+        if (other.getCoreNetworkId() == null ^ this.getCoreNetworkId() == null)
+            return false;
+        if (other.getCoreNetworkId() != null && other.getCoreNetworkId().equals(this.getCoreNetworkId()) == false)
             return false;
         if (other.getRegisteredGatewayArn() == null ^ this.getRegisteredGatewayArn() == null)
             return false;
@@ -1163,6 +1215,7 @@ public class GetNetworkResourcesRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGlobalNetworkId() == null) ? 0 : getGlobalNetworkId().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkId() == null) ? 0 : getCoreNetworkId().hashCode());
         hashCode = prime * hashCode + ((getRegisteredGatewayArn() == null) ? 0 : getRegisteredGatewayArn().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());

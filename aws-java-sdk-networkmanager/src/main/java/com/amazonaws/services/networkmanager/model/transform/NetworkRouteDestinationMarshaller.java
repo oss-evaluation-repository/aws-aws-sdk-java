@@ -27,8 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NetworkRouteDestinationMarshaller {
 
+    private static final MarshallingInfo<String> CORENETWORKATTACHMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoreNetworkAttachmentId").build();
     private static final MarshallingInfo<String> TRANSITGATEWAYATTACHMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransitGatewayAttachmentId").build();
+    private static final MarshallingInfo<String> SEGMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentName").build();
+    private static final MarshallingInfo<String> EDGELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EdgeLocation").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,7 +56,10 @@ public class NetworkRouteDestinationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(networkRouteDestination.getCoreNetworkAttachmentId(), CORENETWORKATTACHMENTID_BINDING);
             protocolMarshaller.marshall(networkRouteDestination.getTransitGatewayAttachmentId(), TRANSITGATEWAYATTACHMENTID_BINDING);
+            protocolMarshaller.marshall(networkRouteDestination.getSegmentName(), SEGMENTNAME_BINDING);
+            protocolMarshaller.marshall(networkRouteDestination.getEdgeLocation(), EDGELOCATION_BINDING);
             protocolMarshaller.marshall(networkRouteDestination.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(networkRouteDestination.getResourceId(), RESOURCEID_BINDING);
         } catch (Exception e) {

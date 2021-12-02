@@ -75,6 +75,72 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(AcceptAttachmentRequest request) {
+
+        return acceptAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(final AcceptAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptAttachmentRequest, AcceptAttachmentResult> asyncHandler) {
+        final AcceptAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptAttachmentResult>() {
+            @Override
+            public AcceptAttachmentResult call() throws Exception {
+                AcceptAttachmentResult result = null;
+
+                try {
+                    result = executeAcceptAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(AssociateConnectPeerRequest request) {
+
+        return associateConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(final AssociateConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateConnectPeerRequest, AssociateConnectPeerResult> asyncHandler) {
+        final AssociateConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateConnectPeerResult>() {
+            @Override
+            public AssociateConnectPeerResult call() throws Exception {
+                AssociateConnectPeerResult result = null;
+
+                try {
+                    result = executeAssociateConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateCustomerGatewayResult> associateCustomerGatewayAsync(AssociateCustomerGatewayRequest request) {
 
         return associateCustomerGatewayAsync(request, null);
@@ -176,6 +242,72 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(CreateConnectAttachmentRequest request) {
+
+        return createConnectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(final CreateConnectAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectAttachmentRequest, CreateConnectAttachmentResult> asyncHandler) {
+        final CreateConnectAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectAttachmentResult>() {
+            @Override
+            public CreateConnectAttachmentResult call() throws Exception {
+                CreateConnectAttachmentResult result = null;
+
+                try {
+                    result = executeCreateConnectAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(CreateConnectPeerRequest request) {
+
+        return createConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(final CreateConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectPeerRequest, CreateConnectPeerResult> asyncHandler) {
+        final CreateConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectPeerResult>() {
+            @Override
+            public CreateConnectPeerResult call() throws Exception {
+                CreateConnectPeerResult result = null;
+
+                try {
+                    result = executeCreateConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
 
         return createConnectionAsync(request, null);
@@ -193,6 +325,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeCreateConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(CreateCoreNetworkRequest request) {
+
+        return createCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(final CreateCoreNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCoreNetworkRequest, CreateCoreNetworkResult> asyncHandler) {
+        final CreateCoreNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCoreNetworkResult>() {
+            @Override
+            public CreateCoreNetworkResult call() throws Exception {
+                CreateCoreNetworkResult result = null;
+
+                try {
+                    result = executeCreateCoreNetwork(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -341,6 +506,139 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request) {
+
+        return createSiteToSiteVpnAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(
+            final CreateSiteToSiteVpnAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSiteToSiteVpnAttachmentRequest, CreateSiteToSiteVpnAttachmentResult> asyncHandler) {
+        final CreateSiteToSiteVpnAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSiteToSiteVpnAttachmentResult>() {
+            @Override
+            public CreateSiteToSiteVpnAttachmentResult call() throws Exception {
+                CreateSiteToSiteVpnAttachmentResult result = null;
+
+                try {
+                    result = executeCreateSiteToSiteVpnAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest request) {
+
+        return createVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(final CreateVpcAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcAttachmentRequest, CreateVpcAttachmentResult> asyncHandler) {
+        final CreateVpcAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcAttachmentResult>() {
+            @Override
+            public CreateVpcAttachmentResult call() throws Exception {
+                CreateVpcAttachmentResult result = null;
+
+                try {
+                    result = executeCreateVpcAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(DeleteAttachmentRequest request) {
+
+        return deleteAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(final DeleteAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAttachmentRequest, DeleteAttachmentResult> asyncHandler) {
+        final DeleteAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAttachmentResult>() {
+            @Override
+            public DeleteAttachmentResult call() throws Exception {
+                DeleteAttachmentResult result = null;
+
+                try {
+                    result = executeDeleteAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(DeleteConnectPeerRequest request) {
+
+        return deleteConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(final DeleteConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConnectPeerRequest, DeleteConnectPeerResult> asyncHandler) {
+        final DeleteConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConnectPeerResult>() {
+            @Override
+            public DeleteConnectPeerResult call() throws Exception {
+                DeleteConnectPeerResult result = null;
+
+                try {
+                    result = executeDeleteConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -358,6 +656,73 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeDeleteConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(DeleteCoreNetworkRequest request) {
+
+        return deleteCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(final DeleteCoreNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkRequest, DeleteCoreNetworkResult> asyncHandler) {
+        final DeleteCoreNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCoreNetworkResult>() {
+            @Override
+            public DeleteCoreNetworkResult call() throws Exception {
+                DeleteCoreNetworkResult result = null;
+
+                try {
+                    result = executeDeleteCoreNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request) {
+
+        return deleteCoreNetworkPolicyVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(
+            final DeleteCoreNetworkPolicyVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkPolicyVersionRequest, DeleteCoreNetworkPolicyVersionResult> asyncHandler) {
+        final DeleteCoreNetworkPolicyVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCoreNetworkPolicyVersionResult>() {
+            @Override
+            public DeleteCoreNetworkPolicyVersionResult call() throws Exception {
+                DeleteCoreNetworkPolicyVersionResult result = null;
+
+                try {
+                    result = executeDeleteCoreNetworkPolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -473,6 +838,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request) {
 
         return deleteSiteAsync(request, null);
@@ -556,6 +954,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeDescribeGlobalNetworks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(DisassociateConnectPeerRequest request) {
+
+        return disassociateConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(final DisassociateConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateConnectPeerRequest, DisassociateConnectPeerResult> asyncHandler) {
+        final DisassociateConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateConnectPeerResult>() {
+            @Override
+            public DisassociateConnectPeerResult call() throws Exception {
+                DisassociateConnectPeerResult result = null;
+
+                try {
+                    result = executeDisassociateConnectPeer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -673,6 +1104,138 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request) {
+
+        return executeCoreNetworkChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(final ExecuteCoreNetworkChangeSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteCoreNetworkChangeSetRequest, ExecuteCoreNetworkChangeSetResult> asyncHandler) {
+        final ExecuteCoreNetworkChangeSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteCoreNetworkChangeSetResult>() {
+            @Override
+            public ExecuteCoreNetworkChangeSetResult call() throws Exception {
+                ExecuteCoreNetworkChangeSetResult result = null;
+
+                try {
+                    result = executeExecuteCoreNetworkChangeSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(GetConnectAttachmentRequest request) {
+
+        return getConnectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(final GetConnectAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectAttachmentRequest, GetConnectAttachmentResult> asyncHandler) {
+        final GetConnectAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectAttachmentResult>() {
+            @Override
+            public GetConnectAttachmentResult call() throws Exception {
+                GetConnectAttachmentResult result = null;
+
+                try {
+                    result = executeGetConnectAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(GetConnectPeerRequest request) {
+
+        return getConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(final GetConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectPeerRequest, GetConnectPeerResult> asyncHandler) {
+        final GetConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectPeerResult>() {
+            @Override
+            public GetConnectPeerResult call() throws Exception {
+                GetConnectPeerResult result = null;
+
+                try {
+                    result = executeGetConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request) {
+
+        return getConnectPeerAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(final GetConnectPeerAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectPeerAssociationsRequest, GetConnectPeerAssociationsResult> asyncHandler) {
+        final GetConnectPeerAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectPeerAssociationsResult>() {
+            @Override
+            public GetConnectPeerAssociationsResult call() throws Exception {
+                GetConnectPeerAssociationsResult result = null;
+
+                try {
+                    result = executeGetConnectPeerAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request) {
 
         return getConnectionsAsync(request, null);
@@ -690,6 +1253,105 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeGetConnections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(GetCoreNetworkRequest request) {
+
+        return getCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(final GetCoreNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCoreNetworkRequest, GetCoreNetworkResult> asyncHandler) {
+        final GetCoreNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCoreNetworkResult>() {
+            @Override
+            public GetCoreNetworkResult call() throws Exception {
+                GetCoreNetworkResult result = null;
+
+                try {
+                    result = executeGetCoreNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request) {
+
+        return getCoreNetworkChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(final GetCoreNetworkChangeSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCoreNetworkChangeSetRequest, GetCoreNetworkChangeSetResult> asyncHandler) {
+        final GetCoreNetworkChangeSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCoreNetworkChangeSetResult>() {
+            @Override
+            public GetCoreNetworkChangeSetResult call() throws Exception {
+                GetCoreNetworkChangeSetResult result = null;
+
+                try {
+                    result = executeGetCoreNetworkChangeSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request) {
+
+        return getCoreNetworkPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(final GetCoreNetworkPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCoreNetworkPolicyRequest, GetCoreNetworkPolicyResult> asyncHandler) {
+        final GetCoreNetworkPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCoreNetworkPolicyResult>() {
+            @Override
+            public GetCoreNetworkPolicyResult call() throws Exception {
+                GetCoreNetworkPolicyResult result = null;
+
+                try {
+                    result = executeGetCoreNetworkPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1006,6 +1668,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(final GetResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+        final GetResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcePolicyResult>() {
+            @Override
+            public GetResourcePolicyResult call() throws Exception {
+                GetResourcePolicyResult result = null;
+
+                try {
+                    result = executeGetResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteAnalysisResult> getRouteAnalysisAsync(GetRouteAnalysisRequest request) {
 
         return getRouteAnalysisAsync(request, null);
@@ -1023,6 +1718,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeGetRouteAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request) {
+
+        return getSiteToSiteVpnAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(final GetSiteToSiteVpnAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSiteToSiteVpnAttachmentRequest, GetSiteToSiteVpnAttachmentResult> asyncHandler) {
+        final GetSiteToSiteVpnAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSiteToSiteVpnAttachmentResult>() {
+            @Override
+            public GetSiteToSiteVpnAttachmentResult call() throws Exception {
+                GetSiteToSiteVpnAttachmentResult result = null;
+
+                try {
+                    result = executeGetSiteToSiteVpnAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1141,6 +1869,172 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(GetVpcAttachmentRequest request) {
+
+        return getVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(final GetVpcAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVpcAttachmentRequest, GetVpcAttachmentResult> asyncHandler) {
+        final GetVpcAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVpcAttachmentResult>() {
+            @Override
+            public GetVpcAttachmentResult call() throws Exception {
+                GetVpcAttachmentResult result = null;
+
+                try {
+                    result = executeGetVpcAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(ListAttachmentsRequest request) {
+
+        return listAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(final ListAttachmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAttachmentsRequest, ListAttachmentsResult> asyncHandler) {
+        final ListAttachmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAttachmentsResult>() {
+            @Override
+            public ListAttachmentsResult call() throws Exception {
+                ListAttachmentsResult result = null;
+
+                try {
+                    result = executeListAttachments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(ListConnectPeersRequest request) {
+
+        return listConnectPeersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(final ListConnectPeersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConnectPeersRequest, ListConnectPeersResult> asyncHandler) {
+        final ListConnectPeersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConnectPeersResult>() {
+            @Override
+            public ListConnectPeersResult call() throws Exception {
+                ListConnectPeersResult result = null;
+
+                try {
+                    result = executeListConnectPeers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request) {
+
+        return listCoreNetworkPolicyVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(
+            final ListCoreNetworkPolicyVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCoreNetworkPolicyVersionsRequest, ListCoreNetworkPolicyVersionsResult> asyncHandler) {
+        final ListCoreNetworkPolicyVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCoreNetworkPolicyVersionsResult>() {
+            @Override
+            public ListCoreNetworkPolicyVersionsResult call() throws Exception {
+                ListCoreNetworkPolicyVersionsResult result = null;
+
+                try {
+                    result = executeListCoreNetworkPolicyVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(ListCoreNetworksRequest request) {
+
+        return listCoreNetworksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(final ListCoreNetworksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCoreNetworksRequest, ListCoreNetworksResult> asyncHandler) {
+        final ListCoreNetworksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCoreNetworksResult>() {
+            @Override
+            public ListCoreNetworksResult call() throws Exception {
+                ListCoreNetworksResult result = null;
+
+                try {
+                    result = executeListCoreNetworks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1174,6 +2068,72 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request) {
+
+        return putCoreNetworkPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(final PutCoreNetworkPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutCoreNetworkPolicyRequest, PutCoreNetworkPolicyResult> asyncHandler) {
+        final PutCoreNetworkPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutCoreNetworkPolicyResult>() {
+            @Override
+            public PutCoreNetworkPolicyResult call() throws Exception {
+                PutCoreNetworkPolicyResult result = null;
+
+                try {
+                    result = executePutCoreNetworkPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterTransitGatewayResult> registerTransitGatewayAsync(RegisterTransitGatewayRequest request) {
 
         return registerTransitGatewayAsync(request, null);
@@ -1191,6 +2151,74 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeRegisterTransitGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(RejectAttachmentRequest request) {
+
+        return rejectAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(final RejectAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectAttachmentRequest, RejectAttachmentResult> asyncHandler) {
+        final RejectAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectAttachmentResult>() {
+            @Override
+            public RejectAttachmentResult call() throws Exception {
+                RejectAttachmentResult result = null;
+
+                try {
+                    result = executeRejectAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            RestoreCoreNetworkPolicyVersionRequest request) {
+
+        return restoreCoreNetworkPolicyVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            final RestoreCoreNetworkPolicyVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreCoreNetworkPolicyVersionRequest, RestoreCoreNetworkPolicyVersionResult> asyncHandler) {
+        final RestoreCoreNetworkPolicyVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreCoreNetworkPolicyVersionResult>() {
+            @Override
+            public RestoreCoreNetworkPolicyVersionResult call() throws Exception {
+                RestoreCoreNetworkPolicyVersionResult result = null;
+
+                try {
+                    result = executeRestoreCoreNetworkPolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1323,6 +2351,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeUpdateConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(UpdateCoreNetworkRequest request) {
+
+        return updateCoreNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(final UpdateCoreNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCoreNetworkRequest, UpdateCoreNetworkResult> asyncHandler) {
+        final UpdateCoreNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCoreNetworkResult>() {
+            @Override
+            public UpdateCoreNetworkResult call() throws Exception {
+                UpdateCoreNetworkResult result = null;
+
+                try {
+                    result = executeUpdateCoreNetwork(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1489,6 +2550,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeUpdateSite(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest request) {
+
+        return updateVpcAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(final UpdateVpcAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResult> asyncHandler) {
+        final UpdateVpcAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVpcAttachmentResult>() {
+            @Override
+            public UpdateVpcAttachmentResult call() throws Exception {
+                UpdateVpcAttachmentResult result = null;
+
+                try {
+                    result = executeUpdateVpcAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

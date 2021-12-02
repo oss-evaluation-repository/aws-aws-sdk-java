@@ -35,7 +35,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.networkman
      * </p>
      */
     private String resourceType;
-
+    /**
+     * <p>
+     * The specified resource could not be found.
+     * </p>
+     */
     private java.util.Map<String, String> context;
 
     /**
@@ -133,7 +137,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.networkman
     }
 
     /**
-     * @return
+     * <p>
+     * The specified resource could not be found.
+     * </p>
+     * 
+     * @return The specified resource could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Context")
@@ -142,7 +150,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.networkman
     }
 
     /**
+     * <p>
+     * The specified resource could not be found.
+     * </p>
+     * 
      * @param context
+     *        The specified resource could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Context")
@@ -151,7 +164,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.networkman
     }
 
     /**
+     * <p>
+     * The specified resource could not be found.
+     * </p>
+     * 
      * @param context
+     *        The specified resource could not be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified value for MaxResults is not valid.
+ * The specified value for <code>MaxResults</code> is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

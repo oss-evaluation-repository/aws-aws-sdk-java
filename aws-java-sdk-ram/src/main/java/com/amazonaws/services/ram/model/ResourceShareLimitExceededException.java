@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested resource share exceeds the limit for your account.
+ * This request would exceed the limit for resource shares for your account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

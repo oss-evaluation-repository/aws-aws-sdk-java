@@ -27,70 +27,93 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add principals or resources to.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to
+     * add only principals.
      * </p>
      */
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The principals to associate with the resource share. The possible values are:
+     * Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want
+     * to add only resources.
+     * </p>
+     * <p>
+     * What the principals can do with the resources in the share is determined by the RAM permissions that you
+     * associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     * </p>
+     * <p>
+     * You can include the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Amazon Resource Name (ARN) of an organization in Organizations
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     * >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      * </p>
      * </note>
      */
     private java.util.List<String> principals;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add principals or resources to.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -99,10 +122,12 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add principals or resources to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.
      */
 
     public String getResourceShareArn() {
@@ -111,11 +136,13 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add principals or resources to.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +153,15 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to
+     * add only principals.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the resources.
+     * @return Specifies a list of <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only
+     *         principals.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -138,11 +170,16 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to
+     * add only principals.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only
+     *        principals.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -156,7 +193,9 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to
+     * add only principals.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +204,10 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only
+     *        principals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +223,16 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the resources.
+     * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to
+     * add only principals.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the resources.
+     *        Specifies a list of <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only
+     *        principals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,76 +243,98 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals to associate with the resource share. The possible values are:
+     * Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want
+     * to add only resources.
+     * </p>
+     * <p>
+     * What the principals can do with the resources in the share is determined by the RAM permissions that you
+     * associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     * </p>
+     * <p>
+     * You can include the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Amazon Resource Name (ARN) of an organization in Organizations
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     * >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The principals to associate with the resource share. The possible values are:</p>
+     * @return Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if
+     *         you want to add only resources.</p>
+     *         <p>
+     *         What the principals can do with the resources in the share is determined by the RAM permissions that you
+     *         associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     *         </p>
+     *         <p>
+     *         You can include the following values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         An Amazon Web Services account ID
+     *         An Amazon Web Services account ID, for example: <code>123456789012</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An Amazon Resource Name (ARN) of an organization in Organizations
+     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of an organization in Organizations, for example:
+     *         <code>organizations::123456789012:organization/o-exampleorgid</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an organizational unit (OU) in Organizations
+     *         An ARN of an organizational unit (OU) in Organizations, for example:
+     *         <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an IAM role
+     *         An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An ARN of an IAM user
+     *         An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <note>
      *         <p>
-     *         Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     *         Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      *         "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     *         >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     *         >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      *         </p>
      */
 
@@ -275,77 +344,99 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals to associate with the resource share. The possible values are:
+     * Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want
+     * to add only resources.
+     * </p>
+     * <p>
+     * What the principals can do with the resources in the share is determined by the RAM permissions that you
+     * associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     * </p>
+     * <p>
+     * You can include the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Amazon Resource Name (ARN) of an organization in Organizations
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     * >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      * </p>
      * </note>
      * 
      * @param principals
-     *        The principals to associate with the resource share. The possible values are:</p>
+     *        Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if
+     *        you want to add only resources.</p>
+     *        <p>
+     *        What the principals can do with the resources in the share is determined by the RAM permissions that you
+     *        associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     *        </p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        An Amazon Web Services account ID
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Resource Name (ARN) of an organization in Organizations
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organizational unit (OU) in Organizations
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM role
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM user
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
-     *        Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     *        >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      *        </p>
      */
 
@@ -360,40 +451,51 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals to associate with the resource share. The possible values are:
+     * Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want
+     * to add only resources.
+     * </p>
+     * <p>
+     * What the principals can do with the resources in the share is determined by the RAM permissions that you
+     * associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     * </p>
+     * <p>
+     * You can include the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Amazon Resource Name (ARN) of an organization in Organizations
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     * >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -403,39 +505,50 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param principals
-     *        The principals to associate with the resource share. The possible values are:</p>
+     *        Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if
+     *        you want to add only resources.</p>
+     *        <p>
+     *        What the principals can do with the resources in the share is determined by the RAM permissions that you
+     *        associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     *        </p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        An Amazon Web Services account ID
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Resource Name (ARN) of an organization in Organizations
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organizational unit (OU) in Organizations
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM role
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM user
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
-     *        Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     *        >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -452,77 +565,99 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals to associate with the resource share. The possible values are:
+     * Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want
+     * to add only resources.
+     * </p>
+     * <p>
+     * What the principals can do with the resources in the share is determined by the RAM permissions that you
+     * associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     * </p>
+     * <p>
+     * You can include the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An Amazon Web Services account ID
+     * An Amazon Web Services account ID, for example: <code>123456789012</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Amazon Resource Name (ARN) of an organization in Organizations
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of an organization in Organizations, for example:
+     * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an organizational unit (OU) in Organizations
+     * An ARN of an organizational unit (OU) in Organizations, for example:
+     * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM role
+     * An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An ARN of an IAM user
+     * An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     * Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      * "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     * >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     * >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      * </p>
      * </note>
      * 
      * @param principals
-     *        The principals to associate with the resource share. The possible values are:</p>
+     *        Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if
+     *        you want to add only resources.</p>
+     *        <p>
+     *        What the principals can do with the resources in the share is determined by the RAM permissions that you
+     *        associate with the resource share. See <a>AssociateResourceSharePermission</a>.
+     *        </p>
+     *        <p>
+     *        You can include the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        An Amazon Web Services account ID
+     *        An Amazon Web Services account ID, for example: <code>123456789012</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Resource Name (ARN) of an organization in Organizations
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of an organization in Organizations, for example:
+     *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an organizational unit (OU) in Organizations
+     *        An ARN of an organizational unit (OU) in Organizations, for example:
+     *        <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM role
+     *        An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An ARN of an IAM user
+     *        An ARN of an IAM user, for example: <code>iam::123456789012user/username</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
-     *        Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href=
+     *        Not all resource types can be shared with IAM roles and users. For more information, see <a href=
      *        "https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types"
-     *        >Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+     *        >Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -534,11 +669,24 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public void setClientToken(String clientToken) {
@@ -547,10 +695,23 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *         This lets you safely retry the request without accidentally performing the same operation a second time.
+     *         Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *         other parameters. We recommend that you use a <a
+     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *         <p>
+     *         If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public String getClientToken() {
@@ -559,11 +720,24 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

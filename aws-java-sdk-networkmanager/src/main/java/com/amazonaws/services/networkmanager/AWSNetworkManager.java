@@ -44,6 +44,68 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Accepts a core network attachment request.
+     * </p>
+     * <p>
+     * Once the attachment request is accepted by a core network owner, the attachment is created and connected to a
+     * core network.
+     * </p>
+     * 
+     * @param acceptAttachmentRequest
+     * @return Result of the AcceptAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.AcceptAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptAttachmentResult acceptAttachment(AcceptAttachmentRequest acceptAttachmentRequest);
+
+    /**
+     * <p>
+     * Associates a core network Connect peer with a device and optionally, with a link.
+     * </p>
+     * <p>
+     * If you specify a link, it must be associated with the specified device. You can only associate core network
+     * Connect peers that have been created on a core network Connect attachment on a core network.
+     * </p>
+     * 
+     * @param associateConnectPeerRequest
+     * @return Result of the AssociateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.AssociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateConnectPeerResult associateConnectPeer(AssociateConnectPeerRequest associateConnectPeerRequest);
+
+    /**
+     * <p>
      * Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be
      * associated with the specified device.
      * </p>
@@ -151,6 +213,64 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Creates a core network Connect attachment from a specified core network attachment.
+     * </p>
+     * <p>
+     * A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection
+     * between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the
+     * underlying transport mechanism.
+     * </p>
+     * 
+     * @param createConnectAttachmentRequest
+     * @return Result of the CreateConnectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConnectAttachmentResult createConnectAttachment(CreateConnectAttachmentRequest createConnectAttachmentRequest);
+
+    /**
+     * <p>
+     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * 
+     * @param createConnectPeerRequest
+     * @return Result of the CreateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConnectPeerResult createConnectPeer(CreateConnectPeerRequest createConnectPeerRequest);
+
+    /**
+     * <p>
      * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
      * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
      * on-premises network.
@@ -176,6 +296,34 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a core network as part of your global network, and optionally, with a core network policy.
+     * </p>
+     * 
+     * @param createCoreNetworkRequest
+     * @return Result of the CreateCoreNetwork operation returned by the service.
+     * @throws CoreNetworkPolicyException
+     *         Describes a core network policy exception.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCoreNetworkResult createCoreNetwork(CreateCoreNetworkRequest createCoreNetworkRequest);
 
     /**
      * <p>
@@ -290,6 +438,110 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createSiteToSiteVpnAttachmentRequest
+     * @return Result of the CreateSiteToSiteVpnAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSiteToSiteVpnAttachmentResult createSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest createSiteToSiteVpnAttachmentRequest);
+
+    /**
+     * <p>
+     * Creates a VPC attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createVpcAttachmentRequest
+     * @return Result of the CreateVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.CreateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVpcAttachmentResult createVpcAttachment(CreateVpcAttachmentRequest createVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Deletes an attachment. Supports all attachment types.
+     * </p>
+     * 
+     * @param deleteAttachmentRequest
+     * @return Result of the DeleteAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAttachmentResult deleteAttachment(DeleteAttachmentRequest deleteAttachmentRequest);
+
+    /**
+     * <p>
+     * Deletes a Connect peer.
+     * </p>
+     * 
+     * @param deleteConnectPeerRequest
+     * @return Result of the DeleteConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConnectPeerResult deleteConnectPeer(DeleteConnectPeerRequest deleteConnectPeerRequest);
+
+    /**
+     * <p>
      * Deletes the specified connection in your global network.
      * </p>
      * 
@@ -313,6 +565,59 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes a core network along with all core network policies. This can only be done if there are no attachments on
+     * a core network.
+     * </p>
+     * 
+     * @param deleteCoreNetworkRequest
+     * @return Result of the DeleteCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCoreNetworkResult deleteCoreNetwork(DeleteCoreNetworkRequest deleteCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Deletes a policy version from a core network. You can't delete the current LIVE policy.
+     * </p>
+     * 
+     * @param deleteCoreNetworkPolicyVersionRequest
+     * @return Result of the DeleteCoreNetworkPolicyVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.DeleteCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCoreNetworkPolicyVersionResult deleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest deleteCoreNetworkPolicyVersionRequest);
 
     /**
      * <p>
@@ -395,6 +700,31 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the
+     * resource policy.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
      * Deletes an existing site. The site cannot be associated with any device or link.
      * </p>
      * 
@@ -470,6 +800,32 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeGlobalNetworksResult describeGlobalNetworks(DescribeGlobalNetworksRequest describeGlobalNetworksRequest);
+
+    /**
+     * <p>
+     * Disassociates a core network Connect peer from a device and a link.
+     * </p>
+     * 
+     * @param disassociateConnectPeerRequest
+     * @return Result of the DisassociateConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.DisassociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateConnectPeerResult disassociateConnectPeer(DisassociateConnectPeerRequest disassociateConnectPeerRequest);
 
     /**
      * <p>
@@ -554,6 +910,104 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Executes a change set on your core network. Deploys changes globally based on the policy submitted..
+     * </p>
+     * 
+     * @param executeCoreNetworkChangeSetRequest
+     * @return Result of the ExecuteCoreNetworkChangeSet operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.ExecuteCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExecuteCoreNetworkChangeSetResult executeCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest executeCoreNetworkChangeSetRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect attachment.
+     * </p>
+     * 
+     * @param getConnectAttachmentRequest
+     * @return Result of the GetConnectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConnectAttachmentResult getConnectAttachment(GetConnectAttachmentRequest getConnectAttachmentRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer.
+     * </p>
+     * 
+     * @param getConnectPeerRequest
+     * @return Result of the GetConnectPeer operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetConnectPeerResult getConnectPeer(GetConnectPeerRequest getConnectPeerRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer associations.
+     * </p>
+     * 
+     * @param getConnectPeerAssociationsRequest
+     * @return Result of the GetConnectPeerAssociations operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetConnectPeerAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConnectPeerAssociationsResult getConnectPeerAssociations(GetConnectPeerAssociationsRequest getConnectPeerAssociationsRequest);
+
+    /**
+     * <p>
      * Gets information about one or more of your connections in a global network.
      * </p>
      * 
@@ -574,6 +1028,76 @@ public interface AWSNetworkManager {
      *      API Documentation</a>
      */
     GetConnectionsResult getConnections(GetConnectionsRequest getConnectionsRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network. By default it returns the LIVE policy.
+     * </p>
+     * 
+     * @param getCoreNetworkRequest
+     * @return Result of the GetCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCoreNetworkResult getCoreNetwork(GetCoreNetworkRequest getCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Returns a change set between the LIVE core network policy and a submitted policy.
+     * </p>
+     * 
+     * @param getCoreNetworkChangeSetRequest
+     * @return Result of the GetCoreNetworkChangeSet operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCoreNetworkChangeSetResult getCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest getCoreNetworkChangeSetRequest);
+
+    /**
+     * <p>
+     * Gets details about a core network policy. You can get details about your current live policy or any previous
+     * policy version.
+     * </p>
+     * 
+     * @param getCoreNetworkPolicyRequest
+     * @return Result of the GetCoreNetworkPolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCoreNetworkPolicyResult getCoreNetworkPolicy(GetCoreNetworkPolicyRequest getCoreNetworkPolicyRequest);
 
     /**
      * <p>
@@ -794,6 +1318,27 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Returns information about a resource policy.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
      * Gets information about the specified route analysis.
      * </p>
      * 
@@ -814,6 +1359,29 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     GetRouteAnalysisResult getRouteAnalysis(GetRouteAnalysisRequest getRouteAnalysisRequest);
+
+    /**
+     * <p>
+     * Returns information about a site-to-site VPN attachment.
+     * </p>
+     * 
+     * @param getSiteToSiteVpnAttachmentRequest
+     * @return Result of the GetSiteToSiteVpnAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSiteToSiteVpnAttachmentResult getSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest getSiteToSiteVpnAttachmentRequest);
 
     /**
      * <p>
@@ -891,6 +1459,115 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
+     * Returns information about a VPC attachment.
+     * </p>
+     * 
+     * @param getVpcAttachmentRequest
+     * @return Result of the GetVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.GetVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVpcAttachmentResult getVpcAttachment(GetVpcAttachmentRequest getVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network attachments.
+     * </p>
+     * 
+     * @param listAttachmentsRequest
+     * @return Result of the ListAttachments operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListAttachmentsResult listAttachments(ListAttachmentsRequest listAttachmentsRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network Connect peers.
+     * </p>
+     * 
+     * @param listConnectPeersRequest
+     * @return Result of the ListConnectPeers operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConnectPeersResult listConnectPeers(ListConnectPeersRequest listConnectPeersRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network policy versions.
+     * </p>
+     * 
+     * @param listCoreNetworkPolicyVersionsRequest
+     * @return Result of the ListCoreNetworkPolicyVersions operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListCoreNetworkPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCoreNetworkPolicyVersionsResult listCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest listCoreNetworkPolicyVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of owned and shared core networks.
+     * </p>
+     * 
+     * @param listCoreNetworksRequest
+     * @return Result of the ListCoreNetworks operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.ListCoreNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCoreNetworksResult listCoreNetworks(ListCoreNetworksRequest listCoreNetworksRequest);
+
+    /**
+     * <p>
      * Lists the tags for a specified resource.
      * </p>
      * 
@@ -911,6 +1588,61 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Creates a new, immutable version of a core network policy. A subsequent change set is created showing the
+     * differences between the LIVE policy and the submitted policy.
+     * </p>
+     * 
+     * @param putCoreNetworkPolicyRequest
+     * @return Result of the PutCoreNetworkPolicy operation returned by the service.
+     * @throws CoreNetworkPolicyException
+     *         Describes a core network policy exception.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.PutCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutCoreNetworkPolicyResult putCoreNetworkPolicy(PutCoreNetworkPolicyRequest putCoreNetworkPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>
@@ -939,6 +1671,59 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     RegisterTransitGatewayResult registerTransitGateway(RegisterTransitGatewayRequest registerTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Rejects a core network attachment request.
+     * </p>
+     * 
+     * @param rejectAttachmentRequest
+     * @return Result of the RejectAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.RejectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RejectAttachmentResult rejectAttachment(RejectAttachmentRequest rejectAttachmentRequest);
+
+    /**
+     * <p>
+     * Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set
+     * is created showing the differences between the LIVE policy and restored policy.
+     * </p>
+     * 
+     * @param restoreCoreNetworkPolicyVersionRequest
+     * @return Result of the RestoreCoreNetworkPolicyVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @sample AWSNetworkManager.RestoreCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RestoreCoreNetworkPolicyVersionResult restoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest restoreCoreNetworkPolicyVersionRequest);
 
     /**
      * <p>
@@ -1047,6 +1832,32 @@ public interface AWSNetworkManager {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateConnectionResult updateConnection(UpdateConnectionRequest updateConnectionRequest);
+
+    /**
+     * <p>
+     * Updates the description of a core network.
+     * </p>
+     * 
+     * @param updateCoreNetworkRequest
+     * @return Result of the UpdateCoreNetwork operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.UpdateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCoreNetworkResult updateCoreNetwork(UpdateCoreNetworkRequest updateCoreNetworkRequest);
 
     /**
      * <p>
@@ -1182,6 +1993,32 @@ public interface AWSNetworkManager {
      *      Documentation</a>
      */
     UpdateSiteResult updateSite(UpdateSiteRequest updateSiteRequest);
+
+    /**
+     * <p>
+     * Updates a VPC attachment.
+     * </p>
+     * 
+     * @param updateVpcAttachmentRequest
+     * @return Result of the UpdateVpcAttachment operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.UpdateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateVpcAttachmentResult updateVpcAttachment(UpdateVpcAttachmentRequest updateVpcAttachmentRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

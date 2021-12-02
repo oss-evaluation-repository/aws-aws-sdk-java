@@ -80,6 +80,10 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                     context.nextToken();
                     resource.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("resourceRegionScope", targetDepth)) {
+                    context.nextToken();
+                    resource.setResourceRegionScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

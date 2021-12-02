@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a permission that is associated with a resource share.
+ * Information about an RAM permission that is associated with a resource share and any of its resources of a specified
+ * type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceSharePermissionSummary" target="_top">AWS
@@ -30,31 +31,33 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission you want information about.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      */
     private Boolean defaultVersion;
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of resource to which the permission applies.
+     * The type of resource to which this permission applies.
      * </p>
      */
     private String resourceType;
@@ -78,18 +81,21 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      */
     private Boolean isResourceTypeDefault;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission you want information about.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the permission you want information about.
      */
 
     public void setArn(String arn) {
@@ -98,10 +104,12 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission you want information about.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the permission.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the permission you want information about.
      */
 
     public String getArn() {
@@ -110,11 +118,13 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the permission you want information about.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the permission you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +135,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
      * @param version
-     *        The identifier for the version of the permission.
+     *        The version of the permission represented in this structure.
      */
 
     public void setVersion(String version) {
@@ -138,10 +148,10 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
-     * @return The identifier for the version of the permission.
+     * @return The version of the permission represented in this structure.
      */
 
     public String getVersion() {
@@ -150,11 +160,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The identifier for the version of the permission.
+     * The version of the permission represented in this structure.
      * </p>
      * 
      * @param version
-     *        The identifier for the version of the permission.
+     *        The version of the permission represented in this structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +175,13 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission is set to the default version for this permission.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        this permission.
      */
 
     public void setDefaultVersion(Boolean defaultVersion) {
@@ -178,10 +190,12 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this permission.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         this permission.
      */
 
     public Boolean getDefaultVersion() {
@@ -190,11 +204,13 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission is set to the default version for this permission.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,10 +221,12 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this permission.
+     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this permission.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         this permission.
      */
 
     public Boolean isDefaultVersion() {
@@ -217,11 +235,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
      * @param name
-     *        The name of the permission.
+     *        The name of this permission.
      */
 
     public void setName(String name) {
@@ -230,10 +248,10 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
-     * @return The name of the permission.
+     * @return The name of this permission.
      */
 
     public String getName() {
@@ -242,11 +260,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name of the permission.
+     * The name of this permission.
      * </p>
      * 
      * @param name
-     *        The name of the permission.
+     *        The name of this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +275,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of resource to which the permission applies.
+     * The type of resource to which this permission applies.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to which the permission applies.
+     *        The type of resource to which this permission applies.
      */
 
     public void setResourceType(String resourceType) {
@@ -270,10 +288,10 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of resource to which the permission applies.
+     * The type of resource to which this permission applies.
      * </p>
      * 
-     * @return The type of resource to which the permission applies.
+     * @return The type of resource to which this permission applies.
      */
 
     public String getResourceType() {
@@ -282,11 +300,11 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of resource to which the permission applies.
+     * The type of resource to which this permission applies.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to which the permission applies.
+     *        The type of resource to which this permission applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,11 +435,13 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        all resources of this resource type.
      */
 
     public void setIsResourceTypeDefault(Boolean isResourceTypeDefault) {
@@ -430,10 +450,12 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         all resources of this resource type.
      */
 
     public Boolean getIsResourceTypeDefault() {
@@ -442,11 +464,13 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        all resources of this resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,10 +481,12 @@ public class ResourceSharePermissionSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     *         all resources of this resource type.
      */
 
     public Boolean isResourceTypeDefault() {

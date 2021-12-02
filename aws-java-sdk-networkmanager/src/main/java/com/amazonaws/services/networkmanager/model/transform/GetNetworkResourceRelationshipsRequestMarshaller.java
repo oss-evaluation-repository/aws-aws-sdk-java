@@ -29,6 +29,8 @@ public class GetNetworkResourceRelationshipsRequestMarshaller {
 
     private static final MarshallingInfo<String> GLOBALNETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("globalNetworkId").build();
+    private static final MarshallingInfo<String> CORENETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("coreNetworkId").build();
     private static final MarshallingInfo<String> REGISTEREDGATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("registeredGatewayArn").build();
     private static final MarshallingInfo<String> AWSREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class GetNetworkResourceRelationshipsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getNetworkResourceRelationshipsRequest.getGlobalNetworkId(), GLOBALNETWORKID_BINDING);
+            protocolMarshaller.marshall(getNetworkResourceRelationshipsRequest.getCoreNetworkId(), CORENETWORKID_BINDING);
             protocolMarshaller.marshall(getNetworkResourceRelationshipsRequest.getRegisteredGatewayArn(), REGISTEREDGATEWAYARN_BINDING);
             protocolMarshaller.marshall(getNetworkResourceRelationshipsRequest.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(getNetworkResourceRelationshipsRequest.getAccountId(), ACCOUNTID_BINDING);

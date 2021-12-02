@@ -25,24 +25,26 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The permissions associated with the resource share.
+     * An array of objects that describe the permissions associated with the resource share.
      * </p>
      */
     private java.util.List<ResourceSharePermissionSummary> permissions;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The permissions associated with the resource share.
+     * An array of objects that describe the permissions associated with the resource share.
      * </p>
      * 
-     * @return The permissions associated with the resource share.
+     * @return An array of objects that describe the permissions associated with the resource share.
      */
 
     public java.util.List<ResourceSharePermissionSummary> getPermissions() {
@@ -51,11 +53,11 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The permissions associated with the resource share.
+     * An array of objects that describe the permissions associated with the resource share.
      * </p>
      * 
      * @param permissions
-     *        The permissions associated with the resource share.
+     *        An array of objects that describe the permissions associated with the resource share.
      */
 
     public void setPermissions(java.util.Collection<ResourceSharePermissionSummary> permissions) {
@@ -69,7 +71,7 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The permissions associated with the resource share.
+     * An array of objects that describe the permissions associated with the resource share.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +80,7 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param permissions
-     *        The permissions associated with the resource share.
+     *        An array of objects that describe the permissions associated with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +96,11 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The permissions associated with the resource share.
+     * An array of objects that describe the permissions associated with the resource share.
      * </p>
      * 
      * @param permissions
-     *        The permissions associated with the resource share.
+     *        An array of objects that describe the permissions associated with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +111,17 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +130,16 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return If present, this value indicates that more output is available than is included in the current response.
+     *         Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *         get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *         comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public String getNextToken() {
@@ -138,13 +148,17 @@ public class ListResourceSharePermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

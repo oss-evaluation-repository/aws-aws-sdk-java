@@ -26,24 +26,27 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources included the resource share.
+     * An array of objects that contain the information about the resources included the specified resource share.
      * </p>
      */
     private java.util.List<Resource> resources;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Information about the resources included the resource share.
+     * An array of objects that contain the information about the resources included the specified resource share.
      * </p>
      * 
-     * @return Information about the resources included the resource share.
+     * @return An array of objects that contain the information about the resources included the specified resource
+     *         share.
      */
 
     public java.util.List<Resource> getResources() {
@@ -52,11 +55,12 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources included the resource share.
+     * An array of objects that contain the information about the resources included the specified resource share.
      * </p>
      * 
      * @param resources
-     *        Information about the resources included the resource share.
+     *        An array of objects that contain the information about the resources included the specified resource
+     *        share.
      */
 
     public void setResources(java.util.Collection<Resource> resources) {
@@ -70,7 +74,7 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources included the resource share.
+     * An array of objects that contain the information about the resources included the specified resource share.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +83,8 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param resources
-     *        Information about the resources included the resource share.
+     *        An array of objects that contain the information about the resources included the specified resource
+     *        share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +100,12 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources included the resource share.
+     * An array of objects that contain the information about the resources included the specified resource share.
      * </p>
      * 
      * @param resources
-     *        Information about the resources included the resource share.
+     *        An array of objects that contain the information about the resources included the specified resource
+     *        share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,13 +116,17 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,12 +135,16 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return If present, this value indicates that more output is available than is included in the current response.
+     *         Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *         get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *         comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public String getNextToken() {
@@ -139,13 +153,17 @@ public class ListPendingInvitationResourcesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

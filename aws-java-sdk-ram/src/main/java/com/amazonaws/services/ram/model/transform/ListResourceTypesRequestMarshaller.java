@@ -31,6 +31,8 @@ public class ListResourceTypesRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> RESOURCEREGIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRegionScope").build();
 
     private static final ListResourceTypesRequestMarshaller instance = new ListResourceTypesRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ListResourceTypesRequestMarshaller {
         try {
             protocolMarshaller.marshall(listResourceTypesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listResourceTypesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listResourceTypesRequest.getResourceRegionScope(), RESOURCEREGIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

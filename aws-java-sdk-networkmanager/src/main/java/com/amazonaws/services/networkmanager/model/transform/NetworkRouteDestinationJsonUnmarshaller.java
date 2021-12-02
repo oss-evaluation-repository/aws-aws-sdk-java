@@ -48,9 +48,21 @@ public class NetworkRouteDestinationJsonUnmarshaller implements Unmarshaller<Net
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CoreNetworkAttachmentId", targetDepth)) {
+                    context.nextToken();
+                    networkRouteDestination.setCoreNetworkAttachmentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TransitGatewayAttachmentId", targetDepth)) {
                     context.nextToken();
                     networkRouteDestination.setTransitGatewayAttachmentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SegmentName", targetDepth)) {
+                    context.nextToken();
+                    networkRouteDestination.setSegmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EdgeLocation", targetDepth)) {
+                    context.nextToken();
+                    networkRouteDestination.setEdgeLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();

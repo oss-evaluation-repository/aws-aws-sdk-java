@@ -27,24 +27,34 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation that you want to accept.
      * </p>
      */
     private String resourceShareInvitationArn;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The Amazon Resource Name (ARN) of the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the invitation that you want to accept.
      */
 
     public void setResourceShareInvitationArn(String resourceShareInvitationArn) {
@@ -53,10 +63,12 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the invitation.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         Name (ARN)</a> of the invitation that you want to accept.
      */
 
     public String getResourceShareInvitationArn() {
@@ -65,11 +77,13 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the invitation.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The Amazon Resource Name (ARN) of the invitation.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        Name (ARN)</a> of the invitation that you want to accept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +94,24 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public void setClientToken(String clientToken) {
@@ -93,10 +120,23 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *         This lets you safely retry the request without accidentally performing the same operation a second time.
+     *         Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *         other parameters. We recommend that you use a <a
+     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *         <p>
+     *         If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public String getClientToken() {
@@ -105,11 +145,24 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

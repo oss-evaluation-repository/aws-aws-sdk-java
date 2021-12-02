@@ -27,44 +27,66 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use
+     * either the <a>ListPermissions</a> operation or go to the <a
+     * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
+     * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      */
     private String permissionArn;
     /**
      * <p>
-     * Indicates whether the permission should replace the permissions that are currently associated with the resource
-     * share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission.
+     * Specifies whether the specified permission should replace or add to the existing permission associated with the
+     * resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the
+     * permission to the current permission. The default value is <code>false</code>.
      * </p>
+     * <note>
+     * <p>
+     * A resource share can have only one permission per resource type. If a resource share already has a permission for
+     * the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation
+     * returns an error. This helps prevent accidental overwriting of a permission.
+     * </p>
+     * </note>
      */
     private Boolean replace;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The version of the RAM permissions to associate with the resource share.
+     * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
+     * parameter, the operation uses the version designated as the default.
      * </p>
      */
     private Integer permissionVersion;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -73,10 +95,12 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      */
 
     public String getResourceShareArn() {
@@ -85,11 +109,13 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +126,19 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use
+     * either the <a>ListPermissions</a> operation or go to the <a
+     * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
+     * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
      * @param permissionArn
-     *        The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a
+     *        permission, use either the <a>ListPermissions</a> operation or go to the <a
+     *        href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
+     *        console and then choose the name of the permission. The ARN is displayed on the detail page.
      */
 
     public void setPermissionArn(String permissionArn) {
@@ -113,10 +147,18 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use
+     * either the <a>ListPermissions</a> operation or go to the <a
+     * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
+     * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a
+     *         permission, use either the <a>ListPermissions</a> operation or go to the <a
+     *         href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
+     *         console and then choose the name of the permission. The ARN is displayed on the detail page.
      */
 
     public String getPermissionArn() {
@@ -125,11 +167,19 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use
+     * either the <a>ListPermissions</a> operation or go to the <a
+     * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
+     * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
      * @param permissionArn
-     *        The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a
+     *        permission, use either the <a>ListPermissions</a> operation or go to the <a
+     *        href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
+     *        console and then choose the name of the permission. The ARN is displayed on the detail page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,15 +190,27 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the permission should replace the permissions that are currently associated with the resource
-     * share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission.
+     * Specifies whether the specified permission should replace or add to the existing permission associated with the
+     * resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the
+     * permission to the current permission. The default value is <code>false</code>.
      * </p>
+     * <note>
+     * <p>
+     * A resource share can have only one permission per resource type. If a resource share already has a permission for
+     * the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation
+     * returns an error. This helps prevent accidental overwriting of a permission.
+     * </p>
+     * </note>
      * 
      * @param replace
-     *        Indicates whether the permission should replace the permissions that are currently associated with the
-     *        resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add
-     *        the permission to the current permission.
+     *        Specifies whether the specified permission should replace or add to the existing permission associated
+     *        with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code>
+     *        to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+     *        <p>
+     *        A resource share can have only one permission per resource type. If a resource share already has a
+     *        permission for the specified resource type and you don't set <code>replace</code> to <code>true</code>
+     *        then the operation returns an error. This helps prevent accidental overwriting of a permission.
+     *        </p>
      */
 
     public void setReplace(Boolean replace) {
@@ -157,14 +219,26 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the permission should replace the permissions that are currently associated with the resource
-     * share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission.
+     * Specifies whether the specified permission should replace or add to the existing permission associated with the
+     * resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the
+     * permission to the current permission. The default value is <code>false</code>.
      * </p>
+     * <note>
+     * <p>
+     * A resource share can have only one permission per resource type. If a resource share already has a permission for
+     * the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation
+     * returns an error. This helps prevent accidental overwriting of a permission.
+     * </p>
+     * </note>
      * 
-     * @return Indicates whether the permission should replace the permissions that are currently associated with the
-     *         resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add
-     *         the permission to the current permission.
+     * @return Specifies whether the specified permission should replace or add to the existing permission associated
+     *         with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code>
+     *         to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+     *         <p>
+     *         A resource share can have only one permission per resource type. If a resource share already has a
+     *         permission for the specified resource type and you don't set <code>replace</code> to <code>true</code>
+     *         then the operation returns an error. This helps prevent accidental overwriting of a permission.
+     *         </p>
      */
 
     public Boolean getReplace() {
@@ -173,15 +247,27 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the permission should replace the permissions that are currently associated with the resource
-     * share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission.
+     * Specifies whether the specified permission should replace or add to the existing permission associated with the
+     * resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the
+     * permission to the current permission. The default value is <code>false</code>.
      * </p>
+     * <note>
+     * <p>
+     * A resource share can have only one permission per resource type. If a resource share already has a permission for
+     * the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation
+     * returns an error. This helps prevent accidental overwriting of a permission.
+     * </p>
+     * </note>
      * 
      * @param replace
-     *        Indicates whether the permission should replace the permissions that are currently associated with the
-     *        resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add
-     *        the permission to the current permission.
+     *        Specifies whether the specified permission should replace or add to the existing permission associated
+     *        with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code>
+     *        to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+     *        <p>
+     *        A resource share can have only one permission per resource type. If a resource share already has a
+     *        permission for the specified resource type and you don't set <code>replace</code> to <code>true</code>
+     *        then the operation returns an error. This helps prevent accidental overwriting of a permission.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,14 +278,26 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the permission should replace the permissions that are currently associated with the resource
-     * share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission.
+     * Specifies whether the specified permission should replace or add to the existing permission associated with the
+     * resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the
+     * permission to the current permission. The default value is <code>false</code>.
      * </p>
+     * <note>
+     * <p>
+     * A resource share can have only one permission per resource type. If a resource share already has a permission for
+     * the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation
+     * returns an error. This helps prevent accidental overwriting of a permission.
+     * </p>
+     * </note>
      * 
-     * @return Indicates whether the permission should replace the permissions that are currently associated with the
-     *         resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add
-     *         the permission to the current permission.
+     * @return Specifies whether the specified permission should replace or add to the existing permission associated
+     *         with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code>
+     *         to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+     *         <p>
+     *         A resource share can have only one permission per resource type. If a resource share already has a
+     *         permission for the specified resource type and you don't set <code>replace</code> to <code>true</code>
+     *         then the operation returns an error. This helps prevent accidental overwriting of a permission.
+     *         </p>
      */
 
     public Boolean isReplace() {
@@ -208,11 +306,24 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public void setClientToken(String clientToken) {
@@ -221,10 +332,23 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *         This lets you safely retry the request without accidentally performing the same operation a second time.
+     *         Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *         other parameters. We recommend that you use a <a
+     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *         <p>
+     *         If you don't provide this value, then Amazon Web Services generates a random one for you.
      */
 
     public String getClientToken() {
@@ -233,11 +357,24 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This
+     * lets you safely retry the request without accidentally performing the same operation a second time. Passing the
+     * same value to a later call to an operation requires that you also pass the same value for all other parameters.
+     * We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.
+     * </p>
+     * <p>
+     * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        This lets you safely retry the request without accidentally performing the same operation a second time.
+     *        Passing the same value to a later call to an operation requires that you also pass the same value for all
+     *        other parameters. We recommend that you use a <a
+     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+     *        <p>
+     *        If you don't provide this value, then Amazon Web Services generates a random one for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +385,13 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the RAM permissions to associate with the resource share.
+     * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
+     * parameter, the operation uses the version designated as the default.
      * </p>
      * 
      * @param permissionVersion
-     *        The version of the RAM permissions to associate with the resource share.
+     *        Specifies the version of the RAM permission to associate with the resource share. If you don't specify
+     *        this parameter, the operation uses the version designated as the default.
      */
 
     public void setPermissionVersion(Integer permissionVersion) {
@@ -261,10 +400,12 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the RAM permissions to associate with the resource share.
+     * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
+     * parameter, the operation uses the version designated as the default.
      * </p>
      * 
-     * @return The version of the RAM permissions to associate with the resource share.
+     * @return Specifies the version of the RAM permission to associate with the resource share. If you don't specify
+     *         this parameter, the operation uses the version designated as the default.
      */
 
     public Integer getPermissionVersion() {
@@ -273,11 +414,13 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The version of the RAM permissions to associate with the resource share.
+     * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
+     * parameter, the operation uses the version designated as the default.
      * </p>
      * 
      * @param permissionVersion
-     *        The version of the RAM permissions to associate with the resource share.
+     *        Specifies the version of the RAM permission to associate with the resource share. If you don't specify
+     *        this parameter, the operation uses the version designated as the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

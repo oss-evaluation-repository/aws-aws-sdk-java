@@ -27,24 +27,28 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add tags to.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * One or more tags.
+     * A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag
+     * value must be present but can be an empty string.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add tags to.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to add tags to.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -53,10 +57,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add tags to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource share.
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resoure Name (ARN)</a> of the resource share that you want to add tags to.
      */
 
     public String getResourceShareArn() {
@@ -65,11 +71,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * Name (ARN)</a> of the resource share that you want to add tags to.
      * </p>
      * 
      * @param resourceShareArn
-     *        The Amazon Resource Name (ARN) of the resource share.
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resoure Name (ARN)</a> of the resource share that you want to add tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +88,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags.
+     * A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag
+     * value must be present but can be an empty string.
      * </p>
      * 
-     * @return One or more tags.
+     * @return A list of one or more tag key and value pairs. The tag key must be present and not be an empty string.
+     *         The tag value must be present but can be an empty string.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +102,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags.
+     * A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag
+     * value must be present but can be an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The
+     *        tag value must be present but can be an empty string.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +122,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags.
+     * A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag
+     * value must be present but can be an empty string.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +132,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The
+     *        tag value must be present but can be an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +149,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags.
+     * A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag
+     * value must be present but can be an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The
+     *        tag value must be present but can be an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

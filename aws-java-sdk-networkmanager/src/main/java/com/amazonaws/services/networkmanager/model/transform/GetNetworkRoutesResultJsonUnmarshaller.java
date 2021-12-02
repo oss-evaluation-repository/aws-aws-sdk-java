@@ -52,6 +52,10 @@ public class GetNetworkRoutesResultJsonUnmarshaller implements Unmarshaller<GetN
                     context.nextToken();
                     getNetworkRoutesResult.setRouteTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CoreNetworkSegmentEdge", targetDepth)) {
+                    context.nextToken();
+                    getNetworkRoutesResult.setCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RouteTableType", targetDepth)) {
                     context.nextToken();
                     getNetworkRoutesResult.setRouteTableType(context.getUnmarshaller(String.class).unmarshall(context));

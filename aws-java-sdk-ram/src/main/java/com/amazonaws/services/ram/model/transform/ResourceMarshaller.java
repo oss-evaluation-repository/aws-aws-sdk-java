@@ -43,6 +43,8 @@ public class ResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RESOURCEREGIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRegionScope").build();
 
     private static final ResourceMarshaller instance = new ResourceMarshaller();
 
@@ -68,6 +70,7 @@ public class ResourceMarshaller {
             protocolMarshaller.marshall(resource.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(resource.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(resource.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(resource.getResourceRegionScope(), RESOURCEREGIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

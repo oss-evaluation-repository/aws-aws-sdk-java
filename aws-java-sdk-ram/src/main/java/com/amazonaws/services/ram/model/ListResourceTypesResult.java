@@ -25,24 +25,26 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The shareable resource types supported by RAM.
+     * An array of objects that contain information about the resource types that can be shared using RAM.
      * </p>
      */
     private java.util.List<ServiceNameAndResourceType> resourceTypes;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The shareable resource types supported by RAM.
+     * An array of objects that contain information about the resource types that can be shared using RAM.
      * </p>
      * 
-     * @return The shareable resource types supported by RAM.
+     * @return An array of objects that contain information about the resource types that can be shared using RAM.
      */
 
     public java.util.List<ServiceNameAndResourceType> getResourceTypes() {
@@ -51,11 +53,11 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The shareable resource types supported by RAM.
+     * An array of objects that contain information about the resource types that can be shared using RAM.
      * </p>
      * 
      * @param resourceTypes
-     *        The shareable resource types supported by RAM.
+     *        An array of objects that contain information about the resource types that can be shared using RAM.
      */
 
     public void setResourceTypes(java.util.Collection<ServiceNameAndResourceType> resourceTypes) {
@@ -69,7 +71,7 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The shareable resource types supported by RAM.
+     * An array of objects that contain information about the resource types that can be shared using RAM.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +80,7 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param resourceTypes
-     *        The shareable resource types supported by RAM.
+     *        An array of objects that contain information about the resource types that can be shared using RAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +96,11 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The shareable resource types supported by RAM.
+     * An array of objects that contain information about the resource types that can be shared using RAM.
      * </p>
      * 
      * @param resourceTypes
-     *        The shareable resource types supported by RAM.
+     *        An array of objects that contain information about the resource types that can be shared using RAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +111,17 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +130,16 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return If present, this value indicates that more output is available than is included in the current response.
+     *         Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *         get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *         comes back as <code>null</code>. This indicates that this is the last page of results.
      */
 
     public String getNextToken() {
@@ -138,13 +148,17 @@ public class ListResourceTypesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

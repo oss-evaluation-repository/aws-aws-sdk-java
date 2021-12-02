@@ -35,6 +35,84 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Accepts a core network attachment request.
+     * </p>
+     * <p>
+     * Once the attachment request is accepted by a core network owner, the attachment is created and connected to a
+     * core network.
+     * </p>
+     * 
+     * @param acceptAttachmentRequest
+     * @return A Java Future containing the result of the AcceptAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.AcceptAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(AcceptAttachmentRequest acceptAttachmentRequest);
+
+    /**
+     * <p>
+     * Accepts a core network attachment request.
+     * </p>
+     * <p>
+     * Once the attachment request is accepted by a core network owner, the attachment is created and connected to a
+     * core network.
+     * </p>
+     * 
+     * @param acceptAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.AcceptAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAttachmentResult> acceptAttachmentAsync(AcceptAttachmentRequest acceptAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptAttachmentRequest, AcceptAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a core network Connect peer with a device and optionally, with a link.
+     * </p>
+     * <p>
+     * If you specify a link, it must be associated with the specified device. You can only associate core network
+     * Connect peers that have been created on a core network Connect attachment on a core network.
+     * </p>
+     * 
+     * @param associateConnectPeerRequest
+     * @return A Java Future containing the result of the AssociateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsync.AssociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(AssociateConnectPeerRequest associateConnectPeerRequest);
+
+    /**
+     * <p>
+     * Associates a core network Connect peer with a device and optionally, with a link.
+     * </p>
+     * <p>
+     * If you specify a link, it must be associated with the specified device. You can only associate core network
+     * Connect peers that have been created on a core network Connect attachment on a core network.
+     * </p>
+     * 
+     * @param associateConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.AssociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateConnectPeerResult> associateConnectPeerAsync(AssociateConnectPeerRequest associateConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateConnectPeerRequest, AssociateConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be
      * associated with the specified device.
      * </p>
@@ -176,6 +254,80 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Creates a core network Connect attachment from a specified core network attachment.
+     * </p>
+     * <p>
+     * A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection
+     * between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the
+     * underlying transport mechanism.
+     * </p>
+     * 
+     * @param createConnectAttachmentRequest
+     * @return A Java Future containing the result of the CreateConnectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.CreateConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(CreateConnectAttachmentRequest createConnectAttachmentRequest);
+
+    /**
+     * <p>
+     * Creates a core network Connect attachment from a specified core network attachment.
+     * </p>
+     * <p>
+     * A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection
+     * between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the
+     * underlying transport mechanism.
+     * </p>
+     * 
+     * @param createConnectAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectAttachmentResult> createConnectAttachmentAsync(CreateConnectAttachmentRequest createConnectAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectAttachmentRequest, CreateConnectAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * 
+     * @param createConnectPeerRequest
+     * @return A Java Future containing the result of the CreateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsync.CreateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(CreateConnectPeerRequest createConnectPeerRequest);
+
+    /**
+     * <p>
+     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * 
+     * @param createConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectPeerResult> createConnectPeerAsync(CreateConnectPeerRequest createConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectPeerRequest, CreateConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a
      * third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an
      * on-premises network.
@@ -208,6 +360,37 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a core network as part of your global network, and optionally, with a core network policy.
+     * </p>
+     * 
+     * @param createCoreNetworkRequest
+     * @return A Java Future containing the result of the CreateCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsync.CreateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(CreateCoreNetworkRequest createCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Creates a core network as part of your global network, and optionally, with a core network policy.
+     * </p>
+     * 
+     * @param createCoreNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCoreNetworkResult> createCoreNetworkAsync(CreateCoreNetworkRequest createCoreNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCoreNetworkRequest, CreateCoreNetworkResult> asyncHandler);
 
     /**
      * <p>
@@ -337,6 +520,134 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createSiteToSiteVpnAttachmentRequest
+     * @return A Java Future containing the result of the CreateSiteToSiteVpnAttachment operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.CreateSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(
+            CreateSiteToSiteVpnAttachmentRequest createSiteToSiteVpnAttachmentRequest);
+
+    /**
+     * <p>
+     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createSiteToSiteVpnAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSiteToSiteVpnAttachment operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSiteToSiteVpnAttachmentResult> createSiteToSiteVpnAttachmentAsync(
+            CreateSiteToSiteVpnAttachmentRequest createSiteToSiteVpnAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSiteToSiteVpnAttachmentRequest, CreateSiteToSiteVpnAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a VPC attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createVpcAttachmentRequest
+     * @return A Java Future containing the result of the CreateVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.CreateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest createVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Creates a VPC attachment on an edge location of a core network.
+     * </p>
+     * 
+     * @param createVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.CreateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcAttachmentResult> createVpcAttachmentAsync(CreateVpcAttachmentRequest createVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcAttachmentRequest, CreateVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an attachment. Supports all attachment types.
+     * </p>
+     * 
+     * @param deleteAttachmentRequest
+     * @return A Java Future containing the result of the DeleteAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DeleteAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(DeleteAttachmentRequest deleteAttachmentRequest);
+
+    /**
+     * <p>
+     * Deletes an attachment. Supports all attachment types.
+     * </p>
+     * 
+     * @param deleteAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttachmentResult> deleteAttachmentAsync(DeleteAttachmentRequest deleteAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttachmentRequest, DeleteAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Connect peer.
+     * </p>
+     * 
+     * @param deleteConnectPeerRequest
+     * @return A Java Future containing the result of the DeleteConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DeleteConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(DeleteConnectPeerRequest deleteConnectPeerRequest);
+
+    /**
+     * <p>
+     * Deletes a Connect peer.
+     * </p>
+     * 
+     * @param deleteConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectPeerResult> deleteConnectPeerAsync(DeleteConnectPeerRequest deleteConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectPeerRequest, DeleteConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified connection in your global network.
      * </p>
      * 
@@ -365,6 +676,74 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a core network along with all core network policies. This can only be done if there are no attachments on
+     * a core network.
+     * </p>
+     * 
+     * @param deleteCoreNetworkRequest
+     * @return A Java Future containing the result of the DeleteCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DeleteCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(DeleteCoreNetworkRequest deleteCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Deletes a core network along with all core network policies. This can only be done if there are no attachments on
+     * a core network.
+     * </p>
+     * 
+     * @param deleteCoreNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCoreNetworkResult> deleteCoreNetworkAsync(DeleteCoreNetworkRequest deleteCoreNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkRequest, DeleteCoreNetworkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a policy version from a core network. You can't delete the current LIVE policy.
+     * </p>
+     * 
+     * @param deleteCoreNetworkPolicyVersionRequest
+     * @return A Java Future containing the result of the DeleteCoreNetworkPolicyVersion operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.DeleteCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(
+            DeleteCoreNetworkPolicyVersionRequest deleteCoreNetworkPolicyVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a policy version from a core network. You can't delete the current LIVE policy.
+     * </p>
+     * 
+     * @param deleteCoreNetworkPolicyVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCoreNetworkPolicyVersion operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCoreNetworkPolicyVersionResult> deleteCoreNetworkPolicyVersionAsync(
+            DeleteCoreNetworkPolicyVersionRequest deleteCoreNetworkPolicyVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCoreNetworkPolicyVersionRequest, DeleteCoreNetworkPolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -460,6 +839,39 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<DeleteLinkResult> deleteLinkAsync(DeleteLinkRequest deleteLinkRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLinkRequest, DeleteLinkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the
+     * resource policy.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the
+     * resource policy.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -559,6 +971,37 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<DescribeGlobalNetworksResult> describeGlobalNetworksAsync(DescribeGlobalNetworksRequest describeGlobalNetworksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeGlobalNetworksRequest, DescribeGlobalNetworksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a core network Connect peer from a device and a link.
+     * </p>
+     * 
+     * @param disassociateConnectPeerRequest
+     * @return A Java Future containing the result of the DisassociateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsync.DisassociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(DisassociateConnectPeerRequest disassociateConnectPeerRequest);
+
+    /**
+     * <p>
+     * Disassociates a core network Connect peer from a device and a link.
+     * </p>
+     * 
+     * @param disassociateConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.DisassociateConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateConnectPeerResult> disassociateConnectPeerAsync(DisassociateConnectPeerRequest disassociateConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConnectPeerRequest, DisassociateConnectPeerResult> asyncHandler);
 
     /**
      * <p>
@@ -665,6 +1108,134 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Executes a change set on your core network. Deploys changes globally based on the policy submitted..
+     * </p>
+     * 
+     * @param executeCoreNetworkChangeSetRequest
+     * @return A Java Future containing the result of the ExecuteCoreNetworkChangeSet operation returned by the service.
+     * @sample AWSNetworkManagerAsync.ExecuteCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(
+            ExecuteCoreNetworkChangeSetRequest executeCoreNetworkChangeSetRequest);
+
+    /**
+     * <p>
+     * Executes a change set on your core network. Deploys changes globally based on the policy submitted..
+     * </p>
+     * 
+     * @param executeCoreNetworkChangeSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteCoreNetworkChangeSet operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.ExecuteCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCoreNetworkChangeSetResult> executeCoreNetworkChangeSetAsync(
+            ExecuteCoreNetworkChangeSetRequest executeCoreNetworkChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteCoreNetworkChangeSetRequest, ExecuteCoreNetworkChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect attachment.
+     * </p>
+     * 
+     * @param getConnectAttachmentRequest
+     * @return A Java Future containing the result of the GetConnectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(GetConnectAttachmentRequest getConnectAttachmentRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect attachment.
+     * </p>
+     * 
+     * @param getConnectAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetConnectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectAttachmentResult> getConnectAttachmentAsync(GetConnectAttachmentRequest getConnectAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectAttachmentRequest, GetConnectAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer.
+     * </p>
+     * 
+     * @param getConnectPeerRequest
+     * @return A Java Future containing the result of the GetConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(GetConnectPeerRequest getConnectPeerRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer.
+     * </p>
+     * 
+     * @param getConnectPeerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnectPeer operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectPeerResult> getConnectPeerAsync(GetConnectPeerRequest getConnectPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectPeerRequest, GetConnectPeerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer associations.
+     * </p>
+     * 
+     * @param getConnectPeerAssociationsRequest
+     * @return A Java Future containing the result of the GetConnectPeerAssociations operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetConnectPeerAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(
+            GetConnectPeerAssociationsRequest getConnectPeerAssociationsRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network Connect peer associations.
+     * </p>
+     * 
+     * @param getConnectPeerAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnectPeerAssociations operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetConnectPeerAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectPeerAssociationsResult> getConnectPeerAssociationsAsync(
+            GetConnectPeerAssociationsRequest getConnectPeerAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectPeerAssociationsRequest, GetConnectPeerAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about one or more of your connections in a global network.
      * </p>
      * 
@@ -693,6 +1264,101 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest getConnectionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetConnectionsRequest, GetConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a core network. By default it returns the LIVE policy.
+     * </p>
+     * 
+     * @param getCoreNetworkRequest
+     * @return A Java Future containing the result of the GetCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(GetCoreNetworkRequest getCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Returns information about a core network. By default it returns the LIVE policy.
+     * </p>
+     * 
+     * @param getCoreNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkResult> getCoreNetworkAsync(GetCoreNetworkRequest getCoreNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkRequest, GetCoreNetworkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a change set between the LIVE core network policy and a submitted policy.
+     * </p>
+     * 
+     * @param getCoreNetworkChangeSetRequest
+     * @return A Java Future containing the result of the GetCoreNetworkChangeSet operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest getCoreNetworkChangeSetRequest);
+
+    /**
+     * <p>
+     * Returns a change set between the LIVE core network policy and a submitted policy.
+     * </p>
+     * 
+     * @param getCoreNetworkChangeSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCoreNetworkChangeSet operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetCoreNetworkChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkChangeSetResult> getCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest getCoreNetworkChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkChangeSetRequest, GetCoreNetworkChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets details about a core network policy. You can get details about your current live policy or any previous
+     * policy version.
+     * </p>
+     * 
+     * @param getCoreNetworkPolicyRequest
+     * @return A Java Future containing the result of the GetCoreNetworkPolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest getCoreNetworkPolicyRequest);
+
+    /**
+     * <p>
+     * Gets details about a core network policy. You can get details about your current live policy or any previous
+     * policy version.
+     * </p>
+     * 
+     * @param getCoreNetworkPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCoreNetworkPolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCoreNetworkPolicyResult> getCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest getCoreNetworkPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCoreNetworkPolicyRequest, GetCoreNetworkPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1001,6 +1667,37 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Returns information about a resource policy.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Returns information about a resource policy.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified route analysis.
      * </p>
      * 
@@ -1029,6 +1726,39 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<GetRouteAnalysisResult> getRouteAnalysisAsync(GetRouteAnalysisRequest getRouteAnalysisRequest,
             com.amazonaws.handlers.AsyncHandler<GetRouteAnalysisRequest, GetRouteAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a site-to-site VPN attachment.
+     * </p>
+     * 
+     * @param getSiteToSiteVpnAttachmentRequest
+     * @return A Java Future containing the result of the GetSiteToSiteVpnAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(
+            GetSiteToSiteVpnAttachmentRequest getSiteToSiteVpnAttachmentRequest);
+
+    /**
+     * <p>
+     * Returns information about a site-to-site VPN attachment.
+     * </p>
+     * 
+     * @param getSiteToSiteVpnAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSiteToSiteVpnAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetSiteToSiteVpnAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSiteToSiteVpnAttachmentResult> getSiteToSiteVpnAttachmentAsync(
+            GetSiteToSiteVpnAttachmentRequest getSiteToSiteVpnAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSiteToSiteVpnAttachmentRequest, GetSiteToSiteVpnAttachmentResult> asyncHandler);
 
     /**
      * <p>
@@ -1135,6 +1865,165 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
+     * Returns information about a VPC attachment.
+     * </p>
+     * 
+     * @param getVpcAttachmentRequest
+     * @return A Java Future containing the result of the GetVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.GetVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(GetVpcAttachmentRequest getVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Returns information about a VPC attachment.
+     * </p>
+     * 
+     * @param getVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.GetVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVpcAttachmentResult> getVpcAttachmentAsync(GetVpcAttachmentRequest getVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVpcAttachmentRequest, GetVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of core network attachments.
+     * </p>
+     * 
+     * @param listAttachmentsRequest
+     * @return A Java Future containing the result of the ListAttachments operation returned by the service.
+     * @sample AWSNetworkManagerAsync.ListAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(ListAttachmentsRequest listAttachmentsRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network attachments.
+     * </p>
+     * 
+     * @param listAttachmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttachments operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.ListAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttachmentsResult> listAttachmentsAsync(ListAttachmentsRequest listAttachmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttachmentsRequest, ListAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of core network Connect peers.
+     * </p>
+     * 
+     * @param listConnectPeersRequest
+     * @return A Java Future containing the result of the ListConnectPeers operation returned by the service.
+     * @sample AWSNetworkManagerAsync.ListConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(ListConnectPeersRequest listConnectPeersRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network Connect peers.
+     * </p>
+     * 
+     * @param listConnectPeersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConnectPeers operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.ListConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectPeersResult> listConnectPeersAsync(ListConnectPeersRequest listConnectPeersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConnectPeersRequest, ListConnectPeersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of core network policy versions.
+     * </p>
+     * 
+     * @param listCoreNetworkPolicyVersionsRequest
+     * @return A Java Future containing the result of the ListCoreNetworkPolicyVersions operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.ListCoreNetworkPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(
+            ListCoreNetworkPolicyVersionsRequest listCoreNetworkPolicyVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of core network policy versions.
+     * </p>
+     * 
+     * @param listCoreNetworkPolicyVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCoreNetworkPolicyVersions operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.ListCoreNetworkPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCoreNetworkPolicyVersionsResult> listCoreNetworkPolicyVersionsAsync(
+            ListCoreNetworkPolicyVersionsRequest listCoreNetworkPolicyVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCoreNetworkPolicyVersionsRequest, ListCoreNetworkPolicyVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of owned and shared core networks.
+     * </p>
+     * 
+     * @param listCoreNetworksRequest
+     * @return A Java Future containing the result of the ListCoreNetworks operation returned by the service.
+     * @sample AWSNetworkManagerAsync.ListCoreNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(ListCoreNetworksRequest listCoreNetworksRequest);
+
+    /**
+     * <p>
+     * Returns a list of owned and shared core networks.
+     * </p>
+     * 
+     * @param listCoreNetworksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCoreNetworks operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.ListCoreNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCoreNetworksResult> listCoreNetworksAsync(ListCoreNetworksRequest listCoreNetworksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCoreNetworksRequest, ListCoreNetworksResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags for a specified resource.
      * </p>
      * 
@@ -1163,6 +2052,70 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new, immutable version of a core network policy. A subsequent change set is created showing the
+     * differences between the LIVE policy and the submitted policy.
+     * </p>
+     * 
+     * @param putCoreNetworkPolicyRequest
+     * @return A Java Future containing the result of the PutCoreNetworkPolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsync.PutCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest putCoreNetworkPolicyRequest);
+
+    /**
+     * <p>
+     * Creates a new, immutable version of a core network policy. A subsequent change set is created showing the
+     * differences between the LIVE policy and the submitted policy.
+     * </p>
+     * 
+     * @param putCoreNetworkPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutCoreNetworkPolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.PutCoreNetworkPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCoreNetworkPolicyResult> putCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest putCoreNetworkPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutCoreNetworkPolicyRequest, PutCoreNetworkPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1198,6 +2151,74 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<RegisterTransitGatewayResult> registerTransitGatewayAsync(RegisterTransitGatewayRequest registerTransitGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterTransitGatewayRequest, RegisterTransitGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Rejects a core network attachment request.
+     * </p>
+     * 
+     * @param rejectAttachmentRequest
+     * @return A Java Future containing the result of the RejectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.RejectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(RejectAttachmentRequest rejectAttachmentRequest);
+
+    /**
+     * <p>
+     * Rejects a core network attachment request.
+     * </p>
+     * 
+     * @param rejectAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.RejectAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectAttachmentResult> rejectAttachmentAsync(RejectAttachmentRequest rejectAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectAttachmentRequest, RejectAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set
+     * is created showing the differences between the LIVE policy and restored policy.
+     * </p>
+     * 
+     * @param restoreCoreNetworkPolicyVersionRequest
+     * @return A Java Future containing the result of the RestoreCoreNetworkPolicyVersion operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.RestoreCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            RestoreCoreNetworkPolicyVersionRequest restoreCoreNetworkPolicyVersionRequest);
+
+    /**
+     * <p>
+     * Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set
+     * is created showing the differences between the LIVE policy and restored policy.
+     * </p>
+     * 
+     * @param restoreCoreNetworkPolicyVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreCoreNetworkPolicyVersion operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.RestoreCoreNetworkPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
+            RestoreCoreNetworkPolicyVersionRequest restoreCoreNetworkPolicyVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreCoreNetworkPolicyVersionRequest, RestoreCoreNetworkPolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1326,6 +2347,37 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the description of a core network.
+     * </p>
+     * 
+     * @param updateCoreNetworkRequest
+     * @return A Java Future containing the result of the UpdateCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsync.UpdateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(UpdateCoreNetworkRequest updateCoreNetworkRequest);
+
+    /**
+     * <p>
+     * Updates the description of a core network.
+     * </p>
+     * 
+     * @param updateCoreNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCoreNetwork operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.UpdateCoreNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCoreNetworkResult> updateCoreNetworkAsync(UpdateCoreNetworkRequest updateCoreNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCoreNetworkRequest, UpdateCoreNetworkResult> asyncHandler);
 
     /**
      * <p>
@@ -1491,5 +2543,36 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      */
     java.util.concurrent.Future<UpdateSiteResult> updateSiteAsync(UpdateSiteRequest updateSiteRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSiteRequest, UpdateSiteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a VPC attachment.
+     * </p>
+     * 
+     * @param updateVpcAttachmentRequest
+     * @return A Java Future containing the result of the UpdateVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsync.UpdateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest updateVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Updates a VPC attachment.
+     * </p>
+     * 
+     * @param updateVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVpcAttachment operation returned by the service.
+     * @sample AWSNetworkManagerAsyncHandler.UpdateVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVpcAttachmentResult> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest updateVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResult> asyncHandler);
 
 }

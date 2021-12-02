@@ -52,6 +52,10 @@ public class NetworkTelemetryJsonUnmarshaller implements Unmarshaller<NetworkTel
                     context.nextToken();
                     networkTelemetry.setRegisteredGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    context.nextToken();
+                    networkTelemetry.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AwsRegion", targetDepth)) {
                     context.nextToken();
                     networkTelemetry.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));

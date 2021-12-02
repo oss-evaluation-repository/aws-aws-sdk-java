@@ -29,6 +29,8 @@ public class NetworkTelemetryMarshaller {
 
     private static final MarshallingInfo<String> REGISTEREDGATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegisteredGatewayArn").build();
+    private static final MarshallingInfo<String> CORENETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoreNetworkId").build();
     private static final MarshallingInfo<String> AWSREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AwsRegion").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class NetworkTelemetryMarshaller {
 
         try {
             protocolMarshaller.marshall(networkTelemetry.getRegisteredGatewayArn(), REGISTEREDGATEWAYARN_BINDING);
+            protocolMarshaller.marshall(networkTelemetry.getCoreNetworkId(), CORENETWORKID_BINDING);
             protocolMarshaller.marshall(networkTelemetry.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(networkTelemetry.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(networkTelemetry.getResourceType(), RESOURCETYPE_BINDING);

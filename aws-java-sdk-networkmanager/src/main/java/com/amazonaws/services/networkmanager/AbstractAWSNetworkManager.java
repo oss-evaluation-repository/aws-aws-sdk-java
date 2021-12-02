@@ -28,6 +28,16 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public AcceptAttachmentResult acceptAttachment(AcceptAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateConnectPeerResult associateConnectPeer(AssociateConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateCustomerGatewayResult associateCustomerGateway(AssociateCustomerGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -43,7 +53,22 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public CreateConnectAttachmentResult createConnectAttachment(CreateConnectAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectPeerResult createConnectPeer(CreateConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConnectionResult createConnection(CreateConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCoreNetworkResult createCoreNetwork(CreateCoreNetworkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +93,37 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public CreateSiteToSiteVpnAttachmentResult createSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVpcAttachmentResult createVpcAttachment(CreateVpcAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAttachmentResult deleteAttachment(DeleteAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConnectPeerResult deleteConnectPeer(DeleteConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCoreNetworkResult deleteCoreNetwork(DeleteCoreNetworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCoreNetworkPolicyVersionResult deleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +143,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSiteResult deleteSite(DeleteSiteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +159,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public DescribeGlobalNetworksResult describeGlobalNetworks(DescribeGlobalNetworksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateConnectPeerResult disassociateConnectPeer(DisassociateConnectPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,7 +183,42 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public ExecuteCoreNetworkChangeSetResult executeCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectAttachmentResult getConnectAttachment(GetConnectAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectPeerResult getConnectPeer(GetConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectPeerAssociationsResult getConnectPeerAssociations(GetConnectPeerAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectionsResult getConnections(GetConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCoreNetworkResult getCoreNetwork(GetCoreNetworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCoreNetworkChangeSetResult getCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCoreNetworkPolicyResult getCoreNetworkPolicy(GetCoreNetworkPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +268,17 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRouteAnalysisResult getRouteAnalysis(GetRouteAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSiteToSiteVpnAttachmentResult getSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,12 +298,57 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public GetVpcAttachmentResult getVpcAttachment(GetVpcAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAttachmentsResult listAttachments(ListAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConnectPeersResult listConnectPeers(ListConnectPeersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCoreNetworkPolicyVersionsResult listCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCoreNetworksResult listCoreNetworks(ListCoreNetworksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public PutCoreNetworkPolicyResult putCoreNetworkPolicy(PutCoreNetworkPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterTransitGatewayResult registerTransitGateway(RegisterTransitGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectAttachmentResult rejectAttachment(RejectAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreCoreNetworkPolicyVersionResult restoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +369,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCoreNetworkResult updateCoreNetwork(UpdateCoreNetworkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -239,6 +399,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public UpdateSiteResult updateSite(UpdateSiteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcAttachmentResult updateVpcAttachment(UpdateVpcAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -33,6 +33,8 @@ public class ListPendingInvitationResourcesRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> RESOURCEREGIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRegionScope").build();
 
     private static final ListPendingInvitationResourcesRequestMarshaller instance = new ListPendingInvitationResourcesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListPendingInvitationResourcesRequestMarshaller {
             protocolMarshaller.marshall(listPendingInvitationResourcesRequest.getResourceShareInvitationArn(), RESOURCESHAREINVITATIONARN_BINDING);
             protocolMarshaller.marshall(listPendingInvitationResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listPendingInvitationResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listPendingInvitationResourcesRequest.getResourceRegionScope(), RESOURCEREGIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,24 +25,26 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resource share.
+     * An object with information about the new resource share.
      * </p>
      */
     private ResourceShare resourceShare;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * Information about the resource share.
+     * An object with information about the new resource share.
      * </p>
      * 
      * @param resourceShare
-     *        Information about the resource share.
+     *        An object with information about the new resource share.
      */
 
     public void setResourceShare(ResourceShare resourceShare) {
@@ -51,10 +53,10 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resource share.
+     * An object with information about the new resource share.
      * </p>
      * 
-     * @return Information about the resource share.
+     * @return An object with information about the new resource share.
      */
 
     public ResourceShare getResourceShare() {
@@ -63,11 +65,11 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resource share.
+     * An object with information about the new resource share.
      * </p>
      * 
      * @param resourceShare
-     *        Information about the resource share.
+     *        An object with information about the new resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +80,15 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public void setClientToken(String clientToken) {
@@ -91,10 +97,14 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *         idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *         that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public String getClientToken() {
@@ -103,11 +113,15 @@ public class CreateResourceShareResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

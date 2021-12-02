@@ -31,6 +31,8 @@ public class ServiceNameAndResourceTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
+    private static final MarshallingInfo<String> RESOURCEREGIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRegionScope").build();
 
     private static final ServiceNameAndResourceTypeMarshaller instance = new ServiceNameAndResourceTypeMarshaller();
 
@@ -50,6 +52,7 @@ public class ServiceNameAndResourceTypeMarshaller {
         try {
             protocolMarshaller.marshall(serviceNameAndResourceType.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(serviceNameAndResourceType.getServiceName(), SERVICENAME_BINDING);
+            protocolMarshaller.marshall(serviceNameAndResourceType.getResourceRegionScope(), RESOURCEREGIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

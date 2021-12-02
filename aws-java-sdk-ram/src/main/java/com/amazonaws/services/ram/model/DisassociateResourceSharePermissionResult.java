@@ -26,24 +26,29 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Indicates whether the request succeeded.
+     * A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates
+     * that the request failed.
      * </p>
      */
     private Boolean returnValue;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * Indicates whether the request succeeded.
+     * A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates
+     * that the request failed.
      * </p>
      * 
      * @param returnValue
-     *        Indicates whether the request succeeded.
+     *        A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code>
+     *        indicates that the request failed.
      */
 
     public void setReturnValue(Boolean returnValue) {
@@ -52,10 +57,12 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Indicates whether the request succeeded.
+     * A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates
+     * that the request failed.
      * </p>
      * 
-     * @return Indicates whether the request succeeded.
+     * @return A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code>
+     *         indicates that the request failed.
      */
 
     public Boolean getReturnValue() {
@@ -64,11 +71,13 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Indicates whether the request succeeded.
+     * A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates
+     * that the request failed.
      * </p>
      * 
      * @param returnValue
-     *        Indicates whether the request succeeded.
+     *        A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code>
+     *        indicates that the request failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +88,12 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Indicates whether the request succeeded.
+     * A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates
+     * that the request failed.
      * </p>
      * 
-     * @return Indicates whether the request succeeded.
+     * @return A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code>
+     *         indicates that the request failed.
      */
 
     public Boolean isReturnValue() {
@@ -91,11 +102,15 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public void setClientToken(String clientToken) {
@@ -104,10 +119,14 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *         idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *         that later call. All other parameters must also have the same values that you used in the first call.
      */
 
     public String getClientToken() {
@@ -116,11 +135,15 @@ public class DisassociateResourceSharePermissionResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     * idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that
+     * later call. All other parameters must also have the same values that you used in the first call.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        The idempotency identifier associated with this request. If you want to repeat the same operation in an
+     *        idempotent manner then you must include this value in the <code>clientToken</code> request parameter of
+     *        that later call. All other parameters must also have the same values that you used in the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

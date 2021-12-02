@@ -29,9 +29,10 @@ import com.amazonaws.services.ram.model.*;
  * <p>
  * This is the <i>Resource Access Manager API Reference</i>. This documentation provides descriptions and syntax for
  * each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services
- * resources across Amazon Web Services accounts and within your organization or organizational units (OUs) in
- * Organizations. For supported resource types, you can also share resources with IAM roles and IAM users. If you have
- * multiple Amazon Web Services accounts, you can use RAM to share those resources with other accounts.
+ * resources across Amazon Web Services accounts. If you have multiple Amazon Web Services accounts, you can use RAM to
+ * share those resources with other accounts. If you use Organizations to manage your accounts, then you share your
+ * resources with your organization or organizational units (OUs). For supported resource types, you can also share
+ * resources with individual Identity and Access Management (IAM) roles an users.
  * </p>
  * <p>
  * To learn more about RAM, see the following resources:
@@ -62,7 +63,9 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Accepts an invitation to a resource share from another Amazon Web Services account.
+     * Accepts an invitation to a resource share from another Amazon Web Services account. After you accept the
+     * invitation, the resources included in the resource share are available to interact with in the relevant Amazon
+     * Web Services Management Consoles and tools.
      * </p>
      * 
      * @param acceptResourceShareInvitationRequest
@@ -72,22 +75,22 @@ public interface AWSRAM {
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws ResourceShareInvitationArnNotFoundException
-     *         The Amazon Resource Name (ARN) for an invitation was not found.
+     *         The specified Amazon Resource Name (ARN) for an invitation was not found.
      * @throws ResourceShareInvitationAlreadyAcceptedException
-     *         The invitation was already accepted.
+     *         The specified invitation was already accepted.
      * @throws ResourceShareInvitationAlreadyRejectedException
-     *         The invitation was already rejected.
+     *         The specified invitation was already rejected.
      * @throws ResourceShareInvitationExpiredException
-     *         The invitation is expired.
+     *         The specified invitation is expired.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
      *         The service is not available.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @sample AWSRAM.AcceptResourceShareInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -96,26 +99,28 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Associates the specified resource share with the specified principals and resources.
+     * Adds the specified list of principals and list of resources to a resource share. Principals that already have
+     * access to this resource share immediately receive access to the added resources. Newly added principals
+     * immediately receive access to the resources shared in this resource share.
      * </p>
      * 
      * @param associateResourceShareRequest
      * @return Result of the AssociateResourceShare operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @throws UnknownResourceException
      *         A specified resource was not found.
      * @throws InvalidStateTransitionException
      *         The requested state transition is not valid.
      * @throws ResourceShareLimitExceededException
-     *         The requested resource share exceeds the limit for your account.
+     *         This request would exceed the limit for resource shares for your account.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidStateTransitionException
      *         The requested state transition is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws OperationNotPermittedException
@@ -126,6 +131,8 @@ public interface AWSRAM {
      *         The service is not available.
      * @throws UnknownResourceException
      *         A specified resource was not found.
+     * @throws ThrottlingException
+     *         You exceeded the rate at which you are allowed to perform this operation. Please try again later.
      * @sample AWSRAM.AssociateResourceShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare" target="_top">AWS API
      *      Documentation</a>
@@ -134,7 +141,9 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Associates a permission with a resource share.
+     * Adds or replaces the RAM permission for a resource type included in a resource share. You can have exactly one
+     * permission associated with each resource type in the resource share. You can add a new RAM permission only if
+     * there are currently no resources of that resource type currently in the resource share.
      * </p>
      * 
      * @param associateResourceSharePermissionRequest
@@ -146,7 +155,7 @@ public interface AWSRAM {
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -161,9 +170,10 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs) for the resources you want
-     * to share. You must also specify who you want to share the resources with, and the permissions that you grant
-     * them.
+     * Creates a resource share. You can provide a list of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with,
+     * and the permissions to grant those principals.
      * </p>
      * <note>
      * <p>
@@ -176,8 +186,8 @@ public interface AWSRAM {
      * @param createResourceShareRequest
      * @return Result of the CreateResourceShare operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @throws InvalidStateTransitionException
      *         The requested state transition is not valid.
      * @throws UnknownResourceException
@@ -185,15 +195,15 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws ResourceShareLimitExceededException
-     *         The requested resource share exceeds the limit for your account.
+     *         This request would exceed the limit for resource shares for your account.
      * @throws TagPolicyViolationException
-     *         The specified tag is a reserved word and cannot be used.
+     *         The specified tag key is a reserved word and can't be used.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -206,7 +216,9 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Deletes the specified resource share.
+     * Deletes the specified resource share. This doesn't delete any of the resources that were associated with the
+     * resource share; it only stops the sharing of those resources outside of the Amazon Web Services account that
+     * created them.
      * </p>
      * 
      * @param deleteResourceShareRequest
@@ -214,8 +226,8 @@ public interface AWSRAM {
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @throws InvalidStateTransitionException
      *         The requested state transition is not valid.
      * @throws UnknownResourceException
@@ -223,7 +235,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -244,16 +256,16 @@ public interface AWSRAM {
      * @param disassociateResourceShareRequest
      * @return Result of the DisassociateResourceShare operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @throws ResourceShareLimitExceededException
-     *         The requested resource share exceeds the limit for your account.
+     *         This request would exceed the limit for resource shares for your account.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidStateTransitionException
      *         The requested state transition is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws OperationNotPermittedException
@@ -272,7 +284,9 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Disassociates an RAM permission from a resource share.
+     * Disassociates an RAM permission from a resource share. Permission changes take effect immediately. You can remove
+     * a RAM permission from a resource share only if there are currently no resources of the relevant resource type
+     * currently attached to the resource share.
      * </p>
      * 
      * @param disassociateResourceSharePermissionRequest
@@ -284,7 +298,7 @@ public interface AWSRAM {
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -302,10 +316,14 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Enables resource sharing within your organization in Organizations.
+     * Enables resource sharing within your organization in Organizations. Calling this operation enables RAM to
+     * retrieve information about the organization and its structure. This lets you share resources with all of the
+     * accounts in an organization by specifying the organization's ID, or all of the accounts in an organizational unit
+     * (OU) by specifying the OU's ID. Until you enable sharing within the organization, you can specify only individual
+     * Amazon Web Services accounts, or for supported resource types, IAM users and roles.
      * </p>
      * <p>
-     * The caller must be the master account for the organization.
+     * You must call this operation from an IAM user or role in the organization's management account.
      * </p>
      * 
      * @param enableSharingWithAwsOrganizationRequest
@@ -349,7 +367,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Gets the policies for the specified resources that you own and have shared.
+     * Retrieves the resource policies for the specified resources that you own and have shared.
      * </p>
      * 
      * @param getResourcePoliciesRequest
@@ -357,11 +375,11 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ResourceArnNotFoundException
-     *         An Amazon Resource Name (ARN) was not found.
+     *         The specified Amazon Resource Name (ARN) was not found.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -374,7 +392,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Gets the resources or principals for the resource shares that you own.
+     * Retrieves the resource and principal associations for resource shares that you own.
      * </p>
      * 
      * @param getResourceShareAssociationsRequest
@@ -384,7 +402,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws OperationNotPermittedException
@@ -401,21 +419,21 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Gets the invitations that you have received for resource shares.
+     * Retrieves details about invitations that you have received for resource shares.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest
      * @return Result of the GetResourceShareInvitations operation returned by the service.
      * @throws ResourceShareInvitationArnNotFoundException
-     *         The Amazon Resource Name (ARN) for an invitation was not found.
+     *         The specified Amazon Resource Name (ARN) for an invitation was not found.
      * @throws InvalidMaxResultsException
-     *         The specified value for MaxResults is not valid.
+     *         The specified value for <code>MaxResults</code> is not valid.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws UnknownResourceException
      *         A specified resource was not found.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -430,7 +448,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Gets the resource shares that you own or the resource shares that are shared with you.
+     * Retrieves details about the resource shares that you own or that are shared with you.
      * </p>
      * 
      * @param getResourceSharesRequest
@@ -440,7 +458,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -455,7 +473,9 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Lists the resources in a resource share that is shared with you but that the invitation is still pending for.
+     * Lists the resources in a resource share that is shared with you but for which the invitation is still
+     * <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't
+     * expired.
      * </p>
      * 
      * @param listPendingInvitationResourcesRequest
@@ -463,7 +483,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -471,13 +491,13 @@ public interface AWSRAM {
      * @throws ServiceUnavailableException
      *         The service is not available.
      * @throws ResourceShareInvitationArnNotFoundException
-     *         The Amazon Resource Name (ARN) for an invitation was not found.
+     *         The specified Amazon Resource Name (ARN) for an invitation was not found.
      * @throws MissingRequiredParameterException
      *         A required input parameter is missing.
      * @throws ResourceShareInvitationAlreadyRejectedException
-     *         The invitation was already rejected.
+     *         The specified invitation was already rejected.
      * @throws ResourceShareInvitationExpiredException
-     *         The invitation is expired.
+     *         The specified invitation is expired.
      * @sample AWSRAM.ListPendingInvitationResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources"
      *      target="_top">AWS API Documentation</a>
@@ -486,7 +506,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Lists the RAM permissions.
+     * Retrieves a list of available RAM permissions that you can use for the supported resource types.
      * </p>
      * 
      * @param listPermissionsRequest
@@ -494,7 +514,7 @@ public interface AWSRAM {
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -509,7 +529,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Lists the principals that you have shared resources with or that have shared resources with you.
+     * Lists the principals that you are sharing resources with or that are sharing resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -519,7 +539,7 @@ public interface AWSRAM {
      * @throws UnknownResourceException
      *         A specified resource was not found.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -546,7 +566,7 @@ public interface AWSRAM {
      * @throws UnknownResourceException
      *         A specified resource was not found.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -561,13 +581,13 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Lists the shareable resource types supported by RAM.
+     * Lists the resource types that can be shared by RAM.
      * </p>
      * 
      * @param listResourceTypesRequest
      * @return Result of the ListResourceTypes operation returned by the service.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -594,7 +614,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidNextTokenException
-     *         The specified value for NextToken is not valid.
+     *         The specified value for <code>NextToken</code> is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws ServerInternalException
@@ -609,31 +629,22 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Resource shares that were created by attaching a policy to a resource are visible only to the resource share
-     * owner, and the resource share cannot be modified in RAM.
+     * When you attach a resource-based permission policy to a resource, it automatically creates a resource share.
+     * However, resource shares created this way are visible only to the resource share owner, and the resource share
+     * can't be modified in RAM.
      * </p>
      * <p>
-     * Use this API action to promote the resource share. When you promote the resource share, it becomes:
+     * You can use this operation to promote the resource share to a full RAM resource share. When you promote a
+     * resource share, you can then manage the resource share in RAM and it becomes visible to all of the principals you
+     * shared it with.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Visible to all principals that it is shared with.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Modifiable in RAM.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param promoteResourceShareCreatedFromPolicyRequest
      * @return Result of the PromoteResourceShareCreatedFromPolicy operation returned by the service.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws ResourceShareLimitExceededException
-     *         The requested resource share exceeds the limit for your account.
+     *         This request would exceed the limit for resource shares for your account.
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws InvalidParameterException
@@ -665,22 +676,22 @@ public interface AWSRAM {
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws ResourceShareInvitationArnNotFoundException
-     *         The Amazon Resource Name (ARN) for an invitation was not found.
+     *         The specified Amazon Resource Name (ARN) for an invitation was not found.
      * @throws ResourceShareInvitationAlreadyAcceptedException
-     *         The invitation was already accepted.
+     *         The specified invitation was already accepted.
      * @throws ResourceShareInvitationAlreadyRejectedException
-     *         The invitation was already rejected.
+     *         The specified invitation was already rejected.
      * @throws ResourceShareInvitationExpiredException
-     *         The invitation is expired.
+     *         The specified invitation is expired.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
      *         The service is not available.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @sample AWSRAM.RejectResourceShareInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/RejectResourceShareInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -689,7 +700,8 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Adds the specified tags to the specified resource share that you own.
+     * Adds the specified tag keys and values to the specified resource share. The tags are attached only to the
+     * resource share, not to the resources that are in the resource share.
      * </p>
      * 
      * @param tagResourceRequest
@@ -701,11 +713,11 @@ public interface AWSRAM {
      * @throws UnknownResourceException
      *         A specified resource was not found.
      * @throws TagLimitExceededException
-     *         The requested tags exceed the limit for your account.
+     *         This request would exceed the limit for tags for your account.
      * @throws ResourceArnNotFoundException
-     *         An Amazon Resource Name (ARN) was not found.
+     *         The specified Amazon Resource Name (ARN) was not found.
      * @throws TagPolicyViolationException
-     *         The specified tag is a reserved word and cannot be used.
+     *         The specified tag key is a reserved word and can't be used.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -718,7 +730,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Removes the specified tags from the specified resource share that you own.
+     * Removes the specified tag key and value pairs from the specified resource share.
      * </p>
      * 
      * @param untagResourceRequest
@@ -737,14 +749,14 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Updates the specified resource share that you own.
+     * Modifies some of the properties of the specified resource share.
      * </p>
      * 
      * @param updateResourceShareRequest
      * @return Result of the UpdateResourceShare operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         A client token input parameter was reused with an operation, but at least one of the other input
-     *         parameters is different from the previous call to the operation.
+     *         The client token input parameter was matched one used with a previous call to the operation, but at least
+     *         one of the other input parameters is different from the previous call.
      * @throws MissingRequiredParameterException
      *         A required input parameter is missing.
      * @throws UnknownResourceException
@@ -752,7 +764,7 @@ public interface AWSRAM {
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
      * @throws InvalidClientTokenException
-     *         A client token is not valid.
+     *         The client token is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
      * @throws OperationNotPermittedException

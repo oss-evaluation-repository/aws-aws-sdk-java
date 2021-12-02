@@ -27,34 +27,44 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the resource type for which to list permissions. For example, to list only permissions that apply to
-     * EC2 subnets, specify <code>ec2:Subnet</code>.
+     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
+     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
+     * operation to get the specific string required.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Specifies the resource type for which to list permissions. For example, to list only permissions that apply to
-     * EC2 subnets, specify <code>ec2:Subnet</code>.
+     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
+     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
+     * operation to get the specific string required.
      * </p>
      * 
      * @param resourceType
-     *        Specifies the resource type for which to list permissions. For example, to list only permissions that
-     *        apply to EC2 subnets, specify <code>ec2:Subnet</code>.
+     *        Specifies that you want to list permissions for only the specified resource type. For example, to list
+     *        only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
+     *        <a>ListResourceTypes</a> operation to get the specific string required.
      */
 
     public void setResourceType(String resourceType) {
@@ -63,12 +73,14 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the resource type for which to list permissions. For example, to list only permissions that apply to
-     * EC2 subnets, specify <code>ec2:Subnet</code>.
+     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
+     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
+     * operation to get the specific string required.
      * </p>
      * 
-     * @return Specifies the resource type for which to list permissions. For example, to list only permissions that
-     *         apply to EC2 subnets, specify <code>ec2:Subnet</code>.
+     * @return Specifies that you want to list permissions for only the specified resource type. For example, to list
+     *         only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
+     *         <a>ListResourceTypes</a> operation to get the specific string required.
      */
 
     public String getResourceType() {
@@ -77,13 +89,15 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the resource type for which to list permissions. For example, to list only permissions that apply to
-     * EC2 subnets, specify <code>ec2:Subnet</code>.
+     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
+     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
+     * operation to get the specific string required.
      * </p>
      * 
      * @param resourceType
-     *        Specifies the resource type for which to list permissions. For example, to list only permissions that
-     *        apply to EC2 subnets, specify <code>ec2:Subnet</code>.
+     *        Specifies that you want to list permissions for only the specified resource type. For example, to list
+     *        only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
+     *        <a>ListResourceTypes</a> operation to get the specific string required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +108,16 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -107,10 +126,15 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return Specifies that you want to receive the next page of results. Valid only if you received a
+     *         <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *         available. Set this parameter to the value provided by the previous call's <code>NextToken</code>
+     *         response to request the next page of results.
      */
 
     public String getNextToken() {
@@ -119,11 +143,16 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The token for the next page of results.
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +163,23 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -149,12 +188,22 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.
+     * @return Specifies the total number of results that you want included on each page of the response. If you do not
+     *         include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *         exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *         (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *         to the operation to get the next part of the results. Note that the service might return fewer results
+     *         than the maximum even when there are more results available. You should check <code>NextToken</code>
+     *         after every operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -163,13 +212,23 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * Specifies the total number of results that you want included on each page of the response. If you do not include
+     * this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the
+     * specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next
+     * part of the results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        Specifies the total number of results that you want included on each page of the response. If you do not
+     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value
+     *        (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call
+     *        to the operation to get the next part of the results. Note that the service might return fewer results
+     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        every operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
