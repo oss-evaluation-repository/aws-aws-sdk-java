@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SlotTypeFilterName {
 
-    SlotTypeName("SlotTypeName");
+    SlotTypeName("SlotTypeName"),
+    ExternalSourceType("ExternalSourceType");
 
     private String value;
 

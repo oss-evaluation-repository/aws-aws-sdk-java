@@ -322,23 +322,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -565,6 +628,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -1188,23 +1261,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -1431,6 +1567,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -2045,23 +2191,87 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        <code>ES_IDENTIFICATION</code>
      *        </p>
      *        <p>
-     *        Specify the applicable value:
+     *        The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>For contacts inside Spain:</b> Enter your passport ID.
+     *        The value of <code>ES_LEGAL_FORM</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     *        The value of <code>ES_IDENTIFICATION_TYPE</code>
      *        </p>
-     *        <note>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     *        <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      *        </p>
-     *        </note></li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: B12345678
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     *        <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación
+     *        Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: 12345678M
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: Y1234567X
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify a passport number, drivers license number, or national identity card number
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -2288,6 +2498,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>.eu</dt>
+     *        <dd>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     *        </p>
      *        </li>
      *        </ul>
      *        </dd>
@@ -2909,23 +3129,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -3152,6 +3435,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -3765,23 +4058,87 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *         <code>ES_IDENTIFICATION</code>
      *         </p>
      *         <p>
-     *         Specify the applicable value:
+     *         The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>For contacts inside Spain:</b> Enter your passport ID.
+     *         The value of <code>ES_LEGAL_FORM</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     *         The value of <code>ES_IDENTIFICATION_TYPE</code>
      *         </p>
-     *         <note>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     *         <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      *         </p>
-     *         </note></li>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Example: B12345678
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     *         <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación
+     *         Fiscal])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Example: 12345678M
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Example: Y1234567X
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a passport number, drivers license number, or national identity card number
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      *         </ul>
      *         </li>
      *         <li>
@@ -4008,6 +4365,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     *         <dt>.eu</dt>
+     *         <dd>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     *         </p>
      *         </li>
      *         </ul>
      *         </dd>
@@ -4629,23 +4996,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -4872,6 +5302,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -5486,23 +5926,87 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        <code>ES_IDENTIFICATION</code>
      *        </p>
      *        <p>
-     *        Specify the applicable value:
+     *        The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>For contacts inside Spain:</b> Enter your passport ID.
+     *        The value of <code>ES_LEGAL_FORM</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     *        The value of <code>ES_IDENTIFICATION_TYPE</code>
      *        </p>
-     *        <note>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     *        <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      *        </p>
-     *        </note></li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: B12345678
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     *        <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación
+     *        Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: 12345678M
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: Y1234567X
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify a passport number, drivers license number, or national identity card number
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -5729,6 +6233,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>.eu</dt>
+     *        <dd>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     *        </p>
      *        </li>
      *        </ul>
      *        </dd>
@@ -6352,23 +6866,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -6595,6 +7172,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -7209,23 +7796,87 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        <code>ES_IDENTIFICATION</code>
      *        </p>
      *        <p>
-     *        Specify the applicable value:
+     *        The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>For contacts inside Spain:</b> Enter your passport ID.
+     *        The value of <code>ES_LEGAL_FORM</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     *        The value of <code>ES_IDENTIFICATION_TYPE</code>
      *        </p>
-     *        <note>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     *        <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      *        </p>
-     *        </note></li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: B12345678
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     *        <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación
+     *        Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: 12345678M
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: Y1234567X
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify a passport number, drivers license number, or national identity card number
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -7452,6 +8103,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>.eu</dt>
+     *        <dd>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     *        </p>
      *        </li>
      *        </ul>
      *        </dd>
@@ -8073,23 +8734,86 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <code>ES_IDENTIFICATION</code>
      * </p>
      * <p>
-     * Specify the applicable value:
+     * The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>For contacts inside Spain:</b> Enter your passport ID.
+     * The value of <code>ES_LEGAL_FORM</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     * The value of <code>ES_IDENTIFICATION_TYPE</code>
      * </p>
-     * <note>
+     * </li>
+     * </ul>
      * <p>
-     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     * <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      * </p>
-     * </note></li>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: B12345678
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     * <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: 12345678M
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Y1234567X
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a passport number, drivers license number, or national identity card number
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -8316,6 +9040,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>.eu</dt>
+     * <dd>
+     * <ul>
+     * <li>
+     * <p>
+     * <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     * </p>
      * </li>
      * </ul>
      * </dd>
@@ -8930,23 +9664,87 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        <code>ES_IDENTIFICATION</code>
      *        </p>
      *        <p>
-     *        Specify the applicable value:
+     *        The value of <code>ES_IDENTIFICATION</code> depends on the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>For contacts inside Spain:</b> Enter your passport ID.
+     *        The value of <code>ES_LEGAL_FORM</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.
+     *        The value of <code>ES_IDENTIFICATION_TYPE</code>
      *        </p>
-     *        <note>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+     *        <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
      *        </p>
-     *        </note></li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: B12345678
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for
+     *        <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación
+     *        Fiscal])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: 12345678M
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: Y1234567X
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify a passport number, drivers license number, or national identity card number
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -9173,6 +9971,16 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>.eu</dt>
+     *        <dd>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code> EU_COUNTRY_OF_CITIZENSHIP</code>
+     *        </p>
      *        </li>
      *        </ul>
      *        </dd>
@@ -9557,7 +10365,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

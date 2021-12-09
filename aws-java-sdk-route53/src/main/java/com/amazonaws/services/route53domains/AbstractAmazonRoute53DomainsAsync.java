@@ -84,6 +84,19 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
+
+        return deleteDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest request) {
 
         return deleteTagsForDomainAsync(request, null);
@@ -270,6 +283,19 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
             com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
 
         return listOperationsAsync(new ListOperationsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPricesResult> listPricesAsync(ListPricesRequest request) {
+
+        return listPricesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPricesResult> listPricesAsync(ListPricesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPricesRequest, ListPricesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

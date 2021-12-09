@@ -220,6 +220,20 @@ public class AmazonEC2Waiters {
     }
 
     /**
+     * Builds a InternetGatewayExists waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeInternetGatewaysRequest> internetGatewayExists() {
+
+        return new WaiterBuilder<DescribeInternetGatewaysRequest, DescribeInternetGatewaysResult>()
+                .withSdkFunction(new DescribeInternetGatewaysFunction(client))
+                .withAcceptors(new InternetGatewayExists.IsTrueMatcher(), new InternetGatewayExists.IsInvalidInternetGatewayNotFoundMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(6), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a ImageExists waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.

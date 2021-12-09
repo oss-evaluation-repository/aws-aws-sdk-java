@@ -31,7 +31,7 @@ public class RejectDomainTransferFromAnotherAwsAccountRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the domain that was specified when another AWS account submitted a <a href=
+     * The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a> request.
      * </p>
@@ -40,13 +40,13 @@ public class RejectDomainTransferFromAnotherAwsAccountRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the domain that was specified when another AWS account submitted a <a href=
+     * The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a> request.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that was specified when another AWS account submitted a <a href=
+     *        The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      *        >TransferDomainToAnotherAwsAccount</a> request.
      */
@@ -57,12 +57,12 @@ public class RejectDomainTransferFromAnotherAwsAccountRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the domain that was specified when another AWS account submitted a <a href=
+     * The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a> request.
      * </p>
      * 
-     * @return The name of the domain that was specified when another AWS account submitted a <a href=
+     * @return The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      *         >TransferDomainToAnotherAwsAccount</a> request.
      */
@@ -73,13 +73,13 @@ public class RejectDomainTransferFromAnotherAwsAccountRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the domain that was specified when another AWS account submitted a <a href=
+     * The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a> request.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that was specified when another AWS account submitted a <a href=
+     *        The name of the domain that was specified when another Amazon Web Services account submitted a <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      *        >TransferDomainToAnotherAwsAccount</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.

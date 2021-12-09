@@ -33,7 +33,7 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String savingsPlanOfferingId;
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three
+     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
      * digits after the decimal point.
      * </p>
      */
@@ -106,13 +106,13 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three
+     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
      * digits after the decimal point.
      * </p>
      * 
      * @param commitment
      *        The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *        three digits after the decimal point.
+     *        five digits after the decimal point.
      */
 
     public void setCommitment(String commitment) {
@@ -121,12 +121,12 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three
+     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
      * digits after the decimal point.
      * </p>
      * 
      * @return The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *         three digits after the decimal point.
+     *         five digits after the decimal point.
      */
 
     public String getCommitment() {
@@ -135,13 +135,13 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three
+     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
      * digits after the decimal point.
      * </p>
      * 
      * @param commitment
      *        The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *        three digits after the decimal point.
+     *        five digits after the decimal point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

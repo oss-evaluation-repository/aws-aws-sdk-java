@@ -51,7 +51,7 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     private String licenseType;
     /**
      * <p>
-     * The name of the IAM role to be used by AWS SMS.
+     * The name of the IAM role to be used by Server Migration Service.
      * </p>
      */
     private String roleName;
@@ -301,11 +301,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the IAM role to be used by AWS SMS.
+     * The name of the IAM role to be used by Server Migration Service.
      * </p>
      * 
      * @param roleName
-     *        The name of the IAM role to be used by AWS SMS.
+     *        The name of the IAM role to be used by Server Migration Service.
      */
 
     public void setRoleName(String roleName) {
@@ -314,10 +314,10 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the IAM role to be used by AWS SMS.
+     * The name of the IAM role to be used by Server Migration Service.
      * </p>
      * 
-     * @return The name of the IAM role to be used by AWS SMS.
+     * @return The name of the IAM role to be used by Server Migration Service.
      */
 
     public String getRoleName() {
@@ -326,11 +326,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the IAM role to be used by AWS SMS.
+     * The name of the IAM role to be used by Server Migration Service.
      * </p>
      * 
      * @param roleName
-     *        The name of the IAM role to be used by AWS SMS.
+     *        The name of the IAM role to be used by Server Migration Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

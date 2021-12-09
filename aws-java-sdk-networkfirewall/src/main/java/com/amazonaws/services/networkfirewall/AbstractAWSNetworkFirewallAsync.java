@@ -210,6 +210,19 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(DescribeRuleGroupMetadataRequest request) {
+
+        return describeRuleGroupMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(DescribeRuleGroupMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRuleGroupMetadataRequest, DescribeRuleGroupMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSubnetsResult> disassociateSubnetsAsync(DisassociateSubnetsRequest request) {
 
         return disassociateSubnetsAsync(request, null);

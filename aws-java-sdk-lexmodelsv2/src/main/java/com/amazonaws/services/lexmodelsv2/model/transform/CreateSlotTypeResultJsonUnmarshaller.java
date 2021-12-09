@@ -90,6 +90,10 @@ public class CreateSlotTypeResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createSlotTypeResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("externalSourceSetting", targetDepth)) {
+                    context.nextToken();
+                    createSlotTypeResult.setExternalSourceSetting(ExternalSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

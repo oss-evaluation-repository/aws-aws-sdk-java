@@ -158,7 +158,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to
      * update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name
      * (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you
-     * can use with API calls to the Amazon Route 53 Application Recovery Controller cluster data plane.
+     * can use with API calls to the cluster data plane.
      * </p>
      * 
      * @param createClusterRequest
@@ -232,7 +232,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * Creates a new control panel. A control panel represents a group of routing controls that can be changed together
      * in a single transaction. You can use a control panel to centrally view the operational status of applications
      * across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an
-     * Availability Zone or AWS Region.
+     * Availability Zone or Amazon Web Services Region.
      * </p>
      * 
      * @param createControlPanelRequest
@@ -384,20 +384,27 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
-     * Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling
-     * routing controls, to help prevent unexpected outcomes.
+     * Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control
+     * states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.
      * </p>
      * <p>
      * There are two types of safety rules: assertion rules and gating rules.
      * </p>
      * <p>
-     * Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the
-     * rule configuration is met. Otherwise, the change to the routing control is not accepted.
+     * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
+     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     * scenario.
      * </p>
      * <p>
-     * Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule
-     * configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery
-     * Controller allows a set of routing control state changes to run and complete against the set of target controls.
+     * Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group
+     * of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple
+     * gating routing controls.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in
+     * the Amazon Route 53 Application Recovery Controller Developer Guide.
      * </p>
      * 
      * @param createSafetyRuleRequest
@@ -940,8 +947,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
-     * Describes the safety rules (that is, the assertion rules and gating rules) for the routing controls in a control
-     * panel.
+     * Returns information about a safety rule.
      * </p>
      * 
      * @param describeSafetyRuleRequest
@@ -1134,7 +1140,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
-     * Returns an array of control panels for a cluster.
+     * Returns an array of control panels in an account or in a cluster.
      * </p>
      * 
      * @param listControlPanelsRequest
@@ -1337,6 +1343,194 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
+     * Lists the tags for a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws ValidationException
+     *         400 response - Multiple causes. For example, you might have a malformed query string and input parameter
+     *         might be out of range, or you used parameters together incorrectly.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.ListTagsForResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53 Recovery Control Config");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a tag to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request of adding tag to the resource
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws ValidationException
+     *         400 response - Multiple causes. For example, you might have a malformed query string and input parameter
+     *         might be out of range, or you used parameters together incorrectly.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53 Recovery Control Config");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a tag from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws ValidationException
+     *         400 response - Multiple causes. For example, you might have a malformed query string and input parameter
+     *         might be out of range, or you used parameters together incorrectly.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53 Recovery Control Config");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a control panel. The only update you can make to a control panel is to change the name of the control
      * panel.
      * </p>
@@ -1480,12 +1674,13 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
-     * Update a safety rule (an assertion rule or gating rule) for the routing controls in a control panel. You can only
-     * update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and
-     * create a new safety rule.
+     * Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for
+     * a safety rule. To make other updates, delete the safety rule and create a new one.
      * </p>
      * 
      * @param updateSafetyRuleRequest
+     *        A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally
+     *        impair your application's availability.
      * @return Result of the UpdateSafetyRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.

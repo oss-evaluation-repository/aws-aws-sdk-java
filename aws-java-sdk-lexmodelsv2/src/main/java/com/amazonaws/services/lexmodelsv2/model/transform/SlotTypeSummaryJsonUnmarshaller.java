@@ -68,6 +68,10 @@ public class SlotTypeSummaryJsonUnmarshaller implements Unmarshaller<SlotTypeSum
                     context.nextToken();
                     slotTypeSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("slotTypeCategory", targetDepth)) {
+                    context.nextToken();
+                    slotTypeSummary.setSlotTypeCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

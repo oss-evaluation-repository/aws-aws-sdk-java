@@ -49,8 +49,8 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      */
     private RuleConfig ruleConfig;
@@ -236,13 +236,13 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many
-     *        controls must be enabled to allow you to change (set or unset) the target controls.
+     *        The criteria that you set for specific gating controls (routing controls) that designates how many control
+     *        states must be ON to allow you to change (set or unset) the target control states.
      */
 
     public void setRuleConfig(RuleConfig ruleConfig) {
@@ -251,12 +251,12 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
      * @return The criteria that you set for specific gating controls (routing controls) that designates how many
-     *         controls must be enabled to allow you to change (set or unset) the target controls.
+     *         control states must be ON to allow you to change (set or unset) the target control states.
      */
 
     public RuleConfig getRuleConfig() {
@@ -265,13 +265,13 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many
-     *        controls must be enabled to allow you to change (set or unset) the target controls.
+     *        The criteria that you set for specific gating controls (routing controls) that designates how many control
+     *        states must be ON to allow you to change (set or unset) the target control states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

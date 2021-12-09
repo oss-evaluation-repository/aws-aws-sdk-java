@@ -158,7 +158,7 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     private String reseller;
     /**
      * <p>
-     * Reserved for future use.
+     * Deprecated.
      * </p>
      */
     private String dnsSec;
@@ -1140,11 +1140,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reserved for future use.
+     * Deprecated.
      * </p>
      * 
      * @param dnsSec
-     *        Reserved for future use.
+     *        Deprecated.
      */
 
     public void setDnsSec(String dnsSec) {
@@ -1153,10 +1153,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reserved for future use.
+     * Deprecated.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return Deprecated.
      */
 
     public String getDnsSec() {
@@ -1165,11 +1165,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reserved for future use.
+     * Deprecated.
      * </p>
      * 
      * @param dnsSec
-     *        Reserved for future use.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

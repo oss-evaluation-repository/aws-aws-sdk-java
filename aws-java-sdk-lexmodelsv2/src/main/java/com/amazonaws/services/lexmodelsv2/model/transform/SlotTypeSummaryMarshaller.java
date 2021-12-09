@@ -37,6 +37,8 @@ public class SlotTypeSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentSlotTypeSignature").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SLOTTYPECATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("slotTypeCategory").build();
 
     private static final SlotTypeSummaryMarshaller instance = new SlotTypeSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class SlotTypeSummaryMarshaller {
             protocolMarshaller.marshall(slotTypeSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(slotTypeSummary.getParentSlotTypeSignature(), PARENTSLOTTYPESIGNATURE_BINDING);
             protocolMarshaller.marshall(slotTypeSummary.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
+            protocolMarshaller.marshall(slotTypeSummary.getSlotTypeCategory(), SLOTTYPECATEGORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

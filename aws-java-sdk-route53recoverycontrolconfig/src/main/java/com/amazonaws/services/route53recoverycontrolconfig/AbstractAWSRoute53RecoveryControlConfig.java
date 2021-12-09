@@ -114,6 +114,21 @@ public class AbstractAWSRoute53RecoveryControlConfig implements AWSRoute53Recove
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateControlPanelResult updateControlPanel(UpdateControlPanelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

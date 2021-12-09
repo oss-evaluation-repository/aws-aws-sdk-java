@@ -27,18 +27,18 @@ public class DescribeSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The request body that you include when you update a safety rule.
+     * The ARN of the safety rule.
      * </p>
      */
     private String safetyRuleArn;
 
     /**
      * <p>
-     * The request body that you include when you update a safety rule.
+     * The ARN of the safety rule.
      * </p>
      * 
      * @param safetyRuleArn
-     *        The request body that you include when you update a safety rule.
+     *        The ARN of the safety rule.
      */
 
     public void setSafetyRuleArn(String safetyRuleArn) {
@@ -47,10 +47,10 @@ public class DescribeSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The request body that you include when you update a safety rule.
+     * The ARN of the safety rule.
      * </p>
      * 
-     * @return The request body that you include when you update a safety rule.
+     * @return The ARN of the safety rule.
      */
 
     public String getSafetyRuleArn() {
@@ -59,11 +59,11 @@ public class DescribeSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The request body that you include when you update a safety rule.
+     * The ARN of the safety rule.
      * </p>
      * 
      * @param safetyRuleArn
-     *        The request body that you include when you update a safety rule.
+     *        The ARN of the safety rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

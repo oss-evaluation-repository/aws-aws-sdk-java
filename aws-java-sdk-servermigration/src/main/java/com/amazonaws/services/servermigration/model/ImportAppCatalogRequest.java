@@ -27,27 +27,27 @@ public class ImportAppCatalogRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub
-     * in your account. Otherwise, the role that you provide must have the <a
+     * The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in
+     * your account. Otherwise, the role that you provide must have the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust
-     * policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     * policy</a> described in the <i>Migration Hub User Guide</i>.
      * </p>
      */
     private String roleName;
 
     /**
      * <p>
-     * The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub
-     * in your account. Otherwise, the role that you provide must have the <a
+     * The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in
+     * your account. Otherwise, the role that you provide must have the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust
-     * policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     * policy</a> described in the <i>Migration Hub User Guide</i>.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role. If you omit this parameter, we create a service-linked role for AWS
-     *        Migration Hub in your account. Otherwise, the role that you provide must have the <a
+     *        The name of the service role. If you omit this parameter, we create a service-linked role for Migration
+     *        Hub in your account. Otherwise, the role that you provide must have the <a
      *        href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and
-     *        trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     *        trust policy</a> described in the <i>Migration Hub User Guide</i>.
      */
 
     public void setRoleName(String roleName) {
@@ -56,16 +56,16 @@ public class ImportAppCatalogRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub
-     * in your account. Otherwise, the role that you provide must have the <a
+     * The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in
+     * your account. Otherwise, the role that you provide must have the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust
-     * policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     * policy</a> described in the <i>Migration Hub User Guide</i>.
      * </p>
      * 
-     * @return The name of the service role. If you omit this parameter, we create a service-linked role for AWS
-     *         Migration Hub in your account. Otherwise, the role that you provide must have the <a
+     * @return The name of the service role. If you omit this parameter, we create a service-linked role for Migration
+     *         Hub in your account. Otherwise, the role that you provide must have the <a
      *         href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and
-     *         trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     *         trust policy</a> described in the <i>Migration Hub User Guide</i>.
      */
 
     public String getRoleName() {
@@ -74,17 +74,17 @@ public class ImportAppCatalogRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub
-     * in your account. Otherwise, the role that you provide must have the <a
+     * The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in
+     * your account. Otherwise, the role that you provide must have the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust
-     * policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     * policy</a> described in the <i>Migration Hub User Guide</i>.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role. If you omit this parameter, we create a service-linked role for AWS
-     *        Migration Hub in your account. Otherwise, the role that you provide must have the <a
+     *        The name of the service role. If you omit this parameter, we create a service-linked role for Migration
+     *        Hub in your account. Otherwise, the role that you provide must have the <a
      *        href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and
-     *        trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+     *        trust policy</a> described in the <i>Migration Hub User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

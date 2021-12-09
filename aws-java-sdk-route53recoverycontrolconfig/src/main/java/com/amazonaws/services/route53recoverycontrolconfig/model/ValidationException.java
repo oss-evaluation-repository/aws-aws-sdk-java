@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * 400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out
- * of range, or you used parameters together incorrectly.
+ * of range, or you might have used parameters together incorrectly.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

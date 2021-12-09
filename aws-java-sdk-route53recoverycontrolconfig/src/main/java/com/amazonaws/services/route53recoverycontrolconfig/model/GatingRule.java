@@ -19,9 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you
- * specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of
- * routing control state changes to run and complete against the set of target controls.
+ * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based on
+ * a rule configuration that you specify, which allows a set of routing control state changes to complete.
+ * </p>
+ * <p>
+ * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
+ * indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the
+ * gating control "switch" to be "On". When you do that, then you can update the routing control states for the target
+ * routing controls that you specify in the gating rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GatingRule"
@@ -38,21 +43,22 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
     private String controlPanelArn;
     /**
      * <p>
-     * The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration
-     * that you specify.
+     * An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN
+     * for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to
+     * determine if the target routing control states can be changed.
      * </p>
      */
     private java.util.List<String> gatingControls;
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * be ON to allow you to update target routing control states.
      * </p>
      */
     private RuleConfig ruleConfig;
@@ -70,14 +76,10 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
-     * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
-     * the routing controls that you have specified as TargetControls if that rule evaluates to true.
-     * </p>
-     * <p>
-     * In other words, your ability to change the routing controls that you have specified as TargetControls is gated by
-     * the rule that you set for the routing controls in GatingControls.
+     * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
+     * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
+     * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
+     * use this to manually override automated fail over, for example.
      * </p>
      */
     private java.util.List<String> targetControls;
@@ -132,12 +134,14 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration
-     * that you specify.
+     * An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN
+     * for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to
+     * determine if the target routing control states can be changed.
      * </p>
      * 
-     * @return The gating controls for the gating rule. That is, routing controls that are evaluated by the rule
-     *         configuration that you specify.
+     * @return An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify
+     *         the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that
+     *         you specify to determine if the target routing control states can be changed.
      */
 
     public java.util.List<String> getGatingControls() {
@@ -146,13 +150,15 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration
-     * that you specify.
+     * An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN
+     * for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to
+     * determine if the target routing control states can be changed.
      * </p>
      * 
      * @param gatingControls
-     *        The gating controls for the gating rule. That is, routing controls that are evaluated by the rule
-     *        configuration that you specify.
+     *        An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the
+     *        ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you
+     *        specify to determine if the target routing control states can be changed.
      */
 
     public void setGatingControls(java.util.Collection<String> gatingControls) {
@@ -166,8 +172,9 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration
-     * that you specify.
+     * An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN
+     * for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to
+     * determine if the target routing control states can be changed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,8 +183,9 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gatingControls
-     *        The gating controls for the gating rule. That is, routing controls that are evaluated by the rule
-     *        configuration that you specify.
+     *        An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the
+     *        ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you
+     *        specify to determine if the target routing control states can be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,13 +201,15 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration
-     * that you specify.
+     * An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN
+     * for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to
+     * determine if the target routing control states can be changed.
      * </p>
      * 
      * @param gatingControls
-     *        The gating controls for the gating rule. That is, routing controls that are evaluated by the rule
-     *        configuration that you specify.
+     *        An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the
+     *        ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you
+     *        specify to determine if the target routing control states can be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,11 +220,11 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
      * @param name
-     *        The name for the gating rule.
+     *        The name for the gating rule. You can use any non-white space character in the name.
      */
 
     public void setName(String name) {
@@ -223,10 +233,10 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
-     * @return The name for the gating rule.
+     * @return The name for the gating rule. You can use any non-white space character in the name.
      */
 
     public String getName() {
@@ -235,11 +245,11 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
      * @param name
-     *        The name for the gating rule.
+     *        The name for the gating rule. You can use any non-white space character in the name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,13 +260,13 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * be ON to allow you to update target routing control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many
-     *        controls must be enabled to allow you to change (set or unset) the target controls.
+     *        The criteria that you set for gating routing controls that designates how many of the routing control
+     *        states must be ON to allow you to update target routing control states.
      */
 
     public void setRuleConfig(RuleConfig ruleConfig) {
@@ -265,12 +275,12 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * be ON to allow you to update target routing control states.
      * </p>
      * 
-     * @return The criteria that you set for specific gating controls (routing controls) that designates how many
-     *         controls must be enabled to allow you to change (set or unset) the target controls.
+     * @return The criteria that you set for gating routing controls that designates how many of the routing control
+     *         states must be ON to allow you to update target routing control states.
      */
 
     public RuleConfig getRuleConfig() {
@@ -279,13 +289,13 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many controls must
-     * be enabled to allow you to change (set or unset) the target controls.
+     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * be ON to allow you to update target routing control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many
-     *        controls must be enabled to allow you to change (set or unset) the target controls.
+     *        The criteria that you set for gating routing controls that designates how many of the routing control
+     *        states must be ON to allow you to update target routing control states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,24 +409,16 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
-     * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
-     * the routing controls that you have specified as TargetControls if that rule evaluates to true.
-     * </p>
-     * <p>
-     * In other words, your ability to change the routing controls that you have specified as TargetControls is gated by
-     * the rule that you set for the routing controls in GatingControls.
+     * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
+     * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
+     * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
+     * use this to manually override automated fail over, for example.
      * </p>
      * 
-     * @return Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
-     *         specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *         Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
-     *         change (set or unset) the routing controls that you have specified as TargetControls if that rule
-     *         evaluates to true.</p>
-     *         <p>
-     *         In other words, your ability to change the routing controls that you have specified as TargetControls is
-     *         gated by the rule that you set for the routing controls in GatingControls.
+     * @return An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
+     *         if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
+     *         example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
+     *         routing controls. You can use this to manually override automated fail over, for example.
      */
 
     public java.util.List<String> getTargetControls() {
@@ -425,25 +427,17 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
-     * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
-     * the routing controls that you have specified as TargetControls if that rule evaluates to true.
-     * </p>
-     * <p>
-     * In other words, your ability to change the routing controls that you have specified as TargetControls is gated by
-     * the rule that you set for the routing controls in GatingControls.
+     * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
+     * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
+     * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
+     * use this to manually override automated fail over, for example.
      * </p>
      * 
      * @param targetControls
-     *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
-     *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
-     *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
-     *        evaluates to true.</p>
-     *        <p>
-     *        In other words, your ability to change the routing controls that you have specified as TargetControls is
-     *        gated by the rule that you set for the routing controls in GatingControls.
+     *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
+     *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
+     *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
+     *        routing controls. You can use this to manually override automated fail over, for example.
      */
 
     public void setTargetControls(java.util.Collection<String> targetControls) {
@@ -457,14 +451,10 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
-     * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
-     * the routing controls that you have specified as TargetControls if that rule evaluates to true.
-     * </p>
-     * <p>
-     * In other words, your ability to change the routing controls that you have specified as TargetControls is gated by
-     * the rule that you set for the routing controls in GatingControls.
+     * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
+     * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
+     * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
+     * use this to manually override automated fail over, for example.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -473,14 +463,10 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targetControls
-     *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
-     *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
-     *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
-     *        evaluates to true.</p>
-     *        <p>
-     *        In other words, your ability to change the routing controls that you have specified as TargetControls is
-     *        gated by the rule that you set for the routing controls in GatingControls.
+     *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
+     *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
+     *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
+     *        routing controls. You can use this to manually override automated fail over, for example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,25 +482,17 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
-     * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
-     * the routing controls that you have specified as TargetControls if that rule evaluates to true.
-     * </p>
-     * <p>
-     * In other words, your ability to change the routing controls that you have specified as TargetControls is gated by
-     * the rule that you set for the routing controls in GatingControls.
+     * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
+     * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
+     * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
+     * use this to manually override automated fail over, for example.
      * </p>
      * 
      * @param targetControls
-     *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
-     *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
-     *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
-     *        evaluates to true.</p>
-     *        <p>
-     *        In other words, your ability to change the routing controls that you have specified as TargetControls is
-     *        gated by the rule that you set for the routing controls in GatingControls.
+     *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
+     *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
+     *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
+     *        routing controls. You can use this to manually override automated fail over, for example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

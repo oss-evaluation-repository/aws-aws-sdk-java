@@ -58,6 +58,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -120,6 +125,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     @Override
     public ListOperationsResult listOperations() {
         return listOperations(new ListOperationsRequest());
+    }
+
+    @Override
+    public ListPricesResult listPrices(ListPricesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

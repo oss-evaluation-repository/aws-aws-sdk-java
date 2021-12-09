@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * 404 response - The query string contains a syntax error or resource not found.
+ * 404 response - MalformedQueryString. The query string contains a syntax error or resource not found..
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

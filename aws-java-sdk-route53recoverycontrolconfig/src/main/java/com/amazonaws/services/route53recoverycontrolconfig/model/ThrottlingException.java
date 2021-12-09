@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * 429 response - ThrottlingException.
+ * 429 response - LimitExceededException or TooManyRequestsException.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

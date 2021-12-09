@@ -25,20 +25,35 @@ import com.amazonaws.services.servermigration.model.*;
  * {@link com.amazonaws.services.servermigration.AbstractAWSServerMigrationAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS Server Migration Service</fullname>
+ * <important>
  * <p>
- * AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate your on-premises workloads to
- * AWS. To learn more about AWS SMS, see the following resources:
+ * <b>Product update</b>
+ * </p>
+ * <p>
+ * As of March 31, 2022, Amazon Web Services will discontinue Server Migration Service (Amazon Web Services SMS). Going
+ * forward, we recommend <a href="http://aws.amazon.com/application-migration-service">Amazon Web Services Application
+ * Migration Service</a> (Amazon Web Services MGN) as the primary migration service for lift-and-shift migrations.
+ * </p>
+ * <p>
+ * You can initiate new migration jobs in Server Migration Service until January 1, 2022. Complete these active
+ * migration projects by March 31, 2022. For more information, see <a
+ * href="http://aws.amazon.com/application-migration-service/when-to-choose-aws-mgn/">When to Choose AWS Application
+ * Migration Service</a>.
+ * </p>
+ * </important>
+ * <p>
+ * Server Migration Service (Server Migration Service) makes it easier and faster for you to migrate your on-premises
+ * workloads to Amazon Web Services. To learn more about Server Migration Service, see the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/server-migration-service/">AWS Server Migration Service product page</a>
+ * <a href="http://aws.amazon.com/server-migration-service/">Server Migration Service product page</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">AWS Server Migration Service User
+ * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">Server Migration Service User
  * Guide</a>
  * </p>
  * </li>
@@ -83,7 +98,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
     /**
      * <p>
      * Creates a replication job. The replication job schedules periodic replication runs to replicate your server to
-     * AWS. Each replication run creates an Amazon Machine Image (AMI).
+     * Amazon Web Services. Each replication run creates an Amazon Machine Image (AMI).
      * </p>
      * 
      * @param createReplicationJobRequest
@@ -97,7 +112,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
     /**
      * <p>
      * Creates a replication job. The replication job schedules periodic replication runs to replicate your server to
-     * AWS. Each replication run creates an Amazon Machine Image (AMI).
+     * Amazon Web Services. Each replication run creates an Amazon Machine Image (AMI).
      * </p>
      * 
      * @param createReplicationJobRequest
@@ -116,7 +131,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
     /**
      * <p>
      * Deletes the specified application. Optionally deletes the launched stack associated with the application and all
-     * AWS SMS replication jobs for servers in the application.
+     * Server Migration Service replication jobs for servers in the application.
      * </p>
      * 
      * @param deleteAppRequest
@@ -130,7 +145,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
     /**
      * <p>
      * Deletes the specified application. Optionally deletes the launched stack associated with the application and all
-     * AWS SMS replication jobs for servers in the application.
+     * Server Migration Service replication jobs for servers in the application.
      * </p>
      * 
      * @param deleteAppRequest
@@ -256,8 +271,9 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * Deletes the specified replication job.
      * </p>
      * <p>
-     * After you delete a replication job, there are no further replication runs. AWS deletes the contents of the Amazon
-     * S3 bucket used to store AWS SMS artifacts. The AMIs created by the replication runs are not deleted.
+     * After you delete a replication job, there are no further replication runs. Amazon Web Services deletes the
+     * contents of the Amazon S3 bucket used to store Server Migration Service artifacts. The AMIs created by the
+     * replication runs are not deleted.
      * </p>
      * 
      * @param deleteReplicationJobRequest
@@ -273,8 +289,9 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * Deletes the specified replication job.
      * </p>
      * <p>
-     * After you delete a replication job, there are no further replication runs. AWS deletes the contents of the Amazon
-     * S3 bucket used to store AWS SMS artifacts. The AMIs created by the replication runs are not deleted.
+     * After you delete a replication job, there are no further replication runs. Amazon Web Services deletes the
+     * contents of the Amazon S3 bucket used to store Server Migration Service artifacts. The AMIs created by the
+     * replication runs are not deleted.
      * </p>
      * 
      * @param deleteReplicationJobRequest
@@ -323,7 +340,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Disassociates the specified connector from AWS SMS.
+     * Disassociates the specified connector from Server Migration Service.
      * </p>
      * <p>
      * After you disassociate a connector, it is no longer available to support replication jobs.
@@ -339,7 +356,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Disassociates the specified connector from AWS SMS.
+     * Disassociates the specified connector from Server Migration Service.
      * </p>
      * <p>
      * After you disassociate a connector, it is no longer available to support replication jobs.
@@ -393,7 +410,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Generates an AWS CloudFormation template based on the current launch configuration and writes it to an Amazon S3
+     * Generates an CloudFormation template based on the current launch configuration and writes it to an Amazon S3
      * object in the customer’s Amazon S3 bucket.
      * </p>
      * 
@@ -407,7 +424,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Generates an AWS CloudFormation template based on the current launch configuration and writes it to an Amazon S3
+     * Generates an CloudFormation template based on the current launch configuration and writes it to an Amazon S3
      * object in the customer’s Amazon S3 bucket.
      * </p>
      * 
@@ -591,7 +608,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Describes the connectors registered with the AWS SMS.
+     * Describes the connectors registered with the Server Migration Service.
      * </p>
      * 
      * @param getConnectorsRequest
@@ -604,7 +621,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Describes the connectors registered with the AWS SMS.
+     * Describes the connectors registered with the Server Migration Service.
      * </p>
      * 
      * @param getConnectorsRequest
@@ -721,7 +738,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Allows application import from AWS Migration Hub.
+     * Allows application import from Migration Hub.
      * </p>
      * 
      * @param importAppCatalogRequest
@@ -734,7 +751,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Allows application import from AWS Migration Hub.
+     * Allows application import from Migration Hub.
      * </p>
      * 
      * @param importAppCatalogRequest
@@ -791,7 +808,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Launches the specified application as a stack in AWS CloudFormation.
+     * Launches the specified application as a stack in CloudFormation.
      * </p>
      * 
      * @param launchAppRequest
@@ -804,7 +821,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Launches the specified application as a stack in AWS CloudFormation.
+     * Launches the specified application as a stack in CloudFormation.
      * </p>
      * 
      * @param launchAppRequest
@@ -853,7 +870,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Provides information to AWS SMS about whether application validation is successful.
+     * Provides information to Server Migration Service about whether application validation is successful.
      * </p>
      * 
      * @param notifyAppValidationOutputRequest
@@ -867,7 +884,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
 
     /**
      * <p>
-     * Provides information to AWS SMS about whether application validation is successful.
+     * Provides information to Server Migration Service about whether application validation is successful.
      * </p>
      * 
      * @param notifyAppValidationOutputRequest

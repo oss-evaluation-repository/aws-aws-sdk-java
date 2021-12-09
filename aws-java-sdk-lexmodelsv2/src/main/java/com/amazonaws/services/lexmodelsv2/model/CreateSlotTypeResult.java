@@ -84,6 +84,12 @@ public class CreateSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date creationDateTime;
+    /**
+     * <p>
+     * The type of external information used to create the slot type.
+     * </p>
+     */
+    private ExternalSourceSetting externalSourceSetting;
 
     /**
      * <p>
@@ -522,6 +528,46 @@ public class CreateSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The type of external information used to create the slot type.
+     * </p>
+     * 
+     * @param externalSourceSetting
+     *        The type of external information used to create the slot type.
+     */
+
+    public void setExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        this.externalSourceSetting = externalSourceSetting;
+    }
+
+    /**
+     * <p>
+     * The type of external information used to create the slot type.
+     * </p>
+     * 
+     * @return The type of external information used to create the slot type.
+     */
+
+    public ExternalSourceSetting getExternalSourceSetting() {
+        return this.externalSourceSetting;
+    }
+
+    /**
+     * <p>
+     * The type of external information used to create the slot type.
+     * </p>
+     * 
+     * @param externalSourceSetting
+     *        The type of external information used to create the slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotTypeResult withExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        setExternalSourceSetting(externalSourceSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -552,7 +598,9 @@ public class CreateSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getLocaleId() != null)
             sb.append("LocaleId: ").append(getLocaleId()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: ").append(getCreationDateTime());
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
+        if (getExternalSourceSetting() != null)
+            sb.append("ExternalSourceSetting: ").append(getExternalSourceSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -607,6 +655,10 @@ public class CreateSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
+        if (other.getExternalSourceSetting() == null ^ this.getExternalSourceSetting() == null)
+            return false;
+        if (other.getExternalSourceSetting() != null && other.getExternalSourceSetting().equals(this.getExternalSourceSetting()) == false)
+            return false;
         return true;
     }
 
@@ -625,6 +677,7 @@ public class CreateSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getExternalSourceSetting() == null) ? 0 : getExternalSourceSetting().hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,10 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally impair your
+ * application's availability.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +29,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The assertion rule to update.
+     * </p>
+     */
     private AssertionRuleUpdate assertionRuleUpdate;
-
+    /**
+     * <p>
+     * The gating rule to update.
+     * </p>
+     */
     private GatingRuleUpdate gatingRuleUpdate;
 
     /**
+     * <p>
+     * The assertion rule to update.
+     * </p>
+     * 
      * @param assertionRuleUpdate
+     *        The assertion rule to update.
      */
 
     public void setAssertionRuleUpdate(AssertionRuleUpdate assertionRuleUpdate) {
@@ -38,7 +56,11 @@ public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The assertion rule to update.
+     * </p>
+     * 
+     * @return The assertion rule to update.
      */
 
     public AssertionRuleUpdate getAssertionRuleUpdate() {
@@ -46,7 +68,12 @@ public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The assertion rule to update.
+     * </p>
+     * 
      * @param assertionRuleUpdate
+     *        The assertion rule to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +83,12 @@ public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The gating rule to update.
+     * </p>
+     * 
      * @param gatingRuleUpdate
+     *        The gating rule to update.
      */
 
     public void setGatingRuleUpdate(GatingRuleUpdate gatingRuleUpdate) {
@@ -64,7 +96,11 @@ public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The gating rule to update.
+     * </p>
+     * 
+     * @return The gating rule to update.
      */
 
     public GatingRuleUpdate getGatingRuleUpdate() {
@@ -72,7 +108,12 @@ public class UpdateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The gating rule to update.
+     * </p>
+     * 
      * @param gatingRuleUpdate
+     *        The gating rule to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class SSMValidationParameters implements Serializable, Cloneable, Structu
     private String scriptType;
     /**
      * <p>
-     * The command to run the validation script
+     * The command to run the validation script.
      * </p>
      */
     private String command;
@@ -206,11 +206,11 @@ public class SSMValidationParameters implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The command to run the validation script
+     * The command to run the validation script.
      * </p>
      * 
      * @param command
-     *        The command to run the validation script
+     *        The command to run the validation script.
      */
 
     public void setCommand(String command) {
@@ -219,10 +219,10 @@ public class SSMValidationParameters implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The command to run the validation script
+     * The command to run the validation script.
      * </p>
      * 
-     * @return The command to run the validation script
+     * @return The command to run the validation script.
      */
 
     public String getCommand() {
@@ -231,11 +231,11 @@ public class SSMValidationParameters implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The command to run the validation script
+     * The command to run the validation script.
      * </p>
      * 
      * @param command
-     *        The command to run the validation script
+     *        The command to run the validation script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,7 +40,7 @@ public class ListAssociatedRoute53HealthChecksRequest extends com.amazonaws.Amaz
     private String nextToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     * The Amazon Resource Name (ARN) of the routing control.
      * </p>
      */
     private String routingControlArn;
@@ -127,11 +127,11 @@ public class ListAssociatedRoute53HealthChecksRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     * The Amazon Resource Name (ARN) of the routing control.
      * </p>
      * 
      * @param routingControlArn
-     *        The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     *        The Amazon Resource Name (ARN) of the routing control.
      */
 
     public void setRoutingControlArn(String routingControlArn) {
@@ -140,10 +140,10 @@ public class ListAssociatedRoute53HealthChecksRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     * The Amazon Resource Name (ARN) of the routing control.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     * @return The Amazon Resource Name (ARN) of the routing control.
      */
 
     public String getRoutingControlArn() {
@@ -152,11 +152,11 @@ public class ListAssociatedRoute53HealthChecksRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     * The Amazon Resource Name (ARN) of the routing control.
      * </p>
      * 
      * @param routingControlArn
-     *        The Amazon Resource Name (ARN) of the routing control that you're getting details for.
+     *        The Amazon Resource Name (ARN) of the routing control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

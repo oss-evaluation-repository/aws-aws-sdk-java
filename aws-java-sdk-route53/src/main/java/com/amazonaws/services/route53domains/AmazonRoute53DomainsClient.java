@@ -298,10 +298,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Accepts the transfer of a domain from another AWS account to the current AWS account. You initiate a transfer
-     * between AWS accounts using <a href=
+     * Accepts the transfer of a domain from another Amazon Web Services account to the currentAmazon Web Services
+     * account. You initiate a transfer between Amazon Web Services accounts using <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a>.
+     * </p>
+     * <p>
+     * If you use the CLI command at <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/route53domains/accept-domain-transfer-from-another-aws-account.html"
+     * >accept-domain-transfer-from-another-aws-account</a>, use JSON format as input instead of text because otherwise
+     * CLI will throw an error from domain transfer input that includes single quotes.
      * </p>
      * <p>
      * Use either <a
@@ -324,6 +330,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws DomainLimitExceededException
      *         The number of domains has exceeded the allowed threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.AcceptDomainTransferFromAnotherAwsAccount
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount"
@@ -378,14 +386,14 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Cancels the transfer of a domain from the current AWS account to another AWS account. You initiate a transfer
-     * between AWS accounts using <a href=
+     * Cancels the transfer of a domain from the current Amazon Web Services account to another Amazon Web Services
+     * account. You initiate a transfer betweenAmazon Web Services accounts using <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a>.
      * </p>
      * <important>
      * <p>
-     * You must cancel the transfer before the other AWS account accepts the transfer using <a href=
+     * You must cancel the transfer before the other Amazon Web Services account accepts the transfer using <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a>.
      * </p>
@@ -409,6 +417,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.CancelDomainTransferToAnotherAwsAccount
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount"
@@ -580,6 +590,96 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<CheckDomainTransferabilityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CheckDomainTransferabilityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation deletes the specified domain. This action is permanent. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-delete.html">Deleting a domain name
+     * registration</a>.
+     * </p>
+     * <p>
+     * To transfer the domain registration to another registrar, use the transfer process that’s provided by the
+     * registrar to which you want to transfer the registration. Otherwise, the following apply:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * You can’t get a refund for the cost of a deleted domain registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The registry for the top-level domain might hold the domain name for a brief time before releasing it for other
+     * users to register (varies by registry).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When the registration has been deleted, we'll send you a confirmation to the registrant contact. The email will
+     * come from <code>noreply@domainnameverification.net</code> or <code>noreply@registrar.amazon.com</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteDomainRequest
+     * @return Result of the DeleteDomain operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteDomain" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainResult executeDeleteDomain(DeleteDomainRequest deleteDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDomainRequest> request = null;
+        Response<DeleteDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -797,7 +897,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * This operation configures Amazon Route 53 to automatically renew the specified domain before the domain
-     * registration expires. The cost of renewing your domain registration is billed to your AWS account.
+     * registration expires. The cost of renewing your domain registration is billed to your Amazon Web Services
+     * account.
      * </p>
      * <p>
      * The period during which you can renew a domain name varies by TLD. For a list of TLDs and their renewal policies,
@@ -1009,8 +1110,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns detailed information about a specified domain that is associated with the current AWS
-     * account. Contact information for the domain is also returned as part of the output.
+     * This operation returns detailed information about a specified domain that is associated with the current Amazon
+     * Web Services account. Contact information for the domain is also returned as part of the output.
      * </p>
      * 
      * @param getDomainDetailRequest
@@ -1194,7 +1295,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns all the domain names registered with Amazon Route 53 for the current AWS account.
+     * This operation returns all the domain names registered with Amazon Route 53 for the current Amazon Web Services
+     * account if no filtering conditions are used.
      * </p>
      * 
      * @param listDomainsRequest
@@ -1262,6 +1364,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * Returns information about all of the operations that return an operation ID and that have ever been performed on
      * domains that were registered by the current account.
      * </p>
+     * <p>
+     * This command runs only in the us-east-1 Region.
+     * </p>
      * 
      * @param listOperationsRequest
      *        The ListOperations request includes the following elements.
@@ -1321,6 +1426,94 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
     @Override
     public ListOperationsResult listOperations() {
         return listOperations(new ListOperationsRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the following prices for either all the TLDs supported by Route 53, or the specified TLD:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Registration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Transfer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Owner change
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Domain renewal
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Domain restoration
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listPricesRequest
+     * @return Result of the ListPrices operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.ListPrices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListPrices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListPricesResult listPrices(ListPricesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPrices(request);
+    }
+
+    @SdkInternalApi
+    final ListPricesResult executeListPrices(ListPricesRequest listPricesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPricesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPricesRequest> request = null;
+        Response<ListPricesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPricesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPricesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPricesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPricesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1417,10 +1610,14 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * <p>
      * Optionally enables privacy protection, so WHOIS queries return contact information either for Amazon Registrar
      * (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you don't
-     * enable privacy protection, WHOIS queries return the information that you entered for the registrant, admin, and
-     * tech contacts.
+     * enable privacy protection, WHOIS queries return the information that you entered for the administrative,
+     * registrant, and technical contacts.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * If registration is successful, returns an operation ID that you can use to track the progress and completion of
@@ -1429,7 +1626,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </li>
      * <li>
      * <p>
-     * Charges your AWS account an amount based on the top-level domain. For more information, see <a
+     * Charges your Amazon Web Services account an amount based on the top-level domain. For more information, see <a
      * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      * </p>
      * </li>
@@ -1502,8 +1699,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Rejects the transfer of a domain from another AWS account to the current AWS account. You initiate a transfer
-     * between AWS accounts using <a href=
+     * Rejects the transfer of a domain from another Amazon Web Services account to the current Amazon Web Services
+     * account. You initiate a transfer betweenAmazon Web Services accounts using <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a>.
      * </p>
@@ -1526,6 +1723,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.RejectDomainTransferFromAnotherAwsAccount
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount"
@@ -1581,7 +1780,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * This operation renews a domain for the specified number of years. The cost of renewing your domain is billed to
-     * your AWS account.
+     * your Amazon Web Services account.
      * </p>
      * <p>
      * We recommend that you renew your domain several weeks before the expiration date. Some TLD registries delete
@@ -1807,7 +2006,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </li>
      * <li>
      * <p>
-     * For information about how to transfer a domain from one AWS account to another, see <a href=
+     * For information about how to transfer a domain from one Amazon Web Services account to another, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html"
      * >TransferDomainToAnotherAwsAccount</a>.
      * </p>
@@ -1907,13 +2106,14 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Transfers a domain from the current AWS account to another AWS account. Note the following:
+     * Transfers a domain from the current Amazon Web Services account to another Amazon Web Services account. Note the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The AWS account that you're transferring the domain to must accept the transfer. If the other account doesn't
-     * accept the transfer within 3 days, we cancel the transfer. See <a href=
+     * The Amazon Web Services account that you're transferring the domain to must accept the transfer. If the other
+     * account doesn't accept the transfer within 3 days, we cancel the transfer. See <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a>.
      * </p>
@@ -1935,12 +2135,12 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </ul>
      * <important>
      * <p>
-     * When you transfer a domain from one AWS account to another, Route 53 doesn't transfer the hosted zone that is
-     * associated with the domain. DNS resolution isn't affected if the domain and the hosted zone are owned by separate
-     * accounts, so transferring the hosted zone is optional. For information about transferring the hosted zone to
-     * another AWS account, see <a
+     * When you transfer a domain from one Amazon Web Services account to another, Route 53 doesn't transfer the hosted
+     * zone that is associated with the domain. DNS resolution isn't affected if the domain and the hosted zone are
+     * owned by separate accounts, so transferring the hosted zone is optional. For information about transferring the
+     * hosted zone to another Amazon Web Services account, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating a Hosted
-     * Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * Zone to a Different Amazon Web Services Account</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -1964,6 +2164,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.TransferDomainToAnotherAwsAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount"
      *      target="_top">AWS API Documentation</a>
@@ -2095,9 +2297,14 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * contact information such as email address is replaced either with contact information for Amazon Registrar (for
      * .com, .net, and .org domains) or with contact information for our registrar associate, Gandi.
      * </p>
+     * <note>
      * <p>
-     * This operation affects only the contact information for the specified contact type (registrant, administrator, or
-     * tech). If the request succeeds, Amazon Route 53 returns an operation ID that you can use with <a
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
+     * <p>
+     * This operation affects only the contact information for the specified contact type (administrative, registrant,
+     * or technical). If the request succeeds, Amazon Route 53 returns an operation ID that you can use with <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
      * >GetOperationDetail</a> to track the progress and completion of the action. If the request doesn't complete
      * successfully, the domain registrant will be notified by email.
@@ -2330,7 +2537,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns all the domain-related billing records for the current AWS account for a specified period
+     * Returns all the domain-related billing records for the current Amazon Web Services account for a specified period
      * </p>
      * 
      * @param viewBillingRequest

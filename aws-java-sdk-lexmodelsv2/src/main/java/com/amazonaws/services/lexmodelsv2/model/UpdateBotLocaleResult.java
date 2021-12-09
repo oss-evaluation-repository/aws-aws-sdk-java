@@ -91,6 +91,12 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     */
+    private java.util.List<String> recommendedActions;
 
     /**
      * <p>
@@ -596,6 +602,76 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @return Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     */
+
+    public java.util.List<String> getRecommendedActions() {
+        return recommendedActions;
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     */
+
+    public void setRecommendedActions(java.util.Collection<String> recommendedActions) {
+        if (recommendedActions == null) {
+            this.recommendedActions = null;
+            return;
+        }
+
+        this.recommendedActions = new java.util.ArrayList<String>(recommendedActions);
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecommendedActions(java.util.Collection)} or {@link #withRecommendedActions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotLocaleResult withRecommendedActions(String... recommendedActions) {
+        if (this.recommendedActions == null) {
+            setRecommendedActions(new java.util.ArrayList<String>(recommendedActions.length));
+        }
+        for (String ele : recommendedActions) {
+            this.recommendedActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotLocaleResult withRecommendedActions(java.util.Collection<String> recommendedActions) {
+        setRecommendedActions(recommendedActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -628,7 +704,9 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getRecommendedActions() != null)
+            sb.append("RecommendedActions: ").append(getRecommendedActions());
         sb.append("}");
         return sb.toString();
     }
@@ -687,6 +765,10 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getRecommendedActions() == null ^ this.getRecommendedActions() == null)
+            return false;
+        if (other.getRecommendedActions() != null && other.getRecommendedActions().equals(this.getRecommendedActions()) == false)
+            return false;
         return true;
     }
 
@@ -706,6 +788,7 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getFailureReasons() == null) ? 0 : getFailureReasons().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getRecommendedActions() == null) ? 0 : getRecommendedActions().hashCode());
         return hashCode;
     }
 

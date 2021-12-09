@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53recoverycontrolconfig.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -36,6 +38,8 @@ public class CreateControlPanelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterArn").build();
     private static final MarshallingInfo<String> CONTROLPANELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ControlPanelName").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateControlPanelRequestMarshaller instance = new CreateControlPanelRequestMarshaller();
 
@@ -56,6 +60,7 @@ public class CreateControlPanelRequestMarshaller {
             protocolMarshaller.marshall(createControlPanelRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createControlPanelRequest.getClusterArn(), CLUSTERARN_BINDING);
             protocolMarshaller.marshall(createControlPanelRequest.getControlPanelName(), CONTROLPANELNAME_BINDING);
+            protocolMarshaller.marshall(createControlPanelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

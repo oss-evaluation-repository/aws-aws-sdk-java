@@ -126,6 +126,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the admin contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -138,6 +143,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the registrant contact (the domain owner).
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -150,6 +160,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the technical contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -759,6 +774,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the admin contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -767,7 +787,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the admin contact.</p>
+     *        WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -783,6 +807,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the admin contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -790,7 +819,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the admin contact.</p>
+     *         WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -806,6 +839,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the admin contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -814,7 +852,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the admin contact.</p>
+     *        WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -832,6 +874,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the admin contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -839,7 +886,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the admin contact.</p>
+     *         WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -855,6 +906,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the registrant contact (the domain owner).
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -864,6 +920,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
      *        WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+     *        <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -879,6 +940,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the registrant contact (the domain owner).
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -887,6 +953,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
      *         WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+     *         <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -902,6 +973,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the registrant contact (the domain owner).
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -911,6 +987,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
      *        WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+     *        <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -928,6 +1009,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the registrant contact (the domain owner).
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -936,6 +1022,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
      *         WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+     *         <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -951,6 +1042,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the technical contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -959,7 +1055,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the technical contact.</p>
+     *        WHOIS queries return the information that you entered for the technical contact.</p> <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -975,6 +1075,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the technical contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -982,7 +1087,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the technical contact.</p>
+     *         WHOIS queries return the information that you entered for the technical contact.</p> <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -998,6 +1107,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the technical contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -1006,7 +1120,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the technical contact.</p>
+     *        WHOIS queries return the information that you entered for the technical contact.</p> <note>
+     *        <p>
+     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1024,6 +1142,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
      * the information that you entered for the technical contact.
      * </p>
+     * <note>
+     * <p>
+     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>true</code>
      * </p>
@@ -1031,7 +1154,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
      *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
      *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the technical contact.</p>
+     *         WHOIS queries return the information that you entered for the technical contact.</p> <note>
+     *         <p>
+     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>true</code>
      */

@@ -221,7 +221,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getFIAuthKey() != null)
-            sb.append("FIAuthKey: ").append(getFIAuthKey()).append(",");
+            sb.append("FIAuthKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getNameservers() != null)
             sb.append("Nameservers: ").append(getNameservers());
         sb.append("}");

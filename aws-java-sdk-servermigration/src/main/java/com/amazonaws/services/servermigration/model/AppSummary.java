@@ -126,7 +126,7 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModified;
     /**
      * <p>
-     * The name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by Server Migration Service.
      * </p>
      */
     private String roleName;
@@ -880,11 +880,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by Server Migration Service.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by Server Migration Service.
      */
 
     public void setRoleName(String roleName) {
@@ -893,10 +893,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by Server Migration Service.
      * </p>
      * 
-     * @return The name of the service role in the customer's account used by AWS SMS.
+     * @return The name of the service role in the customer's account used by Server Migration Service.
      */
 
     public String getRoleName() {
@@ -905,11 +905,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by Server Migration Service.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by Server Migration Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

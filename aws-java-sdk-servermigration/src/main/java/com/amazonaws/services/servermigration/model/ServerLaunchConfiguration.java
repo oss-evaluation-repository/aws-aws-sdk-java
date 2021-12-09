@@ -36,7 +36,7 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
     private Server server;
     /**
      * <p>
-     * The logical ID of the server in the AWS CloudFormation template.
+     * The logical ID of the server in the CloudFormation template.
      * </p>
      */
     private String logicalId;
@@ -139,11 +139,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The logical ID of the server in the AWS CloudFormation template.
+     * The logical ID of the server in the CloudFormation template.
      * </p>
      * 
      * @param logicalId
-     *        The logical ID of the server in the AWS CloudFormation template.
+     *        The logical ID of the server in the CloudFormation template.
      */
 
     public void setLogicalId(String logicalId) {
@@ -152,10 +152,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The logical ID of the server in the AWS CloudFormation template.
+     * The logical ID of the server in the CloudFormation template.
      * </p>
      * 
-     * @return The logical ID of the server in the AWS CloudFormation template.
+     * @return The logical ID of the server in the CloudFormation template.
      */
 
     public String getLogicalId() {
@@ -164,11 +164,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The logical ID of the server in the AWS CloudFormation template.
+     * The logical ID of the server in the CloudFormation template.
      * </p>
      * 
      * @param logicalId
-     *        The logical ID of the server in the AWS CloudFormation template.
+     *        The logical ID of the server in the CloudFormation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

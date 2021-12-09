@@ -1497,6 +1497,91 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * High-level information about a rule group, returned by operations like create and describe. You can use the
+     * information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule
+     * group by calling <a>DescribeRuleGroup</a>.
+     * </p>
+     * 
+     * @param describeRuleGroupMetadataRequest
+     * @return Result of the DescribeRuleGroupMetadata operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws ResourceNotFoundException
+     *         Unable to locate a resource using the parameters that you provided.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Retry your request.
+     * @sample AWSNetworkFirewall.DescribeRuleGroupMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRuleGroupMetadataResult describeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRuleGroupMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuleGroupMetadataResult executeDescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest describeRuleGroupMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRuleGroupMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRuleGroupMetadataRequest> request = null;
+        Response<DescribeRuleGroupMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRuleGroupMetadataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRuleGroupMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRuleGroupMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRuleGroupMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRuleGroupMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified subnet associations from the firewall. This removes the firewall endpoints from the subnets
      * and removes any network filtering protections that the endpoints were providing.
      * </p>
@@ -1840,6 +1925,11 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
      * @throws InvalidRequestException
@@ -2035,6 +2125,11 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
      * @throws InvalidRequestException
@@ -2118,6 +2213,11 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
      * @throws InvalidRequestException
@@ -2446,13 +2546,16 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall.
+     * If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect
+     * against accidentally changing a firewall that's in use.
+     * </p>
      * 
      * @param updateFirewallPolicyChangeProtectionRequest
      * @return Result of the UpdateFirewallPolicyChangeProtection operation returned by the service.
      * @throws InvalidRequestException
-     *         The operation failed because of a problem with your request. Examples include:
-     *         </p>
+     *         The operation failed because of a problem with your request. Examples include: </p>
      *         <ul>
      *         <li>
      *         <p>

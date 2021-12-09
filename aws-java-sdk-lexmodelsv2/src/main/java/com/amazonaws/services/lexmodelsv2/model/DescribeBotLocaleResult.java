@@ -115,6 +115,12 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<BotLocaleHistoryEvent> botLocaleHistoryEvents;
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     */
+    private java.util.List<String> recommendedActions;
 
     /**
      * <p>
@@ -814,6 +820,76 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @return Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     */
+
+    public java.util.List<String> getRecommendedActions() {
+        return recommendedActions;
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     */
+
+    public void setRecommendedActions(java.util.Collection<String> recommendedActions) {
+        if (recommendedActions == null) {
+            this.recommendedActions = null;
+            return;
+        }
+
+        this.recommendedActions = new java.util.ArrayList<String>(recommendedActions);
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecommendedActions(java.util.Collection)} or {@link #withRecommendedActions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotLocaleResult withRecommendedActions(String... recommendedActions) {
+        if (this.recommendedActions == null) {
+            setRecommendedActions(new java.util.ArrayList<String>(recommendedActions.length));
+        }
+        for (String ele : recommendedActions) {
+            this.recommendedActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * </p>
+     * 
+     * @param recommendedActions
+     *        Recommended actions to take to resolve an error in the <code>failureReasons</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotLocaleResult withRecommendedActions(java.util.Collection<String> recommendedActions) {
+        setRecommendedActions(recommendedActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -854,7 +930,9 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
         if (getLastBuildSubmittedDateTime() != null)
             sb.append("LastBuildSubmittedDateTime: ").append(getLastBuildSubmittedDateTime()).append(",");
         if (getBotLocaleHistoryEvents() != null)
-            sb.append("BotLocaleHistoryEvents: ").append(getBotLocaleHistoryEvents());
+            sb.append("BotLocaleHistoryEvents: ").append(getBotLocaleHistoryEvents()).append(",");
+        if (getRecommendedActions() != null)
+            sb.append("RecommendedActions: ").append(getRecommendedActions());
         sb.append("}");
         return sb.toString();
     }
@@ -929,6 +1007,10 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getBotLocaleHistoryEvents() != null && other.getBotLocaleHistoryEvents().equals(this.getBotLocaleHistoryEvents()) == false)
             return false;
+        if (other.getRecommendedActions() == null ^ this.getRecommendedActions() == null)
+            return false;
+        if (other.getRecommendedActions() != null && other.getRecommendedActions().equals(this.getRecommendedActions()) == false)
+            return false;
         return true;
     }
 
@@ -952,6 +1034,7 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastBuildSubmittedDateTime() == null) ? 0 : getLastBuildSubmittedDateTime().hashCode());
         hashCode = prime * hashCode + ((getBotLocaleHistoryEvents() == null) ? 0 : getBotLocaleHistoryEvents().hashCode());
+        hashCode = prime * hashCode + ((getRecommendedActions() == null) ? 0 : getRecommendedActions().hashCode());
         return hashCode;
     }
 

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The rule configuration for an assertion rule. That is, the criteria that you set for specific assertion controls
- * (routing controls) that specify how many controls must be enabled after a transaction completes.
+ * (routing controls) that specify how many control states must be ON after a transaction completes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/RuleConfig"

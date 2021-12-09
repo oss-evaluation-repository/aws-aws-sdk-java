@@ -644,6 +644,39 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(DescribeRuleGroupMetadataRequest request) {
+
+        return describeRuleGroupMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(final DescribeRuleGroupMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRuleGroupMetadataRequest, DescribeRuleGroupMetadataResult> asyncHandler) {
+        final DescribeRuleGroupMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRuleGroupMetadataResult>() {
+            @Override
+            public DescribeRuleGroupMetadataResult call() throws Exception {
+                DescribeRuleGroupMetadataResult result = null;
+
+                try {
+                    result = executeDescribeRuleGroupMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSubnetsResult> disassociateSubnetsAsync(DisassociateSubnetsRequest request) {
 
         return disassociateSubnetsAsync(request, null);

@@ -42,6 +42,14 @@ public class ListRuleGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns
+     * all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule
+     * groups.
+     * </p>
+     */
+    private String scope;
 
     /**
      * <p>
@@ -154,6 +162,81 @@ public class ListRuleGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns
+     * all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule
+     * groups.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code>
+     *        returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available
+     *        managed rule groups.
+     * @see ResourceManagedStatus
+     */
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    /**
+     * <p>
+     * The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns
+     * all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule
+     * groups.
+     * </p>
+     * 
+     * @return The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code>
+     *         returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available
+     *         managed rule groups.
+     * @see ResourceManagedStatus
+     */
+
+    public String getScope() {
+        return this.scope;
+    }
+
+    /**
+     * <p>
+     * The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns
+     * all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule
+     * groups.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code>
+     *        returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available
+     *        managed rule groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceManagedStatus
+     */
+
+    public ListRuleGroupsRequest withScope(String scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns
+     * all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule
+     * groups.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code>
+     *        returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available
+     *        managed rule groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceManagedStatus
+     */
+
+    public ListRuleGroupsRequest withScope(ResourceManagedStatus scope) {
+        this.scope = scope.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -168,7 +251,9 @@ public class ListRuleGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getScope() != null)
+            sb.append("Scope: ").append(getScope());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +276,10 @@ public class ListRuleGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getScope() == null ^ this.getScope() == null)
+            return false;
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +290,7 @@ public class ListRuleGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }
 

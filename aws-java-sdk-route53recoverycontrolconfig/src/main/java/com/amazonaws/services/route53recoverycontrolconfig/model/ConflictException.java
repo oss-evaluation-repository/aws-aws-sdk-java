@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * 409 response - ConflictException.
+ * 409 response - ConflictException. You might be using a predefined variable.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

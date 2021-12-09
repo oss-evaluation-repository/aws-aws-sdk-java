@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The assertion rule in the response.
+     * </p>
+     */
     private AssertionRule assertionRule;
-
+    /**
+     * <p>
+     * The gating rule in the response.
+     * </p>
+     */
     private GatingRule gatingRule;
 
     /**
+     * <p>
+     * The assertion rule in the response.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule in the response.
      */
 
     public void setAssertionRule(AssertionRule assertionRule) {
@@ -36,7 +50,11 @@ public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The assertion rule in the response.
+     * </p>
+     * 
+     * @return The assertion rule in the response.
      */
 
     public AssertionRule getAssertionRule() {
@@ -44,7 +62,12 @@ public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The assertion rule in the response.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,12 @@ public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The gating rule in the response.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule in the response.
      */
 
     public void setGatingRule(GatingRule gatingRule) {
@@ -62,7 +90,11 @@ public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The gating rule in the response.
+     * </p>
+     * 
+     * @return The gating rule in the response.
      */
 
     public GatingRule getGatingRule() {
@@ -70,7 +102,12 @@ public class DescribeSafetyRuleResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The gating rule in the response.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

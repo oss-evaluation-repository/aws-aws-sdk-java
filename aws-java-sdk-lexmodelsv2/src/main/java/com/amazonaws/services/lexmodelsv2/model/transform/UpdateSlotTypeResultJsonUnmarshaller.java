@@ -94,6 +94,10 @@ public class UpdateSlotTypeResultJsonUnmarshaller implements Unmarshaller<Update
                     context.nextToken();
                     updateSlotTypeResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("externalSourceSetting", targetDepth)) {
+                    context.nextToken();
+                    updateSlotTypeResult.setExternalSourceSetting(ExternalSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The assertion rule created.
+     * </p>
+     */
     private AssertionRule assertionRule;
-
+    /**
+     * <p>
+     * The gating rule created.
+     * </p>
+     */
     private GatingRule gatingRule;
 
     /**
+     * <p>
+     * The assertion rule created.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule created.
      */
 
     public void setAssertionRule(AssertionRule assertionRule) {
@@ -36,7 +50,11 @@ public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The assertion rule created.
+     * </p>
+     * 
+     * @return The assertion rule created.
      */
 
     public AssertionRule getAssertionRule() {
@@ -44,7 +62,12 @@ public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The assertion rule created.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,12 @@ public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The gating rule created.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule created.
      */
 
     public void setGatingRule(GatingRule gatingRule) {
@@ -62,7 +90,11 @@ public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The gating rule created.
+     * </p>
+     * 
+     * @return The gating rule created.
      */
 
     public GatingRule getGatingRule() {
@@ -70,7 +102,12 @@ public class CreateSafetyRuleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The gating rule created.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

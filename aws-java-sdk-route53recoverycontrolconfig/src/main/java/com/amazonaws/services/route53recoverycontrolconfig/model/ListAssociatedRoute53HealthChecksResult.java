@@ -33,7 +33,7 @@ public class ListAssociatedRoute53HealthChecksResult extends com.amazonaws.Amazo
     private java.util.List<String> healthCheckIds;
     /**
      * <p>
-     * The token that identifies which batch of results you want to see.
+     * Next token for listing health checks.
      * </p>
      */
     private String nextToken;
@@ -110,11 +110,11 @@ public class ListAssociatedRoute53HealthChecksResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The token that identifies which batch of results you want to see.
+     * Next token for listing health checks.
      * </p>
      * 
      * @param nextToken
-     *        The token that identifies which batch of results you want to see.
+     *        Next token for listing health checks.
      */
 
     public void setNextToken(String nextToken) {
@@ -123,10 +123,10 @@ public class ListAssociatedRoute53HealthChecksResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The token that identifies which batch of results you want to see.
+     * Next token for listing health checks.
      * </p>
      * 
-     * @return The token that identifies which batch of results you want to see.
+     * @return Next token for listing health checks.
      */
 
     public String getNextToken() {
@@ -135,11 +135,11 @@ public class ListAssociatedRoute53HealthChecksResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The token that identifies which batch of results you want to see.
+     * Next token for listing health checks.
      * </p>
      * 
      * @param nextToken
-     *        The token that identifies which batch of results you want to see.
+     *        Next token for listing health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

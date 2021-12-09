@@ -98,6 +98,11 @@ public class AbstractAWSNetworkFirewall implements AWSNetworkFirewall {
     }
 
     @Override
+    public DescribeRuleGroupMetadataResult describeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateSubnetsResult disassociateSubnets(DisassociateSubnetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -58,6 +58,34 @@ public class SlotTypeSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * Indicates the type of the slot type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot
+     * type</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String slotTypeCategory;
 
     /**
      * <p>
@@ -260,6 +288,241 @@ public class SlotTypeSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates the type of the slot type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot
+     * type</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param slotTypeCategory
+     *        Indicates the type of the slot type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"
+     *        >AMAZON.AlphaNumeric</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more
+     *        information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom
+     *        grammar slot type</a>.
+     *        </p>
+     *        </li>
+     * @see SlotTypeCategory
+     */
+
+    public void setSlotTypeCategory(String slotTypeCategory) {
+        this.slotTypeCategory = slotTypeCategory;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of the slot type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot
+     * type</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates the type of the slot type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"
+     *         >AMAZON.AlphaNumeric</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more
+     *         information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom
+     *         grammar slot type</a>.
+     *         </p>
+     *         </li>
+     * @see SlotTypeCategory
+     */
+
+    public String getSlotTypeCategory() {
+        return this.slotTypeCategory;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of the slot type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot
+     * type</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param slotTypeCategory
+     *        Indicates the type of the slot type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"
+     *        >AMAZON.AlphaNumeric</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more
+     *        information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom
+     *        grammar slot type</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SlotTypeCategory
+     */
+
+    public SlotTypeSummary withSlotTypeCategory(String slotTypeCategory) {
+        setSlotTypeCategory(slotTypeCategory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of the slot type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot
+     * type</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param slotTypeCategory
+     *        Indicates the type of the slot type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Custom</code> - A slot type that you created using custom values. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"
+     *        >AMAZON.AlphaNumeric</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more
+     *        information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom
+     *        grammar slot type</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SlotTypeCategory
+     */
+
+    public SlotTypeSummary withSlotTypeCategory(SlotTypeCategory slotTypeCategory) {
+        this.slotTypeCategory = slotTypeCategory.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +543,9 @@ public class SlotTypeSummary implements Serializable, Cloneable, StructuredPojo 
         if (getParentSlotTypeSignature() != null)
             sb.append("ParentSlotTypeSignature: ").append(getParentSlotTypeSignature()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getSlotTypeCategory() != null)
+            sb.append("SlotTypeCategory: ").append(getSlotTypeCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +580,10 @@ public class SlotTypeSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getSlotTypeCategory() == null ^ this.getSlotTypeCategory() == null)
+            return false;
+        if (other.getSlotTypeCategory() != null && other.getSlotTypeCategory().equals(this.getSlotTypeCategory()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +597,7 @@ public class SlotTypeSummary implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getParentSlotTypeSignature() == null) ? 0 : getParentSlotTypeSignature().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getSlotTypeCategory() == null) ? 0 : getSlotTypeCategory().hashCode());
         return hashCode;
     }
 

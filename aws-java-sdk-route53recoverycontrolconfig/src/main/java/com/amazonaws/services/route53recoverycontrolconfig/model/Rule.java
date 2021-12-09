@@ -31,15 +31,22 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     * configuration is met. Otherwise, the change to the routing control is not accepted.
+     * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
+     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      */
     private AssertionRule aSSERTION;
     /**
      * <p>
-     * A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you
-     * specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of
-     * routing control state changes to run and complete against the set of target controls.
+     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
+     * </p>
+     * <p>
+     * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
+     * indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the
+     * gating control "switch" to be "On". When you do that, then you can update the routing control states for the
+     * target routing controls that you specify in the gating rule.
      * </p>
      */
     private GatingRule gATING;
@@ -47,12 +54,17 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     * configuration is met. Otherwise, the change to the routing control is not accepted.
+     * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
+     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @param aSSERTION
      *        An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     *        configuration is met. Otherwise, the change to the routing control is not accepted.
+     *        configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     *        criteria might be that at least one routing control state is On after the transation so that traffic
+     *        continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     *        scenario.
      */
 
     public void setASSERTION(AssertionRule aSSERTION) {
@@ -62,11 +74,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     * configuration is met. Otherwise, the change to the routing control is not accepted.
+     * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
+     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @return An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     *         configuration is met. Otherwise, the change to the routing control is not accepted.
+     *         configuration is met. Otherwise, the change to the routing control state is not accepted. For example,
+     *         the criteria might be that at least one routing control state is On after the transation so that traffic
+     *         continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     *         scenario.
      */
 
     public AssertionRule getASSERTION() {
@@ -76,12 +93,17 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     * configuration is met. Otherwise, the change to the routing control is not accepted.
+     * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
+     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @param aSSERTION
      *        An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
-     *        configuration is met. Otherwise, the change to the routing control is not accepted.
+     *        configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
+     *        criteria might be that at least one routing control state is On after the transation so that traffic
+     *        continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     *        scenario.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,15 +114,25 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you
-     * specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of
-     * routing control state changes to run and complete against the set of target controls.
+     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
+     * </p>
+     * <p>
+     * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
+     * indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the
+     * gating control "switch" to be "On". When you do that, then you can update the routing control states for the
+     * target routing controls that you specify in the gating rule.
      * </p>
      * 
      * @param gATING
-     *        A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that
-     *        you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows
-     *        a set of routing control state changes to run and complete against the set of target controls.
+     *        A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
+     *        true, based on a rule configuration that you specify, which allows a set of routing control state changes
+     *        to complete.</p>
+     *        <p>
+     *        For example, if you specify one gating routing control and you set the Type in the rule configuration to
+     *        OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true;
+     *        that is, for the gating control "switch" to be "On". When you do that, then you can update the routing
+     *        control states for the target routing controls that you specify in the gating rule.
      */
 
     public void setGATING(GatingRule gATING) {
@@ -109,14 +141,24 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you
-     * specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of
-     * routing control state changes to run and complete against the set of target controls.
+     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
+     * </p>
+     * <p>
+     * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
+     * indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the
+     * gating control "switch" to be "On". When you do that, then you can update the routing control states for the
+     * target routing controls that you specify in the gating rule.
      * </p>
      * 
-     * @return A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration
-     *         that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller
-     *         allows a set of routing control state changes to run and complete against the set of target controls.
+     * @return A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
+     *         true, based on a rule configuration that you specify, which allows a set of routing control state changes
+     *         to complete.</p>
+     *         <p>
+     *         For example, if you specify one gating routing control and you set the Type in the rule configuration to
+     *         OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true;
+     *         that is, for the gating control "switch" to be "On". When you do that, then you can update the routing
+     *         control states for the target routing controls that you specify in the gating rule.
      */
 
     public GatingRule getGATING() {
@@ -125,15 +167,25 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you
-     * specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of
-     * routing control state changes to run and complete against the set of target controls.
+     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
+     * </p>
+     * <p>
+     * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
+     * indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the
+     * gating control "switch" to be "On". When you do that, then you can update the routing control states for the
+     * target routing controls that you specify in the gating rule.
      * </p>
      * 
      * @param gATING
-     *        A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that
-     *        you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows
-     *        a set of routing control state changes to run and complete against the set of target controls.
+     *        A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
+     *        true, based on a rule configuration that you specify, which allows a set of routing control state changes
+     *        to complete.</p>
+     *        <p>
+     *        For example, if you specify one gating routing control and you set the Type in the rule configuration to
+     *        OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true;
+     *        that is, for the gating control "switch" to be "On". When you do that, then you can update the routing
+     *        control states for the target routing controls that you specify in the gating rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

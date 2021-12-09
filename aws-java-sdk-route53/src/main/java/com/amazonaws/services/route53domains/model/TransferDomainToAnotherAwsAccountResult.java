@@ -37,8 +37,8 @@ public class TransferDomainToAnotherAwsAccountResult extends com.amazonaws.Amazo
     private String operationId;
     /**
      * <p>
-     * To finish transferring a domain to another AWS account, the account that the domain is being transferred to must
-     * submit an <a href=
+     * To finish transferring a domain to another Amazon Web Services account, the account that the domain is being
+     * transferred to must submit an <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      * <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
@@ -100,16 +100,16 @@ public class TransferDomainToAnotherAwsAccountResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * To finish transferring a domain to another AWS account, the account that the domain is being transferred to must
-     * submit an <a href=
+     * To finish transferring a domain to another Amazon Web Services account, the account that the domain is being
+     * transferred to must submit an <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      * <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
      * </p>
      * 
      * @param password
-     *        To finish transferring a domain to another AWS account, the account that the domain is being transferred
-     *        to must submit an <a href=
+     *        To finish transferring a domain to another Amazon Web Services account, the account that the domain is
+     *        being transferred to must submit an <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      *        >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      *        <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -122,15 +122,15 @@ public class TransferDomainToAnotherAwsAccountResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * To finish transferring a domain to another AWS account, the account that the domain is being transferred to must
-     * submit an <a href=
+     * To finish transferring a domain to another Amazon Web Services account, the account that the domain is being
+     * transferred to must submit an <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      * <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
      * </p>
      * 
-     * @return To finish transferring a domain to another AWS account, the account that the domain is being transferred
-     *         to must submit an <a href=
+     * @return To finish transferring a domain to another Amazon Web Services account, the account that the domain is
+     *         being transferred to must submit an <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      *         >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      *         <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -143,16 +143,16 @@ public class TransferDomainToAnotherAwsAccountResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * To finish transferring a domain to another AWS account, the account that the domain is being transferred to must
-     * submit an <a href=
+     * To finish transferring a domain to another Amazon Web Services account, the account that the domain is being
+     * transferred to must submit an <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      * >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      * <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
      * </p>
      * 
      * @param password
-     *        To finish transferring a domain to another AWS account, the account that the domain is being transferred
-     *        to must submit an <a href=
+     *        To finish transferring a domain to another Amazon Web Services account, the account that the domain is
+     *        being transferred to must submit an <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html"
      *        >AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the
      *        <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code>

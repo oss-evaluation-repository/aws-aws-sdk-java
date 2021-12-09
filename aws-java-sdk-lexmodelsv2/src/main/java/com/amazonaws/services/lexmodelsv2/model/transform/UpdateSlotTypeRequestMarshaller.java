@@ -46,6 +46,8 @@ public class UpdateSlotTypeRequestMarshaller {
             .marshallLocationName("botVersion").build();
     private static final MarshallingInfo<String> LOCALEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("localeId").build();
+    private static final MarshallingInfo<StructuredPojo> EXTERNALSOURCESETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalSourceSetting").build();
 
     private static final UpdateSlotTypeRequestMarshaller instance = new UpdateSlotTypeRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class UpdateSlotTypeRequestMarshaller {
             protocolMarshaller.marshall(updateSlotTypeRequest.getBotId(), BOTID_BINDING);
             protocolMarshaller.marshall(updateSlotTypeRequest.getBotVersion(), BOTVERSION_BINDING);
             protocolMarshaller.marshall(updateSlotTypeRequest.getLocaleId(), LOCALEID_BINDING);
+            protocolMarshaller.marshall(updateSlotTypeRequest.getExternalSourceSetting(), EXTERNALSOURCESETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

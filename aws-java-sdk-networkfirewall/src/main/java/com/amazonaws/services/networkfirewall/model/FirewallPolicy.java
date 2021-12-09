@@ -93,7 +93,38 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<StatefulRuleGroupReference> statefulRuleGroupReferences;
     /**
      * <p>
-     * The default actions to take on a packet that doesn't match any stateful rules.
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     * >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * </p>
      */
     private java.util.List<String> statefulDefaultActions;
@@ -677,10 +708,71 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default actions to take on a packet that doesn't match any stateful rules.
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     * >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * </p>
      * 
-     * @return The default actions to take on a packet that doesn't match any stateful rules.
+     * @return The default actions to take on a packet that doesn't match any stateful rules. The stateful default
+     *         action is optional, and is only valid when using the strict rule order.</p>
+     *         <p>
+     *         Valid values of the stateful default action:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         aws:drop_strict
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:drop_established
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:alert_strict
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         aws:alert_established
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     *         >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      */
 
     public java.util.List<String> getStatefulDefaultActions() {
@@ -689,11 +781,72 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default actions to take on a packet that doesn't match any stateful rules.
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     * >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * </p>
      * 
      * @param statefulDefaultActions
-     *        The default actions to take on a packet that doesn't match any stateful rules.
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     *        >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      */
 
     public void setStatefulDefaultActions(java.util.Collection<String> statefulDefaultActions) {
@@ -707,7 +860,38 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default actions to take on a packet that doesn't match any stateful rules.
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     * >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -716,7 +900,37 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param statefulDefaultActions
-     *        The default actions to take on a packet that doesn't match any stateful rules.
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     *        >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,11 +946,72 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default actions to take on a packet that doesn't match any stateful rules.
+     * The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is
+     * optional, and is only valid when using the strict rule order.
+     * </p>
+     * <p>
+     * Valid values of the stateful default action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * aws:drop_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:drop_established
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_strict
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * aws:alert_established
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     * >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * </p>
      * 
      * @param statefulDefaultActions
-     *        The default actions to take on a packet that doesn't match any stateful rules.
+     *        The default actions to take on a packet that doesn't match any stateful rules. The stateful default action
+     *        is optional, and is only valid when using the strict rule order.</p>
+     *        <p>
+     *        Valid values of the stateful default action:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        aws:drop_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:drop_established
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_strict
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        aws:alert_established
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html"
+     *        >Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

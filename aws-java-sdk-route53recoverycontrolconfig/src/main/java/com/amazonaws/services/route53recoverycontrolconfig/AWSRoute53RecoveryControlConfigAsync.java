@@ -37,7 +37,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to
      * update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name
      * (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you
-     * can use with API calls to the Amazon Route 53 Application Recovery Controller cluster data plane.
+     * can use with API calls to the cluster data plane.
      * </p>
      * 
      * @param createClusterRequest
@@ -54,7 +54,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to
      * update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name
      * (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you
-     * can use with API calls to the Amazon Route 53 Application Recovery Controller cluster data plane.
+     * can use with API calls to the cluster data plane.
      * </p>
      * 
      * @param createClusterRequest
@@ -76,7 +76,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * Creates a new control panel. A control panel represents a group of routing controls that can be changed together
      * in a single transaction. You can use a control panel to centrally view the operational status of applications
      * across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an
-     * Availability Zone or AWS Region.
+     * Availability Zone or Amazon Web Services Region.
      * </p>
      * 
      * @param createControlPanelRequest
@@ -94,7 +94,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * Creates a new control panel. A control panel represents a group of routing controls that can be changed together
      * in a single transaction. You can use a control panel to centrally view the operational status of applications
      * across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an
-     * Availability Zone or AWS Region.
+     * Availability Zone or Amazon Web Services Region.
      * </p>
      * 
      * @param createControlPanelRequest
@@ -165,20 +165,27 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling
-     * routing controls, to help prevent unexpected outcomes.
+     * Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control
+     * states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.
      * </p>
      * <p>
      * There are two types of safety rules: assertion rules and gating rules.
      * </p>
      * <p>
-     * Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the
-     * rule configuration is met. Otherwise, the change to the routing control is not accepted.
+     * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
+     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     * scenario.
      * </p>
      * <p>
-     * Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule
-     * configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery
-     * Controller allows a set of routing control state changes to run and complete against the set of target controls.
+     * Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group
+     * of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple
+     * gating routing controls.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in
+     * the Amazon Route 53 Application Recovery Controller Developer Guide.
      * </p>
      * 
      * @param createSafetyRuleRequest
@@ -192,20 +199,27 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling
-     * routing controls, to help prevent unexpected outcomes.
+     * Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control
+     * states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.
      * </p>
      * <p>
      * There are two types of safety rules: assertion rules and gating rules.
      * </p>
      * <p>
-     * Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the
-     * rule configuration is met. Otherwise, the change to the routing control is not accepted.
+     * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
+     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
+     * scenario.
      * </p>
      * <p>
-     * Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule
-     * configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery
-     * Controller allows a set of routing control state changes to run and complete against the set of target controls.
+     * Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group
+     * of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple
+     * gating routing controls.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in
+     * the Amazon Route 53 Application Recovery Controller Developer Guide.
      * </p>
      * 
      * @param createSafetyRuleRequest
@@ -463,8 +477,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Describes the safety rules (that is, the assertion rules and gating rules) for the routing controls in a control
-     * panel.
+     * Returns information about a safety rule.
      * </p>
      * 
      * @param describeSafetyRuleRequest
@@ -478,8 +491,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Describes the safety rules (that is, the assertion rules and gating rules) for the routing controls in a control
-     * panel.
+     * Returns information about a safety rule.
      * </p>
      * 
      * @param describeSafetyRuleRequest
@@ -566,7 +578,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Returns an array of control panels for a cluster.
+     * Returns an array of control panels in an account or in a cluster.
      * </p>
      * 
      * @param listControlPanelsRequest
@@ -580,7 +592,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Returns an array of control panels for a cluster.
+     * Returns an array of control panels in an account or in a cluster.
      * </p>
      * 
      * @param listControlPanelsRequest
@@ -669,6 +681,103 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
+     * Lists the tags for a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsync.ListTagsForResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags for a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsyncHandler.ListTagsForResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a tag to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request of adding tag to the resource
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds a tag to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request of adding tag to the resource
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a tag from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a control panel. The only update you can make to a control panel is to change the name of the control
      * panel.
      * </p>
@@ -745,12 +854,13 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Update a safety rule (an assertion rule or gating rule) for the routing controls in a control panel. You can only
-     * update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and
-     * create a new safety rule.
+     * Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for
+     * a safety rule. To make other updates, delete the safety rule and create a new one.
      * </p>
      * 
      * @param updateSafetyRuleRequest
+     *        A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally
+     *        impair your application's availability.
      * @return A Java Future containing the result of the UpdateSafetyRule operation returned by the service.
      * @sample AWSRoute53RecoveryControlConfigAsync.UpdateSafetyRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule"
@@ -760,12 +870,13 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
 
     /**
      * <p>
-     * Update a safety rule (an assertion rule or gating rule) for the routing controls in a control panel. You can only
-     * update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and
-     * create a new safety rule.
+     * Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for
+     * a safety rule. To make other updates, delete the safety rule and create a new one.
      * </p>
      * 
      * @param updateSafetyRuleRequest
+     *        A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally
+     *        impair your application's availability.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

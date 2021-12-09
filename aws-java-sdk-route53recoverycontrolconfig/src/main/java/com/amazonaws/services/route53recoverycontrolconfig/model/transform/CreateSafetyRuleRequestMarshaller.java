@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53recoverycontrolconfig.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -36,6 +38,8 @@ public class CreateSafetyRuleRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> GATINGRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatingRule").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateSafetyRuleRequestMarshaller instance = new CreateSafetyRuleRequestMarshaller();
 
@@ -56,6 +60,7 @@ public class CreateSafetyRuleRequestMarshaller {
             protocolMarshaller.marshall(createSafetyRuleRequest.getAssertionRule(), ASSERTIONRULE_BINDING);
             protocolMarshaller.marshall(createSafetyRuleRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createSafetyRuleRequest.getGatingRule(), GATINGRULE_BINDING);
+            protocolMarshaller.marshall(createSafetyRuleRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

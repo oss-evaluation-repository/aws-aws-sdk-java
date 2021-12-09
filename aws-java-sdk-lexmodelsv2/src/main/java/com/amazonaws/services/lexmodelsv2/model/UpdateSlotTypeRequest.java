@@ -82,6 +82,8 @@ public class UpdateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private String localeId;
 
+    private ExternalSourceSetting externalSourceSetting;
+
     /**
      * <p>
      * The unique identifier of the slot type to update.
@@ -485,6 +487,32 @@ public class UpdateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param externalSourceSetting
+     */
+
+    public void setExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        this.externalSourceSetting = externalSourceSetting;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExternalSourceSetting getExternalSourceSetting() {
+        return this.externalSourceSetting;
+    }
+
+    /**
+     * @param externalSourceSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSlotTypeRequest withExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        setExternalSourceSetting(externalSourceSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -513,7 +541,9 @@ public class UpdateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getBotVersion() != null)
             sb.append("BotVersion: ").append(getBotVersion()).append(",");
         if (getLocaleId() != null)
-            sb.append("LocaleId: ").append(getLocaleId());
+            sb.append("LocaleId: ").append(getLocaleId()).append(",");
+        if (getExternalSourceSetting() != null)
+            sb.append("ExternalSourceSetting: ").append(getExternalSourceSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +594,10 @@ public class UpdateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLocaleId() != null && other.getLocaleId().equals(this.getLocaleId()) == false)
             return false;
+        if (other.getExternalSourceSetting() == null ^ this.getExternalSourceSetting() == null)
+            return false;
+        if (other.getExternalSourceSetting() != null && other.getExternalSourceSetting().equals(this.getExternalSourceSetting()) == false)
+            return false;
         return true;
     }
 
@@ -581,6 +615,7 @@ public class UpdateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getBotId() == null) ? 0 : getBotId().hashCode());
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
+        hashCode = prime * hashCode + ((getExternalSourceSetting() == null) ? 0 : getExternalSourceSetting().hashCode());
         return hashCode;
     }
 

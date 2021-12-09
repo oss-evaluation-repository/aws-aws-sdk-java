@@ -90,6 +90,8 @@ public class DescribeSlotTypeResult extends com.amazonaws.AmazonWebServiceResult
      */
     private java.util.Date lastUpdatedDateTime;
 
+    private ExternalSourceSetting externalSourceSetting;
+
     /**
      * <p>
      * The unique identifier for the slot type.
@@ -561,6 +563,32 @@ public class DescribeSlotTypeResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * @param externalSourceSetting
+     */
+
+    public void setExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        this.externalSourceSetting = externalSourceSetting;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExternalSourceSetting getExternalSourceSetting() {
+        return this.externalSourceSetting;
+    }
+
+    /**
+     * @param externalSourceSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSlotTypeResult withExternalSourceSetting(ExternalSourceSetting externalSourceSetting) {
+        setExternalSourceSetting(externalSourceSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -593,7 +621,9 @@ public class DescribeSlotTypeResult extends com.amazonaws.AmazonWebServiceResult
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getExternalSourceSetting() != null)
+            sb.append("ExternalSourceSetting: ").append(getExternalSourceSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +682,10 @@ public class DescribeSlotTypeResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getExternalSourceSetting() == null ^ this.getExternalSourceSetting() == null)
+            return false;
+        if (other.getExternalSourceSetting() != null && other.getExternalSourceSetting().equals(this.getExternalSourceSetting()) == false)
+            return false;
         return true;
     }
 
@@ -671,6 +705,7 @@ public class DescribeSlotTypeResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getExternalSourceSetting() == null) ? 0 : getExternalSourceSetting().hashCode());
         return hashCode;
     }
 

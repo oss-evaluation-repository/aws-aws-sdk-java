@@ -31,7 +31,7 @@ public class GetAppLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
     private String appId;
     /**
      * <p>
-     * The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.
+     * The name of the service role in the customer's account that CloudFormation uses to launch the application.
      * </p>
      */
     private String roleName;
@@ -90,12 +90,11 @@ public class GetAppLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.
+     * The name of the service role in the customer's account that CloudFormation uses to launch the application.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-     *        application.
+     *        The name of the service role in the customer's account that CloudFormation uses to launch the application.
      */
 
     public void setRoleName(String roleName) {
@@ -104,10 +103,10 @@ public class GetAppLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.
+     * The name of the service role in the customer's account that CloudFormation uses to launch the application.
      * </p>
      * 
-     * @return The name of the service role in the customer's account that AWS CloudFormation uses to launch the
+     * @return The name of the service role in the customer's account that CloudFormation uses to launch the
      *         application.
      */
 
@@ -117,12 +116,11 @@ public class GetAppLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.
+     * The name of the service role in the customer's account that CloudFormation uses to launch the application.
      * </p>
      * 
      * @param roleName
-     *        The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-     *        application.
+     *        The name of the service role in the customer's account that CloudFormation uses to launch the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,8 +61,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -246,8 +245,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -272,8 +270,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the
-     *        value of <code>ES_LEGAL_FORM</code>.
+     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      *        </p>
      *        </li>
      * @see ContactType
@@ -304,8 +301,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -329,8 +325,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the
-     *         value of <code>ES_LEGAL_FORM</code>.
+     *         For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three
+     *         contacts.
      *         </p>
      *         </li>
      * @see ContactType
@@ -361,8 +357,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -387,8 +382,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the
-     *        value of <code>ES_LEGAL_FORM</code>.
+     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -421,8 +415,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -447,8 +440,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the
-     *        value of <code>ES_LEGAL_FORM</code>.
+     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      *        </p>
      *        </li>
      * @see ContactType
@@ -479,8 +471,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.
+     * For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      * </p>
      * </li>
      * </ul>
@@ -505,8 +496,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the
-     *        value of <code>ES_LEGAL_FORM</code>.
+     *        For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

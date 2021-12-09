@@ -31,7 +31,7 @@ public class GatingRuleUpdate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      */
     private String name;
@@ -52,11 +52,11 @@ public class GatingRuleUpdate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
      * @param name
-     *        The name for the gating rule.
+     *        The name for the gating rule. You can use any non-white space character in the name.
      */
 
     public void setName(String name) {
@@ -65,10 +65,10 @@ public class GatingRuleUpdate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
-     * @return The name for the gating rule.
+     * @return The name for the gating rule. You can use any non-white space character in the name.
      */
 
     public String getName() {
@@ -77,11 +77,11 @@ public class GatingRuleUpdate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name for the gating rule.
+     * The name for the gating rule. You can use any non-white space character in the name.
      * </p>
      * 
      * @param name
-     *        The name for the gating rule.
+     *        The name for the gating rule. You can use any non-white space character in the name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

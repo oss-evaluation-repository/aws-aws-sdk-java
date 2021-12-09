@@ -680,6 +680,43 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
 
     /**
      * <p>
+     * High-level information about a rule group, returned by operations like create and describe. You can use the
+     * information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule
+     * group by calling <a>DescribeRuleGroup</a>.
+     * </p>
+     * 
+     * @param describeRuleGroupMetadataRequest
+     * @return A Java Future containing the result of the DescribeRuleGroupMetadata operation returned by the service.
+     * @sample AWSNetworkFirewallAsync.DescribeRuleGroupMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(
+            DescribeRuleGroupMetadataRequest describeRuleGroupMetadataRequest);
+
+    /**
+     * <p>
+     * High-level information about a rule group, returned by operations like create and describe. You can use the
+     * information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule
+     * group by calling <a>DescribeRuleGroup</a>.
+     * </p>
+     * 
+     * @param describeRuleGroupMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRuleGroupMetadata operation returned by the service.
+     * @sample AWSNetworkFirewallAsyncHandler.DescribeRuleGroupMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRuleGroupMetadataResult> describeRuleGroupMetadataAsync(
+            DescribeRuleGroupMetadataRequest describeRuleGroupMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRuleGroupMetadataRequest, DescribeRuleGroupMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified subnet associations from the firewall. This removes the firewall endpoints from the subnets
      * and removes any network filtering protections that the endpoints were providing.
      * </p>
@@ -1148,7 +1185,11 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
             com.amazonaws.handlers.AsyncHandler<UpdateFirewallPolicyRequest, UpdateFirewallPolicyResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall.
+     * If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect
+     * against accidentally changing a firewall that's in use.
+     * </p>
      * 
      * @param updateFirewallPolicyChangeProtectionRequest
      * @return A Java Future containing the result of the UpdateFirewallPolicyChangeProtection operation returned by the
@@ -1162,7 +1203,11 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
             UpdateFirewallPolicyChangeProtectionRequest updateFirewallPolicyChangeProtectionRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall.
+     * If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect
+     * against accidentally changing a firewall that's in use.
+     * </p>
      * 
      * @param updateFirewallPolicyChangeProtectionRequest
      * @param asyncHandler

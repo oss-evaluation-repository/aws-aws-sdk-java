@@ -28,18 +28,39 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The assertion rule requested.
+     * </p>
+     */
     private NewAssertionRule assertionRule;
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      */
     private String clientToken;
-
+    /**
+     * <p>
+     * The gating rule requested.
+     * </p>
+     */
     private NewGatingRule gatingRule;
+    /**
+     * <p>
+     * The tags associated with the safety rule.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
+     * <p>
+     * The assertion rule requested.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule requested.
      */
 
     public void setAssertionRule(NewAssertionRule assertionRule) {
@@ -47,7 +68,11 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The assertion rule requested.
+     * </p>
+     * 
+     * @return The assertion rule requested.
      */
 
     public NewAssertionRule getAssertionRule() {
@@ -55,7 +80,12 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The assertion rule requested.
+     * </p>
+     * 
      * @param assertionRule
+     *        The assertion rule requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,11 +96,13 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique client idempotency token.
+     *        A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *        action, specify a client token in the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -79,10 +111,12 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
-     * @return Unique client idempotency token.
+     * @return A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *         action, specify a client token in the request.
      */
 
     public String getClientToken() {
@@ -91,11 +125,13 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique client idempotency token.
+     *        A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *        action, specify a client token in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +141,12 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The gating rule requested.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule requested.
      */
 
     public void setGatingRule(NewGatingRule gatingRule) {
@@ -113,7 +154,11 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The gating rule requested.
+     * </p>
+     * 
+     * @return The gating rule requested.
      */
 
     public NewGatingRule getGatingRule() {
@@ -121,12 +166,85 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The gating rule requested.
+     * </p>
+     * 
      * @param gatingRule
+     *        The gating rule requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSafetyRuleRequest withGatingRule(NewGatingRule gatingRule) {
         setGatingRule(gatingRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the safety rule.
+     * </p>
+     * 
+     * @return The tags associated with the safety rule.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the safety rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the safety rule.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the safety rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the safety rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSafetyRuleRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateSafetyRuleRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSafetyRuleRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSafetyRuleRequest clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -147,7 +265,9 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getGatingRule() != null)
-            sb.append("GatingRule: ").append(getGatingRule());
+            sb.append("GatingRule: ").append(getGatingRule()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -174,6 +294,10 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getGatingRule() != null && other.getGatingRule().equals(this.getGatingRule()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -185,6 +309,7 @@ public class CreateSafetyRuleRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAssertionRule() == null) ? 0 : getAssertionRule().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getGatingRule() == null) ? 0 : getGatingRule().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

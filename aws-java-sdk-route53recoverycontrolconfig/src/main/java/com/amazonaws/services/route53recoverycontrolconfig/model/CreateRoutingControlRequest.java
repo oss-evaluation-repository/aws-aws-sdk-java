@@ -30,7 +30,8 @@ public class CreateRoutingControlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      */
     private String clientToken;
@@ -55,11 +56,13 @@ public class CreateRoutingControlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique client idempotency token.
+     *        A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *        action, specify a client token in the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -68,10 +71,12 @@ public class CreateRoutingControlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
-     * @return Unique client idempotency token.
+     * @return A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *         action, specify a client token in the request.
      */
 
     public String getClientToken() {
@@ -80,11 +85,13 @@ public class CreateRoutingControlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique client idempotency token.
+     * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action,
+     * specify a client token in the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique client idempotency token.
+     *        A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an
+     *        action, specify a client token in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

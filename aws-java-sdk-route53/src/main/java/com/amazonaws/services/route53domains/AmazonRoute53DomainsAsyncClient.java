@@ -395,6 +395,39 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
+
+        return deleteDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(final DeleteDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
+        final DeleteDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDomainResult>() {
+            @Override
+            public DeleteDomainResult call() throws Exception {
+                DeleteDomainResult result = null;
+
+                try {
+                    result = executeDeleteDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest request) {
 
         return deleteTagsForDomainAsync(request, null);
@@ -801,6 +834,39 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
             com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
 
         return listOperationsAsync(new ListOperationsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPricesResult> listPricesAsync(ListPricesRequest request) {
+
+        return listPricesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPricesResult> listPricesAsync(final ListPricesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPricesRequest, ListPricesResult> asyncHandler) {
+        final ListPricesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPricesResult>() {
+            @Override
+            public ListPricesResult call() throws Exception {
+                ListPricesResult result = null;
+
+                try {
+                    result = executeListPrices(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A cluster is a set of five consensus-forming Regional endpoints that represent the infrastructure that hosts your
- * routing controls. Typically, you host together on one cluster all of the routing controls for your applications.
+ * A set of five redundant Regional endpoints against which you can execute API calls to update or get the state of
+ * routing controls. You can host multiple control panels and routing controls on one cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/Cluster"
@@ -41,8 +41,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * in the cluster.
      * </p>
      * <p>
-     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data
-     * Plane) Actions.
+     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing
+     * Control Actions.
      * </p>
      */
     private java.util.List<ClusterEndpoint> clusterEndpoints;
@@ -105,15 +105,15 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * in the cluster.
      * </p>
      * <p>
-     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data
-     * Plane) Actions.
+     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing
+     * Control Actions.
      * </p>
      * 
      * @return Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing
      *         control state in the cluster.</p>
      *         <p>
      *         To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller
-     *         Cluster (Data Plane) Actions.
+     *         Routing Control Actions.
      */
 
     public java.util.List<ClusterEndpoint> getClusterEndpoints() {
@@ -126,8 +126,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * in the cluster.
      * </p>
      * <p>
-     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data
-     * Plane) Actions.
+     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing
+     * Control Actions.
      * </p>
      * 
      * @param clusterEndpoints
@@ -135,7 +135,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        state in the cluster.</p>
      *        <p>
      *        To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller
-     *        Cluster (Data Plane) Actions.
+     *        Routing Control Actions.
      */
 
     public void setClusterEndpoints(java.util.Collection<ClusterEndpoint> clusterEndpoints) {
@@ -153,8 +153,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * in the cluster.
      * </p>
      * <p>
-     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data
-     * Plane) Actions.
+     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing
+     * Control Actions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,7 +167,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        state in the cluster.</p>
      *        <p>
      *        To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller
-     *        Cluster (Data Plane) Actions.
+     *        Routing Control Actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,8 +187,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * in the cluster.
      * </p>
      * <p>
-     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data
-     * Plane) Actions.
+     * To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing
+     * Control Actions.
      * </p>
      * 
      * @param clusterEndpoints
@@ -196,7 +196,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        state in the cluster.</p>
      *        <p>
      *        To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller
-     *        Cluster (Data Plane) Actions.
+     *        Routing Control Actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

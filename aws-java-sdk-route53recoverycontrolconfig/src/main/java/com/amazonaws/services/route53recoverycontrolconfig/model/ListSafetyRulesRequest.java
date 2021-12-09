@@ -27,7 +27,7 @@ public class ListSafetyRulesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     * The Amazon Resource Name (ARN) of the control panel.
      * </p>
      */
     private String controlPanelArn;
@@ -46,11 +46,11 @@ public class ListSafetyRulesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     * The Amazon Resource Name (ARN) of the control panel.
      * </p>
      * 
      * @param controlPanelArn
-     *        The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     *        The Amazon Resource Name (ARN) of the control panel.
      */
 
     public void setControlPanelArn(String controlPanelArn) {
@@ -59,10 +59,10 @@ public class ListSafetyRulesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     * The Amazon Resource Name (ARN) of the control panel.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     * @return The Amazon Resource Name (ARN) of the control panel.
      */
 
     public String getControlPanelArn() {
@@ -71,11 +71,11 @@ public class ListSafetyRulesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     * The Amazon Resource Name (ARN) of the control panel.
      * </p>
      * 
      * @param controlPanelArn
-     *        The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+     *        The Amazon Resource Name (ARN) of the control panel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

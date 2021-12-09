@@ -31,18 +31,18 @@ public class CancelDomainTransferToAnotherAwsAccountRequest extends com.amazonaw
 
     /**
      * <p>
-     * The name of the domain for which you want to cancel the transfer to another AWS account.
+     * The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The name of the domain for which you want to cancel the transfer to another AWS account.
+     * The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain for which you want to cancel the transfer to another AWS account.
+     *        The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      */
 
     public void setDomainName(String domainName) {
@@ -51,10 +51,10 @@ public class CancelDomainTransferToAnotherAwsAccountRequest extends com.amazonaw
 
     /**
      * <p>
-     * The name of the domain for which you want to cancel the transfer to another AWS account.
+     * The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the domain for which you want to cancel the transfer to another AWS account.
+     * @return The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      */
 
     public String getDomainName() {
@@ -63,11 +63,11 @@ public class CancelDomainTransferToAnotherAwsAccountRequest extends com.amazonaw
 
     /**
      * <p>
-     * The name of the domain for which you want to cancel the transfer to another AWS account.
+     * The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain for which you want to cancel the transfer to another AWS account.
+     *        The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

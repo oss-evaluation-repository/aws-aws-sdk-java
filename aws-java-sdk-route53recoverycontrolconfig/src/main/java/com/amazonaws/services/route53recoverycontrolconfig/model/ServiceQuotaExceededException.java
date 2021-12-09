@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * 402 response
+ * 402 response - You attempted to create more resources than the service allows based on service quotas.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

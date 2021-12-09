@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListDomainsRequestMarshaller {
 
+    private static final MarshallingInfo<List> FILTERCONDITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterConditions").build();
+    private static final MarshallingInfo<StructuredPojo> SORTCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortCondition").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +53,8 @@ public class ListDomainsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listDomainsRequest.getFilterConditions(), FILTERCONDITIONS_BINDING);
+            protocolMarshaller.marshall(listDomainsRequest.getSortCondition(), SORTCONDITION_BINDING);
             protocolMarshaller.marshall(listDomainsRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listDomainsRequest.getMaxItems(), MAXITEMS_BINDING);
         } catch (Exception e) {

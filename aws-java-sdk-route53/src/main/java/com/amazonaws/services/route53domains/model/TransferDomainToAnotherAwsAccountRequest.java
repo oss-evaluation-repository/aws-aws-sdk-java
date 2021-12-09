@@ -30,25 +30,26 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the domain that you want to transfer from the current AWS account to another account.
+     * The name of the domain that you want to transfer from the current Amazon Web Services account to another account.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>
-     * .
+     * The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
+     * <code>111122223333</code>.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The name of the domain that you want to transfer from the current AWS account to another account.
+     * The name of the domain that you want to transfer from the current Amazon Web Services account to another account.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that you want to transfer from the current AWS account to another account.
+     *        The name of the domain that you want to transfer from the current Amazon Web Services account to another
+     *        account.
      */
 
     public void setDomainName(String domainName) {
@@ -57,10 +58,11 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the domain that you want to transfer from the current AWS account to another account.
+     * The name of the domain that you want to transfer from the current Amazon Web Services account to another account.
      * </p>
      * 
-     * @return The name of the domain that you want to transfer from the current AWS account to another account.
+     * @return The name of the domain that you want to transfer from the current Amazon Web Services account to another
+     *         account.
      */
 
     public String getDomainName() {
@@ -69,11 +71,12 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the domain that you want to transfer from the current AWS account to another account.
+     * The name of the domain that you want to transfer from the current Amazon Web Services account to another account.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that you want to transfer from the current AWS account to another account.
+     *        The name of the domain that you want to transfer from the current Amazon Web Services account to another
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +87,12 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>
-     * .
+     * The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
+     * <code>111122223333</code>.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the AWS account that you want to transfer the domain to, for example,
+     *        The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
      *        <code>111122223333</code>.
      */
 
@@ -99,11 +102,11 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>
-     * .
+     * The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
+     * <code>111122223333</code>.
      * </p>
      * 
-     * @return The account ID of the AWS account that you want to transfer the domain to, for example,
+     * @return The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
      *         <code>111122223333</code>.
      */
 
@@ -113,12 +116,12 @@ public class TransferDomainToAnotherAwsAccountRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>
-     * .
+     * The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
+     * <code>111122223333</code>.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the AWS account that you want to transfer the domain to, for example,
+     *        The account ID of the Amazon Web Services account that you want to transfer the domain to, for example,
      *        <code>111122223333</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

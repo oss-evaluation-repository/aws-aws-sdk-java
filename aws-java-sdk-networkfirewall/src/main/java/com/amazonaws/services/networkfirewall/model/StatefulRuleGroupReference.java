@@ -50,6 +50,12 @@ public class StatefulRuleGroupReference implements Serializable, Cloneable, Stru
      * </p>
      */
     private Integer priority;
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     */
+    private StatefulRuleGroupOverride override;
 
     /**
      * <p>
@@ -189,6 +195,46 @@ public class StatefulRuleGroupReference implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @param override
+     *        The action that allows the policy owner to override the behavior of the rule group within a policy.
+     */
+
+    public void setOverride(StatefulRuleGroupOverride override) {
+        this.override = override;
+    }
+
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @return The action that allows the policy owner to override the behavior of the rule group within a policy.
+     */
+
+    public StatefulRuleGroupOverride getOverride() {
+        return this.override;
+    }
+
+    /**
+     * <p>
+     * The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * </p>
+     * 
+     * @param override
+     *        The action that allows the policy owner to override the behavior of the rule group within a policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatefulRuleGroupReference withOverride(StatefulRuleGroupOverride override) {
+        setOverride(override);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class StatefulRuleGroupReference implements Serializable, Cloneable, Stru
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: ").append(getPriority());
+            sb.append("Priority: ").append(getPriority()).append(",");
+        if (getOverride() != null)
+            sb.append("Override: ").append(getOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +274,10 @@ public class StatefulRuleGroupReference implements Serializable, Cloneable, Stru
             return false;
         if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
             return false;
+        if (other.getOverride() == null ^ this.getOverride() == null)
+            return false;
+        if (other.getOverride() != null && other.getOverride().equals(this.getOverride()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +288,7 @@ public class StatefulRuleGroupReference implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
+        hashCode = prime * hashCode + ((getOverride() == null) ? 0 : getOverride().hashCode());
         return hashCode;
     }
 

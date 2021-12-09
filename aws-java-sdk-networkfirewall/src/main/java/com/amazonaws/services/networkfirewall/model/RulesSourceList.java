@@ -41,8 +41,7 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas. Valid domain specifications are the following:
+     * The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:
      * </p>
      * <ul>
      * <li>
@@ -76,8 +75,7 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas. Valid domain specifications are the following:
+     * The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:
      * </p>
      * <ul>
      * <li>
@@ -94,8 +92,8 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate
-     *         them with commas. Valid domain specifications are the following:</p>
+     * @return The domains that you want to inspect for in your traffic flows. Valid domain specifications are the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -118,8 +116,7 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas. Valid domain specifications are the following:
+     * The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:
      * </p>
      * <ul>
      * <li>
@@ -137,8 +134,8 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param targets
-     *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas. Valid domain specifications are the following:</p>
+     *        The domains that you want to inspect for in your traffic flows. Valid domain specifications are the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -166,8 +163,7 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas. Valid domain specifications are the following:
+     * The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:
      * </p>
      * <ul>
      * <li>
@@ -190,8 +186,8 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param targets
-     *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas. Valid domain specifications are the following:</p>
+     *        The domains that you want to inspect for in your traffic flows. Valid domain specifications are the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -221,8 +217,7 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas. Valid domain specifications are the following:
+     * The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:
      * </p>
      * <ul>
      * <li>
@@ -240,8 +235,8 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param targets
-     *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas. Valid domain specifications are the following:</p>
+     *        The domains that you want to inspect for in your traffic flows. Valid domain specifications are the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
