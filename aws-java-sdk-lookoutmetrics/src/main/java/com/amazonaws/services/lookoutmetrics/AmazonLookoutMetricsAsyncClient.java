@@ -241,6 +241,39 @@ public class AmazonLookoutMetricsAsyncClient extends AmazonLookoutMetricsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(DeactivateAnomalyDetectorRequest request) {
+
+        return deactivateAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(final DeactivateAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeactivateAnomalyDetectorRequest, DeactivateAnomalyDetectorResult> asyncHandler) {
+        final DeactivateAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeactivateAnomalyDetectorResult>() {
+            @Override
+            public DeactivateAnomalyDetectorResult call() throws Exception {
+                DeactivateAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeDeactivateAnomalyDetector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAlertResult> deleteAlertAsync(DeleteAlertRequest request) {
 
         return deleteAlertAsync(request, null);

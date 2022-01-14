@@ -93,6 +93,19 @@ public class AbstractAmazonLookoutMetricsAsync extends AbstractAmazonLookoutMetr
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(DeactivateAnomalyDetectorRequest request) {
+
+        return deactivateAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(DeactivateAnomalyDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeactivateAnomalyDetectorRequest, DeactivateAnomalyDetectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAlertResult> deleteAlertAsync(DeleteAlertRequest request) {
 
         return deleteAlertAsync(request, null);

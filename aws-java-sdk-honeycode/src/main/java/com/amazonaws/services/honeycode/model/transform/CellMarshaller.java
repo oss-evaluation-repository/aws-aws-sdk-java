@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.honeycode.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CellMarshaller {
             .marshallLocationName("rawValue").build();
     private static final MarshallingInfo<String> FORMATTEDVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formattedValue").build();
+    private static final MarshallingInfo<List> FORMATTEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formattedValues").build();
 
     private static final CellMarshaller instance = new CellMarshaller();
 
@@ -56,6 +59,7 @@ public class CellMarshaller {
             protocolMarshaller.marshall(cell.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(cell.getRawValue(), RAWVALUE_BINDING);
             protocolMarshaller.marshall(cell.getFormattedValue(), FORMATTEDVALUE_BINDING);
+            protocolMarshaller.marshall(cell.getFormattedValues(), FORMATTEDVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

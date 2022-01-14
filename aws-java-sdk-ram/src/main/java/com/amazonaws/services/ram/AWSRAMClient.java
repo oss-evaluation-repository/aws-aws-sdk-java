@@ -1263,6 +1263,76 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
 
     /**
      * <p>
+     * Lists the available versions of the specified RAM permission.
+     * </p>
+     * 
+     * @param listPermissionVersionsRequest
+     * @return Result of the ListPermissionVersions operation returned by the service.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws InvalidNextTokenException
+     *         The specified value for <code>NextToken</code> is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @sample AWSRAM.ListPermissionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListPermissionVersionsResult listPermissionVersions(ListPermissionVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPermissionVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListPermissionVersionsResult executeListPermissionVersions(ListPermissionVersionsRequest listPermissionVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPermissionVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPermissionVersionsRequest> request = null;
+        Response<ListPermissionVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPermissionVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPermissionVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissionVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPermissionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPermissionVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of available RAM permissions that you can use for the supported resource types.
      * </p>
      * 

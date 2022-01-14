@@ -41,6 +41,12 @@ public class DescribeTableDataImportJobResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private TableDataImportJobMetadata jobMetadata;
+    /**
+     * <p>
+     * If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    private String errorCode;
 
     /**
      * <p>
@@ -182,6 +188,65 @@ public class DescribeTableDataImportJobResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * If job status is failed, error code to understand reason for the failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        If job status is failed, error code to understand reason for the failure.
+     * @see ErrorCode
+     */
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * <p>
+     * If job status is failed, error code to understand reason for the failure.
+     * </p>
+     * 
+     * @return If job status is failed, error code to understand reason for the failure.
+     * @see ErrorCode
+     */
+
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * <p>
+     * If job status is failed, error code to understand reason for the failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        If job status is failed, error code to understand reason for the failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ErrorCode
+     */
+
+    public DescribeTableDataImportJobResult withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If job status is failed, error code to understand reason for the failure.
+     * </p>
+     * 
+     * @param errorCode
+     *        If job status is failed, error code to understand reason for the failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ErrorCode
+     */
+
+    public DescribeTableDataImportJobResult withErrorCode(ErrorCode errorCode) {
+        this.errorCode = errorCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +263,9 @@ public class DescribeTableDataImportJobResult extends com.amazonaws.AmazonWebSer
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
         if (getJobMetadata() != null)
-            sb.append("JobMetadata: ").append(getJobMetadata());
+            sb.append("JobMetadata: ").append(getJobMetadata()).append(",");
+        if (getErrorCode() != null)
+            sb.append("ErrorCode: ").append(getErrorCode());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +292,10 @@ public class DescribeTableDataImportJobResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getJobMetadata() != null && other.getJobMetadata().equals(this.getJobMetadata()) == false)
             return false;
+        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
+            return false;
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +307,7 @@ public class DescribeTableDataImportJobResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getJobMetadata() == null) ? 0 : getJobMetadata().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         return hashCode;
     }
 

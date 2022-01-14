@@ -201,6 +201,8 @@ public interface AmazonHoneycode {
      *         Tps(transactions per second) rate reached.
      * @throws ValidationException
      *         Request is invalid. The message in the response contains details on why the request is invalid.
+     * @throws RequestTimeoutException
+     *         The request timed out.
      * @sample AmazonHoneycode.DescribeTableDataImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DescribeTableDataImportJob"
      *      target="_top">AWS API Documentation</a>
@@ -264,6 +266,8 @@ public interface AmazonHoneycode {
      *         The automation execution timed out.
      * @throws RequestTimeoutException
      *         The request timed out.
+     * @throws ServiceQuotaExceededException
+     *         The request caused service quota to be breached.
      * @sample AmazonHoneycode.InvokeScreenAutomation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/InvokeScreenAutomation"
      *      target="_top">AWS API Documentation</a>
@@ -432,6 +436,10 @@ public interface AmazonHoneycode {
      *         Tps(transactions per second) rate reached.
      * @throws ValidationException
      *         Request is invalid. The message in the response contains details on why the request is invalid.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @throws ServiceQuotaExceededException
+     *         The request caused service quota to be breached.
      * @sample AmazonHoneycode.StartTableDataImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/StartTableDataImportJob"
      *      target="_top">AWS API Documentation</a>

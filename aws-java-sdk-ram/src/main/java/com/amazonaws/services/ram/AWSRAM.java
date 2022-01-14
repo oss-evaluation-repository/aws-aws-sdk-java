@@ -506,6 +506,33 @@ public interface AWSRAM {
 
     /**
      * <p>
+     * Lists the available versions of the specified RAM permission.
+     * </p>
+     * 
+     * @param listPermissionVersionsRequest
+     * @return Result of the ListPermissionVersions operation returned by the service.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws InvalidNextTokenException
+     *         The specified value for <code>NextToken</code> is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @sample AWSRAM.ListPermissionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPermissionVersionsResult listPermissionVersions(ListPermissionVersionsRequest listPermissionVersionsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of available RAM permissions that you can use for the supported resource types.
      * </p>
      * 

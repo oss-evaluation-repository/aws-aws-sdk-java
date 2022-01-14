@@ -53,6 +53,11 @@ public class AbstractAmazonLookoutMetrics implements AmazonLookoutMetrics {
     }
 
     @Override
+    public DeactivateAnomalyDetectorResult deactivateAnomalyDetector(DeactivateAnomalyDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAlertResult deleteAlert(DeleteAlertRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

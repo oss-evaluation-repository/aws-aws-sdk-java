@@ -179,6 +179,32 @@ public interface AmazonLookoutMetrics {
 
     /**
      * <p>
+     * Deactivates an anomaly detector.
+     * </p>
+     * 
+     * @param deactivateAnomalyDetectorRequest
+     * @return Result of the DeactivateAnomalyDetector operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
+     *         again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the ARN of the resource and try again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws TooManyRequestsException
+     *         The request was denied due to too many requests being submitted at the same time.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AmazonLookoutMetrics.DeactivateAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeactivateAnomalyDetectorResult deactivateAnomalyDetector(DeactivateAnomalyDetectorRequest deactivateAnomalyDetectorRequest);
+
+    /**
+     * <p>
      * Deletes an alert.
      * </p>
      * 

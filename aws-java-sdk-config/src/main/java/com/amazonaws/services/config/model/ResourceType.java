@@ -128,7 +128,13 @@ public enum ResourceType {
     AWSEFSAccessPoint("AWS::EFS::AccessPoint"),
     AWSEFSFileSystem("AWS::EFS::FileSystem"),
     AWSEKSCluster("AWS::EKS::Cluster"),
-    AWSOpenSearchDomain("AWS::OpenSearch::Domain");
+    AWSOpenSearchDomain("AWS::OpenSearch::Domain"),
+    AWSEC2TransitGateway("AWS::EC2::TransitGateway"),
+    AWSKinesisStream("AWS::Kinesis::Stream"),
+    AWSKinesisStreamConsumer("AWS::Kinesis::StreamConsumer"),
+    AWSCodeDeployApplication("AWS::CodeDeploy::Application"),
+    AWSCodeDeployDeploymentConfig("AWS::CodeDeploy::DeploymentConfig"),
+    AWSCodeDeployDeploymentGroup("AWS::CodeDeploy::DeploymentGroup");
 
     private String value;
 

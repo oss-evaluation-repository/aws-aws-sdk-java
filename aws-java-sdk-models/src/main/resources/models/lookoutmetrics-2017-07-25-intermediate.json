@@ -378,6 +378,63 @@
       },
       "syncReturnType" : "CreateMetricSetResult"
     },
+    "DeactivateAnomalyDetector" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeactivateAnomalyDetectorResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeactivateAnomalyDetectorResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeactivateAnomalyDetectorRequest, DeactivateAnomalyDetectorResult>",
+      "asyncReturnType" : "DeactivateAnomalyDetectorResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deactivates an anomaly detector.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>There was a conflict processing the request. Try your request again.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You do not have sufficient permissions to perform this action.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p>The request was denied due to too many requests being submitted at the same time.</p>",
+        "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>The request processing has failed because of an unknown error, exception, or failure.</p>",
+        "httpStatusCode" : 500
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeactivateAnomalyDetectorRequest",
+        "variableName" : "deactivateAnomalyDetectorRequest",
+        "variableType" : "DeactivateAnomalyDetectorRequest",
+        "documentation" : "",
+        "simpleType" : "DeactivateAnomalyDetectorRequest",
+        "variableSetterType" : "DeactivateAnomalyDetectorRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deactivateAnomalyDetector",
+      "operationName" : "DeactivateAnomalyDetector",
+      "returnType" : {
+        "returnType" : "DeactivateAnomalyDetectorResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeactivateAnomalyDetectorResult"
+    },
     "DeleteAlert" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAlertResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAlertResult>",
@@ -5569,6 +5626,9 @@
       }, {
         "name" : "DELETION_FAILURE",
         "value" : "DELETION_FAILURE"
+      }, {
+        "name" : "DEACTIVATION_FAILURE",
+        "value" : "DEACTIVATION_FAILURE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.lookoutmetrics.enum.AnomalyDetectorFailureType",
@@ -5640,6 +5700,12 @@
       }, {
         "name" : "BACK_TEST_COMPLETE",
         "value" : "BACK_TEST_COMPLETE"
+      }, {
+        "name" : "DEACTIVATED",
+        "value" : "DEACTIVATED"
+      }, {
+        "name" : "DEACTIVATING",
+        "value" : "DEACTIVATING"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.lookoutmetrics.enum.AnomalyDetectorStatus",
@@ -17163,6 +17229,238 @@
         "documentation" : null,
         "simpleType" : "CsvFormatDescriptor",
         "variableSetterType" : "CsvFormatDescriptor"
+      },
+      "wrapper" : false
+    },
+    "DeactivateAnomalyDetectorRequest" : {
+      "c2jName" : "DeactivateAnomalyDetectorRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lookoutmetrics.request.DeactivateAnomalyDetectorRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeactivateAnomalyDetector",
+        "locationName" : null,
+        "requestUri" : "/DeactivateAnomalyDetector",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "AnomalyDetectorArn",
+        "c2jShape" : "Arn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnomalyDetectorArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@return The Amazon Resource Name (ARN) of the anomaly detector.*/",
+        "getterMethodName" : "getAnomalyDetectorArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AnomalyDetectorArn",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AnomalyDetectorArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AnomalyDetectorArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.*/",
+        "setterMethodName" : "setAnomalyDetectorArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "anomalyDetectorArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "anomalyDetectorArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AnomalyDetectorArn" : {
+          "c2jName" : "AnomalyDetectorArn",
+          "c2jShape" : "Arn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnomalyDetectorArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@return The Amazon Resource Name (ARN) of the anomaly detector.*/",
+          "getterMethodName" : "getAnomalyDetectorArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AnomalyDetectorArn",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AnomalyDetectorArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AnomalyDetectorArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.*/",
+          "setterMethodName" : "setAnomalyDetectorArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "anomalyDetectorArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>\n@param anomalyDetectorArn The Amazon Resource Name (ARN) of the anomaly detector.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "anomalyDetectorArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the anomaly detector.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.lookoutmetrics.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "AnomalyDetectorArn" ],
+      "shapeName" : "DeactivateAnomalyDetectorRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeactivateAnomalyDetectorRequest",
+        "variableName" : "deactivateAnomalyDetectorRequest",
+        "variableType" : "DeactivateAnomalyDetectorRequest",
+        "documentation" : null,
+        "simpleType" : "DeactivateAnomalyDetectorRequest",
+        "variableSetterType" : "DeactivateAnomalyDetectorRequest"
+      },
+      "wrapper" : false
+    },
+    "DeactivateAnomalyDetectorResult" : {
+      "c2jName" : "DeactivateAnomalyDetectorResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lookoutmetrics.response.DeactivateAnomalyDetectorResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lookoutmetrics.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "DeactivateAnomalyDetectorResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeactivateAnomalyDetectorResult",
+        "variableName" : "deactivateAnomalyDetectorResult",
+        "variableType" : "DeactivateAnomalyDetectorResult",
+        "documentation" : null,
+        "simpleType" : "DeactivateAnomalyDetectorResult",
+        "variableSetterType" : "DeactivateAnomalyDetectorResult"
       },
       "wrapper" : false
     },

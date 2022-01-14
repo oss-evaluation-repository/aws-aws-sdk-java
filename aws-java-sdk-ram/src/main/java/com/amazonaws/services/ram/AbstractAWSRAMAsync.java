@@ -215,6 +215,19 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest request) {
+
+        return listPermissionVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionVersionsRequest, ListPermissionVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request) {
 
         return listPermissionsAsync(request, null);

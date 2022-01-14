@@ -191,6 +191,39 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
 
     /**
      * <p>
+     * Deactivates an anomaly detector.
+     * </p>
+     * 
+     * @param deactivateAnomalyDetectorRequest
+     * @return A Java Future containing the result of the DeactivateAnomalyDetector operation returned by the service.
+     * @sample AmazonLookoutMetricsAsync.DeactivateAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(
+            DeactivateAnomalyDetectorRequest deactivateAnomalyDetectorRequest);
+
+    /**
+     * <p>
+     * Deactivates an anomaly detector.
+     * </p>
+     * 
+     * @param deactivateAnomalyDetectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeactivateAnomalyDetector operation returned by the service.
+     * @sample AmazonLookoutMetricsAsyncHandler.DeactivateAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateAnomalyDetectorResult> deactivateAnomalyDetectorAsync(
+            DeactivateAnomalyDetectorRequest deactivateAnomalyDetectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeactivateAnomalyDetectorRequest, DeactivateAnomalyDetectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an alert.
      * </p>
      * 

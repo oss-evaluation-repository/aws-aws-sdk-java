@@ -21,6 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * CellInput object contains the data needed to create or update cells in a table.
  * </p>
+ * <note>
+ * <p>
+ * CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact
+ * and facts field are present.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/CellInput" target="_top">AWS API
  *      Documentation</a>
@@ -35,6 +41,13 @@ public class CellInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String fact;
+    /**
+     * <p>
+     * A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or
+     * rowIDs, and rowIDs should from the same table.
+     * </p>
+     */
+    private java.util.List<String> facts;
 
     /**
      * <p>
@@ -83,6 +96,84 @@ public class CellInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or
+     * rowIDs, and rowIDs should from the same table.
+     * </p>
+     * 
+     * @return A list representing the values that are entered into a ROWSET cell. Facts list can have either only
+     *         values or rowIDs, and rowIDs should from the same table.
+     */
+
+    public java.util.List<String> getFacts() {
+        return facts;
+    }
+
+    /**
+     * <p>
+     * A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or
+     * rowIDs, and rowIDs should from the same table.
+     * </p>
+     * 
+     * @param facts
+     *        A list representing the values that are entered into a ROWSET cell. Facts list can have either only values
+     *        or rowIDs, and rowIDs should from the same table.
+     */
+
+    public void setFacts(java.util.Collection<String> facts) {
+        if (facts == null) {
+            this.facts = null;
+            return;
+        }
+
+        this.facts = new java.util.ArrayList<String>(facts);
+    }
+
+    /**
+     * <p>
+     * A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or
+     * rowIDs, and rowIDs should from the same table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFacts(java.util.Collection)} or {@link #withFacts(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param facts
+     *        A list representing the values that are entered into a ROWSET cell. Facts list can have either only values
+     *        or rowIDs, and rowIDs should from the same table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CellInput withFacts(String... facts) {
+        if (this.facts == null) {
+            setFacts(new java.util.ArrayList<String>(facts.length));
+        }
+        for (String ele : facts) {
+            this.facts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or
+     * rowIDs, and rowIDs should from the same table.
+     * </p>
+     * 
+     * @param facts
+     *        A list representing the values that are entered into a ROWSET cell. Facts list can have either only values
+     *        or rowIDs, and rowIDs should from the same table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CellInput withFacts(java.util.Collection<String> facts) {
+        setFacts(facts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +186,9 @@ public class CellInput implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFact() != null)
-            sb.append("Fact: ").append("***Sensitive Data Redacted***");
+            sb.append("Fact: ").append("***Sensitive Data Redacted***").append(",");
+        if (getFacts() != null)
+            sb.append("Facts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +207,10 @@ public class CellInput implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFact() != null && other.getFact().equals(this.getFact()) == false)
             return false;
+        if (other.getFacts() == null ^ this.getFacts() == null)
+            return false;
+        if (other.getFacts() != null && other.getFacts().equals(this.getFacts()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +220,7 @@ public class CellInput implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFact() == null) ? 0 : getFact().hashCode());
+        hashCode = prime * hashCode + ((getFacts() == null) ? 0 : getFacts().hashCode());
         return hashCode;
     }
 

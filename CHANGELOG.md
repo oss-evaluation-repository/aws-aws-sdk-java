@@ -1,3 +1,24 @@
+# __1.12.141__ __2022-01-14__
+## __AWS Config__
+  - ### Features
+    - Update ResourceType enum with values for CodeDeploy, EC2 and Kinesis resources
+
+## __AWS Resource Access Manager__
+  - ### Features
+    - This release adds the ListPermissionVersions API which lists the versions for a given permission.
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - Application Insights support for Active Directory and SharePoint
+
+## __Amazon Honeycode__
+  - ### Features
+    - Added read and write api support for multi-select picklist. And added errorcode field to DescribeTableDataImportJob API output, when import job fails.
+
+## __Amazon Lookout for Metrics__
+  - ### Features
+    - This release adds a new DeactivateAnomalyDetector API operation.
+
 # __1.12.140__ __2022-01-13__
 ## __AWS Glue__
   - ### Features

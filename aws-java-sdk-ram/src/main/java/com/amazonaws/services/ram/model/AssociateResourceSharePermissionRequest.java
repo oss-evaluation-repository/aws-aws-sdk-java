@@ -73,7 +73,8 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
-     * parameter, the operation uses the version designated as the default.
+     * parameter, the operation uses the version designated as the default. You can use the
+     * <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      * </p>
      */
     private Integer permissionVersion;
@@ -386,12 +387,14 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
-     * parameter, the operation uses the version designated as the default.
+     * parameter, the operation uses the version designated as the default. You can use the
+     * <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      * </p>
      * 
      * @param permissionVersion
      *        Specifies the version of the RAM permission to associate with the resource share. If you don't specify
-     *        this parameter, the operation uses the version designated as the default.
+     *        this parameter, the operation uses the version designated as the default. You can use the
+     *        <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      */
 
     public void setPermissionVersion(Integer permissionVersion) {
@@ -401,11 +404,13 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
-     * parameter, the operation uses the version designated as the default.
+     * parameter, the operation uses the version designated as the default. You can use the
+     * <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      * </p>
      * 
      * @return Specifies the version of the RAM permission to associate with the resource share. If you don't specify
-     *         this parameter, the operation uses the version designated as the default.
+     *         this parameter, the operation uses the version designated as the default. You can use the
+     *         <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      */
 
     public Integer getPermissionVersion() {
@@ -415,12 +420,14 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Specifies the version of the RAM permission to associate with the resource share. If you don't specify this
-     * parameter, the operation uses the version designated as the default.
+     * parameter, the operation uses the version designated as the default. You can use the
+     * <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      * </p>
      * 
      * @param permissionVersion
      *        Specifies the version of the RAM permission to associate with the resource share. If you don't specify
-     *        this parameter, the operation uses the version designated as the default.
+     *        this parameter, the operation uses the version designated as the default. You can use the
+     *        <a>ListPermissionVersions</a> operation to discover the available versions of a permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

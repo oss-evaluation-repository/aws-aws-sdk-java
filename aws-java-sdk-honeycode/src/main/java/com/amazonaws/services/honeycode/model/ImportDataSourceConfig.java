@@ -88,7 +88,7 @@ public class ImportDataSourceConfig implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceUrl() != null)
-            sb.append("DataSourceUrl: ").append(getDataSourceUrl());
+            sb.append("DataSourceUrl: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

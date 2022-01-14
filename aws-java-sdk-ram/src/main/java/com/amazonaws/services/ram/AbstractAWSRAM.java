@@ -98,6 +98,11 @@ public class AbstractAWSRAM implements AWSRAM {
     }
 
     @Override
+    public ListPermissionVersionsResult listPermissionVersions(ListPermissionVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPermissionsResult listPermissions(ListPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

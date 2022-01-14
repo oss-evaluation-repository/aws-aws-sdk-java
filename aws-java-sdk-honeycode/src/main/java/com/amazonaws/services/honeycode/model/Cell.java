@@ -77,6 +77,19 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
      * </p>
      * <p>
+     * Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of
+     * each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw
+     * value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A",
+     * "Item B" in the formatted value list and
+     * "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     * as the raw value.
+     * </p>
+     * <p>
+     * Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as
+     * the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the
+     * formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     * </p>
+     * <p>
      * Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
      * contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
      * auto-detected format, the raw and formatted values will be the same as the data in the cell.
@@ -95,6 +108,14 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String formattedValue;
+    /**
+     * <p>
+     * A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     * multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue
+     * field will be empty if this field is returned.
+     * </p>
+     */
+    private java.util.List<String> formattedValues;
 
     /**
      * <p>
@@ -239,6 +260,19 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
      * </p>
      * <p>
+     * Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of
+     * each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw
+     * value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A",
+     * "Item B" in the formatted value list and
+     * "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     * as the raw value.
+     * </p>
+     * <p>
+     * Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as
+     * the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the
+     * formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     * </p>
+     * <p>
      * Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
      * contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
      * auto-detected format, the raw and formatted values will be the same as the data in the cell.
@@ -277,6 +311,20 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      *        value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a
      *        table that displays task status might have "Completed" as the formatted value and
      *        "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     *        </p>
+     *        <p>
+     *        Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column
+     *        of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the
+     *        raw value. For example, a cell containing a multi-select picklist to a table that contains items might
+     *        have "Item A", "Item B" in the formatted value list and
+     *        "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     *        as the raw value.
+     *        </p>
+     *        <p>
+     *        Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the
+     *        attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have
+     *        "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw
+     *        value.
      *        </p>
      *        <p>
      *        Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
@@ -324,6 +372,19 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
      * </p>
      * <p>
+     * Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of
+     * each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw
+     * value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A",
+     * "Item B" in the formatted value list and
+     * "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     * as the raw value.
+     * </p>
+     * <p>
+     * Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as
+     * the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the
+     * formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     * </p>
+     * <p>
      * Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
      * contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
      * auto-detected format, the raw and formatted values will be the same as the data in the cell.
@@ -361,6 +422,20 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      *         value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a
      *         table that displays task status might have "Completed" as the formatted value and
      *         "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     *         </p>
+     *         <p>
+     *         Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first
+     *         column of each of the linked rows as the formatted value in the list, and the rowset id of the linked
+     *         rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains
+     *         items might have "Item A", "Item B" in the formatted value list and
+     *         "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     *         as the raw value.
+     *         </p>
+     *         <p>
+     *         Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the
+     *         attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have
+     *         "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw
+     *         value.
      *         </p>
      *         <p>
      *         Cells with format AUTO or cells without any format that are auto-detected as one of the formats above
@@ -408,6 +483,19 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
      * </p>
      * <p>
+     * Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of
+     * each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw
+     * value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A",
+     * "Item B" in the formatted value list and
+     * "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     * as the raw value.
+     * </p>
+     * <p>
+     * Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as
+     * the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the
+     * formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     * </p>
+     * <p>
      * Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
      * contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
      * auto-detected format, the raw and formatted values will be the same as the data in the cell.
@@ -446,6 +534,20 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
      *        value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a
      *        table that displays task status might have "Completed" as the formatted value and
      *        "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+     *        </p>
+     *        <p>
+     *        Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column
+     *        of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the
+     *        raw value. For example, a cell containing a multi-select picklist to a table that contains items might
+     *        have "Item A", "Item B" in the formatted value list and
+     *        "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+     *        as the raw value.
+     *        </p>
+     *        <p>
+     *        Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the
+     *        attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have
+     *        "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw
+     *        value.
      *        </p>
      *        <p>
      *        Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
@@ -533,6 +635,92 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     * multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue
+     * field will be empty if this field is returned.
+     * </p>
+     * 
+     * @return A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     *         multi-select or multi-record picklist). Values in the list are always represented as strings. The
+     *         formattedValue field will be empty if this field is returned.
+     */
+
+    public java.util.List<String> getFormattedValues() {
+        return formattedValues;
+    }
+
+    /**
+     * <p>
+     * A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     * multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue
+     * field will be empty if this field is returned.
+     * </p>
+     * 
+     * @param formattedValues
+     *        A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     *        multi-select or multi-record picklist). Values in the list are always represented as strings. The
+     *        formattedValue field will be empty if this field is returned.
+     */
+
+    public void setFormattedValues(java.util.Collection<String> formattedValues) {
+        if (formattedValues == null) {
+            this.formattedValues = null;
+            return;
+        }
+
+        this.formattedValues = new java.util.ArrayList<String>(formattedValues);
+    }
+
+    /**
+     * <p>
+     * A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     * multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue
+     * field will be empty if this field is returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFormattedValues(java.util.Collection)} or {@link #withFormattedValues(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param formattedValues
+     *        A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     *        multi-select or multi-record picklist). Values in the list are always represented as strings. The
+     *        formattedValue field will be empty if this field is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cell withFormattedValues(String... formattedValues) {
+        if (this.formattedValues == null) {
+            setFormattedValues(new java.util.ArrayList<String>(formattedValues.length));
+        }
+        for (String ele : formattedValues) {
+            this.formattedValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     * multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue
+     * field will be empty if this field is returned.
+     * </p>
+     * 
+     * @param formattedValues
+     *        A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka
+     *        multi-select or multi-record picklist). Values in the list are always represented as strings. The
+     *        formattedValue field will be empty if this field is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cell withFormattedValues(java.util.Collection<String> formattedValues) {
+        setFormattedValues(formattedValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -551,7 +739,9 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
         if (getRawValue() != null)
             sb.append("RawValue: ").append(getRawValue()).append(",");
         if (getFormattedValue() != null)
-            sb.append("FormattedValue: ").append(getFormattedValue());
+            sb.append("FormattedValue: ").append(getFormattedValue()).append(",");
+        if (getFormattedValues() != null)
+            sb.append("FormattedValues: ").append(getFormattedValues());
         sb.append("}");
         return sb.toString();
     }
@@ -582,6 +772,10 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFormattedValue() != null && other.getFormattedValue().equals(this.getFormattedValue()) == false)
             return false;
+        if (other.getFormattedValues() == null ^ this.getFormattedValues() == null)
+            return false;
+        if (other.getFormattedValues() != null && other.getFormattedValues().equals(this.getFormattedValues()) == false)
+            return false;
         return true;
     }
 
@@ -594,6 +788,7 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getRawValue() == null) ? 0 : getRawValue().hashCode());
         hashCode = prime * hashCode + ((getFormattedValue() == null) ? 0 : getFormattedValue().hashCode());
+        hashCode = prime * hashCode + ((getFormattedValues() == null) ? 0 : getFormattedValues().hashCode());
         return hashCode;
     }
 

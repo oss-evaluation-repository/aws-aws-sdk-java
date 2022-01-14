@@ -30,7 +30,8 @@ public enum Format {
     TEXT("TEXT"),
     ACCOUNTING("ACCOUNTING"),
     CONTACT("CONTACT"),
-    ROWLINK("ROWLINK");
+    ROWLINK("ROWLINK"),
+    ROWSET("ROWSET");
 
     private String value;
 

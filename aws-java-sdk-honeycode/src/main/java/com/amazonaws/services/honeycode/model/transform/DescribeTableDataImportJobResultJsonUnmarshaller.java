@@ -60,6 +60,10 @@ public class DescribeTableDataImportJobResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeTableDataImportJobResult.setJobMetadata(TableDataImportJobMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("errorCode", targetDepth)) {
+                    context.nextToken();
+                    describeTableDataImportJobResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

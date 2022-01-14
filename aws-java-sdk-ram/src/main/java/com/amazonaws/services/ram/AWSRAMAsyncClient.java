@@ -564,6 +564,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest request) {
+
+        return listPermissionVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(final ListPermissionVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPermissionVersionsRequest, ListPermissionVersionsResult> asyncHandler) {
+        final ListPermissionVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPermissionVersionsResult>() {
+            @Override
+            public ListPermissionVersionsResult call() throws Exception {
+                ListPermissionVersionsResult result = null;
+
+                try {
+                    result = executeListPermissionVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request) {
 
         return listPermissionsAsync(request, null);

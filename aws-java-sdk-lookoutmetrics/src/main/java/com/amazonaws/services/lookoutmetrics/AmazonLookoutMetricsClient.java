@@ -499,6 +499,76 @@ public class AmazonLookoutMetricsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Deactivates an anomaly detector.
+     * </p>
+     * 
+     * @param deactivateAnomalyDetectorRequest
+     * @return Result of the DeactivateAnomalyDetector operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
+     *         again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the ARN of the resource and try again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws TooManyRequestsException
+     *         The request was denied due to too many requests being submitted at the same time.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AmazonLookoutMetrics.DeactivateAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeactivateAnomalyDetectorResult deactivateAnomalyDetector(DeactivateAnomalyDetectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateAnomalyDetector(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateAnomalyDetectorResult executeDeactivateAnomalyDetector(DeactivateAnomalyDetectorRequest deactivateAnomalyDetectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deactivateAnomalyDetectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeactivateAnomalyDetectorRequest> request = null;
+        Response<DeactivateAnomalyDetectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeactivateAnomalyDetectorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deactivateAnomalyDetectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutMetrics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateAnomalyDetector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeactivateAnomalyDetectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeactivateAnomalyDetectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an alert.
      * </p>
      * 

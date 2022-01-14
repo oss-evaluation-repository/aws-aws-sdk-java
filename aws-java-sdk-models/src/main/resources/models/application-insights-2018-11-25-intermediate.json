@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -32119,6 +32119,12 @@
       }, {
         "name" : "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
         "value" : "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
+      }, {
+        "name" : "SHAREPOINT",
+        "value" : "SHAREPOINT"
+      }, {
+        "name" : "ACTIVE_DIRECTORY",
+        "value" : "ACTIVE_DIRECTORY"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.applicationinsights.enum.Tier",

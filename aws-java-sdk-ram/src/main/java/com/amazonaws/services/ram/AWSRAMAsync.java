@@ -574,6 +574,37 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Lists the available versions of the specified RAM permission.
+     * </p>
+     * 
+     * @param listPermissionVersionsRequest
+     * @return A Java Future containing the result of the ListPermissionVersions operation returned by the service.
+     * @sample AWSRAMAsync.ListPermissionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest listPermissionVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the available versions of the specified RAM permission.
+     * </p>
+     * 
+     * @param listPermissionVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPermissionVersions operation returned by the service.
+     * @sample AWSRAMAsyncHandler.ListPermissionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest listPermissionVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionVersionsRequest, ListPermissionVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of available RAM permissions that you can use for the supported resource types.
      * </p>
      * 
