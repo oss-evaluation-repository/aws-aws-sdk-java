@@ -42,6 +42,8 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     private java.util.Map<String, String> advancedOptions;
 
+    private ChangeProgressDetails changeProgressDetails;
+
     /**
      * @param upgradeId
      */
@@ -249,6 +251,32 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * @param changeProgressDetails
+     */
+
+    public void setChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
+        this.changeProgressDetails = changeProgressDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public ChangeProgressDetails getChangeProgressDetails() {
+        return this.changeProgressDetails;
+    }
+
+    /**
+     * @param changeProgressDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeDomainResult withChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
+        setChangeProgressDetails(changeProgressDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -269,7 +297,9 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getPerformCheckOnly() != null)
             sb.append("PerformCheckOnly: ").append(getPerformCheckOnly()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: ").append(getAdvancedOptions());
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
+        if (getChangeProgressDetails() != null)
+            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -304,6 +334,10 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
             return false;
+        if (other.getChangeProgressDetails() == null ^ this.getChangeProgressDetails() == null)
+            return false;
+        if (other.getChangeProgressDetails() != null && other.getChangeProgressDetails().equals(this.getChangeProgressDetails()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +351,7 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getTargetVersion() == null) ? 0 : getTargetVersion().hashCode());
         hashCode = prime * hashCode + ((getPerformCheckOnly() == null) ? 0 : getPerformCheckOnly().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
+        hashCode = prime * hashCode + ((getChangeProgressDetails() == null) ? 0 : getChangeProgressDetails().hashCode());
         return hashCode;
     }
 

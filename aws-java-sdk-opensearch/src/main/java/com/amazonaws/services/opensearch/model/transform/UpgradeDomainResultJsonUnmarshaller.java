@@ -69,6 +69,10 @@ public class UpgradeDomainResultJsonUnmarshaller implements Unmarshaller<Upgrade
                     upgradeDomainResult.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    context.nextToken();
+                    upgradeDomainResult.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

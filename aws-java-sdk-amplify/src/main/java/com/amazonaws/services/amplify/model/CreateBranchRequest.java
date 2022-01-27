@@ -78,7 +78,8 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Map<String, String> environmentVariables;
     /**
      * <p>
-     * The basic authorization credentials for the branch.
+     * The basic authorization credentials for the branch. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      */
     private String basicAuthCredentials;
@@ -535,11 +536,13 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The basic authorization credentials for the branch.
+     * The basic authorization credentials for the branch. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The basic authorization credentials for the branch.
+     *        The basic authorization credentials for the branch. You must base64-encode the authorization credentials
+     *        and provide them in the format <code>user:password</code>.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -548,10 +551,12 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The basic authorization credentials for the branch.
+     * The basic authorization credentials for the branch. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
-     * @return The basic authorization credentials for the branch.
+     * @return The basic authorization credentials for the branch. You must base64-encode the authorization credentials
+     *         and provide them in the format <code>user:password</code>.
      */
 
     public String getBasicAuthCredentials() {
@@ -560,11 +565,13 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The basic authorization credentials for the branch.
+     * The basic authorization credentials for the branch. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The basic authorization credentials for the branch.
+     *        The basic authorization credentials for the branch. You must base64-encode the authorization credentials
+     *        and provide them in the format <code>user:password</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

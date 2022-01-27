@@ -116,6 +116,12 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private AutoTuneOptionsStatus autoTuneOptions;
+    /**
+     * <p>
+     * Specifies change details of the domain configuration change.
+     * </p>
+     */
+    private ChangeProgressDetails changeProgressDetails;
 
     /**
      * <p>
@@ -720,6 +726,46 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies change details of the domain configuration change.
+     * </p>
+     * 
+     * @param changeProgressDetails
+     *        Specifies change details of the domain configuration change.
+     */
+
+    public void setChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
+        this.changeProgressDetails = changeProgressDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies change details of the domain configuration change.
+     * </p>
+     * 
+     * @return Specifies change details of the domain configuration change.
+     */
+
+    public ChangeProgressDetails getChangeProgressDetails() {
+        return this.changeProgressDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies change details of the domain configuration change.
+     * </p>
+     * 
+     * @param changeProgressDetails
+     *        Specifies change details of the domain configuration change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainConfig withChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
+        setChangeProgressDetails(changeProgressDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -758,7 +804,9 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         if (getAdvancedSecurityOptions() != null)
             sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
         if (getAutoTuneOptions() != null)
-            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
+        if (getChangeProgressDetails() != null)
+            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -829,6 +877,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
             return false;
+        if (other.getChangeProgressDetails() == null ^ this.getChangeProgressDetails() == null)
+            return false;
+        if (other.getChangeProgressDetails() != null && other.getChangeProgressDetails().equals(this.getChangeProgressDetails()) == false)
+            return false;
         return true;
     }
 
@@ -851,6 +903,7 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
+        hashCode = prime * hashCode + ((getChangeProgressDetails() == null) ? 0 : getChangeProgressDetails().hashCode());
         return hashCode;
     }
 

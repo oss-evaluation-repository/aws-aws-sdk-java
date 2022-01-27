@@ -29,12 +29,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /** EBS volume provisioned throughput information. */
+    private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
      * The size in GiB of the EBS volume for the data drive on each broker node.
      * </p>
      */
     private Integer volumeSize;
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @param provisionedThroughput
+     *        EBS volume provisioned throughput information.
+     */
+
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
+    }
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @return EBS volume provisioned throughput information.
+     */
+
+    public ProvisionedThroughput getProvisionedThroughput() {
+        return this.provisionedThroughput;
+    }
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @param provisionedThroughput
+     *        EBS volume provisioned throughput information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EBSStorageInfo withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        setProvisionedThroughput(provisionedThroughput);
+        return this;
+    }
 
     /**
      * <p>
@@ -94,6 +130,8 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getProvisionedThroughput() != null)
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize());
         sb.append("}");
@@ -110,6 +148,10 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof EBSStorageInfo == false)
             return false;
         EBSStorageInfo other = (EBSStorageInfo) obj;
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
+            return false;
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
+            return false;
         if (other.getVolumeSize() == null ^ this.getVolumeSize() == null)
             return false;
         if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false)
@@ -122,6 +164,7 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
         return hashCode;
     }

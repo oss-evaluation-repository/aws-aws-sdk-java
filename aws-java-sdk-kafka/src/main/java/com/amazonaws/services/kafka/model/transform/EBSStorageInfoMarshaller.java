@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EBSStorageInfoMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("provisionedThroughput").build();
     private static final MarshallingInfo<Integer> VOLUMESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeSize").build();
 
@@ -46,6 +48,7 @@ public class EBSStorageInfoMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(eBSStorageInfo.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(eBSStorageInfo.getVolumeSize(), VOLUMESIZE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

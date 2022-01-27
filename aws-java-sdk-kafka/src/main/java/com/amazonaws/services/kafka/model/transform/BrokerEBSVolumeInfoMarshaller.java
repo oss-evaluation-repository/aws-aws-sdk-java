@@ -29,6 +29,8 @@ public class BrokerEBSVolumeInfoMarshaller {
 
     private static final MarshallingInfo<String> KAFKABROKERNODEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafkaBrokerNodeId").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("provisionedThroughput").build();
     private static final MarshallingInfo<Integer> VOLUMESIZEGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeSizeGB").build();
 
@@ -49,6 +51,7 @@ public class BrokerEBSVolumeInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(brokerEBSVolumeInfo.getKafkaBrokerNodeId(), KAFKABROKERNODEID_BINDING);
+            protocolMarshaller.marshall(brokerEBSVolumeInfo.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(brokerEBSVolumeInfo.getVolumeSizeGB(), VOLUMESIZEGB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

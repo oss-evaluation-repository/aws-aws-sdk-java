@@ -84,7 +84,8 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean enableBasicAuth;
     /**
      * <p>
-     * The basic authorization credentials for an Amplify app.
+     * The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      */
     private String basicAuthCredentials;
@@ -594,11 +595,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The basic authorization credentials for an Amplify app.
+     * The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The basic authorization credentials for an Amplify app.
+     *        The basic authorization credentials for an Amplify app. You must base64-encode the authorization
+     *        credentials and provide them in the format <code>user:password</code>.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -607,10 +610,12 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The basic authorization credentials for an Amplify app.
+     * The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
-     * @return The basic authorization credentials for an Amplify app.
+     * @return The basic authorization credentials for an Amplify app. You must base64-encode the authorization
+     *         credentials and provide them in the format <code>user:password</code>.
      */
 
     public String getBasicAuthCredentials() {
@@ -619,11 +624,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The basic authorization credentials for an Amplify app.
+     * The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and
+     * provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The basic authorization credentials for an Amplify app.
+     *        The basic authorization credentials for an Amplify app. You must base64-encode the authorization
+     *        credentials and provide them in the format <code>user:password</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -98,7 +98,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean enableBasicAuth;
     /**
      * <p>
-     * The credentials for basic authorization for an Amplify app.
+     * The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials
+     * and provide them in the format <code>user:password</code>.
      * </p>
      */
     private String basicAuthCredentials;
@@ -688,11 +689,13 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The credentials for basic authorization for an Amplify app.
+     * The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials
+     * and provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The credentials for basic authorization for an Amplify app.
+     *        The credentials for basic authorization for an Amplify app. You must base64-encode the authorization
+     *        credentials and provide them in the format <code>user:password</code>.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -701,10 +704,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The credentials for basic authorization for an Amplify app.
+     * The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials
+     * and provide them in the format <code>user:password</code>.
      * </p>
      * 
-     * @return The credentials for basic authorization for an Amplify app.
+     * @return The credentials for basic authorization for an Amplify app. You must base64-encode the authorization
+     *         credentials and provide them in the format <code>user:password</code>.
      */
 
     public String getBasicAuthCredentials() {
@@ -713,11 +718,13 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The credentials for basic authorization for an Amplify app.
+     * The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials
+     * and provide them in the format <code>user:password</code>.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        The credentials for basic authorization for an Amplify app.
+     *        The credentials for basic authorization for an Amplify app. You must base64-encode the authorization
+     *        credentials and provide them in the format <code>user:password</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

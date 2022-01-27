@@ -44,6 +44,8 @@ public class StartChatContactRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Integer> CHATDURATIONINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChatDurationInMinutes").build();
 
     private static final StartChatContactRequestMarshaller instance = new StartChatContactRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class StartChatContactRequestMarshaller {
             protocolMarshaller.marshall(startChatContactRequest.getParticipantDetails(), PARTICIPANTDETAILS_BINDING);
             protocolMarshaller.marshall(startChatContactRequest.getInitialMessage(), INITIALMESSAGE_BINDING);
             protocolMarshaller.marshall(startChatContactRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(startChatContactRequest.getChatDurationInMinutes(), CHATDURATIONINMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

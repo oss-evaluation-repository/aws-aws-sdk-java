@@ -39,7 +39,7 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
     private String contactFlowId;
     /**
      * <p>
-     * The name of the contact flow.
+     * TThe name of the contact flow.
      * </p>
      */
     private String name;
@@ -138,11 +138,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the contact flow.
+     * TThe name of the contact flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        TThe name of the contact flow.
      */
 
     public void setName(String name) {
@@ -151,10 +151,10 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the contact flow.
+     * TThe name of the contact flow.
      * </p>
      * 
-     * @return The name of the contact flow.
+     * @return TThe name of the contact flow.
      */
 
     public String getName() {
@@ -163,11 +163,11 @@ public class UpdateContactFlowMetadataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the contact flow.
+     * TThe name of the contact flow.
      * </p>
      * 
      * @param name
-     *        The name of the contact flow.
+     *        TThe name of the contact flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -519,6 +519,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request) {
+
+        return describeDomainChangeProgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(final DescribeDomainChangeProgressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainChangeProgressRequest, DescribeDomainChangeProgressResult> asyncHandler) {
+        final DescribeDomainChangeProgressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainChangeProgressResult>() {
+            @Override
+            public DescribeDomainChangeProgressResult call() throws Exception {
+                DescribeDomainChangeProgressResult result = null;
+
+                try {
+                    result = executeDescribeDomainChangeProgress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainConfigResult> describeDomainConfigAsync(DescribeDomainConfigRequest request) {
 
         return describeDomainConfigAsync(request, null);

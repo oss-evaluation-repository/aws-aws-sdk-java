@@ -147,6 +147,10 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                     context.nextToken();
                     domainStatus.setAutoTuneOptions(AutoTuneOptionsOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

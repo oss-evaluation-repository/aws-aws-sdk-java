@@ -451,6 +451,43 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Returns information about the current blue/green deployment happening on a domain, including a change ID, status,
+     * and progress stages.
+     * </p>
+     * 
+     * @param describeDomainChangeProgressRequest
+     *        Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the
+     *        domain name and optional change specific identity for which you want progress information.
+     * @return A Java Future containing the result of the DescribeDomainChangeProgress operation returned by the
+     *         service.
+     * @sample AmazonOpenSearchAsync.DescribeDomainChangeProgress
+     */
+    java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(
+            DescribeDomainChangeProgressRequest describeDomainChangeProgressRequest);
+
+    /**
+     * <p>
+     * Returns information about the current blue/green deployment happening on a domain, including a change ID, status,
+     * and progress stages.
+     * </p>
+     * 
+     * @param describeDomainChangeProgressRequest
+     *        Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the
+     *        domain name and optional change specific identity for which you want progress information.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainChangeProgress operation returned by the
+     *         service.
+     * @sample AmazonOpenSearchAsyncHandler.DescribeDomainChangeProgress
+     */
+    java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(
+            DescribeDomainChangeProgressRequest describeDomainChangeProgressRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainChangeProgressRequest, DescribeDomainChangeProgressResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides cluster configuration information about the specified domain, such as the state, creation date, update
      * version, and update date for cluster options.
      * </p>

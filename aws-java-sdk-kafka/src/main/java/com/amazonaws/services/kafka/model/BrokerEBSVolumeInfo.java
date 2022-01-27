@@ -36,6 +36,8 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String kafkaBrokerNodeId;
+    /** EBS volume provisioned throughput information. */
+    private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
      * Size of the EBS volume to update.
@@ -86,6 +88,40 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
 
     public BrokerEBSVolumeInfo withKafkaBrokerNodeId(String kafkaBrokerNodeId) {
         setKafkaBrokerNodeId(kafkaBrokerNodeId);
+        return this;
+    }
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @param provisionedThroughput
+     *        EBS volume provisioned throughput information.
+     */
+
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
+    }
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @return EBS volume provisioned throughput information.
+     */
+
+    public ProvisionedThroughput getProvisionedThroughput() {
+        return this.provisionedThroughput;
+    }
+
+    /**
+     * EBS volume provisioned throughput information.
+     * 
+     * @param provisionedThroughput
+     *        EBS volume provisioned throughput information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerEBSVolumeInfo withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        setProvisionedThroughput(provisionedThroughput);
         return this;
     }
 
@@ -149,6 +185,8 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getKafkaBrokerNodeId() != null)
             sb.append("KafkaBrokerNodeId: ").append(getKafkaBrokerNodeId()).append(",");
+        if (getProvisionedThroughput() != null)
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getVolumeSizeGB() != null)
             sb.append("VolumeSizeGB: ").append(getVolumeSizeGB());
         sb.append("}");
@@ -169,6 +207,10 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getKafkaBrokerNodeId() != null && other.getKafkaBrokerNodeId().equals(this.getKafkaBrokerNodeId()) == false)
             return false;
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
+            return false;
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
+            return false;
         if (other.getVolumeSizeGB() == null ^ this.getVolumeSizeGB() == null)
             return false;
         if (other.getVolumeSizeGB() != null && other.getVolumeSizeGB().equals(this.getVolumeSizeGB()) == false)
@@ -182,6 +224,7 @@ public class BrokerEBSVolumeInfo implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKafkaBrokerNodeId() == null) ? 0 : getKafkaBrokerNodeId().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeGB() == null) ? 0 : getVolumeSizeGB().hashCode());
         return hashCode;
     }

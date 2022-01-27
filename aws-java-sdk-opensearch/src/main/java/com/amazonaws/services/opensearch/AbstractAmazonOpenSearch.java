@@ -93,6 +93,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public DescribeDomainChangeProgressResult describeDomainChangeProgress(DescribeDomainChangeProgressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDomainConfigResult describeDomainConfig(DescribeDomainConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

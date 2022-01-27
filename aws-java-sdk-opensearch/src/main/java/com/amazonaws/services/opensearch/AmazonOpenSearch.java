@@ -366,6 +366,29 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
+     * Returns information about the current blue/green deployment happening on a domain, including a change ID, status,
+     * and progress stages.
+     * </p>
+     * 
+     * @param describeDomainChangeProgressRequest
+     *        Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the
+     *        domain name and optional change specific identity for which you want progress information.
+     * @return Result of the DescribeDomainChangeProgress operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AmazonOpenSearch.DescribeDomainChangeProgress
+     */
+    DescribeDomainChangeProgressResult describeDomainChangeProgress(DescribeDomainChangeProgressRequest describeDomainChangeProgressRequest);
+
+    /**
+     * <p>
      * Provides cluster configuration information about the specified domain, such as the state, creation date, update
      * version, and update date for cluster options.
      * </p>

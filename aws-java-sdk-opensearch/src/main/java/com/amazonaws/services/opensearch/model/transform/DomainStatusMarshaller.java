@@ -77,6 +77,8 @@ public class DomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedSecurityOptions").build();
     private static final MarshallingInfo<StructuredPojo> AUTOTUNEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
+    private static final MarshallingInfo<StructuredPojo> CHANGEPROGRESSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeProgressDetails").build();
 
     private static final DomainStatusMarshaller instance = new DomainStatusMarshaller();
 
@@ -118,6 +120,7 @@ public class DomainStatusMarshaller {
             protocolMarshaller.marshall(domainStatus.getDomainEndpointOptions(), DOMAINENDPOINTOPTIONS_BINDING);
             protocolMarshaller.marshall(domainStatus.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(domainStatus.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
+            protocolMarshaller.marshall(domainStatus.getChangeProgressDetails(), CHANGEPROGRESSDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

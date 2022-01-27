@@ -48,6 +48,10 @@ public class EBSStorageInfoJsonUnmarshaller implements Unmarshaller<EBSStorageIn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("provisionedThroughput", targetDepth)) {
+                    context.nextToken();
+                    eBSStorageInfo.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("volumeSize", targetDepth)) {
                     context.nextToken();
                     eBSStorageInfo.setVolumeSize(context.getUnmarshaller(Integer.class).unmarshall(context));

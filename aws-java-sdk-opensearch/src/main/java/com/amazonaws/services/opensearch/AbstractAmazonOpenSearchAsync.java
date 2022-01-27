@@ -197,6 +197,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request) {
+
+        return describeDomainChangeProgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainChangeProgressResult> describeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainChangeProgressRequest, DescribeDomainChangeProgressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainConfigResult> describeDomainConfigAsync(DescribeDomainConfigRequest request) {
 
         return describeDomainConfigAsync(request, null);

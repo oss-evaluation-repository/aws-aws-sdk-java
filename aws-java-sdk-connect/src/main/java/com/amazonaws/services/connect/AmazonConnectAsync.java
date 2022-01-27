@@ -3498,7 +3498,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
      * <p>
-     * A 429 error occurs in two situations:
+     * A 429 error occurs in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -3513,6 +3513,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your account may not support
+     * the ability to configure custom chat durations. For more information, contact Amazon Web Services Support.
+     * </p>
      * <p>
      * For more information about chat, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
@@ -3541,7 +3545,7 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
      * <p>
-     * A 429 error occurs in two situations:
+     * A 429 error occurs in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -3556,6 +3560,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your account may not support
+     * the ability to configure custom chat durations. For more information, contact Amazon Web Services Support.
+     * </p>
      * <p>
      * For more information about chat, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect

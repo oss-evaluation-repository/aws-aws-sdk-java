@@ -52,6 +52,10 @@ public class BrokerEBSVolumeInfoJsonUnmarshaller implements Unmarshaller<BrokerE
                     context.nextToken();
                     brokerEBSVolumeInfo.setKafkaBrokerNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("provisionedThroughput", targetDepth)) {
+                    context.nextToken();
+                    brokerEBSVolumeInfo.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("volumeSizeGB", targetDepth)) {
                     context.nextToken();
                     brokerEBSVolumeInfo.setVolumeSizeGB(context.getUnmarshaller(Integer.class).unmarshall(context));

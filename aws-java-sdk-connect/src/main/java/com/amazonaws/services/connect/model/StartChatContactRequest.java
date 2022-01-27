@@ -73,6 +73,13 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
+     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * </p>
+     */
+    private Integer chatDurationInMinutes;
 
     /**
      * <p>
@@ -409,6 +416,55 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
+     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * </p>
+     * 
+     * @param chatDurationInMinutes
+     *        The total duration of the newly started chat session. If not specified, the chat session duration defaults
+     *        to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
+     *        (7 days).
+     */
+
+    public void setChatDurationInMinutes(Integer chatDurationInMinutes) {
+        this.chatDurationInMinutes = chatDurationInMinutes;
+    }
+
+    /**
+     * <p>
+     * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
+     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * </p>
+     * 
+     * @return The total duration of the newly started chat session. If not specified, the chat session duration
+     *         defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080
+     *         minutes (7 days).
+     */
+
+    public Integer getChatDurationInMinutes() {
+        return this.chatDurationInMinutes;
+    }
+
+    /**
+     * <p>
+     * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
+     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * </p>
+     * 
+     * @param chatDurationInMinutes
+     *        The total duration of the newly started chat session. If not specified, the chat session duration defaults
+     *        to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
+     *        (7 days).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest withChatDurationInMinutes(Integer chatDurationInMinutes) {
+        setChatDurationInMinutes(chatDurationInMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -431,7 +487,9 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
         if (getInitialMessage() != null)
             sb.append("InitialMessage: ").append(getInitialMessage()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getChatDurationInMinutes() != null)
+            sb.append("ChatDurationInMinutes: ").append(getChatDurationInMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -470,6 +528,10 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getChatDurationInMinutes() == null ^ this.getChatDurationInMinutes() == null)
+            return false;
+        if (other.getChatDurationInMinutes() != null && other.getChatDurationInMinutes().equals(this.getChatDurationInMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +546,7 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getParticipantDetails() == null) ? 0 : getParticipantDetails().hashCode());
         hashCode = prime * hashCode + ((getInitialMessage() == null) ? 0 : getInitialMessage().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getChatDurationInMinutes() == null) ? 0 : getChatDurationInMinutes().hashCode());
         return hashCode;
     }
 
