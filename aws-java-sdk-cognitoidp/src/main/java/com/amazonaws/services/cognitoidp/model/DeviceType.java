@@ -54,7 +54,7 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date deviceLastModifiedDate;
     /**
      * <p>
-     * The date in which the device was last authenticated.
+     * The date when the device was last authenticated.
      * </p>
      */
     private java.util.Date deviceLastAuthenticatedDate;
@@ -251,11 +251,11 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date in which the device was last authenticated.
+     * The date when the device was last authenticated.
      * </p>
      * 
      * @param deviceLastAuthenticatedDate
-     *        The date in which the device was last authenticated.
+     *        The date when the device was last authenticated.
      */
 
     public void setDeviceLastAuthenticatedDate(java.util.Date deviceLastAuthenticatedDate) {
@@ -264,10 +264,10 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date in which the device was last authenticated.
+     * The date when the device was last authenticated.
      * </p>
      * 
-     * @return The date in which the device was last authenticated.
+     * @return The date when the device was last authenticated.
      */
 
     public java.util.Date getDeviceLastAuthenticatedDate() {
@@ -276,11 +276,11 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date in which the device was last authenticated.
+     * The date when the device was last authenticated.
      * </p>
      * 
      * @param deviceLastAuthenticatedDate
-     *        The date in which the device was last authenticated.
+     *        The date when the device was last authenticated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

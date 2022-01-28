@@ -30,13 +30,13 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the user pool that contains the user that you are setting options for.
+     * The ID of the user pool that contains the user whose options you're setting.
      * </p>
      */
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user that you are setting options for.
+     * The user name of the user whose options you're setting.
      * </p>
      */
     private String username;
@@ -49,11 +49,11 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the user pool that contains the user that you are setting options for.
+     * The ID of the user pool that contains the user whose options you're setting.
      * </p>
      * 
      * @param userPoolId
-     *        The ID of the user pool that contains the user that you are setting options for.
+     *        The ID of the user pool that contains the user whose options you're setting.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -62,10 +62,10 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the user pool that contains the user that you are setting options for.
+     * The ID of the user pool that contains the user whose options you're setting.
      * </p>
      * 
-     * @return The ID of the user pool that contains the user that you are setting options for.
+     * @return The ID of the user pool that contains the user whose options you're setting.
      */
 
     public String getUserPoolId() {
@@ -74,11 +74,11 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the user pool that contains the user that you are setting options for.
+     * The ID of the user pool that contains the user whose options you're setting.
      * </p>
      * 
      * @param userPoolId
-     *        The ID of the user pool that contains the user that you are setting options for.
+     *        The ID of the user pool that contains the user whose options you're setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user that you are setting options for.
+     * The user name of the user whose options you're setting.
      * </p>
      * 
      * @param username
-     *        The user name of the user that you are setting options for.
+     *        The user name of the user whose options you're setting.
      */
 
     public void setUsername(String username) {
@@ -102,10 +102,10 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user that you are setting options for.
+     * The user name of the user whose options you're setting.
      * </p>
      * 
-     * @return The user name of the user that you are setting options for.
+     * @return The user name of the user whose options you're setting.
      */
 
     public String getUsername() {
@@ -114,11 +114,11 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user that you are setting options for.
+     * The user name of the user whose options you're setting.
      * </p>
      * 
      * @param username
-     *        The user name of the user that you are setting options for.
+     *        The user name of the user whose options you're setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user you wish to retrieve.
+     * The user name of the user you want to retrieve.
      * </p>
      */
     private String username;
@@ -83,11 +83,11 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve.
+     * The user name of the user you want to retrieve.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve.
+     *        The user name of the user you want to retrieve.
      */
 
     public void setUsername(String username) {
@@ -96,10 +96,10 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve.
+     * The user name of the user you want to retrieve.
      * </p>
      * 
-     * @return The user name of the user you wish to retrieve.
+     * @return The user name of the user you want to retrieve.
      */
 
     public String getUsername() {
@@ -108,11 +108,11 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve.
+     * The user name of the user you want to retrieve.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve.
+     *        The user name of the user you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

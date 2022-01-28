@@ -31,7 +31,8 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a
-     * maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of
+     * 256 is reserved for use by Athena.
      * </p>
      */
     private String name;
@@ -120,12 +121,14 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a
-     * maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of
+     * 256 is reserved for use by Athena.
      * </p>
      * 
      * @param name
      *        The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can
-     *        use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length
+     *        constraint of 256 is reserved for use by Athena.
      */
 
     public void setName(String name) {
@@ -135,11 +138,13 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a
-     * maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of
+     * 256 is reserved for use by Athena.
      * </p>
      * 
      * @return The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can
-     *         use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *         use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length
+     *         constraint of 256 is reserved for use by Athena.
      */
 
     public String getName() {
@@ -149,12 +154,14 @@ public class DataCatalog implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a
-     * maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     * maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of
+     * 256 is reserved for use by Athena.
      * </p>
      * 
      * @param name
      *        The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can
-     *        use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+     *        use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length
+     *        constraint of 256 is reserved for use by Athena.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

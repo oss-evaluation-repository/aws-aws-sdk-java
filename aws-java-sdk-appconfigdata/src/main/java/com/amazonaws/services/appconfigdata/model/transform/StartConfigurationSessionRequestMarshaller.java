@@ -29,10 +29,10 @@ public class StartConfigurationSessionRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationIdentifier").build();
-    private static final MarshallingInfo<String> CONFIGURATIONPROFILEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationProfileIdentifier").build();
     private static final MarshallingInfo<String> ENVIRONMENTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentIdentifier").build();
+    private static final MarshallingInfo<String> CONFIGURATIONPROFILEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationProfileIdentifier").build();
     private static final MarshallingInfo<Integer> REQUIREDMINIMUMPOLLINTERVALINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequiredMinimumPollIntervalInSeconds").build();
 
@@ -53,8 +53,8 @@ public class StartConfigurationSessionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startConfigurationSessionRequest.getApplicationIdentifier(), APPLICATIONIDENTIFIER_BINDING);
-            protocolMarshaller.marshall(startConfigurationSessionRequest.getConfigurationProfileIdentifier(), CONFIGURATIONPROFILEIDENTIFIER_BINDING);
             protocolMarshaller.marshall(startConfigurationSessionRequest.getEnvironmentIdentifier(), ENVIRONMENTIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(startConfigurationSessionRequest.getConfigurationProfileIdentifier(), CONFIGURATIONPROFILEIDENTIFIER_BINDING);
             protocolMarshaller.marshall(startConfigurationSessionRequest.getRequiredMinimumPollIntervalInSeconds(),
                     REQUIREDMINIMUMPOLLINTERVALINSECONDS_BINDING);
         } catch (Exception e) {

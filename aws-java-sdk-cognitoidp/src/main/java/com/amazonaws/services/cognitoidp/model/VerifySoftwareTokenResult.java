@@ -31,7 +31,7 @@ public class VerifySoftwareTokenResult extends com.amazonaws.AmazonWebServiceRes
     private String status;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      */
     private String session;
@@ -97,11 +97,11 @@ public class VerifySoftwareTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service.
+     *        The session that should be passed both ways in challenge-response calls to the service.
      */
 
     public void setSession(String session) {
@@ -110,10 +110,10 @@ public class VerifySoftwareTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service.
+     * @return The session that should be passed both ways in challenge-response calls to the service.
      */
 
     public String getSession() {
@@ -122,11 +122,11 @@ public class VerifySoftwareTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service.
+     *        The session that should be passed both ways in challenge-response calls to the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

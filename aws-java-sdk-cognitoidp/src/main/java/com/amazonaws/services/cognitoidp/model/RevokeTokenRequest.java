@@ -27,7 +27,7 @@ public class RevokeTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token that you want to revoke.
+     * The refresh token that you want to revoke.
      * </p>
      */
     private String token;
@@ -46,11 +46,11 @@ public class RevokeTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token that you want to revoke.
+     * The refresh token that you want to revoke.
      * </p>
      * 
      * @param token
-     *        The token that you want to revoke.
+     *        The refresh token that you want to revoke.
      */
 
     public void setToken(String token) {
@@ -59,10 +59,10 @@ public class RevokeTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token that you want to revoke.
+     * The refresh token that you want to revoke.
      * </p>
      * 
-     * @return The token that you want to revoke.
+     * @return The refresh token that you want to revoke.
      */
 
     public String getToken() {
@@ -71,11 +71,11 @@ public class RevokeTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token that you want to revoke.
+     * The refresh token that you want to revoke.
      * </p>
      * 
      * @param token
-     *        The token that you want to revoke.
+     *        The refresh token that you want to revoke.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

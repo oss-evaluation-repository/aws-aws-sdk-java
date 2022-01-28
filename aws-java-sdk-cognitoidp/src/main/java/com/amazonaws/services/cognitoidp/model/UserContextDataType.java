@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+ * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an
  * unexpected event by Amazon Cognito advanced security.
  * </p>
  * 
@@ -31,20 +31,20 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
+     * an unexpected event by Amazon Cognito advanced security.
      * </p>
      */
     private String encodedData;
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
+     * an unexpected event by Amazon Cognito advanced security.
      * </p>
      * 
      * @param encodedData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
      *        risk of an unexpected event by Amazon Cognito advanced security.
      */
 
@@ -54,11 +54,11 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
+     * an unexpected event by Amazon Cognito advanced security.
      * </p>
      * 
-     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     * @return Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
      *         risk of an unexpected event by Amazon Cognito advanced security.
      */
 
@@ -68,12 +68,12 @@ public class UserContextDataType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
-     * unexpected event by Amazon Cognito advanced security.
+     * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of
+     * an unexpected event by Amazon Cognito advanced security.
      * </p>
      * 
      * @param encodedData
-     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the
      *        risk of an unexpected event by Amazon Cognito advanced security.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

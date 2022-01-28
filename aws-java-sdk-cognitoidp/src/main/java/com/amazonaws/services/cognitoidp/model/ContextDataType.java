@@ -54,7 +54,7 @@ public class ContextDataType implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<HttpHeader> httpHeaders;
     /**
      * <p>
-     * Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data collection
+     * Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection
      * library.
      * </p>
      */
@@ -252,12 +252,12 @@ public class ContextDataType implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data collection
+     * Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection
      * library.
      * </p>
      * 
      * @param encodedData
-     *        Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data
+     *        Encoded data containing device fingerprinting details collected using the Amazon Cognito context data
      *        collection library.
      */
 
@@ -267,11 +267,11 @@ public class ContextDataType implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data collection
+     * Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection
      * library.
      * </p>
      * 
-     * @return Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data
+     * @return Encoded data containing device fingerprinting details collected using the Amazon Cognito context data
      *         collection library.
      */
 
@@ -281,12 +281,12 @@ public class ContextDataType implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data collection
+     * Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection
      * library.
      * </p>
      * 
      * @param encodedData
-     *        Encoded data containing device fingerprinting details, collected using the Amazon Cognito context data
+     *        Encoded data containing device fingerprinting details collected using the Amazon Cognito context data
      *        collection library.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

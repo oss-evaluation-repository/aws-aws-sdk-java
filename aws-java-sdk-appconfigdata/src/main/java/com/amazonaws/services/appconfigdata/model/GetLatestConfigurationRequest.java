@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Request parameters for the GetLatestConfiguration API
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -31,9 +28,9 @@ public class GetLatestConfigurationRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token describing the current state of the configuration session. To obtain a token, first call the
-     * StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     * ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.
+     * <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will return a
+     * new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be
+     * provided to subsequent <code>GetLatestConfiguration</code> API calls.
      * </p>
      */
     private String configurationToken;
@@ -41,16 +38,16 @@ public class GetLatestConfigurationRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token describing the current state of the configuration session. To obtain a token, first call the
-     * StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     * ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.
+     * <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will return a
+     * new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be
+     * provided to subsequent <code>GetLatestConfiguration</code> API calls.
      * </p>
      * 
      * @param configurationToken
      *        Token describing the current state of the configuration session. To obtain a token, first call the
-     *        StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     *        ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     *        GetLatestConfiguration API calls.
+     *        <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will
+     *        return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and
+     *        MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.
      */
 
     public void setConfigurationToken(String configurationToken) {
@@ -60,15 +57,15 @@ public class GetLatestConfigurationRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token describing the current state of the configuration session. To obtain a token, first call the
-     * StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     * ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.
+     * <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will return a
+     * new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be
+     * provided to subsequent <code>GetLatestConfiguration</code> API calls.
      * </p>
      * 
      * @return Token describing the current state of the configuration session. To obtain a token, first call the
-     *         StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     *         ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     *         GetLatestConfiguration API calls.
+     *         <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will
+     *         return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response)
+     *         and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.
      */
 
     public String getConfigurationToken() {
@@ -78,16 +75,16 @@ public class GetLatestConfigurationRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token describing the current state of the configuration session. To obtain a token, first call the
-     * StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     * ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.
+     * <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will return a
+     * new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be
+     * provided to subsequent <code>GetLatestConfiguration</code> API calls.
      * </p>
      * 
      * @param configurationToken
      *        Token describing the current state of the configuration session. To obtain a token, first call the
-     *        StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new
-     *        ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     *        GetLatestConfiguration API calls.
+     *        <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code> will
+     *        return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and
+     *        MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Request parameters for the StartConfigurationSession API.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession"
  *      target="_top">AWS API Documentation</a>
@@ -36,21 +33,20 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
     private String applicationIdentifier;
     /**
      * <p>
-     * The configuration profile ID or the configuration profile name.
-     * </p>
-     */
-    private String configurationProfileIdentifier;
-    /**
-     * <p>
      * The environment ID or the environment name.
      * </p>
      */
     private String environmentIdentifier;
     /**
      * <p>
-     * The interval at which your client will poll for configuration. If provided, the service will throw a
-     * BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are
-     * not enforced.
+     * The configuration profile ID or the configuration profile name.
+     * </p>
+     */
+    private String configurationProfileIdentifier;
+    /**
+     * <p>
+     * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      * </p>
      */
     private Integer requiredMinimumPollIntervalInSeconds;
@@ -97,46 +93,6 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The configuration profile ID or the configuration profile name.
-     * </p>
-     * 
-     * @param configurationProfileIdentifier
-     *        The configuration profile ID or the configuration profile name.
-     */
-
-    public void setConfigurationProfileIdentifier(String configurationProfileIdentifier) {
-        this.configurationProfileIdentifier = configurationProfileIdentifier;
-    }
-
-    /**
-     * <p>
-     * The configuration profile ID or the configuration profile name.
-     * </p>
-     * 
-     * @return The configuration profile ID or the configuration profile name.
-     */
-
-    public String getConfigurationProfileIdentifier() {
-        return this.configurationProfileIdentifier;
-    }
-
-    /**
-     * <p>
-     * The configuration profile ID or the configuration profile name.
-     * </p>
-     * 
-     * @param configurationProfileIdentifier
-     *        The configuration profile ID or the configuration profile name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartConfigurationSessionRequest withConfigurationProfileIdentifier(String configurationProfileIdentifier) {
-        setConfigurationProfileIdentifier(configurationProfileIdentifier);
-        return this;
-    }
-
-    /**
-     * <p>
      * The environment ID or the environment name.
      * </p>
      * 
@@ -177,15 +133,53 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The interval at which your client will poll for configuration. If provided, the service will throw a
-     * BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are
-     * not enforced.
+     * The configuration profile ID or the configuration profile name.
+     * </p>
+     * 
+     * @param configurationProfileIdentifier
+     *        The configuration profile ID or the configuration profile name.
+     */
+
+    public void setConfigurationProfileIdentifier(String configurationProfileIdentifier) {
+        this.configurationProfileIdentifier = configurationProfileIdentifier;
+    }
+
+    /**
+     * <p>
+     * The configuration profile ID or the configuration profile name.
+     * </p>
+     * 
+     * @return The configuration profile ID or the configuration profile name.
+     */
+
+    public String getConfigurationProfileIdentifier() {
+        return this.configurationProfileIdentifier;
+    }
+
+    /**
+     * <p>
+     * The configuration profile ID or the configuration profile name.
+     * </p>
+     * 
+     * @param configurationProfileIdentifier
+     *        The configuration profile ID or the configuration profile name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartConfigurationSessionRequest withConfigurationProfileIdentifier(String configurationProfileIdentifier) {
+        setConfigurationProfileIdentifier(configurationProfileIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      * </p>
      * 
      * @param requiredMinimumPollIntervalInSeconds
-     *        The interval at which your client will poll for configuration. If provided, the service will throw a
-     *        BadRequestException if the client polls before the specified poll interval. By default, client poll
-     *        intervals are not enforced.
+     *        Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     *        established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      */
 
     public void setRequiredMinimumPollIntervalInSeconds(Integer requiredMinimumPollIntervalInSeconds) {
@@ -194,14 +188,12 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The interval at which your client will poll for configuration. If provided, the service will throw a
-     * BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are
-     * not enforced.
+     * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      * </p>
      * 
-     * @return The interval at which your client will poll for configuration. If provided, the service will throw a
-     *         BadRequestException if the client polls before the specified poll interval. By default, client poll
-     *         intervals are not enforced.
+     * @return Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     *         established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      */
 
     public Integer getRequiredMinimumPollIntervalInSeconds() {
@@ -210,15 +202,13 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The interval at which your client will poll for configuration. If provided, the service will throw a
-     * BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are
-     * not enforced.
+     * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      * </p>
      * 
      * @param requiredMinimumPollIntervalInSeconds
-     *        The interval at which your client will poll for configuration. If provided, the service will throw a
-     *        BadRequestException if the client polls before the specified poll interval. By default, client poll
-     *        intervals are not enforced.
+     *        Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
+     *        established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,10 +231,10 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
         sb.append("{");
         if (getApplicationIdentifier() != null)
             sb.append("ApplicationIdentifier: ").append(getApplicationIdentifier()).append(",");
-        if (getConfigurationProfileIdentifier() != null)
-            sb.append("ConfigurationProfileIdentifier: ").append(getConfigurationProfileIdentifier()).append(",");
         if (getEnvironmentIdentifier() != null)
             sb.append("EnvironmentIdentifier: ").append(getEnvironmentIdentifier()).append(",");
+        if (getConfigurationProfileIdentifier() != null)
+            sb.append("ConfigurationProfileIdentifier: ").append(getConfigurationProfileIdentifier()).append(",");
         if (getRequiredMinimumPollIntervalInSeconds() != null)
             sb.append("RequiredMinimumPollIntervalInSeconds: ").append(getRequiredMinimumPollIntervalInSeconds());
         sb.append("}");
@@ -265,14 +255,14 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getApplicationIdentifier() != null && other.getApplicationIdentifier().equals(this.getApplicationIdentifier()) == false)
             return false;
+        if (other.getEnvironmentIdentifier() == null ^ this.getEnvironmentIdentifier() == null)
+            return false;
+        if (other.getEnvironmentIdentifier() != null && other.getEnvironmentIdentifier().equals(this.getEnvironmentIdentifier()) == false)
+            return false;
         if (other.getConfigurationProfileIdentifier() == null ^ this.getConfigurationProfileIdentifier() == null)
             return false;
         if (other.getConfigurationProfileIdentifier() != null
                 && other.getConfigurationProfileIdentifier().equals(this.getConfigurationProfileIdentifier()) == false)
-            return false;
-        if (other.getEnvironmentIdentifier() == null ^ this.getEnvironmentIdentifier() == null)
-            return false;
-        if (other.getEnvironmentIdentifier() != null && other.getEnvironmentIdentifier().equals(this.getEnvironmentIdentifier()) == false)
             return false;
         if (other.getRequiredMinimumPollIntervalInSeconds() == null ^ this.getRequiredMinimumPollIntervalInSeconds() == null)
             return false;
@@ -288,8 +278,8 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationIdentifier() == null) ? 0 : getApplicationIdentifier().hashCode());
-        hashCode = prime * hashCode + ((getConfigurationProfileIdentifier() == null) ? 0 : getConfigurationProfileIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentIdentifier() == null) ? 0 : getEnvironmentIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationProfileIdentifier() == null) ? 0 : getConfigurationProfileIdentifier().hashCode());
         hashCode = prime * hashCode + ((getRequiredMinimumPollIntervalInSeconds() == null) ? 0 : getRequiredMinimumPollIntervalInSeconds().hashCode());
         return hashCode;
     }

@@ -32,10 +32,6 @@ public class GetLatestConfigurationResultJsonUnmarshaller implements Unmarshalle
         GetLatestConfigurationResult getLatestConfigurationResult = new GetLatestConfigurationResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Content-Type") != null) {
-                context.setCurrentHeader("Content-Type");
-                getLatestConfigurationResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
-            }
             if (context.getHeader("Next-Poll-Configuration-Token") != null) {
                 context.setCurrentHeader("Next-Poll-Configuration-Token");
                 getLatestConfigurationResult.setNextPollConfigurationToken(context.getUnmarshaller(String.class).unmarshall(context));
@@ -43,6 +39,10 @@ public class GetLatestConfigurationResultJsonUnmarshaller implements Unmarshalle
             if (context.getHeader("Next-Poll-Interval-In-Seconds") != null) {
                 context.setCurrentHeader("Next-Poll-Interval-In-Seconds");
                 getLatestConfigurationResult.setNextPollIntervalInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+            }
+            if (context.getHeader("Content-Type") != null) {
+                context.setCurrentHeader("Content-Type");
+                getLatestConfigurationResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
             }
         }
 

@@ -45,14 +45,14 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
     private SoftwareTokenMfaConfigType softwareTokenMfaConfiguration;
     /**
      * <p>
-     * The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     * MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
+     * The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up can
+     * sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -62,7 +62,7 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -191,14 +191,14 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     * MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
+     * The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up can
+     * sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -208,20 +208,19 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     *        MfaConfiguration value to ‘ON’. See <a
-     *        href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA)
-     *        to a User Pool</a> to learn more. Valid values include:</p>
+     *        The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up
+     *        can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     *        Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -231,7 +230,7 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @see UserPoolMfaType
@@ -243,14 +242,14 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     * MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
+     * The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up can
+     * sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -260,19 +259,19 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     *         MfaConfiguration value to ‘ON’. See <a
+     * @return The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set
+     *         up can sign in. To learn more, see <a
      *         href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA)
-     *         to a User Pool</a> to learn more. Valid values include:</p>
+     *         to a User Pool</a>. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>OFF</code> MFA will not be used for any users.
+     *         <code>OFF</code> MFA won't be used for any users.
      *         </p>
      *         </li>
      *         <li>
@@ -282,7 +281,7 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *         <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *         </p>
      *         </li>
      * @see UserPoolMfaType
@@ -294,14 +293,14 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     * MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
+     * The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up can
+     * sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -311,20 +310,19 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     *        MfaConfiguration value to ‘ON’. See <a
-     *        href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA)
-     *        to a User Pool</a> to learn more. Valid values include:</p>
+     *        The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up
+     *        can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     *        Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -334,7 +332,7 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -348,14 +346,14 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     * MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
+     * The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up can
+     * sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -365,20 +363,19 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mfaConfiguration
-     *        The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the
-     *        MfaConfiguration value to ‘ON’. See <a
-     *        href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA)
-     *        to a User Pool</a> to learn more. Valid values include:</p>
+     *        The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users with an MFA factor set up
+     *        can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     *        Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -388,7 +385,7 @@ public class SetUserPoolMfaConfigRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

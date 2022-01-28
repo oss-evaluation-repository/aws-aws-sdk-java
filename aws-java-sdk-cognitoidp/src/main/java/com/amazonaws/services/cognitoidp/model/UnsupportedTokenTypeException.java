@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when an unsupported token is passed to an operation.
+ * Exception that is thrown when an unsupported token is passed to an operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

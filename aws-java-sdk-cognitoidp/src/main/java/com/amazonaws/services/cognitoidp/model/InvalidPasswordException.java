@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the Amazon Cognito service encounters an invalid password.
+ * This exception is thrown when Amazon Cognito encounters an invalid password.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

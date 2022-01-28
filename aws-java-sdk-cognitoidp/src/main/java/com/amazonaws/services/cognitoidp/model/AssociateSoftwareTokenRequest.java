@@ -33,7 +33,7 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
     private String accessToken;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      */
@@ -81,12 +81,12 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. This allows
+     *        The session that should be passed both ways in challenge-response calls to the service. This allows
      *        authentication of the user as part of the MFA setup process.
      */
 
@@ -96,11 +96,11 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. This allows
+     * @return The session that should be passed both ways in challenge-response calls to the service. This allows
      *         authentication of the user as part of the MFA setup process.
      */
 
@@ -110,12 +110,12 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. This allows
+     *        The session that should be passed both ways in challenge-response calls to the service. This allows
      *        authentication of the user as part of the MFA setup process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

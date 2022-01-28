@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when user pool add-ons are not enabled.
+ * This exception is thrown when user pool add-ons aren't enabled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

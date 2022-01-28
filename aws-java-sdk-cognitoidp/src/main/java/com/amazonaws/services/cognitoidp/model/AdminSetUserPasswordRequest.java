@@ -33,7 +33,7 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user whose password you wish to set.
+     * The user name of the user whose password you want to set.
      * </p>
      */
     private String username;
@@ -92,11 +92,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user whose password you wish to set.
+     * The user name of the user whose password you want to set.
      * </p>
      * 
      * @param username
-     *        The user name of the user whose password you wish to set.
+     *        The user name of the user whose password you want to set.
      */
 
     public void setUsername(String username) {
@@ -105,10 +105,10 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user whose password you wish to set.
+     * The user name of the user whose password you want to set.
      * </p>
      * 
-     * @return The user name of the user whose password you wish to set.
+     * @return The user name of the user whose password you want to set.
      */
 
     public String getUsername() {
@@ -117,11 +117,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user name of the user whose password you wish to set.
+     * The user name of the user whose password you want to set.
      * </p>
      * 
      * @param username
-     *        The user name of the user whose password you wish to set.
+     *        The user name of the user whose password you want to set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

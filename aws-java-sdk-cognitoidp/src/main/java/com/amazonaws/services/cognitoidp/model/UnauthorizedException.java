@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the request is not authorized. This can happen due to an invalid access token in the
+ * Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the
  * request.
  * </p>
  */

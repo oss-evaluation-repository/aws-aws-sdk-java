@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and
- * <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.
+ * <code>SecretBinary</code> values. To get those values, use <a
+ * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a> .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/SecretListEntry" target="_top">AWS API
@@ -65,7 +66,9 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret
-     * either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * either automatically per the schedule or manually by a call to <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     * <code>RotateSecret</code> </a>.
      * </p>
      */
     private String rotationLambdaARN;
@@ -99,14 +102,18 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
-     * parameter of the <a>DeleteSecret</a> operation.
+     * parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     * <code>DeleteSecret</code> </a> operation.
      * </p>
      */
     private java.util.Date deletedDate;
     /**
      * <p>
-     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
-     * remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     * <code>TagResource</code> </a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     * <code>UntagResource</code> </a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -376,12 +383,16 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret
-     * either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * either automatically per the schedule or manually by a call to <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     * <code>RotateSecret</code> </a>.
      * </p>
      * 
      * @param rotationLambdaARN
      *        The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-     *        secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     *        secret either automatically per the schedule or manually by a call to <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     *        <code>RotateSecret</code> </a>.
      */
 
     public void setRotationLambdaARN(String rotationLambdaARN) {
@@ -391,11 +402,15 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret
-     * either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * either automatically per the schedule or manually by a call to <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     * <code>RotateSecret</code> </a>.
      * </p>
      * 
      * @return The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-     *         secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     *         secret either automatically per the schedule or manually by a call to <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     *         <code>RotateSecret</code> </a>.
      */
 
     public String getRotationLambdaARN() {
@@ -405,12 +420,16 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret
-     * either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * either automatically per the schedule or manually by a call to <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     * <code>RotateSecret</code> </a>.
      * </p>
      * 
      * @param rotationLambdaARN
      *        The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-     *        secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     *        secret either automatically per the schedule or manually by a call to <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+     *        <code>RotateSecret</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,13 +614,16 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
-     * parameter of the <a>DeleteSecret</a> operation.
+     * parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     * <code>DeleteSecret</code> </a> operation.
      * </p>
      * 
      * @param deletedDate
      *        The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *        recovered until the number of days in the recovery window has passed, as specified in the
-     *        <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
+     *        <code>RecoveryWindowInDays</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     *        <code>DeleteSecret</code> </a> operation.
      */
 
     public void setDeletedDate(java.util.Date deletedDate) {
@@ -612,12 +634,15 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
-     * parameter of the <a>DeleteSecret</a> operation.
+     * parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     * <code>DeleteSecret</code> </a> operation.
      * </p>
      * 
      * @return The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *         recovered until the number of days in the recovery window has passed, as specified in the
-     *         <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
+     *         <code>RecoveryWindowInDays</code> parameter of the <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     *         <code>DeleteSecret</code> </a> operation.
      */
 
     public java.util.Date getDeletedDate() {
@@ -628,13 +653,16 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
-     * parameter of the <a>DeleteSecret</a> operation.
+     * parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     * <code>DeleteSecret</code> </a> operation.
      * </p>
      * 
      * @param deletedDate
      *        The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *        recovered until the number of days in the recovery window has passed, as specified in the
-     *        <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
+     *        <code>RecoveryWindowInDays</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+     *        <code>DeleteSecret</code> </a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,12 +673,18 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
-     * remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     * <code>TagResource</code> </a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     * <code>UntagResource</code> </a>.
      * </p>
      * 
-     * @return The list of user-defined tags associated with the secret. To add tags to a secret, use
-     *         <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * @return The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     *         <code>TagResource</code> </a>. To remove tags, use <a
+     *         href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     *         <code>UntagResource</code> </a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -659,13 +693,19 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
-     * remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     * <code>TagResource</code> </a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     * <code>UntagResource</code> </a>.
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
-     *        To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     *        <code>TagResource</code> </a>. To remove tags, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     *        <code>UntagResource</code> </a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -679,8 +719,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
-     * remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     * <code>TagResource</code> </a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     * <code>UntagResource</code> </a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -689,8 +732,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
-     *        To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     *        <code>TagResource</code> </a>. To remove tags, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     *        <code>UntagResource</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,13 +752,19 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
-     * remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     * <code>TagResource</code> </a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     * <code>UntagResource</code> </a>.
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
-     *        To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+     *        <code>TagResource</code> </a>. To remove tags, use <a
+     *        href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+     *        <code>UntagResource</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

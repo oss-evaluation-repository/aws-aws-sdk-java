@@ -48,26 +48,26 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private String clientName;
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
      * </p>
      */
     private Integer refreshTokenValidity;
     /**
      * <p>
-     * The time limit, after which the access token is no longer valid and cannot be used.
+     * The time limit after which the access token is no longer valid and can't be used.
      * </p>
      */
     private Integer accessTokenValidity;
     /**
      * <p>
-     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * The time limit after which the ID token is no longer valid and can't be used.
      * </p>
      */
     private Integer idTokenValidity;
     /**
      * <p>
-     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
-     * and access tokens are hours.
+     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
+     * access tokens is hours.
      * </p>
      */
     private TokenValidityUnitsType tokenValidityUnits;
@@ -86,8 +86,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -97,8 +97,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -108,13 +108,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -162,7 +162,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      */
     private java.util.List<String> callbackURLs;
@@ -200,10 +200,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * <p>
-     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      */
     private String defaultRedirectURI;
@@ -235,7 +235,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> allowedOAuthScopes;
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
+     * pools.
      * </p>
      */
     private Boolean allowedOAuthFlowsUserPoolClient;
@@ -245,21 +246,21 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
-     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
-     * Amazon Pinpoint projects within that same region.
+     * In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon
+     * Pinpoint projects within that same Region.
      * </p>
      * </note>
      */
     private AnalyticsConfigurationType analyticsConfiguration;
     /**
      * <p>
-     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
-     * confirmation, and password recovery when the user does not exist in the user pool. When set to
-     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
-     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
-     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
-     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and
+     * password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
+     * doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account
+     * confirmation and password recovery return a response indicating a code was sent to a simulated destination. When
+     * set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't
+     * exist in the user pool.
      * </p>
      * <p>
      * Valid values include:
@@ -272,22 +273,16 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
-     * prevented.
+     * <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors
+     * aren't prevented.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     * <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     * </p>
-     * </note>
      */
     private String preventUserExistenceErrors;
     /**
      * <p>
-     * Enables or disables token revocation. For more information about revoking tokens, see <a
+     * Activates or deactivates token revocation. For more information about revoking tokens, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      * >RevokeToken</a>.
      * </p>
@@ -416,11 +411,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     *        The time limit, in days, after which the refresh token is no longer valid and can't be used.
      */
 
     public void setRefreshTokenValidity(Integer refreshTokenValidity) {
@@ -429,10 +424,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
      * </p>
      * 
-     * @return The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     * @return The time limit, in days, after which the refresh token is no longer valid and can't be used.
      */
 
     public Integer getRefreshTokenValidity() {
@@ -441,11 +436,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+     *        The time limit, in days, after which the refresh token is no longer valid and can't be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,11 +451,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the access token is no longer valid and cannot be used.
+     * The time limit after which the access token is no longer valid and can't be used.
      * </p>
      * 
      * @param accessTokenValidity
-     *        The time limit, after which the access token is no longer valid and cannot be used.
+     *        The time limit after which the access token is no longer valid and can't be used.
      */
 
     public void setAccessTokenValidity(Integer accessTokenValidity) {
@@ -469,10 +464,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the access token is no longer valid and cannot be used.
+     * The time limit after which the access token is no longer valid and can't be used.
      * </p>
      * 
-     * @return The time limit, after which the access token is no longer valid and cannot be used.
+     * @return The time limit after which the access token is no longer valid and can't be used.
      */
 
     public Integer getAccessTokenValidity() {
@@ -481,11 +476,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the access token is no longer valid and cannot be used.
+     * The time limit after which the access token is no longer valid and can't be used.
      * </p>
      * 
      * @param accessTokenValidity
-     *        The time limit, after which the access token is no longer valid and cannot be used.
+     *        The time limit after which the access token is no longer valid and can't be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,11 +491,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * The time limit after which the ID token is no longer valid and can't be used.
      * </p>
      * 
      * @param idTokenValidity
-     *        The time limit, after which the ID token is no longer valid and cannot be used.
+     *        The time limit after which the ID token is no longer valid and can't be used.
      */
 
     public void setIdTokenValidity(Integer idTokenValidity) {
@@ -509,10 +504,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * The time limit after which the ID token is no longer valid and can't be used.
      * </p>
      * 
-     * @return The time limit, after which the ID token is no longer valid and cannot be used.
+     * @return The time limit after which the ID token is no longer valid and can't be used.
      */
 
     public Integer getIdTokenValidity() {
@@ -521,11 +516,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * The time limit after which the ID token is no longer valid and can't be used.
      * </p>
      * 
      * @param idTokenValidity
-     *        The time limit, after which the ID token is no longer valid and cannot be used.
+     *        The time limit after which the ID token is no longer valid and can't be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,13 +531,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
-     * and access tokens are hours.
+     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
+     * access tokens is hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented in. Default for RefreshToken is days, and default
-     *        for ID and access tokens are hours.
+     *        The units in which the validity times are represented. Default for RefreshToken is days, and default for
+     *        ID and access tokens is hours.
      */
 
     public void setTokenValidityUnits(TokenValidityUnitsType tokenValidityUnits) {
@@ -551,12 +546,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
-     * and access tokens are hours.
+     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
+     * access tokens is hours.
      * </p>
      * 
-     * @return The units in which the validity times are represented in. Default for RefreshToken is days, and default
-     *         for ID and access tokens are hours.
+     * @return The units in which the validity times are represented. Default for RefreshToken is days, and default for
+     *         ID and access tokens is hours.
      */
 
     public TokenValidityUnitsType getTokenValidityUnits() {
@@ -565,13 +560,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
-     * and access tokens are hours.
+     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
+     * access tokens is hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented in. Default for RefreshToken is days, and default
-     *        for ID and access tokens are hours.
+     *        The units in which the validity times are represented. Default for RefreshToken is days, and default for
+     *        ID and access tokens is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -723,8 +718,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -734,8 +729,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -745,13 +740,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -762,9 +757,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @return The authentication flows that are supported by the user pool clients. Flow names without the
-     *         <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
-     *         that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
-     *         prefix.</p>
+     *         <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code>
+     *         prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the
+     *         <code>ALLOW_</code> prefix.</p>
      *         <p>
      *         Valid values include:
      *         </p>
@@ -773,8 +768,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      *         <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
-     *         With this authentication flow, Cognito receives the password in the request instead of using the SRP
-     *         (Secure Remote Password protocol) protocol to verify passwords.
+     *         With this authentication flow, Amazon Cognito receives the password in the request instead of using the
+     *         Secure Remote Password (SRP) protocol to verify passwords.
      *         </p>
      *         </li>
      *         <li>
@@ -784,13 +779,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
-     *         receives the password in the request instead of using the SRP protocol to verify passwords.
+     *         <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon
+     *         Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *         <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      *         </p>
      *         </li>
      *         <li>
@@ -808,8 +803,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -819,8 +814,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -830,13 +825,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -848,9 +843,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
-     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
-     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
-     *        prefix.</p>
+     *        <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code>
+     *        prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the
+     *        <code>ALLOW_</code> prefix.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -859,8 +854,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
-     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
-     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        With this authentication flow, Amazon Cognito receives the password in the request instead of using the
+     *        Secure Remote Password (SRP) protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
@@ -870,13 +865,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
-     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon
+     *        Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      *        </p>
      *        </li>
      *        <li>
@@ -899,8 +894,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -910,8 +905,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -921,13 +916,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -944,9 +939,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
-     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
-     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
-     *        prefix.</p>
+     *        <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code>
+     *        prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the
+     *        <code>ALLOW_</code> prefix.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -955,8 +950,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
-     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
-     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        With this authentication flow, Amazon Cognito receives the password in the request instead of using the
+     *        Secure Remote Password (SRP) protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
@@ -966,13 +961,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
-     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon
+     *        Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      *        </p>
      *        </li>
      *        <li>
@@ -997,8 +992,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -1008,8 +1003,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -1019,13 +1014,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -1037,9 +1032,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
-     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
-     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
-     *        prefix.</p>
+     *        <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code>
+     *        prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the
+     *        <code>ALLOW_</code> prefix.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -1048,8 +1043,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
-     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
-     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        With this authentication flow, Amazon Cognito receives the password in the request instead of using the
+     *        Secure Remote Password (SRP) protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
@@ -1059,13 +1054,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
-     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon
+     *        Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      *        </p>
      *        </li>
      *        <li>
@@ -1085,8 +1080,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
-     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
+     * prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.
      * </p>
      * <p>
      * Valid values include:
@@ -1096,8 +1091,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
-     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
-     * Password protocol) protocol to verify passwords.
+     * this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote
+     * Password (SRP) protocol to verify passwords.
      * </p>
      * </li>
      * <li>
@@ -1107,13 +1102,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
-     * the password in the request instead of using the SRP protocol to verify passwords.
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito
+     * receives the password in the request instead of using the SRP protocol to verify passwords.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      * </p>
      * </li>
      * <li>
@@ -1125,9 +1120,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
-     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
-     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
-     *        prefix.</p>
+     *        <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code>
+     *        prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the
+     *        <code>ALLOW_</code> prefix.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -1136,8 +1131,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
-     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
-     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        With this authentication flow, Amazon Cognito receives the password in the request instead of using the
+     *        Secure Remote Password (SRP) protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
@@ -1147,13 +1142,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
-     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon
+     *        Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
      *        </p>
      *        </li>
      *        <li>
@@ -1279,7 +1274,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @return A list of allowed redirect (callback) URLs for the identity providers.</p>
@@ -1310,7 +1305,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      *         </p>
      *         <p>
-     *         App callback URLs such as myapp://example are also supported.
+     *         App callback URLs such as <code>myapp://example</code> are also supported.
      */
 
     public java.util.List<String> getCallbackURLs() {
@@ -1348,7 +1343,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @param callbackURLs
@@ -1380,7 +1375,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      *        </p>
      *        <p>
-     *        App callback URLs such as myapp://example are also supported.
+     *        App callback URLs such as <code>myapp://example</code> are also supported.
      */
 
     public void setCallbackURLs(java.util.Collection<String> callbackURLs) {
@@ -1423,7 +1418,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1460,7 +1455,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      *        </p>
      *        <p>
-     *        App callback URLs such as myapp://example are also supported.
+     *        App callback URLs such as <code>myapp://example</code> are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1505,7 +1500,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @param callbackURLs
@@ -1537,7 +1532,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
      *        </p>
      *        <p>
-     *        App callback URLs such as myapp://example are also supported.
+     *        App callback URLs such as <code>myapp://example</code> are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1644,10 +1639,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * <p>
-     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @param defaultRedirectURI
@@ -1676,10 +1671,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      *        </p>
      *        <p>
-     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes
+     *        only.
      *        </p>
      *        <p>
-     *        App callback URLs such as myapp://example are also supported.
+     *        App callback URLs such as <code>myapp://example</code> are also supported.
      */
 
     public void setDefaultRedirectURI(String defaultRedirectURI) {
@@ -1714,10 +1710,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * <p>
-     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @return The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -1745,10 +1741,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      *         </p>
      *         <p>
-     *         Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *         Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes
+     *         only.
      *         </p>
      *         <p>
-     *         App callback URLs such as myapp://example are also supported.
+     *         App callback URLs such as <code>myapp://example</code> are also supported.
      */
 
     public String getDefaultRedirectURI() {
@@ -1783,10 +1780,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * <p>
-     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.
      * </p>
      * <p>
-     * App callback URLs such as myapp://example are also supported.
+     * App callback URLs such as <code>myapp://example</code> are also supported.
      * </p>
      * 
      * @param defaultRedirectURI
@@ -1815,10 +1812,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      *        </p>
      *        <p>
-     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes
+     *        only.
      *        </p>
      *        <p>
-     *        App callback URLs such as myapp://example are also supported.
+     *        App callback URLs such as <code>myapp://example</code> are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2133,12 +2131,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
+     * pools.
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user
-     *        pools.
+     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
+     *        user pools.
      */
 
     public void setAllowedOAuthFlowsUserPoolClient(Boolean allowedOAuthFlowsUserPoolClient) {
@@ -2147,11 +2146,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
+     * pools.
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user
-     *         pools.
+     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
+     *         user pools.
      */
 
     public Boolean getAllowedOAuthFlowsUserPoolClient() {
@@ -2160,12 +2160,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
+     * pools.
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user
-     *        pools.
+     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
+     *        user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2176,11 +2177,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
+     * pools.
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user
-     *         pools.
+     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
+     *         user pools.
      */
 
     public Boolean isAllowedOAuthFlowsUserPoolClient() {
@@ -2193,18 +2195,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
-     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
-     * Amazon Pinpoint projects within that same region.
+     * In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon
+     * Pinpoint projects within that same Region.
      * </p>
      * </note>
      * 
      * @param analyticsConfiguration
      *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *        <p>
-     *        In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
-     *        Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
-     *        sending events to Amazon Pinpoint projects within that same region.
+     *        In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon
+     *        Pinpoint projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending
+     *        events to Amazon Pinpoint projects within that same Region.
      *        </p>
      */
 
@@ -2218,17 +2220,17 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
-     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
-     * Amazon Pinpoint projects within that same region.
+     * In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon
+     * Pinpoint projects within that same Region.
      * </p>
      * </note>
      * 
      * @return The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *         <p>
-     *         In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
-     *         Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
-     *         sending events to Amazon Pinpoint projects within that same region.
+     *         In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon
+     *         Pinpoint projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending
+     *         events to Amazon Pinpoint projects within that same Region.
      *         </p>
      */
 
@@ -2242,18 +2244,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
-     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
-     * Amazon Pinpoint projects within that same region.
+     * In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon
+     * Pinpoint projects within that same Region.
      * </p>
      * </note>
      * 
      * @param analyticsConfiguration
      *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *        <p>
-     *        In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
-     *        Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
-     *        sending events to Amazon Pinpoint projects within that same region.
+     *        In Amazon Web Services Regions where isn't available, User Pools only supports sending events to Amazon
+     *        Pinpoint projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending
+     *        events to Amazon Pinpoint projects within that same Region.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2265,12 +2267,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
-     * confirmation, and password recovery when the user does not exist in the user pool. When set to
-     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
-     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
-     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
-     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and
+     * password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
+     * doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account
+     * confirmation and password recovery return a response indicating a code was sent to a simulated destination. When
+     * set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't
+     * exist in the user pool.
      * </p>
      * <p>
      * Valid values include:
@@ -2283,25 +2285,19 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
-     * prevented.
+     * <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors
+     * aren't prevented.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     * <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     * </p>
-     * </note>
      * 
      * @param preventUserExistenceErrors
-     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
-     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
-     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
-     *        username or password was incorrect, and account confirmation and password recovery return a response
-     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
-     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        Errors and responses that you want Amazon Cognito APIs to return during authentication, account
+     *        confirmation, and password recovery when the user doesn't exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the
+     *        username or password was incorrect. Account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return
+     *        a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -2313,16 +2309,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
-     *        not prevented.
+     *        <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related
+     *        errors aren't prevented.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     *        </p>
      * @see PreventUserExistenceErrorTypes
      */
 
@@ -2332,12 +2322,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
-     * confirmation, and password recovery when the user does not exist in the user pool. When set to
-     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
-     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
-     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
-     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and
+     * password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
+     * doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account
+     * confirmation and password recovery return a response indicating a code was sent to a simulated destination. When
+     * set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't
+     * exist in the user pool.
      * </p>
      * <p>
      * Valid values include:
@@ -2350,24 +2340,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
-     * prevented.
+     * <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors
+     * aren't prevented.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     * <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     * </p>
-     * </note>
      * 
-     * @return Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
-     *         account confirmation, and password recovery when the user does not exist in the user pool. When set to
-     *         <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
-     *         username or password was incorrect, and account confirmation and password recovery return a response
-     *         indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
-     *         return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     * @return Errors and responses that you want Amazon Cognito APIs to return during authentication, account
+     *         confirmation, and password recovery when the user doesn't exist in the user pool. When set to
+     *         <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the
+     *         username or password was incorrect. Account confirmation and password recovery return a response
+     *         indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return
+     *         a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
      *         <p>
      *         Valid values include:
      *         </p>
@@ -2379,16 +2363,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
-     *         not prevented.
+     *         <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related
+     *         errors aren't prevented.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     *         <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     *         </p>
      * @see PreventUserExistenceErrorTypes
      */
 
@@ -2398,12 +2376,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
-     * confirmation, and password recovery when the user does not exist in the user pool. When set to
-     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
-     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
-     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
-     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and
+     * password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
+     * doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account
+     * confirmation and password recovery return a response indicating a code was sent to a simulated destination. When
+     * set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't
+     * exist in the user pool.
      * </p>
      * <p>
      * Valid values include:
@@ -2416,25 +2394,19 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
-     * prevented.
+     * <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors
+     * aren't prevented.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     * <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     * </p>
-     * </note>
      * 
      * @param preventUserExistenceErrors
-     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
-     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
-     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
-     *        username or password was incorrect, and account confirmation and password recovery return a response
-     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
-     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        Errors and responses that you want Amazon Cognito APIs to return during authentication, account
+     *        confirmation, and password recovery when the user doesn't exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the
+     *        username or password was incorrect. Account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return
+     *        a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -2446,16 +2418,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
-     *        not prevented.
+     *        <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related
+     *        errors aren't prevented.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PreventUserExistenceErrorTypes
      */
@@ -2467,12 +2433,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
-     * confirmation, and password recovery when the user does not exist in the user pool. When set to
-     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
-     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
-     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
-     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and
+     * password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
+     * doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account
+     * confirmation and password recovery return a response indicating a code was sent to a simulated destination. When
+     * set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't
+     * exist in the user pool.
      * </p>
      * <p>
      * Valid values include:
@@ -2485,25 +2451,19 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
-     * prevented.
+     * <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors
+     * aren't prevented.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     * <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     * </p>
-     * </note>
      * 
      * @param preventUserExistenceErrors
-     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
-     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
-     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
-     *        username or password was incorrect, and account confirmation and password recovery return a response
-     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
-     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        Errors and responses that you want Amazon Cognito APIs to return during authentication, account
+     *        confirmation, and password recovery when the user doesn't exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the
+     *        username or password was incorrect. Account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return
+     *        a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -2515,16 +2475,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
-     *        not prevented.
+     *        <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related
+     *        errors aren't prevented.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
-     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PreventUserExistenceErrorTypes
      */
@@ -2536,13 +2490,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Enables or disables token revocation. For more information about revoking tokens, see <a
+     * Activates or deactivates token revocation. For more information about revoking tokens, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      * >RevokeToken</a>.
      * </p>
      * 
      * @param enableTokenRevocation
-     *        Enables or disables token revocation. For more information about revoking tokens, see <a
+     *        Activates or deactivates token revocation. For more information about revoking tokens, see <a
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      *        >RevokeToken</a>.
      */
@@ -2553,12 +2507,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Enables or disables token revocation. For more information about revoking tokens, see <a
+     * Activates or deactivates token revocation. For more information about revoking tokens, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      * >RevokeToken</a>.
      * </p>
      * 
-     * @return Enables or disables token revocation. For more information about revoking tokens, see <a
+     * @return Activates or deactivates token revocation. For more information about revoking tokens, see <a
      *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      *         >RevokeToken</a>.
      */
@@ -2569,13 +2523,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Enables or disables token revocation. For more information about revoking tokens, see <a
+     * Activates or deactivates token revocation. For more information about revoking tokens, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      * >RevokeToken</a>.
      * </p>
      * 
      * @param enableTokenRevocation
-     *        Enables or disables token revocation. For more information about revoking tokens, see <a
+     *        Activates or deactivates token revocation. For more information about revoking tokens, see <a
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      *        >RevokeToken</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2588,12 +2542,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Enables or disables token revocation. For more information about revoking tokens, see <a
+     * Activates or deactivates token revocation. For more information about revoking tokens, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      * >RevokeToken</a>.
      * </p>
      * 
-     * @return Enables or disables token revocation. For more information about revoking tokens, see <a
+     * @return Activates or deactivates token revocation. For more information about revoking tokens, see <a
      *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
      *         >RevokeToken</a>.
      */

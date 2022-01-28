@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Response parameters for the StartConfigurationSession API.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession"
  *      target="_top">AWS API Documentation</a>
@@ -28,13 +25,14 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API
-     * to retrieve configuration data.
+     * Token encapsulating state about the configuration session. Provide this token to the
+     * <code>GetLatestConfiguration</code> API to retrieve configuration data.
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in
-     * the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
+     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
+     * subsequent call to <code>GetLatestConfiguration</code>.
      * </p>
      * </important>
      */
@@ -42,23 +40,24 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API
-     * to retrieve configuration data.
+     * Token encapsulating state about the configuration session. Provide this token to the
+     * <code>GetLatestConfiguration</code> API to retrieve configuration data.
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in
-     * the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
+     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
+     * subsequent call to <code>GetLatestConfiguration</code>.
      * </p>
      * </important>
      * 
      * @param initialConfigurationToken
      *        Token encapsulating state about the configuration session. Provide this token to the
-     *        GetLatestConfiguration API to retrieve configuration data.</p> <important>
+     *        <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *        <p>
-     *        This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new
-     *        token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-     *        GetLatestConfiguration.
+     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
+     *        use the new token in the <code>GetLatestConfiguration</code> response (
+     *        <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
      *        </p>
      */
 
@@ -68,22 +67,23 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API
-     * to retrieve configuration data.
+     * Token encapsulating state about the configuration session. Provide this token to the
+     * <code>GetLatestConfiguration</code> API to retrieve configuration data.
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in
-     * the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
+     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
+     * subsequent call to <code>GetLatestConfiguration</code>.
      * </p>
      * </important>
      * 
      * @return Token encapsulating state about the configuration session. Provide this token to the
-     *         GetLatestConfiguration API to retrieve configuration data.</p> <important>
+     *         <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *         <p>
-     *         This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new
-     *         token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-     *         GetLatestConfiguration.
+     *         This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
+     *         use the new token in the <code>GetLatestConfiguration</code> response (
+     *         <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
      *         </p>
      */
 
@@ -93,23 +93,24 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API
-     * to retrieve configuration data.
+     * Token encapsulating state about the configuration session. Provide this token to the
+     * <code>GetLatestConfiguration</code> API to retrieve configuration data.
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in
-     * the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
+     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
+     * subsequent call to <code>GetLatestConfiguration</code>.
      * </p>
      * </important>
      * 
      * @param initialConfigurationToken
      *        Token encapsulating state about the configuration session. Provide this token to the
-     *        GetLatestConfiguration API to retrieve configuration data.</p> <important>
+     *        <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *        <p>
-     *        This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new
-     *        token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-     *        GetLatestConfiguration.
+     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
+     *        use the new token in the <code>GetLatestConfiguration</code> response (
+     *        <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

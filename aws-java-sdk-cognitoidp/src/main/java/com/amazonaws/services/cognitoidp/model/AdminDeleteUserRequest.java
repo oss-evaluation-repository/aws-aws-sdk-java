@@ -36,7 +36,7 @@ public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceReques
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user you wish to delete.
+     * The user name of the user you want to delete.
      * </p>
      */
     private String username;
@@ -83,11 +83,11 @@ public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to delete.
+     * The user name of the user you want to delete.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to delete.
+     *        The user name of the user you want to delete.
      */
 
     public void setUsername(String username) {
@@ -96,10 +96,10 @@ public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to delete.
+     * The user name of the user you want to delete.
      * </p>
      * 
-     * @return The user name of the user you wish to delete.
+     * @return The user name of the user you want to delete.
      */
 
     public String getUsername() {
@@ -108,11 +108,11 @@ public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to delete.
+     * The user name of the user you want to delete.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to delete.
+     *        The user name of the user you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

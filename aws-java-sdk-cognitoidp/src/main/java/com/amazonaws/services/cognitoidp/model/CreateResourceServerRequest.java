@@ -34,7 +34,7 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource
-     * server is located. For example, <code>https://my-weather-api.example.com</code>.
+     * server is located, such as <code>https://my-weather-api.example.com</code>.
      * </p>
      */
     private String identifier;
@@ -46,7 +46,7 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.
      * </p>
      */
     private java.util.List<ResourceServerScopeType> scopes;
@@ -94,12 +94,12 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource
-     * server is located. For example, <code>https://my-weather-api.example.com</code>.
+     * server is located, such as <code>https://my-weather-api.example.com</code>.
      * </p>
      * 
      * @param identifier
      *        A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the
-     *        resource server is located. For example, <code>https://my-weather-api.example.com</code>.
+     *        resource server is located, such as <code>https://my-weather-api.example.com</code>.
      */
 
     public void setIdentifier(String identifier) {
@@ -109,11 +109,11 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource
-     * server is located. For example, <code>https://my-weather-api.example.com</code>.
+     * server is located, such as <code>https://my-weather-api.example.com</code>.
      * </p>
      * 
      * @return A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the
-     *         resource server is located. For example, <code>https://my-weather-api.example.com</code>.
+     *         resource server is located, such as <code>https://my-weather-api.example.com</code>.
      */
 
     public String getIdentifier() {
@@ -123,12 +123,12 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource
-     * server is located. For example, <code>https://my-weather-api.example.com</code>.
+     * server is located, such as <code>https://my-weather-api.example.com</code>.
      * </p>
      * 
      * @param identifier
      *        A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the
-     *        resource server is located. For example, <code>https://my-weather-api.example.com</code>.
+     *        resource server is located, such as <code>https://my-weather-api.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,10 +179,11 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.
      * </p>
      * 
-     * @return A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * @return A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
+     *         <code>description</code>.
      */
 
     public java.util.List<ResourceServerScopeType> getScopes() {
@@ -191,11 +192,12 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.
      * </p>
      * 
      * @param scopes
-     *        A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     *        A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
+     *        <code>description</code>.
      */
 
     public void setScopes(java.util.Collection<ResourceServerScopeType> scopes) {
@@ -209,7 +211,7 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,7 +220,8 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param scopes
-     *        A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     *        A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
+     *        <code>description</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +237,12 @@ public class CreateResourceServerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     * A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.
      * </p>
      * 
      * @param scopes
-     *        A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+     *        A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
+     *        <code>description</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

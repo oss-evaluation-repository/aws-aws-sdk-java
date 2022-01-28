@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the user pool configuration is invalid.
+ * This exception is thrown when the user pool configuration is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

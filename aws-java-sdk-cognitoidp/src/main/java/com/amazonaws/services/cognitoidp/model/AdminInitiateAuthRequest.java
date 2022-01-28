@@ -42,7 +42,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientId;
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -52,14 +52,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -91,16 +91,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
@@ -108,7 +101,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
     private String authFlow;
     /**
      * <p>
-     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking.
+     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.
      * The required values depend on the value of <code>AuthFlow</code>:
      * </p>
      * <ul>
@@ -177,7 +170,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     * triggers, but it does not provide the ClientMetadata value as input:
+     * triggers, but it doesn't provide the ClientMetadata value as input:
      * </p>
      * <ul>
      * <li>
@@ -218,24 +211,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -338,7 +331,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -348,14 +341,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -387,23 +380,15 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authFlow
-     *        The authentication flow for this call to execute. The API action will depend on this value. For
-     *        example:</p>
+     *        The authentication flow for this call to run. The API action will depend on this value. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -412,14 +397,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
-     *        variables to be used for next challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure
+     *        Remote Password (SRP) protocol variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
-     *        the next challenge or tokens.
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and
+     *        return the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -451,16 +436,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
-     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
-     *        is not found in the user pool.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the
-     *        request instead of using the SRP process to verify passwords.
+     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in
+     *        the request instead of using the SRP process to verify passwords.
      *        </p>
      *        </li>
      * @see AuthFlowType
@@ -472,7 +450,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -482,14 +460,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -521,22 +499,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The authentication flow for this call to execute. The API action will depend on this value. For
-     *         example:</p>
+     * @return The authentication flow for this call to run. The API action will depend on this value. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -545,14 +515,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
-     *         variables to be used for next challenge execution.
+     *         <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the
+     *         Secure Remote Password (SRP) protocol variables to be used for next challenge execution.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
-     *         the next challenge or tokens.
+     *         <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and
+     *         return the next challenge or tokens.
      *         </p>
      *         </li>
      *         </ul>
@@ -584,16 +554,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
-     *         If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the
-     *         USERNAME is not found in the user pool.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     *         <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the
-     *         request instead of using the SRP process to verify passwords.
+     *         <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in
+     *         the request instead of using the SRP process to verify passwords.
      *         </p>
      *         </li>
      * @see AuthFlowType
@@ -605,7 +568,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -615,14 +578,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -654,23 +617,15 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authFlow
-     *        The authentication flow for this call to execute. The API action will depend on this value. For
-     *        example:</p>
+     *        The authentication flow for this call to run. The API action will depend on this value. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -679,14 +634,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
-     *        variables to be used for next challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure
+     *        Remote Password (SRP) protocol variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
-     *        the next challenge or tokens.
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and
+     *        return the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -718,16 +673,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
-     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
-     *        is not found in the user pool.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the
-     *        request instead of using the SRP process to verify passwords.
+     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in
+     *        the request instead of using the SRP process to verify passwords.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -741,7 +689,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -751,14 +699,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -790,23 +738,15 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authFlow
-     *        The authentication flow for this call to execute. The API action will depend on this value. For
-     *        example:</p>
+     *        The authentication flow for this call to run. The API action will depend on this value. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -815,14 +755,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
-     *        variables to be used for next challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure
+     *        Remote Password (SRP) protocol variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
-     *        the next challenge or tokens.
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and
+     *        return the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -854,16 +794,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
-     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
-     *        is not found in the user pool.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the
-     *        request instead of using the SRP process to verify passwords.
+     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in
+     *        the request instead of using the SRP process to verify passwords.
      *        </p>
      *        </li>
      * @see AuthFlowType
@@ -875,7 +808,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication flow for this call to execute. The API action will depend on this value. For example:
+     * The authentication flow for this call to run. The API action will depend on this value. For example:
      * </p>
      * <ul>
      * <li>
@@ -885,14 +818,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
-     * to be used for next challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote
+     * Password (SRP) protocol variables to be used for next challenge execution.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
-     * challenge or tokens.
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the
+     * next challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -924,23 +857,15 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
-     * found in the user pool.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request
-     * instead of using the SRP process to verify passwords.
+     * <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the
+     * request instead of using the SRP process to verify passwords.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authFlow
-     *        The authentication flow for this call to execute. The API action will depend on this value. For
-     *        example:</p>
+     *        The authentication flow for this call to run. The API action will depend on this value. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -949,14 +874,14 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
-     *        variables to be used for next challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure
+     *        Remote Password (SRP) protocol variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
-     *        the next challenge or tokens.
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and
+     *        return the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -988,16 +913,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
-     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
-     *        is not found in the user pool.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the
-     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the
-     *        request instead of using the SRP process to verify passwords.
+     *        <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in
+     *        the request instead of using the SRP process to verify passwords.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1011,7 +929,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking.
+     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.
      * The required values depend on the value of <code>AuthFlow</code>:
      * </p>
      * <ul>
@@ -1044,7 +962,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * 
-     * @return The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are
+     * @return The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
      *         invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
      *         <ul>
      *         <li>
@@ -1083,7 +1001,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking.
+     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.
      * The required values depend on the value of <code>AuthFlow</code>:
      * </p>
      * <ul>
@@ -1117,7 +1035,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param authParameters
-     *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are
+     *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
      *        invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
      *        <ul>
      *        <li>
@@ -1155,7 +1073,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking.
+     * The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.
      * The required values depend on the value of <code>AuthFlow</code>:
      * </p>
      * <ul>
@@ -1189,7 +1107,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param authParameters
-     *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are
+     *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
      *        invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
      *        <ul>
      *        <li>
@@ -1290,7 +1208,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     * triggers, but it does not provide the ClientMetadata value as input:
+     * triggers, but it doesn't provide the ClientMetadata value as input:
      * </p>
      * <ul>
      * <li>
@@ -1331,24 +1249,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -1387,7 +1305,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <p>
      *         When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     *         following triggers, but it does not provide the ClientMetadata value as input:
+     *         following triggers, but it doesn't provide the ClientMetadata value as input:
      *         </p>
      *         <ul>
      *         <li>
@@ -1428,25 +1346,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <note>
      *         <p>
-     *         Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *         When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *         that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *         include triggers, the ClientMetadata parameter serves no purpose.
+     *         Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a
+     *         user pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *         ClientMetadata parameter serves no purpose.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not validate the ClientMetadata value.
+     *         Validate the ClientMetadata value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *         information.
+     *         Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *         </p>
      *         </li>
      *         </ul>
@@ -1491,7 +1408,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     * triggers, but it does not provide the ClientMetadata value as input:
+     * triggers, but it doesn't provide the ClientMetadata value as input:
      * </p>
      * <ul>
      * <li>
@@ -1532,24 +1449,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -1589,7 +1506,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     *        triggers, but it does not provide the ClientMetadata value as input:
+     *        triggers, but it doesn't provide the ClientMetadata value as input:
      *        </p>
      *        <ul>
      *        <li>
@@ -1630,25 +1547,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>
@@ -1693,7 +1609,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     * triggers, but it does not provide the ClientMetadata value as input:
+     * triggers, but it doesn't provide the ClientMetadata value as input:
      * </p>
      * <ul>
      * <li>
@@ -1734,24 +1650,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -1791,7 +1707,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following
-     *        triggers, but it does not provide the ClientMetadata value as input:
+     *        triggers, but it doesn't provide the ClientMetadata value as input:
      *        </p>
      *        <ul>
      *        <li>
@@ -1832,25 +1748,24 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>

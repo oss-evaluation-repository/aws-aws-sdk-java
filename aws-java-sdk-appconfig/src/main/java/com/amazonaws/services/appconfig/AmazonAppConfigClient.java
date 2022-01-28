@@ -60,8 +60,8 @@ import com.amazonaws.services.appconfig.model.transform.*;
  * To prevent errors when deploying application configurations, especially for production systems where a simple typo
  * could cause an unexpected outage, AppConfig includes validators. A validator provides a syntactic or semantic check
  * to ensure that the configuration you want to deploy works as intended. To validate your application configuration
- * data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or
- * update can only proceed when the configuration data is valid.
+ * data, you provide a schema or an Amazon Web Services Lambda function that runs against the configuration. The
+ * configuration deployment or update can only proceed when the configuration data is valid.
  * </p>
  * <p>
  * During a configuration deployment, AppConfig monitors the application to ensure that the deployment is successful. If
@@ -76,14 +76,14 @@ import com.amazonaws.services.appconfig.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application that can only be tested
- * with production traffic.
+ * <b>Feature flags</b>: Use AppConfig to turn on new features that require a timely deployment, such as a product
+ * launch or announcement.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Feature toggle</b>: Use AppConfig to turn on new features that require a timely deployment, such as a product
- * launch or announcement.
+ * <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application that can only be tested
+ * with production traffic.
  * </p>
  * </li>
  * <li>
@@ -276,7 +276,8 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * A validator for the configuration data. Available validators include either a JSON Schema or an Lambda function.
+     * A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web
+     * Services Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -923,9 +924,29 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Retrieves information about a configuration.
+     * Retrieves the latest deployed configuration.
      * </p>
      * <important>
+     * <p>
+     * Note the following important information.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This API action has been deprecated. Calls to receive configuration data should use the <a href=
+     * "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a href=
+     * "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetConfiguration</code> is a priced call. For more information, see <a
+     * href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration
      * version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to
@@ -933,11 +954,19 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
      * clients receive a configuration.
      * </p>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * To avoid excess charges, we recommend you use the <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to
+     * continue using <code>GetConfiguration</code>, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use
+     * for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned
+     * by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to
+     * <code>GetConfiguration</code>.
      * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param getConfigurationRequest
@@ -953,6 +982,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetConfigurationResult getConfiguration(GetConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetConfiguration(request);
@@ -1497,7 +1527,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the deployments for an environment.
+     * Lists the deployments for an environment in descending deployment number order.
      * </p>
      * 
      * @param listDeploymentsRequest

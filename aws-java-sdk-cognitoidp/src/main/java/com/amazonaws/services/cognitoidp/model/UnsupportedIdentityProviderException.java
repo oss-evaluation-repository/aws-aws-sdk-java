@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the specified identifier is not supported.
+ * This exception is thrown when the specified identifier isn't supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

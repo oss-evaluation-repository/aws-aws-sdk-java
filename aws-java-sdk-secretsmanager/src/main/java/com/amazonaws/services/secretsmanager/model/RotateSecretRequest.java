@@ -67,6 +67,22 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private RotationRulesType rotationRules;
+    /**
+     * <p>
+     * Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation
+     * schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+     * </p>
+     * <p>
+     * If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code>
+     * version of the secret and then removes it.
+     * </p>
+     * <p>
+     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * </p>
+     */
+    private Boolean rotateImmediately;
 
     /**
      * <p>
@@ -331,6 +347,134 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation
+     * schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+     * </p>
+     * <p>
+     * If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code>
+     * version of the secret and then removes it.
+     * </p>
+     * <p>
+     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * </p>
+     * 
+     * @param rotateImmediately
+     *        Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
+     *        rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.</p>
+     *        <p>
+     *        If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running
+     *        the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     *        <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an
+     *        <code>AWSPENDING</code> version of the secret and then removes it.
+     *        </p>
+     *        <p>
+     *        If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     */
+
+    public void setRotateImmediately(Boolean rotateImmediately) {
+        this.rotateImmediately = rotateImmediately;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation
+     * schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+     * </p>
+     * <p>
+     * If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code>
+     * version of the secret and then removes it.
+     * </p>
+     * <p>
+     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * </p>
+     * 
+     * @return Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
+     *         rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.</p>
+     *         <p>
+     *         If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running
+     *         the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     *         <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an
+     *         <code>AWSPENDING</code> version of the secret and then removes it.
+     *         </p>
+     *         <p>
+     *         If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     */
+
+    public Boolean getRotateImmediately() {
+        return this.rotateImmediately;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation
+     * schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+     * </p>
+     * <p>
+     * If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code>
+     * version of the secret and then removes it.
+     * </p>
+     * <p>
+     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * </p>
+     * 
+     * @param rotateImmediately
+     *        Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
+     *        rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.</p>
+     *        <p>
+     *        If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running
+     *        the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     *        <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an
+     *        <code>AWSPENDING</code> version of the secret and then removes it.
+     *        </p>
+     *        <p>
+     *        If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RotateSecretRequest withRotateImmediately(Boolean rotateImmediately) {
+        setRotateImmediately(rotateImmediately);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation
+     * schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+     * </p>
+     * <p>
+     * If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code>
+     * version of the secret and then removes it.
+     * </p>
+     * <p>
+     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * </p>
+     * 
+     * @return Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
+     *         rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.</p>
+     *         <p>
+     *         If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running
+     *         the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     *         <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an
+     *         <code>AWSPENDING</code> version of the secret and then removes it.
+     *         </p>
+     *         <p>
+     *         If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     */
+
+    public Boolean isRotateImmediately() {
+        return this.rotateImmediately;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -349,7 +493,9 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getRotationLambdaARN() != null)
             sb.append("RotationLambdaARN: ").append(getRotationLambdaARN()).append(",");
         if (getRotationRules() != null)
-            sb.append("RotationRules: ").append(getRotationRules());
+            sb.append("RotationRules: ").append(getRotationRules()).append(",");
+        if (getRotateImmediately() != null)
+            sb.append("RotateImmediately: ").append(getRotateImmediately());
         sb.append("}");
         return sb.toString();
     }
@@ -380,6 +526,10 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getRotationRules() != null && other.getRotationRules().equals(this.getRotationRules()) == false)
             return false;
+        if (other.getRotateImmediately() == null ^ this.getRotateImmediately() == null)
+            return false;
+        if (other.getRotateImmediately() != null && other.getRotateImmediately().equals(this.getRotateImmediately()) == false)
+            return false;
         return true;
     }
 
@@ -392,6 +542,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getRotationLambdaARN() == null) ? 0 : getRotationLambdaARN().hashCode());
         hashCode = prime * hashCode + ((getRotationRules() == null) ? 0 : getRotationRules().hashCode());
+        hashCode = prime * hashCode + ((getRotateImmediately() == null) ? 0 : getRotateImmediately().hashCode());
         return hashCode;
     }
 

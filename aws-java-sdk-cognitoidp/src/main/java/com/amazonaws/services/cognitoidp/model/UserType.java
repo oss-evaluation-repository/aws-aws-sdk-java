@@ -30,7 +30,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user name of the user you wish to describe.
+     * The user name of the user you want to describe.
      * </p>
      */
     private String username;
@@ -60,7 +60,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
     private Boolean enabled;
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -85,19 +85,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -112,11 +112,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user name of the user you wish to describe.
+     * The user name of the user you want to describe.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to describe.
+     *        The user name of the user you want to describe.
      */
 
     public void setUsername(String username) {
@@ -125,10 +125,10 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user name of the user you wish to describe.
+     * The user name of the user you want to describe.
      * </p>
      * 
-     * @return The user name of the user you wish to describe.
+     * @return The user name of the user you want to describe.
      */
 
     public String getUsername() {
@@ -137,11 +137,11 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user name of the user you wish to describe.
+     * The user name of the user you want to describe.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to describe.
+     *        The user name of the user you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,7 +354,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -379,25 +379,25 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userStatus
-     *        The user status. Can be one of the following:</p>
+     *        The user status. This can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -421,19 +421,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @see UserStatusType
@@ -445,7 +445,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -470,24 +470,24 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The user status. Can be one of the following:</p>
+     * @return The user status. This can be one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -511,19 +511,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         UNKNOWN - User status is not known.
+     *         UNKNOWN - User status isn't known.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *         he or she can sign in.
+     *         RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *         can sign in.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *         first sign-in, the user must change his or her password to a new value before doing anything else.
+     *         first sign-in, the user must change their password to a new value before doing anything else.
      *         </p>
      *         </li>
      * @see UserStatusType
@@ -535,7 +535,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -560,25 +560,25 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userStatus
-     *        The user status. Can be one of the following:</p>
+     *        The user status. This can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -602,19 +602,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -628,7 +628,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -653,25 +653,25 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userStatus
-     *        The user status. Can be one of the following:</p>
+     *        The user status. This can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -695,19 +695,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @see UserStatusType
@@ -719,7 +719,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The user status. This can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -744,25 +744,25 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userStatus
-     *        The user status. Can be one of the following:</p>
+     *        The user status. This can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -786,19 +786,19 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

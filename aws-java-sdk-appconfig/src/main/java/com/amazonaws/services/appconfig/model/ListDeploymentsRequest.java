@@ -39,14 +39,16 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     private String environmentId;
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of items that may be returned for this call. If there are items that have not yet been
+     * returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call
+     * to get the next set of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * The token returned by a prior call to this operation indicating the next set of results to be returned. If not
+     * specified, the operation will return the first set of results.
      * </p>
      */
     private String nextToken;
@@ -133,13 +135,15 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of items that may be returned for this call. If there are items that have not yet been
+     * returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call
+     * to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
-     *        a subsequent call to get the next set of results.
+     *        The maximum number of items that may be returned for this call. If there are items that have not yet been
+     *        returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent
+     *        call to get the next set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -148,12 +152,14 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of items that may be returned for this call. If there are items that have not yet been
+     * returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call
+     * to get the next set of results.
      * </p>
      * 
-     * @return The maximum number of items to return for this call. The call also returns a token that you can specify
-     *         in a subsequent call to get the next set of results.
+     * @return The maximum number of items that may be returned for this call. If there are items that have not yet been
+     *         returned, the response will include a non-null <code>NextToken</code> that you can provide in a
+     *         subsequent call to get the next set of results.
      */
 
     public Integer getMaxResults() {
@@ -162,13 +168,15 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of items that may be returned for this call. If there are items that have not yet been
+     * returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call
+     * to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
-     *        a subsequent call to get the next set of results.
+     *        The maximum number of items that may be returned for this call. If there are items that have not yet been
+     *        returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent
+     *        call to get the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +187,13 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * The token returned by a prior call to this operation indicating the next set of results to be returned. If not
+     * specified, the operation will return the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of results.
+     *        The token returned by a prior call to this operation indicating the next set of results to be returned. If
+     *        not specified, the operation will return the first set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -192,10 +202,12 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * The token returned by a prior call to this operation indicating the next set of results to be returned. If not
+     * specified, the operation will return the first set of results.
      * </p>
      * 
-     * @return A token to start the list. Use this token to get the next set of results.
+     * @return The token returned by a prior call to this operation indicating the next set of results to be returned.
+     *         If not specified, the operation will return the first set of results.
      */
 
     public String getNextToken() {
@@ -204,11 +216,13 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * The token returned by a prior call to this operation indicating the next set of results to be returned. If not
+     * specified, the operation will return the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of results.
+     *        The token returned by a prior call to this operation indicating the next set of results to be returned. If
+     *        not specified, the operation will return the first set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

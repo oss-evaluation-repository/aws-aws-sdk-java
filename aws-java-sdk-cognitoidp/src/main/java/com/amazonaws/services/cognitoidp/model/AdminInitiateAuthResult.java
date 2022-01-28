@@ -28,13 +28,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -42,7 +42,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -64,7 +64,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -75,7 +75,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -87,13 +87,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
@@ -103,16 +103,16 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
+     * The session that should be passed both ways in challenge-response calls to the service. If
      * <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller
-     * needs to go through another challenge, they return a session with other challenge parameters. This session should
-     * be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     * must pass another challenge, they return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
     /**
      * <p>
-     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to
+     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must
      * pass another challenge. The responses in this parameter should be used to compute inputs to the next call (
      * <code>AdminRespondToAuthChallenge</code>).
      * </p>
@@ -120,16 +120,16 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
-     * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
-     * <code>USERNAME</code> attribute cannot be an alias.
+     * This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+     * <code>USERNAME</code> attribute can't be an alias.
      * </p>
      */
     private java.util.Map<String, String> challengeParameters;
     /**
      * <p>
-     * The result of the authentication response. This is only returned if the caller does not need to pass another
+     * The result of the authentication response. This is only returned if the caller doesn't need to pass another
      * challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>,
      * <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      * </p>
@@ -138,13 +138,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -152,7 +152,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -174,7 +174,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -185,7 +185,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -197,13 +197,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
@@ -211,12 +211,12 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * 
      * @param challengeName
-     *        The name of the challenge which you are responding to with this call. This is returned to you in the
-     *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+     *        The name of the challenge that you're responding to with this call. This is returned in the
+     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up
      *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      *        continue to authenticate.
      *        </p>
@@ -224,7 +224,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
-     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      *        </p>
      *        </li>
      *        <li>
@@ -247,8 +247,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges
-     *        were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
+     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous
+     *        challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      *        </p>
      *        </li>
      *        <li>
@@ -258,8 +258,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code>
-     *        and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
+     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
+     *        <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      *        </p>
      *        </li>
      *        <li>
@@ -271,15 +271,15 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
-     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
-     *        value.
+     *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
+     *        MFA types activated for the user pool will be listed in the challenge parameters
+     *        <code>MFA_CAN_SETUP</code> value.
      *        </p>
      *        <p>
-     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
      *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
-     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their
      *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
@@ -292,13 +292,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -306,7 +306,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -328,7 +328,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -339,7 +339,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -351,25 +351,25 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the challenge which you are responding to with this call. This is returned to you in the
-     *         <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+     * @return The name of the challenge that you're responding to with this call. This is returned in the
+     *         <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *         <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up
      *         are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      *         continue to authenticate.
      *         </p>
@@ -377,7 +377,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         <li>
      *         <p>
      *         <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
-     *         SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *         SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      *         </p>
      *         </li>
      *         <li>
@@ -400,7 +400,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous
+     *         <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous
      *         challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      *         </p>
      *         </li>
@@ -411,8 +411,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code>
-     *         and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
+     *         <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
+     *         <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      *         </p>
      *         </li>
      *         <li>
@@ -424,15 +424,15 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The
-     *         MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
-     *         value.
+     *         <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
+     *         MFA types activated for the user pool will be listed in the challenge parameters
+     *         <code>MFA_CAN_SETUP</code> value.
      *         </p>
      *         <p>
-     *         To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *         To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      *         <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
      *         an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
-     *         sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *         sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their
      *         account and then call <code>InitiateAuth</code> again to restart sign-in.
      *         </p>
      *         </li>
@@ -445,13 +445,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -459,7 +459,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -481,7 +481,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -492,7 +492,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -504,13 +504,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
@@ -518,12 +518,12 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * 
      * @param challengeName
-     *        The name of the challenge which you are responding to with this call. This is returned to you in the
-     *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+     *        The name of the challenge that you're responding to with this call. This is returned in the
+     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up
      *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      *        continue to authenticate.
      *        </p>
@@ -531,7 +531,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
-     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      *        </p>
      *        </li>
      *        <li>
@@ -554,8 +554,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges
-     *        were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
+     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous
+     *        challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      *        </p>
      *        </li>
      *        <li>
@@ -565,8 +565,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code>
-     *        and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
+     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
+     *        <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      *        </p>
      *        </li>
      *        <li>
@@ -578,15 +578,15 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
-     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
-     *        value.
+     *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
+     *        MFA types activated for the user pool will be listed in the challenge parameters
+     *        <code>MFA_CAN_SETUP</code> value.
      *        </p>
      *        <p>
-     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
      *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
-     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their
      *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
@@ -601,13 +601,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -615,7 +615,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -637,7 +637,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -648,7 +648,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -660,13 +660,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
@@ -674,12 +674,12 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * 
      * @param challengeName
-     *        The name of the challenge which you are responding to with this call. This is returned to you in the
-     *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+     *        The name of the challenge that you're responding to with this call. This is returned in the
+     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up
      *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      *        continue to authenticate.
      *        </p>
@@ -687,7 +687,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
-     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      *        </p>
      *        </li>
      *        <li>
@@ -710,8 +710,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges
-     *        were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
+     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous
+     *        challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      *        </p>
      *        </li>
      *        <li>
@@ -721,8 +721,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code>
-     *        and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
+     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
+     *        <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      *        </p>
      *        </li>
      *        <li>
@@ -734,15 +734,15 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
-     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
-     *        value.
+     *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
+     *        MFA types activated for the user pool will be listed in the challenge parameters
+     *        <code>MFA_CAN_SETUP</code> value.
      *        </p>
      *        <p>
-     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
      *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
-     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their
      *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
@@ -755,13 +755,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the challenge which you are responding to with this call. This is returned to you in the
-     * <code>AdminInitiateAuth</code> response if you need to pass another challenge.
+     * The name of the challenge that you're responding to with this call. This is returned in the
+     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are
      * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
      * authenticate.
      * </p>
@@ -769,7 +769,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
-     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      * </p>
      * </li>
      * <li>
@@ -791,7 +791,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were
      * passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      * </p>
      * </li>
@@ -802,7 +802,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and
+     * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
      * <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      * </p>
      * </li>
@@ -814,13 +814,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
-     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
+     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
      * </p>
      * <p>
-     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
-     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up
      * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
      * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
@@ -828,12 +828,12 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * 
      * @param challengeName
-     *        The name of the challenge which you are responding to with this call. This is returned to you in the
-     *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+     *        The name of the challenge that you're responding to with this call. This is returned in the
+     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up
      *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      *        continue to authenticate.
      *        </p>
@@ -841,7 +841,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
-     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.
      *        </p>
      *        </li>
      *        <li>
@@ -864,8 +864,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges
-     *        were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
+     *        <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous
+     *        challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.
      *        </p>
      *        </li>
      *        <li>
@@ -875,8 +875,8 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code>
-     *        and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
+     *        <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and
+     *        <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
      *        </p>
      *        </li>
      *        <li>
@@ -888,15 +888,15 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
-     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
-     *        value.
+     *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
+     *        MFA types activated for the user pool will be listed in the challenge parameters
+     *        <code>MFA_CAN_SETUP</code> value.
      *        </p>
      *        <p>
-     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
      *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
      *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
-     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their
      *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
@@ -911,17 +911,17 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
+     * The session that should be passed both ways in challenge-response calls to the service. If
      * <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller
-     * needs to go through another challenge, they return a session with other challenge parameters. This session should
-     * be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     * must pass another challenge, they return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
+     *        The session that should be passed both ways in challenge-response calls to the service. If
      *        <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the
-     *        caller needs to go through another challenge, they return a session with other challenge parameters. This
-     *        session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     *        caller must pass another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -930,16 +930,16 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
+     * The session that should be passed both ways in challenge-response calls to the service. If
      * <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller
-     * needs to go through another challenge, they return a session with other challenge parameters. This session should
-     * be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     * must pass another challenge, they return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If
+     * @return The session that should be passed both ways in challenge-response calls to the service. If
      *         <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the
-     *         caller needs to go through another challenge, they return a session with other challenge parameters. This
-     *         session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     *         caller must pass another challenge, they return a session with other challenge parameters. This session
+     *         should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -948,17 +948,17 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
+     * The session that should be passed both ways in challenge-response calls to the service. If
      * <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller
-     * needs to go through another challenge, they return a session with other challenge parameters. This session should
-     * be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     * must pass another challenge, they return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
+     *        The session that should be passed both ways in challenge-response calls to the service. If
      *        <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the
-     *        caller needs to go through another challenge, they return a session with other challenge parameters. This
-     *        session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
+     *        caller must pass another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -969,7 +969,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to
+     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must
      * pass another challenge. The responses in this parameter should be used to compute inputs to the next call (
      * <code>AdminRespondToAuthChallenge</code>).
      * </p>
@@ -977,23 +977,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
-     * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
-     * <code>USERNAME</code> attribute cannot be an alias.
+     * This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+     * <code>USERNAME</code> attribute can't be an alias.
      * </p>
      * 
      * @return The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you
-     *         need to pass another challenge. The responses in this parameter should be used to compute inputs to the
-     *         next call (<code>AdminRespondToAuthChallenge</code>).</p>
+     *         must pass another challenge. The responses in this parameter should be used to compute inputs to the next
+     *         call (<code>AdminRespondToAuthChallenge</code>).</p>
      *         <p>
      *         All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *         </p>
      *         <p>
-     *         The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
-     *         (such as email address or phone number), even if you specified an alias in your call to
-     *         <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
-     *         <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.
+     *         The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such
+     *         as email address or phone number), even if you specified an alias in your call to
+     *         <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API
+     *         <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.
      */
 
     public java.util.Map<String, String> getChallengeParameters() {
@@ -1002,7 +1002,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to
+     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must
      * pass another challenge. The responses in this parameter should be used to compute inputs to the next call (
      * <code>AdminRespondToAuthChallenge</code>).
      * </p>
@@ -1010,24 +1010,24 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
-     * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
-     * <code>USERNAME</code> attribute cannot be an alias.
+     * This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+     * <code>USERNAME</code> attribute can't be an alias.
      * </p>
      * 
      * @param challengeParameters
      *        The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you
-     *        need to pass another challenge. The responses in this parameter should be used to compute inputs to the
-     *        next call (<code>AdminRespondToAuthChallenge</code>).</p>
+     *        must pass another challenge. The responses in this parameter should be used to compute inputs to the next
+     *        call (<code>AdminRespondToAuthChallenge</code>).</p>
      *        <p>
      *        All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *        </p>
      *        <p>
-     *        The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
-     *        (such as email address or phone number), even if you specified an alias in your call to
-     *        <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
-     *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.
+     *        The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such
+     *        as email address or phone number), even if you specified an alias in your call to
+     *        <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API
+     *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.
      */
 
     public void setChallengeParameters(java.util.Map<String, String> challengeParameters) {
@@ -1036,7 +1036,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to
+     * The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must
      * pass another challenge. The responses in this parameter should be used to compute inputs to the next call (
      * <code>AdminRespondToAuthChallenge</code>).
      * </p>
@@ -1044,24 +1044,24 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
-     * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
-     * <code>USERNAME</code> attribute cannot be an alias.
+     * This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+     * <code>USERNAME</code> attribute can't be an alias.
      * </p>
      * 
      * @param challengeParameters
      *        The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you
-     *        need to pass another challenge. The responses in this parameter should be used to compute inputs to the
-     *        next call (<code>AdminRespondToAuthChallenge</code>).</p>
+     *        must pass another challenge. The responses in this parameter should be used to compute inputs to the next
+     *        call (<code>AdminRespondToAuthChallenge</code>).</p>
      *        <p>
      *        All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *        </p>
      *        <p>
-     *        The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
-     *        (such as email address or phone number), even if you specified an alias in your call to
-     *        <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
-     *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.
+     *        The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such
+     *        as email address or phone number), even if you specified an alias in your call to
+     *        <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API
+     *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,13 +1100,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The result of the authentication response. This is only returned if the caller does not need to pass another
+     * The result of the authentication response. This is only returned if the caller doesn't need to pass another
      * challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>,
      * <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      * </p>
      * 
      * @param authenticationResult
-     *        The result of the authentication response. This is only returned if the caller does not need to pass
+     *        The result of the authentication response. This is only returned if the caller doesn't need to pass
      *        another challenge. If the caller does need to pass another challenge before it gets tokens,
      *        <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      */
@@ -1117,12 +1117,12 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The result of the authentication response. This is only returned if the caller does not need to pass another
+     * The result of the authentication response. This is only returned if the caller doesn't need to pass another
      * challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>,
      * <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      * </p>
      * 
-     * @return The result of the authentication response. This is only returned if the caller does not need to pass
+     * @return The result of the authentication response. This is only returned if the caller doesn't need to pass
      *         another challenge. If the caller does need to pass another challenge before it gets tokens,
      *         <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      */
@@ -1133,13 +1133,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The result of the authentication response. This is only returned if the caller does not need to pass another
+     * The result of the authentication response. This is only returned if the caller doesn't need to pass another
      * challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>,
      * <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      * </p>
      * 
      * @param authenticationResult
-     *        The result of the authentication response. This is only returned if the caller does not need to pass
+     *        The result of the authentication response. This is only returned if the caller doesn't need to pass
      *        another challenge. If the caller does need to pass another challenge before it gets tokens,
      *        <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.
      * @return Returns a reference to this object so that method calls can be chained together.

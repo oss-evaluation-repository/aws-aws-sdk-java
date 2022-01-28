@@ -28,7 +28,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve from the get user request.
+     * The user name of the user you want to retrieve from the get user request.
      * </p>
      */
     private String username;
@@ -44,8 +44,8 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
@@ -57,7 +57,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String preferredMfaSetting;
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      */
@@ -65,11 +65,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve from the get user request.
+     * The user name of the user you want to retrieve from the get user request.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve from the get user request.
+     *        The user name of the user you want to retrieve from the get user request.
      */
 
     public void setUsername(String username) {
@@ -78,10 +78,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve from the get user request.
+     * The user name of the user you want to retrieve from the get user request.
      * </p>
      * 
-     * @return The user name of the user you wish to retrieve from the get user request.
+     * @return The user name of the user you want to retrieve from the get user request.
      */
 
     public String getUsername() {
@@ -90,11 +90,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you wish to retrieve from the get user request.
+     * The user name of the user you want to retrieve from the get user request.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve from the get user request.
+     *        The user name of the user you want to retrieve from the get user request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,13 +196,14 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @return <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *         configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *         information about either type of MFA configuration, use UserMFASettingList instead.
+     *         configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *         MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *         instead.
      */
 
     public java.util.List<MFAOptionType> getMFAOptions() {
@@ -212,14 +213,15 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      */
 
     public void setMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
@@ -234,8 +236,8 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -245,8 +247,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,14 +266,15 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,12 +325,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
-     * @return The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
-     *         and <code>SOFTWARE_TOKEN_MFA</code>.
+     * @return The MFA options that are activated for the user. The possible values in this list are
+     *         <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
     public java.util.List<String> getUserMFASettingList() {
@@ -335,12 +339,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
@@ -355,7 +359,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * <p>
@@ -365,7 +369,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -382,12 +386,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

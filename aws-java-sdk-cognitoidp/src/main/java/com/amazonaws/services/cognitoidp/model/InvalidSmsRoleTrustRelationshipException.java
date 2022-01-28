@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can
- * happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not
+ * This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This
+ * can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not
  * match what is provided in the SMS configuration for the user pool.
  * </p>
  */

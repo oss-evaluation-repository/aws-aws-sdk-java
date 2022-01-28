@@ -28,7 +28,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you are receiving information.
+     * The user name of the user about whom you're receiving information.
      * </p>
      */
     private String username;
@@ -52,7 +52,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date userLastModifiedDate;
     /**
      * <p>
-     * Indicates that the status is enabled.
+     * Indicates that the status is <code>enabled</code>.
      * </p>
      */
     private Boolean enabled;
@@ -83,19 +83,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -104,8 +104,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
@@ -117,7 +117,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String preferredMfaSetting;
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      */
@@ -125,11 +125,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you are receiving information.
+     * The user name of the user about whom you're receiving information.
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you are receiving information.
+     *        The user name of the user about whom you're receiving information.
      */
 
     public void setUsername(String username) {
@@ -138,10 +138,10 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you are receiving information.
+     * The user name of the user about whom you're receiving information.
      * </p>
      * 
-     * @return The user name of the user about whom you are receiving information.
+     * @return The user name of the user about whom you're receiving information.
      */
 
     public String getUsername() {
@@ -150,11 +150,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you are receiving information.
+     * The user name of the user about whom you're receiving information.
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you are receiving information.
+     *        The user name of the user about whom you're receiving information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +315,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates that the status is enabled.
+     * Indicates that the status is <code>enabled</code>.
      * </p>
      * 
      * @param enabled
-     *        Indicates that the status is enabled.
+     *        Indicates that the status is <code>enabled</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -328,10 +328,10 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates that the status is enabled.
+     * Indicates that the status is <code>enabled</code>.
      * </p>
      * 
-     * @return Indicates that the status is enabled.
+     * @return Indicates that the status is <code>enabled</code>.
      */
 
     public Boolean getEnabled() {
@@ -340,11 +340,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates that the status is enabled.
+     * Indicates that the status is <code>enabled</code>.
      * </p>
      * 
      * @param enabled
-     *        Indicates that the status is enabled.
+     *        Indicates that the status is <code>enabled</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,10 +355,10 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates that the status is enabled.
+     * Indicates that the status is <code>enabled</code>.
      * </p>
      * 
-     * @return Indicates that the status is enabled.
+     * @return Indicates that the status is <code>enabled</code>.
      */
 
     public Boolean isEnabled() {
@@ -392,19 +392,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -434,19 +434,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @see UserStatusType
@@ -483,19 +483,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -524,19 +524,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *         </li>
      *         <li>
      *         <p>
-     *         UNKNOWN - User status is not known.
+     *         UNKNOWN - User status isn't known.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *         he or she can sign in.
+     *         RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *         can sign in.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *         first sign-in, the user must change his or her password to a new value before doing anything else.
+     *         first sign-in, the user must change their password to a new value before doing anything else.
      *         </p>
      *         </li>
      * @see UserStatusType
@@ -573,19 +573,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -615,19 +615,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -666,19 +666,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -708,19 +708,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @see UserStatusType
@@ -757,19 +757,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - User status is not known.
+     * UNKNOWN - User status isn't known.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
-     * she can sign in.
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can
+     * sign in.
      * </p>
      * </li>
      * <li>
      * <p>
      * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
-     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * sign-in, the user must change their password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -799,19 +799,19 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - User status is not known.
+     *        UNKNOWN - User status isn't known.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
-     *        he or she can sign in.
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they
+     *        can sign in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
-     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        first sign-in, the user must change their password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -826,13 +826,14 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @return <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *         configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *         information about either type of MFA configuration, use UserMFASettingList instead.
+     *         configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *         MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *         instead.
      */
 
     public java.util.List<MFAOptionType> getMFAOptions() {
@@ -842,14 +843,15 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      */
 
     public void setMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
@@ -864,8 +866,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -875,8 +877,9 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -893,14 +896,15 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
-     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use UserMFASettingList instead.
+     * It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
-     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use UserMFASettingList instead.
+     *        configurations. It doesn't provide information about time-based one-time password (TOTP) software token
+     *        MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -951,12 +955,12 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
-     * @return The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
-     *         and <code>SOFTWARE_TOKEN_MFA</code>.
+     * @return The MFA options that are activated for the user. The possible values in this list are
+     *         <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
     public java.util.List<String> getUserMFASettingList() {
@@ -965,12 +969,12 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
@@ -985,7 +989,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * <p>
@@ -995,7 +999,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1012,12 +1016,12 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and
      * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>
      *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.
+ * This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

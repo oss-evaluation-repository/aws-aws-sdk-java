@@ -42,7 +42,7 @@ public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRe
     private String userPoolId;
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      * </p>
      */
     private String cloudWatchLogsRoleArn;
@@ -129,11 +129,11 @@ public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     *        The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      */
 
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
@@ -142,10 +142,10 @@ public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      * </p>
      * 
-     * @return The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * @return The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      */
 
     public String getCloudWatchLogsRoleArn() {
@@ -154,11 +154,11 @@ public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     *        The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

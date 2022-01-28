@@ -36,7 +36,7 @@ public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceReque
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user you wish to disable.
+     * The user name of the user you want to disable.
      * </p>
      */
     private String username;
@@ -83,11 +83,11 @@ public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name of the user you wish to disable.
+     * The user name of the user you want to disable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to disable.
+     *        The user name of the user you want to disable.
      */
 
     public void setUsername(String username) {
@@ -96,10 +96,10 @@ public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name of the user you wish to disable.
+     * The user name of the user you want to disable.
      * </p>
      * 
-     * @return The user name of the user you wish to disable.
+     * @return The user name of the user you want to disable.
      */
 
     public String getUsername() {
@@ -108,11 +108,11 @@ public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name of the user you wish to disable.
+     * The user name of the user you want to disable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to disable.
+     *        The user name of the user you want to disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

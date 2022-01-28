@@ -30,7 +30,7 @@ public class HttpHeader implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The header name
+     * The header name.
      * </p>
      */
     private String headerName;
@@ -43,11 +43,11 @@ public class HttpHeader implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The header name
+     * The header name.
      * </p>
      * 
      * @param headerName
-     *        The header name
+     *        The header name.
      */
 
     public void setHeaderName(String headerName) {
@@ -56,10 +56,10 @@ public class HttpHeader implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The header name
+     * The header name.
      * </p>
      * 
-     * @return The header name
+     * @return The header name.
      */
 
     public String getHeaderName() {
@@ -68,11 +68,11 @@ public class HttpHeader implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The header name
+     * The header name.
      * </p>
      * 
      * @param headerName
-     *        The header name
+     *        The header name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

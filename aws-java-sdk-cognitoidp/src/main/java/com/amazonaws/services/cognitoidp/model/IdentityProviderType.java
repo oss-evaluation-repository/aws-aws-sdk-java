@@ -183,6 +183,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -192,7 +197,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
@@ -520,6 +525,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -529,7 +539,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
@@ -675,6 +685,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *         jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         <li>
@@ -684,7 +699,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *         <ul>
      *         <li>
      *         <p>
-     *         MetadataFile OR MetadataURL
+     *         MetadataFile or MetadataURL
      *         </p>
      *         </li>
      *         <li>
@@ -837,6 +852,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -846,7 +866,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
@@ -993,6 +1013,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -1002,7 +1027,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        MetadataFile OR MetadataURL
+     *        MetadataFile or MetadataURL
      *        </p>
      *        </li>
      *        <li>
@@ -1155,6 +1180,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -1164,7 +1194,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * MetadataFile OR MetadataURL
+     * MetadataFile or MetadataURL
      * </p>
      * </li>
      * <li>
@@ -1311,6 +1341,11 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -1320,7 +1355,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        MetadataFile OR MetadataURL
+     *        MetadataFile or MetadataURL
      *        </p>
      *        </li>
      *        <li>

@@ -52,6 +52,14 @@ public class RotationRulesTypeJsonUnmarshaller implements Unmarshaller<RotationR
                     context.nextToken();
                     rotationRulesType.setAutomaticallyAfterDays(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("Duration", targetDepth)) {
+                    context.nextToken();
+                    rotationRulesType.setDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    context.nextToken();
+                    rotationRulesType.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

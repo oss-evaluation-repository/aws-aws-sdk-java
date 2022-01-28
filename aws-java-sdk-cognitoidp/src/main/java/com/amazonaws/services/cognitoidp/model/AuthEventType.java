@@ -66,8 +66,8 @@ public class AuthEventType implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ChallengeResponseType> challengeResponses;
     /**
      * <p>
-     * The user context data captured at the time of an event request. It provides additional information about the
-     * client from which event the request is received.
+     * The user context data captured at the time of an event request. This value provides additional information about
+     * the client from which event the request is received.
      * </p>
      */
     private EventContextDataType eventContextData;
@@ -388,13 +388,13 @@ public class AuthEventType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user context data captured at the time of an event request. It provides additional information about the
-     * client from which event the request is received.
+     * The user context data captured at the time of an event request. This value provides additional information about
+     * the client from which event the request is received.
      * </p>
      * 
      * @param eventContextData
-     *        The user context data captured at the time of an event request. It provides additional information about
-     *        the client from which event the request is received.
+     *        The user context data captured at the time of an event request. This value provides additional information
+     *        about the client from which event the request is received.
      */
 
     public void setEventContextData(EventContextDataType eventContextData) {
@@ -403,12 +403,12 @@ public class AuthEventType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user context data captured at the time of an event request. It provides additional information about the
-     * client from which event the request is received.
+     * The user context data captured at the time of an event request. This value provides additional information about
+     * the client from which event the request is received.
      * </p>
      * 
-     * @return The user context data captured at the time of an event request. It provides additional information about
-     *         the client from which event the request is received.
+     * @return The user context data captured at the time of an event request. This value provides additional
+     *         information about the client from which event the request is received.
      */
 
     public EventContextDataType getEventContextData() {
@@ -417,13 +417,13 @@ public class AuthEventType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user context data captured at the time of an event request. It provides additional information about the
-     * client from which event the request is received.
+     * The user context data captured at the time of an event request. This value provides additional information about
+     * the client from which event the request is received.
      * </p>
      * 
      * @param eventContextData
-     *        The user context data captured at the time of an event request. It provides additional information about
-     *        the client from which event the request is received.
+     *        The user context data captured at the time of an event request. This value provides additional information
+     *        about the client from which event the request is received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

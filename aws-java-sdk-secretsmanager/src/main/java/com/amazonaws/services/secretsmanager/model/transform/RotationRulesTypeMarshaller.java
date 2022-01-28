@@ -29,6 +29,10 @@ public class RotationRulesTypeMarshaller {
 
     private static final MarshallingInfo<Long> AUTOMATICALLYAFTERDAYS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomaticallyAfterDays").build();
+    private static final MarshallingInfo<String> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Duration").build();
+    private static final MarshallingInfo<String> SCHEDULEEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
 
     private static final RotationRulesTypeMarshaller instance = new RotationRulesTypeMarshaller();
 
@@ -47,6 +51,8 @@ public class RotationRulesTypeMarshaller {
 
         try {
             protocolMarshaller.marshall(rotationRulesType.getAutomaticallyAfterDays(), AUTOMATICALLYAFTERDAYS_BINDING);
+            protocolMarshaller.marshall(rotationRulesType.getDuration(), DURATION_BINDING);
+            protocolMarshaller.marshall(rotationRulesType.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

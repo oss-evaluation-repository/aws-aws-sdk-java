@@ -23,9 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
- * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
- * Amazon Pinpoint projects within that same region.
+ * In Regions where Pinpoint isn't available, User Pools only supports sending events to Amazon Pinpoint projects in
+ * us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon Pinpoint projects
+ * within that same Region.
  * </p>
  * </note>
  * 
@@ -44,14 +44,15 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject
      * declared by the app ARN.
      * </p>
      */
     private String applicationArn;
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     * The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon
+     * Pinpoint analytics.
      * </p>
      */
     private String roleArn;
@@ -112,14 +113,14 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject
      * declared by the app ARN.
      * </p>
      * 
      * @param applicationArn
      *        The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     *        Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
-     *        project declared by the app ARN.
+     *        integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon
+     *        Pinpointproject declared by the app ARN.
      */
 
     public void setApplicationArn(String applicationArn) {
@@ -129,13 +130,13 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject
      * declared by the app ARN.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     *         Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
-     *         project declared by the app ARN.
+     *         integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon
+     *         Pinpointproject declared by the app ARN.
      */
 
     public String getApplicationArn() {
@@ -145,14 +146,14 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject
      * declared by the app ARN.
      * </p>
      * 
      * @param applicationArn
      *        The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
-     *        Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
-     *        project declared by the app ARN.
+     *        integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon
+     *        Pinpointproject declared by the app ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +164,13 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     * The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon
+     * Pinpoint analytics.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     *        The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to
+     *        Amazon Pinpoint analytics.
      */
 
     public void setRoleArn(String roleArn) {
@@ -176,10 +179,12 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     * The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon
+     * Pinpoint analytics.
      * </p>
      * 
-     * @return The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     * @return The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to
+     *         Amazon Pinpoint analytics.
      */
 
     public String getRoleArn() {
@@ -188,11 +193,13 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     * The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon
+     * Pinpoint analytics.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+     *        The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to
+     *        Amazon Pinpoint analytics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

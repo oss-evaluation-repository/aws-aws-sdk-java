@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about an invalid parameter.
+ * Information about an invalid parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/InvalidParameterDetail"
@@ -30,18 +30,18 @@ public class InvalidParameterDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * The reason the parameter is invalid.
      * </p>
      */
     private String problem;
 
     /**
      * <p>
-     * Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * The reason the parameter is invalid.
      * </p>
      * 
      * @param problem
-     *        Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     *        The reason the parameter is invalid.
      * @see InvalidParameterProblem
      */
 
@@ -51,10 +51,10 @@ public class InvalidParameterDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * The reason the parameter is invalid.
      * </p>
      * 
-     * @return Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * @return The reason the parameter is invalid.
      * @see InvalidParameterProblem
      */
 
@@ -64,11 +64,11 @@ public class InvalidParameterDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * The reason the parameter is invalid.
      * </p>
      * 
      * @param problem
-     *        Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     *        The reason the parameter is invalid.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InvalidParameterProblem
      */
@@ -80,11 +80,11 @@ public class InvalidParameterDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     * The reason the parameter is invalid.
      * </p>
      * 
      * @param problem
-     *        Detail describing why an individual parameter did not satisfy the constraints specified by the service
+     *        The reason the parameter is invalid.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InvalidParameterProblem
      */

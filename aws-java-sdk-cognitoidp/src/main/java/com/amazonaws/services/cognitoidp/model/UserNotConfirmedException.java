@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when a user is not confirmed successfully.
+ * This exception is thrown when a user isn't confirmed successfully.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

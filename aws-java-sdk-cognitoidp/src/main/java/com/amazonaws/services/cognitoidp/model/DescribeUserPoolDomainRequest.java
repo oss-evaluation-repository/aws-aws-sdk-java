@@ -27,18 +27,24 @@ public class DescribeUserPoolDomainRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The domain string.
+     * The domain string. For custom domains, this is the fully-qualified domain name, such as
+     * <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     * <code>auth</code>.
      * </p>
      */
     private String domain;
 
     /**
      * <p>
-     * The domain string.
+     * The domain string. For custom domains, this is the fully-qualified domain name, such as
+     * <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     * <code>auth</code>.
      * </p>
      * 
      * @param domain
-     *        The domain string.
+     *        The domain string. For custom domains, this is the fully-qualified domain name, such as
+     *        <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     *        <code>auth</code>.
      */
 
     public void setDomain(String domain) {
@@ -47,10 +53,14 @@ public class DescribeUserPoolDomainRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The domain string.
+     * The domain string. For custom domains, this is the fully-qualified domain name, such as
+     * <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     * <code>auth</code>.
      * </p>
      * 
-     * @return The domain string.
+     * @return The domain string. For custom domains, this is the fully-qualified domain name, such as
+     *         <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     *         <code>auth</code>.
      */
 
     public String getDomain() {
@@ -59,11 +69,15 @@ public class DescribeUserPoolDomainRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The domain string.
+     * The domain string. For custom domains, this is the fully-qualified domain name, such as
+     * <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     * <code>auth</code>.
      * </p>
      * 
      * @param domain
-     *        The domain string.
+     *        The domain string. For custom domains, this is the fully-qualified domain name, such as
+     *        <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as
+     *        <code>auth</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

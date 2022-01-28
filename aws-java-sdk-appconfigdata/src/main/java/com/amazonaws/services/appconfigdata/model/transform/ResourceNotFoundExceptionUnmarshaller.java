@@ -53,14 +53,14 @@ public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    resourceNotFoundException.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ReferencedBy", targetDepth)) {
                     context.nextToken();
                     resourceNotFoundException.setReferencedBy(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("ResourceType", targetDepth)) {
-                    context.nextToken();
-                    resourceNotFoundException.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

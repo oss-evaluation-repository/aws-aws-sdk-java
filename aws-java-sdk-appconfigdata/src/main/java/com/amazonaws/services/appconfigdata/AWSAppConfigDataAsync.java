@@ -26,7 +26,64 @@ import com.amazonaws.services.appconfigdata.model.*;
  * </p>
  * <p>
  * <p>
- * Use the AppConfigData API, a capability of AWS AppConfig, to retrieve deployed configuration.
+ * AppConfig Data provides the data plane APIs your application uses to retrieve configuration data. Here's how it
+ * works:
+ * </p>
+ * <p>
+ * Your application retrieves configuration data by first establishing a configuration session using the AppConfig Data
+ * <a>StartConfigurationSession</a> API action. Your session's client then makes periodic calls to
+ * <a>GetLatestConfiguration</a> to check for and retrieve the latest data available.
+ * </p>
+ * <p>
+ * When calling <code>StartConfigurationSession</code>, your code sends the following information:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Identifiers (ID or name) of an AppConfig application, environment, and configuration profile that the session tracks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * (Optional) The minimum amount of time the session's client must wait between calls to
+ * <code>GetLatestConfiguration</code>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * In response, AppConfig provides an <code>InitialConfigurationToken</code> to be given to the session's client and
+ * used the first time it calls <code>GetLatestConfiguration</code> for that session.
+ * </p>
+ * <p>
+ * When calling <code>GetLatestConfiguration</code>, your client code sends the most recent
+ * <code>ConfigurationToken</code> value it has and receives in response:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>NextPollConfigurationToken</code>: the <code>ConfigurationToken</code> value to use on the next call to
+ * <code>GetLatestConfiguration</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>NextPollIntervalInSeconds</code>: the duration the client should wait before making its next call to
+ * <code>GetLatestConfiguration</code>. This duration may vary over the course of the session, so it should be used
+ * instead of the value sent on the <code>StartConfigurationSession</code> call.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The configuration: the latest data intended for the session. This may be empty if the client already has the latest
+ * version of the configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information and to view example CLI commands that show how to retrieve a configuration using the AppConfig
+ * Data <code>StartConfigurationSession</code> and <code>GetLatestConfiguration</code> API actions, see <a
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+ * configuration</a> in the <i>AppConfig User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,25 +91,34 @@ public interface AWSAppConfigDataAsync extends AWSAppConfigData {
 
     /**
      * <p>
-     * Retrieves the latest deployed configuration. This API may return empty Configuration data if the client already
-     * has the latest version. See StartConfigurationSession to obtain an InitialConfigurationToken to call this API.
+     * Retrieves the latest deployed configuration. This API may return empty configuration data if the client already
+     * has the latest version. For more information about this API action and to view example CLI commands that show how
+     * to use it with the <a>StartConfigurationSession</a> API action, see <a
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+     * configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Each call to GetLatestConfiguration returns a new ConfigurationToken (NextPollConfigurationToken in the
-     * response). This new token MUST be provided to the next call to GetLatestConfiguration when polling for
-     * configuration updates.
+     * Note the following important information.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * Each configuration token is only valid for one call to <code>GetLatestConfiguration</code>. The
+     * <code>GetLatestConfiguration</code> response includes a <code>NextPollConfigurationToken</code> that should
+     * always replace the token used for the just-completed call in preparation for the next one.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLatestConfiguration</code> is a priced call. For more information, see <a
+     * href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param getLatestConfigurationRequest
-     *        Request parameters for the GetLatestConfiguration API
      * @return A Java Future containing the result of the GetLatestConfiguration operation returned by the service.
      * @sample AWSAppConfigDataAsync.GetLatestConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration"
@@ -62,25 +128,34 @@ public interface AWSAppConfigDataAsync extends AWSAppConfigData {
 
     /**
      * <p>
-     * Retrieves the latest deployed configuration. This API may return empty Configuration data if the client already
-     * has the latest version. See StartConfigurationSession to obtain an InitialConfigurationToken to call this API.
+     * Retrieves the latest deployed configuration. This API may return empty configuration data if the client already
+     * has the latest version. For more information about this API action and to view example CLI commands that show how
+     * to use it with the <a>StartConfigurationSession</a> API action, see <a
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+     * configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Each call to GetLatestConfiguration returns a new ConfigurationToken (NextPollConfigurationToken in the
-     * response). This new token MUST be provided to the next call to GetLatestConfiguration when polling for
-     * configuration updates.
+     * Note the following important information.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * Each configuration token is only valid for one call to <code>GetLatestConfiguration</code>. The
+     * <code>GetLatestConfiguration</code> response includes a <code>NextPollConfigurationToken</code> that should
+     * always replace the token used for the just-completed call in preparation for the next one.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLatestConfiguration</code> is a priced call. For more information, see <a
+     * href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param getLatestConfigurationRequest
-     *        Request parameters for the GetLatestConfiguration API
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -95,12 +170,14 @@ public interface AWSAppConfigDataAsync extends AWSAppConfigData {
 
     /**
      * <p>
-     * Starts a configuration session used to retrieve a deployed configuration. See the GetLatestConfiguration API for
-     * more details.
+     * Starts a configuration session used to retrieve a deployed configuration. For more information about this API
+     * action and to view example CLI commands that show how to use it with the <a>GetLatestConfiguration</a> API
+     * action, see <a
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+     * configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
      * @param startConfigurationSessionRequest
-     *        Request parameters for the StartConfigurationSession API.
      * @return A Java Future containing the result of the StartConfigurationSession operation returned by the service.
      * @sample AWSAppConfigDataAsync.StartConfigurationSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession"
@@ -111,12 +188,14 @@ public interface AWSAppConfigDataAsync extends AWSAppConfigData {
 
     /**
      * <p>
-     * Starts a configuration session used to retrieve a deployed configuration. See the GetLatestConfiguration API for
-     * more details.
+     * Starts a configuration session used to retrieve a deployed configuration. For more information about this API
+     * action and to view example CLI commands that show how to use it with the <a>GetLatestConfiguration</a> API
+     * action, see <a
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+     * configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
      * @param startConfigurationSessionRequest
-     *        Request parameters for the StartConfigurationSession API.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

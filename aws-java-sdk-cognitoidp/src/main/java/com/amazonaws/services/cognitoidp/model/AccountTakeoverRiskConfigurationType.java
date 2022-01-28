@@ -37,7 +37,7 @@ public class AccountTakeoverRiskConfigurationType implements Serializable, Clone
     private NotifyConfigurationType notifyConfiguration;
     /**
      * <p>
-     * Account takeover risk configuration actions
+     * Account takeover risk configuration actions.
      * </p>
      */
     private AccountTakeoverActionsType actions;
@@ -84,11 +84,11 @@ public class AccountTakeoverRiskConfigurationType implements Serializable, Clone
 
     /**
      * <p>
-     * Account takeover risk configuration actions
+     * Account takeover risk configuration actions.
      * </p>
      * 
      * @param actions
-     *        Account takeover risk configuration actions
+     *        Account takeover risk configuration actions.
      */
 
     public void setActions(AccountTakeoverActionsType actions) {
@@ -97,10 +97,10 @@ public class AccountTakeoverRiskConfigurationType implements Serializable, Clone
 
     /**
      * <p>
-     * Account takeover risk configuration actions
+     * Account takeover risk configuration actions.
      * </p>
      * 
-     * @return Account takeover risk configuration actions
+     * @return Account takeover risk configuration actions.
      */
 
     public AccountTakeoverActionsType getActions() {
@@ -109,11 +109,11 @@ public class AccountTakeoverRiskConfigurationType implements Serializable, Clone
 
     /**
      * <p>
-     * Account takeover risk configuration actions
+     * Account takeover risk configuration actions.
      * </p>
      * 
      * @param actions
-     *        Account takeover risk configuration actions
+     *        Account takeover risk configuration actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

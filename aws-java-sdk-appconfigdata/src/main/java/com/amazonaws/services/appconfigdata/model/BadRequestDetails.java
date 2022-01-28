@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details describing why the request was invalid
+ * Detailed information about the input that failed to satisfy the constraints specified by a call.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/BadRequestDetails" target="_top">AWS
@@ -30,17 +30,17 @@ public class BadRequestDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Present if the Reason for the bad request was 'InvalidParameters'
+     * One or more specified parameters are not valid for the call.
      * </p>
      */
     private java.util.Map<String, InvalidParameterDetail> invalidParameters;
 
     /**
      * <p>
-     * Present if the Reason for the bad request was 'InvalidParameters'
+     * One or more specified parameters are not valid for the call.
      * </p>
      * 
-     * @return Present if the Reason for the bad request was 'InvalidParameters'
+     * @return One or more specified parameters are not valid for the call.
      */
 
     public java.util.Map<String, InvalidParameterDetail> getInvalidParameters() {
@@ -49,11 +49,11 @@ public class BadRequestDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Present if the Reason for the bad request was 'InvalidParameters'
+     * One or more specified parameters are not valid for the call.
      * </p>
      * 
      * @param invalidParameters
-     *        Present if the Reason for the bad request was 'InvalidParameters'
+     *        One or more specified parameters are not valid for the call.
      */
 
     public void setInvalidParameters(java.util.Map<String, InvalidParameterDetail> invalidParameters) {
@@ -62,11 +62,11 @@ public class BadRequestDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Present if the Reason for the bad request was 'InvalidParameters'
+     * One or more specified parameters are not valid for the call.
      * </p>
      * 
      * @param invalidParameters
-     *        Present if the Reason for the bad request was 'InvalidParameters'
+     *        One or more specified parameters are not valid for the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

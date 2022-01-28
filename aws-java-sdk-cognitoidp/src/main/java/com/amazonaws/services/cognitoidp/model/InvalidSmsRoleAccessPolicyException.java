@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is returned when the role provided for SMS configuration does not have permission to publish using
+ * This exception is returned when the role provided for SMS configuration doesn't have permission to publish using
  * Amazon SNS.
  * </p>
  */

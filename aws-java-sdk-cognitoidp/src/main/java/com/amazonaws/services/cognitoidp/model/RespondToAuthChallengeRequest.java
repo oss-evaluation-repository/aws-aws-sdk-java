@@ -41,16 +41,16 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      */
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
@@ -60,8 +60,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including
-     * <code>SOFTWARE_TOKEN_MFA</code>).
+     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs that
+     * follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      * </p>
      * </note>
      * <ul>
@@ -75,7 +75,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * <code>TIMESTAMP</code>, <code>USERNAME</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -96,13 +100,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus
+     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
@@ -143,24 +147,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -215,7 +219,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      * 
      * @param challengeName
@@ -223,7 +227,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
      *        >InitiateAuth</a>.</p>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     *        <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * @see ChallengeNameType
      */
 
@@ -238,14 +242,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      * 
      * @return The challenge name. For more information, see <a
      *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
      *         >InitiateAuth</a>.</p>
      *         <p>
-     *         <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     *         <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * @see ChallengeNameType
      */
 
@@ -260,7 +264,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      * 
      * @param challengeName
@@ -268,7 +272,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
      *        >InitiateAuth</a>.</p>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     *        <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -285,7 +289,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      * 
      * @param challengeName
@@ -293,7 +297,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
      *        >InitiateAuth</a>.</p>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     *        <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * @see ChallengeNameType
      */
 
@@ -308,7 +312,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * >InitiateAuth</a>.
      * </p>
      * <p>
-     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * </p>
      * 
      * @param challengeName
@@ -316,7 +320,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
      *        >InitiateAuth</a>.</p>
      *        <p>
-     *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+     *        <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -328,17 +332,17 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
-     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs
-     *        to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If
+     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *        pass another challenge, they return a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -347,16 +351,16 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If
-     *         <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller
-     *         needs to go through another challenge, they return a session with other challenge parameters. This
-     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * @return The session that should be passed both ways in challenge-response calls to the service. If
+     *         <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *         pass another challenge, they return a session with other challenge parameters. This session should be
+     *         passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -365,17 +369,17 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
-     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs
-     *        to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If
+     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *        pass another challenge, they return a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,8 +394,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including
-     * <code>SOFTWARE_TOKEN_MFA</code>).
+     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs that
+     * follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      * </p>
      * </note>
      * <ul>
@@ -405,7 +409,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * <code>TIMESTAMP</code>, <code>USERNAME</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -426,13 +434,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus
+     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
@@ -441,8 +449,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * @return The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
      *         example:</p> <note>
      *         <p>
-     *         <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below
-     *         (including <code>SOFTWARE_TOKEN_MFA</code>).
+     *         <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs
+     *         that follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      *         </p>
      *         </note>
      *         <ul>
@@ -456,7 +464,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
      *         <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -477,13 +489,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
+     *         <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires,
      *         plus <code>DEVICE_KEY</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
@@ -499,8 +511,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including
-     * <code>SOFTWARE_TOKEN_MFA</code>).
+     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs that
+     * follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      * </p>
      * </note>
      * <ul>
@@ -514,7 +526,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * <code>TIMESTAMP</code>, <code>USERNAME</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -535,13 +551,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus
+     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
@@ -551,8 +567,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
      *        example:</p> <note>
      *        <p>
-     *        <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below
-     *        (including <code>SOFTWARE_TOKEN_MFA</code>).
+     *        <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs
+     *        that follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      *        </p>
      *        </note>
      *        <ul>
@@ -566,7 +582,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
      *        <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -587,13 +607,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
+     *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires,
      *        plus <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
@@ -609,8 +629,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including
-     * <code>SOFTWARE_TOKEN_MFA</code>).
+     * <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs that
+     * follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      * </p>
      * </note>
      * <ul>
@@ -624,7 +644,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * <code>TIMESTAMP</code>, <code>USERNAME</code>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -645,13 +669,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus
+     * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
@@ -661,8 +685,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
      *        example:</p> <note>
      *        <p>
-     *        <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below
-     *        (including <code>SOFTWARE_TOKEN_MFA</code>).
+     *        <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs
+     *        that follow (including <code>SOFTWARE_TOKEN_MFA</code>).
      *        </p>
      *        </note>
      *        <ul>
@@ -676,7 +700,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
      *        <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
@@ -697,13 +725,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
+     *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires,
      *        plus <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
@@ -853,31 +881,31 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @return A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *         triggers. </p>
+     *         triggers.</p>
      *         <p>
      *         You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *         RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the
@@ -895,25 +923,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <note>
      *         <p>
-     *         Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *         When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *         that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *         include triggers, the ClientMetadata parameter serves no purpose.
+     *         Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a
+     *         user pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *         ClientMetadata parameter serves no purpose.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not validate the ClientMetadata value.
+     *         Validate the ClientMetadata value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *         information.
+     *         Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *         </p>
      *         </li>
      *         </ul>
@@ -944,24 +971,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -969,7 +996,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *        RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following
@@ -987,25 +1014,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>
@@ -1036,24 +1062,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -1061,7 +1087,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *        RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following
@@ -1079,25 +1105,24 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>

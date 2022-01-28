@@ -30,9 +30,9 @@ public class SmsMfaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SMS authentication message that will be sent to users with the code they need to sign in. The message must
-     * contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not included, and
-     * default message will be used.
+     * The SMS authentication message that will be sent to users with the code they must sign in. The message must
+     * contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default
+     * message will be used.
      * </p>
      */
     private String smsAuthenticationMessage;
@@ -45,15 +45,15 @@ public class SmsMfaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SMS authentication message that will be sent to users with the code they need to sign in. The message must
-     * contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not included, and
-     * default message will be used.
+     * The SMS authentication message that will be sent to users with the code they must sign in. The message must
+     * contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default
+     * message will be used.
      * </p>
      * 
      * @param smsAuthenticationMessage
-     *        The SMS authentication message that will be sent to users with the code they need to sign in. The message
-     *        must contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not
-     *        included, and default message will be used.
+     *        The SMS authentication message that will be sent to users with the code they must sign in. The message
+     *        must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and
+     *        default message will be used.
      */
 
     public void setSmsAuthenticationMessage(String smsAuthenticationMessage) {
@@ -62,14 +62,14 @@ public class SmsMfaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SMS authentication message that will be sent to users with the code they need to sign in. The message must
-     * contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not included, and
-     * default message will be used.
+     * The SMS authentication message that will be sent to users with the code they must sign in. The message must
+     * contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default
+     * message will be used.
      * </p>
      * 
-     * @return The SMS authentication message that will be sent to users with the code they need to sign in. The message
-     *         must contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not
-     *         included, and default message will be used.
+     * @return The SMS authentication message that will be sent to users with the code they must sign in. The message
+     *         must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included,
+     *         and default message will be used.
      */
 
     public String getSmsAuthenticationMessage() {
@@ -78,15 +78,15 @@ public class SmsMfaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SMS authentication message that will be sent to users with the code they need to sign in. The message must
-     * contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not included, and
-     * default message will be used.
+     * The SMS authentication message that will be sent to users with the code they must sign in. The message must
+     * contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default
+     * message will be used.
      * </p>
      * 
      * @param smsAuthenticationMessage
-     *        The SMS authentication message that will be sent to users with the code they need to sign in. The message
-     *        must contain the ‘{####}’ placeholder, which will be replaced with the code. If the message is not
-     *        included, and default message will be used.
+     *        The SMS authentication message that will be sent to users with the code they must sign in. The message
+     *        must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and
+     *        default message will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,15 +42,15 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
     private String clientId;
     /**
      * <p>
-     * The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     * <code>EventAction</code>
+     * The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     * <code>EventAction</code>.
      * </p>
      */
     private CompromisedCredentialsRiskConfigurationType compromisedCredentialsRiskConfiguration;
     /**
      * <p>
-     * The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     * <code>Actions</code> to take in the case of an account takeover.
+     * The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     * <code>Actions</code> to take if there is an account takeover.
      * </p>
      */
     private AccountTakeoverRiskConfigurationType accountTakeoverRiskConfiguration;
@@ -149,13 +149,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     * <code>EventAction</code>
+     * The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     * <code>EventAction</code>.
      * </p>
      * 
      * @param compromisedCredentialsRiskConfiguration
-     *        The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     *        <code>EventAction</code>
+     *        The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     *        <code>EventAction</code>.
      */
 
     public void setCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType compromisedCredentialsRiskConfiguration) {
@@ -164,12 +164,12 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     * <code>EventAction</code>
+     * The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     * <code>EventAction</code>.
      * </p>
      * 
-     * @return The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     *         <code>EventAction</code>
+     * @return The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     *         <code>EventAction</code>.
      */
 
     public CompromisedCredentialsRiskConfigurationType getCompromisedCredentialsRiskConfiguration() {
@@ -178,13 +178,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     * <code>EventAction</code>
+     * The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     * <code>EventAction</code>.
      * </p>
      * 
      * @param compromisedCredentialsRiskConfiguration
-     *        The compromised credentials risk configuration object including the <code>EventFilter</code> and the
-     *        <code>EventAction</code>
+     *        The compromised credentials risk configuration object, including the <code>EventFilter</code> and the
+     *        <code>EventAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,13 +195,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     * <code>Actions</code> to take in the case of an account takeover.
+     * The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     * <code>Actions</code> to take if there is an account takeover.
      * </p>
      * 
      * @param accountTakeoverRiskConfiguration
-     *        The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     *        <code>Actions</code> to take in the case of an account takeover.
+     *        The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     *        <code>Actions</code> to take if there is an account takeover.
      */
 
     public void setAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType accountTakeoverRiskConfiguration) {
@@ -210,12 +210,12 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     * <code>Actions</code> to take in the case of an account takeover.
+     * The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     * <code>Actions</code> to take if there is an account takeover.
      * </p>
      * 
-     * @return The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     *         <code>Actions</code> to take in the case of an account takeover.
+     * @return The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     *         <code>Actions</code> to take if there is an account takeover.
      */
 
     public AccountTakeoverRiskConfigurationType getAccountTakeoverRiskConfiguration() {
@@ -224,13 +224,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     * <code>Actions</code> to take in the case of an account takeover.
+     * The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     * <code>Actions</code> to take if there is an account takeover.
      * </p>
      * 
      * @param accountTakeoverRiskConfiguration
-     *        The account takeover risk configuration object including the <code>NotifyConfiguration</code> object and
-     *        <code>Actions</code> to take in the case of an account takeover.
+     *        The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and
+     *        <code>Actions</code> to take if there is an account takeover.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

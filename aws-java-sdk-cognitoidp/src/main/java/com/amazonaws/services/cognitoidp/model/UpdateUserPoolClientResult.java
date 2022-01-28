@@ -28,19 +28,19 @@ public class UpdateUserPoolClientResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user pool client value from the response from the server when an update user pool client request is made.
+     * The user pool client value from the response from the server when you request to update the user pool client.
      * </p>
      */
     private UserPoolClientType userPoolClient;
 
     /**
      * <p>
-     * The user pool client value from the response from the server when an update user pool client request is made.
+     * The user pool client value from the response from the server when you request to update the user pool client.
      * </p>
      * 
      * @param userPoolClient
-     *        The user pool client value from the response from the server when an update user pool client request is
-     *        made.
+     *        The user pool client value from the response from the server when you request to update the user pool
+     *        client.
      */
 
     public void setUserPoolClient(UserPoolClientType userPoolClient) {
@@ -49,11 +49,11 @@ public class UpdateUserPoolClientResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user pool client value from the response from the server when an update user pool client request is made.
+     * The user pool client value from the response from the server when you request to update the user pool client.
      * </p>
      * 
-     * @return The user pool client value from the response from the server when an update user pool client request is
-     *         made.
+     * @return The user pool client value from the response from the server when you request to update the user pool
+     *         client.
      */
 
     public UserPoolClientType getUserPoolClient() {
@@ -62,12 +62,12 @@ public class UpdateUserPoolClientResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user pool client value from the response from the server when an update user pool client request is made.
+     * The user pool client value from the response from the server when you request to update the user pool client.
      * </p>
      * 
      * @param userPoolClient
-     *        The user pool client value from the response from the server when an update user pool client request is
-     *        made.
+     *        The user pool client value from the response from the server when you request to update the user pool
+     *        client.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

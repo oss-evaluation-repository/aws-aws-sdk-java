@@ -44,7 +44,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <note>
      * <p>
      * If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will
-     * be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user
+     * pool.
      * </p>
      * </note>
      */
@@ -130,7 +131,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <note>
      * <p>
      * If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will
-     * be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user
+     * pool.
      * </p>
      * </note>
      * 
@@ -141,7 +143,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        is 7. </p> <note>
      *        <p>
      *        If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
-     *        value will be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     *        value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter
+     *        for that user pool.
      *        </p>
      */
 
@@ -158,7 +161,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <note>
      * <p>
      * If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will
-     * be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user
+     * pool.
      * </p>
      * </note>
      * 
@@ -168,7 +172,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *         is 7. </p> <note>
      *         <p>
      *         If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
-     *         value will be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     *         value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available
+     *         parameter for that user pool.
      *         </p>
      */
 
@@ -185,7 +190,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <note>
      * <p>
      * If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will
-     * be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user
+     * pool.
      * </p>
      * </note>
      * 
@@ -196,7 +202,8 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        is 7. </p> <note>
      *        <p>
      *        If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
-     *        value will be used and <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     *        value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter
+     *        for that user pool.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

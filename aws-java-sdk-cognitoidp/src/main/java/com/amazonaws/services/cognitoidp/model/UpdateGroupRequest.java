@@ -45,8 +45,8 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the token.
+     * The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code>
+     * and <code>cognito:preferred_role</code> claims in the token.
      * </p>
      */
     private String roleArn;
@@ -181,13 +181,13 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the token.
+     * The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code>
+     * and <code>cognito:preferred_role</code> claims in the token.
      * </p>
      * 
      * @param roleArn
-     *        The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     *        <code>cognito:preferred_role</code> claims in the token.
+     *        The new role Amazon Resource Name (ARN) for the group. This is used for setting the
+     *        <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.
      */
 
     public void setRoleArn(String roleArn) {
@@ -196,12 +196,12 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the token.
+     * The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code>
+     * and <code>cognito:preferred_role</code> claims in the token.
      * </p>
      * 
-     * @return The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     *         <code>cognito:preferred_role</code> claims in the token.
+     * @return The new role Amazon Resource Name (ARN) for the group. This is used for setting the
+     *         <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.
      */
 
     public String getRoleArn() {
@@ -210,13 +210,13 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the token.
+     * The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code>
+     * and <code>cognito:preferred_role</code> claims in the token.
      * </p>
      * 
      * @param roleArn
-     *        The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and
-     *        <code>cognito:preferred_role</code> claims in the token.
+     *        The new role Amazon Resource Name (ARN) for the group. This is used for setting the
+     *        <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
+     * APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -39,16 +40,16 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     * <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
-     * “UserName”. This is the default value.
+     * <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”.
+     * This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is
-     * set to <code>False</code>, users will be able to sign in using either "username" or "Username". This option also
-     * enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to
-     * the <code>username</code> attribute.
+     * set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both
+     * <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the
+     * <code>username</code> attribute.
      * </p>
      * </li>
      * </ul>
@@ -57,7 +58,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
+     * APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -66,23 +68,23 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     * <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
-     * “UserName”. This is the default value.
+     * <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”.
+     * This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is
-     * set to <code>False</code>, users will be able to sign in using either "username" or "Username". This option also
-     * enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to
-     * the <code>username</code> attribute.
+     * set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both
+     * <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the
+     * <code>username</code> attribute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param caseSensitive
-     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito
-     *        APIs.</p>
+     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
+     *        Cognito APIs.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -90,16 +92,16 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     *        <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
+     *        <code>True</code>, users must sign in using the exact capitalization of their given username, such as
      *        “UserName”. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this
-     *        option is set to <code>False</code>, users will be able to sign in using either "username" or "Username".
-     *        This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case
-     *        insensitive, in addition to the <code>username</code> attribute.
+     *        option is set to <code>False</code>, users can sign in using either "username" or "Username". This option
+     *        also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in
+     *        addition to the <code>username</code> attribute.
      *        </p>
      *        </li>
      */
@@ -110,7 +112,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
+     * APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -119,21 +122,21 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     * <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
-     * “UserName”. This is the default value.
+     * <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”.
+     * This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is
-     * set to <code>False</code>, users will be able to sign in using either "username" or "Username". This option also
-     * enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to
-     * the <code>username</code> attribute.
+     * set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both
+     * <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the
+     * <code>username</code> attribute.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through
+     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
      *         Cognito APIs.</p>
      *         <p>
      *         Valid values include:
@@ -142,16 +145,16 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     *         <code>True</code>, users must sign in using the exact capitalization of their given username. For
-     *         example, “UserName”. This is the default value.
+     *         <code>True</code>, users must sign in using the exact capitalization of their given username, such as
+     *         “UserName”. This is the default value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this
-     *         option is set to <code>False</code>, users will be able to sign in using either "username" or "Username".
-     *         This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case
-     *         insensitive, in addition to the <code>username</code> attribute.
+     *         option is set to <code>False</code>, users can sign in using either "username" or "Username". This option
+     *         also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in
+     *         addition to the <code>username</code> attribute.
      *         </p>
      *         </li>
      */
@@ -162,7 +165,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
+     * APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -171,23 +175,23 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     * <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
-     * “UserName”. This is the default value.
+     * <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”.
+     * This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is
-     * set to <code>False</code>, users will be able to sign in using either "username" or "Username". This option also
-     * enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to
-     * the <code>username</code> attribute.
+     * set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both
+     * <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the
+     * <code>username</code> attribute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param caseSensitive
-     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito
-     *        APIs.</p>
+     *        Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
+     *        Cognito APIs.</p>
      *        <p>
      *        Valid values include:
      *        </p>
@@ -195,16 +199,16 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     *        <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
+     *        <code>True</code>, users must sign in using the exact capitalization of their given username, such as
      *        “UserName”. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this
-     *        option is set to <code>False</code>, users will be able to sign in using either "username" or "Username".
-     *        This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case
-     *        insensitive, in addition to the <code>username</code> attribute.
+     *        option is set to <code>False</code>, users can sign in using either "username" or "Username". This option
+     *        also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in
+     *        addition to the <code>username</code> attribute.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -217,7 +221,8 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+     * Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito
+     * APIs.
      * </p>
      * <p>
      * Valid values include:
@@ -226,21 +231,21 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     * <code>True</code>, users must sign in using the exact capitalization of their given username. For example,
-     * “UserName”. This is the default value.
+     * <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”.
+     * This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is
-     * set to <code>False</code>, users will be able to sign in using either "username" or "Username". This option also
-     * enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to
-     * the <code>username</code> attribute.
+     * set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both
+     * <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the
+     * <code>username</code> attribute.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through
+     * @return Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon
      *         Cognito APIs.</p>
      *         <p>
      *         Valid values include:
@@ -249,16 +254,16 @@ public class UsernameConfigurationType implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to
-     *         <code>True</code>, users must sign in using the exact capitalization of their given username. For
-     *         example, “UserName”. This is the default value.
+     *         <code>True</code>, users must sign in using the exact capitalization of their given username, such as
+     *         “UserName”. This is the default value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this
-     *         option is set to <code>False</code>, users will be able to sign in using either "username" or "Username".
-     *         This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case
-     *         insensitive, in addition to the <code>username</code> attribute.
+     *         option is set to <code>False</code>, users can sign in using either "username" or "Username". This option
+     *         also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in
+     *         addition to the <code>username</code> attribute.
      *         </p>
      *         </li>
      */

@@ -43,13 +43,13 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String secretHash;
     /**
      * <p>
-     * The user name of the user you wish to register.
+     * The user name of the user you want to register.
      * </p>
      */
     private String username;
     /**
      * <p>
-     * The password of the user you wish to register.
+     * The password of the user you want to register.
      * </p>
      */
     private String password;
@@ -101,24 +101,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -214,11 +214,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The user name of the user you wish to register.
+     * The user name of the user you want to register.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to register.
+     *        The user name of the user you want to register.
      */
 
     public void setUsername(String username) {
@@ -227,10 +227,10 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The user name of the user you wish to register.
+     * The user name of the user you want to register.
      * </p>
      * 
-     * @return The user name of the user you wish to register.
+     * @return The user name of the user you want to register.
      */
 
     public String getUsername() {
@@ -239,11 +239,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The user name of the user you wish to register.
+     * The user name of the user you want to register.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to register.
+     *        The user name of the user you want to register.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +254,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The password of the user you wish to register.
+     * The password of the user you want to register.
      * </p>
      * 
      * @param password
-     *        The password of the user you wish to register.
+     *        The password of the user you want to register.
      */
 
     public void setPassword(String password) {
@@ -267,10 +267,10 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The password of the user you wish to register.
+     * The password of the user you want to register.
      * </p>
      * 
-     * @return The password of the user you wish to register.
+     * @return The password of the user you want to register.
      */
 
     public String getPassword() {
@@ -279,11 +279,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The password of the user you wish to register.
+     * The password of the user you want to register.
      * </p>
      * 
      * @param password
-     *        The password of the user you wish to register.
+     *        The password of the user you want to register.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,31 +558,31 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @return A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *         triggers. </p>
+     *         triggers.</p>
      *         <p>
      *         You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp
      *         API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre
@@ -599,25 +599,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         </p>
      *         <note>
      *         <p>
-     *         Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *         When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *         that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *         include triggers, the ClientMetadata parameter serves no purpose.
+     *         Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a
+     *         user pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *         ClientMetadata parameter serves no purpose.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not validate the ClientMetadata value.
+     *         Validate the ClientMetadata value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *         information.
+     *         Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *         </p>
      *         </li>
      *         </ul>
@@ -647,24 +646,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -672,7 +671,7 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp
      *        API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre
@@ -689,25 +688,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>
@@ -737,24 +735,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -762,7 +760,7 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp
      *        API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre
@@ -779,25 +777,24 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>

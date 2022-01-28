@@ -30,14 +30,14 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito
-     * passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
+     * Lambda function. The only supported value is <code>V1_0</code>.
      * </p>
      */
     private String lambdaVersion;
     /**
      * <p>
-     * The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS notifications to
+     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
      * users.
      * </p>
      */
@@ -45,13 +45,13 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito
-     * passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
+     * Lambda function. The only supported value is <code>V1_0</code>.
      * </p>
      * 
      * @param lambdaVersion
-     *        The Lambda version represents the signature of the "request" attribute in the "event" information Amazon
-     *        Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
+     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
      * @see CustomSMSSenderLambdaVersionType
      */
 
@@ -61,12 +61,12 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito
-     * passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
+     * Lambda function. The only supported value is <code>V1_0</code>.
      * </p>
      * 
-     * @return The Lambda version represents the signature of the "request" attribute in the "event" information Amazon
-     *         Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * @return Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
+     *         SMS Lambda function. The only supported value is <code>V1_0</code>.
      * @see CustomSMSSenderLambdaVersionType
      */
 
@@ -76,13 +76,13 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito
-     * passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
+     * Lambda function. The only supported value is <code>V1_0</code>.
      * </p>
      * 
      * @param lambdaVersion
-     *        The Lambda version represents the signature of the "request" attribute in the "event" information Amazon
-     *        Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
+     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomSMSSenderLambdaVersionType
      */
@@ -94,13 +94,13 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito
-     * passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
+     * Lambda function. The only supported value is <code>V1_0</code>.
      * </p>
      * 
      * @param lambdaVersion
-     *        The Lambda version represents the signature of the "request" attribute in the "event" information Amazon
-     *        Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
+     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomSMSSenderLambdaVersionType
      */
@@ -112,12 +112,12 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS notifications to
+     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
      * users.
      * </p>
      * 
      * @param lambdaArn
-     *        The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS
+     *        The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
      *        notifications to users.
      */
 
@@ -127,11 +127,11 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS notifications to
+     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
      * users.
      * </p>
      * 
-     * @return The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS
+     * @return The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
      *         notifications to users.
      */
 
@@ -141,12 +141,12 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS notifications to
+     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
      * users.
      * </p>
      * 
      * @param lambdaArn
-     *        The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send SMS
+     *        The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
      *        notifications to users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

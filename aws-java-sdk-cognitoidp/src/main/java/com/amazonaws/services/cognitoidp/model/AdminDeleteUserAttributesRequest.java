@@ -42,7 +42,7 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
     private String username;
     /**
      * <p>
-     * An array of strings representing the user attribute names you wish to delete.
+     * An array of strings representing the user attribute names you want to delete.
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -132,13 +132,13 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of strings representing the user attribute names you wish to delete.
+     * An array of strings representing the user attribute names you want to delete.
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * 
-     * @return An array of strings representing the user attribute names you wish to delete.</p>
+     * @return An array of strings representing the user attribute names you want to delete.</p>
      *         <p>
      *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
@@ -149,14 +149,14 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of strings representing the user attribute names you wish to delete.
+     * An array of strings representing the user attribute names you want to delete.
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        An array of strings representing the user attribute names you want to delete.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
@@ -172,7 +172,7 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of strings representing the user attribute names you wish to delete.
+     * An array of strings representing the user attribute names you want to delete.
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -184,7 +184,7 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        An array of strings representing the user attribute names you want to delete.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -202,14 +202,14 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of strings representing the user attribute names you wish to delete.
+     * An array of strings representing the user attribute names you want to delete.
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        An array of strings representing the user attribute names you want to delete.</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.

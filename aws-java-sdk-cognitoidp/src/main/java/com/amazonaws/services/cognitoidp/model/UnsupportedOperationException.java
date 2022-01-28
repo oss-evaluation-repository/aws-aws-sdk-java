@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when you attempt to perform an operation that is not enabled for the user pool client.
+ * Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

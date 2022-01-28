@@ -67,9 +67,16 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
     private java.util.List<Validator> validators;
     /**
      * <p>
-     * The type of configurations that the configuration profile contains. A configuration can be a feature flag used
-     * for enabling or disabling new features or a free-form configuration used for distributing configurations to your
-     * application.
+     * The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     * <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable
+     * new features and freeform configurations to distribute configurations to an application. When calling this API,
+     * enter one of the following values for <code>Type</code>:
+     * </p>
+     * <p>
+     * <code>AWS.AppConfig.FeatureFlags</code>
+     * </p>
+     * <p>
+     * <code>AWS.Freeform</code>
      * </p>
      */
     private String type;
@@ -389,15 +396,28 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of configurations that the configuration profile contains. A configuration can be a feature flag used
-     * for enabling or disabling new features or a free-form configuration used for distributing configurations to your
-     * application.
+     * The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     * <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable
+     * new features and freeform configurations to distribute configurations to an application. When calling this API,
+     * enter one of the following values for <code>Type</code>:
+     * </p>
+     * <p>
+     * <code>AWS.AppConfig.FeatureFlags</code>
+     * </p>
+     * <p>
+     * <code>AWS.Freeform</code>
      * </p>
      * 
      * @param type
-     *        The type of configurations that the configuration profile contains. A configuration can be a feature flag
-     *        used for enabling or disabling new features or a free-form configuration used for distributing
-     *        configurations to your application.
+     *        The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     *        <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or
+     *        disable new features and freeform configurations to distribute configurations to an application. When
+     *        calling this API, enter one of the following values for <code>Type</code>:</p>
+     *        <p>
+     *        <code>AWS.AppConfig.FeatureFlags</code>
+     *        </p>
+     *        <p>
+     *        <code>AWS.Freeform</code>
      */
 
     public void setType(String type) {
@@ -406,14 +426,27 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of configurations that the configuration profile contains. A configuration can be a feature flag used
-     * for enabling or disabling new features or a free-form configuration used for distributing configurations to your
-     * application.
+     * The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     * <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable
+     * new features and freeform configurations to distribute configurations to an application. When calling this API,
+     * enter one of the following values for <code>Type</code>:
+     * </p>
+     * <p>
+     * <code>AWS.AppConfig.FeatureFlags</code>
+     * </p>
+     * <p>
+     * <code>AWS.Freeform</code>
      * </p>
      * 
-     * @return The type of configurations that the configuration profile contains. A configuration can be a feature flag
-     *         used for enabling or disabling new features or a free-form configuration used for distributing
-     *         configurations to your application.
+     * @return The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     *         <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or
+     *         disable new features and freeform configurations to distribute configurations to an application. When
+     *         calling this API, enter one of the following values for <code>Type</code>:</p>
+     *         <p>
+     *         <code>AWS.AppConfig.FeatureFlags</code>
+     *         </p>
+     *         <p>
+     *         <code>AWS.Freeform</code>
      */
 
     public String getType() {
@@ -422,15 +455,28 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of configurations that the configuration profile contains. A configuration can be a feature flag used
-     * for enabling or disabling new features or a free-form configuration used for distributing configurations to your
-     * application.
+     * The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     * <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable
+     * new features and freeform configurations to distribute configurations to an application. When calling this API,
+     * enter one of the following values for <code>Type</code>:
+     * </p>
+     * <p>
+     * <code>AWS.AppConfig.FeatureFlags</code>
+     * </p>
+     * <p>
+     * <code>AWS.Freeform</code>
      * </p>
      * 
      * @param type
-     *        The type of configurations that the configuration profile contains. A configuration can be a feature flag
-     *        used for enabling or disabling new features or a free-form configuration used for distributing
-     *        configurations to your application.
+     *        The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and
+     *        <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or
+     *        disable new features and freeform configurations to distribute configurations to an application. When
+     *        calling this API, enter one of the following values for <code>Type</code>:</p>
+     *        <p>
+     *        <code>AWS.AppConfig.FeatureFlags</code>
+     *        </p>
+     *        <p>
+     *        <code>AWS.Freeform</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

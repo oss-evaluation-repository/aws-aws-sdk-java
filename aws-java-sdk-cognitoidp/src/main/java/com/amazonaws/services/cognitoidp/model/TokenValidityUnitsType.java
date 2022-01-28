@@ -30,31 +30,34 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
+     * hours.
      * </p>
      */
     private String accessToken;
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
      * </p>
      */
     private String idToken;
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
+     * days.
      * </p>
      */
     private String refreshToken;
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
+     * hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to
-     *        hours.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
+     *        to hours.
      * @see TimeUnitsType
      */
 
@@ -64,11 +67,12 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
+     * hours.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to
-     *         hours.
+     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
+     *         to hours.
      * @see TimeUnitsType
      */
 
@@ -78,12 +82,13 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
+     * hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to
-     *        hours.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
+     *        to hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -95,12 +100,13 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to
+     * hours.
      * </p>
      * 
      * @param accessToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity, defaults to
-     *        hours.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting
+     *        to hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -112,11 +118,11 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
      *        hours.
      * @see TimeUnitsType
      */
@@ -127,10 +133,10 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to
+     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
      *         hours.
      * @see TimeUnitsType
      */
@@ -141,11 +147,11 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
      *        hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
@@ -158,11 +164,11 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to hours.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.
      * </p>
      * 
      * @param idToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity, defaults to
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to
      *        hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
@@ -175,12 +181,13 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
+     * days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to
-     *        days.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
+     *        to days.
      * @see TimeUnitsType
      */
 
@@ -190,11 +197,12 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
+     * days.
      * </p>
      * 
-     * @return A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to
-     *         days.
+     * @return A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
+     *         to days.
      * @see TimeUnitsType
      */
 
@@ -204,12 +212,13 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
+     * days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to
-     *        days.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
+     *        to days.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */
@@ -221,12 +230,13 @@ public class TokenValidityUnitsType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to days.
+     * A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to
+     * days.
      * </p>
      * 
      * @param refreshToken
-     *        A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity, defaults to
-     *        days.
+     *        A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting
+     *        to days.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnitsType
      */

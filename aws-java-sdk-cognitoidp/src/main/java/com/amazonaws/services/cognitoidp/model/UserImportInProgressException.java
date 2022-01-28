@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that
+ * This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that
  * pool.
  * </p>
  */

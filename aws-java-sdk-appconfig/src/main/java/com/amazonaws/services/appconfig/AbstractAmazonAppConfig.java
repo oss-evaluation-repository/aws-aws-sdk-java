@@ -83,6 +83,7 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    @Deprecated
     public GetConfigurationResult getConfiguration(GetConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -65,7 +65,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client
      * secret).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
@@ -80,25 +84,25 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
-     * address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual
-     * username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call
-     * to <code>AdminInitiateAuth</code>.
+     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an
+     * email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
+     * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
      */
     private java.util.Map<String, String> challengeResponses;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If an
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, it returns a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
@@ -137,24 +141,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -352,7 +356,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client
      * secret).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
@@ -367,16 +375,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
-     * address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual
-     * username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call
-     * to <code>AdminInitiateAuth</code>.
+     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an
+     * email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
+     * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
      * 
      * @return The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
@@ -394,7 +402,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>,
      *         <code>SECRET_HASH</code> (if app client is configured with client secret).
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
@@ -409,16 +421,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such
-     *         as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response
-     *         includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you
-     *         specified an alias in your call to <code>AdminInitiateAuth</code>.
+     *         as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
+     *         includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
+     *         even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      */
 
     public java.util.Map<String, String> getChallengeResponses() {
@@ -442,7 +454,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client
      * secret).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
@@ -457,16 +473,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
-     * address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual
-     * username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call
-     * to <code>AdminInitiateAuth</code>.
+     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an
+     * email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
+     * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
      * 
      * @param challengeResponses
@@ -485,7 +501,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>,
      *        <code>SECRET_HASH</code> (if app client is configured with client secret).
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
@@ -500,16 +520,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as
-     *        email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes
-     *        the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
-     *        alias in your call to <code>AdminInitiateAuth</code>.
+     *        an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
+     *        includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
+     *        even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      */
 
     public void setChallengeResponses(java.util.Map<String, String> challengeResponses) {
@@ -533,7 +553,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client
      * secret).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
@@ -548,16 +572,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
-     * address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual
-     * username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call
-     * to <code>AdminInitiateAuth</code>.
+     * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an
+     * email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
+     * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
      * 
      * @param challengeResponses
@@ -576,7 +600,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>,
      *        <code>SECRET_HASH</code> (if app client is configured with client secret).
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        <code>PASSWORD_VERIFIER</code> requires <code>DEVICE_KEY</code> when signing in with a remembered device.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
@@ -591,16 +619,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by
      *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as
-     *        email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes
-     *        the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
-     *        alias in your call to <code>AdminInitiateAuth</code>.
+     *        an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
+     *        includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
+     *        even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -639,17 +667,17 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If an
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, it returns a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
-     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs
-     *        to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If an
+     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *        pass another challenge, it returns a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -658,16 +686,16 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If an
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, it returns a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If
-     *         <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller
-     *         needs to go through another challenge, they return a session with other challenge parameters. This
-     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * @return The session that should be passed both ways in challenge-response calls to the service. If an
+     *         <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *         pass another challenge, it returns a session with other challenge parameters. This session should be
+     *         passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -676,17 +704,17 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If
-     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If an
+     * <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass
+     * another challenge, it returns a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If
-     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs
-     *        to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If an
+     *        <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must
+     *        pass another challenge, it returns a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -806,31 +834,31 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @return A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *         triggers. </p>
+     *         triggers.</p>
      *         <p>
      *         You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *         AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the
@@ -849,25 +877,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         </p>
      *         <note>
      *         <p>
-     *         Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *         When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *         that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *         include triggers, the ClientMetadata parameter serves no purpose.
+     *         Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a
+     *         user pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *         ClientMetadata parameter serves no purpose.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not validate the ClientMetadata value.
+     *         Validate the ClientMetadata value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *         information.
+     *         Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *         </p>
      *         </li>
      *         </ul>
@@ -899,24 +926,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -924,7 +951,7 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *        AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the
@@ -943,25 +970,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>
@@ -993,24 +1019,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Take the following limitations into consideration when you use the ClientMetadata parameter:
+     * When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are
-     * assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers,
-     * the ClientMetadata parameter serves no purpose.
+     * Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool
+     * to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata
+     * parameter serves no purpose.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not validate the ClientMetadata value.
+     * Validate the ClientMetadata value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+     * Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      * </p>
      * </li>
      * </ul>
@@ -1018,7 +1044,7 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * 
      * @param clientMetadata
      *        A map of custom key-value pairs that you can provide as input for any custom workflows that this action
-     *        triggers. </p>
+     *        triggers.</p>
      *        <p>
      *        You create custom workflows by assigning Lambda functions to user pool triggers. When you use the
      *        AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the
@@ -1037,25 +1063,24 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        <note>
      *        <p>
-     *        Take the following limitations into consideration when you use the ClientMetadata parameter:
+     *        When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers
-     *        that are assigned to a user pool to support custom workflows. If your user pool configuration does not
-     *        include triggers, the ClientMetadata parameter serves no purpose.
+     *        Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user
+     *        pool to support custom workflows. If your user pool configuration doesn't include triggers, the
+     *        ClientMetadata parameter serves no purpose.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not validate the ClientMetadata value.
+     *        Validate the ClientMetadata value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive
-     *        information.
+     *        Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
      *        </p>
      *        </li>
      *        </ul>

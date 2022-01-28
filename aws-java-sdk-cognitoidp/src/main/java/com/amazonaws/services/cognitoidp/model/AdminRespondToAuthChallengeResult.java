@@ -36,9 +36,9 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
-     * go through another challenge, they return a session with other challenge parameters. This session should be
-     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
@@ -152,15 +152,15 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
-     * go through another challenge, they return a session with other challenge parameters. This session should be
-     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
-     *        needs to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If the caller must
+     *        pass another challenge, they return a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -169,14 +169,14 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
-     * go through another challenge, they return a session with other challenge parameters. This session should be
-     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If the caller
-     *         needs to go through another challenge, they return a session with other challenge parameters. This
-     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * @return The session that should be passed both ways in challenge-response calls to the service. If the caller
+     *         must pass another challenge, they return a session with other challenge parameters. This session should
+     *         be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -185,15 +185,15 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
-     * go through another challenge, they return a session with other challenge parameters. This session should be
-     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session that should be passed both ways in challenge-response calls to the service. If the caller must pass
+     * another challenge, they return a session with other challenge parameters. This session should be passed as it is
+     * to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
-     *        needs to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session that should be passed both ways in challenge-response calls to the service. If the caller must
+     *        pass another challenge, they return a session with other challenge parameters. This session should be
+     *        passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

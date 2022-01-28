@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.
+ * This exception is thrown when Amazon Cognito can't find a multi-factor authentication (MFA) method.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

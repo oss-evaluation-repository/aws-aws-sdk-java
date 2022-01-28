@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about the input that failed to satisfy the constraints specified by an AWS service.
+ * Detailed information about the input that failed to satisfy the constraints specified by a call.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/BadRequestDetails" target="_top">AWS API

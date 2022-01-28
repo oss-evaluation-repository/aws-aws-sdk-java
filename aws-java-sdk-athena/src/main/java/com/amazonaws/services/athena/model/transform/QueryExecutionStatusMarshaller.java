@@ -35,6 +35,8 @@ public class QueryExecutionStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmissionDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ATHENAERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AthenaError").build();
 
     private static final QueryExecutionStatusMarshaller instance = new QueryExecutionStatusMarshaller();
 
@@ -56,6 +58,7 @@ public class QueryExecutionStatusMarshaller {
             protocolMarshaller.marshall(queryExecutionStatus.getStateChangeReason(), STATECHANGEREASON_BINDING);
             protocolMarshaller.marshall(queryExecutionStatus.getSubmissionDateTime(), SUBMISSIONDATETIME_BINDING);
             protocolMarshaller.marshall(queryExecutionStatus.getCompletionDateTime(), COMPLETIONDATETIME_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatus.getAthenaError(), ATHENAERROR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

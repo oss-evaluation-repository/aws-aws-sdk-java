@@ -22,7 +22,8 @@ public enum TargetPlatformAccelerator {
 
     INTEL_GRAPHICS("INTEL_GRAPHICS"),
     MALI("MALI"),
-    NVIDIA("NVIDIA");
+    NVIDIA("NVIDIA"),
+    NNA("NNA");
 
     private String value;
 

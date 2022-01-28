@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Response parameters for the GetLatestConfiguration API
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -28,11 +25,18 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The data of the configuration. Note that this may be empty if the client already has the latest version of
-     * configuration.
+     * The latest token describing the current state of the configuration session. This MUST be provided to the next
+     * call to <code>GetLatestConfiguration.</code>
      * </p>
      */
-    private java.nio.ByteBuffer configuration;
+    private String nextPollConfigurationToken;
+    /**
+     * <p>
+     * The amount of time the client should wait before polling for configuration updates again. Use
+     * <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     * </p>
+     */
+    private Integer nextPollIntervalInSeconds;
     /**
      * <p>
      * A standard MIME type describing the format of the configuration content.
@@ -41,89 +45,100 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
     private String contentType;
     /**
      * <p>
+     * The data of the configuration. This may be empty if the client already has the latest version of configuration.
+     * </p>
+     */
+    private java.nio.ByteBuffer configuration;
+
+    /**
+     * <p>
      * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to GetLatestConfiguration.
-     * </p>
-     */
-    private String nextPollConfigurationToken;
-    /**
-     * <p>
-     * The amount of time the client should wait before polling for configuration updates again. See
-     * RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     * </p>
-     */
-    private Integer nextPollIntervalInSeconds;
-
-    /**
-     * <p>
-     * The data of the configuration. Note that this may be empty if the client already has the latest version of
-     * configuration.
-     * </p>
-     * <p>
-     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
-     * Users of the SDK should not perform Base64 encoding on this field.
-     * </p>
-     * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
-     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
-     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
-     * major version of the SDK.
+     * call to <code>GetLatestConfiguration.</code>
      * </p>
      * 
-     * @param configuration
-     *        The data of the configuration. Note that this may be empty if the client already has the latest version of
-     *        configuration.
+     * @param nextPollConfigurationToken
+     *        The latest token describing the current state of the configuration session. This MUST be provided to the
+     *        next call to <code>GetLatestConfiguration.</code>
      */
 
-    public void setConfiguration(java.nio.ByteBuffer configuration) {
-        this.configuration = configuration;
+    public void setNextPollConfigurationToken(String nextPollConfigurationToken) {
+        this.nextPollConfigurationToken = nextPollConfigurationToken;
     }
 
     /**
      * <p>
-     * The data of the configuration. Note that this may be empty if the client already has the latest version of
-     * configuration.
-     * </p>
-     * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
-     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
-     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
-     * {@code position}.
+     * The latest token describing the current state of the configuration session. This MUST be provided to the next
+     * call to <code>GetLatestConfiguration.</code>
      * </p>
      * 
-     * @return The data of the configuration. Note that this may be empty if the client already has the latest version
-     *         of configuration.
+     * @return The latest token describing the current state of the configuration session. This MUST be provided to the
+     *         next call to <code>GetLatestConfiguration.</code>
      */
 
-    public java.nio.ByteBuffer getConfiguration() {
-        return this.configuration;
+    public String getNextPollConfigurationToken() {
+        return this.nextPollConfigurationToken;
     }
 
     /**
      * <p>
-     * The data of the configuration. Note that this may be empty if the client already has the latest version of
-     * configuration.
-     * </p>
-     * <p>
-     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
-     * Users of the SDK should not perform Base64 encoding on this field.
-     * </p>
-     * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
-     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
-     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
-     * major version of the SDK.
+     * The latest token describing the current state of the configuration session. This MUST be provided to the next
+     * call to <code>GetLatestConfiguration.</code>
      * </p>
      * 
-     * @param configuration
-     *        The data of the configuration. Note that this may be empty if the client already has the latest version of
-     *        configuration.
+     * @param nextPollConfigurationToken
+     *        The latest token describing the current state of the configuration session. This MUST be provided to the
+     *        next call to <code>GetLatestConfiguration.</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetLatestConfigurationResult withConfiguration(java.nio.ByteBuffer configuration) {
-        setConfiguration(configuration);
+    public GetLatestConfigurationResult withNextPollConfigurationToken(String nextPollConfigurationToken) {
+        setNextPollConfigurationToken(nextPollConfigurationToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time the client should wait before polling for configuration updates again. Use
+     * <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     * </p>
+     * 
+     * @param nextPollIntervalInSeconds
+     *        The amount of time the client should wait before polling for configuration updates again. Use
+     *        <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     */
+
+    public void setNextPollIntervalInSeconds(Integer nextPollIntervalInSeconds) {
+        this.nextPollIntervalInSeconds = nextPollIntervalInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time the client should wait before polling for configuration updates again. Use
+     * <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     * </p>
+     * 
+     * @return The amount of time the client should wait before polling for configuration updates again. Use
+     *         <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     */
+
+    public Integer getNextPollIntervalInSeconds() {
+        return this.nextPollIntervalInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time the client should wait before polling for configuration updates again. Use
+     * <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     * </p>
+     * 
+     * @param nextPollIntervalInSeconds
+     *        The amount of time the client should wait before polling for configuration updates again. Use
+     *        <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLatestConfigurationResult withNextPollIntervalInSeconds(Integer nextPollIntervalInSeconds) {
+        setNextPollIntervalInSeconds(nextPollIntervalInSeconds);
         return this;
     }
 
@@ -169,93 +184,71 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to GetLatestConfiguration.
+     * The data of the configuration. This may be empty if the client already has the latest version of configuration.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
-     * @param nextPollConfigurationToken
-     *        The latest token describing the current state of the configuration session. This MUST be provided to the
-     *        next call to GetLatestConfiguration.
+     * @param configuration
+     *        The data of the configuration. This may be empty if the client already has the latest version of
+     *        configuration.
      */
 
-    public void setNextPollConfigurationToken(String nextPollConfigurationToken) {
-        this.nextPollConfigurationToken = nextPollConfigurationToken;
+    public void setConfiguration(java.nio.ByteBuffer configuration) {
+        this.configuration = configuration;
     }
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to GetLatestConfiguration.
+     * The data of the configuration. This may be empty if the client already has the latest version of configuration.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return The latest token describing the current state of the configuration session. This MUST be provided to the
-     *         next call to GetLatestConfiguration.
+     * @return The data of the configuration. This may be empty if the client already has the latest version of
+     *         configuration.
      */
 
-    public String getNextPollConfigurationToken() {
-        return this.nextPollConfigurationToken;
+    public java.nio.ByteBuffer getConfiguration() {
+        return this.configuration;
     }
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to GetLatestConfiguration.
+     * The data of the configuration. This may be empty if the client already has the latest version of configuration.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
-     * @param nextPollConfigurationToken
-     *        The latest token describing the current state of the configuration session. This MUST be provided to the
-     *        next call to GetLatestConfiguration.
+     * @param configuration
+     *        The data of the configuration. This may be empty if the client already has the latest version of
+     *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetLatestConfigurationResult withNextPollConfigurationToken(String nextPollConfigurationToken) {
-        setNextPollConfigurationToken(nextPollConfigurationToken);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The amount of time the client should wait before polling for configuration updates again. See
-     * RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     * </p>
-     * 
-     * @param nextPollIntervalInSeconds
-     *        The amount of time the client should wait before polling for configuration updates again. See
-     *        RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     */
-
-    public void setNextPollIntervalInSeconds(Integer nextPollIntervalInSeconds) {
-        this.nextPollIntervalInSeconds = nextPollIntervalInSeconds;
-    }
-
-    /**
-     * <p>
-     * The amount of time the client should wait before polling for configuration updates again. See
-     * RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     * </p>
-     * 
-     * @return The amount of time the client should wait before polling for configuration updates again. See
-     *         RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     */
-
-    public Integer getNextPollIntervalInSeconds() {
-        return this.nextPollIntervalInSeconds;
-    }
-
-    /**
-     * <p>
-     * The amount of time the client should wait before polling for configuration updates again. See
-     * RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     * </p>
-     * 
-     * @param nextPollIntervalInSeconds
-     *        The amount of time the client should wait before polling for configuration updates again. See
-     *        RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetLatestConfigurationResult withNextPollIntervalInSeconds(Integer nextPollIntervalInSeconds) {
-        setNextPollIntervalInSeconds(nextPollIntervalInSeconds);
+    public GetLatestConfigurationResult withConfiguration(java.nio.ByteBuffer configuration) {
+        setConfiguration(configuration);
         return this;
     }
 
@@ -271,14 +264,14 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getConfiguration() != null)
-            sb.append("Configuration: ").append("***Sensitive Data Redacted***").append(",");
-        if (getContentType() != null)
-            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getNextPollConfigurationToken() != null)
             sb.append("NextPollConfigurationToken: ").append(getNextPollConfigurationToken()).append(",");
         if (getNextPollIntervalInSeconds() != null)
-            sb.append("NextPollIntervalInSeconds: ").append(getNextPollIntervalInSeconds());
+            sb.append("NextPollIntervalInSeconds: ").append(getNextPollIntervalInSeconds()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -293,14 +286,6 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
         if (obj instanceof GetLatestConfigurationResult == false)
             return false;
         GetLatestConfigurationResult other = (GetLatestConfigurationResult) obj;
-        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
-            return false;
-        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
-            return false;
-        if (other.getContentType() == null ^ this.getContentType() == null)
-            return false;
-        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
-            return false;
         if (other.getNextPollConfigurationToken() == null ^ this.getNextPollConfigurationToken() == null)
             return false;
         if (other.getNextPollConfigurationToken() != null && other.getNextPollConfigurationToken().equals(this.getNextPollConfigurationToken()) == false)
@@ -308,6 +293,14 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
         if (other.getNextPollIntervalInSeconds() == null ^ this.getNextPollIntervalInSeconds() == null)
             return false;
         if (other.getNextPollIntervalInSeconds() != null && other.getNextPollIntervalInSeconds().equals(this.getNextPollIntervalInSeconds()) == false)
+            return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
         return true;
     }
@@ -317,10 +310,10 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getNextPollConfigurationToken() == null) ? 0 : getNextPollConfigurationToken().hashCode());
         hashCode = prime * hashCode + ((getNextPollIntervalInSeconds() == null) ? 0 : getNextPollIntervalInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

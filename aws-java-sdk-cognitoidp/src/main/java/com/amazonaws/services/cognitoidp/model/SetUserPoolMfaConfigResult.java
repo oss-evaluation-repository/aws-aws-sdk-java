@@ -42,7 +42,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -146,7 +146,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -166,7 +166,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -193,7 +193,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -212,7 +212,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>OFF</code> MFA will not be used for any users.
+     *         <code>OFF</code> MFA won't be used for any users.
      *         </p>
      *         </li>
      *         <li>
@@ -239,7 +239,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -259,7 +259,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -288,7 +288,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -308,7 +308,7 @@ public class SetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>

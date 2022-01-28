@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+ * This exception is thrown when the Amazon Cognito service can't find the requested resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

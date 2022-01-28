@@ -25,13 +25,14 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     * generate a one-time code.
      * </p>
      */
     private String secretCode;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      */
@@ -39,11 +40,13 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     * generate a one-time code.
      * </p>
      * 
      * @param secretCode
-     *        A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     *        A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     *        generate a one-time code.
      */
 
     public void setSecretCode(String secretCode) {
@@ -52,10 +55,12 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     * generate a one-time code.
      * </p>
      * 
-     * @return A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     * @return A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm
+     *         to generate a one-time code.
      */
 
     public String getSecretCode() {
@@ -64,11 +69,13 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     * A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     * generate a one-time code.
      * </p>
      * 
      * @param secretCode
-     *        A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.
+     *        A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to
+     *        generate a one-time code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,12 +86,12 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. This allows
+     *        The session that should be passed both ways in challenge-response calls to the service. This allows
      *        authentication of the user as part of the MFA setup process.
      */
 
@@ -94,11 +101,11 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. This allows
+     * @return The session that should be passed both ways in challenge-response calls to the service. This allows
      *         authentication of the user as part of the MFA setup process.
      */
 
@@ -108,12 +115,12 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. This allows
+     * The session that should be passed both ways in challenge-response calls to the service. This allows
      * authentication of the user as part of the MFA setup process.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. This allows
+     *        The session that should be passed both ways in challenge-response calls to the service. This allows
      *        authentication of the user as part of the MFA setup process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

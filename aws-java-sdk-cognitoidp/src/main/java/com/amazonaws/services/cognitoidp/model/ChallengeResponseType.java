@@ -30,7 +30,7 @@ public class ChallengeResponseType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The challenge name
+     * The challenge name.
      * </p>
      */
     private String challengeName;
@@ -43,11 +43,11 @@ public class ChallengeResponseType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The challenge name
+     * The challenge name.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name
+     *        The challenge name.
      * @see ChallengeName
      */
 
@@ -57,10 +57,10 @@ public class ChallengeResponseType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The challenge name
+     * The challenge name.
      * </p>
      * 
-     * @return The challenge name
+     * @return The challenge name.
      * @see ChallengeName
      */
 
@@ -70,11 +70,11 @@ public class ChallengeResponseType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The challenge name
+     * The challenge name.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name
+     *        The challenge name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeName
      */
@@ -86,11 +86,11 @@ public class ChallengeResponseType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The challenge name
+     * The challenge name.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name
+     *        The challenge name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeName
      */

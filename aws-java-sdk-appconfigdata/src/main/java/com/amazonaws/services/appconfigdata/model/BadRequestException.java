@@ -25,16 +25,16 @@ public class BadRequestException extends com.amazonaws.services.appconfigdata.mo
 
     /**
      * <p>
-     * Details describing why the request was invalid
-     * </p>
-     */
-    private BadRequestDetails details;
-    /**
-     * <p>
      * Code indicating the reason the request was invalid.
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * Details describing why the request was invalid.
+     * </p>
+     */
+    private BadRequestDetails details;
 
     /**
      * Constructs a new BadRequestException with the specified error message.
@@ -44,48 +44,6 @@ public class BadRequestException extends com.amazonaws.services.appconfigdata.mo
      */
     public BadRequestException(String message) {
         super(message);
-    }
-
-    /**
-     * <p>
-     * Details describing why the request was invalid
-     * </p>
-     * 
-     * @param details
-     *        Details describing why the request was invalid
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Details")
-    public void setDetails(BadRequestDetails details) {
-        this.details = details;
-    }
-
-    /**
-     * <p>
-     * Details describing why the request was invalid
-     * </p>
-     * 
-     * @return Details describing why the request was invalid
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Details")
-    public BadRequestDetails getDetails() {
-        return this.details;
-    }
-
-    /**
-     * <p>
-     * Details describing why the request was invalid
-     * </p>
-     * 
-     * @param details
-     *        Details describing why the request was invalid
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BadRequestException withDetails(BadRequestDetails details) {
-        setDetails(details);
-        return this;
     }
 
     /**
@@ -146,6 +104,48 @@ public class BadRequestException extends com.amazonaws.services.appconfigdata.mo
 
     public BadRequestException withReason(BadRequestReason reason) {
         this.reason = reason.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details describing why the request was invalid.
+     * </p>
+     * 
+     * @param details
+     *        Details describing why the request was invalid.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Details")
+    public void setDetails(BadRequestDetails details) {
+        this.details = details;
+    }
+
+    /**
+     * <p>
+     * Details describing why the request was invalid.
+     * </p>
+     * 
+     * @return Details describing why the request was invalid.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Details")
+    public BadRequestDetails getDetails() {
+        return this.details;
+    }
+
+    /**
+     * <p>
+     * Details describing why the request was invalid.
+     * </p>
+     * 
+     * @param details
+     *        Details describing why the request was invalid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BadRequestException withDetails(BadRequestDetails details) {
+        setDetails(details);
         return this;
     }
 

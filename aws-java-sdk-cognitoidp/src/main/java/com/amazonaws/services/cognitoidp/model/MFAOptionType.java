@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for
- * TOTP software token MFA configurations.
+ * <i>This data type is no longer supported.</i> You can use it only for SMS multi-factor authentication (MFA)
+ * configurations. You can't use it for time-based one-time password (TOTP) software token MFA configurations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MFAOptionType" target="_top">AWS API

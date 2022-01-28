@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for the user pool's device tracking.
+ * The device tracking configuration for a user pool. A user pool with device tracking deactivated returns a null value.
  * </p>
+ * <note>
+ * <p>
+ * When you provide values for any DeviceConfiguration field, you activate device tracking.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceConfigurationType"
  *      target="_top">AWS API Documentation</a>
@@ -30,24 +35,44 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor
+     * authentication (MFA).
      * </p>
+     * <note>
+     * <p>
+     * Users that sign in with devices that have not been confirmed or remembered will still have to provide a second
+     * factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     * </p>
+     * </note>
      */
     private Boolean challengeRequiredOnNewDevice;
     /**
      * <p>
-     * If true, a device is only remembered on user prompt.
+     * When true, users can opt in to remembering their device. Your app code must use callback functions to return the
+     * user's choice.
      * </p>
      */
     private Boolean deviceOnlyRememberedOnUserPrompt;
 
     /**
      * <p>
-     * Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor
+     * authentication (MFA).
      * </p>
+     * <note>
+     * <p>
+     * Users that sign in with devices that have not been confirmed or remembered will still have to provide a second
+     * factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     * </p>
+     * </note>
      * 
      * @param challengeRequiredOnNewDevice
-     *        Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     *        When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for
+     *        multi-factor authentication (MFA).</p> <note>
+     *        <p>
+     *        Users that sign in with devices that have not been confirmed or remembered will still have to provide a
+     *        second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     *        </p>
      */
 
     public void setChallengeRequiredOnNewDevice(Boolean challengeRequiredOnNewDevice) {
@@ -56,10 +81,22 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor
+     * authentication (MFA).
      * </p>
+     * <note>
+     * <p>
+     * Users that sign in with devices that have not been confirmed or remembered will still have to provide a second
+     * factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     * </p>
+     * </note>
      * 
-     * @return Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * @return When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for
+     *         multi-factor authentication (MFA).</p> <note>
+     *         <p>
+     *         Users that sign in with devices that have not been confirmed or remembered will still have to provide a
+     *         second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     *         </p>
      */
 
     public Boolean getChallengeRequiredOnNewDevice() {
@@ -68,11 +105,23 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor
+     * authentication (MFA).
      * </p>
+     * <note>
+     * <p>
+     * Users that sign in with devices that have not been confirmed or remembered will still have to provide a second
+     * factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     * </p>
+     * </note>
      * 
      * @param challengeRequiredOnNewDevice
-     *        Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     *        When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for
+     *        multi-factor authentication (MFA).</p> <note>
+     *        <p>
+     *        Users that sign in with devices that have not been confirmed or remembered will still have to provide a
+     *        second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +132,22 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor
+     * authentication (MFA).
      * </p>
+     * <note>
+     * <p>
+     * Users that sign in with devices that have not been confirmed or remembered will still have to provide a second
+     * factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     * </p>
+     * </note>
      * 
-     * @return Indicates whether a challenge is required on a new device. Only applicable to a new device.
+     * @return When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for
+     *         multi-factor authentication (MFA).</p> <note>
+     *         <p>
+     *         Users that sign in with devices that have not been confirmed or remembered will still have to provide a
+     *         second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.
+     *         </p>
      */
 
     public Boolean isChallengeRequiredOnNewDevice() {
@@ -95,11 +156,13 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, a device is only remembered on user prompt.
+     * When true, users can opt in to remembering their device. Your app code must use callback functions to return the
+     * user's choice.
      * </p>
      * 
      * @param deviceOnlyRememberedOnUserPrompt
-     *        If true, a device is only remembered on user prompt.
+     *        When true, users can opt in to remembering their device. Your app code must use callback functions to
+     *        return the user's choice.
      */
 
     public void setDeviceOnlyRememberedOnUserPrompt(Boolean deviceOnlyRememberedOnUserPrompt) {
@@ -108,10 +171,12 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, a device is only remembered on user prompt.
+     * When true, users can opt in to remembering their device. Your app code must use callback functions to return the
+     * user's choice.
      * </p>
      * 
-     * @return If true, a device is only remembered on user prompt.
+     * @return When true, users can opt in to remembering their device. Your app code must use callback functions to
+     *         return the user's choice.
      */
 
     public Boolean getDeviceOnlyRememberedOnUserPrompt() {
@@ -120,11 +185,13 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, a device is only remembered on user prompt.
+     * When true, users can opt in to remembering their device. Your app code must use callback functions to return the
+     * user's choice.
      * </p>
      * 
      * @param deviceOnlyRememberedOnUserPrompt
-     *        If true, a device is only remembered on user prompt.
+     *        When true, users can opt in to remembering their device. Your app code must use callback functions to
+     *        return the user's choice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,10 +202,12 @@ public class DeviceConfigurationType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, a device is only remembered on user prompt.
+     * When true, users can opt in to remembering their device. Your app code must use callback functions to return the
+     * user's choice.
      * </p>
      * 
-     * @return If true, a device is only remembered on user prompt.
+     * @return When true, users can opt in to remembering their device. Your app code must use callback functions to
+     *         return the user's choice.
      */
 
     public Boolean isDeviceOnlyRememberedOnUserPrompt() {

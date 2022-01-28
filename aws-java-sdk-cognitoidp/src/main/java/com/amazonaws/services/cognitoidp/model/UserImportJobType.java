@@ -113,7 +113,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -121,8 +121,8 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
     private String status;
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     * "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     * The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more
+     * information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      * </p>
      */
     private String cloudWatchLogsRoleArn;
@@ -140,7 +140,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
     private Long skippedUsers;
     /**
      * <p>
-     * The number of users that could not be imported.
+     * The number of users that couldn't be imported.
      * </p>
      */
     private Long failedUsers;
@@ -474,7 +474,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -521,7 +521,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
-     *        associated with the job was deleted, and the job cannot be started.
+     *        associated with the job was deleted, and the job can't be started.
      *        </p>
      *        </li>
      * @see UserImportJobStatusType
@@ -574,7 +574,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -620,7 +620,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
-     *         associated with the job was deleted, and the job cannot be started.
+     *         associated with the job was deleted, and the job can't be started.
      *         </p>
      *         </li>
      * @see UserImportJobStatusType
@@ -673,7 +673,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -720,7 +720,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
-     *        associated with the job was deleted, and the job cannot be started.
+     *        associated with the job was deleted, and the job can't be started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -775,7 +775,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -822,7 +822,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
-     *        associated with the job was deleted, and the job cannot be started.
+     *        associated with the job was deleted, and the job can't be started.
      *        </p>
      *        </li>
      * @see UserImportJobStatusType
@@ -875,7 +875,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
-     * the job was deleted, and the job cannot be started.
+     * the job was deleted, and the job can't be started.
      * </p>
      * </li>
      * </ul>
@@ -922,7 +922,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
-     *        associated with the job was deleted, and the job cannot be started.
+     *        associated with the job was deleted, and the job can't be started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -936,13 +936,13 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     * "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     * The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more
+     * information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     *        "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     *        The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For
+     *        more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      */
 
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
@@ -951,12 +951,12 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     * "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     * The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more
+     * information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      * </p>
      * 
-     * @return The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     *         "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     * @return The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For
+     *         more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      */
 
     public String getCloudWatchLogsRoleArn() {
@@ -965,13 +965,13 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     * "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     * The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more
+     * information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user import job. For more information, see
-     *        "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
+     *        The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For
+     *        more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1062,11 +1062,11 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of users that could not be imported.
+     * The number of users that couldn't be imported.
      * </p>
      * 
      * @param failedUsers
-     *        The number of users that could not be imported.
+     *        The number of users that couldn't be imported.
      */
 
     public void setFailedUsers(Long failedUsers) {
@@ -1075,10 +1075,10 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of users that could not be imported.
+     * The number of users that couldn't be imported.
      * </p>
      * 
-     * @return The number of users that could not be imported.
+     * @return The number of users that couldn't be imported.
      */
 
     public Long getFailedUsers() {
@@ -1087,11 +1087,11 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of users that could not be imported.
+     * The number of users that couldn't be imported.
      * </p>
      * 
      * @param failedUsers
-     *        The number of users that could not be imported.
+     *        The number of users that couldn't be imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

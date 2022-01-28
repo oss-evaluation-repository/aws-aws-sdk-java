@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the specified OAuth flow is invalid.
+ * This exception is thrown when the specified OAuth flow is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

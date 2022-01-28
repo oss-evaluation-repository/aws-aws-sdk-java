@@ -53,13 +53,13 @@ public class BadRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Details", targetDepth)) {
-                    context.nextToken();
-                    badRequestException.setDetails(BadRequestDetailsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Reason", targetDepth)) {
                     context.nextToken();
                     badRequestException.setReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Details", targetDepth)) {
+                    context.nextToken();
+                    badRequestException.setDetails(BadRequestDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

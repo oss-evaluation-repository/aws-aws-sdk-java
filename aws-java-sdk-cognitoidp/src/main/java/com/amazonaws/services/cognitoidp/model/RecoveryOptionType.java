@@ -36,7 +36,7 @@ public class RecoveryOptionType implements Serializable, Cloneable, StructuredPo
     private Integer priority;
     /**
      * <p>
-     * Specifies the recovery method for a user.
+     * The recovery method for a user.
      * </p>
      */
     private String name;
@@ -83,11 +83,11 @@ public class RecoveryOptionType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies the recovery method for a user.
+     * The recovery method for a user.
      * </p>
      * 
      * @param name
-     *        Specifies the recovery method for a user.
+     *        The recovery method for a user.
      * @see RecoveryOptionNameType
      */
 
@@ -97,10 +97,10 @@ public class RecoveryOptionType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies the recovery method for a user.
+     * The recovery method for a user.
      * </p>
      * 
-     * @return Specifies the recovery method for a user.
+     * @return The recovery method for a user.
      * @see RecoveryOptionNameType
      */
 
@@ -110,11 +110,11 @@ public class RecoveryOptionType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies the recovery method for a user.
+     * The recovery method for a user.
      * </p>
      * 
      * @param name
-     *        Specifies the recovery method for a user.
+     *        The recovery method for a user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryOptionNameType
      */
@@ -126,11 +126,11 @@ public class RecoveryOptionType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies the recovery method for a user.
+     * The recovery method for a user.
      * </p>
      * 
      * @param name
-     *        Specifies the recovery method for a user.
+     *        The recovery method for a user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryOptionNameType
      */

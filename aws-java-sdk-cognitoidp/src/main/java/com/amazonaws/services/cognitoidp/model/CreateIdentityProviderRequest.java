@@ -132,7 +132,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * For OIDC providers:
+     * For OpenID Connect (OIDC) providers:
      * </p>
      * <ul>
      * <li>
@@ -180,6 +180,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -194,7 +199,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignout <i>optional</i>
+     * IDPSignout (optional)
      * </p>
      * </li>
      * </ul>
@@ -457,7 +462,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * For OIDC providers:
+     * For OpenID Connect (OIDC) providers:
      * </p>
      * <ul>
      * <li>
@@ -505,6 +510,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -519,7 +529,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignout <i>optional</i>
+     * IDPSignout (optional)
      * </p>
      * </li>
      * </ul>
@@ -612,7 +622,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         For OIDC providers:
+     *         For OpenID Connect (OIDC) providers:
      *         </p>
      *         <ul>
      *         <li>
@@ -660,6 +670,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         <li>
@@ -674,7 +689,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         IDPSignout <i>optional</i>
+     *         IDPSignout (optional)
      *         </p>
      *         </li>
      *         </ul>
@@ -774,7 +789,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * For OIDC providers:
+     * For OpenID Connect (OIDC) providers:
      * </p>
      * <ul>
      * <li>
@@ -822,6 +837,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -836,7 +856,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignout <i>optional</i>
+     * IDPSignout (optional)
      * </p>
      * </li>
      * </ul>
@@ -930,7 +950,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        For OIDC providers:
+     *        For OpenID Connect (OIDC) providers:
      *        </p>
      *        <ul>
      *        <li>
@@ -978,6 +998,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -992,7 +1017,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignout <i>optional</i>
+     *        IDPSignout (optional)
      *        </p>
      *        </li>
      *        </ul>
@@ -1092,7 +1117,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * For OIDC providers:
+     * For OpenID Connect (OIDC) providers:
      * </p>
      * <ul>
      * <li>
@@ -1140,6 +1165,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -1154,7 +1184,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignout <i>optional</i>
+     * IDPSignout (optional)
      * </p>
      * </li>
      * </ul>
@@ -1248,7 +1278,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        For OIDC providers:
+     *        For OpenID Connect (OIDC) providers:
      *        </p>
      *        <ul>
      *        <li>
@@ -1296,6 +1326,11 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        <li>
@@ -1310,7 +1345,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignout <i>optional</i>
+     *        IDPSignout (optional)
      *        </p>
      *        </li>
      *        </ul>

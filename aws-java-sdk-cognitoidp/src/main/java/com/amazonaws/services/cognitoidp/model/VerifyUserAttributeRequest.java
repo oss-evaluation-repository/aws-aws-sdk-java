@@ -30,7 +30,7 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Represents the access token of the request to verify user attributes.
+     * The access token of the request to verify user attributes.
      * </p>
      */
     private String accessToken;
@@ -49,11 +49,11 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Represents the access token of the request to verify user attributes.
+     * The access token of the request to verify user attributes.
      * </p>
      * 
      * @param accessToken
-     *        Represents the access token of the request to verify user attributes.
+     *        The access token of the request to verify user attributes.
      */
 
     public void setAccessToken(String accessToken) {
@@ -62,10 +62,10 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Represents the access token of the request to verify user attributes.
+     * The access token of the request to verify user attributes.
      * </p>
      * 
-     * @return Represents the access token of the request to verify user attributes.
+     * @return The access token of the request to verify user attributes.
      */
 
     public String getAccessToken() {
@@ -74,11 +74,11 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Represents the access token of the request to verify user attributes.
+     * The access token of the request to verify user attributes.
      * </p>
      * 
      * @param accessToken
-     *        Represents the access token of the request to verify user attributes.
+     *        The access token of the request to verify user attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String userPoolId;
     /**
      * <p>
-     * A container with the policies you wish to update in a user pool.
+     * A container with the policies you want to update in a user pool.
      * </p>
      */
     private UserPoolPolicyType policies;
@@ -48,8 +48,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private LambdaConfigType lambdaConfig;
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      */
     private java.util.List<String> autoVerifiedAttributes;
@@ -90,12 +89,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -142,18 +141,17 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private AdminCreateUserConfigType adminCreateUserConfig;
     /**
      * <p>
-     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     * "AUDIT".
+     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
      * </p>
      */
     private UserPoolAddOnsType userPoolAddOns;
     /**
      * <p>
-     * Use this setting to define which verified available method a user can use to recover their password when they
-     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
-     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
-     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
-     * method where SMS is preferred over email.
+     * The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>
+     * . You can use this setting to define a preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor
+     * authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to
+     * determine the recovery method where SMS is preferred through email.
      * </p>
      */
     private AccountRecoverySettingType accountRecoverySetting;
@@ -200,11 +198,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with the policies you wish to update in a user pool.
+     * A container with the policies you want to update in a user pool.
      * </p>
      * 
      * @param policies
-     *        A container with the policies you wish to update in a user pool.
+     *        A container with the policies you want to update in a user pool.
      */
 
     public void setPolicies(UserPoolPolicyType policies) {
@@ -213,10 +211,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with the policies you wish to update in a user pool.
+     * A container with the policies you want to update in a user pool.
      * </p>
      * 
-     * @return A container with the policies you wish to update in a user pool.
+     * @return A container with the policies you want to update in a user pool.
      */
 
     public UserPoolPolicyType getPolicies() {
@@ -225,11 +223,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A container with the policies you wish to update in a user pool.
+     * A container with the policies you want to update in a user pool.
      * </p>
      * 
      * @param policies
-     *        A container with the policies you wish to update in a user pool.
+     *        A container with the policies you want to update in a user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,12 +278,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      * 
-     * @return The attributes that are automatically verified when the Amazon Cognito service makes a request to update
-     *         user pools.
+     * @return The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * @see VerifiedAttributeType
      */
 
@@ -295,13 +291,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
-     *        user pools.
+     *        The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * @see VerifiedAttributeType
      */
 
@@ -316,8 +310,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -326,8 +319,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
-     *        user pools.
+     *        The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
@@ -344,13 +336,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
-     *        user pools.
+     *        The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
@@ -362,13 +352,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
-     * pools.
+     * The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
-     *        user pools.
+     *        The attributes that are automatically verified when Amazon Cognito requests to update user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
@@ -593,12 +581,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -616,12 +604,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      *        initially creating a user pool. You can use the <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -646,12 +634,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -668,13 +656,13 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *         <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you
-     *         are initially creating a user pool. You can use the <a href=
+     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
+     *         initially creating a user pool. You can use the <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      *         >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *         </p>
@@ -698,12 +686,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -721,12 +709,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      *        initially creating a user pool. You can use the <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -753,12 +741,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -776,12 +764,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      *        initially creating a user pool. You can use the <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -806,12 +794,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      * initially creating a user pool. You can use the <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -829,12 +817,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're
      *        initially creating a user pool. You can use the <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
      *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
@@ -1090,13 +1078,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     * "AUDIT".
+     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
      * </p>
      * 
      * @param userPoolAddOns
-     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
-     *        value "AUDIT".
+     *        Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     *        "AUDIT".
      */
 
     public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
@@ -1105,12 +1092,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     * "AUDIT".
+     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
      * </p>
      * 
-     * @return Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
-     *         value "AUDIT".
+     * @return Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     *         "AUDIT".
      */
 
     public UserPoolAddOnsType getUserPoolAddOns() {
@@ -1119,13 +1105,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     * "AUDIT".
+     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
      * </p>
      * 
      * @param userPoolAddOns
-     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
-     *        value "AUDIT".
+     *        Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     *        "AUDIT".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1136,19 +1121,20 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this setting to define which verified available method a user can use to recover their password when they
-     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
-     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
-     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
-     * method where SMS is preferred over email.
+     * The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>
+     * . You can use this setting to define a preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor
+     * authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to
+     * determine the recovery method where SMS is preferred through email.
      * </p>
      * 
      * @param accountRecoverySetting
-     *        Use this setting to define which verified available method a user can use to recover their password when
-     *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
-     *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
-     *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
-     *        determine the recovery method where SMS is preferred over email.
+     *        The available verified method a user can use to recover their password when they call
+     *        <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more
+     *        than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism
+     *        if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting,
+     *        Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through
+     *        email.
      */
 
     public void setAccountRecoverySetting(AccountRecoverySettingType accountRecoverySetting) {
@@ -1157,18 +1143,19 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this setting to define which verified available method a user can use to recover their password when they
-     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
-     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
-     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
-     * method where SMS is preferred over email.
+     * The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>
+     * . You can use this setting to define a preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor
+     * authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to
+     * determine the recovery method where SMS is preferred through email.
      * </p>
      * 
-     * @return Use this setting to define which verified available method a user can use to recover their password when
-     *         they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
-     *         than one method available. With this setting, SMS does not qualify for a valid password recovery
-     *         mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy
-     *         behavior to determine the recovery method where SMS is preferred over email.
+     * @return The available verified method a user can use to recover their password when they call
+     *         <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more
+     *         than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism
+     *         if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting,
+     *         Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through
+     *         email.
      */
 
     public AccountRecoverySettingType getAccountRecoverySetting() {
@@ -1177,19 +1164,20 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this setting to define which verified available method a user can use to recover their password when they
-     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
-     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
-     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
-     * method where SMS is preferred over email.
+     * The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>
+     * . You can use this setting to define a preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor
+     * authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to
+     * determine the recovery method where SMS is preferred through email.
      * </p>
      * 
      * @param accountRecoverySetting
-     *        Use this setting to define which verified available method a user can use to recover their password when
-     *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
-     *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
-     *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
-     *        determine the recovery method where SMS is preferred over email.
+     *        The available verified method a user can use to recover their password when they call
+     *        <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more
+     *        than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism
+     *        if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting,
+     *        Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through
+     *        email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

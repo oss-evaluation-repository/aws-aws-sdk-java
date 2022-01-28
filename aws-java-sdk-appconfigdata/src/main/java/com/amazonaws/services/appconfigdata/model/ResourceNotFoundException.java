@@ -25,16 +25,16 @@ public class ResourceNotFoundException extends com.amazonaws.services.appconfigd
 
     /**
      * <p>
-     * A map indicating which parameters in the request reference the resource that was not found.
-     * </p>
-     */
-    private java.util.Map<String, String> referencedBy;
-    /**
-     * <p>
      * The type of resource that was not found.
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * A map indicating which parameters in the request reference the resource that was not found.
+     * </p>
+     */
+    private java.util.Map<String, String> referencedBy;
 
     /**
      * Constructs a new ResourceNotFoundException with the specified error message.
@@ -44,6 +44,67 @@ public class ResourceNotFoundException extends com.amazonaws.services.appconfigd
      */
     public ResourceNotFoundException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The type of resource that was not found.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource that was not found.
+     * @see ResourceType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource that was not found.
+     * </p>
+     * 
+     * @return The type of resource that was not found.
+     * @see ResourceType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource that was not found.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource that was not found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ResourceNotFoundException withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resource that was not found.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource that was not found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ResourceNotFoundException withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
     }
 
     /**
@@ -113,67 +174,6 @@ public class ResourceNotFoundException extends com.amazonaws.services.appconfigd
 
     public ResourceNotFoundException clearReferencedByEntries() {
         this.referencedBy = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of resource that was not found.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of resource that was not found.
-     * @see ResourceType
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of resource that was not found.
-     * </p>
-     * 
-     * @return The type of resource that was not found.
-     * @see ResourceType
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
-    public String getResourceType() {
-        return this.resourceType;
-    }
-
-    /**
-     * <p>
-     * The type of resource that was not found.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of resource that was not found.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public ResourceNotFoundException withResourceType(String resourceType) {
-        setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of resource that was not found.
-     * </p>
-     * 
-     * @param resourceType
-     *        The type of resource that was not found.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResourceType
-     */
-
-    public ResourceNotFoundException withResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
         return this;
     }
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).
+ * This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

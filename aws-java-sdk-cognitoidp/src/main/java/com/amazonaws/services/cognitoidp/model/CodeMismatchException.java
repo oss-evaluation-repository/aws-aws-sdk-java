@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown if the provided code does not match what the server was expecting.
+ * This exception is thrown if the provided code doesn't match what the server was expecting.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

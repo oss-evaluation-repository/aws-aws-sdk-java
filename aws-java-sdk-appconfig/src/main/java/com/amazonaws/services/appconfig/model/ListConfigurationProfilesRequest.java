@@ -47,7 +47,7 @@ public class ListConfigurationProfilesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A filter based on the type of configurations that the configuration profile contains. A configuration can be a
-     * feature flag or a free-form configuration.
+     * feature flag or a freeform configuration.
      * </p>
      */
     private String type;
@@ -181,12 +181,12 @@ public class ListConfigurationProfilesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A filter based on the type of configurations that the configuration profile contains. A configuration can be a
-     * feature flag or a free-form configuration.
+     * feature flag or a freeform configuration.
      * </p>
      * 
      * @param type
      *        A filter based on the type of configurations that the configuration profile contains. A configuration can
-     *        be a feature flag or a free-form configuration.
+     *        be a feature flag or a freeform configuration.
      */
 
     public void setType(String type) {
@@ -196,11 +196,11 @@ public class ListConfigurationProfilesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A filter based on the type of configurations that the configuration profile contains. A configuration can be a
-     * feature flag or a free-form configuration.
+     * feature flag or a freeform configuration.
      * </p>
      * 
      * @return A filter based on the type of configurations that the configuration profile contains. A configuration can
-     *         be a feature flag or a free-form configuration.
+     *         be a feature flag or a freeform configuration.
      */
 
     public String getType() {
@@ -210,12 +210,12 @@ public class ListConfigurationProfilesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A filter based on the type of configurations that the configuration profile contains. A configuration can be a
-     * feature flag or a free-form configuration.
+     * feature flag or a freeform configuration.
      * </p>
      * 
      * @param type
      *        A filter based on the type of configurations that the configuration profile contains. A configuration can
-     *        be a feature flag or a free-form configuration.
+     *        be a feature flag or a freeform configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

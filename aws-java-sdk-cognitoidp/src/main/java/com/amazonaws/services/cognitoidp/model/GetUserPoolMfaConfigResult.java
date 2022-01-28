@@ -42,7 +42,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -52,7 +52,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -146,7 +146,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -156,7 +156,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -166,7 +166,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -176,7 +176,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @see UserPoolMfaType
@@ -193,7 +193,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -203,7 +203,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -212,7 +212,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>OFF</code> MFA will not be used for any users.
+     *         <code>OFF</code> MFA won't be used for any users.
      *         </p>
      *         </li>
      *         <li>
@@ -222,7 +222,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *         <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *         </p>
      *         </li>
      * @see UserPoolMfaType
@@ -239,7 +239,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -249,7 +249,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -259,7 +259,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -269,7 +269,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -288,7 +288,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>OFF</code> MFA will not be used for any users.
+     * <code>OFF</code> MFA won't be used for any users.
      * </p>
      * </li>
      * <li>
@@ -298,7 +298,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      * </p>
      * </li>
      * </ul>
@@ -308,7 +308,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OFF</code> MFA will not be used for any users.
+     *        <code>OFF</code> MFA won't be used for any users.
      *        </p>
      *        </li>
      *        <li>
@@ -318,7 +318,7 @@ public class GetUserPoolMfaConfigResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.
+     *        <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

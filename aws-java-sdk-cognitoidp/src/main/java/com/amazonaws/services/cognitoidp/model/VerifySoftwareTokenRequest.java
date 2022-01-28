@@ -33,15 +33,15 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
     private String accessToken;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      */
     private String session;
     /**
      * <p>
-     * The one time password computed using the secret code returned by <a href=
+     * The one- time password computed using the secret code returned by <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     * >AssociateSoftwareToken"</a>.
+     * >AssociateSoftwareToken</a>.
      * </p>
      */
     private String userCode;
@@ -94,11 +94,11 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service.
+     *        The session that should be passed both ways in challenge-response calls to the service.
      */
 
     public void setSession(String session) {
@@ -107,10 +107,10 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service.
+     * @return The session that should be passed both ways in challenge-response calls to the service.
      */
 
     public String getSession() {
@@ -119,11 +119,11 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service.
+     * The session that should be passed both ways in challenge-response calls to the service.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service.
+     *        The session that should be passed both ways in challenge-response calls to the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,15 +134,15 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The one time password computed using the secret code returned by <a href=
+     * The one- time password computed using the secret code returned by <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     * >AssociateSoftwareToken"</a>.
+     * >AssociateSoftwareToken</a>.
      * </p>
      * 
      * @param userCode
-     *        The one time password computed using the secret code returned by <a href=
+     *        The one- time password computed using the secret code returned by <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     *        >AssociateSoftwareToken"</a>.
+     *        >AssociateSoftwareToken</a>.
      */
 
     public void setUserCode(String userCode) {
@@ -151,14 +151,14 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The one time password computed using the secret code returned by <a href=
+     * The one- time password computed using the secret code returned by <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     * >AssociateSoftwareToken"</a>.
+     * >AssociateSoftwareToken</a>.
      * </p>
      * 
-     * @return The one time password computed using the secret code returned by <a href=
+     * @return The one- time password computed using the secret code returned by <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     *         >AssociateSoftwareToken"</a>.
+     *         >AssociateSoftwareToken</a>.
      */
 
     public String getUserCode() {
@@ -167,15 +167,15 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The one time password computed using the secret code returned by <a href=
+     * The one- time password computed using the secret code returned by <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     * >AssociateSoftwareToken"</a>.
+     * >AssociateSoftwareToken</a>.
      * </p>
      * 
      * @param userCode
-     *        The one time password computed using the secret code returned by <a href=
+     *        The one- time password computed using the secret code returned by <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
-     *        >AssociateSoftwareToken"</a>.
+     *        >AssociateSoftwareToken</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

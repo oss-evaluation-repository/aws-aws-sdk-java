@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when a user is not authorized.
+ * This exception is thrown when a user isn't authorized.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

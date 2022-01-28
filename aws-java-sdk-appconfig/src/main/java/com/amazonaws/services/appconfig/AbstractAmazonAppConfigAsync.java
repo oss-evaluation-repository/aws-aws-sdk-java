@@ -175,12 +175,14 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest request) {
 
         return getConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler) {
 
