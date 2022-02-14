@@ -45,8 +45,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * If set to "true", indicates that the previously-specified query results location (also known as a client-side
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side
-     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> is updated with the
-     * new value. For more information, see <a
+     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     * with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -64,7 +64,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
      * client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
+     * <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -178,8 +178,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * If set to "true", indicates that the previously-specified query results location (also known as a client-side
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side
-     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> is updated with the
-     * new value. For more information, see <a
+     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     * with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -189,9 +189,9 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *        client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or
      *        not set, and a value is present in the <code>OutputLocation</code> in
      *        <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the
-     *        workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
-     *        Override Client-Side Settings</a>.
+     *        workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see
+     *        <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     *        Settings Override Client-Side Settings</a>.
      */
 
     public void setRemoveOutputLocation(Boolean removeOutputLocation) {
@@ -203,8 +203,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * If set to "true", indicates that the previously-specified query results location (also known as a client-side
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side
-     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> is updated with the
-     * new value. For more information, see <a
+     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     * with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -213,9 +213,9 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *         client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false"
      *         or not set, and a value is present in the <code>OutputLocation</code> in
      *         <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the
-     *         workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
-     *         href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
-     *         Override Client-Side Settings</a>.
+     *         workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information,
+     *         see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     *         Settings Override Client-Side Settings</a>.
      */
 
     public Boolean getRemoveOutputLocation() {
@@ -227,8 +227,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * If set to "true", indicates that the previously-specified query results location (also known as a client-side
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side
-     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> is updated with the
-     * new value. For more information, see <a
+     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     * with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -238,9 +238,9 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *        client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or
      *        not set, and a value is present in the <code>OutputLocation</code> in
      *        <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the
-     *        workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
-     *        Override Client-Side Settings</a>.
+     *        workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see
+     *        <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     *        Settings Override Client-Side Settings</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,8 +254,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * If set to "true", indicates that the previously-specified query results location (also known as a client-side
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side
-     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> is updated with the
-     * new value. For more information, see <a
+     * setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     * with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -264,9 +264,9 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *         client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false"
      *         or not set, and a value is present in the <code>OutputLocation</code> in
      *         <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the
-     *         workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
-     *         href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
-     *         Override Client-Side Settings</a>.
+     *         workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information,
+     *         see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     *         Settings Override Client-Side Settings</a>.
      */
 
     public Boolean isRemoveOutputLocation() {
@@ -319,7 +319,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
      * client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
+     * <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -329,8 +329,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *        client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or
      *        not set, and a value is present in the <code>EncryptionConfiguration</code> in
      *        <code>ResultConfigurationUpdates</code> (the client-side setting), the
-     *        <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with
-     *        the new value. For more information, see <a
+     *        <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     *        with the new value. For more information, see <a
      *        href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
      *        Override Client-Side Settings</a>.
      */
@@ -345,7 +345,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
      * client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
+     * <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -354,8 +354,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *         client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false"
      *         or not set, and a value is present in the <code>EncryptionConfiguration</code> in
      *         <code>ResultConfigurationUpdates</code> (the client-side setting), the
-     *         <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with
-     *         the new value. For more information, see <a
+     *         <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     *         with the new value. For more information, see <a
      *         href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
      *         Override Client-Side Settings</a>.
      */
@@ -370,7 +370,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
      * client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
+     * <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -380,8 +380,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *        client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or
      *        not set, and a value is present in the <code>EncryptionConfiguration</code> in
      *        <code>ResultConfigurationUpdates</code> (the client-side setting), the
-     *        <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with
-     *        the new value. For more information, see <a
+     *        <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     *        with the new value. For more information, see <a
      *        href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
      *        Override Client-Side Settings</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -398,7 +398,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      * setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a
      * value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
      * client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more information, see <a
+     * <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
      * Client-Side Settings</a>.
      * </p>
@@ -407,8 +407,8 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
      *         client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false"
      *         or not set, and a value is present in the <code>EncryptionConfiguration</code> in
      *         <code>ResultConfigurationUpdates</code> (the client-side setting), the
-     *         <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with
-     *         the new value. For more information, see <a
+     *         <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated
+     *         with the new value. For more information, see <a
      *         href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings
      *         Override Client-Side Settings</a>.
      */

@@ -89,6 +89,11 @@ public class UpgradeTargetStaxUnmarshaller implements Unmarshaller<UpgradeTarget
                     upgradeTarget.setSupportsGlobalDatabases(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsBabelfish", targetDepth)) {
+                    upgradeTarget.setSupportsBabelfish(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return upgradeTarget;

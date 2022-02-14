@@ -52,6 +52,10 @@ public class AthenaErrorJsonUnmarshaller implements Unmarshaller<AthenaError, Js
                     context.nextToken();
                     athenaError.setErrorCategory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ErrorType", targetDepth)) {
+                    context.nextToken();
+                    athenaError.setErrorType(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

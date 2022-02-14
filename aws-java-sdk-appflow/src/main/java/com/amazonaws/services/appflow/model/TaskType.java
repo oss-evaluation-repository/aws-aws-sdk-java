@@ -26,6 +26,7 @@ public enum TaskType {
     Map_all("Map_all"),
     Mask("Mask"),
     Merge("Merge"),
+    Passthrough("Passthrough"),
     Truncate("Truncate"),
     Validate("Validate");
 

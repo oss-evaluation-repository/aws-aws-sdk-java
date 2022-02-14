@@ -1,3 +1,16 @@
+# __1.12.159__ __2022-02-14__
+## __Amazon Appflow__
+  - ### Features
+    - Launching Amazon AppFlow SAP as a destination connector SDK.
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds a subfield, ErrorType, to the AthenaError response object in the GetQueryExecution API when a query fails.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for determining which Aurora PostgreSQL versions support Babelfish.
+
 # __1.12.158__ __2022-02-11__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

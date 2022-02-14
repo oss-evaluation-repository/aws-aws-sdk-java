@@ -43,13 +43,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
+     * results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only
-     * include pending maintenance actions for the DB instances identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     * includes pending maintenance actions for the DB instances identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -129,13 +129,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
+     * results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only
-     * include pending maintenance actions for the DB instances identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     * includes pending maintenance actions for the DB instances identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -148,14 +148,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      *         <li>
      *         <p>
      *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *         The results list will only include pending maintenance actions for the DB clusters identified by these
-     *         ARNs.
+     *         The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will
-     *         only include pending maintenance actions for the DB instances identified by these ARNs.
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     *         includes pending maintenance actions for the DB instances identified by these ARNs.
      *         </p>
      *         </li>
      */
@@ -178,13 +177,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
+     * results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only
-     * include pending maintenance actions for the DB instances identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     * includes pending maintenance actions for the DB instances identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -198,14 +197,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include pending maintenance actions for the DB clusters identified by these
-     *        ARNs.
+     *        The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will
-     *        only include pending maintenance actions for the DB instances identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     *        includes pending maintenance actions for the DB instances identified by these ARNs.
      *        </p>
      *        </li>
      */
@@ -230,13 +228,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
+     * results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only
-     * include pending maintenance actions for the DB instances identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     * includes pending maintenance actions for the DB instances identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -255,14 +253,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include pending maintenance actions for the DB clusters identified by these
-     *        ARNs.
+     *        The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will
-     *        only include pending maintenance actions for the DB instances identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     *        includes pending maintenance actions for the DB instances identified by these ARNs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -289,13 +286,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
+     * results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only
-     * include pending maintenance actions for the DB instances identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     * includes pending maintenance actions for the DB instances identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -309,14 +306,13 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include pending maintenance actions for the DB clusters identified by these
-     *        ARNs.
+     *        The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will
-     *        only include pending maintenance actions for the DB instances identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only
+     *        includes pending maintenance actions for the DB instances identified by these ARNs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

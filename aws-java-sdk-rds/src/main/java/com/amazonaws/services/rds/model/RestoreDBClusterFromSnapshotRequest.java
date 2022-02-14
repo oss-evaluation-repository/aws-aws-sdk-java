@@ -445,7 +445,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     * Valid for: Multi-AZ DB clusters only
      * </p>
      */
     private String dBClusterInstanceClass;
@@ -3260,7 +3260,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param dBClusterInstanceClass
@@ -3273,7 +3273,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        Class</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     *        Valid for: Multi-AZ DB clusters only
      */
 
     public void setDBClusterInstanceClass(String dBClusterInstanceClass) {
@@ -3291,7 +3291,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @return The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example
@@ -3303,7 +3303,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         Class</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
-     *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     *         Valid for: Multi-AZ DB clusters only
      */
 
     public String getDBClusterInstanceClass() {
@@ -3321,7 +3321,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param dBClusterInstanceClass
@@ -3334,7 +3334,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        Class</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
+     *        Valid for: Multi-AZ DB clusters only
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

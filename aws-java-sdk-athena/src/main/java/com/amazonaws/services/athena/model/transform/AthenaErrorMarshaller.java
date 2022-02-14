@@ -29,6 +29,8 @@ public class AthenaErrorMarshaller {
 
     private static final MarshallingInfo<Integer> ERRORCATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorCategory").build();
+    private static final MarshallingInfo<Integer> ERRORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorType").build();
 
     private static final AthenaErrorMarshaller instance = new AthenaErrorMarshaller();
 
@@ -47,6 +49,7 @@ public class AthenaErrorMarshaller {
 
         try {
             protocolMarshaller.marshall(athenaError.getErrorCategory(), ERRORCATEGORY_BINDING);
+            protocolMarshaller.marshall(athenaError.getErrorType(), ERRORTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -47,6 +47,15 @@ public class AthenaError implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer errorCategory;
+    /**
+     * <p>
+     * An integer value that provides specific information about an Athena query error. For the meaning of specific
+     * values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     * >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     * </p>
+     */
+    private Integer errorType;
 
     /**
      * <p>
@@ -146,6 +155,64 @@ public class AthenaError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An integer value that provides specific information about an Athena query error. For the meaning of specific
+     * values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     * >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     * </p>
+     * 
+     * @param errorType
+     *        An integer value that provides specific information about an Athena query error. For the meaning of
+     *        specific values, see the <a href=
+     *        "https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     *        >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     */
+
+    public void setErrorType(Integer errorType) {
+        this.errorType = errorType;
+    }
+
+    /**
+     * <p>
+     * An integer value that provides specific information about an Athena query error. For the meaning of specific
+     * values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     * >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     * </p>
+     * 
+     * @return An integer value that provides specific information about an Athena query error. For the meaning of
+     *         specific values, see the <a href=
+     *         "https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     *         >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     */
+
+    public Integer getErrorType() {
+        return this.errorType;
+    }
+
+    /**
+     * <p>
+     * An integer value that provides specific information about an Athena query error. For the meaning of specific
+     * values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     * >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     * </p>
+     * 
+     * @param errorType
+     *        An integer value that provides specific information about an Athena query error. For the meaning of
+     *        specific values, see the <a href=
+     *        "https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference"
+     *        >Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AthenaError withErrorType(Integer errorType) {
+        setErrorType(errorType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,7 +225,9 @@ public class AthenaError implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getErrorCategory() != null)
-            sb.append("ErrorCategory: ").append(getErrorCategory());
+            sb.append("ErrorCategory: ").append(getErrorCategory()).append(",");
+        if (getErrorType() != null)
+            sb.append("ErrorType: ").append(getErrorType());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +246,10 @@ public class AthenaError implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorCategory() != null && other.getErrorCategory().equals(this.getErrorCategory()) == false)
             return false;
+        if (other.getErrorType() == null ^ this.getErrorType() == null)
+            return false;
+        if (other.getErrorType() != null && other.getErrorType().equals(this.getErrorType()) == false)
+            return false;
         return true;
     }
 
@@ -186,6 +259,7 @@ public class AthenaError implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getErrorCategory() == null) ? 0 : getErrorCategory().hashCode());
+        hashCode = prime * hashCode + ((getErrorType() == null) ? 0 : getErrorType().hashCode());
         return hashCode;
     }
 

@@ -76,6 +76,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsGlobalDatabases;
+    /**
+     * <p>
+     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * </p>
+     */
+    private Boolean supportsBabelfish;
 
     /**
      * <p>
@@ -495,6 +501,60 @@ public class UpgradeTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * </p>
+     * 
+     * @param supportsBabelfish
+     *        A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     */
+
+    public void setSupportsBabelfish(Boolean supportsBabelfish) {
+        this.supportsBabelfish = supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine
+     *         version.
+     */
+
+    public Boolean getSupportsBabelfish() {
+        return this.supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * </p>
+     * 
+     * @param supportsBabelfish
+     *        A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsBabelfish(Boolean supportsBabelfish) {
+        setSupportsBabelfish(supportsBabelfish);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine
+     *         version.
+     */
+
+    public Boolean isSupportsBabelfish() {
+        return this.supportsBabelfish;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +581,9 @@ public class UpgradeTarget implements Serializable, Cloneable {
         if (getSupportsParallelQuery() != null)
             sb.append("SupportsParallelQuery: ").append(getSupportsParallelQuery()).append(",");
         if (getSupportsGlobalDatabases() != null)
-            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases()).append(",");
+        if (getSupportsBabelfish() != null)
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +630,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
             return false;
         if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
             return false;
+        if (other.getSupportsBabelfish() == null ^ this.getSupportsBabelfish() == null)
+            return false;
+        if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +650,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         hashCode = prime * hashCode + ((getSupportsParallelQuery() == null) ? 0 : getSupportsParallelQuery().hashCode());
         hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
+        hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
         return hashCode;
     }
 

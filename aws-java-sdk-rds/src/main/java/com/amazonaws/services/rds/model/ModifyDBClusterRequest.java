@@ -343,8 +343,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <note>
      * <p>
      * When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster
-     * isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but
-     * instead are applied immediately.
+     * isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next
+     * maintenance window.
      * </p>
      * </note>
      * <p>
@@ -361,8 +361,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     * <code>AllowMajorVersionUpgrade</code> parameter.
+     * The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     * <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      * </p>
      * </li>
      * </ul>
@@ -2635,8 +2635,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <note>
      * <p>
      * When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster
-     * isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but
-     * instead are applied immediately.
+     * isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next
+     * maintenance window.
      * </p>
      * </note>
      * <p>
@@ -2653,8 +2653,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     * <code>AllowMajorVersionUpgrade</code> parameter.
+     * The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     * <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      * </p>
      * </li>
      * </ul>
@@ -2666,8 +2666,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
      *        <p>
      *        When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
-     *        cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance
-     *        window but instead are applied immediately.
+     *        cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during
+     *        the next maintenance window.
      *        </p>
      *        </note>
      *        <p>
@@ -2684,8 +2684,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     *        <code>AllowMajorVersionUpgrade</code> parameter.
+     *        The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     *        <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      *        </p>
      *        </li>
      *        </ul>
@@ -2704,8 +2704,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <note>
      * <p>
      * When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster
-     * isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but
-     * instead are applied immediately.
+     * isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next
+     * maintenance window.
      * </p>
      * </note>
      * <p>
@@ -2722,8 +2722,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     * <code>AllowMajorVersionUpgrade</code> parameter.
+     * The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     * <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      * </p>
      * </li>
      * </ul>
@@ -2734,8 +2734,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
      *         <p>
      *         When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
-     *         cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance
-     *         window but instead are applied immediately.
+     *         cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during
+     *         the next maintenance window.
      *         </p>
      *         </note>
      *         <p>
@@ -2752,8 +2752,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     *         <code>AllowMajorVersionUpgrade</code> parameter.
+     *         The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     *         <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      *         </p>
      *         </li>
      *         </ul>
@@ -2772,8 +2772,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <note>
      * <p>
      * When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster
-     * isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but
-     * instead are applied immediately.
+     * isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next
+     * maintenance window.
      * </p>
      * </note>
      * <p>
@@ -2790,8 +2790,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     * <code>AllowMajorVersionUpgrade</code> parameter.
+     * The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     * <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      * </p>
      * </li>
      * </ul>
@@ -2803,8 +2803,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
      *        <p>
      *        When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
-     *        cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance
-     *        window but instead are applied immediately.
+     *        cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during
+     *        the next maintenance window.
      *        </p>
      *        </note>
      *        <p>
@@ -2821,8 +2821,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the
-     *        <code>AllowMajorVersionUpgrade</code> parameter.
+     *        The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the
+     *        <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
      *        </p>
      *        </li>
      *        </ul>

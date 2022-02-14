@@ -94,6 +94,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private CustomConnectorDestinationProperties customConnector;
+    /**
+     * <p>
+     * The properties required to query SAPOData.
+     * </p>
+     */
+    private SAPODataDestinationProperties sAPOData;
 
     /**
      * <p>
@@ -536,6 +542,46 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query SAPOData.
+     * </p>
+     * 
+     * @param sAPOData
+     *        The properties required to query SAPOData.
+     */
+
+    public void setSAPOData(SAPODataDestinationProperties sAPOData) {
+        this.sAPOData = sAPOData;
+    }
+
+    /**
+     * <p>
+     * The properties required to query SAPOData.
+     * </p>
+     * 
+     * @return The properties required to query SAPOData.
+     */
+
+    public SAPODataDestinationProperties getSAPOData() {
+        return this.sAPOData;
+    }
+
+    /**
+     * <p>
+     * The properties required to query SAPOData.
+     * </p>
+     * 
+     * @param sAPOData
+     *        The properties required to query SAPOData.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withSAPOData(SAPODataDestinationProperties sAPOData) {
+        setSAPOData(sAPOData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -568,7 +614,9 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         if (getZendesk() != null)
             sb.append("Zendesk: ").append(getZendesk()).append(",");
         if (getCustomConnector() != null)
-            sb.append("CustomConnector: ").append(getCustomConnector());
+            sb.append("CustomConnector: ").append(getCustomConnector()).append(",");
+        if (getSAPOData() != null)
+            sb.append("SAPOData: ").append(getSAPOData());
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +675,10 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
             return false;
         if (other.getCustomConnector() != null && other.getCustomConnector().equals(this.getCustomConnector()) == false)
             return false;
+        if (other.getSAPOData() == null ^ this.getSAPOData() == null)
+            return false;
+        if (other.getSAPOData() != null && other.getSAPOData().equals(this.getSAPOData()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +698,7 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getCustomerProfiles() == null) ? 0 : getCustomerProfiles().hashCode());
         hashCode = prime * hashCode + ((getZendesk() == null) ? 0 : getZendesk().hashCode());
         hashCode = prime * hashCode + ((getCustomConnector() == null) ? 0 : getCustomConnector().hashCode());
+        hashCode = prime * hashCode + ((getSAPOData() == null) ? 0 : getSAPOData().hashCode());
         return hashCode;
     }
 

@@ -92,6 +92,10 @@ public class DestinationConnectorPropertiesJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     destinationConnectorProperties.setCustomConnector(CustomConnectorDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SAPOData", targetDepth)) {
+                    context.nextToken();
+                    destinationConnectorProperties.setSAPOData(SAPODataDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

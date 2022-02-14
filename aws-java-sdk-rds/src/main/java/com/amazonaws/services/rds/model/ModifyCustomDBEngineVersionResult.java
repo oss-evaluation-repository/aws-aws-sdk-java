@@ -199,6 +199,12 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private java.util.Date createTime;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * </p>
+     */
+    private Boolean supportsBabelfish;
 
     /**
      * <p>
@@ -1701,6 +1707,58 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * </p>
+     * 
+     * @param supportsBabelfish
+     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     */
+
+    public void setSupportsBabelfish(Boolean supportsBabelfish) {
+        this.supportsBabelfish = supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     */
+
+    public Boolean getSupportsBabelfish() {
+        return this.supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * </p>
+     * 
+     * @param supportsBabelfish
+     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCustomDBEngineVersionResult withSupportsBabelfish(Boolean supportsBabelfish) {
+        setSupportsBabelfish(supportsBabelfish);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     */
+
+    public Boolean isSupportsBabelfish() {
+        return this.supportsBabelfish;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1761,7 +1819,9 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: ").append(getTagList());
+            sb.append("TagList: ").append(getTagList()).append(",");
+        if (getSupportsBabelfish() != null)
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
         sb.append("}");
         return sb.toString();
     }
@@ -1879,6 +1939,10 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
             return false;
+        if (other.getSupportsBabelfish() == null ^ this.getSupportsBabelfish() == null)
+            return false;
+        if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
+            return false;
         return true;
     }
 
@@ -1912,6 +1976,7 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getKMSKeyId() == null) ? 0 : getKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
         return hashCode;
     }
 

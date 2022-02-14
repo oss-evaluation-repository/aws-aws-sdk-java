@@ -133,8 +133,82 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     private String dBParameterGroupFamily;
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more DB engine versions to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     * versions for these engines.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB
+     * engine versions for these engine modes. Valid DB engine modes are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB
+     * engine versions for these engine versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB
+     * engine versions for these statuses. Valid statuses are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deprecated</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -842,10 +916,157 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more DB engine versions to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     * versions for these engines.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB
+     * engine versions for these engine modes. Valid DB engine modes are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB
+     * engine versions for these engine versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB
+     * engine versions for these statuses. Valid statuses are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deprecated</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter isn't currently supported.
+     * @return A filter that specifies one or more DB engine versions to describe.</p>
+     *         <p>
+     *         Supported filters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only
+     *         includes information about the DB engine versions for these parameter group families.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine</code> - Accepts engine names. The results list only includes information about the DB
+     *         engine versions for these engines.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the
+     *         DB engine versions for these engine modes. Valid DB engine modes are the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>global</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>multimaster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>parallelquery</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>provisioned</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>serverless</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine-version</code> - Accepts engine versions. The results list only includes information about
+     *         the DB engine versions for these engine versions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>status</code> - Accepts engine version statuses. The results list only includes information about
+     *         the DB engine versions for these statuses. Valid statuses are the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deprecated</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -857,11 +1078,158 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more DB engine versions to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     * versions for these engines.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB
+     * engine versions for these engine modes. Valid DB engine modes are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB
+     * engine versions for these engine versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB
+     * engine versions for these statuses. Valid statuses are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deprecated</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more DB engine versions to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only
+     *        includes information about the DB engine versions for these parameter group families.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     *        versions for these engines.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the
+     *        DB engine versions for these engine modes. Valid DB engine modes are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>global</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multimaster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>parallelquery</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisioned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>serverless</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-version</code> - Accepts engine versions. The results list only includes information about
+     *        the DB engine versions for these engine versions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>status</code> - Accepts engine version statuses. The results list only includes information about
+     *        the DB engine versions for these statuses. Valid statuses are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deprecated</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -875,8 +1243,82 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more DB engine versions to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     * versions for these engines.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB
+     * engine versions for these engine modes. Valid DB engine modes are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB
+     * engine versions for these engine versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB
+     * engine versions for these statuses. Valid statuses are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deprecated</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -884,7 +1326,80 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more DB engine versions to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only
+     *        includes information about the DB engine versions for these parameter group families.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     *        versions for these engines.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the
+     *        DB engine versions for these engine modes. Valid DB engine modes are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>global</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multimaster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>parallelquery</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisioned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>serverless</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-version</code> - Accepts engine versions. The results list only includes information about
+     *        the DB engine versions for these engine versions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>status</code> - Accepts engine version statuses. The results list only includes information about
+     *        the DB engine versions for these statuses. Valid statuses are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deprecated</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -900,11 +1415,158 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more DB engine versions to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     * versions for these engines.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB
+     * engine versions for these engine modes. Valid DB engine modes are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>global</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multimaster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>parallelquery</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisioned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>serverless</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB
+     * engine versions for these engine versions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB
+     * engine versions for these statuses. Valid statuses are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deprecated</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more DB engine versions to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only
+     *        includes information about the DB engine versions for these parameter group families.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine
+     *        versions for these engines.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the
+     *        DB engine versions for these engine modes. Valid DB engine modes are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>global</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multimaster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>parallelquery</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisioned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>serverless</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine-version</code> - Accepts engine versions. The results list only includes information about
+     *        the DB engine versions for these engine versions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>status</code> - Accepts engine version statuses. The results list only includes information about
+     *        the DB engine versions for these statuses. Valid statuses are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deprecated</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
