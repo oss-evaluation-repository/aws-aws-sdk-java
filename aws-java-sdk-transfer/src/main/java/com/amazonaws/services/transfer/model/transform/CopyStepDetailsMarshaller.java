@@ -33,6 +33,8 @@ public class CopyStepDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationFileLocation").build();
     private static final MarshallingInfo<String> OVERWRITEEXISTING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverwriteExisting").build();
+    private static final MarshallingInfo<String> SOURCEFILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceFileLocation").build();
 
     private static final CopyStepDetailsMarshaller instance = new CopyStepDetailsMarshaller();
 
@@ -53,6 +55,7 @@ public class CopyStepDetailsMarshaller {
             protocolMarshaller.marshall(copyStepDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(copyStepDetails.getDestinationFileLocation(), DESTINATIONFILELOCATION_BINDING);
             protocolMarshaller.marshall(copyStepDetails.getOverwriteExisting(), OVERWRITEEXISTING_BINDING);
+            protocolMarshaller.marshall(copyStepDetails.getSourceFileLocation(), SOURCEFILELOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,16 +27,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
  * </p>
- * <note>
- * <p>
- * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround,
- * you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the
- * CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can
- * use the put-object operation. For example, you use the following:
- * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name
- * ends in a <code>/</code> for it to be considered a folder.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/HomeDirectoryMapEntry" target="_top">AWS API
  *      Documentation</a>

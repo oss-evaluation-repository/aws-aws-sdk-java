@@ -34,7 +34,12 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     * <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
+     * </p>
+     */
     private InputFileLocation destinationFileLocation;
     /**
      * <p>
@@ -43,6 +48,26 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String overwriteExisting;
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String sourceFileLocation;
 
     /**
      * <p>
@@ -85,7 +110,14 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     * <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
+     * </p>
+     * 
      * @param destinationFileLocation
+     *        Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     *        <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
      */
 
     public void setDestinationFileLocation(InputFileLocation destinationFileLocation) {
@@ -93,7 +125,13 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     * <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
+     * </p>
+     * 
+     * @return Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     *         <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
      */
 
     public InputFileLocation getDestinationFileLocation() {
@@ -101,7 +139,14 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     * <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
+     * </p>
+     * 
      * @param destinationFileLocation
+     *        Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use
+     *        <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,6 +223,127 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     */
+
+    public void setSourceFileLocation(String sourceFileLocation) {
+        this.sourceFileLocation = sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *         the originally uploaded file for the workflow.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *         step uses the output file from the previous workflow step as input. This is the default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *         </p>
+     *         </li>
+     */
+
+    public String getSourceFileLocation() {
+        return this.sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyStepDetails withSourceFileLocation(String sourceFileLocation) {
+        setSourceFileLocation(sourceFileLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -194,7 +360,9 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
         if (getDestinationFileLocation() != null)
             sb.append("DestinationFileLocation: ").append(getDestinationFileLocation()).append(",");
         if (getOverwriteExisting() != null)
-            sb.append("OverwriteExisting: ").append(getOverwriteExisting());
+            sb.append("OverwriteExisting: ").append(getOverwriteExisting()).append(",");
+        if (getSourceFileLocation() != null)
+            sb.append("SourceFileLocation: ").append(getSourceFileLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +389,10 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getOverwriteExisting() != null && other.getOverwriteExisting().equals(this.getOverwriteExisting()) == false)
             return false;
+        if (other.getSourceFileLocation() == null ^ this.getSourceFileLocation() == null)
+            return false;
+        if (other.getSourceFileLocation() != null && other.getSourceFileLocation().equals(this.getSourceFileLocation()) == false)
+            return false;
         return true;
     }
 
@@ -232,6 +404,7 @@ public class CopyStepDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDestinationFileLocation() == null) ? 0 : getDestinationFileLocation().hashCode());
         hashCode = prime * hashCode + ((getOverwriteExisting() == null) ? 0 : getOverwriteExisting().hashCode());
+        hashCode = prime * hashCode + ((getSourceFileLocation() == null) ? 0 : getSourceFileLocation().hashCode());
         return hashCode;
     }
 

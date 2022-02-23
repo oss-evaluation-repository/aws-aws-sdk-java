@@ -83,6 +83,34 @@ public class AWSLambdaWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a FunctionActiveV2 waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionRequest> functionActiveV2() {
+
+        return new WaiterBuilder<GetFunctionRequest, GetFunctionResult>().withSdkFunction(new GetFunctionFunction(client))
+                .withAcceptors(new FunctionActiveV2.IsActiveMatcher(), new FunctionActiveV2.IsFailedMatcher(), new FunctionActiveV2.IsPendingMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(300), new FixedDelayStrategy(1)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a FunctionUpdatedV2 waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionRequest> functionUpdatedV2() {
+
+        return new WaiterBuilder<GetFunctionRequest, GetFunctionResult>()
+                .withSdkFunction(new GetFunctionFunction(client))
+                .withAcceptors(new FunctionUpdatedV2.IsSuccessfulMatcher(), new FunctionUpdatedV2.IsFailedMatcher(),
+                        new FunctionUpdatedV2.IsInProgressMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(300), new FixedDelayStrategy(1)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }

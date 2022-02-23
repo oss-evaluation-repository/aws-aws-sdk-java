@@ -43,6 +43,26 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<S3Tag> tags;
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String sourceFileLocation;
 
     /**
      * <p>
@@ -155,6 +175,127 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     */
+
+    public void setSourceFileLocation(String sourceFileLocation) {
+        this.sourceFileLocation = sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *         the originally uploaded file for the workflow.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *         step uses the output file from the previous workflow step as input. This is the default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *         </p>
+     *         </li>
+     */
+
+    public String getSourceFileLocation() {
+        return this.sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagStepDetails withSourceFileLocation(String sourceFileLocation) {
+        setSourceFileLocation(sourceFileLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -169,7 +310,9 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSourceFileLocation() != null)
+            sb.append("SourceFileLocation: ").append(getSourceFileLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -192,6 +335,10 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSourceFileLocation() == null ^ this.getSourceFileLocation() == null)
+            return false;
+        if (other.getSourceFileLocation() != null && other.getSourceFileLocation().equals(this.getSourceFileLocation()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +349,7 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceFileLocation() == null) ? 0 : getSourceFileLocation().hashCode());
         return hashCode;
     }
 

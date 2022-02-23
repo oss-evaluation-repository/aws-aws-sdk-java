@@ -34,6 +34,26 @@ public class DeleteStepDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String sourceFileLocation;
 
     /**
      * <p>
@@ -76,6 +96,127 @@ public class DeleteStepDetails implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     */
+
+    public void setSourceFileLocation(String sourceFileLocation) {
+        this.sourceFileLocation = sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *         the originally uploaded file for the workflow.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *         step uses the output file from the previous workflow step as input. This is the default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *         </p>
+     *         </li>
+     */
+
+    public String getSourceFileLocation() {
+        return this.sourceFileLocation;
+    }
+
+    /**
+     * <p>
+     * Specifies which file to use as input to the workflow step: either the output from the previous step, or the
+     * originally uploaded file for the workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * the output file from the previous workflow step as input. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceFileLocation
+     *        Specifies which file to use as input to the workflow step: either the output from the previous step, or
+     *        the originally uploaded file for the workflow.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        step uses the output file from the previous workflow step as input. This is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteStepDetails withSourceFileLocation(String sourceFileLocation) {
+        setSourceFileLocation(sourceFileLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +229,9 @@ public class DeleteStepDetails implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSourceFileLocation() != null)
+            sb.append("SourceFileLocation: ").append(getSourceFileLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +250,10 @@ public class DeleteStepDetails implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSourceFileLocation() == null ^ this.getSourceFileLocation() == null)
+            return false;
+        if (other.getSourceFileLocation() != null && other.getSourceFileLocation().equals(this.getSourceFileLocation()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +263,7 @@ public class DeleteStepDetails implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSourceFileLocation() == null) ? 0 : getSourceFileLocation().hashCode());
         return hashCode;
     }
 

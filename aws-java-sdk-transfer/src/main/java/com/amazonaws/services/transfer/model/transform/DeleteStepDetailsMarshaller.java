@@ -29,6 +29,8 @@ public class DeleteStepDetailsMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SOURCEFILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceFileLocation").build();
 
     private static final DeleteStepDetailsMarshaller instance = new DeleteStepDetailsMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteStepDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteStepDetails.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteStepDetails.getSourceFileLocation(), SOURCEFILELOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

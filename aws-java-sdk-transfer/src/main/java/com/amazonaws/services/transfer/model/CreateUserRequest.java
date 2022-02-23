@@ -69,16 +69,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
-     * <note>
-     * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a <code>/</code> for it to be considered a folder.
-     * </p>
-     * </note>
      */
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
@@ -330,16 +320,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
-     * <note>
-     * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a <code>/</code> for it to be considered a folder.
-     * </p>
-     * </note>
      * 
      * @return Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
      *         your user and how you want to make them visible. You must specify the <code>Entry</code> and
@@ -364,16 +344,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-     *         </p>
-     *         <note>
-     *         <p>
-     *         If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     *         workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     *         directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-     *         <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-     *         following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
-     *         the end of the key name ends in a <code>/</code> for it to be considered a folder.
-     *         </p>
      */
 
     public java.util.List<HomeDirectoryMapEntry> getHomeDirectoryMappings() {
@@ -406,16 +376,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
-     * <note>
-     * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a <code>/</code> for it to be considered a folder.
-     * </p>
-     * </note>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
@@ -441,16 +401,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-     *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-     *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
-     *        end of the key name ends in a <code>/</code> for it to be considered a folder.
-     *        </p>
      */
 
     public void setHomeDirectoryMappings(java.util.Collection<HomeDirectoryMapEntry> homeDirectoryMappings) {
@@ -488,16 +438,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
-     * <note>
-     * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a <code>/</code> for it to be considered a folder.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHomeDirectoryMappings(java.util.Collection)} or
@@ -528,16 +468,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-     *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-     *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
-     *        end of the key name ends in a <code>/</code> for it to be considered a folder.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,16 +507,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
-     * <note>
-     * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a <code>/</code> for it to be considered a folder.
-     * </p>
-     * </note>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
@@ -612,16 +532,6 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
-     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
-     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-     *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-     *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
-     *        end of the key name ends in a <code>/</code> for it to be considered a folder.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

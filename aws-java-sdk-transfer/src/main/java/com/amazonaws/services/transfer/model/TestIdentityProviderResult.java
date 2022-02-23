@@ -39,6 +39,12 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A message that indicates whether the test was successful or not.
      * </p>
+     * <note>
+     * <p>
+     * If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect
+     * username or password.
+     * </p>
+     * </note>
      */
     private String message;
     /**
@@ -132,9 +138,19 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A message that indicates whether the test was successful or not.
      * </p>
+     * <note>
+     * <p>
+     * If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect
+     * username or password.
+     * </p>
+     * </note>
      * 
      * @param message
-     *        A message that indicates whether the test was successful or not.
+     *        A message that indicates whether the test was successful or not.</p> <note>
+     *        <p>
+     *        If an empty string is returned, the most likely cause is that the authentication failed due to an
+     *        incorrect username or password.
+     *        </p>
      */
 
     public void setMessage(String message) {
@@ -145,8 +161,18 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A message that indicates whether the test was successful or not.
      * </p>
+     * <note>
+     * <p>
+     * If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect
+     * username or password.
+     * </p>
+     * </note>
      * 
-     * @return A message that indicates whether the test was successful or not.
+     * @return A message that indicates whether the test was successful or not.</p> <note>
+     *         <p>
+     *         If an empty string is returned, the most likely cause is that the authentication failed due to an
+     *         incorrect username or password.
+     *         </p>
      */
 
     public String getMessage() {
@@ -157,9 +183,19 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A message that indicates whether the test was successful or not.
      * </p>
+     * <note>
+     * <p>
+     * If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect
+     * username or password.
+     * </p>
+     * </note>
      * 
      * @param message
-     *        A message that indicates whether the test was successful or not.
+     *        A message that indicates whether the test was successful or not.</p> <note>
+     *        <p>
+     *        If an empty string is returned, the most likely cause is that the authentication failed due to an
+     *        incorrect username or password.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

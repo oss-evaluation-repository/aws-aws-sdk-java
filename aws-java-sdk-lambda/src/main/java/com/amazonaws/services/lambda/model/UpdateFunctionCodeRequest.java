@@ -58,20 +58,22 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
      * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
-     * Amazon Web Services account.
+     * Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * The Amazon S3 key of the deployment package.
+     * The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      */
     private String s3Key;
@@ -83,7 +85,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private String s3ObjectVersion;
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.
      * </p>
      */
     private String imageUri;
@@ -299,7 +301,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -314,7 +317,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param zipFile
      *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you.
+     *        clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     *        package.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -324,7 +328,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -335,7 +340,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services
-     *         CLI clients handle the encoding for you.
+     *         CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive
+     *         deployment package.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -345,7 +351,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -360,7 +367,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param zipFile
      *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you.
+     *        clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
+     *        package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,12 +380,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
-     * Amazon Web Services account.
+     * Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * 
      * @param s3Bucket
      *        An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
-     *        different Amazon Web Services account.
+     *        different Amazon Web Services account. Use only with a function defined with a .zip file archive
+     *        deployment package.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -387,11 +396,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
-     * Amazon Web Services account.
+     * Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * 
      * @return An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
-     *         different Amazon Web Services account.
+     *         different Amazon Web Services account. Use only with a function defined with a .zip file archive
+     *         deployment package.
      */
 
     public String getS3Bucket() {
@@ -401,12 +411,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
-     * Amazon Web Services account.
+     * Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * 
      * @param s3Bucket
      *        An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
-     *        different Amazon Web Services account.
+     *        different Amazon Web Services account. Use only with a function defined with a .zip file archive
+     *        deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,11 +428,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 key of the deployment package.
+     * The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 key of the deployment package.
+     *        The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive
+     *        deployment package.
      */
 
     public void setS3Key(String s3Key) {
@@ -430,10 +443,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 key of the deployment package.
+     * The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * 
-     * @return The Amazon S3 key of the deployment package.
+     * @return The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive
+     *         deployment package.
      */
 
     public String getS3Key() {
@@ -442,11 +457,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 key of the deployment package.
+     * The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment
+     * package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 key of the deployment package.
+     *        The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive
+     *        deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,11 +514,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.
      * </p>
      * 
      * @param imageUri
-     *        URI of a container image in the Amazon ECR registry.
+     *        URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file
+     *        archive.
      */
 
     public void setImageUri(String imageUri) {
@@ -510,10 +528,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.
      * </p>
      * 
-     * @return URI of a container image in the Amazon ECR registry.
+     * @return URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file
+     *         archive.
      */
 
     public String getImageUri() {
@@ -522,11 +541,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.
      * </p>
      * 
      * @param imageUri
-     *        URI of a container image in the Amazon ECR registry.
+     *        URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file
+     *        archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

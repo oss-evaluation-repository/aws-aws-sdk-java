@@ -33,6 +33,8 @@ public class CustomStepDetailsMarshaller {
             .marshallLocationName("Target").build();
     private static final MarshallingInfo<Integer> TIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutSeconds").build();
+    private static final MarshallingInfo<String> SOURCEFILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceFileLocation").build();
 
     private static final CustomStepDetailsMarshaller instance = new CustomStepDetailsMarshaller();
 
@@ -53,6 +55,7 @@ public class CustomStepDetailsMarshaller {
             protocolMarshaller.marshall(customStepDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(customStepDetails.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(customStepDetails.getTimeoutSeconds(), TIMEOUTSECONDS_BINDING);
+            protocolMarshaller.marshall(customStepDetails.getSourceFileLocation(), SOURCEFILELOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

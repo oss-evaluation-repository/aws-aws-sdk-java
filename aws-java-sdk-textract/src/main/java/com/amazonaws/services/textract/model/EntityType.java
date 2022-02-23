@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum EntityType {
 
     KEY("KEY"),
-    VALUE("VALUE");
+    VALUE("VALUE"),
+    COLUMN_HEADER("COLUMN_HEADER");
 
     private String value;
 

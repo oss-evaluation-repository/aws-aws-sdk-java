@@ -32,6 +32,8 @@ public class TagStepDetailsMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SOURCEFILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceFileLocation").build();
 
     private static final TagStepDetailsMarshaller instance = new TagStepDetailsMarshaller();
 
@@ -51,6 +53,7 @@ public class TagStepDetailsMarshaller {
         try {
             protocolMarshaller.marshall(tagStepDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(tagStepDetails.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(tagStepDetails.getSourceFileLocation(), SOURCEFILELOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

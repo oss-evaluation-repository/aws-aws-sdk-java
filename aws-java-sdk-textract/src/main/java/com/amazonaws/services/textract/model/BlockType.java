@@ -26,7 +26,9 @@ public enum BlockType {
     WORD("WORD"),
     TABLE("TABLE"),
     CELL("CELL"),
-    SELECTION_ELEMENT("SELECTION_ELEMENT");
+    SELECTION_ELEMENT("SELECTION_ELEMENT"),
+    MERGED_CELL("MERGED_CELL"),
+    TITLE("TITLE");
 
     private String value;
 

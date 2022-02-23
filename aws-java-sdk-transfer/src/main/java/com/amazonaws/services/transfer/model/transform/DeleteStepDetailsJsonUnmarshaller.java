@@ -52,6 +52,10 @@ public class DeleteStepDetailsJsonUnmarshaller implements Unmarshaller<DeleteSte
                     context.nextToken();
                     deleteStepDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceFileLocation", targetDepth)) {
+                    context.nextToken();
+                    deleteStepDetails.setSourceFileLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

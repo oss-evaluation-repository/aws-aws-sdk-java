@@ -22,7 +22,9 @@ public enum RelationshipType {
 
     VALUE("VALUE"),
     CHILD("CHILD"),
-    COMPLEX_FEATURES("COMPLEX_FEATURES");
+    COMPLEX_FEATURES("COMPLEX_FEATURES"),
+    MERGED_CELL("MERGED_CELL"),
+    TITLE("TITLE");
 
     private String value;
 
