@@ -48,17 +48,21 @@ public class DescribePackageVersionResultJsonUnmarshaller implements Unmarshalle
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("IsLatestPatch", targetDepth)) {
+                    context.nextToken();
+                    describePackageVersionResult.setIsLatestPatch(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
                     context.nextToken();
                     describePackageVersionResult.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageId", targetDepth)) {
-                    context.nextToken();
-                    describePackageVersionResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("PackageArn", targetDepth)) {
                     context.nextToken();
                     describePackageVersionResult.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PackageId", targetDepth)) {
+                    context.nextToken();
+                    describePackageVersionResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageName", targetDepth)) {
                     context.nextToken();
@@ -72,9 +76,9 @@ public class DescribePackageVersionResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describePackageVersionResult.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("IsLatestPatch", targetDepth)) {
+                if (context.testExpression("RegisteredTime", targetDepth)) {
                     context.nextToken();
-                    describePackageVersionResult.setIsLatestPatch(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    describePackageVersionResult.setRegisteredTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -83,10 +87,6 @@ public class DescribePackageVersionResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("StatusDescription", targetDepth)) {
                     context.nextToken();
                     describePackageVersionResult.setStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("RegisteredTime", targetDepth)) {
-                    context.nextToken();
-                    describePackageVersionResult.setRegisteredTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

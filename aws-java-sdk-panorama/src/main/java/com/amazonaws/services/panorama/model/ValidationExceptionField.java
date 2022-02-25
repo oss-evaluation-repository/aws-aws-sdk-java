@@ -30,56 +30,16 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The field's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The field's message.
      * </p>
      */
     private String message;
-
     /**
      * <p>
      * The field's name.
      * </p>
-     * 
-     * @param name
-     *        The field's name.
      */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The field's name.
-     * </p>
-     * 
-     * @return The field's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The field's name.
-     * </p>
-     * 
-     * @param name
-     *        The field's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ValidationExceptionField withName(String name) {
-        setName(name);
-        return this;
-    }
+    private String name;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The field's name.
+     * </p>
+     * 
+     * @param name
+     *        The field's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The field's name.
+     * </p>
+     * 
+     * @return The field's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The field's name.
+     * </p>
+     * 
+     * @param name
+     *        The field's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidationExceptionField withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
         if (obj instanceof ValidationExceptionField == false)
             return false;
         ValidationExceptionField other = (ValidationExceptionField) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

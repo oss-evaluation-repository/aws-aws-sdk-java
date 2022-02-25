@@ -29,56 +29,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job's ID.
-     * </p>
-     */
-    private String jobId;
-    /**
-     * <p>
      * The target device's ID.
      * </p>
      */
     private String deviceId;
-
     /**
      * <p>
      * The job's ID.
      * </p>
-     * 
-     * @param jobId
-     *        The job's ID.
      */
-
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
-    }
-
-    /**
-     * <p>
-     * The job's ID.
-     * </p>
-     * 
-     * @return The job's ID.
-     */
-
-    public String getJobId() {
-        return this.jobId;
-    }
-
-    /**
-     * <p>
-     * The job's ID.
-     * </p>
-     * 
-     * @param jobId
-     *        The job's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Job withJobId(String jobId) {
-        setJobId(jobId);
-        return this;
-    }
+    private String jobId;
 
     /**
      * <p>
@@ -121,6 +81,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param jobId
+     *        The job's ID.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @return The job's ID.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param jobId
+     *        The job's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -132,10 +132,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId()).append(",");
         if (getDeviceId() != null)
-            sb.append("DeviceId: ").append(getDeviceId());
+            sb.append("DeviceId: ").append(getDeviceId()).append(",");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }
@@ -150,13 +150,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Job == false)
             return false;
         Job other = (Job) obj;
-        if (other.getJobId() == null ^ this.getJobId() == null)
-            return false;
-        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
-            return false;
         if (other.getDeviceId() == null ^ this.getDeviceId() == null)
             return false;
         if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
+            return false;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         return true;
     }
@@ -166,8 +166,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         return hashCode;
     }
 

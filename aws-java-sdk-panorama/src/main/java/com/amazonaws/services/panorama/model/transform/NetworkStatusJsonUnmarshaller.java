@@ -56,6 +56,14 @@ public class NetworkStatusJsonUnmarshaller implements Unmarshaller<NetworkStatus
                     context.nextToken();
                     networkStatus.setEthernet1Status(EthernetStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    networkStatus.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NtpStatus", targetDepth)) {
+                    context.nextToken();
+                    networkStatus.setNtpStatus(NtpStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

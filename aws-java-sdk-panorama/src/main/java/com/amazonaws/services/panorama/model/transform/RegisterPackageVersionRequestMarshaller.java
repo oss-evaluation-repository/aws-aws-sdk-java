@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RegisterPackageVersionRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> MARKLATEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MarkLatest").build();
     private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccount").build();
     private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -35,8 +37,6 @@ public class RegisterPackageVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("PackageVersion").build();
     private static final MarshallingInfo<String> PATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("PatchVersion").build();
-    private static final MarshallingInfo<Boolean> MARKLATEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MarkLatest").build();
 
     private static final RegisterPackageVersionRequestMarshaller instance = new RegisterPackageVersionRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class RegisterPackageVersionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(registerPackageVersionRequest.getMarkLatest(), MARKLATEST_BINDING);
             protocolMarshaller.marshall(registerPackageVersionRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(registerPackageVersionRequest.getPackageId(), PACKAGEID_BINDING);
             protocolMarshaller.marshall(registerPackageVersionRequest.getPackageVersion(), PACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(registerPackageVersionRequest.getPatchVersion(), PATCHVERSION_BINDING);
-            protocolMarshaller.marshall(registerPackageVersionRequest.getMarkLatest(), MARKLATEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

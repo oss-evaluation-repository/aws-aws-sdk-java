@@ -30,16 +30,22 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * When the job was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
      * The job's ID.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * The job's template type.
+     * The node's name.
      * </p>
      */
-    private String templateType;
+    private String nodeName;
     /**
      * <p>
      * The job's status.
@@ -54,16 +60,50 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
     private String statusMessage;
     /**
      * <p>
-     * When the job was created.
+     * The job's template type.
      * </p>
      */
-    private java.util.Date createdTime;
+    private String templateType;
+
     /**
      * <p>
-     * The node's name.
+     * When the job was created.
      * </p>
+     * 
+     * @param createdTime
+     *        When the job was created.
      */
-    private String nodeName;
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeFromTemplateJob withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,60 +147,41 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The job's template type.
+     * The node's name.
      * </p>
      * 
-     * @param templateType
-     *        The job's template type.
-     * @see TemplateType
+     * @param nodeName
+     *        The node's name.
      */
 
-    public void setTemplateType(String templateType) {
-        this.templateType = templateType;
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
     }
 
     /**
      * <p>
-     * The job's template type.
+     * The node's name.
      * </p>
      * 
-     * @return The job's template type.
-     * @see TemplateType
+     * @return The node's name.
      */
 
-    public String getTemplateType() {
-        return this.templateType;
+    public String getNodeName() {
+        return this.nodeName;
     }
 
     /**
      * <p>
-     * The job's template type.
+     * The node's name.
      * </p>
      * 
-     * @param templateType
-     *        The job's template type.
+     * @param nodeName
+     *        The node's name.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TemplateType
      */
 
-    public NodeFromTemplateJob withTemplateType(String templateType) {
-        setTemplateType(templateType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's template type.
-     * </p>
-     * 
-     * @param templateType
-     *        The job's template type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TemplateType
-     */
-
-    public NodeFromTemplateJob withTemplateType(TemplateType templateType) {
-        this.templateType = templateType.toString();
+    public NodeFromTemplateJob withNodeName(String nodeName) {
+        setNodeName(nodeName);
         return this;
     }
 
@@ -265,81 +286,60 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the job was created.
+     * The job's template type.
      * </p>
      * 
-     * @param createdTime
-     *        When the job was created.
+     * @param templateType
+     *        The job's template type.
+     * @see TemplateType
      */
 
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
+    public void setTemplateType(String templateType) {
+        this.templateType = templateType;
     }
 
     /**
      * <p>
-     * When the job was created.
+     * The job's template type.
      * </p>
      * 
-     * @return When the job was created.
+     * @return The job's template type.
+     * @see TemplateType
      */
 
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
+    public String getTemplateType() {
+        return this.templateType;
     }
 
     /**
      * <p>
-     * When the job was created.
+     * The job's template type.
      * </p>
      * 
-     * @param createdTime
-     *        When the job was created.
+     * @param templateType
+     *        The job's template type.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
      */
 
-    public NodeFromTemplateJob withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
+    public NodeFromTemplateJob withTemplateType(String templateType) {
+        setTemplateType(templateType);
         return this;
     }
 
     /**
      * <p>
-     * The node's name.
+     * The job's template type.
      * </p>
      * 
-     * @param nodeName
-     *        The node's name.
-     */
-
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
-    }
-
-    /**
-     * <p>
-     * The node's name.
-     * </p>
-     * 
-     * @return The node's name.
-     */
-
-    public String getNodeName() {
-        return this.nodeName;
-    }
-
-    /**
-     * <p>
-     * The node's name.
-     * </p>
-     * 
-     * @param nodeName
-     *        The node's name.
+     * @param templateType
+     *        The job's template type.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
      */
 
-    public NodeFromTemplateJob withNodeName(String nodeName) {
-        setNodeName(nodeName);
+    public NodeFromTemplateJob withTemplateType(TemplateType templateType) {
+        this.templateType = templateType.toString();
         return this;
     }
 
@@ -355,18 +355,18 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
-        if (getTemplateType() != null)
-            sb.append("TemplateType: ").append(getTemplateType()).append(",");
+        if (getNodeName() != null)
+            sb.append("NodeName: ").append(getNodeName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
-        if (getNodeName() != null)
-            sb.append("NodeName: ").append(getNodeName());
+        if (getTemplateType() != null)
+            sb.append("TemplateType: ").append(getTemplateType());
         sb.append("}");
         return sb.toString();
     }
@@ -381,13 +381,17 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
         if (obj instanceof NodeFromTemplateJob == false)
             return false;
         NodeFromTemplateJob other = (NodeFromTemplateJob) obj;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
-        if (other.getTemplateType() == null ^ this.getTemplateType() == null)
+        if (other.getNodeName() == null ^ this.getNodeName() == null)
             return false;
-        if (other.getTemplateType() != null && other.getTemplateType().equals(this.getTemplateType()) == false)
+        if (other.getNodeName() != null && other.getNodeName().equals(this.getNodeName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -397,13 +401,9 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+        if (other.getTemplateType() == null ^ this.getTemplateType() == null)
             return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
-            return false;
-        if (other.getNodeName() == null ^ this.getNodeName() == null)
-            return false;
-        if (other.getNodeName() != null && other.getNodeName().equals(this.getNodeName()) == false)
+        if (other.getTemplateType() != null && other.getTemplateType().equals(this.getTemplateType()) == false)
             return false;
         return true;
     }
@@ -413,12 +413,12 @@ public class NodeFromTemplateJob implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
+        hashCode = prime * hashCode + ((getNodeName() == null) ? 0 : getNodeName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime * hashCode + ((getNodeName() == null) ? 0 : getNodeName().hashCode());
+        hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
         return hashCode;
     }
 

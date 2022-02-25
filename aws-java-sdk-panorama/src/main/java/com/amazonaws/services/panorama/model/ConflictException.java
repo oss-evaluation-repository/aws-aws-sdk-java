@@ -25,6 +25,18 @@ public class ConflictException extends com.amazonaws.services.panorama.model.AWS
 
     /**
      * <p>
+     * A list of attributes that led to the exception and their values.
+     * </p>
+     */
+    private java.util.List<ConflictExceptionErrorArgument> errorArguments;
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     */
+    private String errorId;
+    /**
+     * <p>
      * The resource's ID.
      * </p>
      */
@@ -35,18 +47,6 @@ public class ConflictException extends com.amazonaws.services.panorama.model.AWS
      * </p>
      */
     private String resourceType;
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     */
-    private String errorId;
-    /**
-     * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     */
-    private java.util.List<ConflictExceptionErrorArgument> errorArguments;
 
     /**
      * Constructs a new ConflictException with the specified error message.
@@ -56,6 +56,120 @@ public class ConflictException extends com.amazonaws.services.panorama.model.AWS
      */
     public ConflictException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * A list of attributes that led to the exception and their values.
+     * </p>
+     * 
+     * @return A list of attributes that led to the exception and their values.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorArguments")
+    public java.util.List<ConflictExceptionErrorArgument> getErrorArguments() {
+        return errorArguments;
+    }
+
+    /**
+     * <p>
+     * A list of attributes that led to the exception and their values.
+     * </p>
+     * 
+     * @param errorArguments
+     *        A list of attributes that led to the exception and their values.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorArguments")
+    public void setErrorArguments(java.util.Collection<ConflictExceptionErrorArgument> errorArguments) {
+        if (errorArguments == null) {
+            this.errorArguments = null;
+            return;
+        }
+
+        this.errorArguments = new java.util.ArrayList<ConflictExceptionErrorArgument>(errorArguments);
+    }
+
+    /**
+     * <p>
+     * A list of attributes that led to the exception and their values.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrorArguments(java.util.Collection)} or {@link #withErrorArguments(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param errorArguments
+     *        A list of attributes that led to the exception and their values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withErrorArguments(ConflictExceptionErrorArgument... errorArguments) {
+        if (this.errorArguments == null) {
+            setErrorArguments(new java.util.ArrayList<ConflictExceptionErrorArgument>(errorArguments.length));
+        }
+        for (ConflictExceptionErrorArgument ele : errorArguments) {
+            this.errorArguments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of attributes that led to the exception and their values.
+     * </p>
+     * 
+     * @param errorArguments
+     *        A list of attributes that led to the exception and their values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withErrorArguments(java.util.Collection<ConflictExceptionErrorArgument> errorArguments) {
+        setErrorArguments(errorArguments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @param errorId
+     *        A unique ID for the error.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
+    public void setErrorId(String errorId) {
+        this.errorId = errorId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @return A unique ID for the error.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
+    public String getErrorId() {
+        return this.errorId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @param errorId
+     *        A unique ID for the error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withErrorId(String errorId) {
+        setErrorId(errorId);
+        return this;
     }
 
     /**
@@ -139,120 +253,6 @@ public class ConflictException extends com.amazonaws.services.panorama.model.AWS
 
     public ConflictException withResourceType(String resourceType) {
         setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @param errorId
-     *        A unique ID for the error.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
-    public void setErrorId(String errorId) {
-        this.errorId = errorId;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @return A unique ID for the error.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
-    public String getErrorId() {
-        return this.errorId;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @param errorId
-     *        A unique ID for the error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ConflictException withErrorId(String errorId) {
-        setErrorId(errorId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     * 
-     * @return A list of attributes that led to the exception and their values.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorArguments")
-    public java.util.List<ConflictExceptionErrorArgument> getErrorArguments() {
-        return errorArguments;
-    }
-
-    /**
-     * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     * 
-     * @param errorArguments
-     *        A list of attributes that led to the exception and their values.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorArguments")
-    public void setErrorArguments(java.util.Collection<ConflictExceptionErrorArgument> errorArguments) {
-        if (errorArguments == null) {
-            this.errorArguments = null;
-            return;
-        }
-
-        this.errorArguments = new java.util.ArrayList<ConflictExceptionErrorArgument>(errorArguments);
-    }
-
-    /**
-     * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setErrorArguments(java.util.Collection)} or {@link #withErrorArguments(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param errorArguments
-     *        A list of attributes that led to the exception and their values.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ConflictException withErrorArguments(ConflictExceptionErrorArgument... errorArguments) {
-        if (this.errorArguments == null) {
-            setErrorArguments(new java.util.ArrayList<ConflictExceptionErrorArgument>(errorArguments.length));
-        }
-        for (ConflictExceptionErrorArgument ele : errorArguments) {
-            this.errorArguments.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     * 
-     * @param errorArguments
-     *        A list of attributes that led to the exception and their values.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ConflictException withErrorArguments(java.util.Collection<ConflictExceptionErrorArgument> errorArguments) {
-        setErrorArguments(errorArguments);
         return this;
     }
 

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PackageImportJobType {
 
-    NODE_PACKAGE_VERSION("NODE_PACKAGE_VERSION");
+    NODE_PACKAGE_VERSION("NODE_PACKAGE_VERSION"),
+    MARKETPLACE_NODE_PACKAGE_VERSION("MARKETPLACE_NODE_PACKAGE_VERSION");
 
     private String value;
 

@@ -49,26 +49,9 @@ public class DescribeApplicationInstanceDetailsResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Name", targetDepth)) {
+                if (context.testExpression("ApplicationInstanceId", targetDepth)) {
                     context.nextToken();
-                    describeApplicationInstanceDetailsResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Description", targetDepth)) {
-                    context.nextToken();
-                    describeApplicationInstanceDetailsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("DefaultRuntimeContextDevice", targetDepth)) {
-                    context.nextToken();
-                    describeApplicationInstanceDetailsResult.setDefaultRuntimeContextDevice(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ManifestPayload", targetDepth)) {
-                    context.nextToken();
-                    describeApplicationInstanceDetailsResult.setManifestPayload(ManifestPayloadJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ManifestOverridesPayload", targetDepth)) {
-                    context.nextToken();
-                    describeApplicationInstanceDetailsResult.setManifestOverridesPayload(ManifestOverridesPayloadJsonUnmarshaller.getInstance().unmarshall(
-                            context));
+                    describeApplicationInstanceDetailsResult.setApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationInstanceIdToReplace", targetDepth)) {
                     context.nextToken();
@@ -78,9 +61,26 @@ public class DescribeApplicationInstanceDetailsResultJsonUnmarshaller implements
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("ApplicationInstanceId", targetDepth)) {
+                if (context.testExpression("DefaultRuntimeContextDevice", targetDepth)) {
                     context.nextToken();
-                    describeApplicationInstanceDetailsResult.setApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeApplicationInstanceDetailsResult.setDefaultRuntimeContextDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    describeApplicationInstanceDetailsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ManifestOverridesPayload", targetDepth)) {
+                    context.nextToken();
+                    describeApplicationInstanceDetailsResult.setManifestOverridesPayload(ManifestOverridesPayloadJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("ManifestPayload", targetDepth)) {
+                    context.nextToken();
+                    describeApplicationInstanceDetailsResult.setManifestPayload(ManifestPayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    describeApplicationInstanceDetailsResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

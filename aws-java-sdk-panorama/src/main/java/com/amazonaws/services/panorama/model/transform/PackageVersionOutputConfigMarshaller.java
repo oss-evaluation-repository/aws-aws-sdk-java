@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PackageVersionOutputConfigMarshaller {
 
+    private static final MarshallingInfo<Boolean> MARKLATEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MarkLatest").build();
     private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageName").build();
     private static final MarshallingInfo<String> PACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageVersion").build();
-    private static final MarshallingInfo<Boolean> MARKLATEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MarkLatest").build();
 
     private static final PackageVersionOutputConfigMarshaller instance = new PackageVersionOutputConfigMarshaller();
 
@@ -50,9 +50,9 @@ public class PackageVersionOutputConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(packageVersionOutputConfig.getMarkLatest(), MARKLATEST_BINDING);
             protocolMarshaller.marshall(packageVersionOutputConfig.getPackageName(), PACKAGENAME_BINDING);
             protocolMarshaller.marshall(packageVersionOutputConfig.getPackageVersion(), PACKAGEVERSION_BINDING);
-            protocolMarshaller.marshall(packageVersionOutputConfig.getMarkLatest(), MARKLATEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

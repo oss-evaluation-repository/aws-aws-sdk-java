@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EthernetStatusMarshaller {
 
-    private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("IpAddress").build();
     private static final MarshallingInfo<String> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
     private static final MarshallingInfo<String> HWADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HwAddress").build();
+    private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpAddress").build();
 
     private static final EthernetStatusMarshaller instance = new EthernetStatusMarshaller();
 
@@ -50,9 +50,9 @@ public class EthernetStatusMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(ethernetStatus.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(ethernetStatus.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
             protocolMarshaller.marshall(ethernetStatus.getHwAddress(), HWADDRESS_BINDING);
+            protocolMarshaller.marshall(ethernetStatus.getIpAddress(), IPADDRESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

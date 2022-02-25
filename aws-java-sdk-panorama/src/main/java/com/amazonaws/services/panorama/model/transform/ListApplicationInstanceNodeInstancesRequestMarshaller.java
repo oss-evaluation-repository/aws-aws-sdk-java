@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListApplicationInstanceNodeInstancesRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationInstanceId").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("ApplicationInstanceId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -26,34 +26,10 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      */
-    private String name;
-    /**
-     * <p>
-     * The application instance's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The application instance's default runtime context device.
-     * </p>
-     */
-    private String defaultRuntimeContextDevice;
-    /**
-     * <p>
-     * The application instance's configuration manifest.
-     * </p>
-     */
-    private ManifestPayload manifestPayload;
-    /**
-     * <p>
-     * Parameter overrides for the configuration manifest.
-     * </p>
-     */
-    private ManifestOverridesPayload manifestOverridesPayload;
+    private String applicationInstanceId;
     /**
      * <p>
      * The ID of the application instance that this instance replaced.
@@ -68,208 +44,72 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
     private java.util.Date createdTime;
     /**
      * <p>
+     * The application instance's default runtime context device.
+     * </p>
+     */
+    private String defaultRuntimeContextDevice;
+    /**
+     * <p>
+     * The application instance's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Parameter overrides for the configuration manifest.
+     * </p>
+     */
+    private ManifestOverridesPayload manifestOverridesPayload;
+    /**
+     * <p>
+     * The application instance's configuration manifest.
+     * </p>
+     */
+    private ManifestPayload manifestPayload;
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     */
+    private String name;
+
+    /**
+     * <p>
      * The application instance's ID.
      * </p>
-     */
-    private String applicationInstanceId;
-
-    /**
-     * <p>
-     * The application instance's name.
-     * </p>
      * 
-     * @param name
-     *        The application instance's name.
+     * @param applicationInstanceId
+     *        The application instance's ID.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setApplicationInstanceId(String applicationInstanceId) {
+        this.applicationInstanceId = applicationInstanceId;
     }
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      * 
-     * @return The application instance's name.
+     * @return The application instance's ID.
      */
 
-    public String getName() {
-        return this.name;
+    public String getApplicationInstanceId() {
+        return this.applicationInstanceId;
     }
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      * 
-     * @param name
-     *        The application instance's name.
+     * @param applicationInstanceId
+     *        The application instance's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationInstanceDetailsResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's description.
-     * </p>
-     * 
-     * @param description
-     *        The application instance's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The application instance's description.
-     * </p>
-     * 
-     * @return The application instance's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The application instance's description.
-     * </p>
-     * 
-     * @param description
-     *        The application instance's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceDetailsResult withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's default runtime context device.
-     * </p>
-     * 
-     * @param defaultRuntimeContextDevice
-     *        The application instance's default runtime context device.
-     */
-
-    public void setDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
-        this.defaultRuntimeContextDevice = defaultRuntimeContextDevice;
-    }
-
-    /**
-     * <p>
-     * The application instance's default runtime context device.
-     * </p>
-     * 
-     * @return The application instance's default runtime context device.
-     */
-
-    public String getDefaultRuntimeContextDevice() {
-        return this.defaultRuntimeContextDevice;
-    }
-
-    /**
-     * <p>
-     * The application instance's default runtime context device.
-     * </p>
-     * 
-     * @param defaultRuntimeContextDevice
-     *        The application instance's default runtime context device.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceDetailsResult withDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
-        setDefaultRuntimeContextDevice(defaultRuntimeContextDevice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's configuration manifest.
-     * </p>
-     * 
-     * @param manifestPayload
-     *        The application instance's configuration manifest.
-     */
-
-    public void setManifestPayload(ManifestPayload manifestPayload) {
-        this.manifestPayload = manifestPayload;
-    }
-
-    /**
-     * <p>
-     * The application instance's configuration manifest.
-     * </p>
-     * 
-     * @return The application instance's configuration manifest.
-     */
-
-    public ManifestPayload getManifestPayload() {
-        return this.manifestPayload;
-    }
-
-    /**
-     * <p>
-     * The application instance's configuration manifest.
-     * </p>
-     * 
-     * @param manifestPayload
-     *        The application instance's configuration manifest.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceDetailsResult withManifestPayload(ManifestPayload manifestPayload) {
-        setManifestPayload(manifestPayload);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Parameter overrides for the configuration manifest.
-     * </p>
-     * 
-     * @param manifestOverridesPayload
-     *        Parameter overrides for the configuration manifest.
-     */
-
-    public void setManifestOverridesPayload(ManifestOverridesPayload manifestOverridesPayload) {
-        this.manifestOverridesPayload = manifestOverridesPayload;
-    }
-
-    /**
-     * <p>
-     * Parameter overrides for the configuration manifest.
-     * </p>
-     * 
-     * @return Parameter overrides for the configuration manifest.
-     */
-
-    public ManifestOverridesPayload getManifestOverridesPayload() {
-        return this.manifestOverridesPayload;
-    }
-
-    /**
-     * <p>
-     * Parameter overrides for the configuration manifest.
-     * </p>
-     * 
-     * @param manifestOverridesPayload
-     *        Parameter overrides for the configuration manifest.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceDetailsResult withManifestOverridesPayload(ManifestOverridesPayload manifestOverridesPayload) {
-        setManifestOverridesPayload(manifestOverridesPayload);
+    public DescribeApplicationInstanceDetailsResult withApplicationInstanceId(String applicationInstanceId) {
+        setApplicationInstanceId(applicationInstanceId);
         return this;
     }
 
@@ -355,41 +195,201 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The application instance's ID.
+     * The application instance's default runtime context device.
      * </p>
      * 
-     * @param applicationInstanceId
-     *        The application instance's ID.
+     * @param defaultRuntimeContextDevice
+     *        The application instance's default runtime context device.
      */
 
-    public void setApplicationInstanceId(String applicationInstanceId) {
-        this.applicationInstanceId = applicationInstanceId;
+    public void setDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
+        this.defaultRuntimeContextDevice = defaultRuntimeContextDevice;
     }
 
     /**
      * <p>
-     * The application instance's ID.
+     * The application instance's default runtime context device.
      * </p>
      * 
-     * @return The application instance's ID.
+     * @return The application instance's default runtime context device.
      */
 
-    public String getApplicationInstanceId() {
-        return this.applicationInstanceId;
+    public String getDefaultRuntimeContextDevice() {
+        return this.defaultRuntimeContextDevice;
     }
 
     /**
      * <p>
-     * The application instance's ID.
+     * The application instance's default runtime context device.
      * </p>
      * 
-     * @param applicationInstanceId
-     *        The application instance's ID.
+     * @param defaultRuntimeContextDevice
+     *        The application instance's default runtime context device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationInstanceDetailsResult withApplicationInstanceId(String applicationInstanceId) {
-        setApplicationInstanceId(applicationInstanceId);
+    public DescribeApplicationInstanceDetailsResult withDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
+        setDefaultRuntimeContextDevice(defaultRuntimeContextDevice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's description.
+     * </p>
+     * 
+     * @param description
+     *        The application instance's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The application instance's description.
+     * </p>
+     * 
+     * @return The application instance's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The application instance's description.
+     * </p>
+     * 
+     * @param description
+     *        The application instance's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceDetailsResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameter overrides for the configuration manifest.
+     * </p>
+     * 
+     * @param manifestOverridesPayload
+     *        Parameter overrides for the configuration manifest.
+     */
+
+    public void setManifestOverridesPayload(ManifestOverridesPayload manifestOverridesPayload) {
+        this.manifestOverridesPayload = manifestOverridesPayload;
+    }
+
+    /**
+     * <p>
+     * Parameter overrides for the configuration manifest.
+     * </p>
+     * 
+     * @return Parameter overrides for the configuration manifest.
+     */
+
+    public ManifestOverridesPayload getManifestOverridesPayload() {
+        return this.manifestOverridesPayload;
+    }
+
+    /**
+     * <p>
+     * Parameter overrides for the configuration manifest.
+     * </p>
+     * 
+     * @param manifestOverridesPayload
+     *        Parameter overrides for the configuration manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceDetailsResult withManifestOverridesPayload(ManifestOverridesPayload manifestOverridesPayload) {
+        setManifestOverridesPayload(manifestOverridesPayload);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's configuration manifest.
+     * </p>
+     * 
+     * @param manifestPayload
+     *        The application instance's configuration manifest.
+     */
+
+    public void setManifestPayload(ManifestPayload manifestPayload) {
+        this.manifestPayload = manifestPayload;
+    }
+
+    /**
+     * <p>
+     * The application instance's configuration manifest.
+     * </p>
+     * 
+     * @return The application instance's configuration manifest.
+     */
+
+    public ManifestPayload getManifestPayload() {
+        return this.manifestPayload;
+    }
+
+    /**
+     * <p>
+     * The application instance's configuration manifest.
+     * </p>
+     * 
+     * @param manifestPayload
+     *        The application instance's configuration manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceDetailsResult withManifestPayload(ManifestPayload manifestPayload) {
+        setManifestPayload(manifestPayload);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @param name
+     *        The application instance's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @return The application instance's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @param name
+     *        The application instance's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceDetailsResult withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -405,22 +405,22 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getDefaultRuntimeContextDevice() != null)
-            sb.append("DefaultRuntimeContextDevice: ").append(getDefaultRuntimeContextDevice()).append(",");
-        if (getManifestPayload() != null)
-            sb.append("ManifestPayload: ").append(getManifestPayload()).append(",");
-        if (getManifestOverridesPayload() != null)
-            sb.append("ManifestOverridesPayload: ").append(getManifestOverridesPayload()).append(",");
+        if (getApplicationInstanceId() != null)
+            sb.append("ApplicationInstanceId: ").append(getApplicationInstanceId()).append(",");
         if (getApplicationInstanceIdToReplace() != null)
             sb.append("ApplicationInstanceIdToReplace: ").append(getApplicationInstanceIdToReplace()).append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
-        if (getApplicationInstanceId() != null)
-            sb.append("ApplicationInstanceId: ").append(getApplicationInstanceId());
+        if (getDefaultRuntimeContextDevice() != null)
+            sb.append("DefaultRuntimeContextDevice: ").append(getDefaultRuntimeContextDevice()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getManifestOverridesPayload() != null)
+            sb.append("ManifestOverridesPayload: ").append(getManifestOverridesPayload()).append(",");
+        if (getManifestPayload() != null)
+            sb.append("ManifestPayload: ").append(getManifestPayload()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -435,25 +435,9 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
         if (obj instanceof DescribeApplicationInstanceDetailsResult == false)
             return false;
         DescribeApplicationInstanceDetailsResult other = (DescribeApplicationInstanceDetailsResult) obj;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getApplicationInstanceId() == null ^ this.getApplicationInstanceId() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDefaultRuntimeContextDevice() == null ^ this.getDefaultRuntimeContextDevice() == null)
-            return false;
-        if (other.getDefaultRuntimeContextDevice() != null && other.getDefaultRuntimeContextDevice().equals(this.getDefaultRuntimeContextDevice()) == false)
-            return false;
-        if (other.getManifestPayload() == null ^ this.getManifestPayload() == null)
-            return false;
-        if (other.getManifestPayload() != null && other.getManifestPayload().equals(this.getManifestPayload()) == false)
-            return false;
-        if (other.getManifestOverridesPayload() == null ^ this.getManifestOverridesPayload() == null)
-            return false;
-        if (other.getManifestOverridesPayload() != null && other.getManifestOverridesPayload().equals(this.getManifestOverridesPayload()) == false)
+        if (other.getApplicationInstanceId() != null && other.getApplicationInstanceId().equals(this.getApplicationInstanceId()) == false)
             return false;
         if (other.getApplicationInstanceIdToReplace() == null ^ this.getApplicationInstanceIdToReplace() == null)
             return false;
@@ -464,9 +448,25 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
-        if (other.getApplicationInstanceId() == null ^ this.getApplicationInstanceId() == null)
+        if (other.getDefaultRuntimeContextDevice() == null ^ this.getDefaultRuntimeContextDevice() == null)
             return false;
-        if (other.getApplicationInstanceId() != null && other.getApplicationInstanceId().equals(this.getApplicationInstanceId()) == false)
+        if (other.getDefaultRuntimeContextDevice() != null && other.getDefaultRuntimeContextDevice().equals(this.getDefaultRuntimeContextDevice()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getManifestOverridesPayload() == null ^ this.getManifestOverridesPayload() == null)
+            return false;
+        if (other.getManifestOverridesPayload() != null && other.getManifestOverridesPayload().equals(this.getManifestOverridesPayload()) == false)
+            return false;
+        if (other.getManifestPayload() == null ^ this.getManifestPayload() == null)
+            return false;
+        if (other.getManifestPayload() != null && other.getManifestPayload().equals(this.getManifestPayload()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -476,14 +476,14 @@ public class DescribeApplicationInstanceDetailsResult extends com.amazonaws.Amaz
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDefaultRuntimeContextDevice() == null) ? 0 : getDefaultRuntimeContextDevice().hashCode());
-        hashCode = prime * hashCode + ((getManifestPayload() == null) ? 0 : getManifestPayload().hashCode());
-        hashCode = prime * hashCode + ((getManifestOverridesPayload() == null) ? 0 : getManifestOverridesPayload().hashCode());
+        hashCode = prime * hashCode + ((getApplicationInstanceId() == null) ? 0 : getApplicationInstanceId().hashCode());
         hashCode = prime * hashCode + ((getApplicationInstanceIdToReplace() == null) ? 0 : getApplicationInstanceIdToReplace().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime * hashCode + ((getApplicationInstanceId() == null) ? 0 : getApplicationInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDefaultRuntimeContextDevice() == null) ? 0 : getDefaultRuntimeContextDevice().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getManifestOverridesPayload() == null) ? 0 : getManifestOverridesPayload().hashCode());
+        hashCode = prime * hashCode + ((getManifestPayload() == null) ? 0 : getManifestPayload().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

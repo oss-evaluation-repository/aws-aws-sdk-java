@@ -30,6 +30,12 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The package's output location.
+     * </p>
+     */
+    private OutPutS3Location outputS3Location;
+    /**
+     * <p>
      * The package's ID.
      * </p>
      */
@@ -46,12 +52,46 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
      * </p>
      */
     private String patchVersion;
+
     /**
      * <p>
      * The package's output location.
      * </p>
+     * 
+     * @param outputS3Location
+     *        The package's output location.
      */
-    private OutPutS3Location outputS3Location;
+
+    public void setOutputS3Location(OutPutS3Location outputS3Location) {
+        this.outputS3Location = outputS3Location;
+    }
+
+    /**
+     * <p>
+     * The package's output location.
+     * </p>
+     * 
+     * @return The package's output location.
+     */
+
+    public OutPutS3Location getOutputS3Location() {
+        return this.outputS3Location;
+    }
+
+    /**
+     * <p>
+     * The package's output location.
+     * </p>
+     * 
+     * @param outputS3Location
+     *        The package's output location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageImportJobOutput withOutputS3Location(OutPutS3Location outputS3Location) {
+        setOutputS3Location(outputS3Location);
+        return this;
+    }
 
     /**
      * <p>
@@ -174,46 +214,6 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p>
-     * The package's output location.
-     * </p>
-     * 
-     * @param outputS3Location
-     *        The package's output location.
-     */
-
-    public void setOutputS3Location(OutPutS3Location outputS3Location) {
-        this.outputS3Location = outputS3Location;
-    }
-
-    /**
-     * <p>
-     * The package's output location.
-     * </p>
-     * 
-     * @return The package's output location.
-     */
-
-    public OutPutS3Location getOutputS3Location() {
-        return this.outputS3Location;
-    }
-
-    /**
-     * <p>
-     * The package's output location.
-     * </p>
-     * 
-     * @param outputS3Location
-     *        The package's output location.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageImportJobOutput withOutputS3Location(OutPutS3Location outputS3Location) {
-        setOutputS3Location(outputS3Location);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,14 +225,14 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOutputS3Location() != null)
+            sb.append("OutputS3Location: ").append(getOutputS3Location()).append(",");
         if (getPackageId() != null)
             sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getPackageVersion() != null)
             sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getPatchVersion() != null)
-            sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
-        if (getOutputS3Location() != null)
-            sb.append("OutputS3Location: ").append(getOutputS3Location());
+            sb.append("PatchVersion: ").append(getPatchVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +247,10 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
         if (obj instanceof PackageImportJobOutput == false)
             return false;
         PackageImportJobOutput other = (PackageImportJobOutput) obj;
+        if (other.getOutputS3Location() == null ^ this.getOutputS3Location() == null)
+            return false;
+        if (other.getOutputS3Location() != null && other.getOutputS3Location().equals(this.getOutputS3Location()) == false)
+            return false;
         if (other.getPackageId() == null ^ this.getPackageId() == null)
             return false;
         if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
@@ -259,10 +263,6 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
             return false;
         if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
-        if (other.getOutputS3Location() == null ^ this.getOutputS3Location() == null)
-            return false;
-        if (other.getOutputS3Location() != null && other.getOutputS3Location().equals(this.getOutputS3Location()) == false)
-            return false;
         return true;
     }
 
@@ -271,10 +271,10 @@ public class PackageImportJobOutput implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOutputS3Location() == null) ? 0 : getOutputS3Location().hashCode());
         hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
-        hashCode = prime * hashCode + ((getOutputS3Location() == null) ? 0 : getOutputS3Location().hashCode());
         return hashCode;
     }
 

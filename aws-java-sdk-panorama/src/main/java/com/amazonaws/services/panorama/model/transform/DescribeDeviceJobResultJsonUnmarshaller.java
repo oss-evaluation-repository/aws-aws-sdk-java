@@ -48,17 +48,17 @@ public class DescribeDeviceJobResultJsonUnmarshaller implements Unmarshaller<Des
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("JobId", targetDepth)) {
+                if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    describeDeviceJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("DeviceId", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceJobResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeDeviceJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeviceArn", targetDepth)) {
                     context.nextToken();
                     describeDeviceJobResult.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeviceId", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceJobResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceName", targetDepth)) {
                     context.nextToken();
@@ -72,13 +72,13 @@ public class DescribeDeviceJobResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeDeviceJobResult.setImageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeDeviceJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

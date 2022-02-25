@@ -27,57 +27,17 @@ public class DeletePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The package's ID.
-     * </p>
-     */
-    private String packageId;
-    /**
-     * <p>
      * Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from
      * Amazon S3.
      * </p>
      */
     private Boolean forceDelete;
-
     /**
      * <p>
      * The package's ID.
      * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
      */
-
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @return The package's ID.
-     */
-
-    public String getPackageId() {
-        return this.packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeletePackageRequest withPackageId(String packageId) {
-        setPackageId(packageId);
-        return this;
-    }
+    private String packageId;
 
     /**
      * <p>
@@ -140,6 +100,46 @@ public class DeletePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     */
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @return The package's ID.
+     */
+
+    public String getPackageId() {
+        return this.packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeletePackageRequest withPackageId(String packageId) {
+        setPackageId(packageId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -151,10 +151,10 @@ public class DeletePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPackageId() != null)
-            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getForceDelete() != null)
-            sb.append("ForceDelete: ").append(getForceDelete());
+            sb.append("ForceDelete: ").append(getForceDelete()).append(",");
+        if (getPackageId() != null)
+            sb.append("PackageId: ").append(getPackageId());
         sb.append("}");
         return sb.toString();
     }
@@ -169,13 +169,13 @@ public class DeletePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof DeletePackageRequest == false)
             return false;
         DeletePackageRequest other = (DeletePackageRequest) obj;
-        if (other.getPackageId() == null ^ this.getPackageId() == null)
-            return false;
-        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
-            return false;
         if (other.getForceDelete() == null ^ this.getForceDelete() == null)
             return false;
         if (other.getForceDelete() != null && other.getForceDelete().equals(this.getForceDelete()) == false)
+            return false;
+        if (other.getPackageId() == null ^ this.getPackageId() == null)
+            return false;
+        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
             return false;
         return true;
     }
@@ -185,8 +185,8 @@ public class DeletePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
+        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         return hashCode;
     }
 

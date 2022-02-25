@@ -25,6 +25,7 @@ import com.amazonaws.services.panorama.model.*;
  * {@link com.amazonaws.services.panorama.AbstractAWSPanoramaAsync} instead.
  * </p>
  * <p>
+ * <p>
  * <fullname>AWS Panorama</fullname>
  * <p>
  * <b>Overview</b>
@@ -33,6 +34,7 @@ import com.amazonaws.services.panorama.model.*;
  * This is the <i>AWS Panorama API Reference</i>. For an introduction to the service, see <a
  * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What is AWS Panorama?</a> in the <i>AWS
  * Panorama Developer Guide</i>.
+ * </p>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -232,6 +234,12 @@ public interface AWSPanoramaAsync extends AWSPanorama {
      * <p>
      * Deletes a package.
      * </p>
+     * <note>
+     * <p>
+     * To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition to permissions for the
+     * AWS Panorama API.
+     * </p>
+     * </note>
      * 
      * @param deletePackageRequest
      * @return A Java Future containing the result of the DeletePackage operation returned by the service.
@@ -245,6 +253,12 @@ public interface AWSPanoramaAsync extends AWSPanorama {
      * <p>
      * Deletes a package.
      * </p>
+     * <note>
+     * <p>
+     * To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition to permissions for the
+     * AWS Panorama API.
+     * </p>
+     * </note>
      * 
      * @param deletePackageRequest
      * @param asyncHandler

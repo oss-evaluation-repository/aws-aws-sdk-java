@@ -30,12 +30,6 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The device's IP address.
-     * </p>
-     */
-    private String ipAddress;
-    /**
-     * <p>
      * The device's connection status.
      * </p>
      */
@@ -46,46 +40,12 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String hwAddress;
-
     /**
      * <p>
      * The device's IP address.
      * </p>
-     * 
-     * @param ipAddress
-     *        The device's IP address.
      */
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-    /**
-     * <p>
-     * The device's IP address.
-     * </p>
-     * 
-     * @return The device's IP address.
-     */
-
-    public String getIpAddress() {
-        return this.ipAddress;
-    }
-
-    /**
-     * <p>
-     * The device's IP address.
-     * </p>
-     * 
-     * @param ipAddress
-     *        The device's IP address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EthernetStatus withIpAddress(String ipAddress) {
-        setIpAddress(ipAddress);
-        return this;
-    }
+    private String ipAddress;
 
     /**
      * <p>
@@ -187,6 +147,46 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The device's IP address.
+     * </p>
+     * 
+     * @param ipAddress
+     *        The device's IP address.
+     */
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    /**
+     * <p>
+     * The device's IP address.
+     * </p>
+     * 
+     * @return The device's IP address.
+     */
+
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * <p>
+     * The device's IP address.
+     * </p>
+     * 
+     * @param ipAddress
+     *        The device's IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EthernetStatus withIpAddress(String ipAddress) {
+        setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,12 +198,12 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getConnectionStatus() != null)
             sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
         if (getHwAddress() != null)
-            sb.append("HwAddress: ").append(getHwAddress());
+            sb.append("HwAddress: ").append(getHwAddress()).append(",");
+        if (getIpAddress() != null)
+            sb.append("IpAddress: ").append(getIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -218,10 +218,6 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof EthernetStatus == false)
             return false;
         EthernetStatus other = (EthernetStatus) obj;
-        if (other.getIpAddress() == null ^ this.getIpAddress() == null)
-            return false;
-        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
-            return false;
         if (other.getConnectionStatus() == null ^ this.getConnectionStatus() == null)
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
@@ -229,6 +225,10 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
         if (other.getHwAddress() == null ^ this.getHwAddress() == null)
             return false;
         if (other.getHwAddress() != null && other.getHwAddress().equals(this.getHwAddress()) == false)
+            return false;
+        if (other.getIpAddress() == null ^ this.getIpAddress() == null)
+            return false;
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
         return true;
     }
@@ -238,9 +238,9 @@ public class EthernetStatus implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
         hashCode = prime * hashCode + ((getHwAddress() == null) ? 0 : getHwAddress().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         return hashCode;
     }
 

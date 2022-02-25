@@ -48,13 +48,13 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("JobId", targetDepth)) {
-                    context.nextToken();
-                    job.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("DeviceId", targetDepth)) {
                     context.nextToken();
                     job.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    job.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -29,10 +29,10 @@ public class ListDevicesJobsRequestMarshaller {
 
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("DeviceId").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
     private static final ListDevicesJobsRequestMarshaller instance = new ListDevicesJobsRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class ListDevicesJobsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listDevicesJobsRequest.getDeviceId(), DEVICEID_BINDING);
-            protocolMarshaller.marshall(listDevicesJobsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listDevicesJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listDevicesJobsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

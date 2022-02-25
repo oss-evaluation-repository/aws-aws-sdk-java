@@ -33,16 +33,16 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
     private String deviceId;
     /**
      * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * The maximum number of device jobs to return in one page of results.
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -81,46 +81,6 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     public ListDevicesJobsRequest withDeviceId(String deviceId) {
         setDeviceId(deviceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @return Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListDevicesJobsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
         return this;
     }
 
@@ -165,6 +125,46 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @return Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDevicesJobsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -178,10 +178,10 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getDeviceId() != null)
             sb.append("DeviceId: ").append(getDeviceId()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -200,13 +200,13 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -217,8 +217,8 @@ public class ListDevicesJobsRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

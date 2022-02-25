@@ -53,6 +53,10 @@ public class ServiceQuotaExceededExceptionUnmarshaller extends EnhancedJsonError
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("QuotaCode", targetDepth)) {
+                    context.nextToken();
+                    serviceQuotaExceededException.setQuotaCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
                     serviceQuotaExceededException.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,10 +64,6 @@ public class ServiceQuotaExceededExceptionUnmarshaller extends EnhancedJsonError
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
                     serviceQuotaExceededException.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("QuotaCode", targetDepth)) {
-                    context.nextToken();
-                    serviceQuotaExceededException.setQuotaCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceCode", targetDepth)) {
                     context.nextToken();

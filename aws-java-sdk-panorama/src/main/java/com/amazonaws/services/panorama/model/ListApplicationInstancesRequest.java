@@ -33,12 +33,6 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
     private String deviceId;
     /**
      * <p>
-     * Only include instances with a specific status.
-     * </p>
-     */
-    private String statusFilter;
-    /**
-     * <p>
      * The maximum number of application instances to return in one page of results.
      * </p>
      */
@@ -49,6 +43,12 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Only include instances with a specific status.
+     * </p>
+     */
+    private String statusFilter;
 
     /**
      * <p>
@@ -87,65 +87,6 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
 
     public ListApplicationInstancesRequest withDeviceId(String deviceId) {
         setDeviceId(deviceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Only include instances with a specific status.
-     * </p>
-     * 
-     * @param statusFilter
-     *        Only include instances with a specific status.
-     * @see StatusFilter
-     */
-
-    public void setStatusFilter(String statusFilter) {
-        this.statusFilter = statusFilter;
-    }
-
-    /**
-     * <p>
-     * Only include instances with a specific status.
-     * </p>
-     * 
-     * @return Only include instances with a specific status.
-     * @see StatusFilter
-     */
-
-    public String getStatusFilter() {
-        return this.statusFilter;
-    }
-
-    /**
-     * <p>
-     * Only include instances with a specific status.
-     * </p>
-     * 
-     * @param statusFilter
-     *        Only include instances with a specific status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StatusFilter
-     */
-
-    public ListApplicationInstancesRequest withStatusFilter(String statusFilter) {
-        setStatusFilter(statusFilter);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Only include instances with a specific status.
-     * </p>
-     * 
-     * @param statusFilter
-     *        Only include instances with a specific status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StatusFilter
-     */
-
-    public ListApplicationInstancesRequest withStatusFilter(StatusFilter statusFilter) {
-        this.statusFilter = statusFilter.toString();
         return this;
     }
 
@@ -230,6 +171,65 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Only include instances with a specific status.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Only include instances with a specific status.
+     * @see StatusFilter
+     */
+
+    public void setStatusFilter(String statusFilter) {
+        this.statusFilter = statusFilter;
+    }
+
+    /**
+     * <p>
+     * Only include instances with a specific status.
+     * </p>
+     * 
+     * @return Only include instances with a specific status.
+     * @see StatusFilter
+     */
+
+    public String getStatusFilter() {
+        return this.statusFilter;
+    }
+
+    /**
+     * <p>
+     * Only include instances with a specific status.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Only include instances with a specific status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFilter
+     */
+
+    public ListApplicationInstancesRequest withStatusFilter(String statusFilter) {
+        setStatusFilter(statusFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Only include instances with a specific status.
+     * </p>
+     * 
+     * @param statusFilter
+     *        Only include instances with a specific status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFilter
+     */
+
+    public ListApplicationInstancesRequest withStatusFilter(StatusFilter statusFilter) {
+        this.statusFilter = statusFilter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,12 +243,12 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
         sb.append("{");
         if (getDeviceId() != null)
             sb.append("DeviceId: ").append(getDeviceId()).append(",");
-        if (getStatusFilter() != null)
-            sb.append("StatusFilter: ").append(getStatusFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStatusFilter() != null)
+            sb.append("StatusFilter: ").append(getStatusFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -267,10 +267,6 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
-        if (other.getStatusFilter() == null ^ this.getStatusFilter() == null)
-            return false;
-        if (other.getStatusFilter() != null && other.getStatusFilter().equals(this.getStatusFilter()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -278,6 +274,10 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getStatusFilter() == null ^ this.getStatusFilter() == null)
+            return false;
+        if (other.getStatusFilter() != null && other.getStatusFilter().equals(this.getStatusFilter()) == false)
             return false;
         return true;
     }
@@ -288,9 +288,9 @@ public class ListApplicationInstancesRequest extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
-        hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         return hashCode;
     }
 

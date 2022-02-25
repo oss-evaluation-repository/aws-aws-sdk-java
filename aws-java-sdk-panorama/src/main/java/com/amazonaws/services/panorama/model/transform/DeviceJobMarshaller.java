@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeviceJobMarshaller {
 
-    private static final MarshallingInfo<String> DEVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceName").build();
-    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("DeviceId").build();
-    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JobId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DeviceId").build();
+    private static final MarshallingInfo<String> DEVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceName").build();
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobId").build();
 
     private static final DeviceJobMarshaller instance = new DeviceJobMarshaller();
 
@@ -52,10 +52,10 @@ public class DeviceJobMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deviceJob.getDeviceName(), DEVICENAME_BINDING);
-            protocolMarshaller.marshall(deviceJob.getDeviceId(), DEVICEID_BINDING);
-            protocolMarshaller.marshall(deviceJob.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(deviceJob.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(deviceJob.getDeviceId(), DEVICEID_BINDING);
+            protocolMarshaller.marshall(deviceJob.getDeviceName(), DEVICENAME_BINDING);
+            protocolMarshaller.marshall(deviceJob.getJobId(), JOBID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

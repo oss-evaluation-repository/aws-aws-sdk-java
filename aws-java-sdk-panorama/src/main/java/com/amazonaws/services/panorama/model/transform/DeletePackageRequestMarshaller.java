@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeletePackageRequestMarshaller {
 
-    private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("PackageId").build();
     private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ForceDelete").build();
+    private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("PackageId").build();
 
     private static final DeletePackageRequestMarshaller instance = new DeletePackageRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class DeletePackageRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deletePackageRequest.getPackageId(), PACKAGEID_BINDING);
             protocolMarshaller.marshall(deletePackageRequest.getForceDelete(), FORCEDELETE_BINDING);
+            protocolMarshaller.marshall(deletePackageRequest.getPackageId(), PACKAGEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

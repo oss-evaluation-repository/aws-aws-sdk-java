@@ -48,25 +48,31 @@ public class DescribeNodeFromTemplateJobResultJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("JobId", targetDepth)) {
-                    context.nextToken();
-                    describeNodeFromTemplateJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Status", targetDepth)) {
-                    context.nextToken();
-                    describeNodeFromTemplateJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("StatusMessage", targetDepth)) {
-                    context.nextToken();
-                    describeNodeFromTemplateJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    describeNodeFromTemplateJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobTags", targetDepth)) {
+                    context.nextToken();
+                    describeNodeFromTemplateJobResult.setJobTags(new ListUnmarshaller<JobResourceTags>(JobResourceTagsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NodeDescription", targetDepth)) {
+                    context.nextToken();
+                    describeNodeFromTemplateJobResult.setNodeDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NodeName", targetDepth)) {
+                    context.nextToken();
+                    describeNodeFromTemplateJobResult.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputPackageName", targetDepth)) {
                     context.nextToken();
@@ -76,28 +82,22 @@ public class DescribeNodeFromTemplateJobResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setOutputPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("NodeName", targetDepth)) {
+                if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    describeNodeFromTemplateJobResult.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeNodeFromTemplateJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("NodeDescription", targetDepth)) {
+                if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();
-                    describeNodeFromTemplateJobResult.setNodeDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("TemplateType", targetDepth)) {
-                    context.nextToken();
-                    describeNodeFromTemplateJobResult.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeNodeFromTemplateJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateParameters", targetDepth)) {
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setTemplateParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
-                if (context.testExpression("JobTags", targetDepth)) {
+                if (context.testExpression("TemplateType", targetDepth)) {
                     context.nextToken();
-                    describeNodeFromTemplateJobResult.setJobTags(new ListUnmarshaller<JobResourceTags>(JobResourceTagsJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
+                    describeNodeFromTemplateJobResult.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

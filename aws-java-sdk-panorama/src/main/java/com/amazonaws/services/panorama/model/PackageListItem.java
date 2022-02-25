@@ -30,18 +30,6 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The package's ID.
-     * </p>
-     */
-    private String packageId;
-    /**
-     * <p>
-     * The package's name.
-     * </p>
-     */
-    private String packageName;
-    /**
-     * <p>
      * The package's ARN.
      * </p>
      */
@@ -54,90 +42,22 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date createdTime;
     /**
      * <p>
+     * The package's ID.
+     * </p>
+     */
+    private String packageId;
+    /**
+     * <p>
+     * The package's name.
+     * </p>
+     */
+    private String packageName;
+    /**
+     * <p>
      * The package's tags.
      * </p>
      */
     private java.util.Map<String, String> tags;
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
-     */
-
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @return The package's ID.
-     */
-
-    public String getPackageId() {
-        return this.packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageListItem withPackageId(String packageId) {
-        setPackageId(packageId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The package's name.
-     * </p>
-     * 
-     * @param packageName
-     *        The package's name.
-     */
-
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
-
-    /**
-     * <p>
-     * The package's name.
-     * </p>
-     * 
-     * @return The package's name.
-     */
-
-    public String getPackageName() {
-        return this.packageName;
-    }
-
-    /**
-     * <p>
-     * The package's name.
-     * </p>
-     * 
-     * @param packageName
-     *        The package's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageListItem withPackageName(String packageName) {
-        setPackageName(packageName);
-        return this;
-    }
 
     /**
      * <p>
@@ -221,6 +141,86 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     */
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @return The package's ID.
+     */
+
+    public String getPackageId() {
+        return this.packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageListItem withPackageId(String packageId) {
+        setPackageId(packageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package's name.
+     * </p>
+     * 
+     * @param packageName
+     *        The package's name.
+     */
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    /**
+     * <p>
+     * The package's name.
+     * </p>
+     * 
+     * @return The package's name.
+     */
+
+    public String getPackageName() {
+        return this.packageName;
+    }
+
+    /**
+     * <p>
+     * The package's name.
+     * </p>
+     * 
+     * @param packageName
+     *        The package's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageListItem withPackageName(String packageName) {
+        setPackageName(packageName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The package's tags.
      * </p>
      * 
@@ -299,14 +299,14 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPackageId() != null)
-            sb.append("PackageId: ").append(getPackageId()).append(",");
-        if (getPackageName() != null)
-            sb.append("PackageName: ").append(getPackageName()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getPackageId() != null)
+            sb.append("PackageId: ").append(getPackageId()).append(",");
+        if (getPackageName() != null)
+            sb.append("PackageName: ").append(getPackageName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -323,14 +323,6 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof PackageListItem == false)
             return false;
         PackageListItem other = (PackageListItem) obj;
-        if (other.getPackageId() == null ^ this.getPackageId() == null)
-            return false;
-        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
-            return false;
-        if (other.getPackageName() == null ^ this.getPackageName() == null)
-            return false;
-        if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
-            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -338,6 +330,14 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getPackageId() == null ^ this.getPackageId() == null)
+            return false;
+        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
+            return false;
+        if (other.getPackageName() == null ^ this.getPackageName() == null)
+            return false;
+        if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -351,10 +351,10 @@ public class PackageListItem implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
-        hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
+        hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

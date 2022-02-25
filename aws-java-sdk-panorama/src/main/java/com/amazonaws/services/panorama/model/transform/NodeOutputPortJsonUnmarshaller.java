@@ -48,13 +48,13 @@ public class NodeOutputPortJsonUnmarshaller implements Unmarshaller<NodeOutputPo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    nodeOutputPort.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     nodeOutputPort.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    nodeOutputPort.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

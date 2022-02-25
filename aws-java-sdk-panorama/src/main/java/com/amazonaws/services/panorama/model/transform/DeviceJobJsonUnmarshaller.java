@@ -48,21 +48,21 @@ public class DeviceJobJsonUnmarshaller implements Unmarshaller<DeviceJob, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DeviceName", targetDepth)) {
+                if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    deviceJob.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
+                    deviceJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeviceId", targetDepth)) {
                     context.nextToken();
                     deviceJob.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeviceName", targetDepth)) {
+                    context.nextToken();
+                    deviceJob.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
                     deviceJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    deviceJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

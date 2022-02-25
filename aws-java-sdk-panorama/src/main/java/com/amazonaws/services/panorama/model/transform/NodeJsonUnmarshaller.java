@@ -48,33 +48,41 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NodeId", targetDepth)) {
+                if (context.testExpression("Category", targetDepth)) {
                     context.nextToken();
-                    node.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
+                    node.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    node.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    node.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     node.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Category", targetDepth)) {
+                if (context.testExpression("NodeId", targetDepth)) {
                     context.nextToken();
-                    node.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                    node.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
                     context.nextToken();
                     node.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageName", targetDepth)) {
+                if (context.testExpression("PackageArn", targetDepth)) {
                     context.nextToken();
-                    node.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                    node.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageId", targetDepth)) {
                     context.nextToken();
                     node.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageArn", targetDepth)) {
+                if (context.testExpression("PackageName", targetDepth)) {
                     context.nextToken();
-                    node.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    node.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageVersion", targetDepth)) {
                     context.nextToken();
@@ -83,14 +91,6 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                 if (context.testExpression("PatchVersion", targetDepth)) {
                     context.nextToken();
                     node.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Description", targetDepth)) {
-                    context.nextToken();
-                    node.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    node.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -25,16 +25,56 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of nodes.
-     * </p>
-     */
-    private java.util.List<Node> nodes;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of nodes.
+     * </p>
+     */
+    private java.util.List<Node> nodes;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNodesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,46 +147,6 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListNodesResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNodes() != null)
-            sb.append("Nodes: ").append(getNodes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getNodes() != null)
+            sb.append("Nodes: ").append(getNodes());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (obj instanceof ListNodesResult == false)
             return false;
         ListNodesResult other = (ListNodesResult) obj;
-        if (other.getNodes() == null ^ this.getNodes() == null)
-            return false;
-        if (other.getNodes() != null && other.getNodes().equals(this.getNodes()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getNodes() == null ^ this.getNodes() == null)
+            return false;
+        if (other.getNodes() != null && other.getNodes().equals(this.getNodes()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNodes() == null) ? 0 : getNodes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNodes() == null) ? 0 : getNodes().hashCode());
         return hashCode;
     }
 

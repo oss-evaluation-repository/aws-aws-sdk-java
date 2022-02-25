@@ -40,6 +40,12 @@ public class NetworkPayload implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EthernetPayload ethernet1;
+    /**
+     * <p>
+     * Network time protocol (NTP) server settings.
+     * </p>
+     */
+    private NtpPayload ntp;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class NetworkPayload implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Network time protocol (NTP) server settings.
+     * </p>
+     * 
+     * @param ntp
+     *        Network time protocol (NTP) server settings.
+     */
+
+    public void setNtp(NtpPayload ntp) {
+        this.ntp = ntp;
+    }
+
+    /**
+     * <p>
+     * Network time protocol (NTP) server settings.
+     * </p>
+     * 
+     * @return Network time protocol (NTP) server settings.
+     */
+
+    public NtpPayload getNtp() {
+        return this.ntp;
+    }
+
+    /**
+     * <p>
+     * Network time protocol (NTP) server settings.
+     * </p>
+     * 
+     * @param ntp
+     *        Network time protocol (NTP) server settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkPayload withNtp(NtpPayload ntp) {
+        setNtp(ntp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class NetworkPayload implements Serializable, Cloneable, StructuredPojo {
         if (getEthernet0() != null)
             sb.append("Ethernet0: ").append(getEthernet0()).append(",");
         if (getEthernet1() != null)
-            sb.append("Ethernet1: ").append(getEthernet1());
+            sb.append("Ethernet1: ").append(getEthernet1()).append(",");
+        if (getNtp() != null)
+            sb.append("Ntp: ").append(getNtp());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class NetworkPayload implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEthernet1() != null && other.getEthernet1().equals(this.getEthernet1()) == false)
             return false;
+        if (other.getNtp() == null ^ this.getNtp() == null)
+            return false;
+        if (other.getNtp() != null && other.getNtp().equals(this.getNtp()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class NetworkPayload implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getEthernet0() == null) ? 0 : getEthernet0().hashCode());
         hashCode = prime * hashCode + ((getEthernet1() == null) ? 0 : getEthernet1().hashCode());
+        hashCode = prime * hashCode + ((getNtp() == null) ? 0 : getNtp().hashCode());
         return hashCode;
     }
 

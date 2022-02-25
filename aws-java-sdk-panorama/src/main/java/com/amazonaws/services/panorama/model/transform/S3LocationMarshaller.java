@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3LocationMarshaller {
 
-    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Region").build();
     private static final MarshallingInfo<String> BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketName").build();
     private static final MarshallingInfo<String> OBJECTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ObjectKey").build();
+    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Region").build();
 
     private static final S3LocationMarshaller instance = new S3LocationMarshaller();
 
@@ -50,9 +50,9 @@ public class S3LocationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(s3Location.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(s3Location.getBucketName(), BUCKETNAME_BINDING);
             protocolMarshaller.marshall(s3Location.getObjectKey(), OBJECTKEY_BINDING);
+            protocolMarshaller.marshall(s3Location.getRegion(), REGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

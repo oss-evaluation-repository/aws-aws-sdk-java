@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NodeInputPortMarshaller {
 
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> MAXCONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConnections").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final NodeInputPortMarshaller instance = new NodeInputPortMarshaller();
 
@@ -54,11 +54,11 @@ public class NodeInputPortMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(nodeInputPort.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(nodeInputPort.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(nodeInputPort.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(nodeInputPort.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(nodeInputPort.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(nodeInputPort.getMaxConnections(), MAXCONNECTIONS_BINDING);
+            protocolMarshaller.marshall(nodeInputPort.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(nodeInputPort.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

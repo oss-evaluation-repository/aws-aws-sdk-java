@@ -27,10 +27,16 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A name for the application instance.
+     * The ID of an application instance to replace with the new instance.
      * </p>
      */
-    private String name;
+    private String applicationInstanceIdToReplace;
+    /**
+     * <p>
+     * A device's ID.
+     * </p>
+     */
+    private String defaultRuntimeContextDevice;
     /**
      * <p>
      * A description for the application instance.
@@ -39,34 +45,28 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
-     * The application's manifest document.
-     * </p>
-     */
-    private ManifestPayload manifestPayload;
-    /**
-     * <p>
      * Setting overrides for the application manifest.
      * </p>
      */
     private ManifestOverridesPayload manifestOverridesPayload;
     /**
      * <p>
-     * The ID of an application instance to replace with the new instance.
+     * The application's manifest document.
      * </p>
      */
-    private String applicationInstanceIdToReplace;
+    private ManifestPayload manifestPayload;
+    /**
+     * <p>
+     * A name for the application instance.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The ARN of a runtime role for the application instance.
      * </p>
      */
     private String runtimeRoleArn;
-    /**
-     * <p>
-     * A device's ID.
-     * </p>
-     */
-    private String defaultRuntimeContextDevice;
     /**
      * <p>
      * Tags for the application instance.
@@ -76,41 +76,81 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A name for the application instance.
+     * The ID of an application instance to replace with the new instance.
      * </p>
      * 
-     * @param name
-     *        A name for the application instance.
+     * @param applicationInstanceIdToReplace
+     *        The ID of an application instance to replace with the new instance.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
+        this.applicationInstanceIdToReplace = applicationInstanceIdToReplace;
     }
 
     /**
      * <p>
-     * A name for the application instance.
+     * The ID of an application instance to replace with the new instance.
      * </p>
      * 
-     * @return A name for the application instance.
+     * @return The ID of an application instance to replace with the new instance.
      */
 
-    public String getName() {
-        return this.name;
+    public String getApplicationInstanceIdToReplace() {
+        return this.applicationInstanceIdToReplace;
     }
 
     /**
      * <p>
-     * A name for the application instance.
+     * The ID of an application instance to replace with the new instance.
      * </p>
      * 
-     * @param name
-     *        A name for the application instance.
+     * @param applicationInstanceIdToReplace
+     *        The ID of an application instance to replace with the new instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationInstanceRequest withName(String name) {
-        setName(name);
+    public CreateApplicationInstanceRequest withApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
+        setApplicationInstanceIdToReplace(applicationInstanceIdToReplace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A device's ID.
+     * </p>
+     * 
+     * @param defaultRuntimeContextDevice
+     *        A device's ID.
+     */
+
+    public void setDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
+        this.defaultRuntimeContextDevice = defaultRuntimeContextDevice;
+    }
+
+    /**
+     * <p>
+     * A device's ID.
+     * </p>
+     * 
+     * @return A device's ID.
+     */
+
+    public String getDefaultRuntimeContextDevice() {
+        return this.defaultRuntimeContextDevice;
+    }
+
+    /**
+     * <p>
+     * A device's ID.
+     * </p>
+     * 
+     * @param defaultRuntimeContextDevice
+     *        A device's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationInstanceRequest withDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
+        setDefaultRuntimeContextDevice(defaultRuntimeContextDevice);
         return this;
     }
 
@@ -156,46 +196,6 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The application's manifest document.
-     * </p>
-     * 
-     * @param manifestPayload
-     *        The application's manifest document.
-     */
-
-    public void setManifestPayload(ManifestPayload manifestPayload) {
-        this.manifestPayload = manifestPayload;
-    }
-
-    /**
-     * <p>
-     * The application's manifest document.
-     * </p>
-     * 
-     * @return The application's manifest document.
-     */
-
-    public ManifestPayload getManifestPayload() {
-        return this.manifestPayload;
-    }
-
-    /**
-     * <p>
-     * The application's manifest document.
-     * </p>
-     * 
-     * @param manifestPayload
-     *        The application's manifest document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationInstanceRequest withManifestPayload(ManifestPayload manifestPayload) {
-        setManifestPayload(manifestPayload);
-        return this;
-    }
-
-    /**
-     * <p>
      * Setting overrides for the application manifest.
      * </p>
      * 
@@ -236,41 +236,81 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of an application instance to replace with the new instance.
+     * The application's manifest document.
      * </p>
      * 
-     * @param applicationInstanceIdToReplace
-     *        The ID of an application instance to replace with the new instance.
+     * @param manifestPayload
+     *        The application's manifest document.
      */
 
-    public void setApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
-        this.applicationInstanceIdToReplace = applicationInstanceIdToReplace;
+    public void setManifestPayload(ManifestPayload manifestPayload) {
+        this.manifestPayload = manifestPayload;
     }
 
     /**
      * <p>
-     * The ID of an application instance to replace with the new instance.
+     * The application's manifest document.
      * </p>
      * 
-     * @return The ID of an application instance to replace with the new instance.
+     * @return The application's manifest document.
      */
 
-    public String getApplicationInstanceIdToReplace() {
-        return this.applicationInstanceIdToReplace;
+    public ManifestPayload getManifestPayload() {
+        return this.manifestPayload;
     }
 
     /**
      * <p>
-     * The ID of an application instance to replace with the new instance.
+     * The application's manifest document.
      * </p>
      * 
-     * @param applicationInstanceIdToReplace
-     *        The ID of an application instance to replace with the new instance.
+     * @param manifestPayload
+     *        The application's manifest document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationInstanceRequest withApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
-        setApplicationInstanceIdToReplace(applicationInstanceIdToReplace);
+    public CreateApplicationInstanceRequest withManifestPayload(ManifestPayload manifestPayload) {
+        setManifestPayload(manifestPayload);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A name for the application instance.
+     * </p>
+     * 
+     * @param name
+     *        A name for the application instance.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name for the application instance.
+     * </p>
+     * 
+     * @return A name for the application instance.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name for the application instance.
+     * </p>
+     * 
+     * @param name
+     *        A name for the application instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationInstanceRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -311,46 +351,6 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     public CreateApplicationInstanceRequest withRuntimeRoleArn(String runtimeRoleArn) {
         setRuntimeRoleArn(runtimeRoleArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A device's ID.
-     * </p>
-     * 
-     * @param defaultRuntimeContextDevice
-     *        A device's ID.
-     */
-
-    public void setDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
-        this.defaultRuntimeContextDevice = defaultRuntimeContextDevice;
-    }
-
-    /**
-     * <p>
-     * A device's ID.
-     * </p>
-     * 
-     * @return A device's ID.
-     */
-
-    public String getDefaultRuntimeContextDevice() {
-        return this.defaultRuntimeContextDevice;
-    }
-
-    /**
-     * <p>
-     * A device's ID.
-     * </p>
-     * 
-     * @param defaultRuntimeContextDevice
-     *        A device's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationInstanceRequest withDefaultRuntimeContextDevice(String defaultRuntimeContextDevice) {
-        setDefaultRuntimeContextDevice(defaultRuntimeContextDevice);
         return this;
     }
 
@@ -434,20 +434,20 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getManifestPayload() != null)
-            sb.append("ManifestPayload: ").append(getManifestPayload()).append(",");
-        if (getManifestOverridesPayload() != null)
-            sb.append("ManifestOverridesPayload: ").append(getManifestOverridesPayload()).append(",");
         if (getApplicationInstanceIdToReplace() != null)
             sb.append("ApplicationInstanceIdToReplace: ").append(getApplicationInstanceIdToReplace()).append(",");
-        if (getRuntimeRoleArn() != null)
-            sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getDefaultRuntimeContextDevice() != null)
             sb.append("DefaultRuntimeContextDevice: ").append(getDefaultRuntimeContextDevice()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getManifestOverridesPayload() != null)
+            sb.append("ManifestOverridesPayload: ").append(getManifestOverridesPayload()).append(",");
+        if (getManifestPayload() != null)
+            sb.append("ManifestPayload: ").append(getManifestPayload()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getRuntimeRoleArn() != null)
+            sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -464,34 +464,34 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof CreateApplicationInstanceRequest == false)
             return false;
         CreateApplicationInstanceRequest other = (CreateApplicationInstanceRequest) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getManifestPayload() == null ^ this.getManifestPayload() == null)
-            return false;
-        if (other.getManifestPayload() != null && other.getManifestPayload().equals(this.getManifestPayload()) == false)
-            return false;
-        if (other.getManifestOverridesPayload() == null ^ this.getManifestOverridesPayload() == null)
-            return false;
-        if (other.getManifestOverridesPayload() != null && other.getManifestOverridesPayload().equals(this.getManifestOverridesPayload()) == false)
-            return false;
         if (other.getApplicationInstanceIdToReplace() == null ^ this.getApplicationInstanceIdToReplace() == null)
             return false;
         if (other.getApplicationInstanceIdToReplace() != null
                 && other.getApplicationInstanceIdToReplace().equals(this.getApplicationInstanceIdToReplace()) == false)
             return false;
-        if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
-            return false;
-        if (other.getRuntimeRoleArn() != null && other.getRuntimeRoleArn().equals(this.getRuntimeRoleArn()) == false)
-            return false;
         if (other.getDefaultRuntimeContextDevice() == null ^ this.getDefaultRuntimeContextDevice() == null)
             return false;
         if (other.getDefaultRuntimeContextDevice() != null && other.getDefaultRuntimeContextDevice().equals(this.getDefaultRuntimeContextDevice()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getManifestOverridesPayload() == null ^ this.getManifestOverridesPayload() == null)
+            return false;
+        if (other.getManifestOverridesPayload() != null && other.getManifestOverridesPayload().equals(this.getManifestOverridesPayload()) == false)
+            return false;
+        if (other.getManifestPayload() == null ^ this.getManifestPayload() == null)
+            return false;
+        if (other.getManifestPayload() != null && other.getManifestPayload().equals(this.getManifestPayload()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
+            return false;
+        if (other.getRuntimeRoleArn() != null && other.getRuntimeRoleArn().equals(this.getRuntimeRoleArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -505,13 +505,13 @@ public class CreateApplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getManifestPayload() == null) ? 0 : getManifestPayload().hashCode());
-        hashCode = prime * hashCode + ((getManifestOverridesPayload() == null) ? 0 : getManifestOverridesPayload().hashCode());
         hashCode = prime * hashCode + ((getApplicationInstanceIdToReplace() == null) ? 0 : getApplicationInstanceIdToReplace().hashCode());
-        hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDefaultRuntimeContextDevice() == null) ? 0 : getDefaultRuntimeContextDevice().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getManifestOverridesPayload() == null) ? 0 : getManifestOverridesPayload().hashCode());
+        hashCode = prime * hashCode + ((getManifestPayload() == null) ? 0 : getManifestPayload().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

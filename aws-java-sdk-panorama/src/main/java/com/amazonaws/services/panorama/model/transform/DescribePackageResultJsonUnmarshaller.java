@@ -48,6 +48,14 @@ public class DescribePackageResultJsonUnmarshaller implements Unmarshaller<Descr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    describePackageResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    describePackageResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("PackageId", targetDepth)) {
                     context.nextToken();
                     describePackageResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,34 +64,26 @@ public class DescribePackageResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describePackageResult.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Arn", targetDepth)) {
-                    context.nextToken();
-                    describePackageResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("StorageLocation", targetDepth)) {
-                    context.nextToken();
-                    describePackageResult.setStorageLocation(StorageLocationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("ReadAccessPrincipalArns", targetDepth)) {
                     context.nextToken();
                     describePackageResult.setReadAccessPrincipalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("WriteAccessPrincipalArns", targetDepth)) {
+                if (context.testExpression("StorageLocation", targetDepth)) {
                     context.nextToken();
-                    describePackageResult.setWriteAccessPrincipalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    describePackageResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    describePackageResult.setStorageLocation(StorageLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     describePackageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("WriteAccessPrincipalArns", targetDepth)) {
+                    context.nextToken();
+                    describePackageResult.setWriteAccessPrincipalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

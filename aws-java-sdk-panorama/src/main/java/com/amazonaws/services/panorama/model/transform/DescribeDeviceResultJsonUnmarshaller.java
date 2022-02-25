@@ -48,45 +48,64 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DeviceId", targetDepth)) {
+                if (context.testExpression("AlternateSoftwares", targetDepth)) {
                     context.nextToken();
-                    describeDeviceResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeDeviceResult.setAlternateSoftwares(new ListUnmarshaller<AlternateSoftwareMetadata>(AlternateSoftwareMetadataJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("CurrentNetworkingStatus", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setCurrentNetworkingStatus(NetworkStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CurrentSoftware", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setCurrentSoftware(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Type", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceConnectionStatus", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setDeviceConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreatedTime", targetDepth)) {
+                if (context.testExpression("DeviceId", targetDepth)) {
                     context.nextToken();
-                    describeDeviceResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    describeDeviceResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ProvisioningStatus", targetDepth)) {
+                if (context.testExpression("LatestAlternateSoftware", targetDepth)) {
                     context.nextToken();
-                    describeDeviceResult.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeDeviceResult.setLatestAlternateSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestSoftware", targetDepth)) {
                     context.nextToken();
                     describeDeviceResult.setLatestSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CurrentSoftware", targetDepth)) {
+                if (context.testExpression("LeaseExpirationTime", targetDepth)) {
                     context.nextToken();
-                    describeDeviceResult.setCurrentSoftware(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeDeviceResult.setLeaseExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetworkingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setNetworkingConfiguration(NetworkPayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ProvisioningStatus", targetDepth)) {
+                    context.nextToken();
+                    describeDeviceResult.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SerialNumber", targetDepth)) {
                     context.nextToken();
@@ -97,17 +116,9 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
                     describeDeviceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
-                if (context.testExpression("NetworkingConfiguration", targetDepth)) {
+                if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    describeDeviceResult.setNetworkingConfiguration(NetworkPayloadJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("CurrentNetworkingStatus", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceResult.setCurrentNetworkingStatus(NetworkStatusJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("LeaseExpirationTime", targetDepth)) {
-                    context.nextToken();
-                    describeDeviceResult.setLeaseExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    describeDeviceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

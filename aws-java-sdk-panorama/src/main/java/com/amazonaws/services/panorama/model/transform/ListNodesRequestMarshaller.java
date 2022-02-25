@@ -29,6 +29,10 @@ public class ListNodesRequestMarshaller {
 
     private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("category").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ownerAccount").build();
     private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -37,10 +41,6 @@ public class ListNodesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("packageVersion").build();
     private static final MarshallingInfo<String> PATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("patchVersion").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListNodesRequestMarshaller instance = new ListNodesRequestMarshaller();
 
@@ -59,12 +59,12 @@ public class ListNodesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listNodesRequest.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(listNodesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listNodesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listNodesRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(listNodesRequest.getPackageName(), PACKAGENAME_BINDING);
             protocolMarshaller.marshall(listNodesRequest.getPackageVersion(), PACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(listNodesRequest.getPatchVersion(), PATCHVERSION_BINDING);
-            protocolMarshaller.marshall(listNodesRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listNodesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

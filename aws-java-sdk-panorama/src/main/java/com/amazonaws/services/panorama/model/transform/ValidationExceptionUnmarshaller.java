@@ -52,14 +52,6 @@ public class ValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Reason", targetDepth)) {
-                    context.nextToken();
-                    validationException.setReason(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ErrorId", targetDepth)) {
-                    context.nextToken();
-                    validationException.setErrorId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ErrorArguments", targetDepth)) {
                     context.nextToken();
                     validationException.setErrorArguments(new ListUnmarshaller<ValidationExceptionErrorArgument>(
@@ -67,11 +59,19 @@ public class ValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ErrorId", targetDepth)) {
+                    context.nextToken();
+                    validationException.setErrorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Fields", targetDepth)) {
                     context.nextToken();
                     validationException.setFields(new ListUnmarshaller<ValidationExceptionField>(ValidationExceptionFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("Reason", targetDepth)) {
+                    context.nextToken();
+                    validationException.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

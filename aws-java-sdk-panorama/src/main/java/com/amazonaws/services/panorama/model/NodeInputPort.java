@@ -30,10 +30,10 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The input port's name.
+     * The input port's default value.
      * </p>
      */
-    private String name;
+    private String defaultValue;
     /**
      * <p>
      * The input port's description.
@@ -42,60 +42,60 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The input port's type.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
-     * The input port's default value.
-     * </p>
-     */
-    private String defaultValue;
-    /**
-     * <p>
      * The input port's max connections.
      * </p>
      */
     private Integer maxConnections;
-
     /**
      * <p>
      * The input port's name.
      * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The input port's type.
+     * </p>
+     */
+    private String type;
+
+    /**
+     * <p>
+     * The input port's default value.
+     * </p>
      * 
-     * @param name
-     *        The input port's name.
+     * @param defaultValue
+     *        The input port's default value.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 
     /**
      * <p>
-     * The input port's name.
+     * The input port's default value.
      * </p>
      * 
-     * @return The input port's name.
+     * @return The input port's default value.
      */
 
-    public String getName() {
-        return this.name;
+    public String getDefaultValue() {
+        return this.defaultValue;
     }
 
     /**
      * <p>
-     * The input port's name.
+     * The input port's default value.
      * </p>
      * 
-     * @param name
-     *        The input port's name.
+     * @param defaultValue
+     *        The input port's default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NodeInputPort withName(String name) {
-        setName(name);
+    public NodeInputPort withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
         return this;
     }
 
@@ -136,6 +136,86 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
 
     public NodeInputPort withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input port's max connections.
+     * </p>
+     * 
+     * @param maxConnections
+     *        The input port's max connections.
+     */
+
+    public void setMaxConnections(Integer maxConnections) {
+        this.maxConnections = maxConnections;
+    }
+
+    /**
+     * <p>
+     * The input port's max connections.
+     * </p>
+     * 
+     * @return The input port's max connections.
+     */
+
+    public Integer getMaxConnections() {
+        return this.maxConnections;
+    }
+
+    /**
+     * <p>
+     * The input port's max connections.
+     * </p>
+     * 
+     * @param maxConnections
+     *        The input port's max connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeInputPort withMaxConnections(Integer maxConnections) {
+        setMaxConnections(maxConnections);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input port's name.
+     * </p>
+     * 
+     * @param name
+     *        The input port's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The input port's name.
+     * </p>
+     * 
+     * @return The input port's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The input port's name.
+     * </p>
+     * 
+     * @param name
+     *        The input port's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeInputPort withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -199,86 +279,6 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The input port's default value.
-     * </p>
-     * 
-     * @param defaultValue
-     *        The input port's default value.
-     */
-
-    public void setDefaultValue(String defaultValue) {
-        this.defaultValue = defaultValue;
-    }
-
-    /**
-     * <p>
-     * The input port's default value.
-     * </p>
-     * 
-     * @return The input port's default value.
-     */
-
-    public String getDefaultValue() {
-        return this.defaultValue;
-    }
-
-    /**
-     * <p>
-     * The input port's default value.
-     * </p>
-     * 
-     * @param defaultValue
-     *        The input port's default value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NodeInputPort withDefaultValue(String defaultValue) {
-        setDefaultValue(defaultValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The input port's max connections.
-     * </p>
-     * 
-     * @param maxConnections
-     *        The input port's max connections.
-     */
-
-    public void setMaxConnections(Integer maxConnections) {
-        this.maxConnections = maxConnections;
-    }
-
-    /**
-     * <p>
-     * The input port's max connections.
-     * </p>
-     * 
-     * @return The input port's max connections.
-     */
-
-    public Integer getMaxConnections() {
-        return this.maxConnections;
-    }
-
-    /**
-     * <p>
-     * The input port's max connections.
-     * </p>
-     * 
-     * @param maxConnections
-     *        The input port's max connections.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NodeInputPort withMaxConnections(Integer maxConnections) {
-        setMaxConnections(maxConnections);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -290,16 +290,16 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getDefaultValue() != null)
             sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getMaxConnections() != null)
-            sb.append("MaxConnections: ").append(getMaxConnections());
+            sb.append("MaxConnections: ").append(getMaxConnections()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -314,25 +314,25 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof NodeInputPort == false)
             return false;
         NodeInputPort other = (NodeInputPort) obj;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
-        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
-            return false;
-        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
-            return false;
         if (other.getMaxConnections() == null ^ this.getMaxConnections() == null)
             return false;
         if (other.getMaxConnections() != null && other.getMaxConnections().equals(this.getMaxConnections()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -342,11 +342,11 @@ public class NodeInputPort implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMaxConnections() == null) ? 0 : getMaxConnections().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

@@ -25,6 +25,7 @@ import java.util.concurrent.ExecutorService;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
+ * <p>
  * <fullname>AWS Panorama</fullname>
  * <p>
  * <b>Overview</b>
@@ -33,6 +34,7 @@ import java.util.concurrent.ExecutorService;
  * This is the <i>AWS Panorama API Reference</i>. For an introduction to the service, see <a
  * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What is AWS Panorama?</a> in the <i>AWS
  * Panorama Developer Guide</i>.
+ * </p>
  * </p>
  */
 @ThreadSafe

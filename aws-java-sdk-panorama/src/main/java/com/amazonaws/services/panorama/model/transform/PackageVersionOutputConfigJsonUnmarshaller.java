@@ -48,6 +48,10 @@ public class PackageVersionOutputConfigJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("MarkLatest", targetDepth)) {
+                    context.nextToken();
+                    packageVersionOutputConfig.setMarkLatest(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("PackageName", targetDepth)) {
                     context.nextToken();
                     packageVersionOutputConfig.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,10 +59,6 @@ public class PackageVersionOutputConfigJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("PackageVersion", targetDepth)) {
                     context.nextToken();
                     packageVersionOutputConfig.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("MarkLatest", targetDepth)) {
-                    context.nextToken();
-                    packageVersionOutputConfig.setMarkLatest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

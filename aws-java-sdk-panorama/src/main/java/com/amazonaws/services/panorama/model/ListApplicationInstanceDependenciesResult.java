@@ -26,16 +26,56 @@ public class ListApplicationInstanceDependenciesResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of package objects.
-     * </p>
-     */
-    private java.util.List<PackageObject> packageObjects;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of package objects.
+     * </p>
+     */
+    private java.util.List<PackageObject> packageObjects;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationInstanceDependenciesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,46 +148,6 @@ public class ListApplicationInstanceDependenciesResult extends com.amazonaws.Ama
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListApplicationInstanceDependenciesResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -159,10 +159,10 @@ public class ListApplicationInstanceDependenciesResult extends com.amazonaws.Ama
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPackageObjects() != null)
-            sb.append("PackageObjects: ").append(getPackageObjects()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPackageObjects() != null)
+            sb.append("PackageObjects: ").append(getPackageObjects());
         sb.append("}");
         return sb.toString();
     }
@@ -177,13 +177,13 @@ public class ListApplicationInstanceDependenciesResult extends com.amazonaws.Ama
         if (obj instanceof ListApplicationInstanceDependenciesResult == false)
             return false;
         ListApplicationInstanceDependenciesResult other = (ListApplicationInstanceDependenciesResult) obj;
-        if (other.getPackageObjects() == null ^ this.getPackageObjects() == null)
-            return false;
-        if (other.getPackageObjects() != null && other.getPackageObjects().equals(this.getPackageObjects()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPackageObjects() == null ^ this.getPackageObjects() == null)
+            return false;
+        if (other.getPackageObjects() != null && other.getPackageObjects().equals(this.getPackageObjects()) == false)
             return false;
         return true;
     }
@@ -193,8 +193,8 @@ public class ListApplicationInstanceDependenciesResult extends com.amazonaws.Ama
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPackageObjects() == null) ? 0 : getPackageObjects().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPackageObjects() == null) ? 0 : getPackageObjects().hashCode());
         return hashCode;
     }
 

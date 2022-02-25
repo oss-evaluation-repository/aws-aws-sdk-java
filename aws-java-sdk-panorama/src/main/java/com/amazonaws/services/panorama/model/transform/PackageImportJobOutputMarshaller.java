@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PackageImportJobOutputMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> OUTPUTS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputS3Location").build();
     private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PackageId").build();
     private static final MarshallingInfo<String> PACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageVersion").build();
     private static final MarshallingInfo<String> PATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatchVersion").build();
-    private static final MarshallingInfo<StructuredPojo> OUTPUTS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputS3Location").build();
 
     private static final PackageImportJobOutputMarshaller instance = new PackageImportJobOutputMarshaller();
 
@@ -52,10 +52,10 @@ public class PackageImportJobOutputMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(packageImportJobOutput.getOutputS3Location(), OUTPUTS3LOCATION_BINDING);
             protocolMarshaller.marshall(packageImportJobOutput.getPackageId(), PACKAGEID_BINDING);
             protocolMarshaller.marshall(packageImportJobOutput.getPackageVersion(), PACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(packageImportJobOutput.getPatchVersion(), PATCHVERSION_BINDING);
-            protocolMarshaller.marshall(packageImportJobOutput.getOutputS3Location(), OUTPUTS3LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -226,25 +226,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -665,25 +646,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1687,25 +1649,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -1861,25 +1804,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2053,25 +1977,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2226,25 +2131,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Memory optimized with data tiering:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Current generation:
-     *         </p>
-     *         <p>
-     *         <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *         <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -2418,25 +2304,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2592,25 +2459,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *        </p>
      *        </li>
      *        </ul>

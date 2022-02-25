@@ -34,7 +34,7 @@ public class ListApplicationInstanceDependenciesRequestProtocolMarshaller implem
         Marshaller<Request<ListApplicationInstanceDependenciesRequest>, ListApplicationInstanceDependenciesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/application-instances/{applicationInstanceId}/package-dependencies").httpMethodName(HttpMethodName.GET)
+            .requestUri("/application-instances/{ApplicationInstanceId}/package-dependencies").httpMethodName(HttpMethodName.GET)
             .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSPanorama").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

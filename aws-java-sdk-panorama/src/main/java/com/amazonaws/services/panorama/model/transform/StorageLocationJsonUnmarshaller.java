@@ -48,25 +48,25 @@ public class StorageLocationJsonUnmarshaller implements Unmarshaller<StorageLoca
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("BinaryPrefixLocation", targetDepth)) {
+                    context.nextToken();
+                    storageLocation.setBinaryPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Bucket", targetDepth)) {
                     context.nextToken();
                     storageLocation.setBucket(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("RepoPrefixLocation", targetDepth)) {
-                    context.nextToken();
-                    storageLocation.setRepoPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneratedPrefixLocation", targetDepth)) {
                     context.nextToken();
                     storageLocation.setGeneratedPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("BinaryPrefixLocation", targetDepth)) {
-                    context.nextToken();
-                    storageLocation.setBinaryPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ManifestPrefixLocation", targetDepth)) {
                     context.nextToken();
                     storageLocation.setManifestPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RepoPrefixLocation", targetDepth)) {
+                    context.nextToken();
+                    storageLocation.setRepoPrefixLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

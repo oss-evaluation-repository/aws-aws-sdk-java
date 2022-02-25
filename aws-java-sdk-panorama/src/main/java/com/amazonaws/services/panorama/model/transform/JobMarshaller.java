@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobMarshaller {
 
-    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JobId").build();
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DeviceId").build();
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobId").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -48,8 +48,8 @@ public class JobMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(job.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(job.getDeviceId(), DEVICEID_BINDING);
+            protocolMarshaller.marshall(job.getJobId(), JOBID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,22 +25,28 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Whether the version is the latest available.
+     * </p>
+     */
+    private Boolean isLatestPatch;
+    /**
+     * <p>
      * The account ID of the version's owner.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * The version's ID.
-     * </p>
-     */
-    private String packageId;
-    /**
-     * <p>
      * The ARN of the package.
      * </p>
      */
     private String packageArn;
+    /**
+     * <p>
+     * The version's ID.
+     * </p>
+     */
+    private String packageId;
     /**
      * <p>
      * The version's name.
@@ -61,10 +67,10 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
     private String patchVersion;
     /**
      * <p>
-     * Whether the version is the latest available.
+     * The version's registered time.
      * </p>
      */
-    private Boolean isLatestPatch;
+    private java.util.Date registeredTime;
     /**
      * <p>
      * The version's status.
@@ -77,12 +83,58 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String statusDescription;
+
     /**
      * <p>
-     * The version's registered time.
+     * Whether the version is the latest available.
      * </p>
+     * 
+     * @param isLatestPatch
+     *        Whether the version is the latest available.
      */
-    private java.util.Date registeredTime;
+
+    public void setIsLatestPatch(Boolean isLatestPatch) {
+        this.isLatestPatch = isLatestPatch;
+    }
+
+    /**
+     * <p>
+     * Whether the version is the latest available.
+     * </p>
+     * 
+     * @return Whether the version is the latest available.
+     */
+
+    public Boolean getIsLatestPatch() {
+        return this.isLatestPatch;
+    }
+
+    /**
+     * <p>
+     * Whether the version is the latest available.
+     * </p>
+     * 
+     * @param isLatestPatch
+     *        Whether the version is the latest available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageVersionResult withIsLatestPatch(Boolean isLatestPatch) {
+        setIsLatestPatch(isLatestPatch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the version is the latest available.
+     * </p>
+     * 
+     * @return Whether the version is the latest available.
+     */
+
+    public Boolean isLatestPatch() {
+        return this.isLatestPatch;
+    }
 
     /**
      * <p>
@@ -126,46 +178,6 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The version's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The version's ID.
-     */
-
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
-    /**
-     * <p>
-     * The version's ID.
-     * </p>
-     * 
-     * @return The version's ID.
-     */
-
-    public String getPackageId() {
-        return this.packageId;
-    }
-
-    /**
-     * <p>
-     * The version's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The version's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageVersionResult withPackageId(String packageId) {
-        setPackageId(packageId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The ARN of the package.
      * </p>
      * 
@@ -201,6 +213,46 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     public DescribePackageVersionResult withPackageArn(String packageArn) {
         setPackageArn(packageArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The version's ID.
+     */
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    /**
+     * <p>
+     * The version's ID.
+     * </p>
+     * 
+     * @return The version's ID.
+     */
+
+    public String getPackageId() {
+        return this.packageId;
+    }
+
+    /**
+     * <p>
+     * The version's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The version's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageVersionResult withPackageId(String packageId) {
+        setPackageId(packageId);
         return this;
     }
 
@@ -326,54 +378,42 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Whether the version is the latest available.
+     * The version's registered time.
      * </p>
      * 
-     * @param isLatestPatch
-     *        Whether the version is the latest available.
+     * @param registeredTime
+     *        The version's registered time.
      */
 
-    public void setIsLatestPatch(Boolean isLatestPatch) {
-        this.isLatestPatch = isLatestPatch;
+    public void setRegisteredTime(java.util.Date registeredTime) {
+        this.registeredTime = registeredTime;
     }
 
     /**
      * <p>
-     * Whether the version is the latest available.
+     * The version's registered time.
      * </p>
      * 
-     * @return Whether the version is the latest available.
+     * @return The version's registered time.
      */
 
-    public Boolean getIsLatestPatch() {
-        return this.isLatestPatch;
+    public java.util.Date getRegisteredTime() {
+        return this.registeredTime;
     }
 
     /**
      * <p>
-     * Whether the version is the latest available.
+     * The version's registered time.
      * </p>
      * 
-     * @param isLatestPatch
-     *        Whether the version is the latest available.
+     * @param registeredTime
+     *        The version's registered time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribePackageVersionResult withIsLatestPatch(Boolean isLatestPatch) {
-        setIsLatestPatch(isLatestPatch);
+    public DescribePackageVersionResult withRegisteredTime(java.util.Date registeredTime) {
+        setRegisteredTime(registeredTime);
         return this;
-    }
-
-    /**
-     * <p>
-     * Whether the version is the latest available.
-     * </p>
-     * 
-     * @return Whether the version is the latest available.
-     */
-
-    public Boolean isLatestPatch() {
-        return this.isLatestPatch;
     }
 
     /**
@@ -476,46 +516,6 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * The version's registered time.
-     * </p>
-     * 
-     * @param registeredTime
-     *        The version's registered time.
-     */
-
-    public void setRegisteredTime(java.util.Date registeredTime) {
-        this.registeredTime = registeredTime;
-    }
-
-    /**
-     * <p>
-     * The version's registered time.
-     * </p>
-     * 
-     * @return The version's registered time.
-     */
-
-    public java.util.Date getRegisteredTime() {
-        return this.registeredTime;
-    }
-
-    /**
-     * <p>
-     * The version's registered time.
-     * </p>
-     * 
-     * @param registeredTime
-     *        The version's registered time.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageVersionResult withRegisteredTime(java.util.Date registeredTime) {
-        setRegisteredTime(registeredTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -527,26 +527,26 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getIsLatestPatch() != null)
+            sb.append("IsLatestPatch: ").append(getIsLatestPatch()).append(",");
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
-        if (getPackageId() != null)
-            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getPackageArn() != null)
             sb.append("PackageArn: ").append(getPackageArn()).append(",");
+        if (getPackageId() != null)
+            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getPackageName() != null)
             sb.append("PackageName: ").append(getPackageName()).append(",");
         if (getPackageVersion() != null)
             sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getPatchVersion() != null)
             sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
-        if (getIsLatestPatch() != null)
-            sb.append("IsLatestPatch: ").append(getIsLatestPatch()).append(",");
+        if (getRegisteredTime() != null)
+            sb.append("RegisteredTime: ").append(getRegisteredTime()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDescription() != null)
-            sb.append("StatusDescription: ").append(getStatusDescription()).append(",");
-        if (getRegisteredTime() != null)
-            sb.append("RegisteredTime: ").append(getRegisteredTime());
+            sb.append("StatusDescription: ").append(getStatusDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -561,17 +561,21 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
         if (obj instanceof DescribePackageVersionResult == false)
             return false;
         DescribePackageVersionResult other = (DescribePackageVersionResult) obj;
+        if (other.getIsLatestPatch() == null ^ this.getIsLatestPatch() == null)
+            return false;
+        if (other.getIsLatestPatch() != null && other.getIsLatestPatch().equals(this.getIsLatestPatch()) == false)
+            return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
-        if (other.getPackageId() == null ^ this.getPackageId() == null)
-            return false;
-        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
-            return false;
         if (other.getPackageArn() == null ^ this.getPackageArn() == null)
             return false;
         if (other.getPackageArn() != null && other.getPackageArn().equals(this.getPackageArn()) == false)
+            return false;
+        if (other.getPackageId() == null ^ this.getPackageId() == null)
+            return false;
+        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
             return false;
         if (other.getPackageName() == null ^ this.getPackageName() == null)
             return false;
@@ -585,9 +589,9 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
-        if (other.getIsLatestPatch() == null ^ this.getIsLatestPatch() == null)
+        if (other.getRegisteredTime() == null ^ this.getRegisteredTime() == null)
             return false;
-        if (other.getIsLatestPatch() != null && other.getIsLatestPatch().equals(this.getIsLatestPatch()) == false)
+        if (other.getRegisteredTime() != null && other.getRegisteredTime().equals(this.getRegisteredTime()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -597,10 +601,6 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getStatusDescription() != null && other.getStatusDescription().equals(this.getStatusDescription()) == false)
             return false;
-        if (other.getRegisteredTime() == null ^ this.getRegisteredTime() == null)
-            return false;
-        if (other.getRegisteredTime() != null && other.getRegisteredTime().equals(this.getRegisteredTime()) == false)
-            return false;
         return true;
     }
 
@@ -609,16 +609,16 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getIsLatestPatch() == null) ? 0 : getIsLatestPatch().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
-        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageArn() == null) ? 0 : getPackageArn().hashCode());
+        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
-        hashCode = prime * hashCode + ((getIsLatestPatch() == null) ? 0 : getIsLatestPatch().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredTime() == null) ? 0 : getRegisteredTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDescription() == null) ? 0 : getStatusDescription().hashCode());
-        hashCode = prime * hashCode + ((getRegisteredTime() == null) ? 0 : getRegisteredTime().hashCode());
         return hashCode;
     }
 

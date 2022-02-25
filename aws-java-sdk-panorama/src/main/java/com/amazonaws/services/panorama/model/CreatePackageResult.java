@@ -25,62 +25,22 @@ public class CreatePackageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The package's ID.
-     * </p>
-     */
-    private String packageId;
-    /**
-     * <p>
      * The package's ARN.
      * </p>
      */
     private String arn;
     /**
      * <p>
+     * The package's ID.
+     * </p>
+     */
+    private String packageId;
+    /**
+     * <p>
      * The package's storage location.
      * </p>
      */
     private StorageLocation storageLocation;
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
-     */
-
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @return The package's ID.
-     */
-
-    public String getPackageId() {
-        return this.packageId;
-    }
-
-    /**
-     * <p>
-     * The package's ID.
-     * </p>
-     * 
-     * @param packageId
-     *        The package's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreatePackageResult withPackageId(String packageId) {
-        setPackageId(packageId);
-        return this;
-    }
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class CreatePackageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public CreatePackageResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     */
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @return The package's ID.
+     */
+
+    public String getPackageId() {
+        return this.packageId;
+    }
+
+    /**
+     * <p>
+     * The package's ID.
+     * </p>
+     * 
+     * @param packageId
+     *        The package's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackageResult withPackageId(String packageId) {
+        setPackageId(packageId);
         return this;
     }
 
@@ -174,10 +174,10 @@ public class CreatePackageResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPackageId() != null)
-            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getPackageId() != null)
+            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getStorageLocation() != null)
             sb.append("StorageLocation: ").append(getStorageLocation());
         sb.append("}");
@@ -194,13 +194,13 @@ public class CreatePackageResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof CreatePackageResult == false)
             return false;
         CreatePackageResult other = (CreatePackageResult) obj;
-        if (other.getPackageId() == null ^ this.getPackageId() == null)
-            return false;
-        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
-            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getPackageId() == null ^ this.getPackageId() == null)
+            return false;
+        if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
             return false;
         if (other.getStorageLocation() == null ^ this.getStorageLocation() == null)
             return false;
@@ -214,8 +214,8 @@ public class CreatePackageResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getStorageLocation() == null) ? 0 : getStorageLocation().hashCode());
         return hashCode;
     }

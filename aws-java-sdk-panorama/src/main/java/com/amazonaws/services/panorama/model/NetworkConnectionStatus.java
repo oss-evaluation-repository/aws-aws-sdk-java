@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum NetworkConnectionStatus {
 
     CONNECTED("CONNECTED"),
-    NOT_CONNECTED("NOT_CONNECTED");
+    NOT_CONNECTED("NOT_CONNECTED"),
+    CONNECTING("CONNECTING");
 
     private String value;
 

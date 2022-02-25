@@ -30,10 +30,22 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node's ID.
+     * The node's category.
      * </p>
      */
-    private String nodeId;
+    private String category;
+    /**
+     * <p>
+     * When the node was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
+     * The node's description.
+     * </p>
+     */
+    private String description;
     /**
      * <p>
      * The node's name.
@@ -42,10 +54,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The node's category.
+     * The node's ID.
      * </p>
      */
-    private String category;
+    private String nodeId;
     /**
      * <p>
      * The account ID of the node's owner.
@@ -54,10 +66,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private String ownerAccount;
     /**
      * <p>
-     * The node's package name.
+     * The node's ARN.
      * </p>
      */
-    private String packageName;
+    private String packageArn;
     /**
      * <p>
      * The node's package ID.
@@ -66,10 +78,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private String packageId;
     /**
      * <p>
-     * The node's ARN.
+     * The node's package name.
      * </p>
      */
-    private String packageArn;
+    private String packageName;
     /**
      * <p>
      * The node's package version.
@@ -82,98 +94,6 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String patchVersion;
-    /**
-     * <p>
-     * The node's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * When the node was created.
-     * </p>
-     */
-    private java.util.Date createdTime;
-
-    /**
-     * <p>
-     * The node's ID.
-     * </p>
-     * 
-     * @param nodeId
-     *        The node's ID.
-     */
-
-    public void setNodeId(String nodeId) {
-        this.nodeId = nodeId;
-    }
-
-    /**
-     * <p>
-     * The node's ID.
-     * </p>
-     * 
-     * @return The node's ID.
-     */
-
-    public String getNodeId() {
-        return this.nodeId;
-    }
-
-    /**
-     * <p>
-     * The node's ID.
-     * </p>
-     * 
-     * @param nodeId
-     *        The node's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Node withNodeId(String nodeId) {
-        setNodeId(nodeId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The node's name.
-     * </p>
-     * 
-     * @param name
-     *        The node's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The node's name.
-     * </p>
-     * 
-     * @return The node's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The node's name.
-     * </p>
-     * 
-     * @param name
-     *        The node's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Node withName(String name) {
-        setName(name);
-        return this;
-    }
 
     /**
      * <p>
@@ -236,6 +156,166 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * When the node was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the node was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * When the node was created.
+     * </p>
+     * 
+     * @return When the node was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * When the node was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the node was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The node's description.
+     * </p>
+     * 
+     * @param description
+     *        The node's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The node's description.
+     * </p>
+     * 
+     * @return The node's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The node's description.
+     * </p>
+     * 
+     * @param description
+     *        The node's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The node's name.
+     * </p>
+     * 
+     * @param name
+     *        The node's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The node's name.
+     * </p>
+     * 
+     * @return The node's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The node's name.
+     * </p>
+     * 
+     * @param name
+     *        The node's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The node's ID.
+     * </p>
+     * 
+     * @param nodeId
+     *        The node's ID.
+     */
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    /**
+     * <p>
+     * The node's ID.
+     * </p>
+     * 
+     * @return The node's ID.
+     */
+
+    public String getNodeId() {
+        return this.nodeId;
+    }
+
+    /**
+     * <p>
+     * The node's ID.
+     * </p>
+     * 
+     * @param nodeId
+     *        The node's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withNodeId(String nodeId) {
+        setNodeId(nodeId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The account ID of the node's owner.
      * </p>
      * 
@@ -276,41 +356,41 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node's package name.
+     * The node's ARN.
      * </p>
      * 
-     * @param packageName
-     *        The node's package name.
+     * @param packageArn
+     *        The node's ARN.
      */
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
+    public void setPackageArn(String packageArn) {
+        this.packageArn = packageArn;
     }
 
     /**
      * <p>
-     * The node's package name.
+     * The node's ARN.
      * </p>
      * 
-     * @return The node's package name.
+     * @return The node's ARN.
      */
 
-    public String getPackageName() {
-        return this.packageName;
+    public String getPackageArn() {
+        return this.packageArn;
     }
 
     /**
      * <p>
-     * The node's package name.
+     * The node's ARN.
      * </p>
      * 
-     * @param packageName
-     *        The node's package name.
+     * @param packageArn
+     *        The node's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Node withPackageName(String packageName) {
-        setPackageName(packageName);
+    public Node withPackageArn(String packageArn) {
+        setPackageArn(packageArn);
         return this;
     }
 
@@ -356,41 +436,41 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The node's ARN.
+     * The node's package name.
      * </p>
      * 
-     * @param packageArn
-     *        The node's ARN.
+     * @param packageName
+     *        The node's package name.
      */
 
-    public void setPackageArn(String packageArn) {
-        this.packageArn = packageArn;
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
     /**
      * <p>
-     * The node's ARN.
+     * The node's package name.
      * </p>
      * 
-     * @return The node's ARN.
+     * @return The node's package name.
      */
 
-    public String getPackageArn() {
-        return this.packageArn;
+    public String getPackageName() {
+        return this.packageName;
     }
 
     /**
      * <p>
-     * The node's ARN.
+     * The node's package name.
      * </p>
      * 
-     * @param packageArn
-     *        The node's ARN.
+     * @param packageName
+     *        The node's package name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Node withPackageArn(String packageArn) {
-        setPackageArn(packageArn);
+    public Node withPackageName(String packageName) {
+        setPackageName(packageName);
         return this;
     }
 
@@ -475,86 +555,6 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The node's description.
-     * </p>
-     * 
-     * @param description
-     *        The node's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The node's description.
-     * </p>
-     * 
-     * @return The node's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The node's description.
-     * </p>
-     * 
-     * @param description
-     *        The node's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Node withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the node was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the node was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the node was created.
-     * </p>
-     * 
-     * @return When the node was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the node was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the node was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Node withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -566,28 +566,28 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNodeId() != null)
-            sb.append("NodeId: ").append(getNodeId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getNodeId() != null)
+            sb.append("NodeId: ").append(getNodeId()).append(",");
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
-        if (getPackageName() != null)
-            sb.append("PackageName: ").append(getPackageName()).append(",");
-        if (getPackageId() != null)
-            sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getPackageArn() != null)
             sb.append("PackageArn: ").append(getPackageArn()).append(",");
+        if (getPackageId() != null)
+            sb.append("PackageId: ").append(getPackageId()).append(",");
+        if (getPackageName() != null)
+            sb.append("PackageName: ").append(getPackageName()).append(",");
         if (getPackageVersion() != null)
             sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getPatchVersion() != null)
-            sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("PatchVersion: ").append(getPatchVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -602,33 +602,41 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Node == false)
             return false;
         Node other = (Node) obj;
-        if (other.getNodeId() == null ^ this.getNodeId() == null)
+        if (other.getCategory() == null ^ this.getCategory() == null)
             return false;
-        if (other.getNodeId() != null && other.getNodeId().equals(this.getNodeId()) == false)
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getCategory() == null ^ this.getCategory() == null)
+        if (other.getNodeId() == null ^ this.getNodeId() == null)
             return false;
-        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+        if (other.getNodeId() != null && other.getNodeId().equals(this.getNodeId()) == false)
             return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
-        if (other.getPackageName() == null ^ this.getPackageName() == null)
+        if (other.getPackageArn() == null ^ this.getPackageArn() == null)
             return false;
-        if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
+        if (other.getPackageArn() != null && other.getPackageArn().equals(this.getPackageArn()) == false)
             return false;
         if (other.getPackageId() == null ^ this.getPackageId() == null)
             return false;
         if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
             return false;
-        if (other.getPackageArn() == null ^ this.getPackageArn() == null)
+        if (other.getPackageName() == null ^ this.getPackageName() == null)
             return false;
-        if (other.getPackageArn() != null && other.getPackageArn().equals(this.getPackageArn()) == false)
+        if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
             return false;
         if (other.getPackageVersion() == null ^ this.getPackageVersion() == null)
             return false;
@@ -638,14 +646,6 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
-            return false;
         return true;
     }
 
@@ -654,17 +654,17 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNodeId() == null) ? 0 : getNodeId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNodeId() == null) ? 0 : getNodeId().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
-        hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
-        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageArn() == null) ? 0 : getPackageArn().hashCode());
+        hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
+        hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         return hashCode;
     }
 

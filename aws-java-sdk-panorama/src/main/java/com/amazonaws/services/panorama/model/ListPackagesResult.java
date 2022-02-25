@@ -25,16 +25,56 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of packages.
-     * </p>
-     */
-    private java.util.List<PackageListItem> packages;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of packages.
+     * </p>
+     */
+    private java.util.List<PackageListItem> packages;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPackagesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,46 +147,6 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPackagesResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPackages() != null)
-            sb.append("Packages: ").append(getPackages()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPackages() != null)
+            sb.append("Packages: ").append(getPackages());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof ListPackagesResult == false)
             return false;
         ListPackagesResult other = (ListPackagesResult) obj;
-        if (other.getPackages() == null ^ this.getPackages() == null)
-            return false;
-        if (other.getPackages() != null && other.getPackages().equals(this.getPackages()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPackages() == null ^ this.getPackages() == null)
+            return false;
+        if (other.getPackages() != null && other.getPackages().equals(this.getPackages()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPackages() == null) ? 0 : getPackages().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPackages() == null) ? 0 : getPackages().hashCode());
         return hashCode;
     }
 

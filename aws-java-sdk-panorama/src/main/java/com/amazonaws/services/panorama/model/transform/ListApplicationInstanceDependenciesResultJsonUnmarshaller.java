@@ -49,16 +49,16 @@ public class ListApplicationInstanceDependenciesResultJsonUnmarshaller implement
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    listApplicationInstanceDependenciesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PackageObjects", targetDepth)) {
                     context.nextToken();
                     listApplicationInstanceDependenciesResult
                             .setPackageObjects(new ListUnmarshaller<PackageObject>(PackageObjectJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
-                }
-                if (context.testExpression("NextToken", targetDepth)) {
-                    context.nextToken();
-                    listApplicationInstanceDependenciesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

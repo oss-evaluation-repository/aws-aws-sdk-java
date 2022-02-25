@@ -27,56 +27,16 @@ public class UpdateDeviceMetadataRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The device's ID.
-     * </p>
-     */
-    private String deviceId;
-    /**
-     * <p>
      * A description for the device.
      * </p>
      */
     private String description;
-
     /**
      * <p>
      * The device's ID.
      * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
      */
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @return The device's ID.
-     */
-
-    public String getDeviceId() {
-        return this.deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateDeviceMetadataRequest withDeviceId(String deviceId) {
-        setDeviceId(deviceId);
-        return this;
-    }
+    private String deviceId;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class UpdateDeviceMetadataRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     */
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @return The device's ID.
+     */
+
+    public String getDeviceId() {
+        return this.deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDeviceMetadataRequest withDeviceId(String deviceId) {
+        setDeviceId(deviceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -130,10 +130,10 @@ public class UpdateDeviceMetadataRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeviceId() != null)
-            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDeviceId() != null)
+            sb.append("DeviceId: ").append(getDeviceId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class UpdateDeviceMetadataRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof UpdateDeviceMetadataRequest == false)
             return false;
         UpdateDeviceMetadataRequest other = (UpdateDeviceMetadataRequest) obj;
-        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
-            return false;
-        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
+            return false;
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class UpdateDeviceMetadataRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         return hashCode;
     }
 

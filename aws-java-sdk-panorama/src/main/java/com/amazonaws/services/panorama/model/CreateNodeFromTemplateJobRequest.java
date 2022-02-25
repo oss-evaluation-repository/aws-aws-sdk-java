@@ -27,10 +27,22 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The type of node.
+     * Tags for the job.
      * </p>
      */
-    private String templateType;
+    private java.util.List<JobResourceTags> jobTags;
+    /**
+     * <p>
+     * A description for the node.
+     * </p>
+     */
+    private String nodeDescription;
+    /**
+     * <p>
+     * A name for the node.
+     * </p>
+     */
+    private String nodeName;
     /**
      * <p>
      * An output package name for the node.
@@ -45,85 +57,164 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
     private String outputPackageVersion;
     /**
      * <p>
-     * A name for the node.
-     * </p>
-     */
-    private String nodeName;
-    /**
-     * <p>
-     * A description for the node.
-     * </p>
-     */
-    private String nodeDescription;
-    /**
-     * <p>
      * Template parameters for the node.
      * </p>
      */
     private java.util.Map<String, String> templateParameters;
     /**
      * <p>
+     * The type of node.
+     * </p>
+     */
+    private String templateType;
+
+    /**
+     * <p>
      * Tags for the job.
      * </p>
-     */
-    private java.util.List<JobResourceTags> jobTags;
-
-    /**
-     * <p>
-     * The type of node.
-     * </p>
      * 
-     * @param templateType
-     *        The type of node.
-     * @see TemplateType
+     * @return Tags for the job.
      */
 
-    public void setTemplateType(String templateType) {
-        this.templateType = templateType;
+    public java.util.List<JobResourceTags> getJobTags() {
+        return jobTags;
     }
 
     /**
      * <p>
-     * The type of node.
+     * Tags for the job.
      * </p>
      * 
-     * @return The type of node.
-     * @see TemplateType
+     * @param jobTags
+     *        Tags for the job.
      */
 
-    public String getTemplateType() {
-        return this.templateType;
+    public void setJobTags(java.util.Collection<JobResourceTags> jobTags) {
+        if (jobTags == null) {
+            this.jobTags = null;
+            return;
+        }
+
+        this.jobTags = new java.util.ArrayList<JobResourceTags>(jobTags);
     }
 
     /**
      * <p>
-     * The type of node.
+     * Tags for the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobTags(java.util.Collection)} or {@link #withJobTags(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param templateType
-     *        The type of node.
+     * @param jobTags
+     *        Tags for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TemplateType
      */
 
-    public CreateNodeFromTemplateJobRequest withTemplateType(String templateType) {
-        setTemplateType(templateType);
+    public CreateNodeFromTemplateJobRequest withJobTags(JobResourceTags... jobTags) {
+        if (this.jobTags == null) {
+            setJobTags(new java.util.ArrayList<JobResourceTags>(jobTags.length));
+        }
+        for (JobResourceTags ele : jobTags) {
+            this.jobTags.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The type of node.
+     * Tags for the job.
      * </p>
      * 
-     * @param templateType
-     *        The type of node.
+     * @param jobTags
+     *        Tags for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TemplateType
      */
 
-    public CreateNodeFromTemplateJobRequest withTemplateType(TemplateType templateType) {
-        this.templateType = templateType.toString();
+    public CreateNodeFromTemplateJobRequest withJobTags(java.util.Collection<JobResourceTags> jobTags) {
+        setJobTags(jobTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the node.
+     * </p>
+     * 
+     * @param nodeDescription
+     *        A description for the node.
+     */
+
+    public void setNodeDescription(String nodeDescription) {
+        this.nodeDescription = nodeDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the node.
+     * </p>
+     * 
+     * @return A description for the node.
+     */
+
+    public String getNodeDescription() {
+        return this.nodeDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the node.
+     * </p>
+     * 
+     * @param nodeDescription
+     *        A description for the node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNodeFromTemplateJobRequest withNodeDescription(String nodeDescription) {
+        setNodeDescription(nodeDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A name for the node.
+     * </p>
+     * 
+     * @param nodeName
+     *        A name for the node.
+     */
+
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
+    }
+
+    /**
+     * <p>
+     * A name for the node.
+     * </p>
+     * 
+     * @return A name for the node.
+     */
+
+    public String getNodeName() {
+        return this.nodeName;
+    }
+
+    /**
+     * <p>
+     * A name for the node.
+     * </p>
+     * 
+     * @param nodeName
+     *        A name for the node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNodeFromTemplateJobRequest withNodeName(String nodeName) {
+        setNodeName(nodeName);
         return this;
     }
 
@@ -209,86 +300,6 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A name for the node.
-     * </p>
-     * 
-     * @param nodeName
-     *        A name for the node.
-     */
-
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
-    }
-
-    /**
-     * <p>
-     * A name for the node.
-     * </p>
-     * 
-     * @return A name for the node.
-     */
-
-    public String getNodeName() {
-        return this.nodeName;
-    }
-
-    /**
-     * <p>
-     * A name for the node.
-     * </p>
-     * 
-     * @param nodeName
-     *        A name for the node.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNodeFromTemplateJobRequest withNodeName(String nodeName) {
-        setNodeName(nodeName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for the node.
-     * </p>
-     * 
-     * @param nodeDescription
-     *        A description for the node.
-     */
-
-    public void setNodeDescription(String nodeDescription) {
-        this.nodeDescription = nodeDescription;
-    }
-
-    /**
-     * <p>
-     * A description for the node.
-     * </p>
-     * 
-     * @return A description for the node.
-     */
-
-    public String getNodeDescription() {
-        return this.nodeDescription;
-    }
-
-    /**
-     * <p>
-     * A description for the node.
-     * </p>
-     * 
-     * @param nodeDescription
-     *        A description for the node.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNodeFromTemplateJobRequest withNodeDescription(String nodeDescription) {
-        setNodeDescription(nodeDescription);
-        return this;
-    }
-
-    /**
-     * <p>
      * Template parameters for the node.
      * </p>
      * 
@@ -357,71 +368,60 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags for the job.
+     * The type of node.
      * </p>
      * 
-     * @return Tags for the job.
+     * @param templateType
+     *        The type of node.
+     * @see TemplateType
      */
 
-    public java.util.List<JobResourceTags> getJobTags() {
-        return jobTags;
+    public void setTemplateType(String templateType) {
+        this.templateType = templateType;
     }
 
     /**
      * <p>
-     * Tags for the job.
+     * The type of node.
      * </p>
      * 
-     * @param jobTags
-     *        Tags for the job.
+     * @return The type of node.
+     * @see TemplateType
      */
 
-    public void setJobTags(java.util.Collection<JobResourceTags> jobTags) {
-        if (jobTags == null) {
-            this.jobTags = null;
-            return;
-        }
-
-        this.jobTags = new java.util.ArrayList<JobResourceTags>(jobTags);
+    public String getTemplateType() {
+        return this.templateType;
     }
 
     /**
      * <p>
-     * Tags for the job.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setJobTags(java.util.Collection)} or {@link #withJobTags(java.util.Collection)} if you want to override
-     * the existing values.
+     * The type of node.
      * </p>
      * 
-     * @param jobTags
-     *        Tags for the job.
+     * @param templateType
+     *        The type of node.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
      */
 
-    public CreateNodeFromTemplateJobRequest withJobTags(JobResourceTags... jobTags) {
-        if (this.jobTags == null) {
-            setJobTags(new java.util.ArrayList<JobResourceTags>(jobTags.length));
-        }
-        for (JobResourceTags ele : jobTags) {
-            this.jobTags.add(ele);
-        }
+    public CreateNodeFromTemplateJobRequest withTemplateType(String templateType) {
+        setTemplateType(templateType);
         return this;
     }
 
     /**
      * <p>
-     * Tags for the job.
+     * The type of node.
      * </p>
      * 
-     * @param jobTags
-     *        Tags for the job.
+     * @param templateType
+     *        The type of node.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateType
      */
 
-    public CreateNodeFromTemplateJobRequest withJobTags(java.util.Collection<JobResourceTags> jobTags) {
-        setJobTags(jobTags);
+    public CreateNodeFromTemplateJobRequest withTemplateType(TemplateType templateType) {
+        this.templateType = templateType.toString();
         return this;
     }
 
@@ -437,20 +437,20 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTemplateType() != null)
-            sb.append("TemplateType: ").append(getTemplateType()).append(",");
+        if (getJobTags() != null)
+            sb.append("JobTags: ").append(getJobTags()).append(",");
+        if (getNodeDescription() != null)
+            sb.append("NodeDescription: ").append(getNodeDescription()).append(",");
+        if (getNodeName() != null)
+            sb.append("NodeName: ").append(getNodeName()).append(",");
         if (getOutputPackageName() != null)
             sb.append("OutputPackageName: ").append(getOutputPackageName()).append(",");
         if (getOutputPackageVersion() != null)
             sb.append("OutputPackageVersion: ").append(getOutputPackageVersion()).append(",");
-        if (getNodeName() != null)
-            sb.append("NodeName: ").append(getNodeName()).append(",");
-        if (getNodeDescription() != null)
-            sb.append("NodeDescription: ").append(getNodeDescription()).append(",");
         if (getTemplateParameters() != null)
             sb.append("TemplateParameters: ").append("***Sensitive Data Redacted***").append(",");
-        if (getJobTags() != null)
-            sb.append("JobTags: ").append(getJobTags());
+        if (getTemplateType() != null)
+            sb.append("TemplateType: ").append(getTemplateType());
         sb.append("}");
         return sb.toString();
     }
@@ -465,9 +465,17 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof CreateNodeFromTemplateJobRequest == false)
             return false;
         CreateNodeFromTemplateJobRequest other = (CreateNodeFromTemplateJobRequest) obj;
-        if (other.getTemplateType() == null ^ this.getTemplateType() == null)
+        if (other.getJobTags() == null ^ this.getJobTags() == null)
             return false;
-        if (other.getTemplateType() != null && other.getTemplateType().equals(this.getTemplateType()) == false)
+        if (other.getJobTags() != null && other.getJobTags().equals(this.getJobTags()) == false)
+            return false;
+        if (other.getNodeDescription() == null ^ this.getNodeDescription() == null)
+            return false;
+        if (other.getNodeDescription() != null && other.getNodeDescription().equals(this.getNodeDescription()) == false)
+            return false;
+        if (other.getNodeName() == null ^ this.getNodeName() == null)
+            return false;
+        if (other.getNodeName() != null && other.getNodeName().equals(this.getNodeName()) == false)
             return false;
         if (other.getOutputPackageName() == null ^ this.getOutputPackageName() == null)
             return false;
@@ -477,21 +485,13 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getOutputPackageVersion() != null && other.getOutputPackageVersion().equals(this.getOutputPackageVersion()) == false)
             return false;
-        if (other.getNodeName() == null ^ this.getNodeName() == null)
-            return false;
-        if (other.getNodeName() != null && other.getNodeName().equals(this.getNodeName()) == false)
-            return false;
-        if (other.getNodeDescription() == null ^ this.getNodeDescription() == null)
-            return false;
-        if (other.getNodeDescription() != null && other.getNodeDescription().equals(this.getNodeDescription()) == false)
-            return false;
         if (other.getTemplateParameters() == null ^ this.getTemplateParameters() == null)
             return false;
         if (other.getTemplateParameters() != null && other.getTemplateParameters().equals(this.getTemplateParameters()) == false)
             return false;
-        if (other.getJobTags() == null ^ this.getJobTags() == null)
+        if (other.getTemplateType() == null ^ this.getTemplateType() == null)
             return false;
-        if (other.getJobTags() != null && other.getJobTags().equals(this.getJobTags()) == false)
+        if (other.getTemplateType() != null && other.getTemplateType().equals(this.getTemplateType()) == false)
             return false;
         return true;
     }
@@ -501,13 +501,13 @@ public class CreateNodeFromTemplateJobRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
+        hashCode = prime * hashCode + ((getJobTags() == null) ? 0 : getJobTags().hashCode());
+        hashCode = prime * hashCode + ((getNodeDescription() == null) ? 0 : getNodeDescription().hashCode());
+        hashCode = prime * hashCode + ((getNodeName() == null) ? 0 : getNodeName().hashCode());
         hashCode = prime * hashCode + ((getOutputPackageName() == null) ? 0 : getOutputPackageName().hashCode());
         hashCode = prime * hashCode + ((getOutputPackageVersion() == null) ? 0 : getOutputPackageVersion().hashCode());
-        hashCode = prime * hashCode + ((getNodeName() == null) ? 0 : getNodeName().hashCode());
-        hashCode = prime * hashCode + ((getNodeDescription() == null) ? 0 : getNodeDescription().hashCode());
         hashCode = prime * hashCode + ((getTemplateParameters() == null) ? 0 : getTemplateParameters().hashCode());
-        hashCode = prime * hashCode + ((getJobTags() == null) ? 0 : getJobTags().hashCode());
+        hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
         return hashCode;
     }
 

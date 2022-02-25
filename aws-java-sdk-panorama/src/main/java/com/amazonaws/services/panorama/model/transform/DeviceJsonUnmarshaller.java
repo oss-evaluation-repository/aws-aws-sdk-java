@@ -48,21 +48,13 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DeviceId", targetDepth)) {
-                    context.nextToken();
-                    device.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    device.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     device.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("ProvisioningStatus", targetDepth)) {
+                if (context.testExpression("DeviceId", targetDepth)) {
                     context.nextToken();
-                    device.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    device.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
@@ -71,6 +63,14 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 if (context.testExpression("LeaseExpirationTime", targetDepth)) {
                     context.nextToken();
                     device.setLeaseExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    device.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisioningStatus", targetDepth)) {
+                    context.nextToken();
+                    device.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

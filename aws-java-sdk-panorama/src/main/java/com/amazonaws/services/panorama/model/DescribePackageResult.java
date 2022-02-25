@@ -25,6 +25,18 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The package's ARN.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * When the package was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
      * The package's ID.
      * </p>
      */
@@ -37,10 +49,10 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
     private String packageName;
     /**
      * <p>
-     * The package's ARN.
+     * ARNs of accounts that have read access to the package.
      * </p>
      */
-    private String arn;
+    private java.util.List<String> readAccessPrincipalArns;
     /**
      * <p>
      * The package's storage location.
@@ -49,28 +61,96 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
     private StorageLocation storageLocation;
     /**
      * <p>
-     * ARNs of accounts that have read access to the package.
+     * The package's tags.
      * </p>
      */
-    private java.util.List<String> readAccessPrincipalArns;
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * ARNs of accounts that have write access to the package.
      * </p>
      */
     private java.util.List<String> writeAccessPrincipalArns;
+
+    /**
+     * <p>
+     * The package's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The package's ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The package's ARN.
+     * </p>
+     * 
+     * @return The package's ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The package's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The package's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
     /**
      * <p>
      * When the package was created.
      * </p>
+     * 
+     * @param createdTime
+     *        When the package was created.
      */
-    private java.util.Date createdTime;
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
     /**
      * <p>
-     * The package's tags.
+     * When the package was created.
      * </p>
+     * 
+     * @return When the package was created.
      */
-    private java.util.Map<String, String> tags;
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * When the package was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the package was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -154,86 +234,6 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The package's ARN.
-     * </p>
-     * 
-     * @param arn
-     *        The package's ARN.
-     */
-
-    public void setArn(String arn) {
-        this.arn = arn;
-    }
-
-    /**
-     * <p>
-     * The package's ARN.
-     * </p>
-     * 
-     * @return The package's ARN.
-     */
-
-    public String getArn() {
-        return this.arn;
-    }
-
-    /**
-     * <p>
-     * The package's ARN.
-     * </p>
-     * 
-     * @param arn
-     *        The package's ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult withArn(String arn) {
-        setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The package's storage location.
-     * </p>
-     * 
-     * @param storageLocation
-     *        The package's storage location.
-     */
-
-    public void setStorageLocation(StorageLocation storageLocation) {
-        this.storageLocation = storageLocation;
-    }
-
-    /**
-     * <p>
-     * The package's storage location.
-     * </p>
-     * 
-     * @return The package's storage location.
-     */
-
-    public StorageLocation getStorageLocation() {
-        return this.storageLocation;
-    }
-
-    /**
-     * <p>
-     * The package's storage location.
-     * </p>
-     * 
-     * @param storageLocation
-     *        The package's storage location.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult withStorageLocation(StorageLocation storageLocation) {
-        setStorageLocation(storageLocation);
-        return this;
-    }
-
-    /**
-     * <p>
      * ARNs of accounts that have read access to the package.
      * </p>
      * 
@@ -299,6 +299,114 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribePackageResult withReadAccessPrincipalArns(java.util.Collection<String> readAccessPrincipalArns) {
         setReadAccessPrincipalArns(readAccessPrincipalArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package's storage location.
+     * </p>
+     * 
+     * @param storageLocation
+     *        The package's storage location.
+     */
+
+    public void setStorageLocation(StorageLocation storageLocation) {
+        this.storageLocation = storageLocation;
+    }
+
+    /**
+     * <p>
+     * The package's storage location.
+     * </p>
+     * 
+     * @return The package's storage location.
+     */
+
+    public StorageLocation getStorageLocation() {
+        return this.storageLocation;
+    }
+
+    /**
+     * <p>
+     * The package's storage location.
+     * </p>
+     * 
+     * @param storageLocation
+     *        The package's storage location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult withStorageLocation(StorageLocation storageLocation) {
+        setStorageLocation(storageLocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package's tags.
+     * </p>
+     * 
+     * @return The package's tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The package's tags.
+     * </p>
+     * 
+     * @param tags
+     *        The package's tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The package's tags.
+     * </p>
+     * 
+     * @param tags
+     *        The package's tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribePackageResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackageResult clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -373,114 +481,6 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p>
-     * When the package was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the package was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the package was created.
-     * </p>
-     * 
-     * @return When the package was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the package was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the package was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The package's tags.
-     * </p>
-     * 
-     * @return The package's tags.
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * The package's tags.
-     * </p>
-     * 
-     * @param tags
-     *        The package's tags.
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * The package's tags.
-     * </p>
-     * 
-     * @param tags
-     *        The package's tags.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    /**
-     * Add a single Tags entry
-     *
-     * @see DescribePackageResult#withTags
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePackageResult clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -492,22 +492,22 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getPackageId() != null)
             sb.append("PackageId: ").append(getPackageId()).append(",");
         if (getPackageName() != null)
             sb.append("PackageName: ").append(getPackageName()).append(",");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
-        if (getStorageLocation() != null)
-            sb.append("StorageLocation: ").append(getStorageLocation()).append(",");
         if (getReadAccessPrincipalArns() != null)
             sb.append("ReadAccessPrincipalArns: ").append(getReadAccessPrincipalArns()).append(",");
-        if (getWriteAccessPrincipalArns() != null)
-            sb.append("WriteAccessPrincipalArns: ").append(getWriteAccessPrincipalArns()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getStorageLocation() != null)
+            sb.append("StorageLocation: ").append(getStorageLocation()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWriteAccessPrincipalArns() != null)
+            sb.append("WriteAccessPrincipalArns: ").append(getWriteAccessPrincipalArns());
         sb.append("}");
         return sb.toString();
     }
@@ -522,6 +522,14 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof DescribePackageResult == false)
             return false;
         DescribePackageResult other = (DescribePackageResult) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
         if (other.getPackageId() == null ^ this.getPackageId() == null)
             return false;
         if (other.getPackageId() != null && other.getPackageId().equals(this.getPackageId()) == false)
@@ -530,29 +538,21 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
             return false;
-        if (other.getArn() == null ^ this.getArn() == null)
+        if (other.getReadAccessPrincipalArns() == null ^ this.getReadAccessPrincipalArns() == null)
             return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+        if (other.getReadAccessPrincipalArns() != null && other.getReadAccessPrincipalArns().equals(this.getReadAccessPrincipalArns()) == false)
             return false;
         if (other.getStorageLocation() == null ^ this.getStorageLocation() == null)
             return false;
         if (other.getStorageLocation() != null && other.getStorageLocation().equals(this.getStorageLocation()) == false)
             return false;
-        if (other.getReadAccessPrincipalArns() == null ^ this.getReadAccessPrincipalArns() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getReadAccessPrincipalArns() != null && other.getReadAccessPrincipalArns().equals(this.getReadAccessPrincipalArns()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getWriteAccessPrincipalArns() == null ^ this.getWriteAccessPrincipalArns() == null)
             return false;
         if (other.getWriteAccessPrincipalArns() != null && other.getWriteAccessPrincipalArns().equals(this.getWriteAccessPrincipalArns()) == false)
-            return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -562,14 +562,14 @@ public class DescribePackageResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getStorageLocation() == null) ? 0 : getStorageLocation().hashCode());
         hashCode = prime * hashCode + ((getReadAccessPrincipalArns() == null) ? 0 : getReadAccessPrincipalArns().hashCode());
-        hashCode = prime * hashCode + ((getWriteAccessPrincipalArns() == null) ? 0 : getWriteAccessPrincipalArns().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getStorageLocation() == null) ? 0 : getStorageLocation().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWriteAccessPrincipalArns() == null) ? 0 : getWriteAccessPrincipalArns().hashCode());
         return hashCode;
     }
 

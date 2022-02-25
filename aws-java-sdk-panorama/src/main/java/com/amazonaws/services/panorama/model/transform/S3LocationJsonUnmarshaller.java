@@ -48,10 +48,6 @@ public class S3LocationJsonUnmarshaller implements Unmarshaller<S3Location, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Region", targetDepth)) {
-                    context.nextToken();
-                    s3Location.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("BucketName", targetDepth)) {
                     context.nextToken();
                     s3Location.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +55,10 @@ public class S3LocationJsonUnmarshaller implements Unmarshaller<S3Location, Json
                 if (context.testExpression("ObjectKey", targetDepth)) {
                     context.nextToken();
                     s3Location.setObjectKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Region", targetDepth)) {
+                    context.nextToken();
+                    s3Location.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

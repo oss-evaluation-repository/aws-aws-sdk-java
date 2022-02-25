@@ -48,14 +48,6 @@ public class PackageListItemJsonUnmarshaller implements Unmarshaller<PackageList
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("PackageId", targetDepth)) {
-                    context.nextToken();
-                    packageListItem.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PackageName", targetDepth)) {
-                    context.nextToken();
-                    packageListItem.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     packageListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +55,14 @@ public class PackageListItemJsonUnmarshaller implements Unmarshaller<PackageList
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     packageListItem.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PackageId", targetDepth)) {
+                    context.nextToken();
+                    packageListItem.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PackageName", targetDepth)) {
+                    context.nextToken();
+                    packageListItem.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

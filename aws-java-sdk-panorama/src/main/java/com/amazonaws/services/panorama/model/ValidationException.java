@@ -25,10 +25,10 @@ public class ValidationException extends com.amazonaws.services.panorama.model.A
 
     /**
      * <p>
-     * The reason that validation failed.
+     * A list of attributes that led to the exception and their values.
      * </p>
      */
-    private String reason;
+    private java.util.List<ValidationExceptionErrorArgument> errorArguments;
     /**
      * <p>
      * A unique ID for the error.
@@ -37,16 +37,16 @@ public class ValidationException extends com.amazonaws.services.panorama.model.A
     private String errorId;
     /**
      * <p>
-     * A list of attributes that led to the exception and their values.
-     * </p>
-     */
-    private java.util.List<ValidationExceptionErrorArgument> errorArguments;
-    /**
-     * <p>
      * A list of request parameters that failed validation.
      * </p>
      */
     private java.util.List<ValidationExceptionField> fields;
+    /**
+     * <p>
+     * The reason that validation failed.
+     * </p>
+     */
+    private String reason;
 
     /**
      * Constructs a new ValidationException with the specified error message.
@@ -56,109 +56,6 @@ public class ValidationException extends com.amazonaws.services.panorama.model.A
      */
     public ValidationException(String message) {
         super(message);
-    }
-
-    /**
-     * <p>
-     * The reason that validation failed.
-     * </p>
-     * 
-     * @param reason
-     *        The reason that validation failed.
-     * @see ValidationExceptionReason
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    /**
-     * <p>
-     * The reason that validation failed.
-     * </p>
-     * 
-     * @return The reason that validation failed.
-     * @see ValidationExceptionReason
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
-    public String getReason() {
-        return this.reason;
-    }
-
-    /**
-     * <p>
-     * The reason that validation failed.
-     * </p>
-     * 
-     * @param reason
-     *        The reason that validation failed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ValidationExceptionReason
-     */
-
-    public ValidationException withReason(String reason) {
-        setReason(reason);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The reason that validation failed.
-     * </p>
-     * 
-     * @param reason
-     *        The reason that validation failed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ValidationExceptionReason
-     */
-
-    public ValidationException withReason(ValidationExceptionReason reason) {
-        this.reason = reason.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @param errorId
-     *        A unique ID for the error.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
-    public void setErrorId(String errorId) {
-        this.errorId = errorId;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @return A unique ID for the error.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
-    public String getErrorId() {
-        return this.errorId;
-    }
-
-    /**
-     * <p>
-     * A unique ID for the error.
-     * </p>
-     * 
-     * @param errorId
-     *        A unique ID for the error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ValidationException withErrorId(String errorId) {
-        setErrorId(errorId);
-        return this;
     }
 
     /**
@@ -235,6 +132,48 @@ public class ValidationException extends com.amazonaws.services.panorama.model.A
 
     /**
      * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @param errorId
+     *        A unique ID for the error.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
+    public void setErrorId(String errorId) {
+        this.errorId = errorId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @return A unique ID for the error.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorId")
+    public String getErrorId() {
+        return this.errorId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for the error.
+     * </p>
+     * 
+     * @param errorId
+     *        A unique ID for the error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidationException withErrorId(String errorId) {
+        setErrorId(errorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of request parameters that failed validation.
      * </p>
      * 
@@ -302,6 +241,67 @@ public class ValidationException extends com.amazonaws.services.panorama.model.A
 
     public ValidationException withFields(java.util.Collection<ValidationExceptionField> fields) {
         setFields(fields);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason that validation failed.
+     * </p>
+     * 
+     * @param reason
+     *        The reason that validation failed.
+     * @see ValidationExceptionReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason that validation failed.
+     * </p>
+     * 
+     * @return The reason that validation failed.
+     * @see ValidationExceptionReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason that validation failed.
+     * </p>
+     * 
+     * @param reason
+     *        The reason that validation failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationExceptionReason
+     */
+
+    public ValidationException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason that validation failed.
+     * </p>
+     * 
+     * @param reason
+     *        The reason that validation failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationExceptionReason
+     */
+
+    public ValidationException withReason(ValidationExceptionReason reason) {
+        this.reason = reason.toString();
         return this;
     }
 

@@ -1,3 +1,12 @@
+# __1.12.167__ __2022-02-25__
+## __AWS Panorama__
+  - ### Features
+    - Added NTP server configuration parameter to ProvisionDevice operation. Added alternate software fields to DescribeDevice response
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Doc only update for ElastiCache
+
 # __1.12.166__ __2022-02-24__
 ## __AWS Glue DataBrew__
   - ### Features

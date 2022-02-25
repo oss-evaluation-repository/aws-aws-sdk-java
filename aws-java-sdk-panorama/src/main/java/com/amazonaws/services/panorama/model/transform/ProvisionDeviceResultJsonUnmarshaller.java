@@ -48,25 +48,25 @@ public class ProvisionDeviceResultJsonUnmarshaller implements Unmarshaller<Provi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DeviceId", targetDepth)) {
-                    context.nextToken();
-                    provisionDeviceResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     provisionDeviceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Status", targetDepth)) {
-                    context.nextToken();
-                    provisionDeviceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificates", targetDepth)) {
                     context.nextToken();
                     provisionDeviceResult.setCertificates(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
+                if (context.testExpression("DeviceId", targetDepth)) {
+                    context.nextToken();
+                    provisionDeviceResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IotThingName", targetDepth)) {
                     context.nextToken();
                     provisionDeviceResult.setIotThingName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    provisionDeviceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

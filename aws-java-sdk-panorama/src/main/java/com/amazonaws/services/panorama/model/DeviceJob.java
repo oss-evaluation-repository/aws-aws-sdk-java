@@ -30,10 +30,10 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target device
+     * When the job was created.
      * </p>
      */
-    private String deviceName;
+    private java.util.Date createdTime;
     /**
      * <p>
      * The ID of the target device.
@@ -42,54 +42,54 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
     private String deviceId;
     /**
      * <p>
+     * The name of the target device
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
      * The job's ID.
      * </p>
      */
     private String jobId;
+
     /**
      * <p>
      * When the job was created.
      * </p>
-     */
-    private java.util.Date createdTime;
-
-    /**
-     * <p>
-     * The name of the target device
-     * </p>
      * 
-     * @param deviceName
-     *        The name of the target device
+     * @param createdTime
+     *        When the job was created.
      */
 
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
     }
 
     /**
      * <p>
-     * The name of the target device
+     * When the job was created.
      * </p>
      * 
-     * @return The name of the target device
+     * @return When the job was created.
      */
 
-    public String getDeviceName() {
-        return this.deviceName;
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
     }
 
     /**
      * <p>
-     * The name of the target device
+     * When the job was created.
      * </p>
      * 
-     * @param deviceName
-     *        The name of the target device
+     * @param createdTime
+     *        When the job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceJob withDeviceName(String deviceName) {
-        setDeviceName(deviceName);
+    public DeviceJob withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
         return this;
     }
 
@@ -135,6 +135,46 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the target device
+     * </p>
+     * 
+     * @param deviceName
+     *        The name of the target device
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The name of the target device
+     * </p>
+     * 
+     * @return The name of the target device
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The name of the target device
+     * </p>
+     * 
+     * @param deviceName
+     *        The name of the target device
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceJob withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The job's ID.
      * </p>
      * 
@@ -174,46 +214,6 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeviceJob withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,14 +225,14 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeviceName() != null)
-            sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getDeviceId() != null)
             sb.append("DeviceId: ").append(getDeviceId()).append(",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }
@@ -247,21 +247,21 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof DeviceJob == false)
             return false;
         DeviceJob other = (DeviceJob) obj;
-        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         if (other.getDeviceId() == null ^ this.getDeviceId() == null)
             return false;
         if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
-            return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         return true;
     }
@@ -271,10 +271,10 @@ public class DeviceJob implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
-        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
-        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         return hashCode;
     }
 

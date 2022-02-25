@@ -30,6 +30,12 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * Indicates that the version is recommended for all users.
+     * </p>
+     */
+    private Boolean markLatest;
+    /**
+     * <p>
      * The output's package name.
      * </p>
      */
@@ -40,12 +46,58 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
      * </p>
      */
     private String packageVersion;
+
     /**
      * <p>
      * Indicates that the version is recommended for all users.
      * </p>
+     * 
+     * @param markLatest
+     *        Indicates that the version is recommended for all users.
      */
-    private Boolean markLatest;
+
+    public void setMarkLatest(Boolean markLatest) {
+        this.markLatest = markLatest;
+    }
+
+    /**
+     * <p>
+     * Indicates that the version is recommended for all users.
+     * </p>
+     * 
+     * @return Indicates that the version is recommended for all users.
+     */
+
+    public Boolean getMarkLatest() {
+        return this.markLatest;
+    }
+
+    /**
+     * <p>
+     * Indicates that the version is recommended for all users.
+     * </p>
+     * 
+     * @param markLatest
+     *        Indicates that the version is recommended for all users.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageVersionOutputConfig withMarkLatest(Boolean markLatest) {
+        setMarkLatest(markLatest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates that the version is recommended for all users.
+     * </p>
+     * 
+     * @return Indicates that the version is recommended for all users.
+     */
+
+    public Boolean isMarkLatest() {
+        return this.markLatest;
+    }
 
     /**
      * <p>
@@ -128,58 +180,6 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
     }
 
     /**
-     * <p>
-     * Indicates that the version is recommended for all users.
-     * </p>
-     * 
-     * @param markLatest
-     *        Indicates that the version is recommended for all users.
-     */
-
-    public void setMarkLatest(Boolean markLatest) {
-        this.markLatest = markLatest;
-    }
-
-    /**
-     * <p>
-     * Indicates that the version is recommended for all users.
-     * </p>
-     * 
-     * @return Indicates that the version is recommended for all users.
-     */
-
-    public Boolean getMarkLatest() {
-        return this.markLatest;
-    }
-
-    /**
-     * <p>
-     * Indicates that the version is recommended for all users.
-     * </p>
-     * 
-     * @param markLatest
-     *        Indicates that the version is recommended for all users.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageVersionOutputConfig withMarkLatest(Boolean markLatest) {
-        setMarkLatest(markLatest);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates that the version is recommended for all users.
-     * </p>
-     * 
-     * @return Indicates that the version is recommended for all users.
-     */
-
-    public Boolean isMarkLatest() {
-        return this.markLatest;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,12 +191,12 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getMarkLatest() != null)
+            sb.append("MarkLatest: ").append(getMarkLatest()).append(",");
         if (getPackageName() != null)
             sb.append("PackageName: ").append(getPackageName()).append(",");
         if (getPackageVersion() != null)
-            sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
-        if (getMarkLatest() != null)
-            sb.append("MarkLatest: ").append(getMarkLatest());
+            sb.append("PackageVersion: ").append(getPackageVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +211,10 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
         if (obj instanceof PackageVersionOutputConfig == false)
             return false;
         PackageVersionOutputConfig other = (PackageVersionOutputConfig) obj;
+        if (other.getMarkLatest() == null ^ this.getMarkLatest() == null)
+            return false;
+        if (other.getMarkLatest() != null && other.getMarkLatest().equals(this.getMarkLatest()) == false)
+            return false;
         if (other.getPackageName() == null ^ this.getPackageName() == null)
             return false;
         if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
@@ -218,10 +222,6 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
         if (other.getPackageVersion() == null ^ this.getPackageVersion() == null)
             return false;
         if (other.getPackageVersion() != null && other.getPackageVersion().equals(this.getPackageVersion()) == false)
-            return false;
-        if (other.getMarkLatest() == null ^ this.getMarkLatest() == null)
-            return false;
-        if (other.getMarkLatest() != null && other.getMarkLatest().equals(this.getMarkLatest()) == false)
             return false;
         return true;
     }
@@ -231,9 +231,9 @@ public class PackageVersionOutputConfig implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getMarkLatest() == null) ? 0 : getMarkLatest().hashCode());
         hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
-        hashCode = prime * hashCode + ((getMarkLatest() == null) ? 0 : getMarkLatest().hashCode());
         return hashCode;
     }
 

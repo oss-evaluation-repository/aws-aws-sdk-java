@@ -25,6 +25,12 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.panora
 
     /**
      * <p>
+     * The name of the limit.
+     * </p>
+     */
+    private String quotaCode;
+    /**
+     * <p>
      * The target resource's ID.
      * </p>
      */
@@ -35,12 +41,6 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.panora
      * </p>
      */
     private String resourceType;
-    /**
-     * <p>
-     * The name of the limit.
-     * </p>
-     */
-    private String quotaCode;
     /**
      * <p>
      * The name of the service.
@@ -56,6 +56,48 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.panora
      */
     public ServiceQuotaExceededException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The name of the limit.
+     * </p>
+     * 
+     * @param quotaCode
+     *        The name of the limit.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
+    public void setQuotaCode(String quotaCode) {
+        this.quotaCode = quotaCode;
+    }
+
+    /**
+     * <p>
+     * The name of the limit.
+     * </p>
+     * 
+     * @return The name of the limit.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
+    public String getQuotaCode() {
+        return this.quotaCode;
+    }
+
+    /**
+     * <p>
+     * The name of the limit.
+     * </p>
+     * 
+     * @param quotaCode
+     *        The name of the limit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceQuotaExceededException withQuotaCode(String quotaCode) {
+        setQuotaCode(quotaCode);
+        return this;
     }
 
     /**
@@ -139,48 +181,6 @@ public class ServiceQuotaExceededException extends com.amazonaws.services.panora
 
     public ServiceQuotaExceededException withResourceType(String resourceType) {
         setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the limit.
-     * </p>
-     * 
-     * @param quotaCode
-     *        The name of the limit.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
-    public void setQuotaCode(String quotaCode) {
-        this.quotaCode = quotaCode;
-    }
-
-    /**
-     * <p>
-     * The name of the limit.
-     * </p>
-     * 
-     * @return The name of the limit.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
-    public String getQuotaCode() {
-        return this.quotaCode;
-    }
-
-    /**
-     * <p>
-     * The name of the limit.
-     * </p>
-     * 
-     * @param quotaCode
-     *        The name of the limit.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ServiceQuotaExceededException withQuotaCode(String quotaCode) {
-        setQuotaCode(quotaCode);
         return this;
     }
 

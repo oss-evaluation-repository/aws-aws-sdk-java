@@ -30,12 +30,6 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The bucket's Region.
-     * </p>
-     */
-    private String region;
-    /**
-     * <p>
      * A bucket name.
      * </p>
      */
@@ -46,46 +40,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String objectKey;
-
     /**
      * <p>
      * The bucket's Region.
      * </p>
-     * 
-     * @param region
-     *        The bucket's Region.
      */
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    /**
-     * <p>
-     * The bucket's Region.
-     * </p>
-     * 
-     * @return The bucket's Region.
-     */
-
-    public String getRegion() {
-        return this.region;
-    }
-
-    /**
-     * <p>
-     * The bucket's Region.
-     * </p>
-     * 
-     * @param region
-     *        The bucket's Region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3Location withRegion(String region) {
-        setRegion(region);
-        return this;
-    }
+    private String region;
 
     /**
      * <p>
@@ -168,6 +128,46 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The bucket's Region.
+     * </p>
+     * 
+     * @param region
+     *        The bucket's Region.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The bucket's Region.
+     * </p>
+     * 
+     * @return The bucket's Region.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The bucket's Region.
+     * </p>
+     * 
+     * @param region
+     *        The bucket's Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Location withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +179,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRegion() != null)
-            sb.append("Region: ").append(getRegion()).append(",");
         if (getBucketName() != null)
             sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getObjectKey() != null)
-            sb.append("ObjectKey: ").append(getObjectKey());
+            sb.append("ObjectKey: ").append(getObjectKey()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -199,10 +199,6 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof S3Location == false)
             return false;
         S3Location other = (S3Location) obj;
-        if (other.getRegion() == null ^ this.getRegion() == null)
-            return false;
-        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
-            return false;
         if (other.getBucketName() == null ^ this.getBucketName() == null)
             return false;
         if (other.getBucketName() != null && other.getBucketName().equals(this.getBucketName()) == false)
@@ -210,6 +206,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
         if (other.getObjectKey() == null ^ this.getObjectKey() == null)
             return false;
         if (other.getObjectKey() != null && other.getObjectKey().equals(this.getObjectKey()) == false)
+            return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode + ((getObjectKey() == null) ? 0 : getObjectKey().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         return hashCode;
     }
 

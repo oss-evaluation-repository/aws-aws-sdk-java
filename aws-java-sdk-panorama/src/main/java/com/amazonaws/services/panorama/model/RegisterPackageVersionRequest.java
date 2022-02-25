@@ -27,6 +27,12 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Whether to mark the new version as the latest version.
+     * </p>
+     */
+    private Boolean markLatest;
+    /**
+     * <p>
      * An owner account.
      * </p>
      */
@@ -49,12 +55,58 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String patchVersion;
+
     /**
      * <p>
      * Whether to mark the new version as the latest version.
      * </p>
+     * 
+     * @param markLatest
+     *        Whether to mark the new version as the latest version.
      */
-    private Boolean markLatest;
+
+    public void setMarkLatest(Boolean markLatest) {
+        this.markLatest = markLatest;
+    }
+
+    /**
+     * <p>
+     * Whether to mark the new version as the latest version.
+     * </p>
+     * 
+     * @return Whether to mark the new version as the latest version.
+     */
+
+    public Boolean getMarkLatest() {
+        return this.markLatest;
+    }
+
+    /**
+     * <p>
+     * Whether to mark the new version as the latest version.
+     * </p>
+     * 
+     * @param markLatest
+     *        Whether to mark the new version as the latest version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterPackageVersionRequest withMarkLatest(Boolean markLatest) {
+        setMarkLatest(markLatest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to mark the new version as the latest version.
+     * </p>
+     * 
+     * @return Whether to mark the new version as the latest version.
+     */
+
+    public Boolean isMarkLatest() {
+        return this.markLatest;
+    }
 
     /**
      * <p>
@@ -217,58 +269,6 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p>
-     * Whether to mark the new version as the latest version.
-     * </p>
-     * 
-     * @param markLatest
-     *        Whether to mark the new version as the latest version.
-     */
-
-    public void setMarkLatest(Boolean markLatest) {
-        this.markLatest = markLatest;
-    }
-
-    /**
-     * <p>
-     * Whether to mark the new version as the latest version.
-     * </p>
-     * 
-     * @return Whether to mark the new version as the latest version.
-     */
-
-    public Boolean getMarkLatest() {
-        return this.markLatest;
-    }
-
-    /**
-     * <p>
-     * Whether to mark the new version as the latest version.
-     * </p>
-     * 
-     * @param markLatest
-     *        Whether to mark the new version as the latest version.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterPackageVersionRequest withMarkLatest(Boolean markLatest) {
-        setMarkLatest(markLatest);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Whether to mark the new version as the latest version.
-     * </p>
-     * 
-     * @return Whether to mark the new version as the latest version.
-     */
-
-    public Boolean isMarkLatest() {
-        return this.markLatest;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,6 +280,8 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getMarkLatest() != null)
+            sb.append("MarkLatest: ").append(getMarkLatest()).append(",");
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getPackageId() != null)
@@ -287,9 +289,7 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
         if (getPackageVersion() != null)
             sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getPatchVersion() != null)
-            sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
-        if (getMarkLatest() != null)
-            sb.append("MarkLatest: ").append(getMarkLatest());
+            sb.append("PatchVersion: ").append(getPatchVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -304,6 +304,10 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof RegisterPackageVersionRequest == false)
             return false;
         RegisterPackageVersionRequest other = (RegisterPackageVersionRequest) obj;
+        if (other.getMarkLatest() == null ^ this.getMarkLatest() == null)
+            return false;
+        if (other.getMarkLatest() != null && other.getMarkLatest().equals(this.getMarkLatest()) == false)
+            return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
@@ -320,10 +324,6 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
-        if (other.getMarkLatest() == null ^ this.getMarkLatest() == null)
-            return false;
-        if (other.getMarkLatest() != null && other.getMarkLatest().equals(this.getMarkLatest()) == false)
-            return false;
         return true;
     }
 
@@ -332,11 +332,11 @@ public class RegisterPackageVersionRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getMarkLatest() == null) ? 0 : getMarkLatest().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getPackageId() == null) ? 0 : getPackageId().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
-        hashCode = prime * hashCode + ((getMarkLatest() == null) ? 0 : getMarkLatest().hashCode());
         return hashCode;
     }
 

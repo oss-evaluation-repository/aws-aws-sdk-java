@@ -40,6 +40,18 @@ public class NetworkStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EthernetStatus ethernet1Status;
+    /**
+     * <p>
+     * When the network status changed.
+     * </p>
+     */
+    private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * Details about a network time protocol (NTP) server connection.
+     * </p>
+     */
+    private NtpStatus ntpStatus;
 
     /**
      * <p>
@@ -122,6 +134,86 @@ public class NetworkStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When the network status changed.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        When the network status changed.
+     */
+
+    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * When the network status changed.
+     * </p>
+     * 
+     * @return When the network status changed.
+     */
+
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * When the network status changed.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        When the network status changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkStatus withLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        setLastUpdatedTime(lastUpdatedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a network time protocol (NTP) server connection.
+     * </p>
+     * 
+     * @param ntpStatus
+     *        Details about a network time protocol (NTP) server connection.
+     */
+
+    public void setNtpStatus(NtpStatus ntpStatus) {
+        this.ntpStatus = ntpStatus;
+    }
+
+    /**
+     * <p>
+     * Details about a network time protocol (NTP) server connection.
+     * </p>
+     * 
+     * @return Details about a network time protocol (NTP) server connection.
+     */
+
+    public NtpStatus getNtpStatus() {
+        return this.ntpStatus;
+    }
+
+    /**
+     * <p>
+     * Details about a network time protocol (NTP) server connection.
+     * </p>
+     * 
+     * @param ntpStatus
+     *        Details about a network time protocol (NTP) server connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkStatus withNtpStatus(NtpStatus ntpStatus) {
+        setNtpStatus(ntpStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +228,11 @@ public class NetworkStatus implements Serializable, Cloneable, StructuredPojo {
         if (getEthernet0Status() != null)
             sb.append("Ethernet0Status: ").append(getEthernet0Status()).append(",");
         if (getEthernet1Status() != null)
-            sb.append("Ethernet1Status: ").append(getEthernet1Status());
+            sb.append("Ethernet1Status: ").append(getEthernet1Status()).append(",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getNtpStatus() != null)
+            sb.append("NtpStatus: ").append(getNtpStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +255,14 @@ public class NetworkStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEthernet1Status() != null && other.getEthernet1Status().equals(this.getEthernet1Status()) == false)
             return false;
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+            return false;
+        if (other.getNtpStatus() == null ^ this.getNtpStatus() == null)
+            return false;
+        if (other.getNtpStatus() != null && other.getNtpStatus().equals(this.getNtpStatus()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +273,8 @@ public class NetworkStatus implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getEthernet0Status() == null) ? 0 : getEthernet0Status().hashCode());
         hashCode = prime * hashCode + ((getEthernet1Status() == null) ? 0 : getEthernet1Status().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getNtpStatus() == null) ? 0 : getNtpStatus().hashCode());
         return hashCode;
     }
 

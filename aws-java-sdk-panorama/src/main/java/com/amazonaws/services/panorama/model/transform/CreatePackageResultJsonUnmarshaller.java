@@ -48,13 +48,13 @@ public class CreatePackageResultJsonUnmarshaller implements Unmarshaller<CreateP
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("PackageId", targetDepth)) {
-                    context.nextToken();
-                    createPackageResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     createPackageResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PackageId", targetDepth)) {
+                    context.nextToken();
+                    createPackageResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageLocation", targetDepth)) {
                     context.nextToken();

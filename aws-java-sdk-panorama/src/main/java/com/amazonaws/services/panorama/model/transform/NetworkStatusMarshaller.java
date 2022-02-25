@@ -31,6 +31,10 @@ public class NetworkStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ethernet0Status").build();
     private static final MarshallingInfo<StructuredPojo> ETHERNET1STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ethernet1Status").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> NTPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NtpStatus").build();
 
     private static final NetworkStatusMarshaller instance = new NetworkStatusMarshaller();
 
@@ -50,6 +54,8 @@ public class NetworkStatusMarshaller {
         try {
             protocolMarshaller.marshall(networkStatus.getEthernet0Status(), ETHERNET0STATUS_BINDING);
             protocolMarshaller.marshall(networkStatus.getEthernet1Status(), ETHERNET1STATUS_BINDING);
+            protocolMarshaller.marshall(networkStatus.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(networkStatus.getNtpStatus(), NTPSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

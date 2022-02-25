@@ -48,13 +48,17 @@ public class NodeFromTemplateJobJsonUnmarshaller implements Unmarshaller<NodeFro
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    nodeFromTemplateJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
                     nodeFromTemplateJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("TemplateType", targetDepth)) {
+                if (context.testExpression("NodeName", targetDepth)) {
                     context.nextToken();
-                    nodeFromTemplateJob.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
+                    nodeFromTemplateJob.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -64,13 +68,9 @@ public class NodeFromTemplateJobJsonUnmarshaller implements Unmarshaller<NodeFro
                     context.nextToken();
                     nodeFromTemplateJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreatedTime", targetDepth)) {
+                if (context.testExpression("TemplateType", targetDepth)) {
                     context.nextToken();
-                    nodeFromTemplateJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("NodeName", targetDepth)) {
-                    context.nextToken();
-                    nodeFromTemplateJob.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
+                    nodeFromTemplateJob.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

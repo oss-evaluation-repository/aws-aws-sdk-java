@@ -30,62 +30,22 @@ public class NodeOutputPort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output port's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The output port's description.
      * </p>
      */
     private String description;
     /**
      * <p>
+     * The output port's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The output port's type.
      * </p>
      */
     private String type;
-
-    /**
-     * <p>
-     * The output port's name.
-     * </p>
-     * 
-     * @param name
-     *        The output port's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The output port's name.
-     * </p>
-     * 
-     * @return The output port's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The output port's name.
-     * </p>
-     * 
-     * @param name
-     *        The output port's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NodeOutputPort withName(String name) {
-        setName(name);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class NodeOutputPort implements Serializable, Cloneable, StructuredPojo {
 
     public NodeOutputPort withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output port's name.
+     * </p>
+     * 
+     * @param name
+     *        The output port's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The output port's name.
+     * </p>
+     * 
+     * @return The output port's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The output port's name.
+     * </p>
+     * 
+     * @param name
+     *        The output port's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeOutputPort withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -198,10 +198,10 @@ public class NodeOutputPort implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -218,13 +218,13 @@ public class NodeOutputPort implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof NodeOutputPort == false)
             return false;
         NodeOutputPort other = (NodeOutputPort) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -238,8 +238,8 @@ public class NodeOutputPort implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

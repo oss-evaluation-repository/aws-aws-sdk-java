@@ -48,33 +48,33 @@ public class NodeInstanceJsonUnmarshaller implements Unmarshaller<NodeInstance, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NodeInstanceId", targetDepth)) {
+                if (context.testExpression("CurrentStatus", targetDepth)) {
                     context.nextToken();
-                    nodeInstance.setNodeInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    nodeInstance.setCurrentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
                     context.nextToken();
                     nodeInstance.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageName", targetDepth)) {
+                if (context.testExpression("NodeInstanceId", targetDepth)) {
                     context.nextToken();
-                    nodeInstance.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PackageVersion", targetDepth)) {
-                    context.nextToken();
-                    nodeInstance.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PackagePatchVersion", targetDepth)) {
-                    context.nextToken();
-                    nodeInstance.setPackagePatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                    nodeInstance.setNodeInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeName", targetDepth)) {
                     context.nextToken();
                     nodeInstance.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CurrentStatus", targetDepth)) {
+                if (context.testExpression("PackageName", targetDepth)) {
                     context.nextToken();
-                    nodeInstance.setCurrentStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    nodeInstance.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PackagePatchVersion", targetDepth)) {
+                    context.nextToken();
+                    nodeInstance.setPackagePatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PackageVersion", targetDepth)) {
+                    context.nextToken();
+                    nodeInstance.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

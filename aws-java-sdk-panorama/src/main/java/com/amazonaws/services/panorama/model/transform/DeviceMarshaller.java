@@ -27,18 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeviceMarshaller {
 
-    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("DeviceId").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> PROVISIONINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningStatus").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DeviceId").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LEASEEXPIRATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LeaseExpirationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> PROVISIONINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningStatus").build();
 
     private static final DeviceMarshaller instance = new DeviceMarshaller();
 
@@ -56,12 +56,12 @@ public class DeviceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(device.getDeviceId(), DEVICEID_BINDING);
-            protocolMarshaller.marshall(device.getName(), NAME_BINDING);
             protocolMarshaller.marshall(device.getCreatedTime(), CREATEDTIME_BINDING);
-            protocolMarshaller.marshall(device.getProvisioningStatus(), PROVISIONINGSTATUS_BINDING);
+            protocolMarshaller.marshall(device.getDeviceId(), DEVICEID_BINDING);
             protocolMarshaller.marshall(device.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(device.getLeaseExpirationTime(), LEASEEXPIRATIONTIME_BINDING);
+            protocolMarshaller.marshall(device.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(device.getProvisioningStatus(), PROVISIONINGSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

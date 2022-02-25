@@ -30,28 +30,16 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The device's ID.
-     * </p>
-     */
-    private String deviceId;
-    /**
-     * <p>
-     * The device's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * When the device was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The device's provisioning status.
+     * The device's ID.
      * </p>
      */
-    private String provisioningStatus;
+    private String deviceId;
     /**
      * <p>
      * When the device was updated.
@@ -64,86 +52,18 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date leaseExpirationTime;
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     */
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @return The device's ID.
-     */
-
-    public String getDeviceId() {
-        return this.deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Device withDeviceId(String deviceId) {
-        setDeviceId(deviceId);
-        return this;
-    }
-
     /**
      * <p>
      * The device's name.
      * </p>
-     * 
-     * @param name
-     *        The device's name.
      */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    private String name;
     /**
      * <p>
-     * The device's name.
+     * The device's provisioning status.
      * </p>
-     * 
-     * @return The device's name.
      */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The device's name.
-     * </p>
-     * 
-     * @param name
-     *        The device's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Device withName(String name) {
-        setName(name);
-        return this;
-    }
+    private String provisioningStatus;
 
     /**
      * <p>
@@ -187,60 +107,41 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The device's provisioning status.
+     * The device's ID.
      * </p>
      * 
-     * @param provisioningStatus
-     *        The device's provisioning status.
-     * @see DeviceStatus
+     * @param deviceId
+     *        The device's ID.
      */
 
-    public void setProvisioningStatus(String provisioningStatus) {
-        this.provisioningStatus = provisioningStatus;
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     /**
      * <p>
-     * The device's provisioning status.
+     * The device's ID.
      * </p>
      * 
-     * @return The device's provisioning status.
-     * @see DeviceStatus
+     * @return The device's ID.
      */
 
-    public String getProvisioningStatus() {
-        return this.provisioningStatus;
+    public String getDeviceId() {
+        return this.deviceId;
     }
 
     /**
      * <p>
-     * The device's provisioning status.
+     * The device's ID.
      * </p>
      * 
-     * @param provisioningStatus
-     *        The device's provisioning status.
+     * @param deviceId
+     *        The device's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceStatus
      */
 
-    public Device withProvisioningStatus(String provisioningStatus) {
-        setProvisioningStatus(provisioningStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device's provisioning status.
-     * </p>
-     * 
-     * @param provisioningStatus
-     *        The device's provisioning status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceStatus
-     */
-
-    public Device withProvisioningStatus(DeviceStatus provisioningStatus) {
-        this.provisioningStatus = provisioningStatus.toString();
+    public Device withDeviceId(String deviceId) {
+        setDeviceId(deviceId);
         return this;
     }
 
@@ -325,6 +226,105 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The device's name.
+     * </p>
+     * 
+     * @param name
+     *        The device's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The device's name.
+     * </p>
+     * 
+     * @return The device's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The device's name.
+     * </p>
+     * 
+     * @param name
+     *        The device's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's provisioning status.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The device's provisioning status.
+     * @see DeviceStatus
+     */
+
+    public void setProvisioningStatus(String provisioningStatus) {
+        this.provisioningStatus = provisioningStatus;
+    }
+
+    /**
+     * <p>
+     * The device's provisioning status.
+     * </p>
+     * 
+     * @return The device's provisioning status.
+     * @see DeviceStatus
+     */
+
+    public String getProvisioningStatus() {
+        return this.provisioningStatus;
+    }
+
+    /**
+     * <p>
+     * The device's provisioning status.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The device's provisioning status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceStatus
+     */
+
+    public Device withProvisioningStatus(String provisioningStatus) {
+        setProvisioningStatus(provisioningStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's provisioning status.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The device's provisioning status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceStatus
+     */
+
+    public Device withProvisioningStatus(DeviceStatus provisioningStatus) {
+        this.provisioningStatus = provisioningStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,18 +336,18 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeviceId() != null)
-            sb.append("DeviceId: ").append(getDeviceId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
-        if (getProvisioningStatus() != null)
-            sb.append("ProvisioningStatus: ").append(getProvisioningStatus()).append(",");
+        if (getDeviceId() != null)
+            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getLeaseExpirationTime() != null)
-            sb.append("LeaseExpirationTime: ").append(getLeaseExpirationTime());
+            sb.append("LeaseExpirationTime: ").append(getLeaseExpirationTime()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getProvisioningStatus() != null)
+            sb.append("ProvisioningStatus: ").append(getProvisioningStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -362,21 +362,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Device == false)
             return false;
         Device other = (Device) obj;
-        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
-            return false;
-        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
-        if (other.getProvisioningStatus() == null ^ this.getProvisioningStatus() == null)
+        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
             return false;
-        if (other.getProvisioningStatus() != null && other.getProvisioningStatus().equals(this.getProvisioningStatus()) == false)
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
         if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
             return false;
@@ -386,6 +378,14 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLeaseExpirationTime() != null && other.getLeaseExpirationTime().equals(this.getLeaseExpirationTime()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getProvisioningStatus() == null ^ this.getProvisioningStatus() == null)
+            return false;
+        if (other.getProvisioningStatus() != null && other.getProvisioningStatus().equals(this.getProvisioningStatus()) == false)
+            return false;
         return true;
     }
 
@@ -394,12 +394,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime * hashCode + ((getProvisioningStatus() == null) ? 0 : getProvisioningStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getLeaseExpirationTime() == null) ? 0 : getLeaseExpirationTime().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningStatus() == null) ? 0 : getProvisioningStatus().hashCode());
         return hashCode;
     }
 

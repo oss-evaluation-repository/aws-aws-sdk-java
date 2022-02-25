@@ -48,37 +48,43 @@ public class DescribePackageImportJobResultJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("JobId", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ClientToken", targetDepth)) {
                     context.nextToken();
                     describePackageImportJobResult.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("JobType", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("InputConfig", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setInputConfig(PackageImportJobInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("OutputConfig", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setOutputConfig(PackageImportJobOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Output", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setOutput(PackageImportJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     describePackageImportJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("InputConfig", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setInputConfig(PackageImportJobInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobTags", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setJobTags(new ListUnmarshaller<JobResourceTags>(JobResourceTagsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("JobType", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
                     describePackageImportJobResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Output", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setOutput(PackageImportJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputConfig", targetDepth)) {
+                    context.nextToken();
+                    describePackageImportJobResult.setOutputConfig(PackageImportJobOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -87,12 +93,6 @@ public class DescribePackageImportJobResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();
                     describePackageImportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("JobTags", targetDepth)) {
-                    context.nextToken();
-                    describePackageImportJobResult.setJobTags(new ListUnmarshaller<JobResourceTags>(JobResourceTagsJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

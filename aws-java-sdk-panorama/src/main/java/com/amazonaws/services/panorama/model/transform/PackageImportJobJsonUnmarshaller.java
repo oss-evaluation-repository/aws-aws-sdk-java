@@ -48,6 +48,10 @@ public class PackageImportJobJsonUnmarshaller implements Unmarshaller<PackageImp
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    packageImportJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
                     packageImportJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,6 +60,10 @@ public class PackageImportJobJsonUnmarshaller implements Unmarshaller<PackageImp
                     context.nextToken();
                     packageImportJob.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    packageImportJob.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     packageImportJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,14 +71,6 @@ public class PackageImportJobJsonUnmarshaller implements Unmarshaller<PackageImp
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();
                     packageImportJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    packageImportJob.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("LastUpdatedTime", targetDepth)) {
-                    context.nextToken();
-                    packageImportJob.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

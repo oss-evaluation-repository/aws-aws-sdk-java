@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeApplicationInstanceDetailsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationInstanceId").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("ApplicationInstanceId").build();
 
     private static final DescribeApplicationInstanceDetailsRequestMarshaller instance = new DescribeApplicationInstanceDetailsRequestMarshaller();
 

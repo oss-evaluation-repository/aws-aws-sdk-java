@@ -27,28 +27,68 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A name for the device.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * A description for the device.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Tags for the device.
+     * A name for the device.
      * </p>
      */
-    private java.util.Map<String, String> tags;
+    private String name;
     /**
      * <p>
      * A networking configuration for the device.
      * </p>
      */
     private NetworkPayload networkingConfiguration;
+    /**
+     * <p>
+     * Tags for the device.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * A description for the device.
+     * </p>
+     * 
+     * @param description
+     *        A description for the device.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the device.
+     * </p>
+     * 
+     * @return A description for the device.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the device.
+     * </p>
+     * 
+     * @param description
+     *        A description for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionDeviceRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
@@ -92,41 +132,41 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A description for the device.
+     * A networking configuration for the device.
      * </p>
      * 
-     * @param description
-     *        A description for the device.
+     * @param networkingConfiguration
+     *        A networking configuration for the device.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setNetworkingConfiguration(NetworkPayload networkingConfiguration) {
+        this.networkingConfiguration = networkingConfiguration;
     }
 
     /**
      * <p>
-     * A description for the device.
+     * A networking configuration for the device.
      * </p>
      * 
-     * @return A description for the device.
+     * @return A networking configuration for the device.
      */
 
-    public String getDescription() {
-        return this.description;
+    public NetworkPayload getNetworkingConfiguration() {
+        return this.networkingConfiguration;
     }
 
     /**
      * <p>
-     * A description for the device.
+     * A networking configuration for the device.
      * </p>
      * 
-     * @param description
-     *        A description for the device.
+     * @param networkingConfiguration
+     *        A networking configuration for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ProvisionDeviceRequest withDescription(String description) {
-        setDescription(description);
+    public ProvisionDeviceRequest withNetworkingConfiguration(NetworkPayload networkingConfiguration) {
+        setNetworkingConfiguration(networkingConfiguration);
         return this;
     }
 
@@ -199,46 +239,6 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * A networking configuration for the device.
-     * </p>
-     * 
-     * @param networkingConfiguration
-     *        A networking configuration for the device.
-     */
-
-    public void setNetworkingConfiguration(NetworkPayload networkingConfiguration) {
-        this.networkingConfiguration = networkingConfiguration;
-    }
-
-    /**
-     * <p>
-     * A networking configuration for the device.
-     * </p>
-     * 
-     * @return A networking configuration for the device.
-     */
-
-    public NetworkPayload getNetworkingConfiguration() {
-        return this.networkingConfiguration;
-    }
-
-    /**
-     * <p>
-     * A networking configuration for the device.
-     * </p>
-     * 
-     * @param networkingConfiguration
-     *        A networking configuration for the device.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProvisionDeviceRequest withNetworkingConfiguration(NetworkPayload networkingConfiguration) {
-        setNetworkingConfiguration(networkingConfiguration);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,14 +250,14 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getNetworkingConfiguration() != null)
-            sb.append("NetworkingConfiguration: ").append(getNetworkingConfiguration());
+            sb.append("NetworkingConfiguration: ").append(getNetworkingConfiguration()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -272,21 +272,21 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof ProvisionDeviceRequest == false)
             return false;
         ProvisionDeviceRequest other = (ProvisionDeviceRequest) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getNetworkingConfiguration() == null ^ this.getNetworkingConfiguration() == null)
             return false;
         if (other.getNetworkingConfiguration() != null && other.getNetworkingConfiguration().equals(this.getNetworkingConfiguration()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -296,10 +296,10 @@ public class ProvisionDeviceRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNetworkingConfiguration() == null) ? 0 : getNetworkingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

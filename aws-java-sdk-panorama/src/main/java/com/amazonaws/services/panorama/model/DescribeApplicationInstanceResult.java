@@ -25,16 +25,28 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      */
-    private String name;
+    private String applicationInstanceId;
     /**
      * <p>
-     * The application instance's description.
+     * The ID of the application instance that this instance replaced.
      * </p>
      */
-    private String description;
+    private String applicationInstanceIdToReplace;
+    /**
+     * <p>
+     * The application instance's ARN.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * When the application instance was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
     /**
      * <p>
      * The device's ID.
@@ -49,10 +61,28 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
     private String defaultRuntimeContextDeviceName;
     /**
      * <p>
-     * The ID of the application instance that this instance replaced.
+     * The application instance's description.
      * </p>
      */
-    private String applicationInstanceIdToReplace;
+    private String description;
+    /**
+     * <p>
+     * The application instance's health status.
+     * </p>
+     */
+    private String healthStatus;
+    /**
+     * <p>
+     * The application instance was updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The application instance's runtime role ARN.
@@ -67,40 +97,10 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
     private String status;
     /**
      * <p>
-     * The application instance's health status.
-     * </p>
-     */
-    private String healthStatus;
-    /**
-     * <p>
      * The application instance's status description.
      * </p>
      */
     private String statusDescription;
-    /**
-     * <p>
-     * When the application instance was created.
-     * </p>
-     */
-    private java.util.Date createdTime;
-    /**
-     * <p>
-     * The application instance was updated.
-     * </p>
-     */
-    private java.util.Date lastUpdatedTime;
-    /**
-     * <p>
-     * The application instance's ID.
-     * </p>
-     */
-    private String applicationInstanceId;
-    /**
-     * <p>
-     * The application instance's ARN.
-     * </p>
-     */
-    private String arn;
     /**
      * <p>
      * The application instance's tags.
@@ -110,81 +110,161 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      * 
-     * @param name
-     *        The application instance's name.
+     * @param applicationInstanceId
+     *        The application instance's ID.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setApplicationInstanceId(String applicationInstanceId) {
+        this.applicationInstanceId = applicationInstanceId;
     }
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      * 
-     * @return The application instance's name.
+     * @return The application instance's ID.
      */
 
-    public String getName() {
-        return this.name;
+    public String getApplicationInstanceId() {
+        return this.applicationInstanceId;
     }
 
     /**
      * <p>
-     * The application instance's name.
+     * The application instance's ID.
      * </p>
      * 
-     * @param name
-     *        The application instance's name.
+     * @param applicationInstanceId
+     *        The application instance's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationInstanceResult withName(String name) {
-        setName(name);
+    public DescribeApplicationInstanceResult withApplicationInstanceId(String applicationInstanceId) {
+        setApplicationInstanceId(applicationInstanceId);
         return this;
     }
 
     /**
      * <p>
-     * The application instance's description.
+     * The ID of the application instance that this instance replaced.
      * </p>
      * 
-     * @param description
-     *        The application instance's description.
+     * @param applicationInstanceIdToReplace
+     *        The ID of the application instance that this instance replaced.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
+        this.applicationInstanceIdToReplace = applicationInstanceIdToReplace;
     }
 
     /**
      * <p>
-     * The application instance's description.
+     * The ID of the application instance that this instance replaced.
      * </p>
      * 
-     * @return The application instance's description.
+     * @return The ID of the application instance that this instance replaced.
      */
 
-    public String getDescription() {
-        return this.description;
+    public String getApplicationInstanceIdToReplace() {
+        return this.applicationInstanceIdToReplace;
     }
 
     /**
      * <p>
-     * The application instance's description.
+     * The ID of the application instance that this instance replaced.
      * </p>
      * 
-     * @param description
-     *        The application instance's description.
+     * @param applicationInstanceIdToReplace
+     *        The ID of the application instance that this instance replaced.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationInstanceResult withDescription(String description) {
-        setDescription(description);
+    public DescribeApplicationInstanceResult withApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
+        setApplicationInstanceIdToReplace(applicationInstanceIdToReplace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The application instance's ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The application instance's ARN.
+     * </p>
+     * 
+     * @return The application instance's ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The application instance's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The application instance's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the application instance was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the application instance was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * When the application instance was created.
+     * </p>
+     * 
+     * @return When the application instance was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * When the application instance was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the application instance was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
         return this;
     }
 
@@ -270,41 +350,180 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the application instance that this instance replaced.
+     * The application instance's description.
      * </p>
      * 
-     * @param applicationInstanceIdToReplace
-     *        The ID of the application instance that this instance replaced.
+     * @param description
+     *        The application instance's description.
      */
 
-    public void setApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
-        this.applicationInstanceIdToReplace = applicationInstanceIdToReplace;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The ID of the application instance that this instance replaced.
+     * The application instance's description.
      * </p>
      * 
-     * @return The ID of the application instance that this instance replaced.
+     * @return The application instance's description.
      */
 
-    public String getApplicationInstanceIdToReplace() {
-        return this.applicationInstanceIdToReplace;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The ID of the application instance that this instance replaced.
+     * The application instance's description.
      * </p>
      * 
-     * @param applicationInstanceIdToReplace
-     *        The ID of the application instance that this instance replaced.
+     * @param description
+     *        The application instance's description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationInstanceResult withApplicationInstanceIdToReplace(String applicationInstanceIdToReplace) {
-        setApplicationInstanceIdToReplace(applicationInstanceIdToReplace);
+    public DescribeApplicationInstanceResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's health status.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The application instance's health status.
+     * @see ApplicationInstanceHealthStatus
+     */
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
+    /**
+     * <p>
+     * The application instance's health status.
+     * </p>
+     * 
+     * @return The application instance's health status.
+     * @see ApplicationInstanceHealthStatus
+     */
+
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    /**
+     * <p>
+     * The application instance's health status.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The application instance's health status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationInstanceHealthStatus
+     */
+
+    public DescribeApplicationInstanceResult withHealthStatus(String healthStatus) {
+        setHealthStatus(healthStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's health status.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The application instance's health status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationInstanceHealthStatus
+     */
+
+    public DescribeApplicationInstanceResult withHealthStatus(ApplicationInstanceHealthStatus healthStatus) {
+        this.healthStatus = healthStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The application instance was updated.
+     */
+
+    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The application instance was updated.
+     * </p>
+     * 
+     * @return The application instance was updated.
+     */
+
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The application instance was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The application instance was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        setLastUpdatedTime(lastUpdatedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @param name
+     *        The application instance's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @return The application instance's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The application instance's name.
+     * </p>
+     * 
+     * @param name
+     *        The application instance's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationInstanceResult withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -409,65 +628,6 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The application instance's health status.
-     * </p>
-     * 
-     * @param healthStatus
-     *        The application instance's health status.
-     * @see ApplicationInstanceHealthStatus
-     */
-
-    public void setHealthStatus(String healthStatus) {
-        this.healthStatus = healthStatus;
-    }
-
-    /**
-     * <p>
-     * The application instance's health status.
-     * </p>
-     * 
-     * @return The application instance's health status.
-     * @see ApplicationInstanceHealthStatus
-     */
-
-    public String getHealthStatus() {
-        return this.healthStatus;
-    }
-
-    /**
-     * <p>
-     * The application instance's health status.
-     * </p>
-     * 
-     * @param healthStatus
-     *        The application instance's health status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ApplicationInstanceHealthStatus
-     */
-
-    public DescribeApplicationInstanceResult withHealthStatus(String healthStatus) {
-        setHealthStatus(healthStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's health status.
-     * </p>
-     * 
-     * @param healthStatus
-     *        The application instance's health status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ApplicationInstanceHealthStatus
-     */
-
-    public DescribeApplicationInstanceResult withHealthStatus(ApplicationInstanceHealthStatus healthStatus) {
-        this.healthStatus = healthStatus.toString();
-        return this;
-    }
-
-    /**
-     * <p>
      * The application instance's status description.
      * </p>
      * 
@@ -503,166 +663,6 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
 
     public DescribeApplicationInstanceResult withStatusDescription(String statusDescription) {
         setStatusDescription(statusDescription);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the application instance was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the application instance was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the application instance was created.
-     * </p>
-     * 
-     * @return When the application instance was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the application instance was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the application instance was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceResult withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance was updated.
-     * </p>
-     * 
-     * @param lastUpdatedTime
-     *        The application instance was updated.
-     */
-
-    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
-        this.lastUpdatedTime = lastUpdatedTime;
-    }
-
-    /**
-     * <p>
-     * The application instance was updated.
-     * </p>
-     * 
-     * @return The application instance was updated.
-     */
-
-    public java.util.Date getLastUpdatedTime() {
-        return this.lastUpdatedTime;
-    }
-
-    /**
-     * <p>
-     * The application instance was updated.
-     * </p>
-     * 
-     * @param lastUpdatedTime
-     *        The application instance was updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceResult withLastUpdatedTime(java.util.Date lastUpdatedTime) {
-        setLastUpdatedTime(lastUpdatedTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's ID.
-     * </p>
-     * 
-     * @param applicationInstanceId
-     *        The application instance's ID.
-     */
-
-    public void setApplicationInstanceId(String applicationInstanceId) {
-        this.applicationInstanceId = applicationInstanceId;
-    }
-
-    /**
-     * <p>
-     * The application instance's ID.
-     * </p>
-     * 
-     * @return The application instance's ID.
-     */
-
-    public String getApplicationInstanceId() {
-        return this.applicationInstanceId;
-    }
-
-    /**
-     * <p>
-     * The application instance's ID.
-     * </p>
-     * 
-     * @param applicationInstanceId
-     *        The application instance's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceResult withApplicationInstanceId(String applicationInstanceId) {
-        setApplicationInstanceId(applicationInstanceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The application instance's ARN.
-     * </p>
-     * 
-     * @param arn
-     *        The application instance's ARN.
-     */
-
-    public void setArn(String arn) {
-        this.arn = arn;
-    }
-
-    /**
-     * <p>
-     * The application instance's ARN.
-     * </p>
-     * 
-     * @return The application instance's ARN.
-     */
-
-    public String getArn() {
-        return this.arn;
-    }
-
-    /**
-     * <p>
-     * The application instance's ARN.
-     * </p>
-     * 
-     * @param arn
-     *        The application instance's ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeApplicationInstanceResult withArn(String arn) {
-        setArn(arn);
         return this;
     }
 
@@ -746,32 +746,32 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getApplicationInstanceId() != null)
+            sb.append("ApplicationInstanceId: ").append(getApplicationInstanceId()).append(",");
+        if (getApplicationInstanceIdToReplace() != null)
+            sb.append("ApplicationInstanceIdToReplace: ").append(getApplicationInstanceIdToReplace()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getDefaultRuntimeContextDevice() != null)
             sb.append("DefaultRuntimeContextDevice: ").append(getDefaultRuntimeContextDevice()).append(",");
         if (getDefaultRuntimeContextDeviceName() != null)
             sb.append("DefaultRuntimeContextDeviceName: ").append(getDefaultRuntimeContextDeviceName()).append(",");
-        if (getApplicationInstanceIdToReplace() != null)
-            sb.append("ApplicationInstanceIdToReplace: ").append(getApplicationInstanceIdToReplace()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getHealthStatus() != null)
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getRuntimeRoleArn() != null)
             sb.append("RuntimeRoleArn: ").append(getRuntimeRoleArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getHealthStatus() != null)
-            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getStatusDescription() != null)
             sb.append("StatusDescription: ").append(getStatusDescription()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
-        if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
-        if (getApplicationInstanceId() != null)
-            sb.append("ApplicationInstanceId: ").append(getApplicationInstanceId()).append(",");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -788,13 +788,22 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
         if (obj instanceof DescribeApplicationInstanceResult == false)
             return false;
         DescribeApplicationInstanceResult other = (DescribeApplicationInstanceResult) obj;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getApplicationInstanceId() == null ^ this.getApplicationInstanceId() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getApplicationInstanceId() != null && other.getApplicationInstanceId().equals(this.getApplicationInstanceId()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getApplicationInstanceIdToReplace() == null ^ this.getApplicationInstanceIdToReplace() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getApplicationInstanceIdToReplace() != null
+                && other.getApplicationInstanceIdToReplace().equals(this.getApplicationInstanceIdToReplace()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         if (other.getDefaultRuntimeContextDevice() == null ^ this.getDefaultRuntimeContextDevice() == null)
             return false;
@@ -805,10 +814,21 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
         if (other.getDefaultRuntimeContextDeviceName() != null
                 && other.getDefaultRuntimeContextDeviceName().equals(this.getDefaultRuntimeContextDeviceName()) == false)
             return false;
-        if (other.getApplicationInstanceIdToReplace() == null ^ this.getApplicationInstanceIdToReplace() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getApplicationInstanceIdToReplace() != null
-                && other.getApplicationInstanceIdToReplace().equals(this.getApplicationInstanceIdToReplace()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
+            return false;
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+            return false;
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getRuntimeRoleArn() == null ^ this.getRuntimeRoleArn() == null)
             return false;
@@ -818,29 +838,9 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
-            return false;
-        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
-            return false;
         if (other.getStatusDescription() == null ^ this.getStatusDescription() == null)
             return false;
         if (other.getStatusDescription() != null && other.getStatusDescription().equals(this.getStatusDescription()) == false)
-            return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
-            return false;
-        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
-            return false;
-        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
-            return false;
-        if (other.getApplicationInstanceId() == null ^ this.getApplicationInstanceId() == null)
-            return false;
-        if (other.getApplicationInstanceId() != null && other.getApplicationInstanceId().equals(this.getApplicationInstanceId()) == false)
-            return false;
-        if (other.getArn() == null ^ this.getArn() == null)
-            return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -854,19 +854,19 @@ public class DescribeApplicationInstanceResult extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getApplicationInstanceId() == null) ? 0 : getApplicationInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationInstanceIdToReplace() == null) ? 0 : getApplicationInstanceIdToReplace().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getDefaultRuntimeContextDevice() == null) ? 0 : getDefaultRuntimeContextDevice().hashCode());
         hashCode = prime * hashCode + ((getDefaultRuntimeContextDeviceName() == null) ? 0 : getDefaultRuntimeContextDeviceName().hashCode());
-        hashCode = prime * hashCode + ((getApplicationInstanceIdToReplace() == null) ? 0 : getApplicationInstanceIdToReplace().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRuntimeRoleArn() == null) ? 0 : getRuntimeRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDescription() == null) ? 0 : getStatusDescription().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
-        hashCode = prime * hashCode + ((getApplicationInstanceId() == null) ? 0 : getApplicationInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

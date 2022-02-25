@@ -30,6 +30,18 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The connection's default gateway.
+     * </p>
+     */
+    private String defaultGateway;
+    /**
+     * <p>
+     * The connection's DNS address.
+     * </p>
+     */
+    private java.util.List<String> dns;
+    /**
+     * <p>
      * The connection's IP address.
      * </p>
      */
@@ -40,18 +52,116 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
      * </p>
      */
     private String mask;
-    /**
-     * <p>
-     * The connection's DNS address.
-     * </p>
-     */
-    private java.util.List<String> dns;
+
     /**
      * <p>
      * The connection's default gateway.
      * </p>
+     * 
+     * @param defaultGateway
+     *        The connection's default gateway.
      */
-    private String defaultGateway;
+
+    public void setDefaultGateway(String defaultGateway) {
+        this.defaultGateway = defaultGateway;
+    }
+
+    /**
+     * <p>
+     * The connection's default gateway.
+     * </p>
+     * 
+     * @return The connection's default gateway.
+     */
+
+    public String getDefaultGateway() {
+        return this.defaultGateway;
+    }
+
+    /**
+     * <p>
+     * The connection's default gateway.
+     * </p>
+     * 
+     * @param defaultGateway
+     *        The connection's default gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StaticIpConnectionInfo withDefaultGateway(String defaultGateway) {
+        setDefaultGateway(defaultGateway);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection's DNS address.
+     * </p>
+     * 
+     * @return The connection's DNS address.
+     */
+
+    public java.util.List<String> getDns() {
+        return dns;
+    }
+
+    /**
+     * <p>
+     * The connection's DNS address.
+     * </p>
+     * 
+     * @param dns
+     *        The connection's DNS address.
+     */
+
+    public void setDns(java.util.Collection<String> dns) {
+        if (dns == null) {
+            this.dns = null;
+            return;
+        }
+
+        this.dns = new java.util.ArrayList<String>(dns);
+    }
+
+    /**
+     * <p>
+     * The connection's DNS address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDns(java.util.Collection)} or {@link #withDns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param dns
+     *        The connection's DNS address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StaticIpConnectionInfo withDns(String... dns) {
+        if (this.dns == null) {
+            setDns(new java.util.ArrayList<String>(dns.length));
+        }
+        for (String ele : dns) {
+            this.dns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection's DNS address.
+     * </p>
+     * 
+     * @param dns
+     *        The connection's DNS address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StaticIpConnectionInfo withDns(java.util.Collection<String> dns) {
+        setDns(dns);
+        return this;
+    }
 
     /**
      * <p>
@@ -134,116 +244,6 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
     }
 
     /**
-     * <p>
-     * The connection's DNS address.
-     * </p>
-     * 
-     * @return The connection's DNS address.
-     */
-
-    public java.util.List<String> getDns() {
-        return dns;
-    }
-
-    /**
-     * <p>
-     * The connection's DNS address.
-     * </p>
-     * 
-     * @param dns
-     *        The connection's DNS address.
-     */
-
-    public void setDns(java.util.Collection<String> dns) {
-        if (dns == null) {
-            this.dns = null;
-            return;
-        }
-
-        this.dns = new java.util.ArrayList<String>(dns);
-    }
-
-    /**
-     * <p>
-     * The connection's DNS address.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setDns(java.util.Collection)} or {@link #withDns(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param dns
-     *        The connection's DNS address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StaticIpConnectionInfo withDns(String... dns) {
-        if (this.dns == null) {
-            setDns(new java.util.ArrayList<String>(dns.length));
-        }
-        for (String ele : dns) {
-            this.dns.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The connection's DNS address.
-     * </p>
-     * 
-     * @param dns
-     *        The connection's DNS address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StaticIpConnectionInfo withDns(java.util.Collection<String> dns) {
-        setDns(dns);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The connection's default gateway.
-     * </p>
-     * 
-     * @param defaultGateway
-     *        The connection's default gateway.
-     */
-
-    public void setDefaultGateway(String defaultGateway) {
-        this.defaultGateway = defaultGateway;
-    }
-
-    /**
-     * <p>
-     * The connection's default gateway.
-     * </p>
-     * 
-     * @return The connection's default gateway.
-     */
-
-    public String getDefaultGateway() {
-        return this.defaultGateway;
-    }
-
-    /**
-     * <p>
-     * The connection's default gateway.
-     * </p>
-     * 
-     * @param defaultGateway
-     *        The connection's default gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StaticIpConnectionInfo withDefaultGateway(String defaultGateway) {
-        setDefaultGateway(defaultGateway);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,14 +255,14 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDefaultGateway() != null)
+            sb.append("DefaultGateway: ").append(getDefaultGateway()).append(",");
+        if (getDns() != null)
+            sb.append("Dns: ").append(getDns()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getMask() != null)
-            sb.append("Mask: ").append(getMask()).append(",");
-        if (getDns() != null)
-            sb.append("Dns: ").append(getDns()).append(",");
-        if (getDefaultGateway() != null)
-            sb.append("DefaultGateway: ").append(getDefaultGateway());
+            sb.append("Mask: ").append(getMask());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +277,14 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
         if (obj instanceof StaticIpConnectionInfo == false)
             return false;
         StaticIpConnectionInfo other = (StaticIpConnectionInfo) obj;
+        if (other.getDefaultGateway() == null ^ this.getDefaultGateway() == null)
+            return false;
+        if (other.getDefaultGateway() != null && other.getDefaultGateway().equals(this.getDefaultGateway()) == false)
+            return false;
+        if (other.getDns() == null ^ this.getDns() == null)
+            return false;
+        if (other.getDns() != null && other.getDns().equals(this.getDns()) == false)
+            return false;
         if (other.getIpAddress() == null ^ this.getIpAddress() == null)
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
@@ -284,14 +292,6 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
         if (other.getMask() == null ^ this.getMask() == null)
             return false;
         if (other.getMask() != null && other.getMask().equals(this.getMask()) == false)
-            return false;
-        if (other.getDns() == null ^ this.getDns() == null)
-            return false;
-        if (other.getDns() != null && other.getDns().equals(this.getDns()) == false)
-            return false;
-        if (other.getDefaultGateway() == null ^ this.getDefaultGateway() == null)
-            return false;
-        if (other.getDefaultGateway() != null && other.getDefaultGateway().equals(this.getDefaultGateway()) == false)
             return false;
         return true;
     }
@@ -301,10 +301,10 @@ public class StaticIpConnectionInfo implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDefaultGateway() == null) ? 0 : getDefaultGateway().hashCode());
+        hashCode = prime * hashCode + ((getDns() == null) ? 0 : getDns().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getMask() == null) ? 0 : getMask().hashCode());
-        hashCode = prime * hashCode + ((getDns() == null) ? 0 : getDns().hashCode());
-        hashCode = prime * hashCode + ((getDefaultGateway() == null) ? 0 : getDefaultGateway().hashCode());
         return hashCode;
     }
 

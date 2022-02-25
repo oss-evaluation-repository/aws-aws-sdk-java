@@ -31,6 +31,8 @@ public class NetworkPayloadMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ethernet0").build();
     private static final MarshallingInfo<StructuredPojo> ETHERNET1_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ethernet1").build();
+    private static final MarshallingInfo<StructuredPojo> NTP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ntp").build();
 
     private static final NetworkPayloadMarshaller instance = new NetworkPayloadMarshaller();
 
@@ -50,6 +52,7 @@ public class NetworkPayloadMarshaller {
         try {
             protocolMarshaller.marshall(networkPayload.getEthernet0(), ETHERNET0_BINDING);
             protocolMarshaller.marshall(networkPayload.getEthernet1(), ETHERNET1_BINDING);
+            protocolMarshaller.marshall(networkPayload.getNtp(), NTP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

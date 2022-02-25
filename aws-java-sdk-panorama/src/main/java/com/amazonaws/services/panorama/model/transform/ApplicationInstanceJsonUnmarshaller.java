@@ -48,13 +48,17 @@ public class ApplicationInstanceJsonUnmarshaller implements Unmarshaller<Applica
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    applicationInstance.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ApplicationInstanceId", targetDepth)) {
                     context.nextToken();
                     applicationInstance.setApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    applicationInstance.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    applicationInstance.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DefaultRuntimeContextDevice", targetDepth)) {
                     context.nextToken();
@@ -68,25 +72,21 @@ public class ApplicationInstanceJsonUnmarshaller implements Unmarshaller<Applica
                     context.nextToken();
                     applicationInstance.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Status", targetDepth)) {
-                    context.nextToken();
-                    applicationInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("HealthStatus", targetDepth)) {
                     context.nextToken();
                     applicationInstance.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    applicationInstance.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    applicationInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("StatusDescription", targetDepth)) {
                     context.nextToken();
                     applicationInstance.setStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    applicationInstance.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("Arn", targetDepth)) {
-                    context.nextToken();
-                    applicationInstance.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

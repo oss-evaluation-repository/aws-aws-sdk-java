@@ -25,22 +25,22 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The job's ID.
+     * When the job was created.
      * </p>
      */
-    private String jobId;
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     */
-    private String deviceId;
+    private java.util.Date createdTime;
     /**
      * <p>
      * The device's ARN.
      * </p>
      */
     private String deviceArn;
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     */
+    private String deviceId;
     /**
      * <p>
      * The device's name.
@@ -61,94 +61,54 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
     private String imageVersion;
     /**
      * <p>
+     * The job's ID.
+     * </p>
+     */
+    private String jobId;
+    /**
+     * <p>
      * The job's status.
      * </p>
      */
     private String status;
+
     /**
      * <p>
      * When the job was created.
      * </p>
-     */
-    private java.util.Date createdTime;
-
-    /**
-     * <p>
-     * The job's ID.
-     * </p>
      * 
-     * @param jobId
-     *        The job's ID.
+     * @param createdTime
+     *        When the job was created.
      */
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
     }
 
     /**
      * <p>
-     * The job's ID.
+     * When the job was created.
      * </p>
      * 
-     * @return The job's ID.
+     * @return When the job was created.
      */
 
-    public String getJobId() {
-        return this.jobId;
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
     }
 
     /**
      * <p>
-     * The job's ID.
+     * When the job was created.
      * </p>
      * 
-     * @param jobId
-     *        The job's ID.
+     * @param createdTime
+     *        When the job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDeviceJobResult withJobId(String jobId) {
-        setJobId(jobId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     */
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @return The device's ID.
-     */
-
-    public String getDeviceId() {
-        return this.deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeDeviceJobResult withDeviceId(String deviceId) {
-        setDeviceId(deviceId);
+    public DescribeDeviceJobResult withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
         return this;
     }
 
@@ -189,6 +149,46 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeDeviceJobResult withDeviceArn(String deviceArn) {
         setDeviceArn(deviceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     */
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @return The device's ID.
+     */
+
+    public String getDeviceId() {
+        return this.deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeviceJobResult withDeviceId(String deviceId) {
+        setDeviceId(deviceId);
         return this;
     }
 
@@ -333,6 +333,46 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param jobId
+     *        The job's ID.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @return The job's ID.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param jobId
+     *        The job's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeviceJobResult withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The job's status.
      * </p>
      * 
@@ -391,46 +431,6 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeDeviceJobResult withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -442,22 +442,22 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId()).append(",");
-        if (getDeviceId() != null)
-            sb.append("DeviceId: ").append(getDeviceId()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getDeviceArn() != null)
             sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
+        if (getDeviceId() != null)
+            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getDeviceType() != null)
             sb.append("DeviceType: ").append(getDeviceType()).append(",");
         if (getImageVersion() != null)
             sb.append("ImageVersion: ").append(getImageVersion()).append(",");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -472,17 +472,17 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof DescribeDeviceJobResult == false)
             return false;
         DescribeDeviceJobResult other = (DescribeDeviceJobResult) obj;
-        if (other.getJobId() == null ^ this.getJobId() == null)
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
-            return false;
-        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
-            return false;
-        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         if (other.getDeviceArn() == null ^ this.getDeviceArn() == null)
             return false;
         if (other.getDeviceArn() != null && other.getDeviceArn().equals(this.getDeviceArn()) == false)
+            return false;
+        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
+            return false;
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
@@ -496,13 +496,13 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getImageVersion() != null && other.getImageVersion().equals(this.getImageVersion()) == false)
             return false;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         return true;
     }
@@ -512,14 +512,14 @@ public class DescribeDeviceJobResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         hashCode = prime * hashCode + ((getImageVersion() == null) ? 0 : getImageVersion().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         return hashCode;
     }
 

@@ -25,22 +25,10 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The device's ID.
-     * </p>
-     */
-    private String deviceId;
-    /**
-     * <p>
      * The device's ARN.
      * </p>
      */
     private String arn;
-    /**
-     * <p>
-     * The device's status.
-     * </p>
-     */
-    private String status;
     /**
      * <p>
      * The device's configuration bundle.
@@ -49,50 +37,22 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
     private java.nio.ByteBuffer certificates;
     /**
      * <p>
+     * The device's ID.
+     * </p>
+     */
+    private String deviceId;
+    /**
+     * <p>
      * The device's IoT thing name.
      * </p>
      */
     private String iotThingName;
-
     /**
      * <p>
-     * The device's ID.
+     * The device's status.
      * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
      */
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @return The device's ID.
-     */
-
-    public String getDeviceId() {
-        return this.deviceId;
-    }
-
-    /**
-     * <p>
-     * The device's ID.
-     * </p>
-     * 
-     * @param deviceId
-     *        The device's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ProvisionDeviceResult withDeviceId(String deviceId) {
-        setDeviceId(deviceId);
-        return this;
-    }
+    private String status;
 
     /**
      * <p>
@@ -131,65 +91,6 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
 
     public ProvisionDeviceResult withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device's status.
-     * </p>
-     * 
-     * @param status
-     *        The device's status.
-     * @see DeviceStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The device's status.
-     * </p>
-     * 
-     * @return The device's status.
-     * @see DeviceStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The device's status.
-     * </p>
-     * 
-     * @param status
-     *        The device's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceStatus
-     */
-
-    public ProvisionDeviceResult withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device's status.
-     * </p>
-     * 
-     * @param status
-     *        The device's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceStatus
-     */
-
-    public ProvisionDeviceResult withStatus(DeviceStatus status) {
-        this.status = status.toString();
         return this;
     }
 
@@ -262,6 +163,46 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     */
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @return The device's ID.
+     */
+
+    public String getDeviceId() {
+        return this.deviceId;
+    }
+
+    /**
+     * <p>
+     * The device's ID.
+     * </p>
+     * 
+     * @param deviceId
+     *        The device's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionDeviceResult withDeviceId(String deviceId) {
+        setDeviceId(deviceId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The device's IoT thing name.
      * </p>
      * 
@@ -301,6 +242,65 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The device's status.
+     * </p>
+     * 
+     * @param status
+     *        The device's status.
+     * @see DeviceStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The device's status.
+     * </p>
+     * 
+     * @return The device's status.
+     * @see DeviceStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The device's status.
+     * </p>
+     * 
+     * @param status
+     *        The device's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceStatus
+     */
+
+    public ProvisionDeviceResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's status.
+     * </p>
+     * 
+     * @param status
+     *        The device's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceStatus
+     */
+
+    public ProvisionDeviceResult withStatus(DeviceStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -312,16 +312,16 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeviceId() != null)
-            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getCertificates() != null)
             sb.append("Certificates: ").append(getCertificates()).append(",");
+        if (getDeviceId() != null)
+            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getIotThingName() != null)
-            sb.append("IotThingName: ").append(getIotThingName());
+            sb.append("IotThingName: ").append(getIotThingName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -336,25 +336,25 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof ProvisionDeviceResult == false)
             return false;
         ProvisionDeviceResult other = (ProvisionDeviceResult) obj;
-        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
-            return false;
-        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
-            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getCertificates() == null ^ this.getCertificates() == null)
             return false;
         if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
             return false;
+        if (other.getDeviceId() == null ^ this.getDeviceId() == null)
+            return false;
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
+            return false;
         if (other.getIotThingName() == null ^ this.getIotThingName() == null)
             return false;
         if (other.getIotThingName() != null && other.getIotThingName().equals(this.getIotThingName()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -364,11 +364,11 @@ public class ProvisionDeviceResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getIotThingName() == null) ? 0 : getIotThingName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

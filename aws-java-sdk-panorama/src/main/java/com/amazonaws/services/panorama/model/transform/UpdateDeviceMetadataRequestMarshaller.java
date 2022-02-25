@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateDeviceMetadataRequestMarshaller {
 
-    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("DeviceId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DeviceId").build();
 
     private static final UpdateDeviceMetadataRequestMarshaller instance = new UpdateDeviceMetadataRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class UpdateDeviceMetadataRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateDeviceMetadataRequest.getDeviceId(), DEVICEID_BINDING);
             protocolMarshaller.marshall(updateDeviceMetadataRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateDeviceMetadataRequest.getDeviceId(), DEVICEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

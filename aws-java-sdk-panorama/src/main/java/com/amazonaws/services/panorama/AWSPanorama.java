@@ -26,6 +26,7 @@ import com.amazonaws.services.panorama.model.*;
  * {@link com.amazonaws.services.panorama.AbstractAWSPanorama} instead.
  * </p>
  * <p>
+ * <p>
  * <fullname>AWS Panorama</fullname>
  * <p>
  * <b>Overview</b>
@@ -34,6 +35,7 @@ import com.amazonaws.services.panorama.model.*;
  * This is the <i>AWS Panorama API Reference</i>. For an introduction to the service, see <a
  * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What is AWS Panorama?</a> in the <i>AWS
  * Panorama Developer Guide</i>.
+ * </p>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -56,12 +58,12 @@ public interface AWSPanorama {
      * @return Result of the CreateApplicationInstance operation returned by the service.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ServiceQuotaExceededException
      *         The request would cause a limit to be exceeded.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.CreateApplicationInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateApplicationInstance"
      *      target="_top">AWS API Documentation</a>
@@ -79,12 +81,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.CreateJobForDevices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateJobForDevices" target="_top">AWS
      *      API Documentation</a>
@@ -98,14 +100,14 @@ public interface AWSPanorama {
      * 
      * @param createNodeFromTemplateJobRequest
      * @return Result of the CreateNodeFromTemplateJob operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.CreateNodeFromTemplateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateNodeFromTemplateJob"
      *      target="_top">AWS API Documentation</a>
@@ -119,14 +121,14 @@ public interface AWSPanorama {
      * 
      * @param createPackageRequest
      * @return Result of the CreatePackage operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.CreatePackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreatePackage" target="_top">AWS API
      *      Documentation</a>
@@ -140,14 +142,14 @@ public interface AWSPanorama {
      * 
      * @param createPackageImportJobRequest
      * @return Result of the CreatePackageImportJob operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.CreatePackageImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreatePackageImportJob"
      *      target="_top">AWS API Documentation</a>
@@ -165,12 +167,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DeleteDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeleteDevice" target="_top">AWS API
      *      Documentation</a>
@@ -181,19 +183,25 @@ public interface AWSPanorama {
      * <p>
      * Deletes a package.
      * </p>
+     * <note>
+     * <p>
+     * To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition to permissions for the
+     * AWS Panorama API.
+     * </p>
+     * </note>
      * 
      * @param deletePackageRequest
      * @return Result of the DeletePackage operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DeletePackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeletePackage" target="_top">AWS API
      *      Documentation</a>
@@ -207,16 +215,16 @@ public interface AWSPanorama {
      * 
      * @param deregisterPackageVersionRequest
      * @return Result of the DeregisterPackageVersion operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DeregisterPackageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeregisterPackageVersion"
      *      target="_top">AWS API Documentation</a>
@@ -234,12 +242,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeApplicationInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeApplicationInstance"
      *      target="_top">AWS API Documentation</a>
@@ -257,12 +265,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeApplicationInstanceDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeApplicationInstanceDetails"
      *      target="_top">AWS API Documentation</a>
@@ -279,12 +287,12 @@ public interface AWSPanorama {
      * @return Result of the DescribeDevice operation returned by the service.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeDevice" target="_top">AWS API
      *      Documentation</a>
@@ -302,12 +310,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeDeviceJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeDeviceJob" target="_top">AWS API
      *      Documentation</a>
@@ -325,12 +333,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeNode" target="_top">AWS API
      *      Documentation</a>
@@ -344,14 +352,14 @@ public interface AWSPanorama {
      * 
      * @param describeNodeFromTemplateJobRequest
      * @return Result of the DescribeNodeFromTemplateJob operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribeNodeFromTemplateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeNodeFromTemplateJob"
      *      target="_top">AWS API Documentation</a>
@@ -365,16 +373,16 @@ public interface AWSPanorama {
      * 
      * @param describePackageRequest
      * @return Result of the DescribePackage operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribePackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackage" target="_top">AWS API
      *      Documentation</a>
@@ -388,14 +396,14 @@ public interface AWSPanorama {
      * 
      * @param describePackageImportJobRequest
      * @return Result of the DescribePackageImportJob operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribePackageImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackageImportJob"
      *      target="_top">AWS API Documentation</a>
@@ -409,16 +417,16 @@ public interface AWSPanorama {
      * 
      * @param describePackageVersionRequest
      * @return Result of the DescribePackageVersion operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.DescribePackageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackageVersion"
      *      target="_top">AWS API Documentation</a>
@@ -489,10 +497,10 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ListDevices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListDevices" target="_top">AWS API
      *      Documentation</a>
@@ -510,12 +518,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ListDevicesJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListDevicesJobs" target="_top">AWS API
      *      Documentation</a>
@@ -529,14 +537,14 @@ public interface AWSPanorama {
      * 
      * @param listNodeFromTemplateJobsRequest
      * @return Result of the ListNodeFromTemplateJobs operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ListNodeFromTemplateJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListNodeFromTemplateJobs"
      *      target="_top">AWS API Documentation</a>
@@ -569,14 +577,14 @@ public interface AWSPanorama {
      * 
      * @param listPackageImportJobsRequest
      * @return Result of the ListPackageImportJobs operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ListPackageImportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListPackageImportJobs" target="_top">AWS
      *      API Documentation</a>
@@ -590,16 +598,16 @@ public interface AWSPanorama {
      * 
      * @param listPackagesRequest
      * @return Result of the ListPackages operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ListPackages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListPackages" target="_top">AWS API
      *      Documentation</a>
@@ -613,10 +621,10 @@ public interface AWSPanorama {
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         The target resource was not found.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found.
      * @throws InternalServerException
      *         An internal error occurred.
      * @sample AWSPanorama.ListTagsForResource
@@ -638,12 +646,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ServiceQuotaExceededException
      *         The request would cause a limit to be exceeded.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.ProvisionDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ProvisionDevice" target="_top">AWS API
      *      Documentation</a>
@@ -657,14 +665,14 @@ public interface AWSPanorama {
      * 
      * @param registerPackageVersionRequest
      * @return Result of the RegisterPackageVersion operation returned by the service.
-     * @throws ValidationException
-     *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
-     * @throws AccessDeniedException
-     *         The requestor does not have permission to access the target action or resource.
      * @throws ConflictException
      *         The target resource is in use.
+     * @throws ValidationException
+     *         The request contains an invalid parameter value.
+     * @throws AccessDeniedException
+     *         The requestor does not have permission to access the target action or resource.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.RegisterPackageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/RegisterPackageVersion"
      *      target="_top">AWS API Documentation</a>
@@ -682,12 +690,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.RemoveApplicationInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/RemoveApplicationInstance"
      *      target="_top">AWS API Documentation</a>
@@ -701,10 +709,10 @@ public interface AWSPanorama {
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         The target resource was not found.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found.
      * @throws InternalServerException
      *         An internal error occurred.
      * @sample AWSPanorama.TagResource
@@ -720,10 +728,10 @@ public interface AWSPanorama {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         The target resource was not found.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found.
      * @throws InternalServerException
      *         An internal error occurred.
      * @sample AWSPanorama.UntagResource
@@ -743,12 +751,12 @@ public interface AWSPanorama {
      *         The target resource is in use.
      * @throws ValidationException
      *         The request contains an invalid parameter value.
-     * @throws InternalServerException
-     *         An internal error occurred.
      * @throws AccessDeniedException
      *         The requestor does not have permission to access the target action or resource.
      * @throws ResourceNotFoundException
      *         The target resource was not found.
+     * @throws InternalServerException
+     *         An internal error occurred.
      * @sample AWSPanorama.UpdateDeviceMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/UpdateDeviceMetadata" target="_top">AWS
      *      API Documentation</a>

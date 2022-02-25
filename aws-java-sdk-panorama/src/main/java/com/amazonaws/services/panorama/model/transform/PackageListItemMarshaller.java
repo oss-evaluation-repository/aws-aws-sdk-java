@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PackageListItemMarshaller {
 
-    private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("PackageId").build();
-    private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageName").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> PACKAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PackageId").build();
+    private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageName").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -56,10 +56,10 @@ public class PackageListItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(packageListItem.getPackageId(), PACKAGEID_BINDING);
-            protocolMarshaller.marshall(packageListItem.getPackageName(), PACKAGENAME_BINDING);
             protocolMarshaller.marshall(packageListItem.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(packageListItem.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(packageListItem.getPackageId(), PACKAGEID_BINDING);
+            protocolMarshaller.marshall(packageListItem.getPackageName(), PACKAGENAME_BINDING);
             protocolMarshaller.marshall(packageListItem.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

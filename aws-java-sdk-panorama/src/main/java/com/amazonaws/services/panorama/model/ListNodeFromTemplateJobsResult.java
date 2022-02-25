@@ -25,16 +25,56 @@ public class ListNodeFromTemplateJobsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of jobs.
-     * </p>
-     */
-    private java.util.List<NodeFromTemplateJob> nodeFromTemplateJobs;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of jobs.
+     * </p>
+     */
+    private java.util.List<NodeFromTemplateJob> nodeFromTemplateJobs;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNodeFromTemplateJobsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,46 +147,6 @@ public class ListNodeFromTemplateJobsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListNodeFromTemplateJobsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListNodeFromTemplateJobsResult extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNodeFromTemplateJobs() != null)
-            sb.append("NodeFromTemplateJobs: ").append(getNodeFromTemplateJobs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getNodeFromTemplateJobs() != null)
+            sb.append("NodeFromTemplateJobs: ").append(getNodeFromTemplateJobs());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListNodeFromTemplateJobsResult extends com.amazonaws.AmazonWebServi
         if (obj instanceof ListNodeFromTemplateJobsResult == false)
             return false;
         ListNodeFromTemplateJobsResult other = (ListNodeFromTemplateJobsResult) obj;
-        if (other.getNodeFromTemplateJobs() == null ^ this.getNodeFromTemplateJobs() == null)
-            return false;
-        if (other.getNodeFromTemplateJobs() != null && other.getNodeFromTemplateJobs().equals(this.getNodeFromTemplateJobs()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getNodeFromTemplateJobs() == null ^ this.getNodeFromTemplateJobs() == null)
+            return false;
+        if (other.getNodeFromTemplateJobs() != null && other.getNodeFromTemplateJobs().equals(this.getNodeFromTemplateJobs()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListNodeFromTemplateJobsResult extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNodeFromTemplateJobs() == null) ? 0 : getNodeFromTemplateJobs().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNodeFromTemplateJobs() == null) ? 0 : getNodeFromTemplateJobs().hashCode());
         return hashCode;
     }
 

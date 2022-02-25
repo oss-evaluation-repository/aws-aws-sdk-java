@@ -30,6 +30,12 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * When the job was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
      * The job's ID.
      * </p>
      */
@@ -42,6 +48,12 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
     private String jobType;
     /**
      * <p>
+     * When the job was updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
      * The job's status.
      * </p>
      */
@@ -52,18 +64,46 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String statusMessage;
+
     /**
      * <p>
      * When the job was created.
      * </p>
+     * 
+     * @param createdTime
+     *        When the job was created.
      */
-    private java.util.Date createdTime;
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
     /**
      * <p>
-     * When the job was updated.
+     * When the job was created.
      * </p>
+     * 
+     * @return When the job was created.
      */
-    private java.util.Date lastUpdatedTime;
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageImportJob withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -161,6 +201,46 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
 
     public PackageImportJob withJobType(PackageImportJobType jobType) {
         this.jobType = jobType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the job was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        When the job was updated.
+     */
+
+    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * When the job was updated.
+     * </p>
+     * 
+     * @return When the job was updated.
+     */
+
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * When the job was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        When the job was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageImportJob withLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        setLastUpdatedTime(lastUpdatedTime);
         return this;
     }
 
@@ -264,86 +344,6 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     */
-
-    public void setCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreatedTime() {
-        return this.createdTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param createdTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageImportJob withCreatedTime(java.util.Date createdTime) {
-        setCreatedTime(createdTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the job was updated.
-     * </p>
-     * 
-     * @param lastUpdatedTime
-     *        When the job was updated.
-     */
-
-    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
-        this.lastUpdatedTime = lastUpdatedTime;
-    }
-
-    /**
-     * <p>
-     * When the job was updated.
-     * </p>
-     * 
-     * @return When the job was updated.
-     */
-
-    public java.util.Date getLastUpdatedTime() {
-        return this.lastUpdatedTime;
-    }
-
-    /**
-     * <p>
-     * When the job was updated.
-     * </p>
-     * 
-     * @param lastUpdatedTime
-     *        When the job was updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PackageImportJob withLastUpdatedTime(java.util.Date lastUpdatedTime) {
-        setLastUpdatedTime(lastUpdatedTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,18 +355,18 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
-        if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
-        if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -381,6 +381,10 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof PackageImportJob == false)
             return false;
         PackageImportJob other = (PackageImportJob) obj;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
@@ -388,6 +392,10 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
         if (other.getJobType() == null ^ this.getJobType() == null)
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -397,14 +405,6 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
-            return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
-            return false;
-        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
-            return false;
-        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
-            return false;
         return true;
     }
 
@@ -413,12 +413,12 @@ public class PackageImportJob implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         return hashCode;
     }
 

@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ProvisionDeviceRequestMarshaller {
 
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkingConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ProvisionDeviceRequestMarshaller instance = new ProvisionDeviceRequestMarshaller();
 
@@ -54,10 +54,10 @@ public class ProvisionDeviceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(provisionDeviceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(provisionDeviceRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(provisionDeviceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(provisionDeviceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(provisionDeviceRequest.getNetworkingConfiguration(), NETWORKINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(provisionDeviceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

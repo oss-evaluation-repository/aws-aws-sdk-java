@@ -33,6 +33,18 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String category;
     /**
      * <p>
+     * The maximum number of nodes to return in one page of results.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
      * Search for nodes by the account ID of the nodes' owner.
      * </p>
      */
@@ -55,18 +67,6 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String patchVersion;
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
-     * The maximum number of nodes to return in one page of results.
-     * </p>
-     */
-    private Integer maxResults;
 
     /**
      * <p>
@@ -124,6 +124,86 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public ListNodesRequest withCategory(NodeCategory category) {
         this.category = category.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of nodes to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of nodes to return in one page of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of nodes to return in one page of results.
+     * </p>
+     * 
+     * @return The maximum number of nodes to return in one page of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of nodes to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of nodes to return in one page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNodesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @return Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNodesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -288,86 +368,6 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @return Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListNodesRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of nodes to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of nodes to return in one page of results.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of nodes to return in one page of results.
-     * </p>
-     * 
-     * @return The maximum number of nodes to return in one page of results.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of nodes to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of nodes to return in one page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListNodesRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -381,6 +381,10 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getPackageName() != null)
@@ -388,11 +392,7 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getPackageVersion() != null)
             sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getPatchVersion() != null)
-            sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("PatchVersion: ").append(getPatchVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -411,6 +411,14 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
@@ -427,14 +435,6 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         return true;
     }
 
@@ -444,12 +444,12 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

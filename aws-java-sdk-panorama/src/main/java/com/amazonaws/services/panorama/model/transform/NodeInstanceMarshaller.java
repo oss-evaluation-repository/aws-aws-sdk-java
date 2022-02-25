@@ -27,20 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NodeInstanceMarshaller {
 
-    private static final MarshallingInfo<String> NODEINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeInstanceId").build();
-    private static final MarshallingInfo<String> NODEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("NodeId").build();
-    private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageName").build();
-    private static final MarshallingInfo<String> PACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageVersion").build();
-    private static final MarshallingInfo<String> PACKAGEPATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackagePatchVersion").build();
-    private static final MarshallingInfo<String> NODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("NodeName").build();
     private static final MarshallingInfo<String> CURRENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentStatus").build();
+    private static final MarshallingInfo<String> NODEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NodeId").build();
+    private static final MarshallingInfo<String> NODEINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeInstanceId").build();
+    private static final MarshallingInfo<String> NODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NodeName").build();
+    private static final MarshallingInfo<String> PACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageName").build();
+    private static final MarshallingInfo<String> PACKAGEPATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackagePatchVersion").build();
+    private static final MarshallingInfo<String> PACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageVersion").build();
 
     private static final NodeInstanceMarshaller instance = new NodeInstanceMarshaller();
 
@@ -58,13 +58,13 @@ public class NodeInstanceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(nodeInstance.getNodeInstanceId(), NODEINSTANCEID_BINDING);
-            protocolMarshaller.marshall(nodeInstance.getNodeId(), NODEID_BINDING);
-            protocolMarshaller.marshall(nodeInstance.getPackageName(), PACKAGENAME_BINDING);
-            protocolMarshaller.marshall(nodeInstance.getPackageVersion(), PACKAGEVERSION_BINDING);
-            protocolMarshaller.marshall(nodeInstance.getPackagePatchVersion(), PACKAGEPATCHVERSION_BINDING);
-            protocolMarshaller.marshall(nodeInstance.getNodeName(), NODENAME_BINDING);
             protocolMarshaller.marshall(nodeInstance.getCurrentStatus(), CURRENTSTATUS_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getNodeId(), NODEID_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getNodeInstanceId(), NODEINSTANCEID_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getNodeName(), NODENAME_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getPackageName(), PACKAGENAME_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getPackagePatchVersion(), PACKAGEPATCHVERSION_BINDING);
+            protocolMarshaller.marshall(nodeInstance.getPackageVersion(), PACKAGEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

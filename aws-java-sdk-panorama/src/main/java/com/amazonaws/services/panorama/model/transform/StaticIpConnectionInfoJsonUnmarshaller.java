@@ -48,13 +48,9 @@ public class StaticIpConnectionInfoJsonUnmarshaller implements Unmarshaller<Stat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("IpAddress", targetDepth)) {
+                if (context.testExpression("DefaultGateway", targetDepth)) {
                     context.nextToken();
-                    staticIpConnectionInfo.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Mask", targetDepth)) {
-                    context.nextToken();
-                    staticIpConnectionInfo.setMask(context.getUnmarshaller(String.class).unmarshall(context));
+                    staticIpConnectionInfo.setDefaultGateway(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dns", targetDepth)) {
                     context.nextToken();
@@ -62,9 +58,13 @@ public class StaticIpConnectionInfoJsonUnmarshaller implements Unmarshaller<Stat
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("DefaultGateway", targetDepth)) {
+                if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    staticIpConnectionInfo.setDefaultGateway(context.getUnmarshaller(String.class).unmarshall(context));
+                    staticIpConnectionInfo.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Mask", targetDepth)) {
+                    context.nextToken();
+                    staticIpConnectionInfo.setMask(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

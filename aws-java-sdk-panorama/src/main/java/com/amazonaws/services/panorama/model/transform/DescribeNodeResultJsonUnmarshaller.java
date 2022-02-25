@@ -48,33 +48,53 @@ public class DescribeNodeResultJsonUnmarshaller implements Unmarshaller<Describe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("NodeId", targetDepth)) {
+                if (context.testExpression("AssetName", targetDepth)) {
                     context.nextToken();
-                    describeNodeResult.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Name", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeNodeResult.setAssetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
                     context.nextToken();
                     describeNodeResult.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NodeId", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NodeInterface", targetDepth)) {
+                    context.nextToken();
+                    describeNodeResult.setNodeInterface(NodeInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
                     context.nextToken();
                     describeNodeResult.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageName", targetDepth)) {
+                if (context.testExpression("PackageArn", targetDepth)) {
                     context.nextToken();
-                    describeNodeResult.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeNodeResult.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageId", targetDepth)) {
                     context.nextToken();
                     describeNodeResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PackageArn", targetDepth)) {
+                if (context.testExpression("PackageName", targetDepth)) {
                     context.nextToken();
-                    describeNodeResult.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeNodeResult.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageVersion", targetDepth)) {
                     context.nextToken();
@@ -83,26 +103,6 @@ public class DescribeNodeResultJsonUnmarshaller implements Unmarshaller<Describe
                 if (context.testExpression("PatchVersion", targetDepth)) {
                     context.nextToken();
                     describeNodeResult.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("NodeInterface", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setNodeInterface(NodeInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("AssetName", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setAssetName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Description", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedTime", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("LastUpdatedTime", targetDepth)) {
-                    context.nextToken();
-                    describeNodeResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -52,6 +52,17 @@ public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ErrorArguments", targetDepth)) {
+                    context.nextToken();
+                    conflictException.setErrorArguments(new ListUnmarshaller<ConflictExceptionErrorArgument>(ConflictExceptionErrorArgumentJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ErrorId", targetDepth)) {
+                    context.nextToken();
+                    conflictException.setErrorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
                     conflictException.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,17 +70,6 @@ public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
                     conflictException.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ErrorId", targetDepth)) {
-                    context.nextToken();
-                    conflictException.setErrorId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("ErrorArguments", targetDepth)) {
-                    context.nextToken();
-                    conflictException.setErrorArguments(new ListUnmarshaller<ConflictExceptionErrorArgument>(ConflictExceptionErrorArgumentJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
