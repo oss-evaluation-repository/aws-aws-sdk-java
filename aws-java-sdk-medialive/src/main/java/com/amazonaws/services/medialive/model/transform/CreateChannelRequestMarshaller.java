@@ -45,6 +45,8 @@ public class CreateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSpecification").build();
     private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("logLevel").build();
+    private static final MarshallingInfo<StructuredPojo> MAINTENANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenance").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -81,6 +83,7 @@ public class CreateChannelRequestMarshaller {
             protocolMarshaller.marshall(createChannelRequest.getInputAttachments(), INPUTATTACHMENTS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getInputSpecification(), INPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getLogLevel(), LOGLEVEL_BINDING);
+            protocolMarshaller.marshall(createChannelRequest.getMaintenance(), MAINTENANCE_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getReserved(), RESERVED_BINDING);

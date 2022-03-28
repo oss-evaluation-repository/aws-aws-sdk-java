@@ -34,8 +34,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * Templates</a>.
      * </p>
      * <p>
-     * If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services
-     * Private CA applies <a
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      * >order of operation rules</a> to determine what information is used.
      * </p>
@@ -91,9 +91,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
-     * certificates, you should choose the shortest path length that meets your needs. The path length is indicated by
-     * the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
      * </p>
      * <p>
@@ -101,7 +101,7 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      * Templates</a>.
      * </p>
@@ -135,9 +135,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * date for the certificate.
      * </p>
      * <p>
-     * By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance
-     * time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
      * </p>
      * <p>
      * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
@@ -154,9 +154,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services
-     * Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      */
     private String idempotencyToken;
@@ -170,8 +170,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * Templates</a>.
      * </p>
      * <p>
-     * If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services
-     * Private CA applies <a
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      * >order of operation rules</a> to determine what information is used.
      * </p>
@@ -183,8 +183,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *        Templates</a>.</p>
      *        <p>
-     *        If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web
-     *        Services Private CA applies <a href=
+     *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *        CA applies <a href=
      *        "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      *        >order of operation rules</a> to determine what information is used.
      */
@@ -202,8 +202,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * Templates</a>.
      * </p>
      * <p>
-     * If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services
-     * Private CA applies <a
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      * >order of operation rules</a> to determine what information is used.
      * </p>
@@ -214,8 +214,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *         Templates</a>.</p>
      *         <p>
-     *         If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web
-     *         Services Private CA applies <a href=
+     *         If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *         CA applies <a href=
      *         "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      *         >order of operation rules</a> to determine what information is used.
      */
@@ -233,8 +233,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * Templates</a>.
      * </p>
      * <p>
-     * If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services
-     * Private CA applies <a
+     * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
+     * applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      * >order of operation rules</a> to determine what information is used.
      * </p>
@@ -246,8 +246,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *        Templates</a>.</p>
      *        <p>
-     *        If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web
-     *        Services Private CA applies <a href=
+     *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
+     *        CA applies <a href=
      *        "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
      *        >order of operation rules</a> to determine what information is used.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -613,9 +613,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
-     * certificates, you should choose the shortest path length that meets your needs. The path length is indicated by
-     * the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
      * </p>
      * <p>
@@ -623,15 +623,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      * Templates</a>.
      * </p>
      * 
      * @param templateArn
      *        Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *        provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
-     *        For CA certificates, you should choose the shortest path length that meets your needs. The path length is
+     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *        certificates, you should choose the shortest path length that meets your needs. The path length is
      *        indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
      *        <p>
@@ -639,7 +639,7 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        in the CA hierarchy.
      *        </p>
      *        <p>
-     *        For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     *        For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *        Templates</a>.
      */
@@ -651,9 +651,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
-     * certificates, you should choose the shortest path length that meets your needs. The path length is indicated by
-     * the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
      * </p>
      * <p>
@@ -661,14 +661,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      * Templates</a>.
      * </p>
      * 
      * @return Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *         provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
-     *         For CA certificates, you should choose the shortest path length that meets your needs. The path length is
+     *         provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *         certificates, you should choose the shortest path length that meets your needs. The path length is
      *         indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
      *         <p>
@@ -676,7 +676,7 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         parents in the CA hierarchy.
      *         </p>
      *         <p>
-     *         For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     *         For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *         Templates</a>.
      */
@@ -688,9 +688,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
-     * certificates, you should choose the shortest path length that meets your needs. The path length is indicated by
-     * the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
      * </p>
      * <p>
@@ -698,15 +698,15 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * CA hierarchy.
      * </p>
      * <p>
-     * For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     * For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      * Templates</a>.
      * </p>
      * 
      * @param templateArn
      *        Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *        provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
-     *        For CA certificates, you should choose the shortest path length that meets your needs. The path length is
+     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *        certificates, you should choose the shortest path length that meets your needs. The path length is
      *        indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
      *        <p>
@@ -714,7 +714,7 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        in the CA hierarchy.
      *        </p>
      *        <p>
-     *        For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private CA, see <a
+     *        For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
      *        Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -864,9 +864,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * date for the certificate.
      * </p>
      * <p>
-     * By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance
-     * time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
      * </p>
      * <p>
      * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
@@ -882,8 +882,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Information describing the start of the validity period of the certificate. This parameter sets the “Not
      *        Before" date for the certificate.</p>
      *        <p>
-     *        By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the
-     *        issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *        By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *        minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
      *        <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
      *        </p>
      *        <p>
@@ -907,9 +907,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * date for the certificate.
      * </p>
      * <p>
-     * By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance
-     * time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
      * </p>
      * <p>
      * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
@@ -924,8 +924,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Information describing the start of the validity period of the certificate. This parameter sets the “Not
      *         Before" date for the certificate.</p>
      *         <p>
-     *         By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the
-     *         issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *         By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *         minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
      *         <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
      *         </p>
      *         <p>
@@ -949,9 +949,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * date for the certificate.
      * </p>
      * <p>
-     * By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance
-     * time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
+     * By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60
+     * minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value.
      * </p>
      * <p>
      * Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.
@@ -967,8 +967,8 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Information describing the start of the validity period of the certificate. This parameter sets the “Not
      *        Before" date for the certificate.</p>
      *        <p>
-     *        By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the
-     *        issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
+     *        By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time
+     *        minus 60 minutes. This compensates for clock inconsistencies across computer systems. The
      *        <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value.
      *        </p>
      *        <p>
@@ -992,18 +992,17 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services
-     * Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      *        Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web
-     *        Services Private CA recognizes that you are requesting only one certificate and will issue only one. If
-     *        you change the idempotency token for each call, PCA recognizes that you are requesting multiple
-     *        certificates.
+     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *        recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *        idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -1014,17 +1013,16 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services
-     * Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @return Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      *         Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     *         <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web
-     *         Services Private CA recognizes that you are requesting only one certificate and will issue only one. If
-     *         you change the idempotency token for each call, PCA recognizes that you are requesting multiple
-     *         certificates.
+     *         <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *         recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *         idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      */
 
     public String getIdempotencyToken() {
@@ -1035,18 +1033,17 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      * Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services
-     * Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
+     * <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action.
      *        Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call
-     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web
-     *        Services Private CA recognizes that you are requesting only one certificate and will issue only one. If
-     *        you change the idempotency token for each call, PCA recognizes that you are requesting multiple
-     *        certificates.
+     *        <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA
+     *        recognizes that you are requesting only one certificate and will issue only one. If you change the
+     *        idempotency token for each call, PCA recognizes that you are requesting multiple certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

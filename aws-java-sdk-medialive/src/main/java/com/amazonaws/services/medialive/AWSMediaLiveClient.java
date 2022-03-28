@@ -1765,7 +1765,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.DescribeInput
@@ -2655,7 +2655,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.ListInputs

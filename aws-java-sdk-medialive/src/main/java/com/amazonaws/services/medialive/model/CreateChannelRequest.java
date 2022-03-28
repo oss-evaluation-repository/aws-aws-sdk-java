@@ -43,6 +43,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private InputSpecification inputSpecification;
     /** The log level to write to CloudWatch Logs. */
     private String logLevel;
+    /** Maintenance settings for this channel. */
+    private MaintenanceCreateSettings maintenance;
     /** Name of channel. */
     private String name;
     /**
@@ -378,6 +380,40 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * Maintenance settings for this channel.
+     * 
+     * @param maintenance
+     *        Maintenance settings for this channel.
+     */
+
+    public void setMaintenance(MaintenanceCreateSettings maintenance) {
+        this.maintenance = maintenance;
+    }
+
+    /**
+     * Maintenance settings for this channel.
+     * 
+     * @return Maintenance settings for this channel.
+     */
+
+    public MaintenanceCreateSettings getMaintenance() {
+        return this.maintenance;
+    }
+
+    /**
+     * Maintenance settings for this channel.
+     * 
+     * @param maintenance
+     *        Maintenance settings for this channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withMaintenance(MaintenanceCreateSettings maintenance) {
+        setMaintenance(maintenance);
+        return this;
+    }
+
+    /**
      * Name of channel.
      * 
      * @param name
@@ -635,6 +671,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
         if (getLogLevel() != null)
             sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getMaintenance() != null)
+            sb.append("Maintenance: ").append(getMaintenance()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRequestId() != null)
@@ -689,6 +727,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
             return false;
+        if (other.getMaintenance() == null ^ this.getMaintenance() == null)
+            return false;
+        if (other.getMaintenance() != null && other.getMaintenance().equals(this.getMaintenance()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -728,6 +770,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getMaintenance() == null) ? 0 : getMaintenance().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getReserved() == null) ? 0 : getReserved().hashCode());

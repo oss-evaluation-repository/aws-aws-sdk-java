@@ -40,9 +40,9 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
     private Boolean enabled;
     /**
      * <p>
-     * By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     * validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to
-     * define a CNAME specifying a customized OCSP domain.
+     * By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online
+     * Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a
+     * customized OCSP domain.
      * </p>
      * <p>
      * Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
@@ -50,7 +50,7 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      */
     private String ocspCustomCname;
@@ -113,9 +113,9 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     * validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to
-     * define a CNAME specifying a customized OCSP domain.
+     * By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online
+     * Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a
+     * customized OCSP domain.
      * </p>
      * <p>
      * Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
@@ -123,21 +123,21 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
      * @param ocspCustomCname
-     *        By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     *        validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-     *        to define a CNAME specifying a customized OCSP domain.</p>
+     *        By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the
+     *        Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME
+     *        specifying a customized OCSP domain.</p>
      *        <p>
      *        Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
      *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *        Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User
-     *        Guide</i>.
+     *        Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
+     *        User Guide</i>.
      */
 
     public void setOcspCustomCname(String ocspCustomCname) {
@@ -146,9 +146,9 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     * validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to
-     * define a CNAME specifying a customized OCSP domain.
+     * By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online
+     * Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a
+     * customized OCSP domain.
      * </p>
      * <p>
      * Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
@@ -156,20 +156,20 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
-     * @return By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     *         validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-     *         to define a CNAME specifying a customized OCSP domain.</p>
+     * @return By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the
+     *         Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME
+     *         specifying a customized OCSP domain.</p>
      *         <p>
      *         Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
      *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *         Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User
-     *         Guide</i>.
+     *         Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
+     *         User Guide</i>.
      */
 
     public String getOcspCustomCname() {
@@ -178,9 +178,9 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     * validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to
-     * define a CNAME specifying a customized OCSP domain.
+     * By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online
+     * Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a
+     * customized OCSP domain.
      * </p>
      * <p>
      * Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
@@ -188,21 +188,21 @@ public class OcspConfiguration implements Serializable, Cloneable, StructuredPoj
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-     * Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.
+     * Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
      * </p>
      * 
      * @param ocspCustomCname
-     *        By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being
-     *        validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-     *        to define a CNAME specifying a customized OCSP domain.</p>
+     *        By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the
+     *        Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME
+     *        specifying a customized OCSP domain.</p>
      *        <p>
      *        Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".
      *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online
-     *        Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User
-     *        Guide</i>.
+     *        Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA)
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

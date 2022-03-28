@@ -50,6 +50,8 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     private InputSpecification inputSpecification;
     /** The log level being written to CloudWatch Logs. */
     private String logLevel;
+    /** Maintenance settings for this channel. */
+    private MaintenanceStatus maintenance;
     /** The name of the channel. (user-mutable) */
     private String name;
     /** The number of currently healthy pipelines. */
@@ -505,6 +507,40 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Maintenance settings for this channel.
+     * 
+     * @param maintenance
+     *        Maintenance settings for this channel.
+     */
+
+    public void setMaintenance(MaintenanceStatus maintenance) {
+        this.maintenance = maintenance;
+    }
+
+    /**
+     * Maintenance settings for this channel.
+     * 
+     * @return Maintenance settings for this channel.
+     */
+
+    public MaintenanceStatus getMaintenance() {
+        return this.maintenance;
+    }
+
+    /**
+     * Maintenance settings for this channel.
+     * 
+     * @param maintenance
+     *        Maintenance settings for this channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelSummary withMaintenance(MaintenanceStatus maintenance) {
+        setMaintenance(maintenance);
+        return this;
+    }
+
+    /**
      * The name of the channel. (user-mutable)
      * 
      * @param name
@@ -772,6 +808,8 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
         if (getLogLevel() != null)
             sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getMaintenance() != null)
+            sb.append("Maintenance: ").append(getMaintenance()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPipelinesRunningCount() != null)
@@ -834,6 +872,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
             return false;
+        if (other.getMaintenance() == null ^ this.getMaintenance() == null)
+            return false;
+        if (other.getMaintenance() != null && other.getMaintenance().equals(this.getMaintenance()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -875,6 +917,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getMaintenance() == null) ? 0 : getMaintenance().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPipelinesRunningCount() == null) ? 0 : getPipelinesRunningCount().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

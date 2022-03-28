@@ -24,12 +24,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you
  * specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the
  * <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution
- * Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to Amazon Web
- * Services Private CA.
+ * Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private
+ * CA.
  * </p>
  * <p>
- * Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected with encryption. For more
- * information, see <a
+ * ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a
  * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.
  * </p>
  * <p>
@@ -40,7 +39,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update
- * fails, Amazon Web Services Private CA makes further attempts every 15 minutes.
+ * fails, ACM Private CA makes further attempts every 15 minutes.
  * </p>
  * <p>
  * CRLs contain the following fields:
@@ -130,15 +129,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * Certificate revocation lists created by Amazon Web Services Private CA are DER-encoded. You can use the following
- * OpenSSL command to list a CRL.
+ * Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to
+ * list a CRL.
  * </p>
  * <p>
  * <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
  * </p>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a
- * certificate revocation list (CRL)</a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>
+ * certificate revocation list (CRL)</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User
+ * Guide</i>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration" target="_top">AWS API
@@ -179,7 +179,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      * >UpdateCertificateAuthority</a> operation. You must specify a <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-     * allows Amazon Web Services Private CA to write the CRL to your bucket.
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      */
     private String s3BucketName;
@@ -395,7 +395,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      * >UpdateCertificateAuthority</a> operation. You must specify a <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-     * allows Amazon Web Services Private CA to write the CRL to your bucket.
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
@@ -405,7 +405,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      *        >UpdateCertificateAuthority</a> operation. You must specify a <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a>
-     *        that allows Amazon Web Services Private CA to write the CRL to your bucket.
+     *        that allows ACM Private CA to write the CRL to your bucket.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -420,7 +420,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      * >UpdateCertificateAuthority</a> operation. You must specify a <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-     * allows Amazon Web Services Private CA to write the CRL to your bucket.
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @return Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b>
@@ -429,7 +429,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      *         >UpdateCertificateAuthority</a> operation. You must specify a <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     *         policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.
+     *         policy</a> that allows ACM Private CA to write the CRL to your bucket.
      */
 
     public String getS3BucketName() {
@@ -444,7 +444,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      * >UpdateCertificateAuthority</a> operation. You must specify a <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
-     * allows Amazon Web Services Private CA to write the CRL to your bucket.
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
@@ -454,7 +454,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
      *        >UpdateCertificateAuthority</a> operation. You must specify a <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a>
-     *        that allows Amazon Web Services Private CA to write the CRL to your bucket.
+     *        that allows ACM Private CA to write the CRL to your bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

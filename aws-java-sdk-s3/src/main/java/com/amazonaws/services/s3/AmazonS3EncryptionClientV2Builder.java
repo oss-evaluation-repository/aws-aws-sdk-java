@@ -16,6 +16,7 @@
 package com.amazonaws.services.s3;
 
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.regions.Region;
 import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.model.CryptoConfigurationV2;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
@@ -35,6 +36,10 @@ public final class AmazonS3EncryptionClientV2Builder extends
 
     /**
      * Sets the encryption materials to be used to encrypt and decrypt data
+     * <p>
+     * <b>Note: </b> If a non-KMS encryption materials provider is used, an internal KMS client will still be created by default.
+     * See {@link #setKmsClient(AWSKMS)} for more information.
+     *
      * @param encryptionMaterialsProvider a provider for the encryption materials
      */
     public void setEncryptionMaterialsProvider(EncryptionMaterialsProvider encryptionMaterialsProvider) {
@@ -42,7 +47,11 @@ public final class AmazonS3EncryptionClientV2Builder extends
     }
 
     /**
-     * Sets the encryption materials to be used to encrypt and decrypt data
+     * Sets the encryption materials to be used to encrypt and decrypt data.
+     * <p>
+     * <b>Note: </b> If a non-KMS encryption materials provider is used, an internal KMS client will still be created by default.
+     * See {@link #withKmsClient(AWSKMS)} for more information.
+     *
      * @param encryptionMaterialsProvider A provider for the encryption materials to be used to encrypt and decrypt data.
      * @return this object for method chaining
      */
@@ -71,7 +80,14 @@ public final class AmazonS3EncryptionClientV2Builder extends
     }
 
     /**
-     * Sets the KMS implementation to be used throughout the crypto process
+     * Sets the KMS implementation to be used throughout the crypto process.
+     * <p>
+     * If a KMS client isn't specified here, the encryption client creates a default internal KMS client.
+     * <br>
+     * <b>Note:</b> An internal KMS client is created even if the user supply their own encryption materials. If the KMS
+     * client fails to find a region when it's instantiated, supply a client through this method or set the
+     * KMS region through {@link CryptoConfigurationV2#withAwsKmsRegion(Region)}.
+     *
      * @param kmsClient an {@link AWSKMS} implementation (e.g. {@link com.amazonaws.services.kms.AWSKMSClient})
      */
     public void setKmsClient(AWSKMS kmsClient) {
@@ -80,6 +96,13 @@ public final class AmazonS3EncryptionClientV2Builder extends
 
     /**
      * Sets the KMS implementation to be used throughout the crypto process
+     * <p>
+     * If a KMS client isn't specified here, the encryption client creates a default internal KMS client.
+     * <br>
+     * <b>Note:</b> An internal KMS client is created even if the user supply their own encryption materials. If the KMS
+     * client fails to find a region when it's instantiated, supply a client through this method or set the
+     * KMS region through {@link CryptoConfigurationV2#withAwsKmsRegion(Region)}.
+     *
      * @param kmsClient an {@link AWSKMS} implementation (e.g. {@link com.amazonaws.services.kms.AWSKMSClient})
      * @return this object for method chaining
      */

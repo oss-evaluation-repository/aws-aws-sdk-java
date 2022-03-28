@@ -27,8 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EbuTtDDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
-     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions
+     * metadata.
      */
     private String copyrightHolder;
     /**
@@ -63,12 +63,12 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
     private String styleControl;
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
-     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions
+     * metadata.
      * 
      * @param copyrightHolder
-     *        Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
-     *        field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     *        Complete this field if you want to include the name of the copyright holder in the copyright tag in the
+     *        captions metadata.
      */
 
     public void setCopyrightHolder(String copyrightHolder) {
@@ -76,11 +76,11 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
-     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions
+     * metadata.
      * 
-     * @return Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
-     *         field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * @return Complete this field if you want to include the name of the copyright holder in the copyright tag in the
+     *         captions metadata.
      */
 
     public String getCopyrightHolder() {
@@ -88,12 +88,12 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
-     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions
+     * metadata.
      * 
      * @param copyrightHolder
-     *        Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
-     *        field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     *        Complete this field if you want to include the name of the copyright holder in the copyright tag in the
+     *        captions metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

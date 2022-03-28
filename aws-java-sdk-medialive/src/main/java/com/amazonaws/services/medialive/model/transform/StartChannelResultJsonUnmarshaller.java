@@ -94,6 +94,10 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                     context.nextToken();
                     startChannelResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("maintenance", targetDepth)) {
+                    context.nextToken();
+                    startChannelResult.setMaintenance(MaintenanceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

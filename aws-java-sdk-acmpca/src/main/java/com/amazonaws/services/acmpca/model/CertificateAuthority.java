@@ -26,9 +26,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * >CreateCertificateAuthority</a> action to create your private CA. You must then call the <a
  * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html"
  * >GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the
- * CSR with your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">
- * ImportCertificateAuthorityCertificate</a> action to import the signed certificate into Certificate Manager (ACM).
+ * CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html"
+ * >ImportCertificateAuthorityCertificate</a> action to import the signed certificate into Certificate Manager (ACM).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthority" target="_top">AWS API

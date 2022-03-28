@@ -676,7 +676,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.DescribeInput
@@ -1008,7 +1008,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.ListInputs

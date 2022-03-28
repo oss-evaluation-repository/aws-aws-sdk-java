@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.kms.AWSKMS;
+import com.amazonaws.services.s3.AmazonS3EncryptionClientV2Builder;
 import java.io.Serializable;
 import java.security.Provider;
 import java.security.SecureRandom;
@@ -24,6 +26,10 @@ import com.amazonaws.services.s3.internal.crypto.CryptoRuntime;
 /**
  * Stores configuration parameters that will be used during encryption and
  * decryption by the Amazon S3 Encryption Client V2 {@link com.amazonaws.services.s3.AmazonS3EncryptionClientV2}.
+ * <p>
+ * <b>Note: </b> The {@link #withAwsKmsRegion(Region)} parameter only affects the internally instantiated KMS client that
+ * is created by default, not an external client added through {@link AmazonS3EncryptionClientV2Builder#withKmsClient(AWSKMS)}.
+ * The internal KMS client is instantiated even if the user supply their own encryption materials and do not call KMS.
  */
 public class CryptoConfigurationV2 implements Cloneable,Serializable {
 
@@ -288,6 +294,10 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
      * explicit KMS region is explicitly configured.This KMS region parameter is
      * ignored when the Amazon Web Services KMS client of the S3 encryption client is explicitly
      * passed in by the users, instead of being implicitly created.
+     *
+     * <b>Note: </b> An internal KMS client is created even if the user supply their own encryption materials.
+     *
+     * @see AmazonS3EncryptionClientV2Builder#setKmsClient(AWSKMS)
      */
     public void setAwsKmsRegion(Region awsKmsRegion) {
         this.awsKmsRegion = awsKmsRegion;
@@ -300,6 +310,10 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
      * KMS region parameter is ignored when the Amazon Web Services KMS client of the S3
      * encryption client is explicitly passed in by the users, instead of being
      * implicitly created.
+     *
+     * <b>Note: </b> An internal KMS client is created even if the user supply their own encryption materials.
+     *
+     * @see AmazonS3EncryptionClientV2Builder#setKmsClient(AWSKMS)
      */
     public CryptoConfigurationV2 withAwsKmsRegion(Region awsKmsRegion) {
         this.awsKmsRegion = awsKmsRegion;

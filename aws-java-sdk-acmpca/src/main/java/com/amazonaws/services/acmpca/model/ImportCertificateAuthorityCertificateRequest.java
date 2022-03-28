@@ -46,8 +46,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
      * </p>
      * <p>
      * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
@@ -198,8 +198,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
      * </p>
      * <p>
      * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
@@ -217,8 +217,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * 
      * @param certificateChain
      *        A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *        chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is
-     *        the last in the chain, and each certificate in the chain signs the one preceding. </p>
+     *        chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the
+     *        chain, and each certificate in the chain signs the one preceding. </p>
      *        <p>
      *        This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
      *        chain.
@@ -231,8 +231,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
      * </p>
      * <p>
      * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
@@ -246,8 +246,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * </p>
      * 
      * @return A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *         chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate
-     *         is the last in the chain, and each certificate in the chain signs the one preceding. </p>
+     *         chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in
+     *         the chain, and each certificate in the chain signs the one preceding. </p>
      *         <p>
      *         This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
      *         chain.
@@ -260,8 +260,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
      * </p>
      * <p>
      * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
@@ -279,8 +279,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * 
      * @param certificateChain
      *        A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *        chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is
-     *        the last in the chain, and each certificate in the chain signs the one preceding. </p>
+     *        chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the
+     *        chain, and each certificate in the chain signs the one preceding. </p>
      *        <p>
      *        This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
      *        chain.
