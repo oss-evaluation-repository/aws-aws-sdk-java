@@ -27,31 +27,31 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Id of a given wireless device which messages will be deleted
+     * The ID of a given wireless device for which downlink messages will be deleted.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message
-     * with messageId will be deleted
+     * If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the
+     * wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      * </p>
      */
     private String messageId;
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, which can be either Sidewalk or LoRaWAN.
      * </p>
      */
     private String wirelessDeviceType;
 
     /**
      * <p>
-     * Id of a given wireless device which messages will be deleted
+     * The ID of a given wireless device for which downlink messages will be deleted.
      * </p>
      * 
      * @param id
-     *        Id of a given wireless device which messages will be deleted
+     *        The ID of a given wireless device for which downlink messages will be deleted.
      */
 
     public void setId(String id) {
@@ -60,10 +60,10 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Id of a given wireless device which messages will be deleted
+     * The ID of a given wireless device for which downlink messages will be deleted.
      * </p>
      * 
-     * @return Id of a given wireless device which messages will be deleted
+     * @return The ID of a given wireless device for which downlink messages will be deleted.
      */
 
     public String getId() {
@@ -72,11 +72,11 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Id of a given wireless device which messages will be deleted
+     * The ID of a given wireless device for which downlink messages will be deleted.
      * </p>
      * 
      * @param id
-     *        Id of a given wireless device which messages will be deleted
+     *        The ID of a given wireless device for which downlink messages will be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,13 +87,13 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message
-     * with messageId will be deleted
+     * If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the
+     * wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      * </p>
      * 
      * @param messageId
-     *        if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific
-     *        message with messageId will be deleted
+     *        If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by
+     *        the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      */
 
     public void setMessageId(String messageId) {
@@ -102,12 +102,12 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message
-     * with messageId will be deleted
+     * If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the
+     * wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      * </p>
      * 
-     * @return if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific
-     *         message with messageId will be deleted
+     * @return If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by
+     *         the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      */
 
     public String getMessageId() {
@@ -116,13 +116,13 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message
-     * with messageId will be deleted
+     * If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the
+     * wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      * </p>
      * 
      * @param messageId
-     *        if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific
-     *        message with messageId will be deleted
+     *        If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by
+     *        the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, which can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, which can be either Sidewalk or LoRaWAN.
      * @see WirelessDeviceType
      */
 
@@ -147,10 +147,10 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, which can be either Sidewalk or LoRaWAN.
      * </p>
      * 
-     * @return The wireless device type, it is either Sidewalk or LoRaWAN.
+     * @return The wireless device type, which can be either Sidewalk or LoRaWAN.
      * @see WirelessDeviceType
      */
 
@@ -160,11 +160,11 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, which can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, which can be either Sidewalk or LoRaWAN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessDeviceType
      */
@@ -176,11 +176,11 @@ public class DeleteQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, which can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, which can be either Sidewalk or LoRaWAN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessDeviceType
      */

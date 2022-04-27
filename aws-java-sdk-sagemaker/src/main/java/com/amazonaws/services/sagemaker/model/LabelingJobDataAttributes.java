@@ -30,7 +30,7 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      */
@@ -38,13 +38,12 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      * 
-     * @return Declares that your content is free of personally identifiable information or adult content. Amazon
-     *         SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
-     *         information.
+     * @return Declares that your content is free of personally identifiable information or adult content. SageMaker may
+     *         restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * @see ContentClassifier
      */
 
@@ -54,14 +53,13 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
-     *        information.
+     *        Declares that your content is free of personally identifiable information or adult content. SageMaker may
+     *        restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * @see ContentClassifier
      */
 
@@ -76,7 +74,7 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      * <p>
@@ -86,9 +84,8 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
-     *        information.
+     *        Declares that your content is free of personally identifiable information or adult content. SageMaker may
+     *        restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */
@@ -105,14 +102,13 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
-     *        information.
+     *        Declares that your content is free of personally identifiable information or adult content. SageMaker may
+     *        restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */
@@ -124,14 +120,13 @@ public class LabelingJobDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
+     * Declares that your content is free of personally identifiable information or adult content. SageMaker may
      * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
-     *        information.
+     *        Declares that your content is free of personally identifiable information or adult content. SageMaker may
+     *        restrict the Amazon Mechanical Turk workers that can view your task based on this information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */

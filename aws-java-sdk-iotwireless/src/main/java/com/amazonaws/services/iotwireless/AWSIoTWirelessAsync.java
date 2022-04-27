@@ -455,6 +455,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Creates a new network analyzer configuration.
+     * </p>
+     * 
+     * @param createNetworkAnalyzerConfigurationRequest
+     * @return A Java Future containing the result of the CreateNetworkAnalyzerConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.CreateNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            CreateNetworkAnalyzerConfigurationRequest createNetworkAnalyzerConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a new network analyzer configuration.
+     * </p>
+     * 
+     * @param createNetworkAnalyzerConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkAnalyzerConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.CreateNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            CreateNetworkAnalyzerConfigurationRequest createNetworkAnalyzerConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkAnalyzerConfigurationRequest, CreateNetworkAnalyzerConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new service profile.
      * </p>
      * 
@@ -740,7 +775,42 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to delete queued messages.
+     * Deletes a network analyzer configuration.
+     * </p>
+     * 
+     * @param deleteNetworkAnalyzerConfigurationRequest
+     * @return A Java Future containing the result of the DeleteNetworkAnalyzerConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.DeleteNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            DeleteNetworkAnalyzerConfigurationRequest deleteNetworkAnalyzerConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a network analyzer configuration.
+     * </p>
+     * 
+     * @param deleteNetworkAnalyzerConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkAnalyzerConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.DeleteNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            DeleteNetworkAnalyzerConfigurationRequest deleteNetworkAnalyzerConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAnalyzerConfigurationRequest, DeleteNetworkAnalyzerConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove queued messages from the downlink queue.
      * </p>
      * 
      * @param deleteQueuedMessagesRequest
@@ -753,7 +823,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to delete queued messages.
+     * Remove queued messages from the downlink queue.
      * </p>
      * 
      * @param deleteQueuedMessagesRequest
@@ -1253,6 +1323,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Get the event configuration by resource types.
+     * </p>
+     * 
+     * @param getEventConfigurationByResourceTypesRequest
+     * @return A Java Future containing the result of the GetEventConfigurationByResourceTypes operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.GetEventConfigurationByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            GetEventConfigurationByResourceTypesRequest getEventConfigurationByResourceTypesRequest);
+
+    /**
+     * <p>
+     * Get the event configuration by resource types.
+     * </p>
+     * 
+     * @param getEventConfigurationByResourceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventConfigurationByResourceTypes operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.GetEventConfigurationByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            GetEventConfigurationByResourceTypesRequest getEventConfigurationByResourceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventConfigurationByResourceTypesRequest, GetEventConfigurationByResourceTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a FUOTA task.
      * </p>
      * 
@@ -1381,7 +1486,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Get NetworkAnalyzer configuration.
+     * Get network analyzer configuration.
      * </p>
      * 
      * @param getNetworkAnalyzerConfigurationRequest
@@ -1396,7 +1501,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Get NetworkAnalyzer configuration.
+     * Get network analyzer configuration.
      * </p>
      * 
      * @param getNetworkAnalyzerConfigurationRequest
@@ -1911,6 +2016,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * List event configurations where at least one event topic has been enabled.
+     * </p>
+     * 
+     * @param listEventConfigurationsRequest
+     * @return A Java Future containing the result of the ListEventConfigurations operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ListEventConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest listEventConfigurationsRequest);
+
+    /**
+     * <p>
+     * List event configurations where at least one event topic has been enabled.
+     * </p>
+     * 
+     * @param listEventConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventConfigurations operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ListEventConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest listEventConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventConfigurationsRequest, ListEventConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the FUOTA tasks registered to your AWS account.
      * </p>
      * 
@@ -2008,6 +2144,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Lists the network analyzer configurations.
+     * </p>
+     * 
+     * @param listNetworkAnalyzerConfigurationsRequest
+     * @return A Java Future containing the result of the ListNetworkAnalyzerConfigurations operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.ListNetworkAnalyzerConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            ListNetworkAnalyzerConfigurationsRequest listNetworkAnalyzerConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists the network analyzer configurations.
+     * </p>
+     * 
+     * @param listNetworkAnalyzerConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNetworkAnalyzerConfigurations operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.ListNetworkAnalyzerConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            ListNetworkAnalyzerConfigurationsRequest listNetworkAnalyzerConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNetworkAnalyzerConfigurationsRequest, ListNetworkAnalyzerConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the partner accounts associated with your AWS account.
      * </p>
      * 
@@ -2039,7 +2210,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to list queued messages.
+     * List queued messages in the downlink queue.
      * </p>
      * 
      * @param listQueuedMessagesRequest
@@ -2052,7 +2223,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to list queued messages.
+     * List queued messages in the downlink queue.
      * </p>
      * 
      * @param listQueuedMessagesRequest
@@ -2652,6 +2823,43 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Update the event configuration by resource types.
+     * </p>
+     * 
+     * @param updateEventConfigurationByResourceTypesRequest
+     * @return A Java Future containing the result of the UpdateEventConfigurationByResourceTypes operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsync.UpdateEventConfigurationByResourceTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            UpdateEventConfigurationByResourceTypesRequest updateEventConfigurationByResourceTypesRequest);
+
+    /**
+     * <p>
+     * Update the event configuration by resource types.
+     * </p>
+     * 
+     * @param updateEventConfigurationByResourceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEventConfigurationByResourceTypes operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateEventConfigurationByResourceTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            UpdateEventConfigurationByResourceTypesRequest updateEventConfigurationByResourceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventConfigurationByResourceTypesRequest, UpdateEventConfigurationByResourceTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates properties of a FUOTA task.
      * </p>
      * 
@@ -2751,7 +2959,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Update NetworkAnalyzer configuration.
+     * Update network analyzer configuration.
      * </p>
      * 
      * @param updateNetworkAnalyzerConfigurationRequest
@@ -2766,7 +2974,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
-     * Update NetworkAnalyzer configuration.
+     * Update network analyzer configuration.
      * </p>
      * 
      * @param updateNetworkAnalyzerConfigurationRequest

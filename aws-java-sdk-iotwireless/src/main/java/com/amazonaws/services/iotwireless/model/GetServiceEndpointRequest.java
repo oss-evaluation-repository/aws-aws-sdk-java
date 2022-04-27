@@ -28,7 +28,8 @@ public class GetServiceEndpointRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and
-     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the
+     * global endpoint.
      * </p>
      */
     private String serviceType;
@@ -36,12 +37,14 @@ public class GetServiceEndpointRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and
-     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the
+     * global endpoint.
      * </p>
      * 
      * @param serviceType
      *        The service type for which to get endpoint information about. Can be <code>CUPS</code> for the
-     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or
+     *        <code>CLAIM</code> for the global endpoint.
      * @see WirelessGatewayServiceType
      */
 
@@ -52,11 +55,13 @@ public class GetServiceEndpointRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and
-     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the
+     * global endpoint.
      * </p>
      * 
      * @return The service type for which to get endpoint information about. Can be <code>CUPS</code> for the
-     *         Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     *         Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or
+     *         <code>CLAIM</code> for the global endpoint.
      * @see WirelessGatewayServiceType
      */
 
@@ -67,12 +72,14 @@ public class GetServiceEndpointRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and
-     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the
+     * global endpoint.
      * </p>
      * 
      * @param serviceType
      *        The service type for which to get endpoint information about. Can be <code>CUPS</code> for the
-     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or
+     *        <code>CLAIM</code> for the global endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessGatewayServiceType
      */
@@ -85,12 +92,14 @@ public class GetServiceEndpointRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and
-     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     * Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the
+     * global endpoint.
      * </p>
      * 
      * @param serviceType
      *        The service type for which to get endpoint information about. Can be <code>CUPS</code> for the
-     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.
+     *        Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or
+     *        <code>CLAIM</code> for the global endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessGatewayServiceType
      */

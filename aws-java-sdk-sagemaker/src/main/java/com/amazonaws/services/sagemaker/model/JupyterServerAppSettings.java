@@ -31,26 +31,35 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     * JupyterServer app.
+     * JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.
      * </p>
      */
     private ResourceSpec defaultResourceSpec;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this
+     * parameter, the <code>DefaultResourceSpec</code> parameter is also required.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      */
     private java.util.List<String> lifecycleConfigArns;
 
     /**
      * <p>
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     * JupyterServer app.
+     * JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.
      * </p>
      * 
      * @param defaultResourceSpec
      *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *        JupyterServer app.
+     *        JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     *        required.
      */
 
     public void setDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
@@ -60,11 +69,13 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     * JupyterServer app.
+     * JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.
      * </p>
      * 
      * @return The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *         JupyterServer app.
+     *         JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     *         required.
      */
 
     public ResourceSpec getDefaultResourceSpec() {
@@ -74,12 +85,14 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     * JupyterServer app.
+     * JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.
      * </p>
      * 
      * @param defaultResourceSpec
      *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *        JupyterServer app.
+     *        JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     *        required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +103,20 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this
+     * parameter, the <code>DefaultResourceSpec</code> parameter is also required.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * @return The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you
+     *         use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+     *         <p>
+     *         To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *         </p>
      */
 
     public java.util.List<String> getLifecycleConfigArns() {
@@ -102,11 +125,21 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this
+     * parameter, the <code>DefaultResourceSpec</code> parameter is also required.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you
+     *        use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      */
 
     public void setLifecycleConfigArns(java.util.Collection<String> lifecycleConfigArns) {
@@ -120,8 +153,14 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this
+     * parameter, the <code>DefaultResourceSpec</code> parameter is also required.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLifecycleConfigArns(java.util.Collection)} or {@link #withLifecycleConfigArns(java.util.Collection)}
@@ -129,7 +168,11 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you
+     *        use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +188,21 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this
+     * parameter, the <code>DefaultResourceSpec</code> parameter is also required.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you
+     *        use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,8 +28,143 @@ import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
  * </p>
  * <p>
  * <p>
- * This is the Amazon Rekognition API reference.
+ * This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
+ * Rekognition Image</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
+ * Rekognition Custom Labels</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon
+ * Rekognition Stored Video</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
+ * Rekognition Streaming Video</a>. It provides descriptions of actions, data types, common parameters, and common
+ * errors.
  * </p>
+ * <p>
+ * <b>Amazon Rekognition Image</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Custom Labels</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Video Stored Video</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Video Streaming Video</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRekognition {
@@ -170,8 +305,8 @@ public interface AmazonRekognition {
      *         Amazon Rekognition is unable to access the S3 object specified in the request.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -227,8 +362,8 @@ public interface AmazonRekognition {
      *         A resource with the specified ID already exists.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateCollection
      */
     CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest);
@@ -394,31 +529,46 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateProjectVersion
      */
     CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest createProjectVersionRequest);
 
     /**
      * <p>
-     * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming
-     * video.
+     * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces or to detect labels
+     * in a streaming video.
      * </p>
      * <p>
-     * Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Amazon Rekognition Video
-     * sends analysis results to Amazon Kinesis Data Streams.
+     * Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. There are two different
+     * settings for stream processors in Amazon Rekognition: detecting faces and detecting labels.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
-     * stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection
-     * containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream
-     * processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the
-     * source video by calling <a>StartStreamProcessor</a> with the <code>Name</code> field.
+     * If you are creating a stream processor for detecting faces, you provide as input a Kinesis video stream (
+     * <code>Input</code>) and a Kinesis data stream (<code>Output</code>) stream. You also specify the face recognition
+     * criteria in <code>Settings</code>. For example, the collection containing faces that you want to recognize. After
+     * you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
-     * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
+     * If you are creating a stream processor to detect labels, you provide as input a Kinesis video stream (
+     * <code>Input</code>), Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN (
+     * <code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt the data sent to your Amazon S3
+     * bucket. You specify what you want to detect in <code>ConnectedHomeSettings</code>, such as people, packages and
+     * people, or pets, people, and packages. You can also specify where in the frame you want Amazon Rekognition to
+     * monitor with <code>RegionsOfInterest</code>. When you run the <a>StartStreamProcessor</a> operation on a label
+     * detection stream processor, you input start and stop information to determine the length of the processing time.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use <code>Name</code> to assign an identifier for the stream processor. You use <code>Name</code> to manage the
+     * stream processor. For example, you can start processing the source video by calling <a>StartStreamProcessor</a>
+     * with the <code>Name</code> field.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you
@@ -448,8 +598,8 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateStreamProcessor
      */
     CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest createStreamProcessorRequest);
@@ -457,7 +607,8 @@ public interface AmazonRekognition {
     /**
      * <p>
      * Deletes the specified collection. Note that this operation removes all faces in the collection. For an example,
-     * see <a>delete-collection-procedure</a>.
+     * see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting a
+     * collection</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.
@@ -843,8 +994,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
      *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
@@ -901,8 +1052,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -925,7 +1076,7 @@ public interface AmazonRekognition {
      * evening, and nature.
      * </p>
      * <p>
-     * For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition Developer Guide.
+     * For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.
      * </p>
      * <note>
      * <p>
@@ -1009,8 +1160,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -1053,8 +1204,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -1144,8 +1295,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -1196,7 +1347,7 @@ public interface AmazonRekognition {
      * To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.
      * </p>
      * <p>
-     * For more information, see DetectText in the Amazon Rekognition Developer Guide.
+     * For more information, see Detecting text in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param detectTextRequest
@@ -1207,8 +1358,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -1274,7 +1425,7 @@ public interface AmazonRekognition {
      * is empty.
      * </p>
      * <p>
-     * For more information, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.
+     * For more information, see Getting information about a celebrity in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
@@ -1414,7 +1565,7 @@ public interface AmazonRekognition {
      * <code>NextToken</code> returned from the previous call to <code>GetContentModeration</code>.
      * </p>
      * <p>
-     * For more information, see Content moderation in the Amazon Rekognition Developer Guide.
+     * For more information, see moderating content in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param getContentModerationRequest
@@ -1691,7 +1842,7 @@ public interface AmazonRekognition {
      * returned from the previous call to <code>GetSegmentDetection</code>.
      * </p>
      * <p>
-     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * For more information, see Detecting video segments in stored video in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param getSegmentDetectionRequest
@@ -1777,7 +1928,7 @@ public interface AmazonRekognition {
      * match and search operations using the <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.
      * </p>
      * <p>
-     * For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.
+     * For more information, see Adding faces to a collection in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * To get the number of faces in a collection, call <a>DescribeCollection</a>.
@@ -1888,9 +2039,8 @@ public interface AmazonRekognition {
      * <p>
      * If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon
      * Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth)
-     * and other facial attributes. If you provide the same image, specify the same collection, use the same external
-     * ID, and use the same model version in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save
-     * duplicate face metadata.
+     * and other facial attributes. If you provide the same image, specify the same collection, and use the same
+     * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
      * <p/>
      * <p>
@@ -1910,8 +2060,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -1927,8 +2077,8 @@ public interface AmazonRekognition {
      *         The provided image format is not supported.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.IndexFaces
      */
     IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest);
@@ -1939,7 +2089,7 @@ public interface AmazonRekognition {
      * <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.
      * </p>
      * <p>
-     * For an example, see Listing Collections in the Amazon Rekognition Developer Guide.
+     * For an example, see Listing collections in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.
@@ -2135,7 +2285,7 @@ public interface AmazonRekognition {
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. For more information, see Recognizing Celebrities
+     * Returns an array of celebrities recognized in the input image. For more information, see Recognizing celebrities
      * in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
@@ -2162,7 +2312,7 @@ public interface AmazonRekognition {
      * image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.
+     * For an example, see Recognizing celebrities in an image in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
@@ -2178,8 +2328,8 @@ public interface AmazonRekognition {
      *         The provided image format is not supported.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -2213,7 +2363,7 @@ public interface AmazonRekognition {
      * confidence that the specific face matches the input face.
      * </p>
      * <p>
-     * For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition Developer Guide.
+     * For an example, see Searching for a face using its face ID in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.
@@ -2296,8 +2446,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
      *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
-     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
-     *         the Amazon Rekognition Developer Guide.
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -2330,7 +2480,7 @@ public interface AmazonRekognition {
      * <code>JobId</code>) from the initial call to <code>StartCelebrityRecognition</code>.
      * </p>
      * <p>
-     * For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.
+     * For more information, see Recognizing celebrities in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param startCelebrityRecognitionRequest
@@ -2383,7 +2533,7 @@ public interface AmazonRekognition {
      * <code>JobId</code>) from the initial call to <code>StartContentModeration</code>.
      * </p>
      * <p>
-     * For more information, see Content moderation in the Amazon Rekognition Developer Guide.
+     * For more information, see Moderating content in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param startContentModerationRequest
@@ -2430,7 +2580,7 @@ public interface AmazonRekognition {
      * pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
      * </p>
      * <p>
-     * For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition Developer Guide.
+     * For more information, see Detecting faces in a stored video in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param startFaceDetectionRequest
@@ -2475,8 +2625,9 @@ public interface AmazonRekognition {
      * completion status to the Amazon Simple Notification Service topic that you specify in
      * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
      * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job identifier (
-     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
-     * <a>procedure-person-search-videos</a>.
+     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching stored
+     * videos for faces</a>.
      * </p>
      * 
      * @param startFaceSearchRequest
@@ -2677,7 +2828,7 @@ public interface AmazonRekognition {
      * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
      * </p>
      * <p>
-     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * For more information, see Detecting video segments in stored video in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param startSegmentDetectionRequest
@@ -2715,6 +2866,11 @@ public interface AmazonRekognition {
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
+     * </p>
+     * <p>
+     * If you are using a label detection stream processor to detect labels, you need to provide a
+     * <code>Start selector</code> and a <code>Stop selector</code> to determine the length of the stream processing
+     * time.
      * </p>
      * 
      * @param startStreamProcessorRequest
@@ -2856,8 +3012,8 @@ public interface AmazonRekognition {
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -2956,6 +3112,31 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.UpdateDatasetEntries
      */
     UpdateDatasetEntriesResult updateDatasetEntries(UpdateDatasetEntriesRequest updateDatasetEntriesRequest);
+
+    /**
+     * <p>
+     * Allows you to update a stream processor. You can change some settings and regions of interest and delete certain
+     * parameters.
+     * </p>
+     * 
+     * @param updateStreamProcessorRequest
+     * @return Result of the UpdateStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.UpdateStreamProcessor
+     */
+    UpdateStreamProcessorResult updateStreamProcessor(UpdateStreamProcessorRequest updateStreamProcessorRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

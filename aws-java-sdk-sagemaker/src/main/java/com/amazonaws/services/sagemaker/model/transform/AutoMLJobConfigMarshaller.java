@@ -31,6 +31,8 @@ public class AutoMLJobConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionCriteria").build();
     private static final MarshallingInfo<StructuredPojo> SECURITYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfig").build();
+    private static final MarshallingInfo<StructuredPojo> DATASPLITCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSplitConfig").build();
 
     private static final AutoMLJobConfigMarshaller instance = new AutoMLJobConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class AutoMLJobConfigMarshaller {
         try {
             protocolMarshaller.marshall(autoMLJobConfig.getCompletionCriteria(), COMPLETIONCRITERIA_BINDING);
             protocolMarshaller.marshall(autoMLJobConfig.getSecurityConfig(), SECURITYCONFIG_BINDING);
+            protocolMarshaller.marshall(autoMLJobConfig.getDataSplitConfig(), DATASPLITCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

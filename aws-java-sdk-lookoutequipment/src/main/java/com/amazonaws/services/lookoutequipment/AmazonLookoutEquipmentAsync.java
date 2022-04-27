@@ -263,7 +263,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on.
+     * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
      * @param describeDataIngestionJobRequest
@@ -276,7 +276,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on.
+     * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
      * @param describeDataIngestionJobRequest
@@ -294,8 +294,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON description of the data that is in each time series dataset, including names, column names, and
-     * data types.
+     * Provides a JSON description of the data in each time series dataset, including names, column names, and data
+     * types.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -308,8 +308,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON description of the data that is in each time series dataset, including names, column names, and
-     * data types.
+     * Provides a JSON description of the data in each time series dataset, including names, column names, and data
+     * types.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -549,6 +549,39 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest listModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListModelsRequest, ListModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
+     * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
+     * </p>
+     * 
+     * @param listSensorStatisticsRequest
+     * @return A Java Future containing the result of the ListSensorStatistics operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListSensorStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(ListSensorStatisticsRequest listSensorStatisticsRequest);
+
+    /**
+     * <p>
+     * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
+     * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
+     * </p>
+     * 
+     * @param listSensorStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSensorStatistics operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListSensorStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(ListSensorStatisticsRequest listSensorStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSensorStatisticsRequest, ListSensorStatisticsResult> asyncHandler);
 
     /**
      * <p>

@@ -77,6 +77,30 @@ public class DescribeDataIngestionJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDataIngestionJobResult.setFailedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DataQualitySummary", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setDataQualitySummary(DataQualitySummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IngestedFilesSummary", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setIngestedFilesSummary(IngestedFilesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StatusDetail", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IngestedDataSize", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setIngestedDataSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("DataStartTime", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setDataStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DataEndTime", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

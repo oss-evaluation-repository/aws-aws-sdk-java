@@ -20,9 +20,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video
- * analysis operation. For more information, see <a>api-video</a>. Note that the Amazon SNS topic must have a topic name
- * that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to
- * access the topic. For more information, see <a
+ * analysis operation. For more information, see <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video
+ * operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if
+ * you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a
  * href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving
  * access to multiple Amazon SNS topics</a>.
  * </p>
@@ -32,7 +33,7 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     * The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      * </p>
      */
     private String sNSTopicArn;
@@ -45,11 +46,11 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     * The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      * </p>
      * 
      * @param sNSTopicArn
-     *        The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     *        The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      */
 
     public void setSNSTopicArn(String sNSTopicArn) {
@@ -58,10 +59,10 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     * The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      * </p>
      * 
-     * @return The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     * @return The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      */
 
     public String getSNSTopicArn() {
@@ -70,11 +71,11 @@ public class NotificationChannel implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     * The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      * </p>
      * 
      * @param sNSTopicArn
-     *        The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
+     *        The Amazon SNS topic to which Amazon Rekognition posts the completion status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

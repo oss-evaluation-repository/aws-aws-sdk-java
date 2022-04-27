@@ -17,9 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * This exception is thrown when Organizations is not configured to support all features. All features must be enabled
- * in Organizations to support creating an organization trail. For more information, see <a
- * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
- * >Prepare For Creating a Trail For Your Organization</a>.
+ * in Organizations to support creating an organization trail or event data store.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

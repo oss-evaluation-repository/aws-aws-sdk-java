@@ -93,12 +93,6 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * <p>
      * The serverless configuration for the endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      */
     private ProductionVariantServerlessConfig currentServerlessConfig;
     /**
@@ -106,12 +100,6 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * The serverless configuration requested for this deployment, as specified in the endpoint configuration for the
      * endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      */
     private ProductionVariantServerlessConfig desiredServerlessConfig;
 
@@ -621,19 +609,9 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * <p>
      * The serverless configuration for the endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param currentServerlessConfig
-     *        The serverless configuration for the endpoint.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        The serverless configuration for the endpoint.
      */
 
     public void setCurrentServerlessConfig(ProductionVariantServerlessConfig currentServerlessConfig) {
@@ -644,18 +622,8 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * <p>
      * The serverless configuration for the endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
-     * @return The serverless configuration for the endpoint.</p> <note>
-     *         <p>
-     *         Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *         recommend using this feature in production environments.
-     *         </p>
+     * @return The serverless configuration for the endpoint.
      */
 
     public ProductionVariantServerlessConfig getCurrentServerlessConfig() {
@@ -666,19 +634,9 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * <p>
      * The serverless configuration for the endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param currentServerlessConfig
-     *        The serverless configuration for the endpoint.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        The serverless configuration for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -692,20 +650,10 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * The serverless configuration requested for this deployment, as specified in the endpoint configuration for the
      * endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param desiredServerlessConfig
      *        The serverless configuration requested for this deployment, as specified in the endpoint configuration for
-     *        the endpoint.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        the endpoint.
      */
 
     public void setDesiredServerlessConfig(ProductionVariantServerlessConfig desiredServerlessConfig) {
@@ -717,19 +665,9 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * The serverless configuration requested for this deployment, as specified in the endpoint configuration for the
      * endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @return The serverless configuration requested for this deployment, as specified in the endpoint configuration
-     *         for the endpoint.</p> <note>
-     *         <p>
-     *         Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *         recommend using this feature in production environments.
-     *         </p>
+     *         for the endpoint.
      */
 
     public ProductionVariantServerlessConfig getDesiredServerlessConfig() {
@@ -741,20 +679,10 @@ public class PendingProductionVariantSummary implements Serializable, Cloneable,
      * The serverless configuration requested for this deployment, as specified in the endpoint configuration for the
      * endpoint.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param desiredServerlessConfig
      *        The serverless configuration requested for this deployment, as specified in the endpoint configuration for
-     *        the endpoint.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

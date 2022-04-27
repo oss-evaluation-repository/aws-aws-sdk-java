@@ -33,14 +33,14 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<String> startArns;
     /**
      * <p>
-     * Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s)
-     * the query will look.
+     * Associations between lineage entities have a direction. This parameter determines the direction from the
+     * StartArn(s) that the query traverses.
      * </p>
      */
     private String direction;
     /**
      * <p>
-     * Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      * lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.
      * </p>
@@ -82,8 +82,8 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
     private QueryFilters filters;
     /**
      * <p>
-     * The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a
-     * measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
+     * The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure
+     * of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
      * </p>
      */
     private Integer maxDepth;
@@ -174,13 +174,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s)
-     * the query will look.
+     * Associations between lineage entities have a direction. This parameter determines the direction from the
+     * StartArn(s) that the query traverses.
      * </p>
      * 
      * @param direction
-     *        Associations between lineage entities are directed. This parameter determines the direction from the
-     *        StartArn(s) the query will look.
+     *        Associations between lineage entities have a direction. This parameter determines the direction from the
+     *        StartArn(s) that the query traverses.
      * @see Direction
      */
 
@@ -190,12 +190,12 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s)
-     * the query will look.
+     * Associations between lineage entities have a direction. This parameter determines the direction from the
+     * StartArn(s) that the query traverses.
      * </p>
      * 
-     * @return Associations between lineage entities are directed. This parameter determines the direction from the
-     *         StartArn(s) the query will look.
+     * @return Associations between lineage entities have a direction. This parameter determines the direction from the
+     *         StartArn(s) that the query traverses.
      * @see Direction
      */
 
@@ -205,13 +205,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s)
-     * the query will look.
+     * Associations between lineage entities have a direction. This parameter determines the direction from the
+     * StartArn(s) that the query traverses.
      * </p>
      * 
      * @param direction
-     *        Associations between lineage entities are directed. This parameter determines the direction from the
-     *        StartArn(s) the query will look.
+     *        Associations between lineage entities have a direction. This parameter determines the direction from the
+     *        StartArn(s) that the query traverses.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Direction
      */
@@ -223,13 +223,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s)
-     * the query will look.
+     * Associations between lineage entities have a direction. This parameter determines the direction from the
+     * StartArn(s) that the query traverses.
      * </p>
      * 
      * @param direction
-     *        Associations between lineage entities are directed. This parameter determines the direction from the
-     *        StartArn(s) the query will look.
+     *        Associations between lineage entities have a direction. This parameter determines the direction from the
+     *        StartArn(s) that the query traverses.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Direction
      */
@@ -241,13 +241,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      * lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.
      * </p>
      * 
      * @param includeEdges
-     *        Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     *        Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      *        lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your
      *        query.
@@ -259,12 +259,12 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      * lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.
      * </p>
      * 
-     * @return Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * @return Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      *         and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match
      *         your query.
@@ -276,13 +276,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      * lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.
      * </p>
      * 
      * @param includeEdges
-     *        Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     *        Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      *        lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your
      *        query.
@@ -296,12 +296,12 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
      * lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.
      * </p>
      * 
-     * @return Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a
+     * @return Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      *         and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match
      *         your query.
@@ -518,14 +518,14 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a
-     * measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
+     * The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure
+     * of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
      * </p>
      * 
      * @param maxDepth
-     *        The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth
-     *        is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the
-     *        matched results.
+     *        The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a
+     *        measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched
+     *        results.
      */
 
     public void setMaxDepth(Integer maxDepth) {
@@ -534,13 +534,13 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a
-     * measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
+     * The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure
+     * of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
      * </p>
      * 
-     * @return The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth
-     *         is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the
-     *         matched results.
+     * @return The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a
+     *         measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched
+     *         results.
      */
 
     public Integer getMaxDepth() {
@@ -549,14 +549,14 @@ public class QueryLineageRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a
-     * measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
+     * The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure
+     * of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.
      * </p>
      * 
      * @param maxDepth
-     *        The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth
-     *        is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the
-     *        matched results.
+     *        The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a
+     *        measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

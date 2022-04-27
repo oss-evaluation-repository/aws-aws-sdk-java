@@ -30,28 +30,34 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
     private TraceContent traceContent;
     /**
      * <p>
-     * WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code>
+     * of the resource to add in the input array.
      * </p>
      */
     private java.util.List<String> wirelessDevicesToAdd;
     /**
      * <p>
-     * WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * Wireless device resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * </p>
      */
     private java.util.List<String> wirelessDevicesToRemove;
     /**
      * <p>
-     * WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to add to the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resource to add in the input array.
      * </p>
      */
     private java.util.List<String> wirelessGatewaysToAdd;
     /**
      * <p>
-     * WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * </p>
      */
     private java.util.List<String> wirelessGatewaysToRemove;
+
+    private String description;
 
     /**
      * @param configurationName
@@ -107,10 +113,12 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code>
+     * of the resource to add in the input array.
      * </p>
      * 
-     * @return WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * @return Wireless device resources to add to the network analyzer configuration. Provide the
+     *         <code>WirelessDeviceId</code> of the resource to add in the input array.
      */
 
     public java.util.List<String> getWirelessDevicesToAdd() {
@@ -119,11 +127,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code>
+     * of the resource to add in the input array.
      * </p>
      * 
      * @param wirelessDevicesToAdd
-     *        WirelessDevices to add into NetworkAnalyzerConfiguration.
+     *        Wireless device resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resource to add in the input array.
      */
 
     public void setWirelessDevicesToAdd(java.util.Collection<String> wirelessDevicesToAdd) {
@@ -137,7 +147,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code>
+     * of the resource to add in the input array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -146,7 +157,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param wirelessDevicesToAdd
-     *        WirelessDevices to add into NetworkAnalyzerConfiguration.
+     *        Wireless device resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resource to add in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +174,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to add into NetworkAnalyzerConfiguration.
+     * Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code>
+     * of the resource to add in the input array.
      * </p>
      * 
      * @param wirelessDevicesToAdd
-     *        WirelessDevices to add into NetworkAnalyzerConfiguration.
+     *        Wireless device resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resource to add in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,10 +191,12 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * Wireless device resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * </p>
      * 
-     * @return WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * @return Wireless device resources to remove from the network analyzer configuration. Provide the
+     *         <code>WirelessDeviceId</code> of the resources to remove in the input array.
      */
 
     public java.util.List<String> getWirelessDevicesToRemove() {
@@ -189,11 +205,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * Wireless device resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * </p>
      * 
      * @param wirelessDevicesToRemove
-     *        WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     *        Wireless device resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resources to remove in the input array.
      */
 
     public void setWirelessDevicesToRemove(java.util.Collection<String> wirelessDevicesToRemove) {
@@ -207,7 +225,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * Wireless device resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -216,7 +235,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param wirelessDevicesToRemove
-     *        WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     *        Wireless device resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +252,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     * Wireless device resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * </p>
      * 
      * @param wirelessDevicesToRemove
-     *        WirelessDevices to remove from NetworkAnalyzerConfiguration.
+     *        Wireless device resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessDeviceId</code> of the resources to remove in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,10 +269,12 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to add to the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resource to add in the input array.
      * </p>
      * 
-     * @return WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * @return Wireless gateway resources to add to the network analyzer configuration. Provide the
+     *         <code>WirelessGatewayId</code> of the resource to add in the input array.
      */
 
     public java.util.List<String> getWirelessGatewaysToAdd() {
@@ -259,11 +283,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to add to the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resource to add in the input array.
      * </p>
      * 
      * @param wirelessGatewaysToAdd
-     *        WirelessGateways to add into NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resource to add in the input array.
      */
 
     public void setWirelessGatewaysToAdd(java.util.Collection<String> wirelessGatewaysToAdd) {
@@ -277,7 +303,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to add to the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resource to add in the input array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -286,7 +313,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param wirelessGatewaysToAdd
-     *        WirelessGateways to add into NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resource to add in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,11 +330,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to add into NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to add to the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resource to add in the input array.
      * </p>
      * 
      * @param wirelessGatewaysToAdd
-     *        WirelessGateways to add into NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to add to the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resource to add in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,10 +347,12 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * </p>
      * 
-     * @return WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * @return Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     *         <code>WirelessGatewayId</code> of the resources to remove in the input array.
      */
 
     public java.util.List<String> getWirelessGatewaysToRemove() {
@@ -329,11 +361,13 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * </p>
      * 
      * @param wirelessGatewaysToRemove
-     *        WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resources to remove in the input array.
      */
 
     public void setWirelessGatewaysToRemove(java.util.Collection<String> wirelessGatewaysToRemove) {
@@ -347,7 +381,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -356,7 +391,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param wirelessGatewaysToRemove
-     *        WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,16 +408,44 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     * Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     * <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * </p>
      * 
      * @param wirelessGatewaysToRemove
-     *        WirelessGateways to remove from NetworkAnalyzerConfiguration.
+     *        Wireless gateway resources to remove from the network analyzer configuration. Provide the
+     *        <code>WirelessGatewayId</code> of the resources to remove in the input array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateNetworkAnalyzerConfigurationRequest withWirelessGatewaysToRemove(java.util.Collection<String> wirelessGatewaysToRemove) {
         setWirelessGatewaysToRemove(wirelessGatewaysToRemove);
+        return this;
+    }
+
+    /**
+     * @param description
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * @param description
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNetworkAnalyzerConfigurationRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -408,7 +472,9 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         if (getWirelessGatewaysToAdd() != null)
             sb.append("WirelessGatewaysToAdd: ").append(getWirelessGatewaysToAdd()).append(",");
         if (getWirelessGatewaysToRemove() != null)
-            sb.append("WirelessGatewaysToRemove: ").append(getWirelessGatewaysToRemove());
+            sb.append("WirelessGatewaysToRemove: ").append(getWirelessGatewaysToRemove()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -447,6 +513,10 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
             return false;
         if (other.getWirelessGatewaysToRemove() != null && other.getWirelessGatewaysToRemove().equals(this.getWirelessGatewaysToRemove()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -461,6 +531,7 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getWirelessDevicesToRemove() == null) ? 0 : getWirelessDevicesToRemove().hashCode());
         hashCode = prime * hashCode + ((getWirelessGatewaysToAdd() == null) ? 0 : getWirelessGatewaysToAdd().hashCode());
         hashCode = prime * hashCode + ((getWirelessGatewaysToRemove() == null) ? 0 : getWirelessGatewaysToRemove().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

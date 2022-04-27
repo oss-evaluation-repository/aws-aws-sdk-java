@@ -28,7 +28,7 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
-     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     * result. Values should be between 0 and 100. The default MinConfidence is 80.
      * </p>
      */
     private Float minConfidence;
@@ -50,12 +50,12 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
-     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     * result. Values should be between 0 and 100. The default MinConfidence is 80.
      * </p>
      * 
      * @param minConfidence
      *        Sets the confidence of word detection. Words with detection confidence below this will be excluded from
-     *        the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     *        the result. Values should be between 0 and 100. The default MinConfidence is 80.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -65,11 +65,11 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
-     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     * result. Values should be between 0 and 100. The default MinConfidence is 80.
      * </p>
      * 
      * @return Sets the confidence of word detection. Words with detection confidence below this will be excluded from
-     *         the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     *         the result. Values should be between 0 and 100. The default MinConfidence is 80.
      */
 
     public Float getMinConfidence() {
@@ -79,12 +79,12 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
-     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     * result. Values should be between 0 and 100. The default MinConfidence is 80.
      * </p>
      * 
      * @param minConfidence
      *        Sets the confidence of word detection. Words with detection confidence below this will be excluded from
-     *        the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
+     *        the result. Values should be between 0 and 100. The default MinConfidence is 80.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

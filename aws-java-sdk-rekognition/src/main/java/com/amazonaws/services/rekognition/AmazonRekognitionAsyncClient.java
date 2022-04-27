@@ -31,8 +31,143 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is the Amazon Rekognition API reference.
+ * This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
+ * Rekognition Image</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
+ * Rekognition Custom Labels</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon
+ * Rekognition Stored Video</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
+ * Rekognition Streaming Video</a>. It provides descriptions of actions, data types, common parameters, and common
+ * errors.
  * </p>
+ * <p>
+ * <b>Amazon Rekognition Image</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Custom Labels</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Video Stored Video</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
+ * <p>
+ * <b>Amazon Rekognition Video Streaming Video</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * <li>
+ * <p/></li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -2156,6 +2291,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeUpdateDatasetEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamProcessorResult> updateStreamProcessorAsync(UpdateStreamProcessorRequest request) {
+
+        return updateStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamProcessorResult> updateStreamProcessorAsync(final UpdateStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStreamProcessorRequest, UpdateStreamProcessorResult> asyncHandler) {
+        final UpdateStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStreamProcessorResult>() {
+            @Override
+            public UpdateStreamProcessorResult call() throws Exception {
+                UpdateStreamProcessorResult result = null;
+
+                try {
+                    result = executeUpdateStreamProcessor(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

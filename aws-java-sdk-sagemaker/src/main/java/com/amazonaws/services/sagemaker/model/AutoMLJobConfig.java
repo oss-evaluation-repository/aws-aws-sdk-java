@@ -40,6 +40,15 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AutoMLSecurityConfig securityConfig;
+    /**
+     * <p>
+     * The configuration for splitting the input training dataset.
+     * </p>
+     * <p>
+     * Type: AutoMLDataSplitConfig
+     * </p>
+     */
+    private AutoMLDataSplitConfig dataSplitConfig;
 
     /**
      * <p>
@@ -122,6 +131,61 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The configuration for splitting the input training dataset.
+     * </p>
+     * <p>
+     * Type: AutoMLDataSplitConfig
+     * </p>
+     * 
+     * @param dataSplitConfig
+     *        The configuration for splitting the input training dataset.</p>
+     *        <p>
+     *        Type: AutoMLDataSplitConfig
+     */
+
+    public void setDataSplitConfig(AutoMLDataSplitConfig dataSplitConfig) {
+        this.dataSplitConfig = dataSplitConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for splitting the input training dataset.
+     * </p>
+     * <p>
+     * Type: AutoMLDataSplitConfig
+     * </p>
+     * 
+     * @return The configuration for splitting the input training dataset.</p>
+     *         <p>
+     *         Type: AutoMLDataSplitConfig
+     */
+
+    public AutoMLDataSplitConfig getDataSplitConfig() {
+        return this.dataSplitConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for splitting the input training dataset.
+     * </p>
+     * <p>
+     * Type: AutoMLDataSplitConfig
+     * </p>
+     * 
+     * @param dataSplitConfig
+     *        The configuration for splitting the input training dataset.</p>
+     *        <p>
+     *        Type: AutoMLDataSplitConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLJobConfig withDataSplitConfig(AutoMLDataSplitConfig dataSplitConfig) {
+        setDataSplitConfig(dataSplitConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +200,9 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
         if (getCompletionCriteria() != null)
             sb.append("CompletionCriteria: ").append(getCompletionCriteria()).append(",");
         if (getSecurityConfig() != null)
-            sb.append("SecurityConfig: ").append(getSecurityConfig());
+            sb.append("SecurityConfig: ").append(getSecurityConfig()).append(",");
+        if (getDataSplitConfig() != null)
+            sb.append("DataSplitConfig: ").append(getDataSplitConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +225,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSecurityConfig() != null && other.getSecurityConfig().equals(this.getSecurityConfig()) == false)
             return false;
+        if (other.getDataSplitConfig() == null ^ this.getDataSplitConfig() == null)
+            return false;
+        if (other.getDataSplitConfig() != null && other.getDataSplitConfig().equals(this.getDataSplitConfig()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +239,7 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getCompletionCriteria() == null) ? 0 : getCompletionCriteria().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfig() == null) ? 0 : getSecurityConfig().hashCode());
+        hashCode = prime * hashCode + ((getDataSplitConfig() == null) ? 0 : getDataSplitConfig().hashCode());
         return hashCode;
     }
 

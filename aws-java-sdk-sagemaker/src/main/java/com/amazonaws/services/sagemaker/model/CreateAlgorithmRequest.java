@@ -106,9 +106,9 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
     private InferenceSpecification inferenceSpecification;
     /**
      * <p>
-     * Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's
-     * training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the
-     * algorithm's inference code.
+     * Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training
+     * code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference
+     * code.
      * </p>
      */
     private AlgorithmValidationSpecification validationSpecification;
@@ -617,15 +617,15 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's
-     * training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the
-     * algorithm's inference code.
+     * Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training
+     * code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference
+     * code.
      * </p>
      * 
      * @param validationSpecification
-     *        Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
-     *        algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to
-     *        test the algorithm's inference code.
+     *        Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's
+     *        training code and, optionally, one or more batch transform jobs that SageMaker runs to test the
+     *        algorithm's inference code.
      */
 
     public void setValidationSpecification(AlgorithmValidationSpecification validationSpecification) {
@@ -634,14 +634,14 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's
-     * training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the
-     * algorithm's inference code.
+     * Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training
+     * code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference
+     * code.
      * </p>
      * 
-     * @return Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
-     *         algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to
-     *         test the algorithm's inference code.
+     * @return Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's
+     *         training code and, optionally, one or more batch transform jobs that SageMaker runs to test the
+     *         algorithm's inference code.
      */
 
     public AlgorithmValidationSpecification getValidationSpecification() {
@@ -650,15 +650,15 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's
-     * training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the
-     * algorithm's inference code.
+     * Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training
+     * code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference
+     * code.
      * </p>
      * 
      * @param validationSpecification
-     *        Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
-     *        algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to
-     *        test the algorithm's inference code.
+     *        Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's
+     *        training code and, optionally, one or more batch transform jobs that SageMaker runs to test the
+     *        algorithm's inference code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

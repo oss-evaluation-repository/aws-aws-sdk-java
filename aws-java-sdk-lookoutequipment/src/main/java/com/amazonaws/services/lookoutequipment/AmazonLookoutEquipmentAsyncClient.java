@@ -572,6 +572,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(ListSensorStatisticsRequest request) {
+
+        return listSensorStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(final ListSensorStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSensorStatisticsRequest, ListSensorStatisticsResult> asyncHandler) {
+        final ListSensorStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSensorStatisticsResult>() {
+            @Override
+            public ListSensorStatisticsResult call() throws Exception {
+                ListSensorStatisticsResult result = null;
+
+                try {
+                    result = executeListSensorStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);

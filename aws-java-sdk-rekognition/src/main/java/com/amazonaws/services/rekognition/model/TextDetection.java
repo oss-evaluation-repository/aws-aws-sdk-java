@@ -30,7 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * an index for the word within a line of words.
  * </p>
  * <p>
- * For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
+ * For more information, see Detecting text in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

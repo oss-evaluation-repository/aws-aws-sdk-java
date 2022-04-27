@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * Provides APIs for creating and managing Amazon SageMaker resources.
+ * Provides APIs for creating and managing SageMaker resources.
  * </p>
  * <p>
  * Other Resources:
@@ -34,8 +34,7 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon SageMaker Developer
- * Guide</a>
+ * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">SageMaker Developer Guide</a>
  * </p>
  * </li>
  * <li>

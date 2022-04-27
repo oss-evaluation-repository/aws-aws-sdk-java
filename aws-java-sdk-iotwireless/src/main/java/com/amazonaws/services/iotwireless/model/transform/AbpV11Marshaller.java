@@ -31,6 +31,8 @@ public class AbpV11Marshaller {
             .marshallLocationName("DevAddr").build();
     private static final MarshallingInfo<StructuredPojo> SESSIONKEYS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionKeys").build();
+    private static final MarshallingInfo<Integer> FCNTSTART_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FCntStart").build();
 
     private static final AbpV11Marshaller instance = new AbpV11Marshaller();
 
@@ -50,6 +52,7 @@ public class AbpV11Marshaller {
         try {
             protocolMarshaller.marshall(abpV11.getDevAddr(), DEVADDR_BINDING);
             protocolMarshaller.marshall(abpV11.getSessionKeys(), SESSIONKEYS_BINDING);
+            protocolMarshaller.marshall(abpV11.getFCntStart(), FCNTSTART_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,7 +25,7 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Name of the Amazon SageMaker model.
+     * Name of the SageMaker model.
      * </p>
      */
     private String modelName;
@@ -83,11 +83,11 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Name of the Amazon SageMaker model.
+     * Name of the SageMaker model.
      * </p>
      * 
      * @param modelName
-     *        Name of the Amazon SageMaker model.
+     *        Name of the SageMaker model.
      */
 
     public void setModelName(String modelName) {
@@ -96,10 +96,10 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Name of the Amazon SageMaker model.
+     * Name of the SageMaker model.
      * </p>
      * 
-     * @return Name of the Amazon SageMaker model.
+     * @return Name of the SageMaker model.
      */
 
     public String getModelName() {
@@ -108,11 +108,11 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Name of the Amazon SageMaker model.
+     * Name of the SageMaker model.
      * </p>
      * 
      * @param modelName
-     *        Name of the Amazon SageMaker model.
+     *        Name of the SageMaker model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

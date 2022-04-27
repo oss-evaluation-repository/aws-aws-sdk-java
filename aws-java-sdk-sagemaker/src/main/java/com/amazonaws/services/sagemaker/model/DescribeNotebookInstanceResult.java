@@ -31,7 +31,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     private String notebookInstanceArn;
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance.
+     * The name of the SageMaker notebook instance.
      * </p>
      */
     private String notebookInstanceName;
@@ -79,14 +79,14 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     private String roleArn;
     /**
      * <p>
-     * The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
      * attached to the instance.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     * The network interface IDs that SageMaker created at the time of creating the instance.
      * </p>
      */
     private String networkInterfaceId;
@@ -115,9 +115,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     private String notebookInstanceLifecycleConfigName;
     /**
      * <p>
-     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     * training and endpoint services.
+     * Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training
+     * and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -147,7 +147,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -159,7 +159,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -226,11 +226,11 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance.
+     * The name of the SageMaker notebook instance.
      * </p>
      * 
      * @param notebookInstanceName
-     *        The name of the Amazon SageMaker notebook instance.
+     *        The name of the SageMaker notebook instance.
      */
 
     public void setNotebookInstanceName(String notebookInstanceName) {
@@ -239,10 +239,10 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance.
+     * The name of the SageMaker notebook instance.
      * </p>
      * 
-     * @return The name of the Amazon SageMaker notebook instance.
+     * @return The name of the SageMaker notebook instance.
      */
 
     public String getNotebookInstanceName() {
@@ -251,11 +251,11 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance.
+     * The name of the SageMaker notebook instance.
      * </p>
      * 
      * @param notebookInstanceName
-     *        The name of the Amazon SageMaker notebook instance.
+     *        The name of the SageMaker notebook instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,13 +614,13 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
      * attached to the instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
-     *        volume attached to the instance.
+     *        The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
+     *        attached to the instance.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -629,12 +629,12 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
      * attached to the instance.
      * </p>
      * 
-     * @return The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML
-     *         storage volume attached to the instance.
+     * @return The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage
+     *         volume attached to the instance.
      */
 
     public String getKmsKeyId() {
@@ -643,13 +643,13 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
      * attached to the instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
-     *        volume attached to the instance.
+     *        The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume
+     *        attached to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -660,11 +660,11 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     * The network interface IDs that SageMaker created at the time of creating the instance.
      * </p>
      * 
      * @param networkInterfaceId
-     *        The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     *        The network interface IDs that SageMaker created at the time of creating the instance.
      */
 
     public void setNetworkInterfaceId(String networkInterfaceId) {
@@ -673,10 +673,10 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     * The network interface IDs that SageMaker created at the time of creating the instance.
      * </p>
      * 
-     * @return The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     * @return The network interface IDs that SageMaker created at the time of creating the instance.
      */
 
     public String getNetworkInterfaceId() {
@@ -685,11 +685,11 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     * The network interface IDs that SageMaker created at the time of creating the instance.
      * </p>
      * 
      * @param networkInterfaceId
-     *        The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+     *        The network interface IDs that SageMaker created at the time of creating the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -847,9 +847,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     * training and endpoint services.
+     * Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training
+     * and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -858,9 +858,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
-     *        SageMaker training and endpoint services.</p>
+     *        Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     *        <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker
+     *        training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -874,9 +874,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     * training and endpoint services.
+     * Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training
+     * and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -884,9 +884,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
-     * @return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is
-     *         set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
-     *         SageMaker training and endpoint services.</p>
+     * @return Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     *         <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker
+     *         training and endpoint services.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -900,9 +900,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     * training and endpoint services.
+     * Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training
+     * and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -911,9 +911,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
-     *        SageMaker training and endpoint services.</p>
+     *        Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     *        <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker
+     *        training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -929,9 +929,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     * training and endpoint services.
+     * Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training
+     * and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -940,9 +940,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
-     *        SageMaker training and endpoint services.</p>
+     *        Describes whether SageMaker provides internet access to the notebook instance. If this value is set to
+     *        <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker
+     *        training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -1126,7 +1126,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1137,7 +1137,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setDefaultCodeRepository(String defaultCodeRepository) {
@@ -1151,7 +1151,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1161,7 +1161,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *         CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *         directory that contains this repository. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public String getDefaultCodeRepository() {
@@ -1175,7 +1175,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1186,7 +1186,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1202,7 +1202,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1212,7 +1212,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *         CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *         default repository of your notebook instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -1226,7 +1226,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1237,7 +1237,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
@@ -1256,7 +1256,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
@@ -1272,7 +1272,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1293,7 +1293,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1304,7 +1304,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

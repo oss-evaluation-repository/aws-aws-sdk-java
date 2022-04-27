@@ -40,6 +40,12 @@ public class AbpV10X implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SessionKeysAbpV10X sessionKeys;
+    /**
+     * <p>
+     * The FCnt init value.
+     * </p>
+     */
+    private Integer fCntStart;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class AbpV10X implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The FCnt init value.
+     * </p>
+     * 
+     * @param fCntStart
+     *        The FCnt init value.
+     */
+
+    public void setFCntStart(Integer fCntStart) {
+        this.fCntStart = fCntStart;
+    }
+
+    /**
+     * <p>
+     * The FCnt init value.
+     * </p>
+     * 
+     * @return The FCnt init value.
+     */
+
+    public Integer getFCntStart() {
+        return this.fCntStart;
+    }
+
+    /**
+     * <p>
+     * The FCnt init value.
+     * </p>
+     * 
+     * @param fCntStart
+     *        The FCnt init value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AbpV10X withFCntStart(Integer fCntStart) {
+        setFCntStart(fCntStart);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class AbpV10X implements Serializable, Cloneable, StructuredPojo {
         if (getDevAddr() != null)
             sb.append("DevAddr: ").append(getDevAddr()).append(",");
         if (getSessionKeys() != null)
-            sb.append("SessionKeys: ").append(getSessionKeys());
+            sb.append("SessionKeys: ").append(getSessionKeys()).append(",");
+        if (getFCntStart() != null)
+            sb.append("FCntStart: ").append(getFCntStart());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class AbpV10X implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSessionKeys() != null && other.getSessionKeys().equals(this.getSessionKeys()) == false)
             return false;
+        if (other.getFCntStart() == null ^ this.getFCntStart() == null)
+            return false;
+        if (other.getFCntStart() != null && other.getFCntStart().equals(this.getFCntStart()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class AbpV10X implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDevAddr() == null) ? 0 : getDevAddr().hashCode());
         hashCode = prime * hashCode + ((getSessionKeys() == null) ? 0 : getSessionKeys().hashCode());
+        hashCode = prime * hashCode + ((getFCntStart() == null) ? 0 : getFCntStart().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,8 @@ public class UpdateNetworkAnalyzerConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WirelessGatewaysToAdd").build();
     private static final MarshallingInfo<List> WIRELESSGATEWAYSTOREMOVE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WirelessGatewaysToRemove").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
     private static final UpdateNetworkAnalyzerConfigurationRequestMarshaller instance = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateNetworkAnalyzerConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateNetworkAnalyzerConfigurationRequest.getWirelessDevicesToRemove(), WIRELESSDEVICESTOREMOVE_BINDING);
             protocolMarshaller.marshall(updateNetworkAnalyzerConfigurationRequest.getWirelessGatewaysToAdd(), WIRELESSGATEWAYSTOADD_BINDING);
             protocolMarshaller.marshall(updateNetworkAnalyzerConfigurationRequest.getWirelessGatewaysToRemove(), WIRELESSGATEWAYSTOREMOVE_BINDING);
+            protocolMarshaller.marshall(updateNetworkAnalyzerConfigurationRequest.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

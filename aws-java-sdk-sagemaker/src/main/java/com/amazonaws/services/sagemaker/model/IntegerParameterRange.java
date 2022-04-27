@@ -57,7 +57,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -210,7 +210,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -239,7 +239,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>
@@ -275,7 +275,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -303,7 +303,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *         <dt>Auto</dt>
      *         <dd>
      *         <p>
-     *         Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *         SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *         </p>
      *         </dd>
      *         <dt>Linear</dt>
@@ -339,7 +339,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -368,7 +368,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>
@@ -406,7 +406,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -435,7 +435,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>

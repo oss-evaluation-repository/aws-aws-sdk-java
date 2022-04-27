@@ -52,6 +52,10 @@ public class ProximityEventConfigurationJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     proximityEventConfiguration.setSidewalk(SidewalkEventNotificationConfigurationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("WirelessDeviceIdEventTopic", targetDepth)) {
+                    context.nextToken();
+                    proximityEventConfiguration.setWirelessDeviceIdEventTopic(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -20,7 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IdentifierType {
 
-    PartnerAccountId("PartnerAccountId");
+    PartnerAccountId("PartnerAccountId"),
+    DevEui("DevEui"),
+    GatewayEui("GatewayEui"),
+    WirelessDeviceId("WirelessDeviceId"),
+    WirelessGatewayId("WirelessGatewayId");
 
     private String value;
 

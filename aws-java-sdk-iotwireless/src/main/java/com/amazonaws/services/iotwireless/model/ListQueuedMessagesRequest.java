@@ -27,7 +27,7 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Id of a given wireless device which the downlink packets are targeted
+     * The ID of a given wireless device which the downlink message packets are being sent.
      * </p>
      */
     private String id;
@@ -46,18 +46,18 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * </p>
      */
     private String wirelessDeviceType;
 
     /**
      * <p>
-     * Id of a given wireless device which the downlink packets are targeted
+     * The ID of a given wireless device which the downlink message packets are being sent.
      * </p>
      * 
      * @param id
-     *        Id of a given wireless device which the downlink packets are targeted
+     *        The ID of a given wireless device which the downlink message packets are being sent.
      */
 
     public void setId(String id) {
@@ -66,10 +66,10 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Id of a given wireless device which the downlink packets are targeted
+     * The ID of a given wireless device which the downlink message packets are being sent.
      * </p>
      * 
-     * @return Id of a given wireless device which the downlink packets are targeted
+     * @return The ID of a given wireless device which the downlink message packets are being sent.
      */
 
     public String getId() {
@@ -78,11 +78,11 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Id of a given wireless device which the downlink packets are targeted
+     * The ID of a given wireless device which the downlink message packets are being sent.
      * </p>
      * 
      * @param id
-     *        Id of a given wireless device which the downlink packets are targeted
+     *        The ID of a given wireless device which the downlink message packets are being sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * @see WirelessDeviceType
      */
 
@@ -193,10 +193,10 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * </p>
      * 
-     * @return The wireless device type, it is either Sidewalk or LoRaWAN.
+     * @return The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * @see WirelessDeviceType
      */
 
@@ -206,11 +206,11 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessDeviceType
      */
@@ -222,11 +222,11 @@ public class ListQueuedMessagesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The wireless device type, it is either Sidewalk or LoRaWAN.
+     * The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * </p>
      * 
      * @param wirelessDeviceType
-     *        The wireless device type, it is either Sidewalk or LoRaWAN.
+     *        The wireless device type, whic can be either Sidewalk or LoRaWAN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WirelessDeviceType
      */

@@ -27,18 +27,18 @@ public class DescribeModelPackageGroupRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model group to describe.
+     * The name of gthe model group to describe.
      * </p>
      */
     private String modelPackageGroupName;
 
     /**
      * <p>
-     * The name of the model group to describe.
+     * The name of gthe model group to describe.
      * </p>
      * 
      * @param modelPackageGroupName
-     *        The name of the model group to describe.
+     *        The name of gthe model group to describe.
      */
 
     public void setModelPackageGroupName(String modelPackageGroupName) {
@@ -47,10 +47,10 @@ public class DescribeModelPackageGroupRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model group to describe.
+     * The name of gthe model group to describe.
      * </p>
      * 
-     * @return The name of the model group to describe.
+     * @return The name of gthe model group to describe.
      */
 
     public String getModelPackageGroupName() {
@@ -59,11 +59,11 @@ public class DescribeModelPackageGroupRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model group to describe.
+     * The name of gthe model group to describe.
      * </p>
      * 
      * @param modelPackageGroupName
-     *        The name of the model group to describe.
+     *        The name of gthe model group to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

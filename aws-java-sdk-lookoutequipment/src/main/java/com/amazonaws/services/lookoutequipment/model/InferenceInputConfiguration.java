@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies configuration information for the input data for the inference, including S3 location of input data..
+ * Specifies configuration information for the input data for the inference, including Amazon S3 location of input
+ * data..
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceInputConfiguration"
@@ -30,13 +31,14 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies configuration information for the input data for the inference, including S3 location of input data..
+     * Specifies configuration information for the input data for the inference, including Amazon S3 location of input
+     * data.
      * </p>
      */
     private InferenceS3InputConfiguration s3InputConfiguration;
     /**
      * <p>
-     * Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     * Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      * </p>
      */
     private String inputTimeZoneOffset;
@@ -50,12 +52,13 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies configuration information for the input data for the inference, including S3 location of input data..
+     * Specifies configuration information for the input data for the inference, including Amazon S3 location of input
+     * data.
      * </p>
      * 
      * @param s3InputConfiguration
-     *        Specifies configuration information for the input data for the inference, including S3 location of input
-     *        data..
+     *        Specifies configuration information for the input data for the inference, including Amazon S3 location of
+     *        input data.
      */
 
     public void setS3InputConfiguration(InferenceS3InputConfiguration s3InputConfiguration) {
@@ -64,11 +67,12 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies configuration information for the input data for the inference, including S3 location of input data..
+     * Specifies configuration information for the input data for the inference, including Amazon S3 location of input
+     * data.
      * </p>
      * 
-     * @return Specifies configuration information for the input data for the inference, including S3 location of input
-     *         data..
+     * @return Specifies configuration information for the input data for the inference, including Amazon S3 location of
+     *         input data.
      */
 
     public InferenceS3InputConfiguration getS3InputConfiguration() {
@@ -77,12 +81,13 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies configuration information for the input data for the inference, including S3 location of input data..
+     * Specifies configuration information for the input data for the inference, including Amazon S3 location of input
+     * data.
      * </p>
      * 
      * @param s3InputConfiguration
-     *        Specifies configuration information for the input data for the inference, including S3 location of input
-     *        data..
+     *        Specifies configuration information for the input data for the inference, including Amazon S3 location of
+     *        input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +98,11 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     * Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param inputTimeZoneOffset
-     *        Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     *        Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      */
 
     public void setInputTimeZoneOffset(String inputTimeZoneOffset) {
@@ -106,10 +111,10 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     * Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      * </p>
      * 
-     * @return Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     * @return Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      */
 
     public String getInputTimeZoneOffset() {
@@ -118,11 +123,11 @@ public class InferenceInputConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     * Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param inputTimeZoneOffset
-     *        Indicates the difference between your time zone and Greenwich Mean Time (GMT).
+     *        Indicates the difference between your time zone and Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

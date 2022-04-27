@@ -29,6 +29,8 @@ public class StreamProcessorSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> FACESEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaceSearch").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTEDHOME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectedHome").build();
 
     private static final StreamProcessorSettingsMarshaller instance = new StreamProcessorSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class StreamProcessorSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(streamProcessorSettings.getFaceSearch(), FACESEARCH_BINDING);
+            protocolMarshaller.marshall(streamProcessorSettings.getConnectedHome(), CONNECTEDHOME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

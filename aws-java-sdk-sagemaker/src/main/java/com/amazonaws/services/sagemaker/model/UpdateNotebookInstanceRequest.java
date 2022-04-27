@@ -39,13 +39,13 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String instanceType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
@@ -70,10 +70,10 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML
-     * storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the
-     * volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't
-     * decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook
-     * instance with the desired size.
+     * storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume.
+     * Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the
+     * volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance
+     * with the desired size.
      * </p>
      */
     private Integer volumeSizeInGB;
@@ -84,7 +84,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -96,7 +96,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -248,25 +248,25 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
-     *        instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      */
 
@@ -276,24 +276,24 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
-     *         instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *         </p> <note>
+     * @return The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *         <note>
      *         <p>
-     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *         <code>iam:PassRole</code> permission.
+     *         To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *         permission.
      *         </p>
      */
 
@@ -303,25 +303,25 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
-     *        instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -457,18 +457,18 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML
-     * storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the
-     * volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't
-     * decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook
-     * instance with the desired size.
+     * storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume.
+     * Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the
+     * volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance
+     * with the desired size.
      * </p>
      * 
      * @param volumeSizeInGB
      *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
-     *        ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space
-     *        on the volume. Because of this, you can increase the volume size when you update a notebook instance, but
-     *        you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use,
-     *        create a new notebook instance with the desired size.
+     *        ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the
+     *        volume. Because of this, you can increase the volume size when you update a notebook instance, but you
+     *        can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a
+     *        new notebook instance with the desired size.
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -478,17 +478,17 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML
-     * storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the
-     * volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't
-     * decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook
-     * instance with the desired size.
+     * storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume.
+     * Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the
+     * volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance
+     * with the desired size.
      * </p>
      * 
      * @return The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
-     *         ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space
-     *         on the volume. Because of this, you can increase the volume size when you update a notebook instance, but
-     *         you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use,
-     *         create a new notebook instance with the desired size.
+     *         ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the
+     *         volume. Because of this, you can increase the volume size when you update a notebook instance, but you
+     *         can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create
+     *         a new notebook instance with the desired size.
      */
 
     public Integer getVolumeSizeInGB() {
@@ -498,18 +498,18 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML
-     * storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the
-     * volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't
-     * decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook
-     * instance with the desired size.
+     * storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume.
+     * Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the
+     * volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance
+     * with the desired size.
      * </p>
      * 
      * @param volumeSizeInGB
      *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
-     *        ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space
-     *        on the volume. Because of this, you can increase the volume size when you update a notebook instance, but
-     *        you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use,
-     *        create a new notebook instance with the desired size.
+     *        ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the
+     *        volume. Because of this, you can increase the volume size when you update a notebook instance, but you
+     *        can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a
+     *        new notebook instance with the desired size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,7 +525,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -536,7 +536,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setDefaultCodeRepository(String defaultCodeRepository) {
@@ -550,7 +550,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -560,7 +560,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *         directory that contains this repository. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public String getDefaultCodeRepository() {
@@ -574,7 +574,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -585,7 +585,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,7 +601,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -611,7 +611,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *         default repository of your notebook instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -625,7 +625,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -636,7 +636,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
@@ -655,7 +655,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
@@ -671,7 +671,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -692,7 +692,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -703,7 +703,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

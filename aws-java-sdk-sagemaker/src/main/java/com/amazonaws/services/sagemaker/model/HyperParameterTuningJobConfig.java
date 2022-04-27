@@ -72,8 +72,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * <dt>AUTO</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
-     * better than previously completed training jobs. For more information, see <a
+     * SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better
+     * than previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training
      * Jobs Early</a>.
      * </p>
@@ -326,8 +326,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * <dt>AUTO</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
-     * better than previously completed training jobs. For more information, see <a
+     * SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better
+     * than previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training
      * Jobs Early</a>.
      * </p>
@@ -347,8 +347,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      *        <dt>AUTO</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to
-     *        perform better than previously completed training jobs. For more information, see <a
+     *        SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
+     *        better than previously completed training jobs. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      *        Training Jobs Early</a>.
      *        </p>
@@ -375,8 +375,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * <dt>AUTO</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
-     * better than previously completed training jobs. For more information, see <a
+     * SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better
+     * than previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training
      * Jobs Early</a>.
      * </p>
@@ -395,8 +395,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      *         <dt>AUTO</dt>
      *         <dd>
      *         <p>
-     *         Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to
-     *         perform better than previously completed training jobs. For more information, see <a
+     *         SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
+     *         better than previously completed training jobs. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      *         Training Jobs Early</a>.
      *         </p>
@@ -423,8 +423,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * <dt>AUTO</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
-     * better than previously completed training jobs. For more information, see <a
+     * SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better
+     * than previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training
      * Jobs Early</a>.
      * </p>
@@ -444,8 +444,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      *        <dt>AUTO</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to
-     *        perform better than previously completed training jobs. For more information, see <a
+     *        SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
+     *        better than previously completed training jobs. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      *        Training Jobs Early</a>.
      *        </p>
@@ -474,8 +474,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * <dt>AUTO</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
-     * better than previously completed training jobs. For more information, see <a
+     * SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better
+     * than previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training
      * Jobs Early</a>.
      * </p>
@@ -495,8 +495,8 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      *        <dt>AUTO</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to
-     *        perform better than previously completed training jobs. For more information, see <a
+     *        SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform
+     *        better than previously completed training jobs. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      *        Training Jobs Early</a>.
      *        </p>

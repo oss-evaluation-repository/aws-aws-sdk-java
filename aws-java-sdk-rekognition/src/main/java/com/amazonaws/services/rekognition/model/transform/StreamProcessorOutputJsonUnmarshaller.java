@@ -52,6 +52,10 @@ public class StreamProcessorOutputJsonUnmarshaller implements Unmarshaller<Strea
                     context.nextToken();
                     streamProcessorOutput.setKinesisDataStream(KinesisDataStreamJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("S3Destination", targetDepth)) {
+                    context.nextToken();
+                    streamProcessorOutput.setS3Destination(S3DestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

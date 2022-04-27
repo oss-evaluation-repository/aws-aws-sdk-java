@@ -49,8 +49,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -347,8 +347,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -403,9 +403,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *        uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
-     *        endpoint.</p>
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>
@@ -465,8 +464,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -520,9 +519,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *         uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
-     *         endpoint.</p>
+     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *         encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
      *         <p>
      *         The KmsKeyId can be any of the following formats:
      *         </p>
@@ -582,8 +580,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -638,9 +636,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *        uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
-     *        endpoint.</p>
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>

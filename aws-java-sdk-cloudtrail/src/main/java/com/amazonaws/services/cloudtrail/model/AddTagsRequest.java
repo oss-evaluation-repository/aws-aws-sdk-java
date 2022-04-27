@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Specifies the tags to add to a trail.
+ * Specifies the tags to add to a trail or event data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
@@ -30,7 +30,8 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
+     * Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
@@ -46,14 +47,16 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
+     * Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
-     *        Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+     *        Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of
+     *        a trail ARN is:</p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
@@ -64,13 +67,15 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
+     * Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
-     * @return Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+     * @return Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of
+     *         a trail ARN is:</p>
      *         <p>
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
@@ -81,14 +86,16 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
+     * Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
-     *        Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+     *        Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of
+     *        a trail ARN is:</p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.

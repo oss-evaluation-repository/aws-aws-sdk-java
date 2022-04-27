@@ -29,6 +29,8 @@ public class DeviceRegistrationStateEventConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SIDEWALK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sidewalk").build();
+    private static final MarshallingInfo<String> WIRELESSDEVICEIDEVENTTOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WirelessDeviceIdEventTopic").build();
 
     private static final DeviceRegistrationStateEventConfigurationMarshaller instance = new DeviceRegistrationStateEventConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class DeviceRegistrationStateEventConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(deviceRegistrationStateEventConfiguration.getSidewalk(), SIDEWALK_BINDING);
+            protocolMarshaller.marshall(deviceRegistrationStateEventConfiguration.getWirelessDeviceIdEventTopic(), WIRELESSDEVICEIDEVENTTOPIC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

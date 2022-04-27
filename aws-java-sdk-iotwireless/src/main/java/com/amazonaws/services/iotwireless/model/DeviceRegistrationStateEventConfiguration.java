@@ -35,6 +35,12 @@ public class DeviceRegistrationStateEventConfiguration implements Serializable, 
      * </p>
      */
     private SidewalkEventNotificationConfigurations sidewalk;
+    /**
+     * <p>
+     * Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.
+     * </p>
+     */
+    private String wirelessDeviceIdEventTopic;
 
     /**
      * <p>
@@ -80,6 +86,69 @@ public class DeviceRegistrationStateEventConfiguration implements Serializable, 
     }
 
     /**
+     * <p>
+     * Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.
+     * </p>
+     * 
+     * @param wirelessDeviceIdEventTopic
+     *        Enum to denote whether the wireless device id device registration state event topic is enabled or
+     *        disabled.
+     * @see EventNotificationTopicStatus
+     */
+
+    public void setWirelessDeviceIdEventTopic(String wirelessDeviceIdEventTopic) {
+        this.wirelessDeviceIdEventTopic = wirelessDeviceIdEventTopic;
+    }
+
+    /**
+     * <p>
+     * Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.
+     * </p>
+     * 
+     * @return Enum to denote whether the wireless device id device registration state event topic is enabled or
+     *         disabled.
+     * @see EventNotificationTopicStatus
+     */
+
+    public String getWirelessDeviceIdEventTopic() {
+        return this.wirelessDeviceIdEventTopic;
+    }
+
+    /**
+     * <p>
+     * Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.
+     * </p>
+     * 
+     * @param wirelessDeviceIdEventTopic
+     *        Enum to denote whether the wireless device id device registration state event topic is enabled or
+     *        disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventNotificationTopicStatus
+     */
+
+    public DeviceRegistrationStateEventConfiguration withWirelessDeviceIdEventTopic(String wirelessDeviceIdEventTopic) {
+        setWirelessDeviceIdEventTopic(wirelessDeviceIdEventTopic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.
+     * </p>
+     * 
+     * @param wirelessDeviceIdEventTopic
+     *        Enum to denote whether the wireless device id device registration state event topic is enabled or
+     *        disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventNotificationTopicStatus
+     */
+
+    public DeviceRegistrationStateEventConfiguration withWirelessDeviceIdEventTopic(EventNotificationTopicStatus wirelessDeviceIdEventTopic) {
+        this.wirelessDeviceIdEventTopic = wirelessDeviceIdEventTopic.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -92,7 +161,9 @@ public class DeviceRegistrationStateEventConfiguration implements Serializable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSidewalk() != null)
-            sb.append("Sidewalk: ").append(getSidewalk());
+            sb.append("Sidewalk: ").append(getSidewalk()).append(",");
+        if (getWirelessDeviceIdEventTopic() != null)
+            sb.append("WirelessDeviceIdEventTopic: ").append(getWirelessDeviceIdEventTopic());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +182,10 @@ public class DeviceRegistrationStateEventConfiguration implements Serializable, 
             return false;
         if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
             return false;
+        if (other.getWirelessDeviceIdEventTopic() == null ^ this.getWirelessDeviceIdEventTopic() == null)
+            return false;
+        if (other.getWirelessDeviceIdEventTopic() != null && other.getWirelessDeviceIdEventTopic().equals(this.getWirelessDeviceIdEventTopic()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +195,7 @@ public class DeviceRegistrationStateEventConfiguration implements Serializable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
+        hashCode = prime * hashCode + ((getWirelessDeviceIdEventTopic() == null) ? 0 : getWirelessDeviceIdEventTopic().hashCode());
         return hashCode;
     }
 

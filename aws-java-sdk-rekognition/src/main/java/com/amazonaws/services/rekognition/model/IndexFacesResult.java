@@ -61,8 +61,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String orientationCorrection;
     /**
      * <p>
-     * Latest face model being used with the collection. For more information, see <a
-     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      */
     private String faceModelVersion;
@@ -503,13 +503,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Latest face model being used with the collection. For more information, see <a
-     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
      * @param faceModelVersion
-     *        Latest face model being used with the collection. For more information, see <a
-     *        href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     *        The version number of the face detection model that's associated with the input collection (
+     *        <code>CollectionId</code>).
      */
 
     public void setFaceModelVersion(String faceModelVersion) {
@@ -518,12 +518,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Latest face model being used with the collection. For more information, see <a
-     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
-     * @return Latest face model being used with the collection. For more information, see <a
-     *         href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     * @return The version number of the face detection model that's associated with the input collection (
+     *         <code>CollectionId</code>).
      */
 
     public String getFaceModelVersion() {
@@ -532,13 +532,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Latest face model being used with the collection. For more information, see <a
-     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
      * @param faceModelVersion
-     *        Latest face model being used with the collection. For more information, see <a
-     *        href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.
+     *        The version number of the face detection model that's associated with the input collection (
+     *        <code>CollectionId</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

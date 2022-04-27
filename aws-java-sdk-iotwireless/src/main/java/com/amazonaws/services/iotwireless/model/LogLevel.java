@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The log level for a log message.
+ * The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose
+ * logs containing only error information, or to <code>INFO</code> for more detailed logs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

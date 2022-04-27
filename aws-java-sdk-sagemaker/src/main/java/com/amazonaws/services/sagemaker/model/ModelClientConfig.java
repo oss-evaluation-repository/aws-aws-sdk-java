@@ -30,24 +30,24 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The timeout value in seconds for an invocation request.
+     * The timeout value in seconds for an invocation request. The default value is 600.
      * </p>
      */
     private Integer invocationsTimeoutInSeconds;
     /**
      * <p>
-     * The maximum number of retries when invocation requests are failing.
+     * The maximum number of retries when invocation requests are failing. The default value is 3.
      * </p>
      */
     private Integer invocationsMaxRetries;
 
     /**
      * <p>
-     * The timeout value in seconds for an invocation request.
+     * The timeout value in seconds for an invocation request. The default value is 600.
      * </p>
      * 
      * @param invocationsTimeoutInSeconds
-     *        The timeout value in seconds for an invocation request.
+     *        The timeout value in seconds for an invocation request. The default value is 600.
      */
 
     public void setInvocationsTimeoutInSeconds(Integer invocationsTimeoutInSeconds) {
@@ -56,10 +56,10 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The timeout value in seconds for an invocation request.
+     * The timeout value in seconds for an invocation request. The default value is 600.
      * </p>
      * 
-     * @return The timeout value in seconds for an invocation request.
+     * @return The timeout value in seconds for an invocation request. The default value is 600.
      */
 
     public Integer getInvocationsTimeoutInSeconds() {
@@ -68,11 +68,11 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The timeout value in seconds for an invocation request.
+     * The timeout value in seconds for an invocation request. The default value is 600.
      * </p>
      * 
      * @param invocationsTimeoutInSeconds
-     *        The timeout value in seconds for an invocation request.
+     *        The timeout value in seconds for an invocation request. The default value is 600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of retries when invocation requests are failing.
+     * The maximum number of retries when invocation requests are failing. The default value is 3.
      * </p>
      * 
      * @param invocationsMaxRetries
-     *        The maximum number of retries when invocation requests are failing.
+     *        The maximum number of retries when invocation requests are failing. The default value is 3.
      */
 
     public void setInvocationsMaxRetries(Integer invocationsMaxRetries) {
@@ -96,10 +96,10 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of retries when invocation requests are failing.
+     * The maximum number of retries when invocation requests are failing. The default value is 3.
      * </p>
      * 
-     * @return The maximum number of retries when invocation requests are failing.
+     * @return The maximum number of retries when invocation requests are failing. The default value is 3.
      */
 
     public Integer getInvocationsMaxRetries() {
@@ -108,11 +108,11 @@ public class ModelClientConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of retries when invocation requests are failing.
+     * The maximum number of retries when invocation requests are failing. The default value is 3.
      * </p>
      * 
      * @param invocationsMaxRetries
-     *        The maximum number of retries when invocation requests are failing.
+     *        The maximum number of retries when invocation requests are failing. The default value is 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

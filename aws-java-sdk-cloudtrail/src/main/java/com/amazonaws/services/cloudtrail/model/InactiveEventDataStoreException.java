@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The event data store against which you ran your query is inactive.
+ * The event data store is inactive.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

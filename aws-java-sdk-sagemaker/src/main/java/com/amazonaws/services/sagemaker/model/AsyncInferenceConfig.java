@@ -30,8 +30,8 @@ public class AsyncInferenceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
-     * asynchronous inference.
+     * Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous
+     * inference.
      * </p>
      */
     private AsyncInferenceClientConfig clientConfig;
@@ -44,12 +44,12 @@ public class AsyncInferenceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
-     * asynchronous inference.
+     * Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous
+     * inference.
      * </p>
      * 
      * @param clientConfig
-     *        Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
+     *        Configures the behavior of the client used by SageMaker to interact with the model container during
      *        asynchronous inference.
      */
 
@@ -59,12 +59,12 @@ public class AsyncInferenceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
-     * asynchronous inference.
+     * Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous
+     * inference.
      * </p>
      * 
-     * @return Configures the behavior of the client used by Amazon SageMaker to interact with the model container
-     *         during asynchronous inference.
+     * @return Configures the behavior of the client used by SageMaker to interact with the model container during
+     *         asynchronous inference.
      */
 
     public AsyncInferenceClientConfig getClientConfig() {
@@ -73,12 +73,12 @@ public class AsyncInferenceConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
-     * asynchronous inference.
+     * Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous
+     * inference.
      * </p>
      * 
      * @param clientConfig
-     *        Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
+     *        Configures the behavior of the client used by SageMaker to interact with the model container during
      *        asynchronous inference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

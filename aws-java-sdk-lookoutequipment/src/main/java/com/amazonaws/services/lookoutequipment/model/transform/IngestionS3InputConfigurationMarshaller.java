@@ -31,6 +31,8 @@ public class IngestionS3InputConfigurationMarshaller {
             .marshallLocationName("Bucket").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> KEYPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyPattern").build();
 
     private static final IngestionS3InputConfigurationMarshaller instance = new IngestionS3InputConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class IngestionS3InputConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(ingestionS3InputConfiguration.getBucket(), BUCKET_BINDING);
             protocolMarshaller.marshall(ingestionS3InputConfiguration.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(ingestionS3InputConfiguration.getKeyPattern(), KEYPATTERN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

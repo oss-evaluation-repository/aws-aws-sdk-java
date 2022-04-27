@@ -44,8 +44,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String tuningJobArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
-     * training job.
+     * The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training
+     * job.
      * </p>
      */
     private String labelingJobArn;
@@ -66,7 +66,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * The status of the training job.
      * </p>
      * <p>
-     * Amazon SageMaker provides the following training job statuses:
+     * SageMaker provides the following training job statuses:
      * </p>
      * <ul>
      * <li>
@@ -107,7 +107,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -252,7 +252,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<Channel> inputDataConfig;
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      */
@@ -274,13 +274,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -303,8 +303,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      */
     private java.util.Date trainingEndTime;
@@ -331,8 +330,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster
      * for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      */
     private Boolean enableNetworkIsolation;
@@ -365,8 +364,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
-     * training cluster to get the total compute time SageMaker will bill you if you run distributed training. The
-     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     * training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula
+     * is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -554,13 +553,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
-     * training job.
+     * The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training
+     * job.
      * </p>
      * 
      * @param labelingJobArn
-     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
-     *        transform or training job.
+     *        The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or
+     *        training job.
      */
 
     public void setLabelingJobArn(String labelingJobArn) {
@@ -569,12 +568,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
-     * training job.
+     * The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training
+     * job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
-     *         transform or training job.
+     * @return The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or
+     *         training job.
      */
 
     public String getLabelingJobArn() {
@@ -583,13 +582,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
-     * training job.
+     * The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training
+     * job.
      * </p>
      * 
      * @param labelingJobArn
-     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
-     *        transform or training job.
+     *        The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or
+     *        training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,7 +682,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * The status of the training job.
      * </p>
      * <p>
-     * Amazon SageMaker provides the following training job statuses:
+     * SageMaker provides the following training job statuses:
      * </p>
      * <ul>
      * <li>
@@ -720,7 +719,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * @param trainingJobStatus
      *        The status of the training job.</p>
      *        <p>
-     *        Amazon SageMaker provides the following training job statuses:
+     *        SageMaker provides the following training job statuses:
      *        </p>
      *        <ul>
      *        <li>
@@ -764,7 +763,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * The status of the training job.
      * </p>
      * <p>
-     * Amazon SageMaker provides the following training job statuses:
+     * SageMaker provides the following training job statuses:
      * </p>
      * <ul>
      * <li>
@@ -800,7 +799,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @return The status of the training job.</p>
      *         <p>
-     *         Amazon SageMaker provides the following training job statuses:
+     *         SageMaker provides the following training job statuses:
      *         </p>
      *         <ul>
      *         <li>
@@ -844,7 +843,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * The status of the training job.
      * </p>
      * <p>
-     * Amazon SageMaker provides the following training job statuses:
+     * SageMaker provides the following training job statuses:
      * </p>
      * <ul>
      * <li>
@@ -881,7 +880,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * @param trainingJobStatus
      *        The status of the training job.</p>
      *        <p>
-     *        Amazon SageMaker provides the following training job statuses:
+     *        SageMaker provides the following training job statuses:
      *        </p>
      *        <ul>
      *        <li>
@@ -927,7 +926,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * The status of the training job.
      * </p>
      * <p>
-     * Amazon SageMaker provides the following training job statuses:
+     * SageMaker provides the following training job statuses:
      * </p>
      * <ul>
      * <li>
@@ -964,7 +963,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * @param trainingJobStatus
      *        The status of the training job.</p>
      *        <p>
-     *        Amazon SageMaker provides the following training job statuses:
+     *        SageMaker provides the following training job statuses:
      *        </p>
      *        <ul>
      *        <li>
@@ -1011,7 +1010,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1128,7 +1127,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -1252,7 +1251,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1368,7 +1367,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         secondary status of the training job, see <code>StatusMessage</code> under
      *         <a>SecondaryStatusTransition</a>.</p>
      *         <p>
-     *         Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *         SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *         </p>
      *         <dl>
      *         <dt>InProgress</dt>
@@ -1492,7 +1491,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1609,7 +1608,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -1735,7 +1734,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1852,7 +1851,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -2232,13 +2231,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *        creates subfolders for model artifacts.
+     *        The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *        subfolders for model artifacts.
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -2247,12 +2246,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
-     * @return The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *         creates subfolders for model artifacts.
+     * @return The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *         subfolders for model artifacts.
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -2261,13 +2260,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *        creates subfolders for model artifacts.
+     *        The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *        subfolders for model artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2371,23 +2370,23 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     *        Use this API to cap model training costs.</p>
+     *        training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *        this API to cap model training costs.</p>
      *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
-     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
-     *        results of training are not lost.
+     *        To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     *        for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     *        training are not lost.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -2397,20 +2396,20 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @return Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *         training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training
-     *         job. Use this API to cap model training costs.</p>
+     *         training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *         this API to cap model training costs.</p>
      *         <p>
-     *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *         To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
      *         the results of training are not lost.
      */
@@ -2422,23 +2421,23 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     *        Use this API to cap model training costs.</p>
+     *        training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *        this API to cap model training costs.</p>
      *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
-     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
-     *        results of training are not lost.
+     *        To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     *        for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     *        training are not lost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2549,15 +2548,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Indicates the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      */
 
     public void setTrainingEndTime(java.util.Date trainingEndTime) {
@@ -2568,14 +2566,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @return Indicates the time when the training job ends on training instances. You are billed for the time interval
      *         between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *         SageMaker detects a job failure.
+     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *         detects a job failure.
      */
 
     public java.util.Date getTrainingEndTime() {
@@ -2586,15 +2583,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Indicates the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2795,15 +2791,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster
      * for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @param enableNetworkIsolation
      *        If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *        cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
-     *        jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *        artifacts through the specified VPC, but the training container does not have network access.
+     *        jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     *        through the specified VPC, but the training container does not have network access.
      */
 
     public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
@@ -2814,14 +2810,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster
      * for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @return If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *         cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
-     *         jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *         artifacts through the specified VPC, but the training container does not have network access.
+     *         jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     *         through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean getEnableNetworkIsolation() {
@@ -2832,15 +2828,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster
      * for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @param enableNetworkIsolation
      *        If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *        cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
-     *        jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *        artifacts through the specified VPC, but the training container does not have network access.
+     *        jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     *        through the specified VPC, but the training container does not have network access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2853,14 +2849,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster
      * for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @return If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *         cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
-     *         jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *         artifacts through the specified VPC, but the training container does not have network access.
+     *         jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     *         through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean isEnableNetworkIsolation() {
@@ -3071,8 +3067,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
-     * training cluster to get the total compute time SageMaker will bill you if you run distributed training. The
-     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     * training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula
+     * is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3084,8 +3080,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
      *        <p>
      *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
-     *        your training cluster to get the total compute time SageMaker will bill you if you run distributed
-     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        your training cluster to get the total compute time SageMaker bills you if you run distributed training.
+     *        The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula
@@ -3104,8 +3100,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
-     * training cluster to get the total compute time SageMaker will bill you if you run distributed training. The
-     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     * training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula
+     * is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3116,8 +3112,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * @return The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
      *         <p>
      *         Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
-     *         your training cluster to get the total compute time SageMaker will bill you if you run distributed
-     *         training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *         your training cluster to get the total compute time SageMaker bills you if you run distributed training.
+     *         The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      *         </p>
      *         <p>
      *         You can calculate the savings from using managed spot training using the formula
@@ -3136,8 +3132,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
-     * training cluster to get the total compute time SageMaker will bill you if you run distributed training. The
-     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     * training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula
+     * is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3149,8 +3145,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
      *        <p>
      *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
-     *        your training cluster to get the total compute time SageMaker will bill you if you run distributed
-     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        your training cluster to get the total compute time SageMaker bills you if you run distributed training.
+     *        The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula

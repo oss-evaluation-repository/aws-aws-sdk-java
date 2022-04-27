@@ -56,6 +56,10 @@ public class AbpV10XJsonUnmarshaller implements Unmarshaller<AbpV10X, JsonUnmars
                     context.nextToken();
                     abpV10X.setSessionKeys(SessionKeysAbpV10XJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FCntStart", targetDepth)) {
+                    context.nextToken();
+                    abpV10X.setFCntStart(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

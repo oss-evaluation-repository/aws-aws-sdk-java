@@ -167,10 +167,15 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      */
     private AutoBranchCreationConfig autoBranchCreationConfig;
     /**
+     * <note>
      * <p>
-     * The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository,
-     * specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For
-     * GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code>
+     * for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
      * </p>
      */
     private String repositoryCloneMethod;
@@ -1292,16 +1297,27 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <note>
      * <p>
-     * The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository,
-     * specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For
-     * GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code>
+     * for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
      * </p>
      * 
      * @param repositoryCloneMethod
-     *        The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub
-     *        repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify
-     *        <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     *        <p>
+     *        This is for internal use.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     *        repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository,
+     *        <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and
+     *        Bitbucket repositories.
      * @see RepositoryCloneMethod
      */
 
@@ -1310,15 +1326,26 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <note>
      * <p>
-     * The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository,
-     * specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For
-     * GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code>
+     * for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
      * </p>
      * 
-     * @return The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub
-     *         repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify
-     *         <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * @return <p>
+     *         This is for internal use.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     *         repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository,
+     *         <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and
+     *         Bitbucket repositories.
      * @see RepositoryCloneMethod
      */
 
@@ -1327,16 +1354,27 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <note>
      * <p>
-     * The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository,
-     * specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For
-     * GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code>
+     * for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
      * </p>
      * 
      * @param repositoryCloneMethod
-     *        The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub
-     *        repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify
-     *        <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     *        <p>
+     *        This is for internal use.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     *        repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository,
+     *        <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and
+     *        Bitbucket repositories.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryCloneMethod
      */
@@ -1347,16 +1385,27 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <note>
      * <p>
-     * The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository,
-     * specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For
-     * GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code>
+     * for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
      * </p>
      * 
      * @param repositoryCloneMethod
-     *        The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub
-     *        repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify
-     *        <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.
+     *        <p>
+     *        This is for internal use.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The Amplify service uses this parameter to specify the authentication protocol to use to access the Git
+     *        repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository,
+     *        <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and
+     *        Bitbucket repositories.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryCloneMethod
      */

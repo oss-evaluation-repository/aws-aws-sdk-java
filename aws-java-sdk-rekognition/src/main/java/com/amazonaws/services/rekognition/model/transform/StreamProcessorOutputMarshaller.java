@@ -29,6 +29,8 @@ public class StreamProcessorOutputMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> KINESISDATASTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisDataStream").build();
+    private static final MarshallingInfo<StructuredPojo> S3DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Destination").build();
 
     private static final StreamProcessorOutputMarshaller instance = new StreamProcessorOutputMarshaller();
 
@@ -47,6 +49,7 @@ public class StreamProcessorOutputMarshaller {
 
         try {
             protocolMarshaller.marshall(streamProcessorOutput.getKinesisDataStream(), KINESISDATASTREAM_BINDING);
+            protocolMarshaller.marshall(streamProcessorOutput.getS3Destination(), S3DESTINATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

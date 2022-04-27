@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying
- * multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
+ * multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant" target="_top">AWS API
@@ -80,12 +80,6 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
      * instance-based endpoint configuration.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      */
     private ProductionVariantServerlessConfig serverlessConfig;
 
@@ -447,20 +441,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
      * instance-based endpoint configuration.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param serverlessConfig
      *        The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
-     *        instance-based endpoint configuration.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        instance-based endpoint configuration.
      */
 
     public void setServerlessConfig(ProductionVariantServerlessConfig serverlessConfig) {
@@ -472,19 +456,9 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
      * instance-based endpoint configuration.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @return The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
-     *         instance-based endpoint configuration.</p> <note>
-     *         <p>
-     *         Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *         recommend using this feature in production environments.
-     *         </p>
+     *         instance-based endpoint configuration.
      */
 
     public ProductionVariantServerlessConfig getServerlessConfig() {
@@ -496,20 +470,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
      * instance-based endpoint configuration.
      * </p>
-     * <note>
-     * <p>
-     * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend
-     * using this feature in production environments.
-     * </p>
-     * </note>
      * 
      * @param serverlessConfig
      *        The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an
-     *        instance-based endpoint configuration.</p> <note>
-     *        <p>
-     *        Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not
-     *        recommend using this feature in production environments.
-     *        </p>
+     *        instance-based endpoint configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

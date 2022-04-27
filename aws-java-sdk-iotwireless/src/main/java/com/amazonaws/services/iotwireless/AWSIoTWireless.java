@@ -362,6 +362,32 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Creates a new network analyzer configuration.
+     * </p>
+     * 
+     * @param createNetworkAnalyzerConfigurationRequest
+     * @return Result of the CreateNetworkAnalyzerConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.CreateNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNetworkAnalyzerConfigurationResult createNetworkAnalyzerConfiguration(
+            CreateNetworkAnalyzerConfigurationRequest createNetworkAnalyzerConfigurationRequest);
+
+    /**
+     * <p>
      * Creates a new service profile.
      * </p>
      * 
@@ -582,7 +608,33 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to delete queued messages.
+     * Deletes a network analyzer configuration.
+     * </p>
+     * 
+     * @param deleteNetworkAnalyzerConfigurationRequest
+     * @return Result of the DeleteNetworkAnalyzerConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkAnalyzerConfigurationResult deleteNetworkAnalyzerConfiguration(
+            DeleteNetworkAnalyzerConfigurationRequest deleteNetworkAnalyzerConfigurationRequest);
+
+    /**
+     * <p>
+     * Remove queued messages from the downlink queue.
      * </p>
      * 
      * @param deleteQueuedMessagesRequest
@@ -948,6 +1000,26 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Get the event configuration by resource types.
+     * </p>
+     * 
+     * @param getEventConfigurationByResourceTypesRequest
+     * @return Result of the GetEventConfigurationByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetEventConfigurationByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEventConfigurationByResourceTypesResult getEventConfigurationByResourceTypes(
+            GetEventConfigurationByResourceTypesRequest getEventConfigurationByResourceTypesRequest);
+
+    /**
+     * <p>
      * Gets information about a FUOTA task.
      * </p>
      * 
@@ -1041,7 +1113,7 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * Get NetworkAnalyzer configuration.
+     * Get network analyzer configuration.
      * </p>
      * 
      * @param getNetworkAnalyzerConfigurationRequest
@@ -1406,6 +1478,27 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * List event configurations where at least one event topic has been enabled.
+     * </p>
+     * 
+     * @param listEventConfigurationsRequest
+     * @return Result of the ListEventConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.ListEventConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEventConfigurationsResult listEventConfigurations(ListEventConfigurationsRequest listEventConfigurationsRequest);
+
+    /**
+     * <p>
      * Lists the FUOTA tasks registered to your AWS account.
      * </p>
      * 
@@ -1471,6 +1564,27 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Lists the network analyzer configurations.
+     * </p>
+     * 
+     * @param listNetworkAnalyzerConfigurationsRequest
+     * @return Result of the ListNetworkAnalyzerConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListNetworkAnalyzerConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListNetworkAnalyzerConfigurationsResult listNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest listNetworkAnalyzerConfigurationsRequest);
+
+    /**
+     * <p>
      * Lists the partner accounts associated with your AWS account.
      * </p>
      * 
@@ -1492,7 +1606,7 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * The operation to list queued messages.
+     * List queued messages in the downlink queue.
      * </p>
      * 
      * @param listQueuedMessagesRequest
@@ -1932,6 +2046,29 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Update the event configuration by resource types.
+     * </p>
+     * 
+     * @param updateEventConfigurationByResourceTypesRequest
+     * @return Result of the UpdateEventConfigurationByResourceTypes operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateEventConfigurationByResourceTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateEventConfigurationByResourceTypesResult updateEventConfigurationByResourceTypes(
+            UpdateEventConfigurationByResourceTypesRequest updateEventConfigurationByResourceTypesRequest);
+
+    /**
+     * <p>
      * Updates properties of a FUOTA task.
      * </p>
      * 
@@ -2008,7 +2145,7 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
-     * Update NetworkAnalyzer configuration.
+     * Update network analyzer configuration.
      * </p>
      * 
      * @param updateNetworkAnalyzerConfigurationRequest

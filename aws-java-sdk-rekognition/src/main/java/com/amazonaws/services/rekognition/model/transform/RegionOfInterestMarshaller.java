@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class RegionOfInterestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> BOUNDINGBOX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BoundingBox").build();
+    private static final MarshallingInfo<List> POLYGON_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Polygon").build();
 
     private static final RegionOfInterestMarshaller instance = new RegionOfInterestMarshaller();
 
@@ -47,6 +50,7 @@ public class RegionOfInterestMarshaller {
 
         try {
             protocolMarshaller.marshall(regionOfInterest.getBoundingBox(), BOUNDINGBOX_BINDING);
+            protocolMarshaller.marshall(regionOfInterest.getPolygon(), POLYGON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

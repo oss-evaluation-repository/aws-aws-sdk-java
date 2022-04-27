@@ -27,18 +27,18 @@ public class DeleteNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance to delete.
+     * The name of the SageMaker notebook instance to delete.
      * </p>
      */
     private String notebookInstanceName;
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance to delete.
+     * The name of the SageMaker notebook instance to delete.
      * </p>
      * 
      * @param notebookInstanceName
-     *        The name of the Amazon SageMaker notebook instance to delete.
+     *        The name of the SageMaker notebook instance to delete.
      */
 
     public void setNotebookInstanceName(String notebookInstanceName) {
@@ -47,10 +47,10 @@ public class DeleteNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance to delete.
+     * The name of the SageMaker notebook instance to delete.
      * </p>
      * 
-     * @return The name of the Amazon SageMaker notebook instance to delete.
+     * @return The name of the SageMaker notebook instance to delete.
      */
 
     public String getNotebookInstanceName() {
@@ -59,11 +59,11 @@ public class DeleteNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon SageMaker notebook instance to delete.
+     * The name of the SageMaker notebook instance to delete.
      * </p>
      * 
      * @param notebookInstanceName
-     *        The name of the Amazon SageMaker notebook instance to delete.
+     *        The name of the SageMaker notebook instance to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

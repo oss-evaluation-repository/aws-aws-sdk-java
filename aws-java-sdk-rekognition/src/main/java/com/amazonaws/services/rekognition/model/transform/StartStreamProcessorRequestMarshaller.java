@@ -29,6 +29,10 @@ public class StartStreamProcessorRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<StructuredPojo> STARTSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartSelector").build();
+    private static final MarshallingInfo<StructuredPojo> STOPSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StopSelector").build();
 
     private static final StartStreamProcessorRequestMarshaller instance = new StartStreamProcessorRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class StartStreamProcessorRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startStreamProcessorRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startStreamProcessorRequest.getStartSelector(), STARTSELECTOR_BINDING);
+            protocolMarshaller.marshall(startStreamProcessorRequest.getStopSelector(), STOPSELECTOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

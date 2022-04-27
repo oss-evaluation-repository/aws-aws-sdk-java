@@ -69,7 +69,7 @@ public class QueryFilters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If
-     * multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.
+     * multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.
      * </p>
      */
     private java.util.Map<String, String> properties;
@@ -413,11 +413,11 @@ public class QueryFilters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If
-     * multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.
+     * multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.
      * </p>
      * 
      * @return Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value
-     *         pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the
+     *         pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the
      *         provided pairs.
      */
 
@@ -428,12 +428,12 @@ public class QueryFilters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If
-     * multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.
+     * multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.
      * </p>
      * 
      * @param properties
      *        Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value
-     *        pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the
+     *        pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the
      *        provided pairs.
      */
 
@@ -444,12 +444,12 @@ public class QueryFilters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If
-     * multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.
+     * multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.
      * </p>
      * 
      * @param properties
      *        Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value
-     *        pairs. If multiple pairs are provided, an entity will be included in the results if it matches any of the
+     *        pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the
      *        provided pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

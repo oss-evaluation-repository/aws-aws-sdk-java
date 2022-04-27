@@ -476,15 +476,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
-     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
-     * same name but different values. If you specify a key without a value, the tag will be created with the specified
-     * key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region
-     * in which the trail was created (also known as its home region).
+     * Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value
+     * when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have
+     * two keys with the same name but different values. If you specify a key without a value, the tag will be created
+     * with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon
+     * Web Services Regions only from the Region in which the trail or event data store was created (also known as its
+     * home region).
      * </p>
      * 
      * @param addTagsRequest
-     *        Specifies the tags to add to a trail.
+     *        Specifies the tags to add to a trail or event data store.
      * @return Result of the AddTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the specified resource is not found.
@@ -532,7 +533,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
      *         are duplicate tags or too many tags on the resource.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws UnsupportedOperationException
@@ -541,13 +542,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
-     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
@@ -612,7 +615,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InactiveQueryException
      *         The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>,
      *         <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.
@@ -626,7 +629,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
-     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.CancelQuery
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery" target="_top">AWS API
@@ -698,7 +701,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
-     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
      * @throws CloudTrailAccessNotEnabledException
      *         This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations.
@@ -708,26 +711,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
      *         to an organization.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
-     *         be enabled in Organizations to support creating an organization trail. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         be enabled in Organizations to support creating an organization trail or event data store.
      * @sample AWSCloudTrail.CreateEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -868,33 +868,30 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
      *         to an organization.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
-     *         be enabled in Organizations to support creating an organization trail. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         be enabled in Organizations to support creating an organization trail or event data store.
      * @throws CloudTrailInvalidClientTokenIdException
      *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
      *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is
      *         in a suspended Amazon Web Services account.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
-     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.CreateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail" target="_top">AWS API
@@ -975,16 +972,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.DeleteEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -1084,19 +1080,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
-     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
@@ -1159,7 +1154,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws QueryIdNotFoundException
@@ -1606,7 +1601,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InvalidMaxResultsException
      *         This exception is thrown if the limit specified is not valid.
      * @throws InvalidNextTokenException
@@ -2013,10 +2008,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InvalidDateRangeException
-     *         A date range for the query was specified that is not valid. For more information about writing a query,
-     *         see <a
+     *         A date range for the query was specified that is not valid. Be sure that the start time is
+     *         chronologically before the end time. For more information about writing a query, see <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or
      *         edit a query</a> in the <i>CloudTrail User Guide</i>.
      * @throws InvalidMaxResultsException
@@ -2082,11 +2077,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Lists the tags for the trail in the current region.
+     * Lists the tags for the trail or event data store in the current region.
      * </p>
      * 
      * @param listTagsRequest
-     *        Specifies a list of trail tags to return.
+     *        Specifies a list of tags to return.
      * @return Result of the ListTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the specified resource is not found.
@@ -2129,7 +2124,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         </p>
      *         </li>
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws UnsupportedOperationException
@@ -2539,16 +2534,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.PutEventSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -2661,10 +2655,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @sample AWSCloudTrail.PutInsightSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -2715,11 +2711,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Removes the specified tags from a trail.
+     * Removes the specified tags from a trail or event data store.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Specifies the tags to remove from a trail.
+     *        Specifies the tags to remove from a trail or event data store.
      * @return Result of the RemoveTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the specified resource is not found.
@@ -2765,7 +2761,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
      *         are duplicate tags or too many tags on the resource.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws UnsupportedOperationException
@@ -2774,10 +2770,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @sample AWSCloudTrail.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
      *      Documentation</a>
@@ -2857,26 +2855,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
      *         to an organization.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
-     *         be enabled in Organizations to support creating an organization trail. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         be enabled in Organizations to support creating an organization trail or event data store.
      * @sample AWSCloudTrail.RestoreEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RestoreEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -2978,16 +2973,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.StartLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging" target="_top">AWS API
      *      Documentation</a>
@@ -3049,7 +3043,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws InvalidQueryStatementException
@@ -3165,16 +3159,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.StopLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging" target="_top">AWS API
      *      Documentation</a>
@@ -3240,7 +3233,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
      * @throws InactiveEventDataStoreException
-     *         The event data store against which you ran your query is inactive.
+     *         The event data store is inactive.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws OperationNotPermittedException
@@ -3255,26 +3248,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
      *         to an organization.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
-     *         be enabled in Organizations to support creating an organization trail. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         be enabled in Organizations to support creating an organization trail or event data store.
      * @sample AWSCloudTrail.UpdateEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -3451,26 +3441,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
-     *         lacking one or more required permissions for creating an organization trail in a required service. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
      *         to an organization.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
-     *         organization trail is not the management account for an organization in Organizations. For more
-     *         information, see <a href=
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
-     *         be enabled in Organizations to support creating an organization trail. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
-     *         >Prepare For Creating a Trail For Your Organization</a>.
+     *         be enabled in Organizations to support creating an organization trail or event data store.
      * @throws CloudTrailInvalidClientTokenIdException
      *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
      *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is

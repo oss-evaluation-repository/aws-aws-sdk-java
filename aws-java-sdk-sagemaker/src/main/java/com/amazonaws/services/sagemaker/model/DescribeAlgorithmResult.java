@@ -61,7 +61,7 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
     private InferenceSpecification inferenceSpecification;
     /**
      * <p>
-     * Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+     * Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      * </p>
      */
     private AlgorithmValidationSpecification validationSpecification;
@@ -332,12 +332,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+     * Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      * </p>
      * 
      * @param validationSpecification
-     *        Details about configurations for one or more training jobs that Amazon SageMaker runs to test the
-     *        algorithm.
+     *        Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      */
 
     public void setValidationSpecification(AlgorithmValidationSpecification validationSpecification) {
@@ -346,11 +345,10 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+     * Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      * </p>
      * 
-     * @return Details about configurations for one or more training jobs that Amazon SageMaker runs to test the
-     *         algorithm.
+     * @return Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      */
 
     public AlgorithmValidationSpecification getValidationSpecification() {
@@ -359,12 +357,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+     * Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      * </p>
      * 
      * @param validationSpecification
-     *        Details about configurations for one or more training jobs that Amazon SageMaker runs to test the
-     *        algorithm.
+     *        Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

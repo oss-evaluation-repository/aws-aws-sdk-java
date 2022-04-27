@@ -76,7 +76,7 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     private InferenceSpecification inferenceSpecification;
     /**
      * <p>
-     * Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.
+     * Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      * </p>
      */
     private ModelPackageValidationSpecification validationSpecification;
@@ -481,12 +481,11 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.
+     * Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      * </p>
      * 
      * @param validationSpecification
-     *        Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model
-     *        package.
+     *        Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      */
 
     public void setValidationSpecification(ModelPackageValidationSpecification validationSpecification) {
@@ -495,11 +494,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.
+     * Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      * </p>
      * 
-     * @return Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model
-     *         package.
+     * @return Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      */
 
     public ModelPackageValidationSpecification getValidationSpecification() {
@@ -508,12 +506,11 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.
+     * Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      * </p>
      * 
      * @param validationSpecification
-     *        Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model
-     *        package.
+     *        Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

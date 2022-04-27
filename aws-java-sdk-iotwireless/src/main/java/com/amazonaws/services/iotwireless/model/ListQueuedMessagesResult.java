@@ -32,7 +32,7 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
     private String nextToken;
     /**
      * <p>
-     * The messages in downlink queue.
+     * The messages in the downlink queue.
      * </p>
      */
     private java.util.List<DownlinkQueueMessage> downlinkQueueMessagesList;
@@ -85,10 +85,10 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The messages in downlink queue.
+     * The messages in the downlink queue.
      * </p>
      * 
-     * @return The messages in downlink queue.
+     * @return The messages in the downlink queue.
      */
 
     public java.util.List<DownlinkQueueMessage> getDownlinkQueueMessagesList() {
@@ -97,11 +97,11 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The messages in downlink queue.
+     * The messages in the downlink queue.
      * </p>
      * 
      * @param downlinkQueueMessagesList
-     *        The messages in downlink queue.
+     *        The messages in the downlink queue.
      */
 
     public void setDownlinkQueueMessagesList(java.util.Collection<DownlinkQueueMessage> downlinkQueueMessagesList) {
@@ -115,7 +115,7 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The messages in downlink queue.
+     * The messages in the downlink queue.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param downlinkQueueMessagesList
-     *        The messages in downlink queue.
+     *        The messages in the downlink queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListQueuedMessagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The messages in downlink queue.
+     * The messages in the downlink queue.
      * </p>
      * 
      * @param downlinkQueueMessagesList
-     *        The messages in downlink queue.
+     *        The messages in the downlink queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

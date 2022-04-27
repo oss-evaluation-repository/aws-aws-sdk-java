@@ -55,6 +55,18 @@ public class UpdateResourceEventConfigurationRequest extends com.amazonaws.Amazo
      * </p>
      */
     private ProximityEventConfiguration proximity;
+    /**
+     * <p>
+     * Event configuration for the join event
+     * </p>
+     */
+    private JoinEventConfiguration join;
+    /**
+     * <p>
+     * Event configuration for the connection status event
+     * </p>
+     */
+    private ConnectionStatusEventConfiguration connectionStatus;
 
     /**
      * <p>
@@ -295,6 +307,86 @@ public class UpdateResourceEventConfigurationRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * Event configuration for the join event
+     * </p>
+     * 
+     * @param join
+     *        Event configuration for the join event
+     */
+
+    public void setJoin(JoinEventConfiguration join) {
+        this.join = join;
+    }
+
+    /**
+     * <p>
+     * Event configuration for the join event
+     * </p>
+     * 
+     * @return Event configuration for the join event
+     */
+
+    public JoinEventConfiguration getJoin() {
+        return this.join;
+    }
+
+    /**
+     * <p>
+     * Event configuration for the join event
+     * </p>
+     * 
+     * @param join
+     *        Event configuration for the join event
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceEventConfigurationRequest withJoin(JoinEventConfiguration join) {
+        setJoin(join);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Event configuration for the connection status event
+     * </p>
+     * 
+     * @param connectionStatus
+     *        Event configuration for the connection status event
+     */
+
+    public void setConnectionStatus(ConnectionStatusEventConfiguration connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
+    /**
+     * <p>
+     * Event configuration for the connection status event
+     * </p>
+     * 
+     * @return Event configuration for the connection status event
+     */
+
+    public ConnectionStatusEventConfiguration getConnectionStatus() {
+        return this.connectionStatus;
+    }
+
+    /**
+     * <p>
+     * Event configuration for the connection status event
+     * </p>
+     * 
+     * @param connectionStatus
+     *        Event configuration for the connection status event
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceEventConfigurationRequest withConnectionStatus(ConnectionStatusEventConfiguration connectionStatus) {
+        setConnectionStatus(connectionStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -315,7 +407,11 @@ public class UpdateResourceEventConfigurationRequest extends com.amazonaws.Amazo
         if (getDeviceRegistrationState() != null)
             sb.append("DeviceRegistrationState: ").append(getDeviceRegistrationState()).append(",");
         if (getProximity() != null)
-            sb.append("Proximity: ").append(getProximity());
+            sb.append("Proximity: ").append(getProximity()).append(",");
+        if (getJoin() != null)
+            sb.append("Join: ").append(getJoin()).append(",");
+        if (getConnectionStatus() != null)
+            sb.append("ConnectionStatus: ").append(getConnectionStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +446,14 @@ public class UpdateResourceEventConfigurationRequest extends com.amazonaws.Amazo
             return false;
         if (other.getProximity() != null && other.getProximity().equals(this.getProximity()) == false)
             return false;
+        if (other.getJoin() == null ^ this.getJoin() == null)
+            return false;
+        if (other.getJoin() != null && other.getJoin().equals(this.getJoin()) == false)
+            return false;
+        if (other.getConnectionStatus() == null ^ this.getConnectionStatus() == null)
+            return false;
+        if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +467,8 @@ public class UpdateResourceEventConfigurationRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getPartnerType() == null) ? 0 : getPartnerType().hashCode());
         hashCode = prime * hashCode + ((getDeviceRegistrationState() == null) ? 0 : getDeviceRegistrationState().hashCode());
         hashCode = prime * hashCode + ((getProximity() == null) ? 0 : getProximity().hashCode());
+        hashCode = prime * hashCode + ((getJoin() == null) ? 0 : getJoin().hashCode());
+        hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
         return hashCode;
     }
 

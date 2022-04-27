@@ -30,7 +30,7 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
      * The version of the face model that's used by the collection for face detection.
      * </p>
      * <p>
-     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      * </p>
      */
     private String faceModelVersion;
@@ -99,13 +99,13 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
      * The version of the face model that's used by the collection for face detection.
      * </p>
      * <p>
-     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param faceModelVersion
      *        The version of the face model that's used by the collection for face detection.</p>
      *        <p>
-     *        For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     *        For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      */
 
     public void setFaceModelVersion(String faceModelVersion) {
@@ -117,12 +117,12 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
      * The version of the face model that's used by the collection for face detection.
      * </p>
      * <p>
-     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @return The version of the face model that's used by the collection for face detection.</p>
      *         <p>
-     *         For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     *         For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      */
 
     public String getFaceModelVersion() {
@@ -134,13 +134,13 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
      * The version of the face model that's used by the collection for face detection.
      * </p>
      * <p>
-     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param faceModelVersion
      *        The version of the face model that's used by the collection for face detection.</p>
      *        <p>
-     *        For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     *        For more information, see Model versioning in the Amazon Rekognition Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

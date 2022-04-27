@@ -57,6 +57,15 @@ public class GetResourceEventConfigurationResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     getResourceEventConfigurationResult.setProximity(ProximityEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Join", targetDepth)) {
+                    context.nextToken();
+                    getResourceEventConfigurationResult.setJoin(JoinEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    context.nextToken();
+                    getResourceEventConfigurationResult.setConnectionStatus(ConnectionStatusEventConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

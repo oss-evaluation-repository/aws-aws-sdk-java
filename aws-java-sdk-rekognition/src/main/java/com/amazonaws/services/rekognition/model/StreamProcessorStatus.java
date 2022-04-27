@@ -24,7 +24,8 @@ public enum StreamProcessorStatus {
     STARTING("STARTING"),
     RUNNING("RUNNING"),
     FAILED("FAILED"),
-    STOPPING("STOPPING");
+    STOPPING("STOPPING"),
+    UPDATING("UPDATING");
 
     private String value;
 

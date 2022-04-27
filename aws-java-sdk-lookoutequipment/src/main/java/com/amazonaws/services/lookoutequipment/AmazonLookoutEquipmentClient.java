@@ -579,7 +579,7 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on.
+     * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
      * @param describeDataIngestionJobRequest
@@ -647,8 +647,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Provides a JSON description of the data that is in each time series dataset, including names, column names, and
-     * data types.
+     * Provides a JSON description of the data in each time series dataset, including names, column names, and data
+     * types.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -1166,6 +1166,73 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListModelsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
+     * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
+     * </p>
+     * 
+     * @param listSensorStatisticsRequest
+     * @return Result of the ListSensorStatistics operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListSensorStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSensorStatisticsResult listSensorStatistics(ListSensorStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSensorStatistics(request);
+    }
+
+    @SdkInternalApi
+    final ListSensorStatisticsResult executeListSensorStatistics(ListSensorStatisticsRequest listSensorStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSensorStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSensorStatisticsRequest> request = null;
+        Response<ListSensorStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSensorStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSensorStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSensorStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSensorStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSensorStatisticsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

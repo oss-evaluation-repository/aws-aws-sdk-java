@@ -103,6 +103,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public ListSensorStatisticsResult listSensorStatistics(ListSensorStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

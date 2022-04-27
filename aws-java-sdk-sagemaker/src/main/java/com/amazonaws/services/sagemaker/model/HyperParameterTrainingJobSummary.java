@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies summary information about a training job.
+ * The container for the summary information about a training job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTrainingJobSummary"
@@ -68,8 +68,7 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * <p>
      * Specifies the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      */
     private java.util.Date trainingEndTime;
@@ -372,15 +371,14 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * <p>
      * Specifies the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Specifies the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      */
 
     public void setTrainingEndTime(java.util.Date trainingEndTime) {
@@ -391,14 +389,13 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * <p>
      * Specifies the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @return Specifies the time when the training job ends on training instances. You are billed for the time interval
      *         between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *         SageMaker detects a job failure.
+     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *         detects a job failure.
      */
 
     public java.util.Date getTrainingEndTime() {
@@ -409,15 +406,14 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * <p>
      * Specifies the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Specifies the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

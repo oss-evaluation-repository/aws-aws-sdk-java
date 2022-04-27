@@ -81,7 +81,7 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Specifies configuration information for the output results from for the inference execution, including the output
-     * S3 location.
+     * Amazon S3 location.
      * </p>
      */
     private InferenceOutputConfiguration dataOutputConfiguration;
@@ -432,12 +432,12 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Specifies configuration information for the output results from for the inference execution, including the output
-     * S3 location.
+     * Amazon S3 location.
      * </p>
      * 
      * @param dataOutputConfiguration
      *        Specifies configuration information for the output results from for the inference execution, including the
-     *        output S3 location.
+     *        output Amazon S3 location.
      */
 
     public void setDataOutputConfiguration(InferenceOutputConfiguration dataOutputConfiguration) {
@@ -447,11 +447,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Specifies configuration information for the output results from for the inference execution, including the output
-     * S3 location.
+     * Amazon S3 location.
      * </p>
      * 
      * @return Specifies configuration information for the output results from for the inference execution, including
-     *         the output S3 location.
+     *         the output Amazon S3 location.
      */
 
     public InferenceOutputConfiguration getDataOutputConfiguration() {
@@ -461,12 +461,12 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Specifies configuration information for the output results from for the inference execution, including the output
-     * S3 location.
+     * Amazon S3 location.
      * </p>
      * 
      * @param dataOutputConfiguration
      *        Specifies configuration information for the output results from for the inference execution, including the
-     *        output S3 location.
+     *        output Amazon S3 location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

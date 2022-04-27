@@ -20,18 +20,18 @@ public class CreateStreamProcessorResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN for the newly create stream processor.
+     * Amazon Resource Number for the newly created stream processor.
      * </p>
      */
     private String streamProcessorArn;
 
     /**
      * <p>
-     * ARN for the newly create stream processor.
+     * Amazon Resource Number for the newly created stream processor.
      * </p>
      * 
      * @param streamProcessorArn
-     *        ARN for the newly create stream processor.
+     *        Amazon Resource Number for the newly created stream processor.
      */
 
     public void setStreamProcessorArn(String streamProcessorArn) {
@@ -40,10 +40,10 @@ public class CreateStreamProcessorResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN for the newly create stream processor.
+     * Amazon Resource Number for the newly created stream processor.
      * </p>
      * 
-     * @return ARN for the newly create stream processor.
+     * @return Amazon Resource Number for the newly created stream processor.
      */
 
     public String getStreamProcessorArn() {
@@ -52,11 +52,11 @@ public class CreateStreamProcessorResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN for the newly create stream processor.
+     * Amazon Resource Number for the newly created stream processor.
      * </p>
      * 
      * @param streamProcessorArn
-     *        ARN for the newly create stream processor.
+     *        Amazon Resource Number for the newly created stream processor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

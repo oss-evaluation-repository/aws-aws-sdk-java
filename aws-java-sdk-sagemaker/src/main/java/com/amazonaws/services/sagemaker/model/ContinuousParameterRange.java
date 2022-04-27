@@ -59,7 +59,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -233,7 +233,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -271,7 +271,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>
@@ -317,7 +317,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -354,7 +354,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *         <dt>Auto</dt>
      *         <dd>
      *         <p>
-     *         Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *         SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *         </p>
      *         </dd>
      *         <dt>Linear</dt>
@@ -400,7 +400,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -438,7 +438,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>
@@ -486,7 +486,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>Auto</dt>
      * <dd>
      * <p>
-     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      * </p>
      * </dd>
      * <dt>Linear</dt>
@@ -524,7 +524,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>Auto</dt>
      *        <dd>
      *        <p>
-     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
      *        </p>
      *        </dd>
      *        <dt>Linear</dt>

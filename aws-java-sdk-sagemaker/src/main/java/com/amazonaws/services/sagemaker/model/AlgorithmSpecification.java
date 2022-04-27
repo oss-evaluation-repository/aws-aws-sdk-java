@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
  * </p>
  * <p>
- * For more information about algorithms provided by Amazon SageMaker, see <a
+ * For more information about algorithms provided by SageMaker, see <a
  * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your
  * own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
  * Algorithms with Amazon SageMaker</a>.
@@ -39,7 +39,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
      * Algorithms with Amazon SageMaker</a>.
@@ -59,7 +59,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
-     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * </p>
      */
     private java.util.List<MetricDefinition> metricDefinitions;
@@ -71,14 +71,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * You use one of the Amazon SageMaker built-in algorithms
+     * You use one of the SageMaker built-in algorithms
      * </p>
      * </li>
      * <li>
      * <p>
      * You use one of the following <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     * >Prebuilt Amazon SageMaker Docker Images</a>:
+     * >Prebuilt SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
@@ -112,7 +112,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
      * Algorithms with Amazon SageMaker</a>.
@@ -122,7 +122,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
      *        registry paths for built-in algorithms, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
-     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
@@ -138,7 +138,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
      * Algorithms with Amazon SageMaker</a>.
@@ -147,7 +147,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * @return The registry path of the Docker image that contains the training algorithm. For information about docker
      *         registry paths for built-in algorithms, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
-     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
@@ -163,7 +163,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
      * Algorithms with Amazon SageMaker</a>.
@@ -173,7 +173,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
      *        registry paths for built-in algorithms, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
-     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
      *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
@@ -281,11 +281,11 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
-     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * </p>
      * 
      * @return A list of metric definition objects. Each object specifies the metric name and regular expressions used
-     *         to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     *         to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      */
 
     public java.util.List<MetricDefinition> getMetricDefinitions() {
@@ -295,12 +295,12 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
-     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * </p>
      * 
      * @param metricDefinitions
      *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
-     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     *        parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      */
 
     public void setMetricDefinitions(java.util.Collection<MetricDefinition> metricDefinitions) {
@@ -315,7 +315,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
-     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -325,7 +325,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param metricDefinitions
      *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
-     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     *        parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,12 +342,12 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
-     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * </p>
      * 
      * @param metricDefinitions
      *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
-     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     *        parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,14 +364,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * You use one of the Amazon SageMaker built-in algorithms
+     * You use one of the SageMaker built-in algorithms
      * </p>
      * </li>
      * <li>
      * <p>
      * You use one of the following <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     * >Prebuilt Amazon SageMaker Docker Images</a>:
+     * >Prebuilt SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
@@ -404,14 +404,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        You use one of the Amazon SageMaker built-in algorithms
+     *        You use one of the SageMaker built-in algorithms
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        You use one of the following <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     *        >Prebuilt Amazon SageMaker Docker Images</a>:
+     *        >Prebuilt SageMaker Docker Images</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -450,14 +450,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * You use one of the Amazon SageMaker built-in algorithms
+     * You use one of the SageMaker built-in algorithms
      * </p>
      * </li>
      * <li>
      * <p>
      * You use one of the following <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     * >Prebuilt Amazon SageMaker Docker Images</a>:
+     * >Prebuilt SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
@@ -489,14 +489,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         <ul>
      *         <li>
      *         <p>
-     *         You use one of the Amazon SageMaker built-in algorithms
+     *         You use one of the SageMaker built-in algorithms
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         You use one of the following <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     *         >Prebuilt Amazon SageMaker Docker Images</a>:
+     *         >Prebuilt SageMaker Docker Images</a>:
      *         </p>
      *         <ul>
      *         <li>
@@ -535,14 +535,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * You use one of the Amazon SageMaker built-in algorithms
+     * You use one of the SageMaker built-in algorithms
      * </p>
      * </li>
      * <li>
      * <p>
      * You use one of the following <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     * >Prebuilt Amazon SageMaker Docker Images</a>:
+     * >Prebuilt SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
@@ -575,14 +575,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        You use one of the Amazon SageMaker built-in algorithms
+     *        You use one of the SageMaker built-in algorithms
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        You use one of the following <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     *        >Prebuilt Amazon SageMaker Docker Images</a>:
+     *        >Prebuilt SageMaker Docker Images</a>:
      *        </p>
      *        <ul>
      *        <li>
@@ -623,14 +623,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * You use one of the Amazon SageMaker built-in algorithms
+     * You use one of the SageMaker built-in algorithms
      * </p>
      * </li>
      * <li>
      * <p>
      * You use one of the following <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     * >Prebuilt Amazon SageMaker Docker Images</a>:
+     * >Prebuilt SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
@@ -662,14 +662,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         <ul>
      *         <li>
      *         <p>
-     *         You use one of the Amazon SageMaker built-in algorithms
+     *         You use one of the SageMaker built-in algorithms
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         You use one of the following <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
-     *         >Prebuilt Amazon SageMaker Docker Images</a>:
+     *         >Prebuilt SageMaker Docker Images</a>:
      *         </p>
      *         <ul>
      *         <li>

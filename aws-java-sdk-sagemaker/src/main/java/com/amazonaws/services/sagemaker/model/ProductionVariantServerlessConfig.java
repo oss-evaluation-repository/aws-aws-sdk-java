@@ -18,12 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <important>
- * <p>
- * Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using
- * this feature in production environments.
- * </p>
- * </important>
  * <p>
  * Specifies the serverless configuration for an endpoint variant.
  * </p>

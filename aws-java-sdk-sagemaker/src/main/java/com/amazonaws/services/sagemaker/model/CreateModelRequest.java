@@ -52,14 +52,14 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private InferenceExecutionConfig inferenceExecutionConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
-     * instances is part of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker
+     * image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is
+     * part of model hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
@@ -289,27 +289,27 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
-     * instances is part of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker
+     * image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is
+     * part of model hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *        and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
-     *        compute instances is part of model hosting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and
+     *        docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     *        instances is part of model hosting. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      */
 
@@ -319,26 +319,26 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
-     * instances is part of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker
+     * image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is
+     * part of model hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *         and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
-     *         compute instances is part of model hosting. For more information, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *         </p> <note>
+     * @return The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and
+     *         docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     *         instances is part of model hosting. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *         <note>
      *         <p>
-     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *         <code>iam:PassRole</code> permission.
+     *         To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *         permission.
      *         </p>
      */
 
@@ -348,27 +348,27 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
-     * instances is part of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker
+     * image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is
+     * part of model hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *        and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
-     *        compute instances is part of model hosting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and
+     *        docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     *        instances is part of model hosting. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

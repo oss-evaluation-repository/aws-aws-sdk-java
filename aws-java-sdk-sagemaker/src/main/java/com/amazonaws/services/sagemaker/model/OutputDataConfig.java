@@ -30,9 +30,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any
-     * of the following formats:
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -69,9 +69,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions
-     * to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     * for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for
+     * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
+     * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
+     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
      * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
      * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
      * to <code>"aws:kms"</code>. For more information, see <a
@@ -88,7 +88,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     private String kmsKeyId;
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     * Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      */
@@ -96,9 +96,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any
-     * of the following formats:
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -135,9 +135,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions
-     * to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     * for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for
+     * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
+     * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
+     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
      * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
      * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
      * to <code>"aws:kms"</code>. For more information, see <a
@@ -152,7 +152,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
      *        encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can
      *        be any of the following formats: </p>
      *        <ul>
@@ -190,13 +190,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        </ul>
      *        <p>
-     *        If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include
-     *        permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     *        default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     *        KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an
-     *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *        information, see <a
+     *        If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions
+     *        to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key
+     *        for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
+     *        <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission
+     *        that only allows objects with server-side encryption, set the condition key of
+     *        <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
@@ -214,9 +213,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any
-     * of the following formats:
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -253,9 +252,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions
-     * to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     * for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for
+     * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
+     * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
+     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
      * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
      * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
      * to <code>"aws:kms"</code>. For more information, see <a
@@ -269,9 +268,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
-     *         to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code>
-     *         can be any of the following formats: </p>
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
+     *         encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can
+     *         be any of the following formats: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -307,10 +306,10 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         </ul>
      *         <p>
-     *         If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include
-     *         permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses
-     *         the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption
-     *         with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an
+     *         If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include
+     *         permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the
+     *         default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with
+     *         KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an
      *         <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
      *         condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      *         information, see <a
@@ -331,9 +330,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any
-     * of the following formats:
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -370,9 +369,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions
-     * to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     * for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS-managed keys for
+     * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
+     * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
+     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
      * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
      * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
      * to <code>"aws:kms"</code>. For more information, see <a
@@ -387,7 +386,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
      *        encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can
      *        be any of the following formats: </p>
      *        <ul>
@@ -425,13 +424,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        </ul>
      *        <p>
-     *        If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include
-     *        permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     *        default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     *        KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an
-     *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *        information, see <a
+     *        If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions
+     *        to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key
+     *        for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
+     *        <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission
+     *        that only allows objects with server-side encryption, set the condition key of
+     *        <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
@@ -451,12 +449,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     * Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
      * @param s3OutputPath
-     *        Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     *        Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      *        <code>s3://bucket-name/key-name-prefix</code>.
      */
 
@@ -466,11 +464,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     * Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
-     * @return Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     * @return Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      *         <code>s3://bucket-name/key-name-prefix</code>.
      */
 
@@ -480,12 +478,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     * Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
      * @param s3OutputPath
-     *        Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example,
+     *        Identifies the S3 path where you want SageMaker to store the model artifacts. For example,
      *        <code>s3://bucket-name/key-name-prefix</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

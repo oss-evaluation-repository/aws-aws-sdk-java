@@ -37,6 +37,10 @@ public class UpdateResourceEventConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceRegistrationState").build();
     private static final MarshallingInfo<StructuredPojo> PROXIMITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Proximity").build();
+    private static final MarshallingInfo<StructuredPojo> JOIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Join").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
 
     private static final UpdateResourceEventConfigurationRequestMarshaller instance = new UpdateResourceEventConfigurationRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateResourceEventConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateResourceEventConfigurationRequest.getPartnerType(), PARTNERTYPE_BINDING);
             protocolMarshaller.marshall(updateResourceEventConfigurationRequest.getDeviceRegistrationState(), DEVICEREGISTRATIONSTATE_BINDING);
             protocolMarshaller.marshall(updateResourceEventConfigurationRequest.getProximity(), PROXIMITY_BINDING);
+            protocolMarshaller.marshall(updateResourceEventConfigurationRequest.getJoin(), JOIN_BINDING);
+            protocolMarshaller.marshall(updateResourceEventConfigurationRequest.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -23,14 +23,17 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter
-     * name is <code>StreamProcessorInput</code>.
+     * name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream
+     * processors.
      * </p>
      */
     private StreamProcessorInput input;
     /**
      * <p>
-     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
-     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis
+     * results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a
+     * <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data
+     * stream ARN for a face search stream processor.
      * </p>
      */
     private StreamProcessorOutput output;
@@ -38,20 +41,23 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
      * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-     * <code>Name</code> is idempotent.
+     * <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Face recognition input parameters to be used by the stream processor. Includes the collection to use for face
-     * recognition and the face attributes to detect.
+     * Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to
+     * recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.
      * </p>
      */
     private StreamProcessorSettings settings;
     /**
      * <p>
-     * ARN of the IAM role that allows access to the stream processor.
+     * The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     * provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3
+     * bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for
+     * both face search and label detection stream processors.
      * </p>
      */
     private String roleArn;
@@ -62,15 +68,47 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      */
     private java.util.Map<String, String> tags;
 
+    private StreamProcessorNotificationChannel notificationChannel;
+    /**
+     * <p>
+     * The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search stream processor. You can supply the
+     * Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN.
+     * The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and
+     * hero images. Your source images are unaffected.
+     * </p>
+     * <p>
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10
+     * regions of interest. This is an optional parameter for label detection stream processors and should not be used
+     * to create a face search stream processor.
+     * </p>
+     */
+    private java.util.List<RegionOfInterest> regionsOfInterest;
+    /**
+     * <p>
+     * Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at
+     * the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored
+     * on individual streams.
+     * </p>
+     */
+    private StreamProcessorDataSharingPreference dataSharingPreference;
+
     /**
      * <p>
      * Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter
-     * name is <code>StreamProcessorInput</code>.
+     * name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream
+     * processors.
      * </p>
      * 
      * @param input
      *        Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the
-     *        parameter name is <code>StreamProcessorInput</code>.
+     *        parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label
+     *        detection stream processors.
      */
 
     public void setInput(StreamProcessorInput input) {
@@ -80,11 +118,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter
-     * name is <code>StreamProcessorInput</code>.
+     * name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream
+     * processors.
      * </p>
      * 
      * @return Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the
-     *         parameter name is <code>StreamProcessorInput</code>.
+     *         parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label
+     *         detection stream processors.
      */
 
     public StreamProcessorInput getInput() {
@@ -94,12 +134,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter
-     * name is <code>StreamProcessorInput</code>.
+     * name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream
+     * processors.
      * </p>
      * 
      * @param input
      *        Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the
-     *        parameter name is <code>StreamProcessorInput</code>.
+     *        parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label
+     *        detection stream processors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,13 +152,17 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
-     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis
+     * results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a
+     * <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data
+     * stream ARN for a face search stream processor.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
-     *        the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the
+     *        analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        This must be a <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream
+     *        processor or a Kinesis data stream ARN for a face search stream processor.
      */
 
     public void setOutput(StreamProcessorOutput output) {
@@ -125,12 +171,16 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
-     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis
+     * results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a
+     * <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data
+     * stream ARN for a face search stream processor.
      * </p>
      * 
-     * @return Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
-     *         the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * @return Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the
+     *         analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *         This must be a <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream
+     *         processor or a Kinesis data stream ARN for a face search stream processor.
      */
 
     public StreamProcessorOutput getOutput() {
@@ -139,13 +189,17 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
-     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis
+     * results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a
+     * <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data
+     * stream ARN for a face search stream processor.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
-     *        the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the
+     *        analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        This must be a <a>S3Destination</a> of an Amazon S3 bucket that you own for a label detection stream
+     *        processor or a Kinesis data stream ARN for a face search stream processor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,13 +212,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
      * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-     * <code>Name</code> is idempotent.
+     * <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.
      * </p>
      * 
      * @param name
      *        An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
      *        processor. For example, you can get the current status of the stream processor by calling
-     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
+     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. This is required for both face search and
+     *        label detection stream processors.
      */
 
     public void setName(String name) {
@@ -175,12 +230,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
      * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-     * <code>Name</code> is idempotent.
+     * <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.
      * </p>
      * 
      * @return An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
      *         processor. For example, you can get the current status of the stream processor by calling
-     *         <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
+     *         <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. This is required for both face search
+     *         and label detection stream processors.
      */
 
     public String getName() {
@@ -191,13 +247,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
      * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-     * <code>Name</code> is idempotent.
+     * <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.
      * </p>
      * 
      * @param name
      *        An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
      *        processor. For example, you can get the current status of the stream processor by calling
-     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
+     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. This is required for both face search and
+     *        label detection stream processors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,13 +265,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Face recognition input parameters to be used by the stream processor. Includes the collection to use for face
-     * recognition and the face attributes to detect.
+     * Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to
+     * recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.
      * </p>
      * 
      * @param settings
-     *        Face recognition input parameters to be used by the stream processor. Includes the collection to use for
-     *        face recognition and the face attributes to detect.
+     *        Input parameters used in a streaming video analyzed by a stream processor. You can use
+     *        <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code>
+     *        to detect labels.
      */
 
     public void setSettings(StreamProcessorSettings settings) {
@@ -223,12 +281,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Face recognition input parameters to be used by the stream processor. Includes the collection to use for face
-     * recognition and the face attributes to detect.
+     * Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to
+     * recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.
      * </p>
      * 
-     * @return Face recognition input parameters to be used by the stream processor. Includes the collection to use for
-     *         face recognition and the face attributes to detect.
+     * @return Input parameters used in a streaming video analyzed by a stream processor. You can use
+     *         <code>FaceSearch</code> to recognize faces in a streaming video, or you can use
+     *         <code>ConnectedHome</code> to detect labels.
      */
 
     public StreamProcessorSettings getSettings() {
@@ -237,13 +296,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Face recognition input parameters to be used by the stream processor. Includes the collection to use for face
-     * recognition and the face attributes to detect.
+     * Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to
+     * recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.
      * </p>
      * 
      * @param settings
-     *        Face recognition input parameters to be used by the stream processor. Includes the collection to use for
-     *        face recognition and the face attributes to detect.
+     *        Input parameters used in a streaming video analyzed by a stream processor. You can use
+     *        <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code>
+     *        to detect labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +314,17 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the IAM role that allows access to the stream processor.
+     * The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     * provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3
+     * bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for
+     * both face search and label detection stream processors.
      * </p>
      * 
      * @param roleArn
-     *        ARN of the IAM role that allows access to the stream processor.
+     *        The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     *        provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an
+     *        Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This
+     *        is required for both face search and label detection stream processors.
      */
 
     public void setRoleArn(String roleArn) {
@@ -267,10 +333,16 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the IAM role that allows access to the stream processor.
+     * The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     * provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3
+     * bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for
+     * both face search and label detection stream processors.
      * </p>
      * 
-     * @return ARN of the IAM role that allows access to the stream processor.
+     * @return The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     *         provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an
+     *         Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor.
+     *         This is required for both face search and label detection stream processors.
      */
 
     public String getRoleArn() {
@@ -279,11 +351,17 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the IAM role that allows access to the stream processor.
+     * The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     * provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3
+     * bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for
+     * both face search and label detection stream processors.
      * </p>
      * 
      * @param roleArn
-     *        ARN of the IAM role that allows access to the stream processor.
+     *        The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role
+     *        provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an
+     *        Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This
+     *        is required for both face search and label detection stream processors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,6 +439,243 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param notificationChannel
+     */
+
+    public void setNotificationChannel(StreamProcessorNotificationChannel notificationChannel) {
+        this.notificationChannel = notificationChannel;
+    }
+
+    /**
+     * @return
+     */
+
+    public StreamProcessorNotificationChannel getNotificationChannel() {
+        return this.notificationChannel;
+    }
+
+    /**
+     * @param notificationChannel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withNotificationChannel(StreamProcessorNotificationChannel notificationChannel) {
+        setNotificationChannel(notificationChannel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search stream processor. You can supply the
+     * Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN.
+     * The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and
+     * hero images. Your source images are unaffected.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for
+     *        label detection stream processors and should not be used to create a face search stream processor. You can
+     *        supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key,
+     *        or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which
+     *        includes image frames and hero images. Your source images are unaffected. </p>
+     *        <p>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search stream processor. You can supply the
+     * Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN.
+     * The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and
+     * hero images. Your source images are unaffected.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @return The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for
+     *         label detection stream processors and should not be used to create a face search stream processor. You
+     *         can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS
+     *         key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket,
+     *         which includes image frames and hero images. Your source images are unaffected. </p>
+     *         <p>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search stream processor. You can supply the
+     * Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN.
+     * The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and
+     * hero images. Your source images are unaffected.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for
+     *        label detection stream processors and should not be used to create a face search stream processor. You can
+     *        supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key,
+     *        or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which
+     *        includes image frames and hero images. Your source images are unaffected. </p>
+     *        <p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10
+     * regions of interest. This is an optional parameter for label detection stream processors and should not be used
+     * to create a face search stream processor.
+     * </p>
+     * 
+     * @return Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify
+     *         up to 10 regions of interest. This is an optional parameter for label detection stream processors and
+     *         should not be used to create a face search stream processor.
+     */
+
+    public java.util.List<RegionOfInterest> getRegionsOfInterest() {
+        return regionsOfInterest;
+    }
+
+    /**
+     * <p>
+     * Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10
+     * regions of interest. This is an optional parameter for label detection stream processors and should not be used
+     * to create a face search stream processor.
+     * </p>
+     * 
+     * @param regionsOfInterest
+     *        Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify
+     *        up to 10 regions of interest. This is an optional parameter for label detection stream processors and
+     *        should not be used to create a face search stream processor.
+     */
+
+    public void setRegionsOfInterest(java.util.Collection<RegionOfInterest> regionsOfInterest) {
+        if (regionsOfInterest == null) {
+            this.regionsOfInterest = null;
+            return;
+        }
+
+        this.regionsOfInterest = new java.util.ArrayList<RegionOfInterest>(regionsOfInterest);
+    }
+
+    /**
+     * <p>
+     * Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10
+     * regions of interest. This is an optional parameter for label detection stream processors and should not be used
+     * to create a face search stream processor.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegionsOfInterest(java.util.Collection)} or {@link #withRegionsOfInterest(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param regionsOfInterest
+     *        Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify
+     *        up to 10 regions of interest. This is an optional parameter for label detection stream processors and
+     *        should not be used to create a face search stream processor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withRegionsOfInterest(RegionOfInterest... regionsOfInterest) {
+        if (this.regionsOfInterest == null) {
+            setRegionsOfInterest(new java.util.ArrayList<RegionOfInterest>(regionsOfInterest.length));
+        }
+        for (RegionOfInterest ele : regionsOfInterest) {
+            this.regionsOfInterest.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10
+     * regions of interest. This is an optional parameter for label detection stream processors and should not be used
+     * to create a face search stream processor.
+     * </p>
+     * 
+     * @param regionsOfInterest
+     *        Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify
+     *        up to 10 regions of interest. This is an optional parameter for label detection stream processors and
+     *        should not be used to create a face search stream processor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withRegionsOfInterest(java.util.Collection<RegionOfInterest> regionsOfInterest) {
+        setRegionsOfInterest(regionsOfInterest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at
+     * the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored
+     * on individual streams.
+     * </p>
+     * 
+     * @param dataSharingPreference
+     *        Shows whether you are sharing data with Rekognition to improve model performance. You can choose this
+     *        option at the account level or on a per-stream basis. Note that if you opt out at the account level this
+     *        setting is ignored on individual streams.
+     */
+
+    public void setDataSharingPreference(StreamProcessorDataSharingPreference dataSharingPreference) {
+        this.dataSharingPreference = dataSharingPreference;
+    }
+
+    /**
+     * <p>
+     * Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at
+     * the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored
+     * on individual streams.
+     * </p>
+     * 
+     * @return Shows whether you are sharing data with Rekognition to improve model performance. You can choose this
+     *         option at the account level or on a per-stream basis. Note that if you opt out at the account level this
+     *         setting is ignored on individual streams.
+     */
+
+    public StreamProcessorDataSharingPreference getDataSharingPreference() {
+        return this.dataSharingPreference;
+    }
+
+    /**
+     * <p>
+     * Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at
+     * the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored
+     * on individual streams.
+     * </p>
+     * 
+     * @param dataSharingPreference
+     *        Shows whether you are sharing data with Rekognition to improve model performance. You can choose this
+     *        option at the account level or on a per-stream basis. Note that if you opt out at the account level this
+     *        setting is ignored on individual streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withDataSharingPreference(StreamProcessorDataSharingPreference dataSharingPreference) {
+        setDataSharingPreference(dataSharingPreference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -383,7 +698,15 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNotificationChannel() != null)
+            sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getRegionsOfInterest() != null)
+            sb.append("RegionsOfInterest: ").append(getRegionsOfInterest()).append(",");
+        if (getDataSharingPreference() != null)
+            sb.append("DataSharingPreference: ").append(getDataSharingPreference());
         sb.append("}");
         return sb.toString();
     }
@@ -422,6 +745,22 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getNotificationChannel() == null ^ this.getNotificationChannel() == null)
+            return false;
+        if (other.getNotificationChannel() != null && other.getNotificationChannel().equals(this.getNotificationChannel()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
+        if (other.getRegionsOfInterest() == null ^ this.getRegionsOfInterest() == null)
+            return false;
+        if (other.getRegionsOfInterest() != null && other.getRegionsOfInterest().equals(this.getRegionsOfInterest()) == false)
+            return false;
+        if (other.getDataSharingPreference() == null ^ this.getDataSharingPreference() == null)
+            return false;
+        if (other.getDataSharingPreference() != null && other.getDataSharingPreference().equals(this.getDataSharingPreference()) == false)
+            return false;
         return true;
     }
 
@@ -436,6 +775,10 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getRegionsOfInterest() == null) ? 0 : getRegionsOfInterest().hashCode());
+        hashCode = prime * hashCode + ((getDataSharingPreference() == null) ? 0 : getDataSharingPreference().hashCode());
         return hashCode;
     }
 

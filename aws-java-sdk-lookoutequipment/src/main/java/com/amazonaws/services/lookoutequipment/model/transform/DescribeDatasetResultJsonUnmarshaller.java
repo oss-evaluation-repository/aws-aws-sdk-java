@@ -81,6 +81,26 @@ public class DescribeDatasetResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeDatasetResult.setIngestionInputConfiguration(IngestionInputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DataQualitySummary", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setDataQualitySummary(DataQualitySummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IngestedFilesSummary", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setIngestedFilesSummary(IngestedFilesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RoleArn", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataStartTime", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setDataStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DataEndTime", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

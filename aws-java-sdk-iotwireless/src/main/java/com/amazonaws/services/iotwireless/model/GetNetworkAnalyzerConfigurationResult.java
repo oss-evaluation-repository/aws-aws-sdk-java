@@ -27,16 +27,26 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
     private TraceContent traceContent;
     /**
      * <p>
-     * List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      */
     private java.util.List<String> wirelessDevices;
     /**
      * <p>
-     * List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      */
     private java.util.List<String> wirelessGateways;
+
+    private String description;
+    /**
+     * <p>
+     * The Amazon Resource Name of the new resource.
+     * </p>
+     */
+    private String arn;
+
+    private String name;
 
     /**
      * @param traceContent
@@ -66,10 +76,10 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
-     * @return List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * @return List of wireless gateway resources that have been added to the network analyzer configuration.
      */
 
     public java.util.List<String> getWirelessDevices() {
@@ -78,11 +88,11 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessDevices
-     *        List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      */
 
     public void setWirelessDevices(java.util.Collection<String> wirelessDevices) {
@@ -96,7 +106,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -105,7 +115,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param wirelessDevices
-     *        List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +131,11 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessDevices
-     *        List of WirelessDevices in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +146,10 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
-     * @return List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * @return List of wireless gateway resources that have been added to the network analyzer configuration.
      */
 
     public java.util.List<String> getWirelessGateways() {
@@ -148,11 +158,11 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessGateways
-     *        List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      */
 
     public void setWirelessGateways(java.util.Collection<String> wirelessGateways) {
@@ -166,7 +176,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +185,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param wirelessGateways
-     *        List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,16 +201,108 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     * List of wireless gateway resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessGateways
-     *        List of WirelessGateways in the NetworkAnalyzerConfiguration.
+     *        List of wireless gateway resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetNetworkAnalyzerConfigurationResult withWirelessGateways(java.util.Collection<String> wirelessGateways) {
         setWirelessGateways(wirelessGateways);
+        return this;
+    }
+
+    /**
+     * @param description
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * @param description
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkAnalyzerConfigurationResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the new resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the new resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the new resource.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the new resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the new resource.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name of the new resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkAnalyzerConfigurationResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param name
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * @param name
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkAnalyzerConfigurationResult withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -221,7 +323,13 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
         if (getWirelessDevices() != null)
             sb.append("WirelessDevices: ").append(getWirelessDevices()).append(",");
         if (getWirelessGateways() != null)
-            sb.append("WirelessGateways: ").append(getWirelessGateways());
+            sb.append("WirelessGateways: ").append(getWirelessGateways()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +356,18 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
             return false;
         if (other.getWirelessGateways() != null && other.getWirelessGateways().equals(this.getWirelessGateways()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +379,9 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getTraceContent() == null) ? 0 : getTraceContent().hashCode());
         hashCode = prime * hashCode + ((getWirelessDevices() == null) ? 0 : getWirelessDevices().hashCode());
         hashCode = prime * hashCode + ((getWirelessGateways() == null) ? 0 : getWirelessGateways().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

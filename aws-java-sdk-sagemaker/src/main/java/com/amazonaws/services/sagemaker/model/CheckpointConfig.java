@@ -30,7 +30,7 @@ public class CheckpointConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     * Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      */
@@ -45,12 +45,12 @@ public class CheckpointConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     * Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
      * @param s3Uri
-     *        Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     *        Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      *        <code>s3://bucket-name/key-name-prefix</code>.
      */
 
@@ -60,11 +60,11 @@ public class CheckpointConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     * Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
-     * @return Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     * @return Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      *         <code>s3://bucket-name/key-name-prefix</code>.
      */
 
@@ -74,12 +74,12 @@ public class CheckpointConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     * Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.
      * </p>
      * 
      * @param s3Uri
-     *        Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+     *        Identifies the S3 path where you want SageMaker to store checkpoints. For example,
      *        <code>s3://bucket-name/key-name-prefix</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

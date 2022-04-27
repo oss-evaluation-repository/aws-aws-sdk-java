@@ -52,6 +52,12 @@ public class RegionOfInterestJsonUnmarshaller implements Unmarshaller<RegionOfIn
                     context.nextToken();
                     regionOfInterest.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Polygon", targetDepth)) {
+                    context.nextToken();
+                    regionOfInterest.setPolygon(new ListUnmarshaller<Point>(PointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

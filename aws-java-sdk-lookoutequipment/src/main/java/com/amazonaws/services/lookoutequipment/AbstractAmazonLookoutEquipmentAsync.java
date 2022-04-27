@@ -223,6 +223,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(ListSensorStatisticsRequest request) {
+
+        return listSensorStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensorStatisticsResult> listSensorStatisticsAsync(ListSensorStatisticsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSensorStatisticsRequest, ListSensorStatisticsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);

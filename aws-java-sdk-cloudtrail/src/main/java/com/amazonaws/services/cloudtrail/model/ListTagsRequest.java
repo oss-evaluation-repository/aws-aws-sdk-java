@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Specifies a list of trail tags to return.
+ * Specifies a list of tags to return.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags" target="_top">AWS API
@@ -30,11 +30,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the
-     * format of a trail ARN.
-     * </p>
-     * <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIdList;
@@ -47,17 +43,11 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the
-     * format of a trail ARN.
-     * </p>
-     * <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.
      * </p>
      * 
-     * @return Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following
-     *         is the format of a trail ARN.</p>
-     *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * @return Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20
+     *         ARNs.
      */
 
     public java.util.List<String> getResourceIdList() {
@@ -69,18 +59,12 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the
-     * format of a trail ARN.
-     * </p>
-     * <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following
-     *        is the format of a trail ARN.</p>
-     *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20
+     *        ARNs.
      */
 
     public void setResourceIdList(java.util.Collection<String> resourceIdList) {
@@ -94,11 +78,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the
-     * format of a trail ARN.
-     * </p>
-     * <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,10 +87,8 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following
-     *        is the format of a trail ARN.</p>
-     *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20
+     *        ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,18 +104,12 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the
-     * format of a trail ARN.
-     * </p>
-     * <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following
-     *        is the format of a trail ARN.</p>
-     *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20
+     *        ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -65,6 +65,42 @@ public class DescribeDataIngestionJobResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String failedReason;
+    /**
+     * <p>
+     * Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data
+     * such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and
+     * DuplicateTimeStamps.
+     * </p>
+     */
+    private DataQualitySummary dataQualitySummary;
+
+    private IngestedFilesSummary ingestedFilesSummary;
+    /**
+     * <p>
+     * Provides details about status of the ingestion job that is currently in progress.
+     * </p>
+     */
+    private String statusDetail;
+    /**
+     * <p>
+     * Indicates the size of the ingested dataset.
+     * </p>
+     */
+    private Long ingestedDataSize;
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     */
+    private java.util.Date dataStartTime;
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     */
+    private java.util.Date dataEndTime;
 
     /**
      * <p>
@@ -366,6 +402,256 @@ public class DescribeDataIngestionJobResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data
+     * such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and
+     * DuplicateTimeStamps.
+     * </p>
+     * 
+     * @param dataQualitySummary
+     *        Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying
+     *        incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats,
+     *        InsufficientSensorData, and DuplicateTimeStamps.
+     */
+
+    public void setDataQualitySummary(DataQualitySummary dataQualitySummary) {
+        this.dataQualitySummary = dataQualitySummary;
+    }
+
+    /**
+     * <p>
+     * Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data
+     * such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and
+     * DuplicateTimeStamps.
+     * </p>
+     * 
+     * @return Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying
+     *         incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats,
+     *         InsufficientSensorData, and DuplicateTimeStamps.
+     */
+
+    public DataQualitySummary getDataQualitySummary() {
+        return this.dataQualitySummary;
+    }
+
+    /**
+     * <p>
+     * Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data
+     * such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and
+     * DuplicateTimeStamps.
+     * </p>
+     * 
+     * @param dataQualitySummary
+     *        Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying
+     *        incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats,
+     *        InsufficientSensorData, and DuplicateTimeStamps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withDataQualitySummary(DataQualitySummary dataQualitySummary) {
+        setDataQualitySummary(dataQualitySummary);
+        return this;
+    }
+
+    /**
+     * @param ingestedFilesSummary
+     */
+
+    public void setIngestedFilesSummary(IngestedFilesSummary ingestedFilesSummary) {
+        this.ingestedFilesSummary = ingestedFilesSummary;
+    }
+
+    /**
+     * @return
+     */
+
+    public IngestedFilesSummary getIngestedFilesSummary() {
+        return this.ingestedFilesSummary;
+    }
+
+    /**
+     * @param ingestedFilesSummary
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withIngestedFilesSummary(IngestedFilesSummary ingestedFilesSummary) {
+        setIngestedFilesSummary(ingestedFilesSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about status of the ingestion job that is currently in progress.
+     * </p>
+     * 
+     * @param statusDetail
+     *        Provides details about status of the ingestion job that is currently in progress.
+     */
+
+    public void setStatusDetail(String statusDetail) {
+        this.statusDetail = statusDetail;
+    }
+
+    /**
+     * <p>
+     * Provides details about status of the ingestion job that is currently in progress.
+     * </p>
+     * 
+     * @return Provides details about status of the ingestion job that is currently in progress.
+     */
+
+    public String getStatusDetail() {
+        return this.statusDetail;
+    }
+
+    /**
+     * <p>
+     * Provides details about status of the ingestion job that is currently in progress.
+     * </p>
+     * 
+     * @param statusDetail
+     *        Provides details about status of the ingestion job that is currently in progress.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withStatusDetail(String statusDetail) {
+        setStatusDetail(statusDetail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the size of the ingested dataset.
+     * </p>
+     * 
+     * @param ingestedDataSize
+     *        Indicates the size of the ingested dataset.
+     */
+
+    public void setIngestedDataSize(Long ingestedDataSize) {
+        this.ingestedDataSize = ingestedDataSize;
+    }
+
+    /**
+     * <p>
+     * Indicates the size of the ingested dataset.
+     * </p>
+     * 
+     * @return Indicates the size of the ingested dataset.
+     */
+
+    public Long getIngestedDataSize() {
+        return this.ingestedDataSize;
+    }
+
+    /**
+     * <p>
+     * Indicates the size of the ingested dataset.
+     * </p>
+     * 
+     * @param ingestedDataSize
+     *        Indicates the size of the ingested dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withIngestedDataSize(Long ingestedDataSize) {
+        setIngestedDataSize(ingestedDataSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @param dataStartTime
+     *        Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     *        ingestion job.
+     */
+
+    public void setDataStartTime(java.util.Date dataStartTime) {
+        this.dataStartTime = dataStartTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @return Indicates the earliest timestamp corresponding to data that was successfully ingested during this
+     *         specific ingestion job.
+     */
+
+    public java.util.Date getDataStartTime() {
+        return this.dataStartTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @param dataStartTime
+     *        Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific
+     *        ingestion job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withDataStartTime(java.util.Date dataStartTime) {
+        setDataStartTime(dataStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @param dataEndTime
+     *        Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     *        ingestion job.
+     */
+
+    public void setDataEndTime(java.util.Date dataEndTime) {
+        this.dataEndTime = dataEndTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @return Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     *         ingestion job.
+     */
+
+    public java.util.Date getDataEndTime() {
+        return this.dataEndTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     * ingestion job.
+     * </p>
+     * 
+     * @param dataEndTime
+     *        Indicates the latest timestamp corresponding to data that was successfully ingested during this specific
+     *        ingestion job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDataIngestionJobResult withDataEndTime(java.util.Date dataEndTime) {
+        setDataEndTime(dataEndTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -390,7 +676,19 @@ public class DescribeDataIngestionJobResult extends com.amazonaws.AmazonWebServi
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailedReason() != null)
-            sb.append("FailedReason: ").append(getFailedReason());
+            sb.append("FailedReason: ").append(getFailedReason()).append(",");
+        if (getDataQualitySummary() != null)
+            sb.append("DataQualitySummary: ").append(getDataQualitySummary()).append(",");
+        if (getIngestedFilesSummary() != null)
+            sb.append("IngestedFilesSummary: ").append(getIngestedFilesSummary()).append(",");
+        if (getStatusDetail() != null)
+            sb.append("StatusDetail: ").append(getStatusDetail()).append(",");
+        if (getIngestedDataSize() != null)
+            sb.append("IngestedDataSize: ").append(getIngestedDataSize()).append(",");
+        if (getDataStartTime() != null)
+            sb.append("DataStartTime: ").append(getDataStartTime()).append(",");
+        if (getDataEndTime() != null)
+            sb.append("DataEndTime: ").append(getDataEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -433,6 +731,30 @@ public class DescribeDataIngestionJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getFailedReason() != null && other.getFailedReason().equals(this.getFailedReason()) == false)
             return false;
+        if (other.getDataQualitySummary() == null ^ this.getDataQualitySummary() == null)
+            return false;
+        if (other.getDataQualitySummary() != null && other.getDataQualitySummary().equals(this.getDataQualitySummary()) == false)
+            return false;
+        if (other.getIngestedFilesSummary() == null ^ this.getIngestedFilesSummary() == null)
+            return false;
+        if (other.getIngestedFilesSummary() != null && other.getIngestedFilesSummary().equals(this.getIngestedFilesSummary()) == false)
+            return false;
+        if (other.getStatusDetail() == null ^ this.getStatusDetail() == null)
+            return false;
+        if (other.getStatusDetail() != null && other.getStatusDetail().equals(this.getStatusDetail()) == false)
+            return false;
+        if (other.getIngestedDataSize() == null ^ this.getIngestedDataSize() == null)
+            return false;
+        if (other.getIngestedDataSize() != null && other.getIngestedDataSize().equals(this.getIngestedDataSize()) == false)
+            return false;
+        if (other.getDataStartTime() == null ^ this.getDataStartTime() == null)
+            return false;
+        if (other.getDataStartTime() != null && other.getDataStartTime().equals(this.getDataStartTime()) == false)
+            return false;
+        if (other.getDataEndTime() == null ^ this.getDataEndTime() == null)
+            return false;
+        if (other.getDataEndTime() != null && other.getDataEndTime().equals(this.getDataEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -448,6 +770,12 @@ public class DescribeDataIngestionJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailedReason() == null) ? 0 : getFailedReason().hashCode());
+        hashCode = prime * hashCode + ((getDataQualitySummary() == null) ? 0 : getDataQualitySummary().hashCode());
+        hashCode = prime * hashCode + ((getIngestedFilesSummary() == null) ? 0 : getIngestedFilesSummary().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetail() == null) ? 0 : getStatusDetail().hashCode());
+        hashCode = prime * hashCode + ((getIngestedDataSize() == null) ? 0 : getIngestedDataSize().hashCode());
+        hashCode = prime * hashCode + ((getDataStartTime() == null) ? 0 : getDataStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDataEndTime() == null) ? 0 : getDataEndTime().hashCode());
         return hashCode;
     }
 

@@ -198,6 +198,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            CreateNetworkAnalyzerConfigurationRequest request) {
+
+        return createNetworkAnalyzerConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            CreateNetworkAnalyzerConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkAnalyzerConfigurationRequest, CreateNetworkAnalyzerConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServiceProfileResult> createServiceProfileAsync(CreateServiceProfileRequest request) {
 
         return createServiceProfileAsync(request, null);
@@ -312,6 +327,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<DeleteMulticastGroupResult> deleteMulticastGroupAsync(DeleteMulticastGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMulticastGroupRequest, DeleteMulticastGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            DeleteNetworkAnalyzerConfigurationRequest request) {
+
+        return deleteNetworkAnalyzerConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            DeleteNetworkAnalyzerConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAnalyzerConfigurationRequest, DeleteNetworkAnalyzerConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -523,6 +553,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<GetDeviceProfileResult> getDeviceProfileAsync(GetDeviceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeviceProfileRequest, GetDeviceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            GetEventConfigurationByResourceTypesRequest request) {
+
+        return getEventConfigurationByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            GetEventConfigurationByResourceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEventConfigurationByResourceTypesRequest, GetEventConfigurationByResourceTypesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -794,6 +839,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest request) {
+
+        return listEventConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEventConfigurationsRequest, ListEventConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest request) {
 
         return listFuotaTasksAsync(request, null);
@@ -828,6 +886,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<ListMulticastGroupsByFuotaTaskResult> listMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMulticastGroupsByFuotaTaskRequest, ListMulticastGroupsByFuotaTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            ListNetworkAnalyzerConfigurationsRequest request) {
+
+        return listNetworkAnalyzerConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            ListNetworkAnalyzerConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListNetworkAnalyzerConfigurationsRequest, ListNetworkAnalyzerConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1094,6 +1167,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            UpdateEventConfigurationByResourceTypesRequest request) {
+
+        return updateEventConfigurationByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            UpdateEventConfigurationByResourceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventConfigurationByResourceTypesRequest, UpdateEventConfigurationByResourceTypesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

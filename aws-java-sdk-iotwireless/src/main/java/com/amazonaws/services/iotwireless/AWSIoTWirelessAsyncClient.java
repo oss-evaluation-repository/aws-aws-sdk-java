@@ -499,6 +499,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            CreateNetworkAnalyzerConfigurationRequest request) {
+
+        return createNetworkAnalyzerConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkAnalyzerConfigurationResult> createNetworkAnalyzerConfigurationAsync(
+            final CreateNetworkAnalyzerConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNetworkAnalyzerConfigurationRequest, CreateNetworkAnalyzerConfigurationResult> asyncHandler) {
+        final CreateNetworkAnalyzerConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNetworkAnalyzerConfigurationResult>() {
+            @Override
+            public CreateNetworkAnalyzerConfigurationResult call() throws Exception {
+                CreateNetworkAnalyzerConfigurationResult result = null;
+
+                try {
+                    result = executeCreateNetworkAnalyzerConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServiceProfileResult> createServiceProfileAsync(CreateServiceProfileRequest request) {
 
         return createServiceProfileAsync(request, null);
@@ -782,6 +817,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeDeleteMulticastGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            DeleteNetworkAnalyzerConfigurationRequest request) {
+
+        return deleteNetworkAnalyzerConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkAnalyzerConfigurationResult> deleteNetworkAnalyzerConfigurationAsync(
+            final DeleteNetworkAnalyzerConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkAnalyzerConfigurationRequest, DeleteNetworkAnalyzerConfigurationResult> asyncHandler) {
+        final DeleteNetworkAnalyzerConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNetworkAnalyzerConfigurationResult>() {
+            @Override
+            public DeleteNetworkAnalyzerConfigurationResult call() throws Exception {
+                DeleteNetworkAnalyzerConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteNetworkAnalyzerConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1293,6 +1363,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetDeviceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            GetEventConfigurationByResourceTypesRequest request) {
+
+        return getEventConfigurationByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventConfigurationByResourceTypesResult> getEventConfigurationByResourceTypesAsync(
+            final GetEventConfigurationByResourceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventConfigurationByResourceTypesRequest, GetEventConfigurationByResourceTypesResult> asyncHandler) {
+        final GetEventConfigurationByResourceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventConfigurationByResourceTypesResult>() {
+            @Override
+            public GetEventConfigurationByResourceTypesResult call() throws Exception {
+                GetEventConfigurationByResourceTypesResult result = null;
+
+                try {
+                    result = executeGetEventConfigurationByResourceTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1977,6 +2082,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest request) {
+
+        return listEventConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(final ListEventConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventConfigurationsRequest, ListEventConfigurationsResult> asyncHandler) {
+        final ListEventConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventConfigurationsResult>() {
+            @Override
+            public ListEventConfigurationsResult call() throws Exception {
+                ListEventConfigurationsResult result = null;
+
+                try {
+                    result = executeListEventConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFuotaTasksResult> listFuotaTasksAsync(ListFuotaTasksRequest request) {
 
         return listFuotaTasksAsync(request, null);
@@ -2061,6 +2199,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeListMulticastGroupsByFuotaTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            ListNetworkAnalyzerConfigurationsRequest request) {
+
+        return listNetworkAnalyzerConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkAnalyzerConfigurationsResult> listNetworkAnalyzerConfigurationsAsync(
+            final ListNetworkAnalyzerConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNetworkAnalyzerConfigurationsRequest, ListNetworkAnalyzerConfigurationsResult> asyncHandler) {
+        final ListNetworkAnalyzerConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNetworkAnalyzerConfigurationsResult>() {
+            @Override
+            public ListNetworkAnalyzerConfigurationsResult call() throws Exception {
+                ListNetworkAnalyzerConfigurationsResult result = null;
+
+                try {
+                    result = executeListNetworkAnalyzerConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2727,6 +2900,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeUpdateDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            UpdateEventConfigurationByResourceTypesRequest request) {
+
+        return updateEventConfigurationByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventConfigurationByResourceTypesResult> updateEventConfigurationByResourceTypesAsync(
+            final UpdateEventConfigurationByResourceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEventConfigurationByResourceTypesRequest, UpdateEventConfigurationByResourceTypesResult> asyncHandler) {
+        final UpdateEventConfigurationByResourceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEventConfigurationByResourceTypesResult>() {
+            @Override
+            public UpdateEventConfigurationByResourceTypesResult call() throws Exception {
+                UpdateEventConfigurationByResourceTypesResult result = null;
+
+                try {
+                    result = executeUpdateEventConfigurationByResourceTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

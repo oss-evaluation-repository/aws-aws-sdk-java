@@ -94,8 +94,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
     private LabelingJobOutputConfig outputConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
-     * labeling.
+     * The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.
      * </p>
      */
     private String roleArn;
@@ -679,12 +678,11 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
-     * labeling.
+     * The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
+     *        The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data
      *        labeling.
      */
 
@@ -694,11 +692,10 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
-     * labeling.
+     * The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
+     * @return The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data
      *         labeling.
      */
 
@@ -708,12 +705,11 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
-     * labeling.
+     * The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data
+     *        The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data
      *        labeling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

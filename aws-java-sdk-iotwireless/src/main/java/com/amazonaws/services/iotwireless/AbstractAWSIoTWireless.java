@@ -88,6 +88,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public CreateNetworkAnalyzerConfigurationResult createNetworkAnalyzerConfiguration(CreateNetworkAnalyzerConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateServiceProfileResult createServiceProfile(CreateServiceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +134,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public DeleteMulticastGroupResult deleteMulticastGroup(DeleteMulticastGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkAnalyzerConfigurationResult deleteNetworkAnalyzerConfiguration(DeleteNetworkAnalyzerConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -205,6 +215,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public GetDeviceProfileResult getDeviceProfile(GetDeviceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventConfigurationByResourceTypesResult getEventConfigurationByResourceTypes(GetEventConfigurationByResourceTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,6 +324,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public ListEventConfigurationsResult listEventConfigurations(ListEventConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFuotaTasksResult listFuotaTasks(ListFuotaTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -320,6 +340,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public ListMulticastGroupsByFuotaTaskResult listMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNetworkAnalyzerConfigurationsResult listNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -422,6 +447,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public UpdateDestinationResult updateDestination(UpdateDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEventConfigurationByResourceTypesResult updateEventConfigurationByResourceTypes(UpdateEventConfigurationByResourceTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

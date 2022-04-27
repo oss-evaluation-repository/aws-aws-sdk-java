@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An array element of <a>DescribeTrainingJobResponse$SecondaryStatusTransitions</a>. It provides additional details
  * about a status that the training job has transitioned through. A training job can be in one of several states, for
  * example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states.
- * For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML
- * instances. These transitional states are referred to as the job's secondary status.
+ * For example, within the starting state, SageMaker could be starting the training job or launching the ML instances.
+ * These transitional states are referred to as the job's secondary status.
  * </p>
  * <p/>
  * 
@@ -154,7 +154,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * A detailed description of the progress within a secondary status.
      * </p>
      * <p>
-     * Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     * SageMaker provides secondary statuses and status messages that apply to each of them:
      * </p>
      * <dl>
      * <dt>Starting</dt>
@@ -1160,7 +1160,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * A detailed description of the progress within a secondary status.
      * </p>
      * <p>
-     * Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     * SageMaker provides secondary statuses and status messages that apply to each of them:
      * </p>
      * <dl>
      * <dt>Starting</dt>
@@ -1241,7 +1241,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * @param statusMessage
      *        A detailed description of the progress within a secondary status. </p>
      *        <p>
-     *        Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     *        SageMaker provides secondary statuses and status messages that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>Starting</dt>
@@ -1328,7 +1328,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * A detailed description of the progress within a secondary status.
      * </p>
      * <p>
-     * Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     * SageMaker provides secondary statuses and status messages that apply to each of them:
      * </p>
      * <dl>
      * <dt>Starting</dt>
@@ -1408,7 +1408,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * 
      * @return A detailed description of the progress within a secondary status. </p>
      *         <p>
-     *         Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     *         SageMaker provides secondary statuses and status messages that apply to each of them:
      *         </p>
      *         <dl>
      *         <dt>Starting</dt>
@@ -1495,7 +1495,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * A detailed description of the progress within a secondary status.
      * </p>
      * <p>
-     * Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     * SageMaker provides secondary statuses and status messages that apply to each of them:
      * </p>
      * <dl>
      * <dt>Starting</dt>
@@ -1576,7 +1576,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * @param statusMessage
      *        A detailed description of the progress within a secondary status. </p>
      *        <p>
-     *        Amazon SageMaker provides secondary statuses and status messages that apply to each of them:
+     *        SageMaker provides secondary statuses and status messages that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>Starting</dt>

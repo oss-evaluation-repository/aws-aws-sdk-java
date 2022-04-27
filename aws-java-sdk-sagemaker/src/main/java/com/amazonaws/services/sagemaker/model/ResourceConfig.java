@@ -54,12 +54,12 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     * SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      * </p>
      * </note> <note>
      * <p>
      * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
-     * using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2
+     * using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2
      * storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
      * storage.
      * </p>
@@ -74,8 +74,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
     private Integer volumeSizeInGB;
     /**
      * <p>
-     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the training job.
+     * The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -231,12 +231,12 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     * SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      * </p>
      * </note> <note>
      * <p>
      * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
-     * using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2
+     * using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2
      * storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
      * storage.
      * </p>
@@ -260,14 +260,14 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     *        SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      *        </p>
      *        </note> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
-     *        type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead
-     *        of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     *        the local instance storage.
+     *        type. When using these instances for training, SageMaker mounts the local instance storage instead of
+     *        Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the
+     *        local instance storage.
      *        </p>
      *        <p>
      *        For a list of instance types that support local instance storage, including the total size per instance
@@ -295,12 +295,12 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     * SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      * </p>
      * </note> <note>
      * <p>
      * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
-     * using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2
+     * using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2
      * storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
      * storage.
      * </p>
@@ -323,13 +323,13 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     *         SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      *         </p>
      *         </note> <note>
      *         <p>
      *         Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
-     *         type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead
-     *         of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of
+     *         type. When using these instances for training, SageMaker mounts the local instance storage instead of
+     *         Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of
      *         the local instance storage.
      *         </p>
      *         <p>
@@ -358,12 +358,12 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     * SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      * </p>
      * </note> <note>
      * <p>
      * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
-     * using these instances for training, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2
+     * using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2
      * storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
      * storage.
      * </p>
@@ -387,14 +387,14 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     *        SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
      *        </p>
      *        </note> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
-     *        type. When using these instances for training, Amazon SageMaker mounts the local instance storage instead
-     *        of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     *        the local instance storage.
+     *        type. When using these instances for training, SageMaker mounts the local instance storage instead of
+     *        Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the
+     *        local instance storage.
      *        </p>
      *        <p>
      *        For a list of instance types that support local instance storage, including the total size per instance
@@ -412,8 +412,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the training job.
+     * The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -455,8 +455,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
-     *        to the ML compute instance(s) that run the training job.</p> <note>
+     *        The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the
+     *        ML compute instance(s) that run the training job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
@@ -501,8 +501,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the training job.
+     * The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -543,8 +543,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
-     *         to the ML compute instance(s) that run the training job.</p> <note>
+     * @return The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the
+     *         ML compute instance(s) that run the training job.</p> <note>
      *         <p>
      *         Certain Nitro-based instances include local storage, dependent on the instance type. Local storage
      *         volumes are encrypted using a hardware module on the instance. You can't request a
@@ -589,8 +589,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the training job.
+     * The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -632,8 +632,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
-     *        to the ML compute instance(s) that run the training job.</p> <note>
+     *        The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the
+     *        ML compute instance(s) that run the training job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>

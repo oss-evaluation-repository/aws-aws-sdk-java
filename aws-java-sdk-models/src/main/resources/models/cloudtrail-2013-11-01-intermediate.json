@@ -108,7 +108,7 @@
       "asyncReturnType" : "AddTagsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>",
+      "documentation" : "<p>Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web Services Regions only from the Region in which the trail or event data store was created (also known as its home region).</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -139,7 +139,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EventDataStoreNotFoundException",
@@ -155,11 +155,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -169,7 +169,7 @@
         "variableDeclarationType" : "AddTagsRequest",
         "variableName" : "addTagsRequest",
         "variableType" : "AddTagsRequest",
-        "documentation" : "<p>Specifies the tags to add to a trail.</p>",
+        "documentation" : "<p>Specifies the tags to add to a trail or event data store.</p>",
         "simpleType" : "AddTagsRequest",
         "variableSetterType" : "AddTagsRequest"
       },
@@ -204,7 +204,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveQueryException",
@@ -228,7 +228,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -289,7 +289,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudTrailAccessNotEnabledException",
@@ -297,11 +297,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationsNotInUseException",
@@ -309,7 +309,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationNotInAllFeaturesModeException",
-        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -438,11 +438,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationsNotInUseException",
@@ -450,7 +450,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationNotInAllFeaturesModeException",
-        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudTrailInvalidClientTokenIdException",
@@ -458,7 +458,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -519,11 +519,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -580,15 +580,15 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+        "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -633,7 +633,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -894,7 +894,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidMaxResultsException",
@@ -1159,11 +1159,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidDateRangeException",
-        "documentation" : "<p>A date range for the query was specified that is not valid. For more information about writing a query, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html\">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>",
+        "documentation" : "<p>A date range for the query was specified that is not valid. Be sure that the start time is chronologically before the end time. For more information about writing a query, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html\">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidMaxResultsException",
@@ -1217,7 +1217,7 @@
       "asyncReturnType" : "ListTagsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the tags for the trail in the current region.</p>",
+      "documentation" : "<p>Lists the tags for the trail or event data store in the current region.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1240,7 +1240,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EventDataStoreNotFoundException",
@@ -1266,7 +1266,7 @@
         "variableDeclarationType" : "ListTagsRequest",
         "variableName" : "listTagsRequest",
         "variableType" : "ListTagsRequest",
-        "documentation" : "<p>Specifies a list of trail tags to return.</p>",
+        "documentation" : "<p>Specifies a list of tags to return.</p>",
         "simpleType" : "ListTagsRequest",
         "variableSetterType" : "ListTagsRequest"
       },
@@ -1419,11 +1419,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1500,7 +1500,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1530,7 +1530,7 @@
       "asyncReturnType" : "RemoveTagsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Removes the specified tags from a trail.</p>",
+      "documentation" : "<p>Removes the specified tags from a trail or event data store.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1557,7 +1557,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EventDataStoreNotFoundException",
@@ -1573,7 +1573,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1583,7 +1583,7 @@
         "variableDeclarationType" : "RemoveTagsRequest",
         "variableName" : "removeTagsRequest",
         "variableType" : "RemoveTagsRequest",
-        "documentation" : "<p>Specifies the tags to remove from a trail.</p>",
+        "documentation" : "<p>Specifies the tags to remove from a trail or event data store.</p>",
         "simpleType" : "RemoveTagsRequest",
         "variableSetterType" : "RemoveTagsRequest"
       },
@@ -1642,7 +1642,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationsNotInUseException",
@@ -1650,11 +1650,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationNotInAllFeaturesModeException",
-        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1711,11 +1711,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1760,7 +1760,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -1837,11 +1837,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1886,7 +1886,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InactiveEventDataStoreException",
-        "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+        "documentation" : "<p>The event data store is inactive.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -1906,7 +1906,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationsNotInUseException",
@@ -1914,11 +1914,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationNotInAllFeaturesModeException",
-        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2047,7 +2047,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
-        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationsNotInUseException",
@@ -2055,11 +2055,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotOrganizationMasterAccountException",
-        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationNotInAllFeaturesModeException",
-        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudTrailInvalidClientTokenIdException",
@@ -2097,7 +2097,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Specifies the tags to add to a trail.</p>",
+      "documentation" : "<p>Specifies the tags to add to a trail or event data store.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -2119,12 +2119,12 @@
         "c2jName" : "ResourceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+        "documentation" : "<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceId",
-        "getterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "getterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
         "getterMethodName" : "getResourceId",
         "getterModel" : {
           "returnType" : "String",
@@ -2158,7 +2158,7 @@
         "marshallingType" : "STRING",
         "name" : "ResourceId",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "setterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
           "timestampFormat" : null,
@@ -2173,13 +2173,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceId",
           "variableType" : "String",
-          "documentation" : "<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2343,12 +2343,12 @@
           "c2jName" : "ResourceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceId",
-          "getterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "getterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
           "getterMethodName" : "getResourceId",
           "getterModel" : {
             "returnType" : "String",
@@ -2382,7 +2382,7 @@
           "marshallingType" : "STRING",
           "name" : "ResourceId",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "setterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2397,13 +2397,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceId",
             "variableType" : "String",
-            "documentation" : "<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+            "documentation" : "<p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5967,7 +5967,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
+      "documentation" : "<p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConflictException",
@@ -17545,13 +17545,13 @@
       }, {
         "c2jName" : "TerminationProtectionEnabled",
         "c2jShape" : "TerminationProtectionEnabled",
-        "deprecated" : false,
-        "documentation" : "<p>Indicates whether the event data store is protected from termination.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTerminationProtectionEnabled",
-        "getterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@return Indicates whether the event data store is protected from termination.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@return This field is being deprecated. Indicates whether the event data store is protected from termination.*/",
         "getterMethodName" : "getTerminationProtectionEnabled",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -17585,7 +17585,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "TerminationProtectionEnabled",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.*/",
         "setterMethodName" : "setTerminationProtectionEnabled",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17600,13 +17600,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "terminationProtectionEnabled",
           "variableType" : "Boolean",
-          "documentation" : "<p>Indicates whether the event data store is protected from termination.</p>",
+          "documentation" : "<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -17614,13 +17614,13 @@
       }, {
         "c2jName" : "Status",
         "c2jShape" : "EventDataStoreStatus",
-        "deprecated" : false,
-        "documentation" : "<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "EventDataStoreStatus",
-        "fluentSetterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
         "fluentSetterMethodName" : "withStatus",
-        "getterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@return The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@return This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
         "getterMethodName" : "getStatus",
         "getterModel" : {
           "returnType" : "String",
@@ -17654,7 +17654,7 @@
         "marshallingType" : "STRING",
         "name" : "Status",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17669,13 +17669,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
-          "documentation" : "<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
+          "documentation" : "<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -17683,13 +17683,13 @@
       }, {
         "c2jName" : "AdvancedEventSelectors",
         "c2jShape" : "AdvancedEventSelectors",
-        "deprecated" : false,
-        "documentation" : "<p>The advanced event selectors that were used to select events for the data store.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAdvancedEventSelectors",
-        "getterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@return The advanced event selectors that were used to select events for the data store.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@return This field is being deprecated. The advanced event selectors that were used to select events for the data store.*/",
         "getterMethodName" : "getAdvancedEventSelectors",
         "getterModel" : {
           "returnType" : "java.util.List<AdvancedEventSelector>",
@@ -17807,7 +17807,7 @@
         "marshallingType" : "LIST",
         "name" : "AdvancedEventSelectors",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.*/",
         "setterMethodName" : "setAdvancedEventSelectors",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17822,13 +17822,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdvancedEventSelectors(java.util.Collection)} or {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdvancedEventSelectors(java.util.Collection)} or {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>",
           "variableName" : "advancedEventSelectors",
           "variableType" : "java.util.List<AdvancedEventSelector>",
-          "documentation" : "<p>The advanced event selectors that were used to select events for the data store.</p>",
+          "documentation" : "<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>",
           "simpleType" : "List<AdvancedEventSelector>",
           "variableSetterType" : "java.util.Collection<AdvancedEventSelector>"
         },
@@ -17836,13 +17836,13 @@
       }, {
         "c2jName" : "MultiRegionEnabled",
         "c2jShape" : "Boolean",
-        "deprecated" : false,
-        "documentation" : "<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMultiRegionEnabled",
-        "getterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@return Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@return This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
         "getterMethodName" : "getMultiRegionEnabled",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -17876,7 +17876,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "MultiRegionEnabled",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
         "setterMethodName" : "setMultiRegionEnabled",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17891,13 +17891,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "multiRegionEnabled",
           "variableType" : "Boolean",
-          "documentation" : "<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
+          "documentation" : "<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -17905,13 +17905,13 @@
       }, {
         "c2jName" : "OrganizationEnabled",
         "c2jShape" : "Boolean",
-        "deprecated" : false,
-        "documentation" : "<p>Indicates that an event data store is collecting logged events for an organization.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withOrganizationEnabled",
-        "getterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@return Indicates that an event data store is collecting logged events for an organization.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@return This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.*/",
         "getterMethodName" : "getOrganizationEnabled",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -17945,7 +17945,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "OrganizationEnabled",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.*/",
         "setterMethodName" : "setOrganizationEnabled",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17960,13 +17960,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "organizationEnabled",
           "variableType" : "Boolean",
-          "documentation" : "<p>Indicates that an event data store is collecting logged events for an organization.</p>",
+          "documentation" : "<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -17974,13 +17974,13 @@
       }, {
         "c2jName" : "RetentionPeriod",
         "c2jShape" : "RetentionPeriod",
-        "deprecated" : false,
-        "documentation" : "<p>The retention period, in days.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. The retention period, in days.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRetentionPeriod",
-        "getterDocumentation" : "/**<p>The retention period, in days.</p>\n@return The retention period, in days.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@return This field is being deprecated. The retention period, in days.*/",
         "getterMethodName" : "getRetentionPeriod",
         "getterModel" : {
           "returnType" : "Integer",
@@ -18014,7 +18014,7 @@
         "marshallingType" : "INTEGER",
         "name" : "RetentionPeriod",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.*/",
         "setterMethodName" : "setRetentionPeriod",
         "setterModel" : {
           "timestampFormat" : null,
@@ -18029,13 +18029,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "retentionPeriod",
           "variableType" : "Integer",
-          "documentation" : "<p>The retention period, in days.</p>",
+          "documentation" : "<p>This field is being deprecated. The retention period, in days.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -18043,13 +18043,13 @@
       }, {
         "c2jName" : "CreatedTimestamp",
         "c2jShape" : "Date",
-        "deprecated" : false,
-        "documentation" : "<p>The timestamp of the event data store's creation.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. The timestamp of the event data store's creation.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCreatedTimestamp",
-        "getterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@return The timestamp of the event data store's creation.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@return This field is being deprecated. The timestamp of the event data store's creation.*/",
         "getterMethodName" : "getCreatedTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -18083,7 +18083,7 @@
         "marshallingType" : "DATE",
         "name" : "CreatedTimestamp",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.*/",
         "setterMethodName" : "setCreatedTimestamp",
         "setterModel" : {
           "timestampFormat" : null,
@@ -18098,13 +18098,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdTimestamp",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>The timestamp of the event data store's creation.</p>",
+          "documentation" : "<p>This field is being deprecated. The timestamp of the event data store's creation.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -18112,13 +18112,13 @@
       }, {
         "c2jName" : "UpdatedTimestamp",
         "c2jShape" : "Date",
-        "deprecated" : false,
-        "documentation" : "<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withUpdatedTimestamp",
-        "getterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@return The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
+        "getterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@return This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
         "getterMethodName" : "getUpdatedTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -18152,7 +18152,7 @@
         "marshallingType" : "DATE",
         "name" : "UpdatedTimestamp",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
+        "setterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
         "setterMethodName" : "setUpdatedTimestamp",
         "setterModel" : {
           "timestampFormat" : null,
@@ -18167,13 +18167,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedTimestamp",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
+          "documentation" : "<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -18183,13 +18183,13 @@
         "AdvancedEventSelectors" : {
           "c2jName" : "AdvancedEventSelectors",
           "c2jShape" : "AdvancedEventSelectors",
-          "deprecated" : false,
-          "documentation" : "<p>The advanced event selectors that were used to select events for the data store.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAdvancedEventSelectors",
-          "getterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@return The advanced event selectors that were used to select events for the data store.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@return This field is being deprecated. The advanced event selectors that were used to select events for the data store.*/",
           "getterMethodName" : "getAdvancedEventSelectors",
           "getterModel" : {
             "returnType" : "java.util.List<AdvancedEventSelector>",
@@ -18307,7 +18307,7 @@
           "marshallingType" : "LIST",
           "name" : "AdvancedEventSelectors",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.*/",
           "setterMethodName" : "setAdvancedEventSelectors",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18322,13 +18322,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The advanced event selectors that were used to select events for the data store.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdvancedEventSelectors(java.util.Collection)} or {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param advancedEventSelectors The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdvancedEventSelectors(java.util.Collection)} or {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param advancedEventSelectors This field is being deprecated. The advanced event selectors that were used to select events for the data store.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>",
             "variableName" : "advancedEventSelectors",
             "variableType" : "java.util.List<AdvancedEventSelector>",
-            "documentation" : "<p>The advanced event selectors that were used to select events for the data store.</p>",
+            "documentation" : "<p>This field is being deprecated. The advanced event selectors that were used to select events for the data store.</p>",
             "simpleType" : "List<AdvancedEventSelector>",
             "variableSetterType" : "java.util.Collection<AdvancedEventSelector>"
           },
@@ -18337,13 +18337,13 @@
         "CreatedTimestamp" : {
           "c2jName" : "CreatedTimestamp",
           "c2jShape" : "Date",
-          "deprecated" : false,
-          "documentation" : "<p>The timestamp of the event data store's creation.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. The timestamp of the event data store's creation.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCreatedTimestamp",
-          "getterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@return The timestamp of the event data store's creation.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@return This field is being deprecated. The timestamp of the event data store's creation.*/",
           "getterMethodName" : "getCreatedTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -18377,7 +18377,7 @@
           "marshallingType" : "DATE",
           "name" : "CreatedTimestamp",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.*/",
           "setterMethodName" : "setCreatedTimestamp",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18392,13 +18392,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The timestamp of the event data store's creation.</p>\n@param createdTimestamp The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp of the event data store's creation.</p>\n@param createdTimestamp This field is being deprecated. The timestamp of the event data store's creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdTimestamp",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>The timestamp of the event data store's creation.</p>",
+            "documentation" : "<p>This field is being deprecated. The timestamp of the event data store's creation.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -18477,13 +18477,13 @@
         "MultiRegionEnabled" : {
           "c2jName" : "MultiRegionEnabled",
           "c2jShape" : "Boolean",
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMultiRegionEnabled",
-          "getterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@return Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@return This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
           "getterMethodName" : "getMultiRegionEnabled",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -18517,7 +18517,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "MultiRegionEnabled",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.*/",
           "setterMethodName" : "setMultiRegionEnabled",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18532,13 +18532,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>\n@param multiRegionEnabled This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "multiRegionEnabled",
             "variableType" : "Boolean",
-            "documentation" : "<p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
+            "documentation" : "<p>This field is being deprecated. Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -18617,13 +18617,13 @@
         "OrganizationEnabled" : {
           "c2jName" : "OrganizationEnabled",
           "c2jShape" : "Boolean",
-          "deprecated" : false,
-          "documentation" : "<p>Indicates that an event data store is collecting logged events for an organization.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withOrganizationEnabled",
-          "getterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@return Indicates that an event data store is collecting logged events for an organization.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@return This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.*/",
           "getterMethodName" : "getOrganizationEnabled",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -18657,7 +18657,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "OrganizationEnabled",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.*/",
           "setterMethodName" : "setOrganizationEnabled",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18672,13 +18672,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>\n@param organizationEnabled This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "organizationEnabled",
             "variableType" : "Boolean",
-            "documentation" : "<p>Indicates that an event data store is collecting logged events for an organization.</p>",
+            "documentation" : "<p>This field is being deprecated. Indicates that an event data store is collecting logged events for an organization.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -18687,13 +18687,13 @@
         "RetentionPeriod" : {
           "c2jName" : "RetentionPeriod",
           "c2jShape" : "RetentionPeriod",
-          "deprecated" : false,
-          "documentation" : "<p>The retention period, in days.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. The retention period, in days.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRetentionPeriod",
-          "getterDocumentation" : "/**<p>The retention period, in days.</p>\n@return The retention period, in days.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@return This field is being deprecated. The retention period, in days.*/",
           "getterMethodName" : "getRetentionPeriod",
           "getterModel" : {
             "returnType" : "Integer",
@@ -18727,7 +18727,7 @@
           "marshallingType" : "INTEGER",
           "name" : "RetentionPeriod",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.*/",
           "setterMethodName" : "setRetentionPeriod",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18742,13 +18742,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The retention period, in days.</p>\n@param retentionPeriod The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. The retention period, in days.</p>\n@param retentionPeriod This field is being deprecated. The retention period, in days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "retentionPeriod",
             "variableType" : "Integer",
-            "documentation" : "<p>The retention period, in days.</p>",
+            "documentation" : "<p>This field is being deprecated. The retention period, in days.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -18757,13 +18757,13 @@
         "Status" : {
           "c2jName" : "Status",
           "c2jShape" : "EventDataStoreStatus",
-          "deprecated" : false,
-          "documentation" : "<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "EventDataStoreStatus",
-          "fluentSetterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
           "fluentSetterMethodName" : "withStatus",
-          "getterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@return The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@return This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
           "getterMethodName" : "getStatus",
           "getterModel" : {
             "returnType" : "String",
@@ -18797,7 +18797,7 @@
           "marshallingType" : "STRING",
           "name" : "Status",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@see EventDataStoreStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18812,13 +18812,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>\n@param status This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventDataStoreStatus*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
-            "documentation" : "<p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
+            "documentation" : "<p>This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -18827,13 +18827,13 @@
         "TerminationProtectionEnabled" : {
           "c2jName" : "TerminationProtectionEnabled",
           "c2jShape" : "TerminationProtectionEnabled",
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether the event data store is protected from termination.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTerminationProtectionEnabled",
-          "getterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@return Indicates whether the event data store is protected from termination.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@return This field is being deprecated. Indicates whether the event data store is protected from termination.*/",
           "getterMethodName" : "getTerminationProtectionEnabled",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -18867,7 +18867,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "TerminationProtectionEnabled",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.*/",
           "setterMethodName" : "setTerminationProtectionEnabled",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18882,13 +18882,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>\n@param terminationProtectionEnabled This field is being deprecated. Indicates whether the event data store is protected from termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "terminationProtectionEnabled",
             "variableType" : "Boolean",
-            "documentation" : "<p>Indicates whether the event data store is protected from termination.</p>",
+            "documentation" : "<p>This field is being deprecated. Indicates whether the event data store is protected from termination.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -18897,13 +18897,13 @@
         "UpdatedTimestamp" : {
           "c2jName" : "UpdatedTimestamp",
           "c2jShape" : "Date",
-          "deprecated" : false,
-          "documentation" : "<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withUpdatedTimestamp",
-          "getterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@return The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
+          "getterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@return This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
           "getterMethodName" : "getUpdatedTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -18937,7 +18937,7 @@
           "marshallingType" : "DATE",
           "name" : "UpdatedTimestamp",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
+          "setterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.*/",
           "setterMethodName" : "setUpdatedTimestamp",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18952,13 +18952,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>\n@param updatedTimestamp This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedTimestamp",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
+            "documentation" : "<p>This field is being deprecated. The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -28464,7 +28464,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The event data store against which you ran your query is inactive.</p>",
+      "documentation" : "<p>The event data store is inactive.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InactiveEventDataStoreException",
@@ -28821,7 +28821,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InsufficientDependencyServiceAccessPermissionException",
@@ -29067,7 +29067,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A date range for the query was specified that is not valid. For more information about writing a query, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html\">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>",
+      "documentation" : "<p>A date range for the query was specified that is not valid. Be sure that the start time is chronologically before the end time. For more information about writing a query, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html\">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidDateRangeException",
@@ -33200,7 +33200,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Specifies a list of trail tags to return.</p>",
+      "documentation" : "<p>Specifies a list of tags to return.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -33222,12 +33222,12 @@
         "c2jName" : "ResourceIdList",
         "c2jShape" : "ResourceIdList",
         "deprecated" : false,
-        "documentation" : "<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+        "documentation" : "<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceIdList",
-        "getterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "getterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@return Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.*/",
         "getterMethodName" : "getResourceIdList",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -33345,7 +33345,7 @@
         "marshallingType" : "LIST",
         "name" : "ResourceIdList",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "setterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.*/",
         "setterMethodName" : "setResourceIdList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -33360,13 +33360,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "resourceIdList",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -33516,12 +33516,12 @@
           "c2jName" : "ResourceIdList",
           "c2jShape" : "ResourceIdList",
           "deprecated" : false,
-          "documentation" : "<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceIdList",
-          "getterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "getterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@return Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.*/",
           "getterMethodName" : "getResourceIdList",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -33639,7 +33639,7 @@
           "marshallingType" : "LIST",
           "name" : "ResourceIdList",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "setterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.*/",
           "setterMethodName" : "setResourceIdList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -33654,13 +33654,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIdList Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIdList Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "resourceIdList",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+            "documentation" : "<p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -36880,7 +36880,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "documentation" : "<p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a> or <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html\">Create an event data store</a>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotOrganizationMasterAccountException",
@@ -36962,7 +36962,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "documentation" : "<p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "OrganizationNotInAllFeaturesModeException",
@@ -42051,7 +42051,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Specifies the tags to remove from a trail.</p>",
+      "documentation" : "<p>Specifies the tags to remove from a trail or event data store.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -42073,12 +42073,12 @@
         "c2jName" : "ResourceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+        "documentation" : "<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceId",
-        "getterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "getterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@return Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>*/",
         "getterMethodName" : "getResourceId",
         "getterModel" : {
           "returnType" : "String",
@@ -42112,7 +42112,7 @@
         "marshallingType" : "STRING",
         "name" : "ResourceId",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+        "setterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
           "timestampFormat" : null,
@@ -42127,13 +42127,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceId",
           "variableType" : "String",
-          "documentation" : "<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -42297,12 +42297,12 @@
           "c2jName" : "ResourceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+          "documentation" : "<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceId",
-          "getterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@return Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "getterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@return Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>*/",
           "getterMethodName" : "getResourceId",
           "getterModel" : {
             "returnType" : "String",
@@ -42336,7 +42336,7 @@
           "marshallingType" : "STRING",
           "name" : "ResourceId",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>*/",
+          "setterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
             "timestampFormat" : null,
@@ -42351,13 +42351,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>\n@param resourceId Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>\n@param resourceId Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceId",
             "variableType" : "String",
-            "documentation" : "<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+            "documentation" : "<p>Specifies the ARN of the trail or event data store from which tags should be removed.</p> <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

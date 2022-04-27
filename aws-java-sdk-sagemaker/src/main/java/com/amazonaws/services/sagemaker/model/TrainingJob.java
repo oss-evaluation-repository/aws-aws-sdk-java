@@ -111,7 +111,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -246,7 +246,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Channel> inputDataConfig;
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      */
@@ -268,13 +268,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -297,8 +297,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      */
     private java.util.Date trainingEndTime;
@@ -978,7 +977,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1085,7 +1084,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -1199,7 +1198,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1305,7 +1304,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      *         secondary status of the training job, see <code>StatusMessage</code> under
      *         <a>SecondaryStatusTransition</a>.</p>
      *         <p>
-     *         Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *         SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *         </p>
      *         <dl>
      *         <dt>InProgress</dt>
@@ -1419,7 +1418,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1526,7 +1525,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -1642,7 +1641,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
      * </p>
      * <p>
-     * Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     * SageMaker provides primary statuses and secondary statuses that apply to each of them:
      * </p>
      * <dl>
      * <dt>InProgress</dt>
@@ -1749,7 +1748,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      *        secondary status of the training job, see <code>StatusMessage</code> under
      *        <a>SecondaryStatusTransition</a>.</p>
      *        <p>
-     *        Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:
+     *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
      *        <dl>
      *        <dt>InProgress</dt>
@@ -2119,13 +2118,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *        creates subfolders for model artifacts.
+     *        The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *        subfolders for model artifacts.
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -2134,12 +2133,12 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
-     * @return The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *         creates subfolders for model artifacts.
+     * @return The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *         subfolders for model artifacts.
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -2148,13 +2147,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates
+     * The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
      * subfolders for model artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker
-     *        creates subfolders for model artifacts.
+     *        The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates
+     *        subfolders for model artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2258,23 +2257,23 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     *        Use this API to cap model training costs.</p>
+     *        training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *        this API to cap model training costs.</p>
      *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
-     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
-     *        results of training are not lost.
+     *        To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     *        for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     *        training are not lost.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -2284,20 +2283,20 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @return Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *         training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training
-     *         job. Use this API to cap model training costs.</p>
+     *         training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *         this API to cap model training costs.</p>
      *         <p>
-     *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *         To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
      *         the results of training are not lost.
      */
@@ -2309,23 +2308,23 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
-     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.
+     * job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.
      * </p>
      * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
-     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
-     * training are not lost.
+     * To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
+     * 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training
+     * are not lost.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
-     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     *        Use this API to cap model training costs.</p>
+     *        training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use
+     *        this API to cap model training costs.</p>
      *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
-     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
-     *        results of training are not lost.
+     *        To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     *        for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     *        training are not lost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2436,15 +2435,14 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Indicates the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      */
 
     public void setTrainingEndTime(java.util.Date trainingEndTime) {
@@ -2455,14 +2453,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @return Indicates the time when the training job ends on training instances. You are billed for the time interval
      *         between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *         SageMaker detects a job failure.
+     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *         detects a job failure.
      */
 
     public java.util.Date getTrainingEndTime() {
@@ -2473,15 +2470,14 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Indicates the time when the training job ends on training instances. You are billed for the time interval between
      * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
-     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-     * failure.
+     * after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
      * </p>
      * 
      * @param trainingEndTime
      *        Indicates the time when the training job ends on training instances. You are billed for the time interval
      *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
-     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     *        SageMaker detects a job failure.
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     *        detects a job failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

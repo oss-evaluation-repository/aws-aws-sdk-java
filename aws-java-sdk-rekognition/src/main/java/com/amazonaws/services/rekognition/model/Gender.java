@@ -33,8 +33,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * users compared to male users on a social media platform.
  * </p>
  * <p>
- * We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights,
- * privacy, or access to services.
+ * We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or
+ * access to services.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

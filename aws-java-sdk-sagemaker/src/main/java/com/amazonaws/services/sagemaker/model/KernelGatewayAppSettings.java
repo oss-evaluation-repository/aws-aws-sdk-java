@@ -33,6 +33,13 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
      * KernelGateway app.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
+     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
+     * Services CloudFormation and the instance type parameter value is not passed.
+     * </p>
+     * </note>
      */
     private ResourceSpec defaultResourceSpec;
     /**
@@ -45,6 +52,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <p>
      * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      */
     private java.util.List<String> lifecycleConfigArns;
 
@@ -53,10 +65,22 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
      * KernelGateway app.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
+     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
+     * Services CloudFormation and the instance type parameter value is not passed.
+     * </p>
+     * </note>
      * 
      * @param defaultResourceSpec
      *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *        KernelGateway app.
+     *        KernelGateway app.</p> <note>
+     *        <p>
+     *        The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance
+     *        type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon
+     *        Web Services CloudFormation and the instance type parameter value is not passed.
+     *        </p>
      */
 
     public void setDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
@@ -68,9 +92,21 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
      * KernelGateway app.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
+     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
+     * Services CloudFormation and the instance type parameter value is not passed.
+     * </p>
+     * </note>
      * 
      * @return The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *         KernelGateway app.
+     *         KernelGateway app.</p> <note>
+     *         <p>
+     *         The Amazon SageMaker Studio UI does not use the default instance type value set here. The default
+     *         instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface
+     *         or Amazon Web Services CloudFormation and the instance type parameter value is not passed.
+     *         </p>
      */
 
     public ResourceSpec getDefaultResourceSpec() {
@@ -82,10 +118,22 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
      * KernelGateway app.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
+     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
+     * Services CloudFormation and the instance type parameter value is not passed.
+     * </p>
+     * </note>
      * 
      * @param defaultResourceSpec
      *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
-     *        KernelGateway app.
+     *        KernelGateway app.</p> <note>
+     *        <p>
+     *        The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance
+     *        type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon
+     *        Web Services CloudFormation and the instance type parameter value is not passed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,9 +216,17 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <p>
      * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or
-     *         domain.
+     *         domain.</p> <note>
+     *         <p>
+     *         To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *         </p>
      */
 
     public java.util.List<String> getLifecycleConfigArns() {
@@ -181,9 +237,18 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <p>
      * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or
+     *        domain.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      */
 
     public void setLifecycleConfigArns(java.util.Collection<String> lifecycleConfigArns) {
@@ -199,6 +264,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <p>
      * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLifecycleConfigArns(java.util.Collection)} or {@link #withLifecycleConfigArns(java.util.Collection)}
@@ -206,7 +276,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or
+     *        domain.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,9 +298,18 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <p>
      * The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
      * </p>
+     * <note>
+     * <p>
+     * To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     * </p>
+     * </note>
      * 
      * @param lifecycleConfigArns
-     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.
+     *        The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or
+     *        domain.</p> <note>
+     *        <p>
+     *        To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

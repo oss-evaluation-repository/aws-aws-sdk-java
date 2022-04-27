@@ -26,8 +26,8 @@ public class ListNotebookInstanceLifecycleConfigsResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
-     * configurations, use it in the next request.
+     * If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use
+     * it in the next request.
      * </p>
      */
     private String nextToken;
@@ -40,12 +40,12 @@ public class ListNotebookInstanceLifecycleConfigsResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
-     * configurations, use it in the next request.
+     * If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use
+     * it in the next request.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
+     *        If the response is truncated, SageMaker returns this token. To get the next set of lifecycle
      *        configurations, use it in the next request.
      */
 
@@ -55,11 +55,11 @@ public class ListNotebookInstanceLifecycleConfigsResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
-     * configurations, use it in the next request.
+     * If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use
+     * it in the next request.
      * </p>
      * 
-     * @return If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
+     * @return If the response is truncated, SageMaker returns this token. To get the next set of lifecycle
      *         configurations, use it in the next request.
      */
 
@@ -69,12 +69,12 @@ public class ListNotebookInstanceLifecycleConfigsResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
-     * configurations, use it in the next request.
+     * If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use
+     * it in the next request.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle
+     *        If the response is truncated, SageMaker returns this token. To get the next set of lifecycle
      *        configurations, use it in the next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

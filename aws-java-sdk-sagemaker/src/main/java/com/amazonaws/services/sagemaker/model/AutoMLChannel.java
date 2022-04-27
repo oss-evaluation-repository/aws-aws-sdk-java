@@ -19,8 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A channel is a named input source that training algorithms can consume. For more information, see .
+ * A channel is a named input source that training algorithms can consume. The validation dataset size is limited to
+ * less than 2 GB. The training dataset size must be less than 100 GB. For more information, see .
  * </p>
+ * <note>
+ * <p>
+ * A validation dataset must contain the same headers as the training dataset.
+ * </p>
+ * </note>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel" target="_top">AWS API
  *      Documentation</a>
@@ -53,6 +60,13 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String contentType;
+    /**
+     * <p>
+     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
+     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * </p>
+     */
+    private String channelType;
 
     /**
      * <p>
@@ -240,6 +254,74 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
+     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * </p>
+     * 
+     * @param channelType
+     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
+     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * @see AutoMLChannelType
+     */
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    /**
+     * <p>
+     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
+     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * </p>
+     * 
+     * @return The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
+     *         training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>
+     *         .
+     * @see AutoMLChannelType
+     */
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    /**
+     * <p>
+     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
+     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * </p>
+     * 
+     * @param channelType
+     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
+     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLChannelType
+     */
+
+    public AutoMLChannel withChannelType(String channelType) {
+        setChannelType(channelType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for training
+     * and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * </p>
+     * 
+     * @param channelType
+     *        The channel type (optional) is an enum string. The default value is <code>training</code>. Channels for
+     *        training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLChannelType
+     */
+
+    public AutoMLChannel withChannelType(AutoMLChannelType channelType) {
+        this.channelType = channelType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -258,7 +340,9 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
         if (getTargetAttributeName() != null)
             sb.append("TargetAttributeName: ").append(getTargetAttributeName()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: ").append(getContentType());
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getChannelType() != null)
+            sb.append("ChannelType: ").append(getChannelType());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +373,10 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
+        if (other.getChannelType() == null ^ this.getChannelType() == null)
+            return false;
+        if (other.getChannelType() != null && other.getChannelType().equals(this.getChannelType()) == false)
+            return false;
         return true;
     }
 
@@ -301,6 +389,7 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         hashCode = prime * hashCode + ((getTargetAttributeName() == null) ? 0 : getTargetAttributeName().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getChannelType() == null) ? 0 : getChannelType().hashCode());
         return hashCode;
     }
 

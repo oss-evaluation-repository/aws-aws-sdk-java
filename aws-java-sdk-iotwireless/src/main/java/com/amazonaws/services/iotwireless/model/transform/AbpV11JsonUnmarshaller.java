@@ -56,6 +56,10 @@ public class AbpV11JsonUnmarshaller implements Unmarshaller<AbpV11, JsonUnmarsha
                     context.nextToken();
                     abpV11.setSessionKeys(SessionKeysAbpV11JsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FCntStart", targetDepth)) {
+                    context.nextToken();
+                    abpV11.setFCntStart(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

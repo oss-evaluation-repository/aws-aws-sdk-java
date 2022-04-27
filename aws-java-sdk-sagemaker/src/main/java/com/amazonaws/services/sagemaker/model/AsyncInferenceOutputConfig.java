@@ -30,8 +30,8 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the asynchronous inference output in Amazon S3.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * asynchronous inference output in Amazon S3.
      * </p>
      * <p/>
      */
@@ -51,13 +51,13 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the asynchronous inference output in Amazon S3.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * asynchronous inference output in Amazon S3.
      * </p>
      * <p/>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
      *        encrypt the asynchronous inference output in Amazon S3.
      *        </p>
      */
@@ -68,13 +68,13 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the asynchronous inference output in Amazon S3.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * asynchronous inference output in Amazon S3.
      * </p>
      * <p/>
      * 
-     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
-     *         to encrypt the asynchronous inference output in Amazon S3.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
+     *         encrypt the asynchronous inference output in Amazon S3.
      *         </p>
      */
 
@@ -84,13 +84,13 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt the asynchronous inference output in Amazon S3.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the
+     * asynchronous inference output in Amazon S3.
      * </p>
      * <p/>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to
      *        encrypt the asynchronous inference output in Amazon S3.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

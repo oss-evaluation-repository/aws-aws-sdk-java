@@ -49,7 +49,8 @@ public class DataIngestionJobSummary implements Serializable, Cloneable, Structu
     private String datasetArn;
     /**
      * <p>
-     * Specifies information for the input data for the data inference job, including data S3 location parameters.
+     * Specifies information for the input data for the data inference job, including data Amazon S3 location
+     * parameters.
      * </p>
      */
     private IngestionInputConfiguration ingestionInputConfiguration;
@@ -182,11 +183,12 @@ public class DataIngestionJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies information for the input data for the data inference job, including data S3 location parameters.
+     * Specifies information for the input data for the data inference job, including data Amazon S3 location
+     * parameters.
      * </p>
      * 
      * @param ingestionInputConfiguration
-     *        Specifies information for the input data for the data inference job, including data S3 location
+     *        Specifies information for the input data for the data inference job, including data Amazon S3 location
      *        parameters.
      */
 
@@ -196,10 +198,11 @@ public class DataIngestionJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies information for the input data for the data inference job, including data S3 location parameters.
+     * Specifies information for the input data for the data inference job, including data Amazon S3 location
+     * parameters.
      * </p>
      * 
-     * @return Specifies information for the input data for the data inference job, including data S3 location
+     * @return Specifies information for the input data for the data inference job, including data Amazon S3 location
      *         parameters.
      */
 
@@ -209,11 +212,12 @@ public class DataIngestionJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies information for the input data for the data inference job, including data S3 location parameters.
+     * Specifies information for the input data for the data inference job, including data Amazon S3 location
+     * parameters.
      * </p>
      * 
      * @param ingestionInputConfiguration
-     *        Specifies information for the input data for the data inference job, including data S3 location
+     *        Specifies information for the input data for the data inference job, including data Amazon S3 location
      *        parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

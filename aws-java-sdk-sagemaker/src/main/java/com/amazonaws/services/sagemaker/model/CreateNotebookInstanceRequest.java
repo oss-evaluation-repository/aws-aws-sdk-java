@@ -52,15 +52,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes
-     * this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com)
-     * permissions to assume this role. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this
+     * role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform
+     * these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to
+     * assume this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
@@ -68,10 +68,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String roleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
-     * For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
-     * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and
+     * Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -93,9 +93,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String lifecycleConfigName;
     /**
      * <p>
-     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
-     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
+     * connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -126,7 +126,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -138,7 +138,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -386,29 +386,29 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes
-     * this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com)
-     * permissions to assume this role. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this
+     * role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform
+     * these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to
+     * assume this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param roleArn
-     *        When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
-     *        assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so
-     *        Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes
+     *        this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can
+     *        perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com)
+     *        permissions to assume this role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      */
 
@@ -418,28 +418,28 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes
-     * this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com)
-     * permissions to assume this role. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this
+     * role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform
+     * these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to
+     * assume this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
-     * @return When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
-     *         assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so
-     *         Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *         (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *         </p> <note>
+     * @return When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes
+     *         this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker
+     *         can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com)
+     *         permissions to assume this role. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *         <note>
      *         <p>
-     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *         <code>iam:PassRole</code> permission.
+     *         To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *         permission.
      *         </p>
      */
 
@@ -449,29 +449,29 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes
-     * this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com)
-     * permissions to assume this role. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this
+     * role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform
+     * these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to
+     * assume this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
-     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.
      * </p>
      * </note>
      * 
      * @param roleArn
-     *        When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
-     *        assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so
-     *        Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
-     *        </p> <note>
+     *        When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes
+     *        this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can
+     *        perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com)
+     *        permissions to assume this role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
      *        <p>
-     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-     *        <code>iam:PassRole</code> permission.
+     *        To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     *        permission.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -483,16 +483,16 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
-     * For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
-     * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and
+     * Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *        uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide
-     *        must be enabled. For information, see <a
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be
+     *        enabled. For information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *        Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
@@ -503,15 +503,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
-     * For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
-     * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and
+     * Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *         uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide
-     *         must be enabled. For information, see <a
+     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *         encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be
+     *         enabled. For information, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *         Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
@@ -522,16 +522,16 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
-     * For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
-     * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
+     * data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and
+     * Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
-     *        uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide
-     *        must be enabled. For information, see <a
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
+     *        encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be
+     *        enabled. For information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *        Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -689,9 +689,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
-     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
+     * connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -701,10 +701,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param directInternetAccess
-     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
-     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
-     *        your VPC.</p>
+     *        able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your
+     *        VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -719,9 +719,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
-     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
+     * connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -730,10 +730,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      * 
-     * @return Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * @return Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      *         <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
-     *         able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
-     *         your VPC.</p>
+     *         able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your
+     *         VPC.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -748,9 +748,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
-     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
+     * connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -760,10 +760,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param directInternetAccess
-     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
-     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
-     *        your VPC.</p>
+     *        able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your
+     *        VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -780,9 +780,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
-     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
+     * connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -792,10 +792,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param directInternetAccess
-     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        Sets whether SageMaker provides internet access to the notebook instance. If you set this to
      *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
-     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
-     *        your VPC.</p>
+     *        able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your
+     *        VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -980,7 +980,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -991,7 +991,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setDefaultCodeRepository(String defaultCodeRepository) {
@@ -1005,7 +1005,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1015,7 +1015,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *         directory that contains this repository. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public String getDefaultCodeRepository() {
@@ -1029,7 +1029,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1040,7 +1040,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1056,7 +1056,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1066,7 +1066,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *         default repository of your notebook instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -1080,7 +1080,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1091,7 +1091,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
@@ -1110,7 +1110,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
@@ -1126,7 +1126,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1147,7 +1147,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -1158,7 +1158,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

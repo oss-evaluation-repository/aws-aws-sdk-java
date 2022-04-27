@@ -44,6 +44,12 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The instance type that the image version runs on.
      * </p>
+     * <note>
+     * <p>
+     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     * <code>system</code> value, but support all other values for available instance types.
+     * </p>
+     * </note>
      */
     private String instanceType;
     /**
@@ -137,9 +143,19 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The instance type that the image version runs on.
      * </p>
+     * <note>
+     * <p>
+     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     * <code>system</code> value, but support all other values for available instance types.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type that the image version runs on.
+     *        The instance type that the image version runs on.</p> <note>
+     *        <p>
+     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     *        <code>system</code> value, but support all other values for available instance types.
+     *        </p>
      * @see AppInstanceType
      */
 
@@ -151,8 +167,18 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The instance type that the image version runs on.
      * </p>
+     * <note>
+     * <p>
+     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     * <code>system</code> value, but support all other values for available instance types.
+     * </p>
+     * </note>
      * 
-     * @return The instance type that the image version runs on.
+     * @return The instance type that the image version runs on.</p> <note>
+     *         <p>
+     *         JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     *         <code>system</code> value, but support all other values for available instance types.
+     *         </p>
      * @see AppInstanceType
      */
 
@@ -164,9 +190,19 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The instance type that the image version runs on.
      * </p>
+     * <note>
+     * <p>
+     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     * <code>system</code> value, but support all other values for available instance types.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type that the image version runs on.
+     *        The instance type that the image version runs on.</p> <note>
+     *        <p>
+     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     *        <code>system</code> value, but support all other values for available instance types.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType
      */
@@ -180,9 +216,19 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The instance type that the image version runs on.
      * </p>
+     * <note>
+     * <p>
+     * JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     * <code>system</code> value, but support all other values for available instance types.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type that the image version runs on.
+     *        The instance type that the image version runs on.</p> <note>
+     *        <p>
+     *        JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the
+     *        <code>system</code> value, but support all other values for available instance types.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType
      */

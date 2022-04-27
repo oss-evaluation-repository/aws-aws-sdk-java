@@ -27,7 +27,7 @@ public class UpdateEndpointWeightsAndCapacitiesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of an existing Amazon SageMaker endpoint.
+     * The name of an existing SageMaker endpoint.
      * </p>
      */
     private String endpointName;
@@ -40,11 +40,11 @@ public class UpdateEndpointWeightsAndCapacitiesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of an existing Amazon SageMaker endpoint.
+     * The name of an existing SageMaker endpoint.
      * </p>
      * 
      * @param endpointName
-     *        The name of an existing Amazon SageMaker endpoint.
+     *        The name of an existing SageMaker endpoint.
      */
 
     public void setEndpointName(String endpointName) {
@@ -53,10 +53,10 @@ public class UpdateEndpointWeightsAndCapacitiesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of an existing Amazon SageMaker endpoint.
+     * The name of an existing SageMaker endpoint.
      * </p>
      * 
-     * @return The name of an existing Amazon SageMaker endpoint.
+     * @return The name of an existing SageMaker endpoint.
      */
 
     public String getEndpointName() {
@@ -65,11 +65,11 @@ public class UpdateEndpointWeightsAndCapacitiesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of an existing Amazon SageMaker endpoint.
+     * The name of an existing SageMaker endpoint.
      * </p>
      * 
      * @param endpointName
-     *        The name of an existing Amazon SageMaker endpoint.
+     *        The name of an existing SageMaker endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

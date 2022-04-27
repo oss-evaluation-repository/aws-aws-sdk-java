@@ -28,7 +28,7 @@ import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
  * </p>
  * <p>
  * <p>
- * Provides APIs for creating and managing Amazon SageMaker resources.
+ * Provides APIs for creating and managing SageMaker resources.
  * </p>
  * <p>
  * Other Resources:
@@ -36,8 +36,7 @@ import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
  * <ul>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon SageMaker Developer
- * Guide</a>
+ * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">SageMaker Developer Guide</a>
  * </p>
  * </li>
  * <li>
@@ -73,7 +72,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.AddAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation" target="_top">AWS API
@@ -83,9 +82,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook
-     * instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams,
-     * endpoint configurations, and endpoints.
+     * Adds or overwrites one or more tags for the specified SageMaker resource. You can add tags to notebook instances,
+     * training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint
+     * configurations, and endpoints.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
@@ -131,7 +130,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.AssociateTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent"
@@ -163,7 +162,7 @@ public interface AmazonSageMaker {
      * @param createActionRequest
      * @return Result of the CreateAction operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction" target="_top">AWS API
@@ -173,7 +172,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Create a machine learning algorithm that you can use in Amazon SageMaker and list in the Amazon Web Services
+     * Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services
      * Marketplace.
      * </p>
      * 
@@ -196,7 +195,7 @@ public interface AmazonSageMaker {
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -233,7 +232,7 @@ public interface AmazonSageMaker {
      * @param createArtifactRequest
      * @return Result of the CreateArtifact operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact" target="_top">AWS API
@@ -259,7 +258,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateAutoMLJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob" target="_top">AWS API
@@ -269,10 +268,10 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with
-     * notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a
-     * resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it
-     * persists independently from the lifecycle of any notebook instances it is associated with.
+     * Creates a Git repository as a resource in your SageMaker account. You can associate the repository with notebook
+     * instances so that you can use Git source control for the notebooks you create. The Git repository is a resource
+     * in your SageMaker account, so it can be associated with more than one notebook instance, and it persists
+     * independently from the lifecycle of any notebook instances it is associated with.
      * </p>
      * <p>
      * The repository can be hosted either in <a
@@ -339,7 +338,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateCompilationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob" target="_top">AWS
@@ -358,7 +357,7 @@ public interface AmazonSageMaker {
      * @param createContextRequest
      * @return Result of the CreateContext operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateContext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext" target="_top">AWS API
@@ -375,7 +374,7 @@ public interface AmazonSageMaker {
      * @param createDataQualityJobDefinitionRequest
      * @return Result of the CreateDataQualityJobDefinition operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -395,7 +394,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateDeviceFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet" target="_top">AWS
@@ -467,7 +466,7 @@ public interface AmazonSageMaker {
      * @param createDomainRequest
      * @return Result of the CreateDomain operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -487,7 +486,7 @@ public interface AmazonSageMaker {
      * @param createEdgePackagingJobRequest
      * @return Result of the CreateEdgePackagingJob operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateEdgePackagingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob"
@@ -497,16 +496,15 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker uses the endpoint
-     * to provision resources and deploy models. You create the endpoint configuration with the
-     * <a>CreateEndpointConfig</a> API.
+     * Creates an endpoint using the endpoint configuration specified in the request. SageMaker uses the endpoint to
+     * provision resources and deploy models. You create the endpoint configuration with the <a>CreateEndpointConfig</a>
+     * API.
      * </p>
      * <p>
-     * Use this API to deploy models using Amazon SageMaker hosting services.
+     * Use this API to deploy models using SageMaker hosting services.
      * </p>
      * <p>
-     * For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see the <a
-     * href=
+     * For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href=
      * "https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb"
      * >Create Endpoint example notebook.</a>
      * </p>
@@ -521,8 +519,8 @@ public interface AmazonSageMaker {
      * The endpoint name must be unique within an Amazon Web Services Region in your Amazon Web Services account.
      * </p>
      * <p>
-     * When it receives the request, Amazon SageMaker creates the endpoint, launches the resources (ML compute
-     * instances), and deploys the model(s) on them.
+     * When it receives the request, SageMaker creates the endpoint, launches the resources (ML compute instances), and
+     * deploys the model(s) on them.
      * </p>
      * <note>
      * <p>
@@ -538,15 +536,15 @@ public interface AmazonSageMaker {
      * </p>
      * </note>
      * <p>
-     * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it
-     * creates the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can then process incoming
-     * requests for inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a> API.
+     * When SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it creates the
+     * endpoint, it sets the status to <code>InService</code>. SageMaker can then process incoming requests for
+     * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a> API.
      * </p>
      * <p>
-     * If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses
-     * Amazon Web Services Security Token Service to download model artifacts from the S3 path you provided. Amazon Web
-     * Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services
-     * STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a
+     * If any of the models hosted at this endpoint get model data from an Amazon S3 location, SageMaker uses Amazon Web
+     * Services Security Token Service to download model artifacts from the S3 path you provided. Amazon Web Services
+     * STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a
+     * region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity
      * and Access Management User Guide</i>.
@@ -596,7 +594,7 @@ public interface AmazonSageMaker {
      * @param createEndpointRequest
      * @return Result of the CreateEndpoint operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint" target="_top">AWS API
@@ -606,25 +604,25 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In the
-     * configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the
-     * resources that you want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a> API.
+     * Creates an endpoint configuration that SageMaker hosting services uses to deploy models. In the configuration,
+     * you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that
+     * you want SageMaker to provision. Then you call the <a>CreateEndpoint</a> API.
      * </p>
      * <note>
      * <p>
-     * Use this API if you want to use Amazon SageMaker hosting services to deploy models into production.
+     * Use this API if you want to use SageMaker hosting services to deploy models into production.
      * </p>
      * </note>
      * <p>
      * In the request, you define a <code>ProductionVariant</code>, for each model that you want to deploy. Each
-     * <code>ProductionVariant</code> parameter also describes the resources that you want Amazon SageMaker to
-     * provision. This includes the number and type of ML compute instances to deploy.
+     * <code>ProductionVariant</code> parameter also describes the resources that you want SageMaker to provision. This
+     * includes the number and type of ML compute instances to deploy.
      * </p>
      * <p>
      * If you are hosting multiple models, you also assign a <code>VariantWeight</code> to specify how much traffic you
      * want to allocate to each model. For example, suppose that you want to host two models, A and B, and you assign
-     * traffic weight 2 for model A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
-     * A, and one-third to model B.
+     * traffic weight 2 for model A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and
+     * one-third to model B.
      * </p>
      * <note>
      * <p>
@@ -643,7 +641,7 @@ public interface AmazonSageMaker {
      * @param createEndpointConfigRequest
      * @return Result of the CreateEndpointConfig operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateEndpointConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig" target="_top">AWS
@@ -684,7 +682,7 @@ public interface AmazonSageMaker {
      * @param createExperimentRequest
      * @return Result of the CreateExperiment operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateExperiment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment" target="_top">AWS API
@@ -717,7 +715,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateFeatureGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup" target="_top">AWS
@@ -733,7 +731,7 @@ public interface AmazonSageMaker {
      * @param createFlowDefinitionRequest
      * @return Result of the CreateFlowDefinition operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -752,7 +750,7 @@ public interface AmazonSageMaker {
      * @param createHumanTaskUiRequest
      * @return Result of the CreateHumanTaskUi operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -775,7 +773,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateHyperParameterTuningJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob"
@@ -786,7 +784,7 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a
-     * container image stored in Amazon Container Registry (ECR). For more information, see <a
+     * container image stored in Amazon Elastic Container Registry (ECR). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.
      * </p>
      * 
@@ -795,7 +793,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage" target="_top">AWS API
@@ -806,7 +804,7 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
-     * Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.
      * </p>
      * 
      * @param createImageVersionRequest
@@ -814,7 +812,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
@@ -834,7 +832,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateInferenceRecommendationsJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob"
@@ -903,7 +901,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateLabelingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateLabelingJob" target="_top">AWS
@@ -913,42 +911,38 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the
+     * Creates a model in SageMaker. In the request, you name the model and describe a primary container. For the
      * primary container, you specify the Docker image that contains inference code, artifacts (from prior training),
      * and a custom environment map that the inference code uses when you deploy the model for predictions.
      * </p>
      * <p>
-     * Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.
+     * Use this API to create a model if you want to use SageMaker hosting services or run a batch transform job.
      * </p>
      * <p>
      * To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then
-     * create an endpoint with the <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers
-     * that you defined for the model in the hosting environment.
+     * create an endpoint with the <code>CreateEndpoint</code> API. SageMaker then deploys all of the containers that
+     * you defined for the model in the hosting environment.
      * </p>
      * <p>
-     * For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see <a
+     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
      * Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a>
      * </p>
      * <p>
-     * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. Amazon
+     * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API.
      * SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.
      * </p>
      * <p>
-     * In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
-     * parameter.
-     * </p>
-     * <p>
-     * In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also
-     * use the IAM role to manage permissions the inference code needs. For example, if the inference code access any
-     * other Amazon Web Services resources, you grant necessary permissions via this role.
+     * In the request, you also provide an IAM role that SageMaker can assume to access model artifacts and docker image
+     * for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM
+     * role to manage permissions the inference code needs. For example, if the inference code access any other Amazon
+     * Web Services resources, you grant necessary permissions via this role.
      * </p>
      * 
      * @param createModelRequest
      * @return Result of the CreateModel operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateModel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel" target="_top">AWS API
@@ -964,7 +958,7 @@ public interface AmazonSageMaker {
      * @param createModelBiasJobDefinitionRequest
      * @return Result of the CreateModelBiasJobDefinition operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -982,7 +976,7 @@ public interface AmazonSageMaker {
      * @param createModelExplainabilityJobDefinitionRequest
      * @return Result of the CreateModelExplainabilityJobDefinition operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -995,9 +989,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a model package that you can use to create Amazon SageMaker models or list on Amazon Web Services
-     * Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on
-     * Amazon Web Services Marketplace to create models in Amazon SageMaker.
+     * Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace,
+     * or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web
+     * Services Marketplace to create models in SageMaker.
      * </p>
      * <p>
      * To create a model package by specifying a Docker container that contains your inference code and the Amazon S3
@@ -1029,7 +1023,7 @@ public interface AmazonSageMaker {
      *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
      *         or <code>Artifact</code>.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage" target="_top">AWS
@@ -1045,7 +1039,7 @@ public interface AmazonSageMaker {
      * @param createModelPackageGroupRequest
      * @return Result of the CreateModelPackageGroup operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateModelPackageGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackageGroup"
@@ -1062,7 +1056,7 @@ public interface AmazonSageMaker {
      * @param createModelQualityJobDefinitionRequest
      * @return Result of the CreateModelQualityJobDefinition operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -1081,7 +1075,7 @@ public interface AmazonSageMaker {
      * @param createMonitoringScheduleRequest
      * @return Result of the CreateMonitoringSchedule operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -1093,52 +1087,51 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance
-     * running on a Jupyter notebook.
+     * Creates an SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running
+     * on a Jupyter notebook.
      * </p>
      * <p>
      * In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run.
-     * Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
+     * SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
      * training, and attaches an ML storage volume to the notebook instance.
      * </p>
      * <p>
-     * Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker
-     * with a specific algorithm or with a machine learning framework.
+     * SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use SageMaker with a
+     * specific algorithm or with a machine learning framework.
      * </p>
      * <p>
-     * After receiving the request, Amazon SageMaker does the following:
+     * After receiving the request, SageMaker does the following:
      * </p>
      * <ol>
      * <li>
      * <p>
-     * Creates a network interface in the Amazon SageMaker VPC.
+     * Creates a network interface in the SageMaker VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC,
-     * which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon
-     * SageMaker attaches the security group that you specified in the request to the network interface that it creates
-     * in your VPC.
+     * (Option) If you specified <code>SubnetId</code>, SageMaker creates a network interface in your own VPC, which is
+     * inferred from the subnet ID that you provide in the input. When creating this network interface, SageMaker
+     * attaches the security group that you specified in the request to the network interface that it creates in your
+     * VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Launches an EC2 instance of the type specified in the request in the Amazon SageMaker VPC. If you specified
-     * <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both network interfaces when launching this
-     * instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security
-     * groups allow it.
+     * Launches an EC2 instance of the type specified in the request in the SageMaker VPC. If you specified
+     * <code>SubnetId</code> of your VPC, SageMaker specifies both network interfaces when launching this instance. This
+     * enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN). You can't change
-     * the name of a notebook instance after you create it.
+     * After creating the notebook instance, SageMaker returns its Amazon Resource Name (ARN). You can't change the name
+     * of a notebook instance after you create it.
      * </p>
      * <p>
-     * After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter
+     * After SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter
      * notebooks. For example, you can write code to explore a dataset that you can use for model training, train a
-     * model, host models by creating Amazon SageMaker endpoints, and validate hosted models.
+     * model, host models by creating SageMaker endpoints, and validate hosted models.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
@@ -1148,7 +1141,7 @@ public interface AmazonSageMaker {
      * @param createNotebookInstanceRequest
      * @return Result of the CreateNotebookInstance operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateNotebookInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance"
@@ -1186,7 +1179,7 @@ public interface AmazonSageMaker {
      * @param createNotebookInstanceLifecycleConfigRequest
      * @return Result of the CreateNotebookInstanceLifecycleConfig operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateNotebookInstanceLifecycleConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig"
@@ -1205,7 +1198,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline" target="_top">AWS API
@@ -1251,10 +1244,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker
-     * console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing
-     * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
-     * page.
+     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the SageMaker
+     * console, when you choose <code>Open</code> next to a notebook instance, SageMaker opens a new tab showing the
+     * Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the page.
      * </p>
      * <p>
      * The IAM role or user used to call this API defines the permissions to access the notebook instance. Once the
@@ -1297,7 +1289,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
@@ -1316,7 +1308,7 @@ public interface AmazonSageMaker {
      * @param createProjectRequest
      * @return Result of the CreateProject operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject" target="_top">AWS API
@@ -1341,13 +1333,13 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts to an
-     * Amazon S3 location that you specify.
+     * Starts a model training job. After training completes, SageMaker saves the resulting model artifacts to an Amazon
+     * S3 location that you specify.
      * </p>
      * <p>
-     * If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model
-     * artifacts as part of the model. You can also use the artifacts in a machine learning service other than Amazon
-     * SageMaker, provided that you know how to use them for inference.
+     * If you choose to host your model using SageMaker hosting services, you can use the resulting model artifacts as
+     * part of the model. You can also use the artifacts in a machine learning service other than SageMaker, provided
+     * that you know how to use them for inference.
      * </p>
      * <p>
      * In the request body, you provide the following:
@@ -1362,7 +1354,7 @@ public interface AmazonSageMaker {
      * <p>
      * <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model
      * parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * </li>
@@ -1374,8 +1366,8 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the
-     * results of model training.
+     * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker to save the results of
+     * model training.
      * </p>
      * </li>
      * <li>
@@ -1394,9 +1386,9 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your
-     * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
-     * successfully complete model training.
+     * <code>RoleArn</code> - The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf
+     * during model training. You must grant this role the necessary permissions so that SageMaker can successfully
+     * complete model training.
      * </p>
      * </li>
      * <li>
@@ -1419,7 +1411,7 @@ public interface AmazonSageMaker {
      * </li>
      * </ul>
      * <p>
-     * For more information about Amazon SageMaker, see <a
+     * For more information about SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
      * </p>
      * 
@@ -1428,7 +1420,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
@@ -1491,7 +1483,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
@@ -1524,7 +1516,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateTrial
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial" target="_top">AWS API
@@ -1552,7 +1544,7 @@ public interface AmazonSageMaker {
      * @param createTrialComponentRequest
      * @return Result of the CreateTrialComponent operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent" target="_top">AWS
@@ -1572,7 +1564,7 @@ public interface AmazonSageMaker {
      * @param createUserProfileRequest
      * @return Result of the CreateUserProfile operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -1630,7 +1622,7 @@ public interface AmazonSageMaker {
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.CreateWorkteam
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkteam" target="_top">AWS API
@@ -1807,12 +1799,18 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was
-     * created.
+     * Deletes an endpoint. SageMaker frees up all of the resources that were deployed when the endpoint was created.
      * </p>
      * <p>
-     * Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use
-     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.
+     * SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.
+     * </p>
+     * <p>
+     * When you delete your endpoint, SageMaker asynchronously deletes associated endpoint resources such as KMS key
+     * grants. You might still see these resources in your account for a few minutes after deleting your endpoint. Do
+     * not delete or revoke the permissions for your
+     * <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html#sagemaker-CreateModel-request-ExecutionRoleArn">ExecutionRoleArn</a> </code>
+     * , otherwise SageMaker cannot delete these resources.
      * </p>
      * 
      * @param deleteEndpointRequest
@@ -1953,9 +1951,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
-     * SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code,
-     * or the IAM role that you specified when creating the model.
+     * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when
+     * you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role
+     * that you specified when creating the model.
      * </p>
      * 
      * @param deleteModelRequest
@@ -2002,8 +2000,8 @@ public interface AmazonSageMaker {
      * Deletes a model package.
      * </p>
      * <p>
-     * A model package is used to create Amazon SageMaker models or list on Amazon Web Services Marketplace. Buyers can
-     * subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.
+     * A model package is used to create SageMaker models or list on Amazon Web Services Marketplace. Buyers can
+     * subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.
      * </p>
      * 
      * @param deleteModelPackageRequest
@@ -2079,13 +2077,13 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the
+     * Deletes an SageMaker notebook instance. Before you can delete a notebook instance, you must call the
      * <code>StopNotebookInstance</code> API.
      * </p>
      * <important>
      * <p>
-     * When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes the ML compute instance,
-     * and deletes the ML storage volume and the network interface associated with the notebook instance.
+     * When you delete a notebook instance, you lose all of your data. SageMaker removes the ML compute instance, and
+     * deletes the ML storage volume and the network interface associated with the notebook instance.
      * </p>
      * </important>
      * 
@@ -2165,7 +2163,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes the specified tags from an Amazon SageMaker resource.
+     * Deletes the specified tags from an SageMaker resource.
      * </p>
      * <p>
      * To list a resource's tags, use the <code>ListTags</code> API.
@@ -2273,7 +2271,7 @@ public interface AmazonSageMaker {
      * @param deleteWorkteamRequest
      * @return Result of the DeleteWorkteam operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.DeleteWorkteam
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkteam" target="_top">AWS API
@@ -3703,8 +3701,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Returns a list of the Amazon SageMaker notebook instances in the requester's account in an Amazon Web Services
-     * Region.
+     * Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region.
      * </p>
      * 
      * @param listNotebookInstancesRequest
@@ -3831,7 +3828,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Returns the tags for the specified Amazon SageMaker resource.
+     * Returns the tags for the specified SageMaker resource.
      * </p>
      * 
      * @param listTagsRequest
@@ -4044,7 +4041,7 @@ public interface AmazonSageMaker {
      * @param registerDevicesRequest
      * @return Result of the RegisterDevices operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.RegisterDevices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices" target="_top">AWS API
@@ -4077,7 +4074,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ConflictException
      *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
@@ -4118,7 +4115,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.SendPipelineExecutionStepFailure
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
@@ -4138,7 +4135,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.SendPipelineExecutionStepSuccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
@@ -4170,15 +4167,14 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
-     * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
-     * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
-     * your Jupyter notebook.
+     * After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A
+     * notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook.
      * </p>
      * 
      * @param startNotebookInstanceRequest
      * @return Result of the StartNotebookInstance operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.StartNotebookInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance"
@@ -4196,7 +4192,7 @@ public interface AmazonSageMaker {
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.StartPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution"
@@ -4324,9 +4320,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage
-     * volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML
-     * compute instance when you call <code>StopNotebookInstance</code>.
+     * Terminates the ML compute instance. Before terminating the instance, SageMaker disconnects the ML storage volume
+     * from it. SageMaker preserves the ML storage volume. SageMaker stops charging you for the ML compute instance when
+     * you call <code>StopNotebookInstance</code>.
      * </p>
      * <p>
      * To access data on the ML storage volume for a notebook instance that has been terminated, call the
@@ -4401,13 +4397,13 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
-     * delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts,
-     * so the results of the training is not lost.
+     * Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
+     * job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the
+     * results of the training is not lost.
      * </p>
      * <p>
-     * When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of the job to
-     * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to <code>Stopped</code>.
+     * When it receives a <code>StopTrainingJob</code> request, SageMaker changes the status of the job to
+     * <code>Stopping</code>. After SageMaker stops the job, it sets the status to <code>Stopped</code>.
      * </p>
      * 
      * @param stopTrainingJobRequest
@@ -4558,7 +4554,7 @@ public interface AmazonSageMaker {
      * @param updateDomainRequest
      * @return Result of the UpdateDomain operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -4577,8 +4573,8 @@ public interface AmazonSageMaker {
      * no availability loss).
      * </p>
      * <p>
-     * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating
-     * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the
+     * When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating the
+     * endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the
      * <a>DescribeEndpoint</a> API.
      * </p>
      * <note>
@@ -4597,7 +4593,7 @@ public interface AmazonSageMaker {
      * @param updateEndpointRequest
      * @return Result of the UpdateEndpoint operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.UpdateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint" target="_top">AWS API
@@ -4608,7 +4604,7 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant
-     * associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to
+     * associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to
      * <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the
      * status of an endpoint, use the <a>DescribeEndpoint</a> API.
      * </p>
@@ -4616,7 +4612,7 @@ public interface AmazonSageMaker {
      * @param updateEndpointWeightsAndCapacitiesRequest
      * @return Result of the UpdateEndpointWeightsAndCapacities operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.UpdateEndpointWeightsAndCapacities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities"
@@ -4682,7 +4678,7 @@ public interface AmazonSageMaker {
      * @param updateMonitoringScheduleRequest
      * @return Result of the UpdateMonitoringSchedule operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
@@ -4701,7 +4697,7 @@ public interface AmazonSageMaker {
      * @param updateNotebookInstanceRequest
      * @return Result of the UpdateNotebookInstance operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.UpdateNotebookInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance"
@@ -4718,7 +4714,7 @@ public interface AmazonSageMaker {
      * @param updateNotebookInstanceLifecycleConfigRequest
      * @return Result of the UpdateNotebookInstanceLifecycleConfig operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.UpdateNotebookInstanceLifecycleConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig"
@@ -4837,7 +4833,7 @@ public interface AmazonSageMaker {
      * @param updateUserProfileRequest
      * @return Result of the UpdateUserProfile operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
      *         Resource being accessed is in use.
@@ -4898,7 +4894,7 @@ public interface AmazonSageMaker {
      * @param updateWorkteamRequest
      * @return Result of the UpdateWorkteam operation returned by the service.
      * @throws ResourceLimitExceededException
-     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @sample AmazonSageMaker.UpdateWorkteam
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam" target="_top">AWS API

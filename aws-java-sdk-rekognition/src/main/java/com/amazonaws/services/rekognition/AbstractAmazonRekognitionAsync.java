@@ -781,4 +781,17 @@ public class AbstractAmazonRekognitionAsync extends AbstractAmazonRekognition im
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateStreamProcessorResult> updateStreamProcessorAsync(UpdateStreamProcessorRequest request) {
+
+        return updateStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamProcessorResult> updateStreamProcessorAsync(UpdateStreamProcessorRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStreamProcessorRequest, UpdateStreamProcessorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

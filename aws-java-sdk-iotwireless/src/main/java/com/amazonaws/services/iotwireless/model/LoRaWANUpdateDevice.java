@@ -40,6 +40,18 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String serviceProfileId;
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.1
+     * </p>
+     */
+    private UpdateAbpV11 abpV1_1;
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.0.x
+     * </p>
+     */
+    private UpdateAbpV10X abpV1_0_x;
 
     /**
      * <p>
@@ -122,6 +134,86 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * ABP device object for update APIs for v1.1
+     * </p>
+     * 
+     * @param abpV1_1
+     *        ABP device object for update APIs for v1.1
+     */
+
+    public void setAbpV1_1(UpdateAbpV11 abpV1_1) {
+        this.abpV1_1 = abpV1_1;
+    }
+
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.1
+     * </p>
+     * 
+     * @return ABP device object for update APIs for v1.1
+     */
+
+    public UpdateAbpV11 getAbpV1_1() {
+        return this.abpV1_1;
+    }
+
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.1
+     * </p>
+     * 
+     * @param abpV1_1
+     *        ABP device object for update APIs for v1.1
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANUpdateDevice withAbpV1_1(UpdateAbpV11 abpV1_1) {
+        setAbpV1_1(abpV1_1);
+        return this;
+    }
+
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.0.x
+     * </p>
+     * 
+     * @param abpV1_0_x
+     *        ABP device object for update APIs for v1.0.x
+     */
+
+    public void setAbpV1_0_x(UpdateAbpV10X abpV1_0_x) {
+        this.abpV1_0_x = abpV1_0_x;
+    }
+
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.0.x
+     * </p>
+     * 
+     * @return ABP device object for update APIs for v1.0.x
+     */
+
+    public UpdateAbpV10X getAbpV1_0_x() {
+        return this.abpV1_0_x;
+    }
+
+    /**
+     * <p>
+     * ABP device object for update APIs for v1.0.x
+     * </p>
+     * 
+     * @param abpV1_0_x
+     *        ABP device object for update APIs for v1.0.x
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANUpdateDevice withAbpV1_0_x(UpdateAbpV10X abpV1_0_x) {
+        setAbpV1_0_x(abpV1_0_x);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +228,11 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
         if (getDeviceProfileId() != null)
             sb.append("DeviceProfileId: ").append(getDeviceProfileId()).append(",");
         if (getServiceProfileId() != null)
-            sb.append("ServiceProfileId: ").append(getServiceProfileId());
+            sb.append("ServiceProfileId: ").append(getServiceProfileId()).append(",");
+        if (getAbpV1_1() != null)
+            sb.append("AbpV1_1: ").append(getAbpV1_1()).append(",");
+        if (getAbpV1_0_x() != null)
+            sb.append("AbpV1_0_x: ").append(getAbpV1_0_x());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +255,14 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getServiceProfileId() != null && other.getServiceProfileId().equals(this.getServiceProfileId()) == false)
             return false;
+        if (other.getAbpV1_1() == null ^ this.getAbpV1_1() == null)
+            return false;
+        if (other.getAbpV1_1() != null && other.getAbpV1_1().equals(this.getAbpV1_1()) == false)
+            return false;
+        if (other.getAbpV1_0_x() == null ^ this.getAbpV1_0_x() == null)
+            return false;
+        if (other.getAbpV1_0_x() != null && other.getAbpV1_0_x().equals(this.getAbpV1_0_x()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +273,8 @@ public class LoRaWANUpdateDevice implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getDeviceProfileId() == null) ? 0 : getDeviceProfileId().hashCode());
         hashCode = prime * hashCode + ((getServiceProfileId() == null) ? 0 : getServiceProfileId().hashCode());
+        hashCode = prime * hashCode + ((getAbpV1_1() == null) ? 0 : getAbpV1_1().hashCode());
+        hashCode = prime * hashCode + ((getAbpV1_0_x() == null) ? 0 : getAbpV1_0_x().hashCode());
         return hashCode;
     }
 

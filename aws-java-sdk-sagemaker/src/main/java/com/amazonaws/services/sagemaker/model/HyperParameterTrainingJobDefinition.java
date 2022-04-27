@@ -86,7 +86,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      * <p>
      * Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes
-     * for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose
+     * for scratch space. If you want SageMaker to use the storage volume to store the training data, choose
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
@@ -95,8 +95,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     /**
      * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
-     * spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     * Use this API to cap model training costs.
+     * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
+     * API to cap model training costs.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -104,8 +104,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      */
     private Boolean enableNetworkIsolation;
@@ -570,7 +570,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      * <p>
      * Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes
-     * for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose
+     * for scratch space. If you want SageMaker to use the storage volume to store the training data, choose
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
@@ -580,8 +580,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        tuning job launches.</p>
      *        <p>
      *        Storage volumes store model artifacts and incremental states. Training algorithms might also use storage
-     *        volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training
-     *        data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
+     *        volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
+     *        choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *        distributed training algorithms, specify an instance count greater than 1.
      */
 
@@ -596,7 +596,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      * <p>
      * Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes
-     * for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose
+     * for scratch space. If you want SageMaker to use the storage volume to store the training data, choose
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
@@ -605,8 +605,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *         tuning job launches.</p>
      *         <p>
      *         Storage volumes store model artifacts and incremental states. Training algorithms might also use storage
-     *         volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training
-     *         data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
+     *         volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
+     *         choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *         distributed training algorithms, specify an instance count greater than 1.
      */
 
@@ -621,7 +621,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      * <p>
      * Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes
-     * for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose
+     * for scratch space. If you want SageMaker to use the storage volume to store the training data, choose
      * <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training
      * algorithms, specify an instance count greater than 1.
      * </p>
@@ -631,8 +631,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        tuning job launches.</p>
      *        <p>
      *        Storage volumes store model artifacts and incremental states. Training algorithms might also use storage
-     *        volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training
-     *        data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
+     *        volumes for scratch space. If you want SageMaker to use the storage volume to store the training data,
+     *        choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For
      *        distributed training algorithms, specify an instance count greater than 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -645,13 +645,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     /**
      * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
-     * spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     * Use this API to cap model training costs.
+     * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
+     * API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a
-     *        managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the
+     *        managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the
      *        training job. Use this API to cap model training costs.
      */
 
@@ -662,12 +662,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     /**
      * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
-     * spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     * Use this API to cap model training costs.
+     * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
+     * API to cap model training costs.
      * </p>
      * 
      * @return Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a
-     *         managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the
+     *         managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the
      *         training job. Use this API to cap model training costs.
      */
 
@@ -678,13 +678,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     /**
      * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
-     * spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
-     * Use this API to cap model training costs.
+     * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
+     * API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
      *        Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a
-     *        managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the
+     *        managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the
      *        training job. Use this API to cap model training costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -698,15 +698,15 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @param enableNetworkIsolation
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *        between peers within a training cluster for distributed training. If network isolation is used for
-     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specified VPC, but the training container does not have network access.
+     *        training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model
+     *        artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
@@ -717,14 +717,14 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *         between peers within a training cluster for distributed training. If network isolation is used for
-     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specified VPC, but the training container does not have network access.
+     *         training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model
+     *         artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean getEnableNetworkIsolation() {
@@ -735,15 +735,15 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @param enableNetworkIsolation
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *        between peers within a training cluster for distributed training. If network isolation is used for
-     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specified VPC, but the training container does not have network access.
+     *        training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model
+     *        artifacts through the specified VPC, but the training container does not have network access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,14 +756,14 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
-     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specified VPC, but the training container does not have network access.
+     * configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified
+     * VPC, but the training container does not have network access.
      * </p>
      * 
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *         between peers within a training cluster for distributed training. If network isolation is used for
-     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specified VPC, but the training container does not have network access.
+     *         training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model
+     *         artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean isEnableNetworkIsolation() {

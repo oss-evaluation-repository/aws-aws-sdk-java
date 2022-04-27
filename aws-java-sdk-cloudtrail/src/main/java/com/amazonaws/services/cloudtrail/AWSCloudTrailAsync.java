@@ -56,15 +56,16 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
-     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
-     * same name but different values. If you specify a key without a value, the tag will be created with the specified
-     * key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region
-     * in which the trail was created (also known as its home region).
+     * Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value
+     * when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have
+     * two keys with the same name but different values. If you specify a key without a value, the tag will be created
+     * with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon
+     * Web Services Regions only from the Region in which the trail or event data store was created (also known as its
+     * home region).
      * </p>
      * 
      * @param addTagsRequest
-     *        Specifies the tags to add to a trail.
+     *        Specifies the tags to add to a trail or event data store.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample AWSCloudTrailAsync.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
@@ -74,15 +75,16 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
-     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
-     * same name but different values. If you specify a key without a value, the tag will be created with the specified
-     * key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region
-     * in which the trail was created (also known as its home region).
+     * Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value
+     * when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have
+     * two keys with the same name but different values. If you specify a key without a value, the tag will be created
+     * with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon
+     * Web Services Regions only from the Region in which the trail or event data store was created (also known as its
+     * home region).
      * </p>
      * 
      * @param addTagsRequest
-     *        Specifies the tags to add to a trail.
+     *        Specifies the tags to add to a trail or event data store.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -763,11 +765,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail in the current region.
+     * Lists the tags for the trail or event data store in the current region.
      * </p>
      * 
      * @param listTagsRequest
-     *        Specifies a list of trail tags to return.
+     *        Specifies a list of tags to return.
      * @return A Java Future containing the result of the ListTags operation returned by the service.
      * @sample AWSCloudTrailAsync.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags" target="_top">AWS API
@@ -777,11 +779,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail in the current region.
+     * Lists the tags for the trail or event data store in the current region.
      * </p>
      * 
      * @param listTagsRequest
-     *        Specifies a list of trail tags to return.
+     *        Specifies a list of tags to return.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1212,11 +1214,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Removes the specified tags from a trail.
+     * Removes the specified tags from a trail or event data store.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Specifies the tags to remove from a trail.
+     *        Specifies the tags to remove from a trail or event data store.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample AWSCloudTrailAsync.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
@@ -1226,11 +1228,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Removes the specified tags from a trail.
+     * Removes the specified tags from a trail or event data store.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Specifies the tags to remove from a trail.
+     *        Specifies the tags to remove from a trail or event data store.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

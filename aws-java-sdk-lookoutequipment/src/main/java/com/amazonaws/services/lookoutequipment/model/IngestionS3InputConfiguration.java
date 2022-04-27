@@ -40,6 +40,13 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
      * </p>
      */
     private String prefix;
+    /**
+     * <p>
+     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
+     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * </p>
+     */
+    private String keyPattern;
 
     /**
      * <p>
@@ -122,6 +129,52 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
+     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * </p>
+     * 
+     * @param keyPattern
+     *        Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
+     *        we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/
+     **/
+
+    public void setKeyPattern(String keyPattern) {
+        this.keyPattern = keyPattern;
+    }
+
+    /**
+     * <p>
+     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
+     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * </p>
+     * 
+     * @return Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
+     *         we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/
+     **/
+
+    public String getKeyPattern() {
+        return this.keyPattern;
+    }
+
+    /**
+     * <p>
+     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
+     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * </p>
+     * 
+     * @param keyPattern
+     *        Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
+     *        we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IngestionS3InputConfiguration withKeyPattern(String keyPattern) {
+        setKeyPattern(keyPattern);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +189,9 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
         if (getBucket() != null)
             sb.append("Bucket: ").append(getBucket()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: ").append(getPrefix());
+            sb.append("Prefix: ").append(getPrefix()).append(",");
+        if (getKeyPattern() != null)
+            sb.append("KeyPattern: ").append(getKeyPattern());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +214,10 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
             return false;
+        if (other.getKeyPattern() == null ^ this.getKeyPattern() == null)
+            return false;
+        if (other.getKeyPattern() != null && other.getKeyPattern().equals(this.getKeyPattern()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +228,7 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
+        hashCode = prime * hashCode + ((getKeyPattern() == null) ? 0 : getKeyPattern().hashCode());
         return hashCode;
     }
 

@@ -56,6 +56,14 @@ public class LoRaWANUpdateDeviceJsonUnmarshaller implements Unmarshaller<LoRaWAN
                     context.nextToken();
                     loRaWANUpdateDevice.setServiceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AbpV1_1", targetDepth)) {
+                    context.nextToken();
+                    loRaWANUpdateDevice.setAbpV1_1(UpdateAbpV11JsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AbpV1_0_x", targetDepth)) {
+                    context.nextToken();
+                    loRaWANUpdateDevice.setAbpV1_0_x(UpdateAbpV10XJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

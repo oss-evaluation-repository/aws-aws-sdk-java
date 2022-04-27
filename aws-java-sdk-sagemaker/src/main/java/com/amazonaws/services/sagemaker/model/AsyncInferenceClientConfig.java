@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures the behavior of the client used by Amazon SageMaker to interact with the model container during
- * asynchronous inference.
+ * Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous
+ * inference.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AsyncInferenceClientConfig"
@@ -32,7 +32,7 @@ public class AsyncInferenceClientConfig implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is
-     * provided, Amazon SageMaker will choose an optimal value for you.
+     * provided, SageMaker chooses an optimal value.
      * </p>
      */
     private Integer maxConcurrentInvocationsPerInstance;
@@ -40,12 +40,12 @@ public class AsyncInferenceClientConfig implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is
-     * provided, Amazon SageMaker will choose an optimal value for you.
+     * provided, SageMaker chooses an optimal value.
      * </p>
      * 
      * @param maxConcurrentInvocationsPerInstance
      *        The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value
-     *        is provided, Amazon SageMaker will choose an optimal value for you.
+     *        is provided, SageMaker chooses an optimal value.
      */
 
     public void setMaxConcurrentInvocationsPerInstance(Integer maxConcurrentInvocationsPerInstance) {
@@ -55,11 +55,11 @@ public class AsyncInferenceClientConfig implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is
-     * provided, Amazon SageMaker will choose an optimal value for you.
+     * provided, SageMaker chooses an optimal value.
      * </p>
      * 
      * @return The maximum number of concurrent requests sent by the SageMaker client to the model container. If no
-     *         value is provided, Amazon SageMaker will choose an optimal value for you.
+     *         value is provided, SageMaker chooses an optimal value.
      */
 
     public Integer getMaxConcurrentInvocationsPerInstance() {
@@ -69,12 +69,12 @@ public class AsyncInferenceClientConfig implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is
-     * provided, Amazon SageMaker will choose an optimal value for you.
+     * provided, SageMaker chooses an optimal value.
      * </p>
      * 
      * @param maxConcurrentInvocationsPerInstance
      *        The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value
-     *        is provided, Amazon SageMaker will choose an optimal value for you.
+     *        is provided, SageMaker chooses an optimal value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

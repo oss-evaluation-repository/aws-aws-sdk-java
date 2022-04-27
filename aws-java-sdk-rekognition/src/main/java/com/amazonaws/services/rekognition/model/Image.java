@@ -46,7 +46,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more
- * information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
+ * information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

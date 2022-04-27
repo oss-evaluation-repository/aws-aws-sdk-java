@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * WirelessDevice FrameInfo for trace content.
+ * FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug the communication between
+ * your LoRaWAN end devices and the network server.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

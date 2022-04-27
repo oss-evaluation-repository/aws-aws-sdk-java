@@ -219,7 +219,7 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on.
+     * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
      * @param describeDataIngestionJobRequest
@@ -243,8 +243,8 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON description of the data that is in each time series dataset, including names, column names, and
-     * data types.
+     * Provides a JSON description of the data in each time series dataset, including names, column names, and data
+     * types.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -428,6 +428,31 @@ public interface AmazonLookoutEquipment {
      *      API Documentation</a>
      */
     ListModelsResult listModels(ListModelsRequest listModelsRequest);
+
+    /**
+     * <p>
+     * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
+     * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
+     * </p>
+     * 
+     * @param listSensorStatisticsRequest
+     * @return Result of the ListSensorStatistics operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListSensorStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSensorStatisticsResult listSensorStatistics(ListSensorStatisticsRequest listSensorStatisticsRequest);
 
     /**
      * <p>

@@ -989,6 +989,76 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Creates a new network analyzer configuration.
+     * </p>
+     * 
+     * @param createNetworkAnalyzerConfigurationRequest
+     * @return Result of the CreateNetworkAnalyzerConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.CreateNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNetworkAnalyzerConfigurationResult createNetworkAnalyzerConfiguration(CreateNetworkAnalyzerConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkAnalyzerConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkAnalyzerConfigurationResult executeCreateNetworkAnalyzerConfiguration(
+            CreateNetworkAnalyzerConfigurationRequest createNetworkAnalyzerConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkAnalyzerConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkAnalyzerConfigurationRequest> request = null;
+        Response<CreateNetworkAnalyzerConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkAnalyzerConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createNetworkAnalyzerConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkAnalyzerConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNetworkAnalyzerConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateNetworkAnalyzerConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new service profile.
      * </p>
      * 
@@ -1592,7 +1662,77 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * The operation to delete queued messages.
+     * Deletes a network analyzer configuration.
+     * </p>
+     * 
+     * @param deleteNetworkAnalyzerConfigurationRequest
+     * @return Result of the DeleteNetworkAnalyzerConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteNetworkAnalyzerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkAnalyzerConfigurationResult deleteNetworkAnalyzerConfiguration(DeleteNetworkAnalyzerConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkAnalyzerConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkAnalyzerConfigurationResult executeDeleteNetworkAnalyzerConfiguration(
+            DeleteNetworkAnalyzerConfigurationRequest deleteNetworkAnalyzerConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkAnalyzerConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkAnalyzerConfigurationRequest> request = null;
+        Response<DeleteNetworkAnalyzerConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkAnalyzerConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteNetworkAnalyzerConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkAnalyzerConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNetworkAnalyzerConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteNetworkAnalyzerConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove queued messages from the downlink queue.
      * </p>
      * 
      * @param deleteQueuedMessagesRequest
@@ -2608,6 +2748,70 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Get the event configuration by resource types.
+     * </p>
+     * 
+     * @param getEventConfigurationByResourceTypesRequest
+     * @return Result of the GetEventConfigurationByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetEventConfigurationByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEventConfigurationByResourceTypesResult getEventConfigurationByResourceTypes(GetEventConfigurationByResourceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventConfigurationByResourceTypes(request);
+    }
+
+    @SdkInternalApi
+    final GetEventConfigurationByResourceTypesResult executeGetEventConfigurationByResourceTypes(
+            GetEventConfigurationByResourceTypesRequest getEventConfigurationByResourceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventConfigurationByResourceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventConfigurationByResourceTypesRequest> request = null;
+        Response<GetEventConfigurationByResourceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventConfigurationByResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEventConfigurationByResourceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventConfigurationByResourceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventConfigurationByResourceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEventConfigurationByResourceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a FUOTA task.
      * </p>
      * 
@@ -2873,7 +3077,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Get NetworkAnalyzer configuration.
+     * Get network analyzer configuration.
      * </p>
      * 
      * @param getNetworkAnalyzerConfigurationRequest
@@ -3927,6 +4131,71 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * List event configurations where at least one event topic has been enabled.
+     * </p>
+     * 
+     * @param listEventConfigurationsRequest
+     * @return Result of the ListEventConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.ListEventConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEventConfigurationsResult listEventConfigurations(ListEventConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListEventConfigurationsResult executeListEventConfigurations(ListEventConfigurationsRequest listEventConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEventConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEventConfigurationsRequest> request = null;
+        Response<ListEventConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEventConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEventConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEventConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the FUOTA tasks registered to your AWS account.
      * </p>
      * 
@@ -4120,6 +4389,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Lists the network analyzer configurations.
+     * </p>
+     * 
+     * @param listNetworkAnalyzerConfigurationsRequest
+     * @return Result of the ListNetworkAnalyzerConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListNetworkAnalyzerConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListNetworkAnalyzerConfigurationsResult listNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNetworkAnalyzerConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListNetworkAnalyzerConfigurationsResult executeListNetworkAnalyzerConfigurations(
+            ListNetworkAnalyzerConfigurationsRequest listNetworkAnalyzerConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNetworkAnalyzerConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNetworkAnalyzerConfigurationsRequest> request = null;
+        Response<ListNetworkAnalyzerConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNetworkAnalyzerConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listNetworkAnalyzerConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworkAnalyzerConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNetworkAnalyzerConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListNetworkAnalyzerConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the partner accounts associated with your AWS account.
      * </p>
      * 
@@ -4183,7 +4518,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * The operation to list queued messages.
+     * List queued messages in the downlink queue.
      * </p>
      * 
      * @param listQueuedMessagesRequest
@@ -5438,6 +5773,73 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Update the event configuration by resource types.
+     * </p>
+     * 
+     * @param updateEventConfigurationByResourceTypesRequest
+     * @return Result of the UpdateEventConfigurationByResourceTypes operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateEventConfigurationByResourceTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateEventConfigurationByResourceTypesResult updateEventConfigurationByResourceTypes(UpdateEventConfigurationByResourceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEventConfigurationByResourceTypes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEventConfigurationByResourceTypesResult executeUpdateEventConfigurationByResourceTypes(
+            UpdateEventConfigurationByResourceTypesRequest updateEventConfigurationByResourceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEventConfigurationByResourceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEventConfigurationByResourceTypesRequest> request = null;
+        Response<UpdateEventConfigurationByResourceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEventConfigurationByResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventConfigurationByResourceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventConfigurationByResourceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventConfigurationByResourceTypesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateEventConfigurationByResourceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates properties of a FUOTA task.
      * </p>
      * 
@@ -5642,7 +6044,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Update NetworkAnalyzer configuration.
+     * Update network analyzer configuration.
      * </p>
      * 
      * @param updateNetworkAnalyzerConfigurationRequest

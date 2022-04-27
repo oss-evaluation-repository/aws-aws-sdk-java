@@ -113,7 +113,7 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     private ModelMetrics modelMetrics;
     /**
      * <p>
-     * The last time the model package was modified.
+     * The last time that the model package was modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -835,11 +835,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The last time the model package was modified.
+     * The last time that the model package was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The last time the model package was modified.
+     *        The last time that the model package was modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -848,10 +848,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The last time the model package was modified.
+     * The last time that the model package was modified.
      * </p>
      * 
-     * @return The last time the model package was modified.
+     * @return The last time that the model package was modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -860,11 +860,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The last time the model package was modified.
+     * The last time that the model package was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The last time the model package was modified.
+     *        The last time that the model package was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

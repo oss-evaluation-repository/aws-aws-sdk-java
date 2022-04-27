@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides summary information for an Amazon SageMaker notebook instance.
+ * Provides summary information for an SageMaker notebook instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceSummary" target="_top">AWS
@@ -48,7 +48,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
     private String notebookInstanceStatus;
     /**
      * <p>
-     * The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     * The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      * </p>
      */
     private String url;
@@ -88,7 +88,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -100,7 +100,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -247,11 +247,11 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     * The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      * </p>
      * 
      * @param url
-     *        The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     *        The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      */
 
     public void setUrl(String url) {
@@ -260,10 +260,10 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     * The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      * </p>
      * 
-     * @return The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     * @return The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      */
 
     public String getUrl() {
@@ -272,11 +272,11 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     * The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      * </p>
      * 
      * @param url
-     *        The URL that you use to connect to the Jupyter instance running in your notebook instance.
+     *        The URL that you use to connect to the Jupyter notebook running in your notebook instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,7 +498,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -509,7 +509,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setDefaultCodeRepository(String defaultCodeRepository) {
@@ -523,7 +523,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -533,7 +533,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *         CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *         directory that contains this repository. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public String getDefaultCodeRepository() {
@@ -547,7 +547,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      * repository. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -558,7 +558,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *        CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the
      *        directory that contains this repository. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,7 +574,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -584,7 +584,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *         CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *         default repository of your notebook instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
-     *         with Amazon SageMaker Notebook Instances</a>.
+     *         with SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -598,7 +598,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -609,7 +609,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      */
 
     public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
@@ -628,7 +628,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
@@ -644,7 +644,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,7 +665,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or
      * in any other Git repository. These repositories are cloned at the same level as the default repository of your
      * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      * SageMaker Notebook Instances</a>.
      * </p>
      * 
@@ -676,7 +676,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      *        CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the
      *        default repository of your notebook instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *        Amazon SageMaker Notebook Instances</a>.
+     *        SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

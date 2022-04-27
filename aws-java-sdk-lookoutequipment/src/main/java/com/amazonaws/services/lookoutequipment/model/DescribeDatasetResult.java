@@ -72,6 +72,40 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private IngestionInputConfiguration ingestionInputConfiguration;
+    /**
+     * <p>
+     * Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These
+     * statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     * </p>
+     */
+    private DataQualitySummary dataQualitySummary;
+    /**
+     * <p>
+     * IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id.
+     * </p>
+     */
+    private IngestedFilesSummary ingestedFilesSummary;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     */
+    private java.util.Date dataStartTime;
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     */
+    private java.util.Date dataEndTime;
 
     /**
      * <p>
@@ -439,6 +473,233 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These
+     * statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     * </p>
+     * 
+     * @param dataQualitySummary
+     *        Gives statistics associated with the given dataset for the latest successful associated ingestion job id.
+     *        These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData,
+     *        MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     */
+
+    public void setDataQualitySummary(DataQualitySummary dataQualitySummary) {
+        this.dataQualitySummary = dataQualitySummary;
+    }
+
+    /**
+     * <p>
+     * Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These
+     * statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     * </p>
+     * 
+     * @return Gives statistics associated with the given dataset for the latest successful associated ingestion job id.
+     *         These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData,
+     *         MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     */
+
+    public DataQualitySummary getDataQualitySummary() {
+        return this.dataQualitySummary;
+    }
+
+    /**
+     * <p>
+     * Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These
+     * statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     * </p>
+     * 
+     * @param dataQualitySummary
+     *        Gives statistics associated with the given dataset for the latest successful associated ingestion job id.
+     *        These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData,
+     *        MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withDataQualitySummary(DataQualitySummary dataQualitySummary) {
+        setDataQualitySummary(dataQualitySummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id.
+     * </p>
+     * 
+     * @param ingestedFilesSummary
+     *        IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job
+     *        id.
+     */
+
+    public void setIngestedFilesSummary(IngestedFilesSummary ingestedFilesSummary) {
+        this.ingestedFilesSummary = ingestedFilesSummary;
+    }
+
+    /**
+     * <p>
+     * IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id.
+     * </p>
+     * 
+     * @return IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job
+     *         id.
+     */
+
+    public IngestedFilesSummary getIngestedFilesSummary() {
+        return this.ingestedFilesSummary;
+    }
+
+    /**
+     * <p>
+     * IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id.
+     * </p>
+     * 
+     * @param ingestedFilesSummary
+     *        IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job
+     *        id.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withIngestedFilesSummary(IngestedFilesSummary ingestedFilesSummary) {
+        setIngestedFilesSummary(ingestedFilesSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @param dataStartTime
+     *        Indicates the earliest timestamp corresponding to data that was successfully ingested during the most
+     *        recent ingestion of this particular dataset.
+     */
+
+    public void setDataStartTime(java.util.Date dataStartTime) {
+        this.dataStartTime = dataStartTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @return Indicates the earliest timestamp corresponding to data that was successfully ingested during the most
+     *         recent ingestion of this particular dataset.
+     */
+
+    public java.util.Date getDataStartTime() {
+        return this.dataStartTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @param dataStartTime
+     *        Indicates the earliest timestamp corresponding to data that was successfully ingested during the most
+     *        recent ingestion of this particular dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withDataStartTime(java.util.Date dataStartTime) {
+        setDataStartTime(dataStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @param dataEndTime
+     *        Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     *        ingestion of this particular dataset.
+     */
+
+    public void setDataEndTime(java.util.Date dataEndTime) {
+        this.dataEndTime = dataEndTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @return Indicates the latest timestamp corresponding to data that was successfully ingested during the most
+     *         recent ingestion of this particular dataset.
+     */
+
+    public java.util.Date getDataEndTime() {
+        return this.dataEndTime;
+    }
+
+    /**
+     * <p>
+     * Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     * ingestion of this particular dataset.
+     * </p>
+     * 
+     * @param dataEndTime
+     *        Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent
+     *        ingestion of this particular dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withDataEndTime(java.util.Date dataEndTime) {
+        setDataEndTime(dataEndTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -465,7 +726,17 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         if (getServerSideKmsKeyId() != null)
             sb.append("ServerSideKmsKeyId: ").append(getServerSideKmsKeyId()).append(",");
         if (getIngestionInputConfiguration() != null)
-            sb.append("IngestionInputConfiguration: ").append(getIngestionInputConfiguration());
+            sb.append("IngestionInputConfiguration: ").append(getIngestionInputConfiguration()).append(",");
+        if (getDataQualitySummary() != null)
+            sb.append("DataQualitySummary: ").append(getDataQualitySummary()).append(",");
+        if (getIngestedFilesSummary() != null)
+            sb.append("IngestedFilesSummary: ").append(getIngestedFilesSummary()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getDataStartTime() != null)
+            sb.append("DataStartTime: ").append(getDataStartTime()).append(",");
+        if (getDataEndTime() != null)
+            sb.append("DataEndTime: ").append(getDataEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -512,6 +783,26 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getIngestionInputConfiguration() != null && other.getIngestionInputConfiguration().equals(this.getIngestionInputConfiguration()) == false)
             return false;
+        if (other.getDataQualitySummary() == null ^ this.getDataQualitySummary() == null)
+            return false;
+        if (other.getDataQualitySummary() != null && other.getDataQualitySummary().equals(this.getDataQualitySummary()) == false)
+            return false;
+        if (other.getIngestedFilesSummary() == null ^ this.getIngestedFilesSummary() == null)
+            return false;
+        if (other.getIngestedFilesSummary() != null && other.getIngestedFilesSummary().equals(this.getIngestedFilesSummary()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getDataStartTime() == null ^ this.getDataStartTime() == null)
+            return false;
+        if (other.getDataStartTime() != null && other.getDataStartTime().equals(this.getDataStartTime()) == false)
+            return false;
+        if (other.getDataEndTime() == null ^ this.getDataEndTime() == null)
+            return false;
+        if (other.getDataEndTime() != null && other.getDataEndTime().equals(this.getDataEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -528,6 +819,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getServerSideKmsKeyId() == null) ? 0 : getServerSideKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getIngestionInputConfiguration() == null) ? 0 : getIngestionInputConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDataQualitySummary() == null) ? 0 : getDataQualitySummary().hashCode());
+        hashCode = prime * hashCode + ((getIngestedFilesSummary() == null) ? 0 : getIngestedFilesSummary().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDataStartTime() == null) ? 0 : getDataStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDataEndTime() == null) ? 0 : getDataEndTime().hashCode());
         return hashCode;
     }
 

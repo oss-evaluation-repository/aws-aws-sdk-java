@@ -25,7 +25,7 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name of the Amazon SageMaker endpoint configuration.
+     * Name of the SageMaker endpoint configuration.
      * </p>
      */
     private String endpointConfigName;
@@ -67,11 +67,11 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name of the Amazon SageMaker endpoint configuration.
+     * Name of the SageMaker endpoint configuration.
      * </p>
      * 
      * @param endpointConfigName
-     *        Name of the Amazon SageMaker endpoint configuration.
+     *        Name of the SageMaker endpoint configuration.
      */
 
     public void setEndpointConfigName(String endpointConfigName) {
@@ -80,10 +80,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name of the Amazon SageMaker endpoint configuration.
+     * Name of the SageMaker endpoint configuration.
      * </p>
      * 
-     * @return Name of the Amazon SageMaker endpoint configuration.
+     * @return Name of the SageMaker endpoint configuration.
      */
 
     public String getEndpointConfigName() {
@@ -92,11 +92,11 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name of the Amazon SageMaker endpoint configuration.
+     * Name of the SageMaker endpoint configuration.
      * </p>
      * 
      * @param endpointConfigName
-     *        Name of the Amazon SageMaker endpoint configuration.
+     *        Name of the SageMaker endpoint configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

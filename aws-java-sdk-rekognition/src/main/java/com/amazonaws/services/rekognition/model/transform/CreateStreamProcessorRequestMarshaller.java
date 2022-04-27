@@ -13,7 +13,7 @@
 package com.amazonaws.services.rekognition.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +41,14 @@ public class CreateStreamProcessorRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationChannel").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<List> REGIONSOFINTEREST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegionsOfInterest").build();
+    private static final MarshallingInfo<StructuredPojo> DATASHARINGPREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSharingPreference").build();
 
     private static final CreateStreamProcessorRequestMarshaller instance = new CreateStreamProcessorRequestMarshaller();
 
@@ -64,6 +72,10 @@ public class CreateStreamProcessorRequestMarshaller {
             protocolMarshaller.marshall(createStreamProcessorRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(createStreamProcessorRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createStreamProcessorRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createStreamProcessorRequest.getNotificationChannel(), NOTIFICATIONCHANNEL_BINDING);
+            protocolMarshaller.marshall(createStreamProcessorRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createStreamProcessorRequest.getRegionsOfInterest(), REGIONSOFINTEREST_BINDING);
+            protocolMarshaller.marshall(createStreamProcessorRequest.getDataSharingPreference(), DATASHARINGPREFERENCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
