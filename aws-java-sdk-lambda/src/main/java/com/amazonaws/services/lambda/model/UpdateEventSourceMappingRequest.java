@@ -89,7 +89,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -526,7 +526,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -564,7 +564,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
@@ -608,7 +608,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -645,7 +645,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
@@ -689,7 +689,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
@@ -727,7 +727,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>

@@ -44,6 +44,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      */
     private String targetSelection;
     /**
@@ -169,6 +175,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> documentParameters;
 
@@ -261,13 +273,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @see TargetSelection
      */
 
@@ -282,12 +305,23 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *         specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *         when a change is detected in a target. For example, a job will run on a device when the thing
      *         representing the device is added to a target group, even after the job was completed by all things
-     *         originally in the group.
+     *         originally in the group. </p> <note>
+     *         <p>
+     *         We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *         using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *         created.
+     *         </p>
      * @see TargetSelection
      */
 
@@ -302,13 +336,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -325,13 +370,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * detected in a target. For example, a job will run on a device when the thing representing the device is added to
      * a target group, even after the job was completed by all things originally in the group.
      * </p>
+     * <note>
+     * <p>
+     * We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even after the job has been created.
+     * </p>
+     * </note>
      * 
      * @param targetSelection
      *        Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
      *        specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
      *        when a change is detected in a target. For example, a job will run on a device when the thing representing
      *        the device is added to a target group, even after the job was completed by all things originally in the
-     *        group.
+     *        group. </p> <note>
+     *        <p>
+     *        We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By
+     *        using continuous jobs, devices that join the group receive the job execution even after the job has been
+     *        created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetSelection
      */
@@ -1184,10 +1240,20 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @return A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *         schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *         creating a job.
+     *         creating a job.</p> <note>
+     *         <p>
+     *         <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *         templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *         </p>
      */
 
     public java.util.Map<String, String> getDocumentParameters() {
@@ -1199,11 +1265,21 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *        schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *        creating a job.
+     *        creating a job.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      */
 
     public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
@@ -1215,11 +1291,21 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You
      * can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
      * </p>
+     * <note>
+     * <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates.
+     * This parameter can't be used with custom job templates or to create jobs from them.
+     * </p>
+     * </note>
      * 
      * @param documentParameters
      *        A key-value map that pairs the patterns that need to be replaced in a managed template job document
      *        schema. You can use the description of each key as a guidance to specify the inputs during runtime when
-     *        creating a job.
+     *        creating a job.</p> <note>
+     *        <p>
+     *        <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed
+     *        templates. This parameter can't be used with custom job templates or to create jobs from them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

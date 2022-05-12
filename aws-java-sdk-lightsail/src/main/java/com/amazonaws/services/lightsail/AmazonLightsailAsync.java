@@ -3252,9 +3252,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual
-     * private server (or <i>instance</i>).
+     * Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.
      * </p>
+     * <p>
+     * A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of
+     * vCPUs, amount of storage space, and monthly network data transfer quota.
+     * </p>
+     * <note>
+     * <p>
+     * Bundles are referred to as <i>instance plans</i> in the Lightsail console.
+     * </p>
+     * </note>
      * 
      * @param getBundlesRequest
      * @return A Java Future containing the result of the GetBundles operation returned by the service.
@@ -3266,9 +3274,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual
-     * private server (or <i>instance</i>).
+     * Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.
      * </p>
+     * <p>
+     * A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of
+     * vCPUs, amount of storage space, and monthly network data transfer quota.
+     * </p>
+     * <note>
+     * <p>
+     * Bundles are referred to as <i>instance plans</i> in the Lightsail console.
+     * </p>
+     * </note>
      * 
      * @param getBundlesRequest
      * @param asyncHandler

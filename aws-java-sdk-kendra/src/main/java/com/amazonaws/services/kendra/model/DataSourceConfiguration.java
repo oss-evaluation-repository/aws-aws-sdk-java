@@ -108,6 +108,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private QuipConfiguration quipConfiguration;
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     */
+    private JiraConfiguration jiraConfiguration;
 
     /**
      * <p>
@@ -656,6 +662,46 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Provides the configuration information to connect to Jira as your data source.
+     */
+
+    public void setJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @return Provides the configuration information to connect to Jira as your data source.
+     */
+
+    public JiraConfiguration getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to Jira as your data source.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Provides the configuration information to connect to Jira as your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -694,7 +740,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getBoxConfiguration() != null)
             sb.append("BoxConfiguration: ").append(getBoxConfiguration()).append(",");
         if (getQuipConfiguration() != null)
-            sb.append("QuipConfiguration: ").append(getQuipConfiguration());
+            sb.append("QuipConfiguration: ").append(getQuipConfiguration()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -765,6 +813,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getQuipConfiguration() != null && other.getQuipConfiguration().equals(this.getQuipConfiguration()) == false)
             return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -787,6 +839,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getSlackConfiguration() == null) ? 0 : getSlackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBoxConfiguration() == null) ? 0 : getBoxConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQuipConfiguration() == null) ? 0 : getQuipConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

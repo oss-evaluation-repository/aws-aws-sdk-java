@@ -5346,7 +5346,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * transit gateway.
      * </p>
      * <p>
-     * A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+     * A Traffic Mirror target can be a network interface, a Network Load Balancer, or a Gateway Load Balancer endpoint.
      * </p>
      * <p>
      * To use the target in a Traffic Mirror session, use <a
@@ -5373,7 +5373,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * transit gateway.
      * </p>
      * <p>
-     * A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+     * A Traffic Mirror target can be a network interface, a Network Load Balancer, or a Gateway Load Balancer endpoint.
      * </p>
      * <p>
      * To use the target in a Traffic Mirror session, use <a

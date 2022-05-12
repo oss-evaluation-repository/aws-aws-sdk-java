@@ -188,7 +188,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private Integer tumblingWindowInSeconds;
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
@@ -1366,10 +1366,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
-     * @return (Streams only) A list of current response type enums applied to the event source mapping.
+     * @return (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1382,11 +1382,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1401,7 +1401,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1410,7 +1410,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1427,11 +1427,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1443,11 +1443,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams only) A list of current response type enums applied to the event source mapping.
+     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams only) A list of current response type enums applied to the event source mapping.
+     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */

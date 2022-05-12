@@ -34,7 +34,8 @@ public enum DataSourceType {
     FSX("FSX"),
     SLACK("SLACK"),
     BOX("BOX"),
-    QUIP("QUIP");
+    QUIP("QUIP"),
+    JIRA("JIRA");
 
     private String value;
 
